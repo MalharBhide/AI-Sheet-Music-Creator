@@ -1,0 +1,25 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      APP_ENV: development
+      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+      STORAGE_ROOT: /app/storage
+      FFMPEG_BIN: ffmpeg
+      MUSESCORE_BIN: musescore3
+    volumes:
+      - ./storage:/app/storage
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000/api
+    depends_on:
+      - backend
+
