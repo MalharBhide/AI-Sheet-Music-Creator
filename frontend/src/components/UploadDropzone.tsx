@@ -71,10 +71,9 @@ export default function UploadDropzone({
       />
       <UploadCloud aria-hidden="true" size={30} />
       <div>
-        <h1>Upload Audio</h1>
-        <p>MP3, WAV, M4A, AAC, FLAC, or OGG</p>
+        <h1>Choose an audio file</h1>
+        <p>Drop it here or click to browse. MP3 works best.</p>
       </div>
     </div>
   );
 }
-

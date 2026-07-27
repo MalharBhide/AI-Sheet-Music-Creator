@@ -40,7 +40,8 @@ export default function ScorePreview({
   return (
     <div className="empty-preview">
       <Music aria-hidden="true" size={34} />
-      <p>Upload audio to generate piano sheet music.</p>
+      <h1>Turn audio into piano sheet music</h1>
+      <p>Choose an audio file to create a playable piano score.</p>
     </div>
   );
 }

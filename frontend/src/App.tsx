@@ -66,6 +66,10 @@ export default function App() {
 
       <main className="workspace">
         <section className="control-panel" aria-label="Audio upload and job status">
+          <div className="intro-copy">
+            <h1>Make piano sheet music from audio</h1>
+            <p>Upload a recording, then download the generated score as a PDF.</p>
+          </div>
           <UploadDropzone onUpload={handleUpload} disabled={isUploading || !!job} />
           <JobStatus job={job} isUploading={isUploading} error={error} />
           <DownloadPanel job={job} />
@@ -82,4 +86,3 @@ export default function App() {
     </div>
   );
 }
-

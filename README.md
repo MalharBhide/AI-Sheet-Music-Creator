@@ -1,6 +1,26 @@
 # AI Sheet Music Creator
 
-A local MVP that accepts an audio upload and returns piano-focused sheet music outputs:
+Turn an audio recording into downloadable piano sheet music. Upload an audio file in the browser, wait for the score to be generated, then download its PDF.
+
+## Start Here
+
+This is the only setup most people need after downloading or cloning this GitHub repository:
+
+1. Install and open [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+2. Open Terminal in this project folder.
+3. Run:
+
+   ```bash
+   docker compose up --build
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173).
+
+The first start may take a few minutes while Docker downloads the transcription and notation tools. Later starts only need `docker compose up`. Stop the app with `Ctrl+C`.
+
+The browser interface is intentionally simple: choose or drop an audio file, wait for the preview, then select **Download sheet music (PDF)**.
+
+## What It Creates
 
 - MIDI from Basic Pitch
 - MusicXML from music21 cleanup
@@ -8,7 +28,7 @@ A local MVP that accepts an audio upload and returns piano-focused sheet music o
 
 The first version is intentionally scoped to clear piano or single-instrument audio. Full songs with vocals, drums, and dense mixes will run, but the notation quality will vary.
 
-## Prerequisites
+## Manual Development Setup
 
 - Python 3.11
 - Node.js 20+

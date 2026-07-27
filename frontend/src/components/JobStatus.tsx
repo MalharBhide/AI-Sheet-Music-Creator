@@ -48,7 +48,7 @@ export default function JobStatus({
               : "Waiting"}
       </div>
 
-      <div className="step-row">
+      {(isUploading || job) && <div className="step-row">
         {steps.map((step, index) => (
           <div
             className={`step ${index <= currentIndex ? "is-active" : ""} ${
@@ -60,7 +60,7 @@ export default function JobStatus({
             <span className="step-label">{step.label}</span>
           </div>
         ))}
-      </div>
+      </div>}
     </div>
   );
 }
@@ -83,4 +83,3 @@ function labelFor(status: Status): string {
       return "Failed";
   }
 }
-

@@ -9,7 +9,7 @@ type DownloadItem = {
 };
 
 const items: DownloadItem[] = [
-  { key: "pdf", label: "PDF", icon: FileText },
+  { key: "pdf", label: "Download sheet music (PDF)", icon: FileText },
   { key: "musicxml", label: "MusicXML", icon: FileCode2 },
   { key: "midi", label: "MIDI", icon: FileAudio },
   { key: "svg", label: "SVG", icon: FileArchive }
@@ -22,10 +22,10 @@ export default function DownloadPanel({ job }: { job: Job | null }) {
     <div className="downloads" aria-label="Downloads">
       <div className="panel-heading">
         <Download aria-hidden="true" size={18} />
-        <h2>Downloads</h2>
+        <h2>Your sheet music</h2>
       </div>
       <div className="download-grid">
-        {items.map((item) => {
+        {items.slice(0, 1).map((item) => {
           const Icon = item.icon;
           const href = apiUrl(job?.download_urls[item.key]);
           return (
@@ -41,7 +41,23 @@ export default function DownloadPanel({ job }: { job: Job | null }) {
           );
         })}
       </div>
+      {isReady && (
+        <details className="advanced-downloads">
+          <summary>More file formats</summary>
+          <div className="download-grid compact-download-grid">
+            {items.slice(1).map((item) => {
+              const Icon = item.icon;
+              const href = apiUrl(job?.download_urls[item.key]);
+              return (
+                <a className="download-button" href={href || undefined} key={item.key}>
+                  <Icon aria-hidden="true" size={17} />
+                  <span>{item.label}</span>
+                </a>
+              );
+            })}
+          </div>
+        </details>
+      )}
     </div>
   );
 }
-

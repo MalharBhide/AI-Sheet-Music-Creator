@@ -67,10 +67,10 @@ input {
 }
 
 .workspace {
-  width: min(1380px, 100%);
+  width: min(1180px, 100%);
   flex: 1;
   display: grid;
-  grid-template-columns: 380px minmax(0, 1fr);
+  grid-template-columns: 360px minmax(0, 1fr);
   gap: 18px;
   padding: 18px;
   margin: 0 auto;
@@ -89,6 +89,19 @@ input {
   flex-direction: column;
   gap: 16px;
   padding: 16px;
+}
+
+.intro-copy h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #173b36;
+}
+
+.intro-copy p {
+  margin: 0;
+  color: #65716d;
+  line-height: 1.5;
 }
 
 .preview-panel {
@@ -205,7 +218,7 @@ input {
 
 .download-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 8px;
 }
 
@@ -222,6 +235,21 @@ input {
   text-decoration: none;
   font-weight: 680;
   font-size: 13px;
+}
+
+.advanced-downloads {
+  margin-top: 12px;
+  color: #52625e;
+  font-size: 13px;
+}
+
+.advanced-downloads summary {
+  cursor: pointer;
+}
+
+.compact-download-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 10px;
 }
 
 .download-button:not(.is-disabled):hover {
@@ -264,6 +292,12 @@ input {
   padding: 24px;
   text-align: center;
   color: #44625c;
+}
+
+.empty-preview h1 {
+  margin: 0;
+  color: #21443f;
+  font-size: 23px;
 }
 
 .empty-preview.is-error {
@@ -316,8 +350,7 @@ input {
   }
 
   .step-row,
-  .download-grid {
+  .compact-download-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
-
