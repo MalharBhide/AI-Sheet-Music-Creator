@@ -1,0 +1,21 @@
+.env
+.DS_Store
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Node
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+*.tsbuildinfo
+.pnpm-store/
+
+# Generated audio and scores
+storage/jobs/*
+!storage/jobs/.gitkeep
