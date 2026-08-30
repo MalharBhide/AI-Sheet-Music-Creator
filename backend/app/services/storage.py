@@ -72,12 +72,16 @@ async def save_upload(job_id: str, upload_file: UploadFile) -> Path:
     paths.upload_dir.mkdir(parents=True, exist_ok=True)
 
     written = 0
-    with paths.original_audio.open("wb") as destination:
-        while chunk := await upload_file.read(1024 * 1024):
-            written += len(chunk)
-            if written > max_bytes:
-                raise StorageError(f"Upload is larger than {settings.max_upload_mb} MB.")
-            destination.write(chunk)
+    try:
+        with paths.original_audio.open("wb") as destination:
+            while chunk := await upload_file.read(1024 * 1024):
+                written += len(chunk)
+                if written > max_bytes:
+                    raise StorageError(f"Upload is larger than {settings.max_upload_mb} MB.")
+                destination.write(chunk)
+    except StorageError:
+        paths.original_audio.unlink(missing_ok=True)
+        raise
 
     return paths.original_audio
 

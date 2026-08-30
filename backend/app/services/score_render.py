@@ -16,9 +16,12 @@ def render_musicxml_to_pdf_and_svg(musicxml_path: Path, pdf_path: Path, svg_path
     svg_path.parent.mkdir(parents=True, exist_ok=True)
 
     _run_musescore(musescore, musicxml_path, pdf_path)
-    _run_musescore(musescore, musicxml_path, svg_path)
+    _run_musescore(musescore, musicxml_path, svg_path, svg_output=True)
 
     actual_svg = _resolve_svg_output(svg_path)
+    if actual_svg != svg_path:
+        shutil.copyfile(actual_svg, svg_path)
+        actual_svg = svg_path
     return pdf_path, actual_svg
 
 
@@ -43,9 +46,18 @@ def _resolve_musescore(configured_binary: str) -> str:
     )
 
 
-def _run_musescore(musescore: str, input_path: Path, output_path: Path) -> None:
+def _run_musescore(
+    musescore: str,
+    input_path: Path,
+    output_path: Path,
+    svg_output: bool = False,
+) -> None:
+    command = [musescore, "-o", str(output_path), str(input_path)]
+    if svg_output:
+        command.insert(1, "-f")
+
     result = subprocess.run(
-        [musescore, "-o", str(output_path), str(input_path)],
+        command,
         capture_output=True,
         text=True,
     )
