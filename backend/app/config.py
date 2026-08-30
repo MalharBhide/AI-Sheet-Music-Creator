@@ -1,8 +1,11 @@
+from __future__ import annotations
+
 from functools import lru_cache
 from pathlib import Path
+from typing import Annotated, Union
 
 from pydantic import Field, field_validator
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -16,7 +19,7 @@ class Settings(BaseSettings):
     )
 
     app_env: str = "development"
-    cors_origins: list[str] = Field(
+    cors_origins: Annotated[list[str], NoDecode] = Field(
         default_factory=lambda: ["http://localhost:5173", "http://127.0.0.1:5173"]
     )
     storage_root: Path = REPO_ROOT / "storage"
@@ -28,7 +31,7 @@ class Settings(BaseSettings):
 
     @field_validator("cors_origins", mode="before")
     @classmethod
-    def split_cors_origins(cls, value: str | list[str]) -> list[str]:
+    def split_cors_origins(cls, value: Union[str, list[str]]) -> list[str]:
         if isinstance(value, str):
             return [origin.strip() for origin in value.split(",") if origin.strip()]
         return value

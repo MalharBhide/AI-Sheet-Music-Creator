@@ -1,5 +1,8 @@
+from __future__ import annotations
+
 from datetime import datetime, timezone
 from enum import Enum
+from typing import Optional
 
 from pydantic import BaseModel, Field
 
@@ -15,10 +18,10 @@ class JobStatus(str, Enum):
 
 
 class GeneratedFiles(BaseModel):
-    midi: str | None = None
-    musicxml: str | None = None
-    pdf: str | None = None
-    svg: str | None = None
+    midi: Optional[str] = None
+    musicxml: Optional[str] = None
+    pdf: Optional[str] = None
+    svg: Optional[str] = None
 
 
 class JobRecord(BaseModel):
@@ -27,7 +30,7 @@ class JobRecord(BaseModel):
     status: JobStatus = JobStatus.queued
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-    error: str | None = None
+    error: Optional[str] = None
     files: GeneratedFiles = Field(default_factory=GeneratedFiles)
 
 

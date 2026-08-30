@@ -30,7 +30,7 @@ The first version is intentionally scoped to clear piano or single-instrument au
 
 ## Manual Development Setup
 
-- Python 3.11
+- Python 3.9+ (3.11 or 3.12 recommended)
 - Node.js 20+
 - `ffmpeg`
 - MuseScore with CLI access
