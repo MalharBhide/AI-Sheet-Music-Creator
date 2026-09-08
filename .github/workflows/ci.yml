@@ -1,0 +1,43 @@
+name: Verify audio-to-sheet-music MVP
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: pip install -e './backend[dev]'
+      - run: python -m pytest -q
+        working-directory: backend
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install -g pnpm@11.19.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --dir frontend run build
+  native-pipeline:
+    if: github.event_name != 'push' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose build backend
+      - run: |
+          docker compose run --rm --no-deps \
+            -e RUN_PIPELINE_INTEGRATION=1 -v "$PWD:/src:ro" backend \
+            sh -c 'pip install --user pytest httpx && python -m pytest -p no:cacheprovider -q /src/backend/tests/test_integration.py'

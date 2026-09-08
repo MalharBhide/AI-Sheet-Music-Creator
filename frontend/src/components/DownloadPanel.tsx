@@ -3,7 +3,7 @@ import { Download, FileArchive, FileAudio, FileCode2, FileText } from "lucide-re
 import { apiUrl, Job } from "../api";
 
 type DownloadItem = {
-  key: "pdf" | "musicxml" | "midi" | "svg";
+  key: "pdf" | "musicxml" | "midi" | "svg" | "svg_zip";
   label: string;
   icon: typeof FileText;
 };
@@ -12,7 +12,8 @@ const items: DownloadItem[] = [
   { key: "pdf", label: "Download sheet music (PDF)", icon: FileText },
   { key: "musicxml", label: "MusicXML", icon: FileCode2 },
   { key: "midi", label: "MIDI", icon: FileAudio },
-  { key: "svg", label: "SVG", icon: FileArchive }
+  { key: "svg", label: "SVG page 1", icon: FileCode2 },
+  { key: "svg_zip", label: "All SVG pages", icon: FileArchive }
 ];
 
 export default function DownloadPanel({ job }: { job: Job | null }) {
@@ -49,7 +50,7 @@ export default function DownloadPanel({ job }: { job: Job | null }) {
               const Icon = item.icon;
               const href = apiUrl(job?.download_urls[item.key]);
               return (
-                <a className="download-button" href={href || undefined} key={item.key}>
+                <a className={`download-button ${!href ? "is-disabled" : ""}`} href={href || undefined} aria-disabled={!href} key={item.key}>
                   <Icon aria-hidden="true" size={17} />
                   <span>{item.label}</span>
                 </a>

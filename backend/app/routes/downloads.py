@@ -1,48 +1,42 @@
-from fastapi import APIRouter, HTTPException
+from uuid import UUID
+
+from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import FileResponse
 
-from app.services.job_store import JobNotFoundError, job_store
-from app.services.storage import resolve_stored_path
+from app.routes.dependencies import lookup
+from app.services.storage import output_path
+
+router = APIRouter(tags=['downloads'])
+FILENAMES = {'midi': 'transcription.mid', 'musicxml': 'score.musicxml', 'pdf': 'score.pdf',
+             'svg': 'page-1.svg', 'svg_zip': 'score-svgs.zip'}
 
 
-router = APIRouter(prefix="/api/downloads", tags=["downloads"])
-
-CONTENT_TYPES = {
-    "midi": "audio/midi",
-    "musicxml": "application/vnd.recordare.musicxml+xml",
-    "pdf": "application/pdf",
-    "svg": "image/svg+xml",
-}
-
-FILENAMES = {
-    "midi": "piano-transcription.mid",
-    "musicxml": "piano-score.musicxml",
-    "pdf": "piano-score.pdf",
-    "svg": "piano-score.svg",
-}
-
-
-@router.get("/{job_id}/{kind}")
-def download_file(job_id: str, kind: str) -> FileResponse:
-    if kind not in CONTENT_TYPES:
-        raise HTTPException(status_code=404, detail="Unknown download type.")
-
+def serve_artifact(request: Request, job_id: UUID, name: str, preview: bool):
+    job = lookup(request, job_id)
+    if job['status'] != 'completed':
+        raise HTTPException(409, 'Files will be available after processing completes.')
+    artifact = next((a for a in job['artifacts'] if a['name'] == name), None)
+    if artifact is None:
+        raise HTTPException(404, 'This file is not available.')
     try:
-        job = job_store.get(job_id)
-    except JobNotFoundError:
-        raise HTTPException(status_code=404, detail="Job not found.") from None
+        path = output_path(request.app.state.settings, job_id, name)
+    except ValueError as exc:
+        raise HTTPException(404, 'This file is not available.') from exc
+    if not path.is_file():
+        raise HTTPException(404, 'This file was not found or has expired.')
+    return FileResponse(path, media_type=artifact['media_type'], filename=name,
+                        content_disposition_type='inline' if preview else 'attachment',
+                        headers={'X-Content-Type-Options': 'nosniff', 'Cache-Control': 'no-store',
+                                 'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'; sandbox"})
 
-    relative_path = getattr(job.files, kind)
-    if not relative_path:
-        raise HTTPException(status_code=404, detail=f"{kind} is not available yet.")
 
-    path = resolve_stored_path(relative_path)
-    if not path.exists():
-        raise HTTPException(status_code=404, detail=f"{kind} file is missing.")
+@router.get('/api/downloads/{job_id}/{kind}')
+def download_file(job_id: UUID, kind: str, request: Request, preview: bool = False):
+    if kind not in FILENAMES:
+        raise HTTPException(404, 'Unknown download type.')
+    return serve_artifact(request, job_id, FILENAMES[kind], preview)
 
-    return FileResponse(
-        path=path,
-        media_type=CONTENT_TYPES[kind],
-        filename=FILENAMES[kind],
-    )
 
+@router.get('/api/jobs/{job_id}/files/{name}')
+def download_page(job_id: UUID, name: str, request: Request, preview: bool = False):
+    return serve_artifact(request, job_id, name, preview)

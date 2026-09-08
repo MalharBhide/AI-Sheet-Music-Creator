@@ -1,52 +1,51 @@
-from __future__ import annotations
-
+"""Submit a recording to a running backend and verify every returned download."""
 import argparse
-import shutil
+import json
 import sys
+import time
 from pathlib import Path
-
-
-REPO_ROOT = Path(__file__).resolve().parents[1]
-BACKEND_ROOT = REPO_ROOT / "backend"
-sys.path.insert(0, str(BACKEND_ROOT))
-
-from app.models.job import JobStatus  # noqa: E402
-from app.services.job_store import job_store  # noqa: E402
-from app.services.storage import get_job_paths  # noqa: E402
-from app.workers.transcription_worker import run_transcription_job  # noqa: E402
+from urllib.error import HTTPError
+from urllib.request import Request, urlopen
+from uuid import uuid4
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Run the audio-to-piano-score pipeline locally.")
-    parser.add_argument("audio_file", type=Path)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('audio_file', type=Path)
+    parser.add_argument('--api', default='http://localhost:8000')
     args = parser.parse_args()
-
-    audio_file = args.audio_file.expanduser().resolve()
-    if not audio_file.exists():
-      print(f"Audio file not found: {audio_file}", file=sys.stderr)
-      return 1
-
-    job = job_store.create(audio_file.name)
-    paths = get_job_paths(job.job_id, audio_file.name)
-    paths.upload_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(audio_file, paths.original_audio)
-
-    run_transcription_job(job.job_id)
-    result = job_store.get(job.job_id)
-
-    print(f"Job: {result.job_id}")
-    print(f"Status: {result.status}")
-    if result.status == JobStatus.failed:
-        print(f"Error: {result.error}", file=sys.stderr)
+    path = args.audio_file.expanduser().resolve()
+    if not path.is_file():
+        print(f'Audio file not found: {path}', file=sys.stderr)
+        return 1
+    boundary = 'score-' + uuid4().hex
+    body = (f'--{boundary}\r\nContent-Disposition: form-data; name="file"; filename="recording{path.suffix}"\r\n'
+            'Content-Type: application/octet-stream\r\n\r\n').encode()
+    body += path.read_bytes() + f'\r\n--{boundary}--\r\n'.encode()
+    origin = args.api.rstrip('/')
+    try:
+        with urlopen(Request(origin + '/api/upload', data=body,
+                             headers={'Content-Type': f'multipart/form-data; boundary={boundary}'}), timeout=120) as response:
+            job = json.load(response)
+        status_url = origin + '/api/jobs/' + job['job_id']
+        deadline = time.monotonic() + 960
+        while job['status'] not in ('done', 'failed') and time.monotonic() < deadline:
+            time.sleep(2)
+            with urlopen(status_url, timeout=30) as response:
+                job = json.load(response)
+        print('Job:', job['job_id'], 'Status:', job['status'])
+        if job['status'] != 'done':
+            print(job.get('error') or 'Timed out waiting for the job.', file=sys.stderr)
+            return 1
+        for artifact in job['artifacts']:
+            with urlopen(origin + artifact['url'], timeout=30) as response:
+                assert response.read(1), 'Empty artifact: ' + artifact['name']
+            print(artifact['label'] + ':', origin + artifact['url'])
+        return 0
+    except HTTPError as exc:
+        print(exc.read().decode(errors='replace'), file=sys.stderr)
         return 1
 
-    print(f"MIDI: {paths.midi}")
-    print(f"MusicXML: {paths.musicxml}")
-    print(f"PDF: {paths.pdf}")
-    print(f"SVG: {paths.svg}")
-    return 0
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     raise SystemExit(main())
-

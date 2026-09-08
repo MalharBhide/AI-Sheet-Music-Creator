@@ -1,45 +1,40 @@
-from pathlib import Path
-import shutil
+import logging
 import subprocess
+import wave
+from pathlib import Path
 
-from app.config import get_settings
+from app.config import Settings
+from app.models import PipelineError
+
+logger = logging.getLogger(__name__)
 
 
-class AudioPreprocessError(RuntimeError):
-    pass
-
-
-def convert_to_wav(input_path: Path, output_path: Path, sample_rate: int = 22050) -> Path:
-    settings = get_settings()
-    ffmpeg = _resolve_binary(settings.ffmpeg_bin)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-
-    command = [
-        ffmpeg,
-        "-y",
-        "-i",
-        str(input_path),
-        "-ac",
-        "1",
-        "-ar",
-        str(sample_rate),
-        "-vn",
-        str(output_path),
-    ]
-
-    result = subprocess.run(command, capture_output=True, text=True)
+def normalize_audio(source: Path, destination: Path, settings: Settings) -> float:
+    """Decode a bounded amount of audio. Never trust extension, MIME type or duration tags."""
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        result = subprocess.run([
+            settings.ffmpeg_bin, "-nostdin", "-hide_banner", "-loglevel", "error", "-y",
+            "-protocol_whitelist", "file,pipe",
+            "-format_whitelist", "wav,mp3,flac,ogg,mov,mp4,m4a,3gp,3g2,mj2,aac,aiff",
+            "-i", str(source),
+            "-map", "0:a:0", "-vn", "-sn", "-dn", "-ac", "1", "-ar", "22050",
+            "-t", str(settings.max_audio_seconds + 1), "-c:a", "pcm_s16le", str(destination),
+        ], capture_output=True, timeout=60, check=False)
+    except FileNotFoundError as exc:
+        raise PipelineError("Audio decoding is unavailable. The server needs FFmpeg.") from exc
+    except subprocess.TimeoutExpired as exc:
+        raise PipelineError("The recording took too long to decode. Try a shorter file.") from exc
     if result.returncode != 0:
-        detail = result.stderr.strip() or result.stdout.strip()
-        raise AudioPreprocessError(f"ffmpeg could not convert the audio file. {detail}")
-
-    return output_path
-
-
-def _resolve_binary(binary_name: str) -> str:
-    resolved = shutil.which(binary_name)
-    if not resolved:
-        raise AudioPreprocessError(
-            f"Could not find '{binary_name}'. Install ffmpeg or set FFMPEG_BIN."
-        )
-    return resolved
-
+        logger.warning("FFmpeg failed: %s", result.stderr.decode(errors="replace")[-4000:])
+        raise PipelineError("This file could not be decoded as audio. Try exporting it as WAV or MP3.")
+    try:
+        with wave.open(str(destination), "rb") as wav:
+            duration = wav.getnframes() / wav.getframerate()
+    except (wave.Error, OSError) as exc:
+        raise PipelineError("The recording did not contain readable audio.") from exc
+    if duration < 0.25:
+        raise PipelineError("The recording must contain at least a quarter second of audio.")
+    if duration > settings.max_audio_seconds:
+        raise PipelineError(f"The recording exceeds the {settings.max_audio_seconds}-second limit. Upload a shorter clip.")
+    return duration
