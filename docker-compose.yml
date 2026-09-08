@@ -1,25 +1,36 @@
 services:
   backend:
-    build:
-      context: ./backend
+    build: ./backend
+    platform: linux/amd64
+    init: true
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     environment:
-      APP_ENV: development
-      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
-      STORAGE_ROOT: /app/storage
-      FFMPEG_BIN: ffmpeg
-      MUSESCORE_BIN: musescore3
+      STORAGE_ROOT: /data
+      MUSESCORE_BIN: /usr/bin/musescore3
+      MAX_UPLOAD_MB: "25"
+      MAX_AUDIO_SECONDS: "180"
+      RETENTION_HOURS: "24"
     volumes:
-      - ./storage:/app/storage
-
+      - sheet-music-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import json,urllib.request; assert json.load(urllib.request.urlopen('http://127.0.0.1:8000/api/health'))['ready']"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    stop_grace_period: 15s
+    restart: unless-stopped
   frontend:
     build:
-      context: ./frontend
+      context: .
+      dockerfile: frontend/Dockerfile
     ports:
-      - "5173:5173"
-    environment:
-      VITE_API_BASE_URL: http://localhost:8000/api
+      - "127.0.0.1:5173:80"
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
 
+volumes:
+  sheet-music-data:

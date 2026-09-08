@@ -1,66 +1,44 @@
+import { useEffect, useState } from "react";
 import { FileMusic, Loader2, Music } from "lucide-react";
 
 import { JobStatus } from "../api";
 
 export default function ScorePreview({
-  status,
-  previewUrl,
-  error
+  status, previewUrls, error
 }: {
   status?: JobStatus;
-  previewUrl: string | null;
+  previewUrls: string[];
   error?: string | null;
 }) {
-  if (status === "done" && previewUrl) {
+  const [page, setPage] = useState(0);
+  const firstPage = previewUrls[0];
+  useEffect(() => setPage(0), [firstPage]);
+
+  if (status === "done" && previewUrls.length) {
+    const pageNumber = Math.min(page, previewUrls.length - 1);
     return (
-      <div className="score-frame">
-        <img src={previewUrl} alt="Generated piano sheet music" />
+      <div className="preview-pages">
+        <div className="score-frame">
+          <img src={previewUrls[pageNumber] + "?preview=true"} alt={"Generated piano sheet music, page " + (pageNumber + 1)} />
+        </div>
+        {previewUrls.length > 1 && <nav className="page-controls" aria-label="Score pages">
+          <button disabled={pageNumber === 0} onClick={() => setPage(value => value - 1)}>Previous</button>
+          <span>Page {pageNumber + 1} of {previewUrls.length}</span>
+          <button disabled={pageNumber === previewUrls.length - 1} onClick={() => setPage(value => value + 1)}>Next</button>
+        </nav>}
       </div>
     );
   }
 
   if (status === "failed" || error) {
-    return (
-      <div className="empty-preview is-error">
-        <FileMusic aria-hidden="true" size={34} />
-        <p>{error || "The score could not be generated."}</p>
-      </div>
-    );
+    return <div className="empty-preview is-error"><FileMusic aria-hidden="true" size={34} /><p>{error || "The score could not be generated."}</p></div>;
   }
-
   if (status) {
-    return (
-      <div className="empty-preview">
-        <Loader2 aria-hidden="true" className="spin" size={34} />
-        <p>{statusLabel(status)}</p>
-      </div>
-    );
+    const labels: Record<JobStatus, string> = {
+      queued: "Queued", preprocessing: "Preparing audio", transcribing: "Listening for piano notes",
+      scoring: "Building the score", rendering: "Rendering preview", done: "Ready", failed: "Failed"
+    };
+    return <div className="empty-preview"><Loader2 aria-hidden="true" className="spin" size={34} /><p>{labels[status]}</p></div>;
   }
-
-  return (
-    <div className="empty-preview">
-      <Music aria-hidden="true" size={34} />
-      <h1>Turn audio into piano sheet music</h1>
-      <p>Choose an audio file to create a playable piano score.</p>
-    </div>
-  );
-}
-
-function statusLabel(status: JobStatus): string {
-  switch (status) {
-    case "queued":
-      return "Queued";
-    case "preprocessing":
-      return "Preparing audio";
-    case "transcribing":
-      return "Listening for piano notes";
-    case "scoring":
-      return "Building the score";
-    case "rendering":
-      return "Rendering preview";
-    case "done":
-      return "Ready";
-    case "failed":
-      return "Failed";
-  }
+  return <div className="empty-preview"><Music aria-hidden="true" size={34} /><h2>Your score preview</h2><p>Choose an audio file to create a piano score.</p></div>;
 }

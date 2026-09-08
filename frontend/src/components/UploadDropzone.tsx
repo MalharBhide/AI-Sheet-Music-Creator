@@ -55,9 +55,11 @@ export default function UploadDropzone({
       onDragLeave={() => setIsDragging(false)}
       onDrop={handleDrop}
       role="button"
+      aria-disabled={disabled}
       tabIndex={disabled ? -1 : 0}
       onKeyDown={(event) => {
         if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
           openPicker();
         }
       }}
@@ -65,14 +67,14 @@ export default function UploadDropzone({
       <input
         ref={inputRef}
         type="file"
-        accept={`${acceptedAudioTypes},.mp3,.wav,.m4a,.aac,.flac,.ogg`}
+        accept={`${acceptedAudioTypes},.mp3,.wav,.m4a,.aac,.flac,.ogg,.aif,.aiff`}
         onChange={handleInput}
         disabled={disabled}
       />
       <UploadCloud aria-hidden="true" size={30} />
       <div>
-        <h1>Choose an audio file</h1>
-        <p>Drop it here or click to browse. MP3 works best.</p>
+        <h2>Choose an audio file</h2>
+        <p>Drop it here or click to browse. Clear solo piano works best.</p>
       </div>
     </div>
   );

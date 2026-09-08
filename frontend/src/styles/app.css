@@ -142,7 +142,7 @@ input {
   display: none;
 }
 
-.dropzone h1 {
+.dropzone h2 {
   margin: 0 0 6px;
   font-size: 22px;
   line-height: 1.15;
@@ -202,7 +202,7 @@ input {
 }
 
 .step-label {
-  font-size: 11px;
+  font-size: 12px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -313,6 +313,15 @@ input {
 .spin {
   animation: spin 900ms linear infinite;
 }
+
+.preview-pages { width: 100%; display: flex; flex-direction: column; }
+.page-controls { display: flex; justify-content: center; align-items: center; gap: 16px; padding: 12px; border-top: 1px solid #dbe3dc; font-size: 14px; }
+.page-controls button, .retry-button { border: 1px solid #cad7d0; border-radius: 6px; background: #fff; color: #193b37; padding: 8px 12px; cursor: pointer; font-size: 14px; }
+.page-controls button:disabled { opacity: .5; cursor: default; }
+.recording-note { margin: 0; color: #65716d; font-size: 14px; line-height: 1.5; }
+.connection-error { color: #8b2d2d; font-size: 14px; line-height: 1.5; }
+button:focus-visible, a:focus-visible, [role=button]:focus-visible { outline: 3px solid #3a7169; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .spin { animation: none; } .dropzone { transition: none; } }
 
 @keyframes spin {
   to {

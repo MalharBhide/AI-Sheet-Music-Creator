@@ -1,78 +1,71 @@
-from pathlib import Path
-import shutil
+import logging
+import os
+import re
 import subprocess
+import zipfile
+from pathlib import Path
+from xml.etree import ElementTree
 
-from app.config import get_settings
+from pypdf import PdfReader
 
+from app.config import Settings
+from app.models import PipelineError
 
-class ScoreRenderError(RuntimeError):
-    pass
-
-
-def render_musicxml_to_pdf_and_svg(musicxml_path: Path, pdf_path: Path, svg_path: Path) -> tuple[Path, Path]:
-    settings = get_settings()
-    musescore = _resolve_musescore(settings.musescore_bin)
-    pdf_path.parent.mkdir(parents=True, exist_ok=True)
-    svg_path.parent.mkdir(parents=True, exist_ok=True)
-
-    _run_musescore(musescore, musicxml_path, pdf_path)
-    _run_musescore(musescore, musicxml_path, svg_path, svg_output=True)
-
-    actual_svg = _resolve_svg_output(svg_path)
-    if actual_svg != svg_path:
-        shutil.copyfile(actual_svg, svg_path)
-        actual_svg = svg_path
-    return pdf_path, actual_svg
+logger = logging.getLogger(__name__)
 
 
-def _resolve_musescore(configured_binary: str) -> str:
-    candidates = [
-        configured_binary,
-        "mscore",
-        "musescore",
-        "musescore3",
-        "musescore4",
-        "/Applications/MuseScore 4.app/Contents/MacOS/mscore",
-        "/Applications/MuseScore 3.app/Contents/MacOS/mscore",
+def render_score(xml_path: Path, directory: Path, settings: Settings) -> list[dict]:
+    executable = settings.renderer()
+    if executable is None:
+        raise PipelineError("Sheet rendering is unavailable. Install MuseScore and configure MUSESCORE_BIN.")
+    runtime_dir = directory / "qt-runtime"
+    runtime_dir.mkdir(mode=0o700, exist_ok=True)
+    environment = {**os.environ, "QT_QPA_PLATFORM": "offscreen", "XDG_RUNTIME_DIR": str(runtime_dir)}
+    for extension in ("pdf", "svg"):
+        destination = directory / f"score.{extension}"
+        try:
+            result = subprocess.run([executable, "-o", str(destination), str(xml_path)],
+                                    env=environment, capture_output=True,
+                                    timeout=settings.render_timeout_seconds, check=False)
+        except subprocess.TimeoutExpired as exc:
+            raise PipelineError("Sheet rendering timed out. Try a shorter or simpler recording.") from exc
+        if result.returncode != 0:
+            logger.error("MuseScore failed: %s", result.stderr.decode(errors="replace")[-4000:])
+            raise PipelineError("MuseScore could not render this score. Check the server log or try a simpler clip.")
+
+    pdf = directory / "score.pdf"
+    # Different MuseScore releases produce score.svg or score-1.svg, score-2.svg, etc.
+    pages = sorted((p for p in directory.glob("score*.svg")
+                    if re.fullmatch(r"score(?:-\d+)?\.svg", p.name)),
+                   key=lambda p: int(re.search(r"(\d+)\.svg$", p.name).group(1))
+                   if re.search(r"(\d+)\.svg$", p.name) else 0)
+    if not pdf.is_file() or pdf.stat().st_size < 5 or not pages or any(p.stat().st_size == 0 for p in pages):
+        raise PipelineError("MuseScore finished without producing all expected score files.")
+    with pdf.open("rb") as handle:
+        if handle.read(5) != b"%PDF-":
+            raise PipelineError("MuseScore produced an invalid PDF.")
+    try:
+        page_count = len(PdfReader(pdf).pages)
+        for page in pages:
+            if ElementTree.parse(page).getroot().tag != "{http://www.w3.org/2000/svg}svg":
+                raise ValueError("Invalid SVG root")
+    except Exception as exc:
+        raise PipelineError("MuseScore produced unreadable score files.") from exc
+    if len(pages) != page_count:
+        raise PipelineError("MuseScore did not export every SVG page. Use the MuseScore 3 Docker setup and try again.")
+
+    artifacts = [
+        {"name": "score.pdf", "label": "PDF", "media_type": "application/pdf"},
+        {"name": "score.musicxml", "label": "MusicXML", "media_type": "application/vnd.recordare.musicxml+xml"},
+        {"name": "transcription.mid", "label": "MIDI", "media_type": "audio/midi"},
     ]
-    for candidate in candidates:
-        if Path(candidate).exists():
-            return candidate
-        resolved = shutil.which(candidate)
-        if resolved:
-            return resolved
-    raise ScoreRenderError(
-        "MuseScore CLI was not found. Install MuseScore or set MUSESCORE_BIN."
-    )
-
-
-def _run_musescore(
-    musescore: str,
-    input_path: Path,
-    output_path: Path,
-    svg_output: bool = False,
-) -> None:
-    command = [musescore, "-o", str(output_path), str(input_path)]
-    if svg_output:
-        command.insert(1, "-f")
-
-    result = subprocess.run(
-        command,
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode != 0:
-        detail = result.stderr.strip() or result.stdout.strip()
-        raise ScoreRenderError(f"MuseScore could not render {output_path.name}. {detail}")
-
-
-def _resolve_svg_output(expected_svg: Path) -> Path:
-    if expected_svg.exists():
-        return expected_svg
-
-    generated_svgs = sorted(expected_svg.parent.glob(f"{expected_svg.stem}*.svg"))
-    if generated_svgs:
-        return generated_svgs[0]
-
-    raise ScoreRenderError("MuseScore did not create an SVG preview.")
-
+    for index, page in enumerate(pages, 1):
+        target = directory / f"page-{index}.svg"
+        page.rename(target)
+        artifacts.append({"name": target.name, "label": f"SVG · page {index}", "media_type": "image/svg+xml"})
+    with zipfile.ZipFile(directory / "score-svgs.zip", "w", zipfile.ZIP_DEFLATED) as archive:
+        for artifact in artifacts:
+            if artifact["media_type"] == "image/svg+xml":
+                archive.write(directory / artifact["name"], artifact["name"])
+    artifacts.append({"name": "score-svgs.zip", "label": "All SVG pages", "media_type": "application/zip"})
+    return artifacts
