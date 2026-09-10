@@ -6,6 +6,7 @@ import DownloadPanel from "./components/DownloadPanel";
 import JobStatus from "./components/JobStatus";
 import ScorePreview from "./components/ScorePreview";
 import UploadDropzone from "./components/UploadDropzone";
+import { validateAudioUpload } from "./uploadValidation";
 
 function initialJobId(): string | null {
   const id = new URLSearchParams(window.location.search).get("job");
@@ -74,14 +75,9 @@ export default function App() {
   async function handleUpload(file: File) {
     if (submitting.current || jobId || !health?.ready) return;
     setError(null);
-    if (!/\.(wav|mp3|flac|ogg|m4a|aac|aiff?)$/i.test(file.name)) {
-      setError("Choose a WAV, MP3, FLAC, OGG, M4A, AAC, or AIFF recording."); return;
-    }
-    if (!file.size) {
-      setError("Choose a non-empty audio recording."); return;
-    }
-    if (health.limits.max_upload_mb > 0 && file.size > health.limits.max_upload_mb * 1024 * 1024) {
-      setError("Choose a file up to " + health.limits.max_upload_mb + " MB."); return;
+    const validationError = validateAudioUpload(file, health.limits.max_upload_mb);
+    if (validationError) {
+      setError(validationError); return;
     }
     submitting.current = true;
     setIsUploading(true);

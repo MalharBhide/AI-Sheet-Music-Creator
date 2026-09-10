@@ -29,6 +29,7 @@ jobs:
           node-version: '24'
       - run: npm install -g pnpm@11.19.0
       - run: pnpm install --frozen-lockfile
+      - run: pnpm --dir frontend test
       - run: pnpm --dir frontend run build
   native-pipeline:
     if: github.event_name != 'push' || github.ref == 'refs/heads/main'

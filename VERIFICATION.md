@@ -1,5 +1,15 @@
 # Verification
 
+## Website upload regression — 2026-09-10
+
+The reported “Choose a non-empty file up to 0 MB” message was traced to the old frontend in commit `c725d9c`. The current backend uses zero to mean unlimited. Updated the local checkout from the already-merged GitHub main, extracted upload validation into a tested helper, and rebuilt both Docker services.
+
+- All 14 frontend validation tests passed; they now run in CI. Production TypeScript/Vite build passed.
+- Live Nginx checks confirmed `Cache-Control: no-store` for `/`, `/index.html`, SPA routes, and API responses. Hashed assets are immutable, and missing old assets return 404 instead of HTML.
+- The browser showed `Feel No Ways.mp3` in `done` state with seven SVG pages. Every artifact downloaded successfully through the actual Nginx endpoint.
+
+## Pipeline verification — 2026-09-09
+
 Verified locally on 2026-09-09 using the app's Linux amd64 Docker runtime, including real FFmpeg, Basic Pitch 0.4.0, music21 9.7.1, and MuseScore 3.
 
 - Backend regression suite: **72 passed**. Native integration cases are opt-in and skipped by the default command.

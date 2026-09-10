@@ -12,11 +12,13 @@ docker compose up --build
 
 Open **[http://localhost:5173](http://localhost:5173)**. API documentation is at [http://localhost:8000/docs](http://localhost:8000/docs).
 
-The first build downloads the model dependencies and MuseScore. Later starts only need `docker compose up`. Stop with Ctrl+C or `docker compose down`. Job records and outputs remain in the Docker volume between starts. Removing that volume deletes them.
+The first build downloads the model dependencies and MuseScore. Later starts of the same version only need `docker compose up`. After pulling changes or switching branches, rebuild both services with `docker compose up -d --build`, then reload the browser page. Restarting containers alone keeps their previously built code. Stop with Ctrl+C or `docker compose down`. Job records and outputs remain in the Docker volume between starts. Removing that volume deletes them.
 
 Docker includes Python 3.11, FFmpeg, and Debian Bookworm's [MuseScore 3 package](https://packages.debian.org/bookworm/musescore3), and serves a production frontend build through Nginx. The backend uses an amd64 image for the transcription dependencies; Apple Silicon runs it through Docker's emulation. Allow several GB of memory and disk space.
 
 ## Using the app
+
+If a previously opened page says **“Choose a non-empty file up to 0 MB”**, it is running the old upload validator. After rebuilding, hard-refresh that page (Cmd+Shift+R on macOS, Ctrl+Shift+R on Windows/Linux) or open a fresh tab. Zero means unlimited uploads. Updated pages are served without browser caching.
 
 1. Choose or drop a WAV, MP3, FLAC, OGG, M4A, AAC, or AIFF file.
 2. Wait for audio preparation, transcription, notation cleanup, and rendering.
@@ -127,6 +129,8 @@ Manual runs use `storage/jobs.sqlite3` and `storage/jobs/{job_id}/outputs/`. Doc
 This MVP has no login or shared-user authorization. Job URLs act as access links. Docker binds to localhost by default; public hosting needs authentication, quotas, TLS, and a shared queue/storage design before scaling.
 
 ## Tests
+
+Run the frontend upload regressions with `pnpm --dir frontend test` (Node.js 24). They cover unlimited uploads, empty recordings, positive limits and their boundaries, and MP3 filename/MIME variants. CI runs these tests before the frontend production build.
 
 Run API, queue recovery, audio validation, notation, renderer-contract, and worker failure tests:
 
