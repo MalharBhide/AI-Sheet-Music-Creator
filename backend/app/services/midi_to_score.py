@@ -1,80 +1,180 @@
 import math
-from collections import defaultdict
+from collections import Counter, defaultdict, deque
+from dataclasses import dataclass
 from pathlib import Path
 
-from music21 import bar, chord, clef, converter, instrument, layout, metadata, meter, note, stream, tempo
+from music21 import (
+    bar,
+    chord,
+    clef,
+    instrument,
+    layout,
+    metadata,
+    meter,
+    midi,
+    note,
+    stream,
+    tempo,
+    tie,
+)
 
-from app.models import PipelineError, ScoreOptions
+from app.models import ScoreOptions
 
 
-def midi_to_musicxml(midi_path: Path, xml_path: Path, options: ScoreOptions, title: str) -> None:
-    """Quantize MIDI and construct two piano staves without losing overlapping durations.
+@dataclass(frozen=True)
+class _Span:
+    start: int
+    end: int
+    pitches: tuple[int, ...]
+    tied_from: frozenset[int] = frozenset()
+    tied_to: frozenset[int] = frozenset()
 
-    A fixed middle-C split is an MVP hand-assignment heuristic. Notes with equal
-    quantized onset and length become chords. Overlapping groups occupy separate
-    voices; music21 fills rests, makes measures, ties bar crossings and adds beams.
-    """
-    # The MIDI importer already inserts barline ties. Rejoin those fragments before
-    # quantization so sustained notes are not turned into repeated attacks.
-    source = converter.parse(str(midi_path), quantizePost=False).stripTies()
-    ticks_per_quarter = 4 if options.grid == "sixteenth" else 2
+
+def _read_notes(midi_path: Path, grid: int) -> tuple[list[dict], int]:
+    """Read note events directly, without building and then dismantling MIDI measures."""
+    source = midi.MidiFile()
+    source.open(str(midi_path))
+    try:
+        source.read()
+    finally:
+        source.close()
     grouped: list[dict] = [defaultdict(set), defaultdict(set)]
     last_tick = 0
-    note_count = 0
-    for element in source.flatten().notes:
-        start = max(0, int(math.floor(float(element.offset) * ticks_per_quarter + 0.5)))
-        end = max(start + 1, int(math.floor(
-            (float(element.offset) + float(element.quarterLength)) * ticks_per_quarter + 0.5)))
-        for pitch in element.pitches:
-            midi = pitch.midi
-            if 21 <= midi <= 108:
-                grouped[0 if midi >= 60 else 1][(start, end)].add(midi)
+    for track in source.tracks:
+        elapsed = 0
+        active = defaultdict(deque)
+        for event in track.events:
+            if isinstance(event, midi.DeltaTime):
+                elapsed += event.time
+            elif event.isNoteOn():
+                active[(event.channel, event.pitch)].append(elapsed)
+            elif event.isNoteOff():
+                starts = active[(event.channel, event.pitch)]
+                if not starts:
+                    continue
+                onset = starts.popleft()
+                pitch = event.pitch
+                if not 21 <= pitch <= 108:
+                    continue
+                start = max(0, int(math.floor(onset * grid / source.ticksPerQuarterNote + 0.5)))
+                end = max(start + 1, int(math.floor(
+                    elapsed * grid / source.ticksPerQuarterNote + 0.5)))
+                grouped[0 if pitch >= 60 else 1][(start, end)].add(pitch)
                 last_tick = max(last_tick, end)
-                note_count += 1
-    if not note_count:
-        raise PipelineError("No playable piano notes remained after cleanup.")
-    if note_count > 20000:
-        raise PipelineError("Too many notes were detected for this MVP. Try a shorter, clearer clip.")
+    return grouped, last_tick
+
+
+def _chord_segments(groups: dict) -> list[_Span]:
+    """Fold dense polyphony into chords, tying only pitches that keep sounding.
+
+    A note boundary splits the chord, so every attack and release is retained.
+    A repeated piano pitch starts a new attack even if an earlier detection of the
+    same key overlaps it. This avoids requiring unsupported fifth/sixth voices.
+    """
+    events = defaultdict(lambda: (Counter(), Counter()))
+    for (start, end), pitches in groups.items():
+        events[start][0].update(pitches)
+        events[end][1].update(pitches)
+    active: Counter = Counter()
+    previous = 0
+    tied_from: frozenset[int] = frozenset()
+    spans = []
+    for position, (starts, stops) in sorted(events.items()):
+        sounding = frozenset(active)
+        active.subtract(stops)
+        active.update(starts)
+        active = +active  # Remove zero counters after note-offs.
+        continuing = sounding.intersection(active).difference(starts)
+        if sounding and position > previous:
+            spans.append(_Span(previous, position, tuple(sorted(sounding)), tied_from,
+                               frozenset(continuing)))
+        tied_from = frozenset(continuing)
+        previous = position
+    return spans
+
+
+def _voices(groups: dict) -> list[list[_Span]]:
+    voices: list[list[_Span]] = []
+    ends: list[int] = []
+    for (start, end), pitches in sorted(groups.items()):
+        voice_index = next((i for i, stop in enumerate(ends) if stop <= start), None)
+        if voice_index is None:
+            if len(voices) == 4:
+                return [_chord_segments(groups)]
+            voice_index = len(voices)
+            voices.append([])
+            ends.append(0)
+        voices[voice_index].append(_Span(start, end, tuple(sorted(pitches))))
+        ends[voice_index] = end
+    return voices or [[]]
+
+
+def _add_span(voices: list[stream.Voice], span: _Span, bar_ticks: int, grid: int) -> None:
+    """Split a sounding event at barlines and attach ties to individual chord notes."""
+    position = span.start
+    while position < span.end:
+        measure_index, offset = divmod(position, bar_ticks)
+        stop = min(span.end, (measure_index + 1) * bar_ticks)
+        notes = []
+        for pitch in span.pitches:
+            item = note.Note(pitch)
+            before = position > span.start or pitch in span.tied_from
+            after = stop < span.end or pitch in span.tied_to
+            if before or after:
+                item.tie = tie.Tie("continue" if before and after else "stop" if before else "start")
+            notes.append(item)
+        item = notes[0] if len(notes) == 1 else chord.Chord(notes)
+        item.quarterLength = (stop - position) / grid
+        voices[measure_index].insert(offset / grid, item)
+        position = stop
+
+
+def midi_to_musicxml(midi_path: Path, xml_path: Path, options: ScoreOptions, title: str,
+                     *, duration_seconds: float | None = None) -> None:
+    """Quantize a whole recording into two piano staves, including its silent time.
+
+    Ordinary polyphony uses independent voices. Dense passages use chord segments
+    with individual pitch ties, so MuseScore's four-voice limit never drops notes
+    or rejects a recording. Notation is prepared one measure at a time to avoid
+    repeatedly scanning a full recording while filling rests and splitting ties.
+    """
+    grid = 4 if options.grid == "sixteenth" else 2
+    grouped, last_tick = _read_notes(midi_path, grid)
+    if duration_seconds is not None and math.isfinite(duration_seconds) and duration_seconds > 0:
+        last_tick = max(last_tick, math.ceil(duration_seconds * options.tempo_bpm / 60 * grid))
 
     score = stream.Score(id="piano-score")
     score.metadata = metadata.Metadata(title=title[:120], composer="")
     signature = meter.TimeSignature(options.time_signature)
-    bar_ticks = int(signature.barDuration.quarterLength * ticks_per_quarter)
-    end_tick = math.ceil(last_tick / bar_ticks) * bar_ticks
+    bar_ticks = int(signature.barDuration.quarterLength * grid)
+    measure_count = max(1, math.ceil(last_tick / bar_ticks))
     staves = []
     for index, groups in enumerate(grouped):
         staff = stream.PartStaff(id="right-hand" if index == 0 else "left-hand")
         staff.partName = "Piano" if index == 0 else ""
         staff.insert(0, instrument.Piano())
-        staff.insert(0, clef.TrebleClef() if index == 0 else clef.BassClef())
-        staff.insert(0, meter.TimeSignature(options.time_signature))
+        measures = [stream.Measure(number=i + 1) for i in range(measure_count)]
+        measures[0].insert(0, clef.TrebleClef() if index == 0 else clef.BassClef())
+        measures[0].insert(0, meter.TimeSignature(options.time_signature))
         if index == 0:
-            staff.insert(0, tempo.MetronomeMark(number=options.tempo_bpm))
-        voices: list[stream.Voice] = []
-        voice_ends: list[int] = []
-        for (start, end), pitches in sorted(groups.items()):
-            voice_index = next((i for i, stop in enumerate(voice_ends) if stop <= start), None)
-            if voice_index is None:
-                # MuseScore supports four independent voices per staff.
-                if len(voices) >= 4:
-                    raise PipelineError("The recording is too dense to notate clearly. Try a simpler passage.")
-                voice_index = len(voices)
-                voices.append(stream.Voice(id=voice_index + 1))
-                voice_ends.append(0)
-            item = (note.Note(next(iter(pitches))) if len(pitches) == 1
-                    else chord.Chord(sorted(pitches)))
-            item.quarterLength = (end - start) / ticks_per_quarter
-            voices[voice_index].insert(start / ticks_per_quarter, item)
-            voice_ends[voice_index] = end
-        if not voices:
-            voices.append(stream.Voice(id=1))
-        for voice in voices:
-            voice.makeRests(fillGaps=True, timeRangeFromBarDuration=False,
-                            refStreamOrTimeRange=[0, end_tick / ticks_per_quarter], inPlace=True)
-            staff.insert(0, voice)
-        staff.makeNotation(inPlace=True)
-        if measures := list(staff.getElementsByClass(stream.Measure)):
-            measures[-1].rightBarline = bar.Barline("final")
+            measures[0].insert(0, tempo.MetronomeMark(number=options.tempo_bpm))
+        for voice_index, spans in enumerate(_voices(groups)):
+            voices = [stream.Voice(id=voice_index + 1) for _ in measures]
+            for span in spans:
+                _add_span(voices, span, bar_ticks, grid)
+            for measure, voice in zip(measures, voices, strict=True):
+                voice.makeRests(fillGaps=True, timeRangeFromBarDuration=False,
+                                refStreamOrTimeRange=[0, bar_ticks / grid], inPlace=True)
+                measure.insert(0, voice)
+        for measure_index, measure in enumerate(measures):
+            staff.insert(measure_index * bar_ticks / grid, measure)
+            measure.makeNotation(inPlace=True)
+            # Measure.makeNotation materializes the contextual meter for beaming.
+            # Keep it implicit after the first bar so export does not print a new
+            # time signature (and courtesy signature) at every single barline.
+            if measure_index:
+                measure.timeSignature = None
+        measures[-1].rightBarline = bar.Barline("final")
         staves.append(staff)
         score.insert(0, staff)
     score.insert(0, layout.StaffGroup(staves, name="Piano", symbol="brace", barTogether=True))

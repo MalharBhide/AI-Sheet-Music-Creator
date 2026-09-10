@@ -10,7 +10,7 @@ class UploadLimitMiddleware:
         self.limit = limit
 
     async def __call__(self, scope, receive, send):
-        if scope["type"] != "http":
+        if scope["type"] != "http" or not self.limit:
             return await self.app(scope, receive, send)
         headers = dict(scope["headers"])
         try:

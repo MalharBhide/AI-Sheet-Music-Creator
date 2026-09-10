@@ -15,6 +15,7 @@ dependencies = [
   "music21==9.7.1",
   "numpy>=1.26.4,<2",
   "pypdf>=5.4,<7",
+  "soundfile>=0.12,<1",
 ]
 
 [project.optional-dependencies]
@@ -23,7 +24,7 @@ transcription = [
   # Basic Pitch pins resampy <0.4.3, which imports the removed pkg_resources API.
   "setuptools>=75,<81",
 ]
-dev = ["pytest>=8.3,<9", "httpx>=0.28,<1", "ruff>=0.11,<1"]
+dev = ["pytest>=8.3,<9", "httpx>=0.28,<1", "ruff>=0.11,<1", "pretty-midi>=0.2.11,<1"]
 
 [tool.setuptools.packages.find]
 include = ["app*"]

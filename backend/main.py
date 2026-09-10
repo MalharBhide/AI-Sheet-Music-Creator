@@ -32,7 +32,9 @@ def create_app(settings: Settings | None = None, *, start_worker: bool = True) -
                 runner.stop()
 
     app = FastAPI(title='AI Sheet Music Creator API', version='0.2.0', lifespan=lifespan)
-    app.add_middleware(UploadLimitMiddleware, limit=settings.max_upload_mb * 1024 * 1024 + 65536)
+    app.add_middleware(UploadLimitMiddleware,
+                       limit=settings.max_upload_mb * 1024 * 1024 + 65536
+                       if settings.max_upload_mb else 0)
     app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origins,
                        allow_methods=['GET', 'POST'], allow_headers=['Content-Type'],
                        expose_headers=['Location', 'Content-Disposition', 'Retry-After'])

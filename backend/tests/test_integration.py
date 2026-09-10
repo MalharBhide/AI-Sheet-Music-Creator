@@ -1,6 +1,7 @@
 """Opt-in integration gate: no substitutions for FFmpeg, Basic Pitch, music21 or MuseScore."""
 import importlib.util
 import os
+import subprocess
 import time
 from pathlib import Path
 
@@ -13,7 +14,8 @@ from main import create_app, dependencies
 
 @pytest.mark.integration
 @pytest.mark.skipif(os.environ.get('RUN_PIPELINE_INTEGRATION') != '1', reason='Set RUN_PIPELINE_INTEGRATION=1 to run the complete native pipeline')
-def test_audio_upload_to_all_download_formats(tmp_path):
+@pytest.mark.parametrize('encoding', ['wav', 'mp3-vbr-long', 'mp3-short', 'mp3-silent'])
+def test_audio_upload_to_all_download_formats(tmp_path, encoding):
     settings = Settings(storage_root=tmp_path / 'data', _env_file=None)
     assert all(dependencies(settings).values()), 'Install every native and Python dependency before running this integration gate.'
     script = Path(__file__).resolve().parents[2] / 'scripts' / 'make_sample.py'
@@ -22,8 +24,19 @@ def test_audio_upload_to_all_download_formats(tmp_path):
     spec.loader.exec_module(module)
     audio = tmp_path / 'sample.wav'
     module.make_sample(audio)
+    if encoding != 'wav':
+        mp3 = tmp_path / 'sample.mp3'
+        # Exercise the former 180-second failure through the real API and every
+        # native stage. Sparse piano avoids turning this into a quality benchmark.
+        filters = ['-af', 'apad=whole_dur=181.125'] if encoding == 'mp3-vbr-long' else ['-t', '0.125']
+        if encoding == 'mp3-silent':
+            filters = ['-af', 'volume=0']
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(audio), *filters,
+                        '-ar', '48000', '-ac', '2', '-c:a', 'libmp3lame', '-q:a', '4',
+                        str(mp3)], check=True)
+        audio = mp3
     with TestClient(create_app(settings)) as client:
-        result = client.post('/api/upload', files={'file': ('sample.wav', audio.read_bytes(), 'audio/wav')})
+        result = client.post('/api/upload', files={'file': (audio.name, audio.read_bytes(), 'application/octet-stream')})
         assert result.status_code == 202, result.text
         url = result.headers['Location']
         deadline = time.monotonic() + 900
@@ -35,11 +48,23 @@ def test_audio_upload_to_all_download_formats(tmp_path):
         assert job['status'] == 'done', job
         expected = {'application/pdf', 'image/svg+xml', 'audio/midi', 'application/vnd.recordare.musicxml+xml', 'application/zip'}
         assert {a['media_type'] for a in job['artifacts']} == expected
+        if encoding == 'mp3-silent':
+            from xml.etree import ElementTree
+
+            xml = ElementTree.parse(settings.jobs_dir / job['job_id'] / 'outputs/score.musicxml')
+            assert not xml.findall('.//pitch')
+            assert xml.findall('.//rest')
+        if encoding == 'mp3-vbr-long':
+            from music21 import converter
+
+            score = converter.parse(str(settings.jobs_dir / job['job_id'] / 'outputs/score.musicxml'))
+            assert score.highestTime >= 181.125 * 2  # Full duration at 120 BPM.
         for artifact in job['artifacts']:
             response = client.get(artifact['url'])
             assert response.status_code == 200
             assert response.content
-        assert not (settings.jobs_dir / job['job_id'] / 'upload/input.wav').exists()
+        assert not list((settings.jobs_dir / job['job_id'] / 'upload').iterdir())
+        assert not list((settings.jobs_dir / job['job_id'] / 'work').iterdir())
 
 
 @pytest.mark.integration

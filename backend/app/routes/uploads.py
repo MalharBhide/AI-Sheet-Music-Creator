@@ -29,8 +29,10 @@ async def upload_audio(
     directory = None
     saved = False
     try:
+        # Display names are shortened for storage/UI; determine the extension first
+        # so a long (otherwise valid) MP3 filename does not lose its suffix.
+        extension = Path((file.filename or '').replace('\\', '/')).suffix.lower()
         filename = display_filename(file.filename)
-        extension = Path(filename).suffix.lower()
         if extension not in SUPPORTED_AUDIO_EXTENSIONS:
             raise HTTPException(415, 'Choose a WAV, MP3, FLAC, OGG, M4A, AAC, or AIFF file.')
         try:
@@ -50,7 +52,7 @@ async def upload_audio(
         with (directory / input_name).open('xb') as destination:
             while chunk := await file.read(1024 * 1024):
                 total += len(chunk)
-                if total > settings.max_upload_mb * 1024 * 1024:
+                if settings.max_upload_mb and total > settings.max_upload_mb * 1024 * 1024:
                     raise HTTPException(413, f'Audio files must be {settings.max_upload_mb} MB or smaller.')
                 destination.write(chunk)
         if total == 0:

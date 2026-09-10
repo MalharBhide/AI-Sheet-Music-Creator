@@ -15,7 +15,7 @@ def test_renderer_collects_every_svg_page_in_numeric_order(tmp_path, settings, m
     def render(command, **kwargs):
         commands.append(command)
         assert kwargs['env']['QT_QPA_PLATFORM'] == 'offscreen'
-        assert kwargs['timeout'] == settings.render_timeout_seconds
+        assert kwargs['timeout'] == (settings.render_timeout_seconds or None)
         destination = Path(command[2])
         if destination.suffix == '.pdf':
             writer = PdfWriter()
@@ -47,7 +47,8 @@ def test_render_failure_is_reported(tmp_path, settings, monkeypatch, failure):
         render_score(tmp_path / 'score.musicxml', tmp_path, settings)
 
 
-def test_incomplete_svg_export_cannot_be_reported_as_completed(tmp_path, settings, monkeypatch):
+@pytest.mark.parametrize('svg_failure', ['incomplete', 'timeout', 'exit', 'invalid'])
+def test_svg_failure_preserves_complete_pdf(tmp_path, settings, monkeypatch, svg_failure):
     monkeypatch.setattr(type(settings), 'renderer', lambda _: '/mock/musescore')
     def render(command, **kwargs):
         destination = Path(command[2])
@@ -57,8 +58,30 @@ def test_incomplete_svg_export_cannot_be_reported_as_completed(tmp_path, setting
                 writer.add_blank_page(width=595, height=842)
             writer.write(destination)
         else:
-            destination.write_text('<svg xmlns="http://www.w3.org/2000/svg"/>')
+            if svg_failure == 'timeout':
+                raise subprocess.TimeoutExpired(command, 1)
+            if svg_failure == 'exit':
+                return subprocess.CompletedProcess(command, 1, b'', b'SVG failed')
+            if svg_failure == 'invalid':
+                for page in (1, 2):
+                    destination.with_name(f'score-{page}.svg').write_text('broken xml')
+            else:
+                destination.write_text('<svg xmlns="http://www.w3.org/2000/svg"/>')
         return subprocess.CompletedProcess(command, 0, b'', b'')
     monkeypatch.setattr('app.services.score_render.subprocess.run', render)
-    with pytest.raises(PipelineError, match='every SVG page'):
+    artifacts = render_score(tmp_path / 'score.musicxml', tmp_path, settings)
+    assert {a['name'] for a in artifacts} == {'score.pdf', 'score.musicxml', 'transcription.mid'}
+    assert (tmp_path / 'score.pdf').is_file()
+
+
+def test_configured_render_timeout_is_used(tmp_path, settings, monkeypatch):
+    settings.render_timeout_seconds = 25
+    monkeypatch.setattr(type(settings), 'renderer', lambda _: '/mock/musescore')
+
+    def render(command, **kwargs):
+        assert kwargs['timeout'] == 25
+        raise subprocess.TimeoutExpired(command, 25)
+
+    monkeypatch.setattr('app.services.score_render.subprocess.run', render)
+    with pytest.raises(PipelineError, match='RENDER_TIMEOUT_SECONDS'):
         render_score(tmp_path / 'score.musicxml', tmp_path, settings)

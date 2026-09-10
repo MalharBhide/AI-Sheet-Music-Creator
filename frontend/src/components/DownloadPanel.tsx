@@ -17,7 +17,8 @@ const items: DownloadItem[] = [
 ];
 
 export default function DownloadPanel({ job }: { job: Job | null }) {
-  const isReady = job?.status === "done";
+  const hasExtraFiles = items.slice(1).some(item => !!job?.download_urls[item.key]);
+  const hasPdf = !!job?.download_urls.pdf;
 
   return (
     <div className="downloads" aria-label="Downloads">
@@ -31,10 +32,10 @@ export default function DownloadPanel({ job }: { job: Job | null }) {
           const href = apiUrl(job?.download_urls[item.key]);
           return (
             <a
-              className={`download-button ${!isReady || !href ? "is-disabled" : ""}`}
-              href={isReady && href ? href : undefined}
+              className={`download-button ${!href ? "is-disabled" : ""}`}
+              href={href || undefined}
               key={item.key}
-              aria-disabled={!isReady || !href}
+              aria-disabled={!href}
             >
               <Icon aria-hidden="true" size={17} />
               <span>{item.label}</span>
@@ -42,11 +43,11 @@ export default function DownloadPanel({ job }: { job: Job | null }) {
           );
         })}
       </div>
-      {isReady && (
-        <details className="advanced-downloads">
-          <summary>More file formats</summary>
+      {hasExtraFiles && (
+        <details className="advanced-downloads" open={!hasPdf}>
+          <summary>{hasPdf ? "More file formats" : "Available files"}</summary>
           <div className="download-grid compact-download-grid">
-            {items.slice(1).map((item) => {
+            {items.slice(1).filter(item => !!job?.download_urls[item.key]).map((item) => {
               const Icon = item.icon;
               const href = apiUrl(job?.download_urls[item.key]);
               return (

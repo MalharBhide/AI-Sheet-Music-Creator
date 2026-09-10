@@ -13,10 +13,10 @@ FILENAMES = {'midi': 'transcription.mid', 'musicxml': 'score.musicxml', 'pdf': '
 
 def serve_artifact(request: Request, job_id: UUID, name: str, preview: bool):
     job = lookup(request, job_id)
-    if job['status'] != 'completed':
-        raise HTTPException(409, 'Files will be available after processing completes.')
     artifact = next((a for a in job['artifacts'] if a['name'] == name), None)
     if artifact is None:
+        if job['status'] not in ('completed', 'failed'):
+            raise HTTPException(409, 'This file will be available after its processing stage completes.')
         raise HTTPException(404, 'This file is not available.')
     try:
         path = output_path(request.app.state.settings, job_id, name)

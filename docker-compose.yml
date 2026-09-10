@@ -8,9 +8,11 @@ services:
     environment:
       STORAGE_ROOT: /data
       MUSESCORE_BIN: /usr/bin/musescore3
-      MAX_UPLOAD_MB: "25"
-      MAX_AUDIO_SECONDS: "180"
-      RETENTION_HOURS: "24"
+      MAX_UPLOAD_MB: "${MAX_UPLOAD_MB:-0}"
+      MAX_AUDIO_SECONDS: "${MAX_AUDIO_SECONDS:-0}"
+      JOB_TIMEOUT_SECONDS: "${JOB_TIMEOUT_SECONDS:-0}"
+      RENDER_TIMEOUT_SECONDS: "${RENDER_TIMEOUT_SECONDS:-0}"
+      RETENTION_HOURS: "${RETENTION_HOURS:-24}"
     volumes:
       - sheet-music-data:/data
     healthcheck:

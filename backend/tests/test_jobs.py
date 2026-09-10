@@ -2,8 +2,8 @@ import time
 from uuid import uuid4
 
 from app.models import ScoreOptions
-from app.workers.job_runner import JobRunner
 from app.services.job_store import JobStore
+from app.workers.job_runner import JobRunner
 from app.workers.transcription_worker import process_job
 
 
@@ -58,3 +58,69 @@ def test_coordinator_runs_actual_child_process(settings):
     finally:
         runner.stop()
     assert not (directory / 'upload/input.wav').exists()
+
+
+def test_late_render_failure_preserves_downloadable_intermediate_files(settings, monkeypatch):
+    from app.models import PipelineError
+
+    store, job_id, directory = seed(settings)
+    store.claim_next()
+    monkeypatch.setattr('app.workers.transcription_worker.normalize_audio', lambda *args: 200.0)
+
+    def transcribe(audio, destination, options, *, progress_callback):
+        destination.write_bytes(b'MThd')
+        progress_callback(.5)
+        assert store.get(job_id)['progress'] == 44
+        progress_callback(1)
+
+    def notate(source, destination, options, title, *, duration_seconds):
+        assert duration_seconds == 200.0
+        destination.write_text('<score-partwise/>')
+
+    def render(*args):
+        raise PipelineError('Renderer unavailable')
+
+    monkeypatch.setattr('app.workers.transcription_worker.transcribe', transcribe)
+    monkeypatch.setattr('app.services.midi_to_score.midi_to_musicxml', notate)
+    monkeypatch.setattr('app.workers.transcription_worker.render_score', render)
+    process_job(job_id, settings)
+    job = store.get(job_id)
+    assert job['status'] == 'failed'
+    assert {a['name'] for a in job['artifacts']} == {'transcription.mid', 'score.musicxml'}
+    assert (directory / 'outputs/transcription.mid').exists()
+    assert (directory / 'outputs/score.musicxml').exists()
+    assert not (directory / 'upload/input.wav').exists()
+
+
+def test_default_settings_remove_recording_and_deadline_caps():
+    from app.config import Settings
+
+    settings = Settings(_env_file=None)
+    assert settings.max_audio_seconds == settings.max_upload_mb == 0
+    assert settings.job_timeout_seconds == settings.render_timeout_seconds == 0
+    large = Settings(max_audio_seconds=86400, max_upload_mb=10000,
+                     job_timeout_seconds=86400, render_timeout_seconds=7200, _env_file=None)
+    assert large.max_audio_seconds == 86400
+
+
+def test_disabled_job_deadline_allows_long_running_child(settings, monkeypatch):
+    store, job_id, _ = seed(settings)
+    job = store.claim_next()
+    settings.job_timeout_seconds = 0
+    runner = JobRunner(settings, store)
+    monkeypatch.setattr(runner.stopping, 'wait', lambda _: False)
+    monkeypatch.setattr('app.workers.job_runner.time.monotonic', lambda: 10**12)
+
+    class Child:
+        polls = 0
+
+        def poll(self):
+            self.polls += 1
+            if self.polls >= 5:
+                store.update(job_id, status='completed', stage='completed', progress=100)
+                return 0
+            return None
+
+    monkeypatch.setattr('app.workers.job_runner.subprocess.Popen', lambda *args, **kwargs: Child())
+    runner.execute(job)
+    assert store.get(job_id)['status'] == 'completed'

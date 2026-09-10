@@ -104,11 +104,16 @@ class JobRunner:
                                            cwd=Path(__file__).resolve().parents[2],
                                            env=environment, stdout=log, stderr=subprocess.STDOUT,
                                            start_new_session=os.name == "posix")
-                deadline = time.monotonic() + self.settings.job_timeout_seconds
+                deadline = (time.monotonic() + self.settings.job_timeout_seconds
+                            if self.settings.job_timeout_seconds else None)
                 while process.poll() is None:
-                    if self.stopping.wait(0.25) or time.monotonic() > deadline:
+                    stopped = self.stopping.wait(0.25)
+                    if stopped or (deadline is not None and time.monotonic() > deadline):
                         self.kill(process)
-                        self.store.fail(job["id"], "Processing was interrupted or timed out. Please upload a shorter clip again.")
+                        self.store.fail(job["id"],
+                                        "Processing was interrupted by a server shutdown. Please upload again."
+                                        if stopped else
+                                        "Processing exceeded the configured JOB_TIMEOUT_SECONDS limit. Increase it or set it to 0 and upload again.")
                         break
                 if self.store.get(job["id"])["status"] == "processing":
                     self.store.fail(job["id"], "The processing worker stopped unexpectedly. Please try again.")

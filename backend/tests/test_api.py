@@ -56,7 +56,7 @@ def test_missing_dependencies(client, monkeypatch):
     assert upload(client).status_code == 503
 
 
-def test_downloads_are_only_for_completed_manifest_files(client, settings):
+def test_downloads_are_only_for_manifest_files(client, settings):
     job = upload(client).json()
     root = f"/api/jobs/{job['job_id']}"
     assert client.get(f"{root}/files/score.pdf").status_code == 409
@@ -82,6 +82,24 @@ def test_downloads_are_only_for_completed_manifest_files(client, settings):
     assert client.get("/api/jobs/not-a-uuid").status_code == 422
 
 
+def test_completed_stages_remain_downloadable_if_later_stage_fails(client, settings):
+    job = upload(client).json()
+    store = client.app.state.store
+    directory = settings.jobs_dir / job["job_id"] / "outputs"
+    directory.mkdir()
+    midi = b"MThd checkpoint MIDI"
+    (directory / "transcription.mid").write_bytes(midi)
+    artifact = {"name": "transcription.mid", "label": "MIDI", "media_type": "audio/midi"}
+    store.update(job["job_id"], status="processing", stage="notating", progress=65, artifacts=[artifact])
+    for status in ("processing", "failed"):
+        if status == "failed":
+            store.fail(job["job_id"], "Renderer unavailable")
+        result = client.get(f"/api/jobs/{job['job_id']}").json()
+        assert client.get(result["download_urls"]["midi"]).content == midi
+        assert not result["download_urls"]["pdf"]
+        assert client.get(f"/api/jobs/{job['job_id']}/files/worker.log").status_code in (404, 409)
+
+
 def test_body_limit_without_content_length(client):
     boundary = "piano-boundary"
     header = f'--{boundary}\r\nContent-Disposition: form-data; name="file"; filename="large.wav"\r\nContent-Type: audio/wav\r\n\r\n'.encode()
@@ -92,3 +110,37 @@ def test_body_limit_without_content_length(client):
         yield f'\r\n--{boundary}--\r\n'.encode()
     response = client.post("/api/upload", content=chunks(), headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
     assert response.status_code == 413
+
+
+@pytest.mark.parametrize("filename", ["recording.mp3", "RECORDING.MP3", "x" * 180 + ".mp3"])
+def test_mp3_upload_accepts_generic_content_type_and_long_names(client, settings, filename):
+    content = b"ID3 test MP3 upload"
+    response = client.post("/api/upload", files={"file": (filename, content, "application/octet-stream")})
+    assert response.status_code == 202
+    job = response.json()
+    assert (settings.jobs_dir / job["job_id"] / "upload/input.mp3").read_bytes() == content
+
+
+def test_disabled_upload_limit_accepts_large_and_chunked_mp3(client, settings):
+    unlimited = settings.model_copy(update={"max_upload_mb": 0, "max_audio_seconds": 0})
+    with TestClient(create_app(unlimited, start_worker=False)) as server:
+        # Exceeds the old default, exercising both middleware and file copy limits.
+        content = b"x" * (26 * 1024 * 1024)
+        response = upload(server, content, "long.mp3")
+        assert response.status_code == 202
+        saved = settings.jobs_dir / response.json()["job_id"] / "upload/input.mp3"
+        assert saved.stat().st_size == len(content)
+        assert server.get("/api/health").json()["limits"]["max_upload_mb"] == 0
+
+        boundary = "unlimited-mp3"
+        def chunks():
+            yield (f'--{boundary}\r\nContent-Disposition: form-data; name="file"; '
+                   'filename="stream.mp3"\r\nContent-Type: audio/mpeg\r\n\r\n').encode()
+            for _ in range(4):
+                yield b"x" * (1024 * 1024)
+            yield f'\r\n--{boundary}--\r\n'.encode()
+        response = server.post("/api/upload", content=chunks(),
+                               headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
+        assert response.status_code == 202
+        saved = settings.jobs_dir / response.json()["job_id"] / "upload/input.mp3"
+        assert saved.stat().st_size == 4 * 1024 * 1024
