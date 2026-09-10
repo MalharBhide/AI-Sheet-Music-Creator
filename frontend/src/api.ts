@@ -12,6 +12,7 @@ export type Job = {
   job_id: string;
   original_filename: string;
   status: JobStatus;
+  progress: number;
   created_at: string;
   updated_at: string;
   error?: string | null;
@@ -36,7 +37,7 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   const abort = () => controller.abort();
   if (init.signal?.aborted) controller.abort();
   init.signal?.addEventListener("abort", abort, { once: true });
-  const timeout = window.setTimeout(abort, init.method === "POST" ? 120000 : 15000);
+  const timeout = window.setTimeout(abort, 15000);
   try {
     const response = await fetch(API_BASE + path, { ...init, signal: controller.signal });
     const payload = await response.json().catch(() => null);
@@ -53,10 +54,30 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   }
 }
 
-export async function uploadAudio(file: File): Promise<Job> {
+export function uploadAudio(file: File, onProgress?: (percent: number) => void): Promise<Job> {
   const formData = new FormData();
   formData.append("file", file);
-  return request<Job>("/upload", { method: "POST", body: formData });
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", API_BASE + "/upload");
+    // Large recordings and slow connections have no overall upload deadline.
+    xhr.timeout = 0;
+    xhr.responseType = "json";
+    xhr.upload.onprogress = event => {
+      if (event.lengthComputable) onProgress?.(Math.round(event.loaded / event.total * 100));
+    };
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300 && xhr.response?.job_id) {
+        resolve(xhr.response as Job);
+      } else {
+        const detail = xhr.response?.detail;
+        reject(new ApiError(typeof detail === "string" ? detail : "Upload failed. Check the file and try again.", xhr.status));
+      }
+    };
+    xhr.onerror = () => reject(new ApiError("Upload interrupted. Check your connection and try again.", 0));
+    xhr.onabort = () => reject(new ApiError("Upload cancelled.", 0));
+    xhr.send(formData);
+  });
 }
 
 export const fetchJob = (jobId: string, signal?: AbortSignal) =>

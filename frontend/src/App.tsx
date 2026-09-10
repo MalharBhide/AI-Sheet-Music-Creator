@@ -24,6 +24,7 @@ export default function App() {
   const [job, setJob] = useState<Job | null>(null);
   const [health, setHealth] = useState<Health | null>(null);
   const [isUploading, setIsUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [connectionError, setConnectionError] = useState<string | null>(null);
   const [healthRetry, setHealthRetry] = useState(0);
@@ -63,7 +64,7 @@ export default function App() {
         failures += 1;
         const missing = err instanceof ApiError && (err.status === 404 || err.status === 422);
         setError(missing ? err.message : "Connection interrupted. Your job may still be processing.");
-        if (!missing && failures < 5) timer = window.setTimeout(poll, Math.min(1000 * 2 ** failures, 15000));
+        if (!missing) timer = window.setTimeout(poll, Math.min(1000 * 2 ** Math.min(failures, 4), 15000));
       }
     }
     void poll();
@@ -76,13 +77,17 @@ export default function App() {
     if (!/\.(wav|mp3|flac|ogg|m4a|aac|aiff?)$/i.test(file.name)) {
       setError("Choose a WAV, MP3, FLAC, OGG, M4A, AAC, or AIFF recording."); return;
     }
-    if (!file.size || file.size > health.limits.max_upload_mb * 1024 * 1024) {
-      setError("Choose a non-empty file up to " + health.limits.max_upload_mb + " MB."); return;
+    if (!file.size) {
+      setError("Choose a non-empty audio recording."); return;
+    }
+    if (health.limits.max_upload_mb > 0 && file.size > health.limits.max_upload_mb * 1024 * 1024) {
+      setError("Choose a file up to " + health.limits.max_upload_mb + " MB."); return;
     }
     submitting.current = true;
     setIsUploading(true);
+    setUploadProgress(0);
     try {
-      const created = await uploadAudio(file);
+      const created = await uploadAudio(file, setUploadProgress);
       setJob(created);
       setJobId(created.job_id);
       updateUrl(created.job_id);
@@ -101,6 +106,10 @@ export default function App() {
 
   const previewUrls = (job?.svg_pages ?? []).map(path => apiUrl(path)!);
   if (!previewUrls.length && job?.download_urls.svg) previewUrls.push(apiUrl(job.download_urls.svg)!);
+  const recordingLimits = health ? [
+    health.limits.max_upload_mb > 0 ? `Up to ${health.limits.max_upload_mb} MB` : null,
+    health.limits.max_audio_seconds > 0 ? `${health.limits.max_audio_seconds} seconds maximum` : null
+  ].filter(Boolean).join(" · ") : "";
 
   return (
     <div className="app-shell">
@@ -123,17 +132,18 @@ export default function App() {
             <p>Upload a recording, then download the generated score as a PDF.</p>
           </div>
           <UploadDropzone onUpload={handleUpload} disabled={isUploading || !!jobId || !health?.ready || !!connectionError} />
-          {health && <p className="recording-note">Up to {health.limits.max_upload_mb} MB · {health.limits.max_audio_seconds} seconds</p>}
+          {health && <p className="recording-note">{recordingLimits || "Long recordings supported. Processing time depends on the recording length."}</p>}
           {connectionError && <div className="connection-error" role="alert"><p>{connectionError}</p><button className="retry-button" onClick={() => setHealthRetry(value => value + 1)}>Reconnect</button></div>}
           {jobId && !job && !error && <p className="recording-note" role="status">Loading your saved job…</p>}
-          <JobStatus job={job} isUploading={isUploading} error={error} />
+          <JobStatus job={job} isUploading={isUploading} uploadProgress={uploadProgress} error={error} />
           {error && jobId && <button className="retry-button" onClick={() => setPollRetry(value => value + 1)}>Retry job status</button>}
+          {job?.status === "failed" && <button className="retry-button" onClick={reset}>Choose another recording or retry</button>}
           <DownloadPanel job={job} />
           {job?.status === "done" && <p className="recording-note">This is a first draft. Check the notes and rhythm, and download your files within {health?.limits.retention_hours ?? 24} hours.</p>}
         </section>
 
         <section className="preview-panel" aria-label="Sheet music preview">
-          <ScorePreview status={job?.status} previewUrls={previewUrls} error={job?.error || error} />
+          <ScorePreview status={job?.status} previewUrls={previewUrls} pdfUrl={apiUrl(job?.download_urls.pdf)} error={job?.error || (!job ? error : null)} />
         </section>
       </main>
     </div>

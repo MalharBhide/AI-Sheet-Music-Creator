@@ -4,10 +4,11 @@ import { FileMusic, Loader2, Music } from "lucide-react";
 import { JobStatus } from "../api";
 
 export default function ScorePreview({
-  status, previewUrls, error
+  status, previewUrls, pdfUrl, error
 }: {
   status?: JobStatus;
   previewUrls: string[];
+  pdfUrl?: string | null;
   error?: string | null;
 }) {
   const [page, setPage] = useState(0);
@@ -28,6 +29,12 @@ export default function ScorePreview({
         </nav>}
       </div>
     );
+  }
+
+  if (pdfUrl) {
+    return <object className="pdf-preview" data={pdfUrl + "?preview=true"} type="application/pdf" aria-label="Generated piano sheet music PDF">
+      <div className="empty-preview"><FileMusic aria-hidden="true" size={34} /><p>Your PDF is ready. <a href={pdfUrl}>Download the sheet music</a> to view it.</p></div>
+    </object>;
   }
 
   if (status === "failed" || error) {

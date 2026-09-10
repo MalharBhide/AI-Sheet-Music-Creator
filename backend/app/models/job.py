@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -45,8 +45,8 @@ def job_response(job: dict) -> JobResponse:
     artifacts = [{**a, 'url': f"/api/jobs/{job['id']}/files/{a['name']}"} for a in job['artifacts']]
     return JobResponse(job_id=job['id'], original_filename=job['filename'], status=status,
                        stage=job['stage'], progress=job['progress'], options=job['options'],
-                       created_at=datetime.fromtimestamp(job['created_at'], timezone.utc),
-                       updated_at=datetime.fromtimestamp(job['updated_at'], timezone.utc),
+                       created_at=datetime.fromtimestamp(job['created_at'], UTC),
+                       updated_at=datetime.fromtimestamp(job['updated_at'], UTC),
                        error=job['error'], files=GeneratedFiles(**files),
                        download_urls=GeneratedFiles(**urls), artifacts=artifacts,
                        svg_pages=[a['url'] for a in artifacts if a['media_type'] == 'image/svg+xml'])

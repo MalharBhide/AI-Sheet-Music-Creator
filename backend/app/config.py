@@ -17,11 +17,12 @@ class Settings(BaseSettings):
     )
     storage_root: Path = REPO_ROOT / 'storage'
     cors_origins: Annotated[list[str], NoDecode] = ['http://localhost:5173', 'http://127.0.0.1:5173']
-    max_upload_mb: int = Field(default=25, ge=1, le=200)
-    max_audio_seconds: int = Field(default=180, ge=1, le=600)
+    # Zero disables optional operator limits. Audio is streamed and transcribed in chunks.
+    max_upload_mb: int = Field(default=0, ge=0)
+    max_audio_seconds: int = Field(default=0, ge=0)
     max_queued_jobs: int = Field(default=10, ge=1, le=100)
-    job_timeout_seconds: int = Field(default=900, ge=10, le=3600)
-    render_timeout_seconds: int = Field(default=90, ge=1, le=300)
+    job_timeout_seconds: int = Field(default=0, ge=0)
+    render_timeout_seconds: int = Field(default=0, ge=0)
     retention_hours: int = Field(default=24, ge=1, le=720)
     default_tempo_bpm: int = Field(default=120, ge=30, le=240)
     ffmpeg_bin: str = 'ffmpeg'

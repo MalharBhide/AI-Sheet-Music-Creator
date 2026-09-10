@@ -86,7 +86,8 @@ class JobStore:
             db.execute(f"UPDATE jobs SET {assignments} WHERE id = ?", (*fields.values(), job_id))
 
     def fail(self, job_id: str, message: str) -> None:
-        self.update(job_id, status="failed", stage="failed", error=message, artifacts=[])
+        # Completed earlier stages remain useful if a later stage fails.
+        self.update(job_id, status="failed", stage="failed", error=message)
 
     def recover_interrupted(self) -> None:
         with closing(self.connect()) as db, db:

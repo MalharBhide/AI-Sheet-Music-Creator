@@ -14,14 +14,18 @@ const steps: { status: Status; label: string }[] = [
 export default function JobStatus({
   job,
   isUploading,
+  uploadProgress,
   error
 }: {
   job: Job | null;
   isUploading: boolean;
+  uploadProgress: number;
   error: string | null;
 }) {
   const currentIndex = job ? steps.findIndex((step) => step.status === job.status) : -1;
-  const failed = job?.status === "failed" || !!error;
+  const failed = job?.status === "failed" || (!job && !!error);
+  const processing = job && job.status !== "done" && job.status !== "failed";
+  const progress = Math.max(0, Math.min(100, isUploading ? uploadProgress : job?.progress ?? 0));
 
   return (
     <div className="status-panel" aria-live="polite">
@@ -39,14 +43,17 @@ export default function JobStatus({
       </div>
 
       <div className="status-text">
-        {failed
-          ? job?.error || error
+        {error || (failed
+          ? job?.error || "The score could not be generated."
           : isUploading
-            ? "Uploading"
+            ? uploadProgress === 100 ? "Upload received. Adding your recording to the queue…" : `Uploading ${uploadProgress}%`
             : job
               ? labelFor(job.status)
-              : "Waiting"}
+              : "Waiting")}
       </div>
+
+      {(isUploading || processing) && <progress className="job-progress" max={100} value={progress} aria-label={isUploading ? "Upload progress" : "Processing progress"} />}
+      {processing && <p className="processing-note">{progress}% · You can return to this page later; processing continues on the server.</p>}
 
       {(isUploading || job) && <div className="step-row">
         {steps.map((step, index) => (
