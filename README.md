@@ -1,6 +1,8 @@
-# AI Sheet Music Creator
+# Piano Scribe
 
-Upload an audio recording and download a piano score as PDF, MusicXML, MIDI, or SVG. The React interface shows processing status and a paginated sheet preview. FastAPI runs the real Basic Pitch → music21 → MuseScore pipeline.
+Piano Scribe turns recordings into editable piano sheet music, with a browser studio for choosing the right transcription mode, reviewing the score, and listening to the notes before downloading. It exports PDF, MusicXML, MIDI, and SVG. The React/Vite frontend talks to a FastAPI backend with a durable job queue, local transcription models, and MuseScore rendering.
+
+The transcription design is informed by an [extensive review of Songscription, Klangio, AnthemScore, ScoreCloud, and open-source models](docs/transcription-research.md). The report distinguishes documented product features from measured accuracy. A completed PDF is a working output, not evidence that every note is correct.
 
 ## Quick start with Docker
 
@@ -10,29 +12,49 @@ Install and open [Docker Desktop](https://www.docker.com/products/docker-desktop
 docker compose up --build
 ```
 
-Open **[http://localhost:5173](http://localhost:5173)**. API documentation is at [http://localhost:8000/docs](http://localhost:8000/docs).
+Open **[http://localhost:5173](http://localhost:5173)**. Interactive API documentation is at [http://localhost:8000/docs](http://localhost:8000/docs).
 
-The first build downloads the model dependencies and MuseScore. Later starts of the same version only need `docker compose up`. After pulling changes or switching branches, rebuild both services with `docker compose up -d --build`, then reload the browser page. Restarting containers alone keeps their previously built code. Stop with Ctrl+C or `docker compose down`. Job records and outputs remain in the Docker volume between starts. Removing that volume deletes them.
+The first build installs the Python dependencies, FFmpeg, and MuseScore and downloads the piano and source-separation model checkpoints. Later starts of the same version only need `docker compose up`. After pulling changes or switching branches, rebuild with `docker compose up -d --build`, then reload the browser. Restarting containers alone keeps their previously built code. Stop with Ctrl+C or `docker compose down`; job records and outputs remain in the named Docker volume until expiration. Removing that volume deletes them.
 
-Docker includes Python 3.11, FFmpeg, and Debian Bookworm's [MuseScore 3 package](https://packages.debian.org/bookworm/musescore3), and serves a production frontend build through Nginx. The backend uses an amd64 image for the transcription dependencies; Apple Silicon runs it through Docker's emulation. Allow several GB of memory and disk space.
+Docker includes Python 3.11 and Debian Bookworm's [MuseScore 3 package](https://packages.debian.org/bookworm/musescore3), and serves a production frontend build through Nginx. The backend builds for the host architecture: native ARM64 on Apple Silicon and AMD64 on Intel/AMD hosts. The Linux ARM runtime uses TensorFlow's AWS CPU package with the same pinned TensorFlow and PyTorch versions. Allow several GB of memory and disk space. Full-song separation is substantially more work than a short solo-piano transcription.
 
-## Using the app
+## Using the studio
 
-If a previously opened page says **“Choose a non-empty file up to 0 MB”**, it is running the old upload validator. After rebuilding, hard-refresh that page (Cmd+Shift+R on macOS, Ctrl+Shift+R on Windows/Linux) or open a fresh tab. Zero means unlimited uploads. Updated pages are served without browser caching.
+1. Drop or choose a WAV, MP3, FLAC, OGG, M4A, AAC, or AIFF recording. **Try a piano example** submits an original 96 BPM piano study through the real transcription pipeline. The bundled recording is rendered by MuseScore from the reproducible quality fixture in `scripts/benchmark_transcription.py`.
+2. Select **Full song**, **Solo piano**, or **Melody**, then choose balanced or more detailed notation. Under **Tempo & rhythm**, optionally enter a tempo, choose a time signature, and select an eighth- or sixteenth-note grid.
+3. Click **Create sheet music**. The studio shows actual upload and processing progress and reconnects after temporary network interruptions.
+4. Read the score with page and zoom controls. Use the synthesized piano player to play/pause, restart, seek, change playback speed, and adjust volume. The player sounds the final score's notes. For a recording uploaded in the current session, expand the original-audio comparison to listen to the source.
+5. Download a PDF to read or print, MusicXML to edit in a notation application, or MIDI for music software. Vector downloads include the first SVG page and a ZIP of every SVG page.
 
-1. Choose or drop a WAV, MP3, FLAC, OGG, M4A, AAC, or AIFF file.
-2. Wait for audio preparation, transcription, notation cleanup, and rendering.
-3. Browse the score pages and download the PDF. **More file formats** includes MIDI, MusicXML, the first SVG page, and a ZIP of all SVG pages. MIDI and MusicXML become downloadable as their stages finish, so a later rendering failure does not hide the files already created.
+The URL contains the job ID, so reloading or returning to that URL restores the job. Recent transcription links are stored on this device in the browser's local storage. Generated files are available for **24 hours after processing finishes** by default; an older history entry may remain after its files expire. Original-audio comparison is available only while the uploaded file remains in the current page session. The server deletes source audio after processing.
 
-There is no default file size, recording duration, or processing time limit. MP3 files are decoded by FFmpeg, and transcription processes the entire recording in overlapping chunks so model memory does not grow with audio length. Longer recordings need more processing time and disk space; the upload and transcription progress are shown in the app. The page URL contains the job ID, so reloading or returning to that URL restores the job, and status polling reconnects automatically after a temporary network interruption. Save the downloads within 24 hours after processing finishes.
+There is **no default upload-size, recording-duration, or processing-time cap**. Zero in the limit settings means unlimited, not a 0 MB allowance. FFmpeg decodes supported audio, including MP3, and transcription uses overlapping windows across the recording. Audio buffers are bounded rather than loading an entire long recording into the model at once. Long jobs still require sufficient time, disk, and memory for models, accumulated notes, and score rendering. Corrupt or undecodable files receive an error; no system can guarantee valid output for every possible file or unlimited duration.
 
-This is a first draft of a score, intended for clear solo piano or single-instrument recordings. Basic Pitch detects pitches and timing; it does not separate instruments or arrange a full song for piano. The MVP uses 120 BPM, 4/4, a sixteenth-note grid, and a fixed middle-C split between hands. Sustained notes, chords, rests, voices, and barline ties are preserved during cleanup, but phrasing, spelling, rhythm, and hand assignment still need musical review. Tempo, meter, and grid can be supplied through the API.
+If an old open tab still displays **“Choose a non-empty file up to 0 MB”**, rebuild the app and hard-refresh that tab with Cmd+Shift+R on macOS or Ctrl+Shift+R on Windows/Linux. The updated frontend is served without page caching.
+
+## Transcription modes and musical limits
+
+| Mode | Pipeline | Best use |
+| --- | --- | --- |
+| **Solo piano** (`piano`) | High-resolution piano CRNN → note cleanup → grand-staff notation | Clear recordings of piano notes; uses a dedicated piano onset/offset model |
+| **Full song** (`full_mix`) | Demucs four-stem separation → Basic Pitch on vocals, bass, and accompaniment → piano reduction | A playable draft from a mixed song; drum detections are excluded from pitched notation |
+| **Melody** (`melody`) | Basic Pitch → single-line selection and cleanup | A clear solo instrument or isolated melody; this mode does not perform source separation |
+
+The website initially selects **Full song**. The API defaults to **Solo piano** when `transcription_mode` is omitted, preserving compatibility with existing callers.
+
+Full-song mode creates a piano arrangement of detected material. Separated accompaniment can contain several instruments and artifacts; it is not an isolated original piano part. Balanced detail reduces clutter, while more detail keeps additional detections. Both need musical review, especially for dense mixes, heavy reverb, pedal, repeated notes, and overlapping vocals.
+
+Tempo is estimated automatically from bounded excerpts unless you supply a 30–240 BPM override. If a steady tempo cannot be found, the system uses 120 BPM and reports a warning. The score currently uses one tempo throughout, so rubato, swing, tempo changes, and half/double-time interpretations may need manual correction. Time signature is selected by the user, with `4/4` as the default; it is not automatically detected.
+
+The system estimates a key from detected pitch durations when the evidence is sufficient. This guides notation and does not change detected pitches. Rhythm is quantized to the chosen grid, with cleanup for duplicate detections and overlapping notes. Grand-staff notation preserves chords, rests, voices, and barline ties, but hand assignment, spelling, beat alignment, and phrasing may still need editing.
+
+MusicXML is the final notation source. Its exported MIDI and playback JSON drive the website's synthesized piano, so completed-score playback agrees with the score rather than an unrelated raw model output. MIDI is also made available earlier in processing as a recoverable intermediate; if a job fails before score export finishes, that partial MIDI may not yet include final notation changes. Available artifacts remain downloadable when a later stage fails. Silence or a source with no detected pitches can produce a rest-only score with a warning.
 
 ## Manual development setup
 
-Use **Python 3.11** and **Node.js 24**. The full transcription dependency set is pinned for Python 3.11; Python 3.12 is not supported by this setup.
+Use **Python 3.11** and **Node.js 24**. The transcription dependency set is pinned for Python 3.11; Python 3.12 is not supported by this setup.
 
-Install FFmpeg and MuseScore CLI:
+Install FFmpeg and the MuseScore CLI:
 
 ```bash
 # Debian / Ubuntu with the musescore3 package
@@ -44,7 +66,7 @@ brew install ffmpeg
 brew install --cask musescore
 ```
 
-MuseScore 3 is the target server renderer. Some MuseScore 4 releases export only the first SVG page from the CLI. If SVG export is incomplete or fails, the app keeps the valid PDF and previews it directly. Use the Docker setup if your native installation cannot run with Qt's offscreen platform.
+MuseScore 3 is the target server renderer. Some MuseScore 4 releases export only the first SVG page from the CLI. If SVG export is incomplete or fails, the app keeps the valid PDF and previews it directly. Use Docker if your native installation cannot run with Qt's offscreen platform.
 
 From the repository root:
 
@@ -55,12 +77,21 @@ source backend/.venv/bin/activate
 python -m pip install -r backend/requirements.txt
 python -m pip install --no-deps -e backend
 cd backend
+python -m app.services.model_assets
 uvicorn main:app --reload --port 8000
 ```
 
+The model setup downloads the piano checkpoint to `~/.cache/piano-scribe/piano.pth` and caches Demucs `htdemucs` weights before processing jobs. To use a different piano checkpoint location, export `PIANO_MODEL_PATH=/absolute/path/to/piano.pth` before running both model setup and the server. `TORCH_HOME` can relocate PyTorch/Demucs's cache. Docker preloads both models during its build and sets the corresponding paths.
+
 On Windows, use `py -3.11 -m venv backend/.venv` and `backend\.venv\Scripts\Activate.ps1`; Docker is the easiest way to provide the native tools.
 
-Alternatively, with [uv](https://docs.astral.sh/uv/), run `uv sync --frozen --extra transcription --extra dev` inside `backend/`, then `uv run uvicorn main:app --reload --port 8000`.
+Alternatively, using [uv](https://docs.astral.sh/uv/) from `backend/`:
+
+```bash
+uv sync --frozen --extra transcription --extra dev
+uv run python -m app.services.model_assets
+uv run uvicorn main:app --reload --port 8000
+```
 
 In a second terminal, from the repository root:
 
@@ -74,49 +105,77 @@ Open [http://localhost:5173](http://localhost:5173). The Vite development proxy 
 
 ## Configuration
 
-The backend reads root `.env` and then `backend/.env`; environment variables take precedence. See `.env.example`.
+The backend reads root `.env` and then `backend/.env`; environment variables take precedence. See `.env.example`. The standalone model setup command reads exported environment variables, so export a custom `PIANO_MODEL_PATH` when downloading to a nondefault location.
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
 | `STORAGE_ROOT` | `storage` | Database and job directories; relative paths resolve from the repository root |
 | `CORS_ORIGINS` | localhost and 127.0.0.1 on port 5173 | Comma-separated origins or a JSON array |
-| `MAX_UPLOAD_MB` | 0 | Optional file size limit; 0 disables it |
-| `MAX_AUDIO_SECONDS` | 0 | Optional decoded recording duration limit; 0 disables it |
+| `MAX_UPLOAD_MB` | 0 | Optional file-size limit; 0 disables it |
+| `MAX_AUDIO_SECONDS` | 0 | Optional decoded-duration limit; 0 disables it |
 | `MAX_QUEUED_JOBS` | 10 | Maximum jobs waiting to be processed |
 | `JOB_TIMEOUT_SECONDS` | 0 | Optional overall processing deadline; 0 disables it |
 | `RENDER_TIMEOUT_SECONDS` | 0 | Optional deadline for each MuseScore export; 0 disables it |
-| `RETENTION_HOURS` | 24 | Retention after a job finishes |
-| `DEFAULT_TEMPO_BPM` | 120 | Tempo used when the upload omits it |
+| `RETENTION_HOURS` | 24 | File and job retention after processing finishes |
+| `PIANO_MODEL_PATH` | `~/.cache/piano-scribe/piano.pth` | Piano checkpoint; Docker uses `/opt/models/piano.pth` |
+| `TORCH_HOME` | PyTorch's cache default | Optional model-cache location; Docker uses `/opt/models/torch` |
 | `FFMPEG_BIN` | `ffmpeg` | FFmpeg command or executable path |
 | `MUSESCORE_BIN` | Auto-detected | MuseScore executable path |
 
-For macOS, a typical explicit path is `MUSESCORE_BIN="/Applications/MuseScore 4.app/Contents/MacOS/mscore"`. The readiness endpoint checks that packages and executables are present; a successful transcription also requires those tools to run.
+For macOS, a typical explicit renderer path is `MUSESCORE_BIN="/Applications/MuseScore 4.app/Contents/MacOS/mscore"`. The readiness endpoint checks required dependencies and the piano checkpoint; completing a transcription also requires sufficient resources and successfully running the native tools.
 
-Docker reads these size, duration, timeout, and retention settings from the root environment file through `docker-compose.yml`. Nginx streams uploads without a default body size cap, and the browser imposes no total upload deadline. Positive `MAX_UPLOAD_MB` values are enforced by the API and shown in the UI. Proxy timeouts apply to stalled connections, not the total recording length.
+Docker passes size, duration, timeout, and retention settings from the root environment file through `docker-compose.yml`. Nginx streams uploads without a default body-size cap, and the browser imposes no total upload deadline. Positive `MAX_UPLOAD_MB` values are enforced by the API and shown in the studio. Proxy timeouts apply to stalled connections, not the total recording length.
 
 The frontend defaults to same-origin `/api`. To use a separate backend during development, put `VITE_API_BASE_URL=http://localhost:8000/api` in `frontend/.env`. Include the `/api` suffix and add the frontend origin to the backend's CORS settings.
 
 ## API
 
+Create a full-song arrangement with automatic tempo:
+
 ```bash
 curl -i http://localhost:8000/api/upload \
-  -F "file=@recording.wav" \
-  -F "tempo_bpm=120" \
+  -F "file=@recording.mp3" \
+  -F "transcription_mode=full_mix" \
+  -F "detail=balanced" \
   -F "time_signature=4/4" \
   -F "grid=sixteenth"
 ```
 
-Successful upload returns **202 Accepted**, a JSON job, and a `Location: /api/jobs/{job_id}` header. Tempo accepts 30–240 BPM, meter accepts `4/4`, `3/4`, or `6/8`, and grid accepts `eighth` or `sixteenth`.
+To override tempo, add `-F "tempo_bpm=120"`. Omit the field for automatic estimation.
+
+| Upload field | Accepted values | Default |
+| --- | --- | --- |
+| `file` | Supported nonempty audio file | Required |
+| `transcription_mode` | `piano`, `full_mix`, `melody` | `piano` |
+| `detail` | `balanced`, `detailed` | `balanced` |
+| `tempo_bpm` | 30–240 | Automatic estimation |
+| `time_signature` | `4/4`, `3/4`, `6/8` | `4/4` |
+| `grid` | `eighth`, `sixteenth` | `sixteenth` |
+
+Successful upload returns **202 Accepted**, a JSON job, and a `Location: /api/jobs/{job_id}` header.
 
 | Endpoint | Result |
 | --- | --- |
 | `GET /api/health` | Dependency readiness and upload/retention limits |
+| `GET /api/example` | Generated short piano-study WAV for a real example transcription |
 | `POST /api/upload` | Accept multipart `file` and optional score settings |
-| `GET /api/jobs/{job_id}` | Status, progress, errors, download URLs, and SVG page URLs |
-| `GET /api/downloads/{job_id}/{kind}` | Download `pdf`, `musicxml`, `midi`, `svg`, or `svg_zip` |
+| `GET /api/jobs/{job_id}` | Status, progress, settings, analysis, errors, download URLs, and SVG page URLs |
+| `GET /api/downloads/{job_id}/{kind}` | Download `pdf`, `musicxml`, `midi`, `svg`, `svg_zip`, or `playback` |
 | `GET /api/jobs/{job_id}/files/{name}` | Download an exact file from the job's artifact manifest |
 
-The state sequence is `queued → preprocessing → transcribing → scoring → rendering → done`, or `failed`. Poll the status URL until a terminal state. `svg_pages` lists every available SVG preview page; the PDF is used when SVG preview is unavailable. `artifacts` lists every downloadable file, including completed stages of a processing or failed job. Add `?preview=true` for inline display. Downloads return 409 when the requested file is not yet ready, and expired or unavailable files return 404 after the job finishes. A full queue returns 429 with `Retry-After`.
+The public state sequence is `queued → preprocessing → transcribing → scoring → rendering → done`, or `failed`. Poll until a terminal state. `analysis` includes the selected engine, tempo, optional estimated key, note counts, source roles, duration, and musical warnings when available. `svg_pages` lists available preview pages; PDF is used when SVG preview is unavailable. `artifacts` lists downloadable files, including completed stages of processing or failed jobs. Add `?preview=true` for inline display.
+
+`download_urls.playback` provides JSON in this shape, with timing in seconds and MIDI pitches/velocities:
+
+```json
+{
+  "duration": 8.0,
+  "tempo_bpm": 120.0,
+  "notes": [{ "pitch": 60, "start": 0.0, "end": 0.5, "velocity": 80 }]
+}
+```
+
+Downloads return 409 when a requested file is not yet ready. Expired or unavailable files return 404 after the job finishes. A full queue returns 429 with `Retry-After`.
 
 ## Storage and process model
 
@@ -124,15 +183,22 @@ SQLite persists the queue and job records. One coordinator processes one job at 
 
 Queued jobs resume after a server restart. A job interrupted during processing becomes failed with a retry message; completed jobs stay downloadable until expiration. Original and normalized audio are deleted after processing, and a periodic cleanup removes expired job records and output files. Server-side `worker.log` files help diagnose native-tool failures and are never exposed by download routes.
 
-Manual runs use `storage/jobs.sqlite3` and `storage/jobs/{job_id}/outputs/`. Docker uses its named `sheet-music-data` volume. Files from the previous in-memory implementation are left alone; old job statuses cannot be reconstructed automatically. The new Docker volume does not import the earlier `./storage` bind mount.
+Manual runs use `storage/jobs.sqlite3` and `storage/jobs/{job_id}/outputs/`. Docker uses its named `sheet-music-data` volume and does not automatically import files from an older local bind mount. Browser history contains links and filenames, not copies of generated audio or scores.
 
-This MVP has no login or shared-user authorization. Job URLs act as access links. Docker binds to localhost by default; public hosting needs authentication, quotas, TLS, and a shared queue/storage design before scaling.
+The app currently has no login or shared-user authorization. Job URLs act as access links. Docker binds to localhost by default. A public multi-user deployment needs authentication, quotas, TLS, and an appropriate shared queue/storage design.
 
 ## Tests
 
-Run the frontend upload regressions with `pnpm --dir frontend test` (Node.js 24). They cover unlimited uploads, empty recordings, positive limits and their boundaries, and MP3 filename/MIME variants. CI runs these tests before the frontend production build.
+Run frontend tests and the production build:
 
-Run API, queue recovery, audio validation, notation, renderer-contract, and worker failure tests:
+```bash
+pnpm --dir frontend test
+pnpm --dir frontend build
+```
+
+Frontend regressions cover unlimited uploads, empty recordings, positive size limits, and MP3 filename/MIME variants. Playback tests cover note normalization, long-duration time labels, speed and position math, seeking into held notes, and bounded voice scheduling with pause cleanup.
+
+Run backend API, queue recovery, audio validation, transcription, musical-analysis, notation, score-playback, renderer-contract, and worker-failure tests:
 
 ```bash
 cd backend
@@ -140,15 +206,16 @@ uv sync --frozen --extra dev
 uv run pytest -q
 ```
 
-The native integration cases are skipped by default because they require the real Basic Pitch and MuseScore stack. With all dependencies installed:
+Native integration cases are skipped by default because they require the real models, FFmpeg, and MuseScore. With the complete dependencies and model assets installed:
 
 ```bash
 cd backend
 uv sync --frozen --extra transcription --extra dev
+uv run python -m app.services.model_assets
 RUN_PIPELINE_INTEGRATION=1 uv run pytest -q tests/test_integration.py
 ```
 
-The integration gate uploads a piano-like WAV, a 181-second stereo VBR MP3, a 0.125-second MP3, and a silent MP3 through FastAPI, waits for actual transcription/rendering, and downloads every format. It also checks that a long score produces all SVG pages. The default suite covers MP3 sample rates, channels, CBR/VBR, metadata, missing duration headers, chunk boundaries, dense polyphony, and recordings exceeding ten minutes. GitHub Actions runs unit tests, the frontend production build, and this native gate in the backend Docker image for pull requests and main-branch pushes.
+The native gate uploads a piano-like WAV, a stereo VBR MP3 longer than three minutes, a very short MP3, and a silent MP3 through FastAPI, waits for actual transcription/rendering, and downloads the generated formats, including playback JSON. It also checks multipage SVG output. The default suite covers decoding variants, chunk boundaries, musical cleanup and analysis, dense polyphony, artifact preservation, and agreement between final notation and playback. These are reliability and regression checks, not a controlled accuracy comparison with commercial products. GitHub Actions runs backend tests, frontend tests/build, and the native gate in the backend Docker image for pull requests and main-branch pushes.
 
 To exercise a running app from the repository root:
 
@@ -159,21 +226,30 @@ python scripts/test_transcription.py sample.wav
 python scripts/test_transcription.py /path/to/recording.mp3 --api http://localhost:8000
 ```
 
-The Python runtime lock is `backend/uv.lock`. `backend/requirements-runtime.txt` is its transcription-enabled export used by Docker and pip. Regenerate it after dependency changes with `uv export --frozen --extra transcription --no-dev --no-emit-project --no-hashes --output-file requirements-runtime.txt` from `backend/`.
+The Python runtime lock is `backend/uv.lock`. `backend/requirements-runtime.txt` is its transcription-enabled export used by Docker and pip. Regenerate it from `backend/` after dependency changes:
+
+```bash
+uv export --frozen --extra transcription --no-dev --no-emit-project \
+  --no-hashes --emit-index-url --output-file requirements-runtime.txt
+```
+
+Keep `--emit-index-url`: the export needs the pinned PyTorch CPU package index on Linux.
 
 ## File structure
 
 | Path | Responsibility |
 | --- | --- |
 | `backend/main.py` | FastAPI app, readiness, coordinator lifecycle |
-| `backend/app/routes/` | Upload, status, and manifest-only downloads |
+| `backend/app/routes/` | Upload, status, example audio, and manifest-only downloads |
 | `backend/app/models/` | Job responses and score settings |
-| `backend/app/services/` | SQLite, audio normalization, transcription, notation, rendering |
+| `backend/app/services/` | Storage, normalization, model assets, separation, transcription, musical analysis, notation, playback export, rendering |
 | `backend/app/workers/` | Queue coordinator and isolated job entry point |
 | `backend/tests/` | Unit and opt-in native integration tests |
-| `frontend/src/` | React upload, status, preview, and download UI |
+| `frontend/src/` | React studio, recording setup, history, preview, playback, and downloads |
+| `frontend/src/playback.ts` | Web Audio synthesis, bounded scheduler, and timing helpers |
 | `frontend/nginx.conf` | Production SPA and API proxy |
 | `scripts/` | Native-tool helper, sample generator, live API smoke test |
+| `docs/transcription-research.md` | Product/model research, sources, design recommendations, and evaluation approach |
 | `.github/workflows/ci.yml` | Backend, frontend, and native pipeline checks |
 
-Core projects: [Basic Pitch](https://github.com/spotify/basic-pitch), [music21](https://www.music21.org/music21docs/), and [MuseScore CLI](https://musescore.org/en/handbook/3/command-line-options).
+Core projects: [high-resolution piano transcription](https://github.com/qiuqiangkong/piano_transcription_inference), [Demucs](https://github.com/facebookresearch/demucs), [Basic Pitch](https://github.com/spotify/basic-pitch), [music21](https://www.music21.org/music21docs/), and [MuseScore CLI](https://musescore.org/en/handbook/3/command-line-options). The piano checkpoint by Qiuqiang Kong is distributed under [CC BY 4.0 in its official model record](https://zenodo.org/records/4034264); the research report records the distinction between model and code licenses.

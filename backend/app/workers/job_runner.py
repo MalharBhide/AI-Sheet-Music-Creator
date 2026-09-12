@@ -42,7 +42,7 @@ class JobRunner:
     def remove_audio(self, job: dict) -> None:
         directory = self.settings.jobs_dir / job["id"]
         (directory / job["input_name"]).unlink(missing_ok=True)
-        (directory / "work/input.wav").unlink(missing_ok=True)
+        shutil.rmtree(directory / 'work', ignore_errors=True)
 
     def cleanup(self) -> None:
         cutoff = time.time() - self.settings.retention_hours * 3600

@@ -14,6 +14,7 @@ class GeneratedFiles(BaseModel):
     pdf: str | None = None
     svg: str | None = None
     svg_zip: str | None = None
+    playback: str | None = None
 
 
 class JobResponse(BaseModel):
@@ -30,6 +31,7 @@ class JobResponse(BaseModel):
     download_urls: GeneratedFiles = Field(default_factory=GeneratedFiles)
     svg_pages: list[str] = Field(default_factory=list)
     artifacts: list[Artifact] = Field(default_factory=list)
+    analysis: dict = Field(default_factory=dict)
 
 
 def job_response(job: dict) -> JobResponse:
@@ -38,7 +40,7 @@ def job_response(job: dict) -> JobResponse:
     if status is None:
         status = {'transcribing': 'transcribing', 'notating': 'scoring', 'rendering': 'rendering'}.get(job['stage'], 'preprocessing')
     names = {'midi': 'transcription.mid', 'musicxml': 'score.musicxml', 'pdf': 'score.pdf',
-             'svg': 'page-1.svg', 'svg_zip': 'score-svgs.zip'}
+             'svg': 'page-1.svg', 'svg_zip': 'score-svgs.zip', 'playback': 'playback.json'}
     existing = {artifact['name'] for artifact in job['artifacts']}
     files = {kind: name for kind, name in names.items() if name in existing}
     urls = {kind: f"/api/downloads/{job['id']}/{kind}" for kind in files}
@@ -49,4 +51,5 @@ def job_response(job: dict) -> JobResponse:
                        updated_at=datetime.fromtimestamp(job['updated_at'], UTC),
                        error=job['error'], files=GeneratedFiles(**files),
                        download_urls=GeneratedFiles(**urls), artifacts=artifacts,
+                       analysis=job.get('analysis', {}),
                        svg_pages=[a['url'] for a in artifacts if a['media_type'] == 'image/svg+xml'])

@@ -124,15 +124,32 @@ def test_leading_and_trailing_silence_preserve_recording_duration(tmp_path):
 
 
 def test_more_than_twenty_thousand_notes_produce_musicxml(tmp_path):
+    import pretty_midi
+
     # Repeated full-keyboard chords exercise the former 20k-note rejection with
     # only 60 measures, keeping this regression practical to run in the suite.
     midi, xml = tmp_path / "input.mid", tmp_path / "score.musicxml"
-    score = stream.Stream()
-    pitches = list(range(21, 109))
+    score = pretty_midi.PrettyMIDI(initial_tempo=120)
+    piano = pretty_midi.Instrument(0)
     for beat in range(228):
-        score.insert(beat, chord.Chord(pitches, quarterLength=1))
-    score.write("midi", fp=str(midi))
+        for pitch in range(21, 109):
+            piano.notes.append(pretty_midi.Note(90, pitch, beat / 2, (beat + 1) / 2))
+    score.instruments.append(piano)
+    score.write(str(midi))
     midi_to_musicxml(midi, xml, ScoreOptions(), "Long recording")
     tree = ET.parse(xml)
     assert len(tree.findall(".//note/pitch")) == 228 * 88
     assert len(tree.findall(".//measure")) == 57
+
+
+def test_estimated_flat_key_spells_notes_without_changing_sounding_pitch(tmp_path):
+    midi, xml = tmp_path / 'flat.mid', tmp_path / 'flat.musicxml'
+    score = stream.Stream([note.Note(70), note.Note(74), note.Note(77)])
+    score.write('midi', fp=str(midi))
+    midi_to_musicxml(midi, xml, ScoreOptions(tempo_bpm=96), 'B flat', key_signature='B- major')
+    tree = ET.parse(xml)
+    assert tree.findtext('.//key/fifths') == '-2'
+    assert tree.findtext('.//pitch/step') == 'B'
+    assert tree.findtext('.//pitch/alter') == '-1'
+    parsed = converter.parse(str(xml))
+    assert [p.pitch.midi for p in parsed.parts[0].flatten().notes] == [70, 74, 77]

@@ -35,6 +35,9 @@ class JobStore:
                 )
             """)
             db.execute("CREATE INDEX IF NOT EXISTS jobs_status_created ON jobs(status, created_at)")
+            # Existing completed jobs remain readable after the studio upgrade.
+            if 'analysis' not in {row['name'] for row in db.execute('PRAGMA table_info(jobs)')}:
+                db.execute("ALTER TABLE jobs ADD COLUMN analysis TEXT NOT NULL DEFAULT '{}'")
 
     @staticmethod
     def decode(row: sqlite3.Row | None) -> dict | None:
@@ -43,6 +46,7 @@ class JobStore:
         job = dict(row)
         job["options"] = json.loads(job["options"])
         job["artifacts"] = json.loads(job["artifacts"])
+        job["analysis"] = json.loads(job.get("analysis", "{}"))
         return job
 
     def create(self, job_id: str, filename: str, input_name: str,
@@ -75,11 +79,12 @@ class JobStore:
             return self.decode(db.execute("SELECT * FROM jobs WHERE id = ?", (row["id"],)).fetchone())
 
     def update(self, job_id: str, **fields) -> None:
-        allowed = {"status", "stage", "progress", "error", "artifacts"}
+        allowed = {"status", "stage", "progress", "error", "artifacts", "analysis", "options"}
         if not fields.keys() <= allowed:
             raise ValueError("Unsupported job update")
-        if "artifacts" in fields:
-            fields["artifacts"] = json.dumps(fields["artifacts"])
+        for key in ("artifacts", "analysis", "options"):
+            if key in fields:
+                fields[key] = json.dumps(fields[key])
         fields["updated_at"] = time.time()
         assignments = ", ".join(f"{key} = ?" for key in fields)
         with closing(self.connect()) as db, db:

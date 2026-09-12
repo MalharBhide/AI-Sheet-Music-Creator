@@ -8,7 +8,7 @@ from app.services.storage import output_path
 
 router = APIRouter(tags=['downloads'])
 FILENAMES = {'midi': 'transcription.mid', 'musicxml': 'score.musicxml', 'pdf': 'score.pdf',
-             'svg': 'page-1.svg', 'svg_zip': 'score-svgs.zip'}
+             'svg': 'page-1.svg', 'svg_zip': 'score-svgs.zip', 'playback': 'playback.json'}
 
 
 def serve_artifact(request: Request, job_id: UUID, name: str, preview: bool):

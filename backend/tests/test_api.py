@@ -35,9 +35,47 @@ def test_invalid_uploads_leave_no_job_files(client, settings, content, filename,
 
 
 @pytest.mark.parametrize("data", [{"tempo_bpm": "0"}, {"tempo_bpm": "nan"},
-                                  {"time_signature": "5/0"}, {"grid": "invalid"}])
+                                  {"time_signature": "5/0"}, {"grid": "invalid"},
+                                  {"transcription_mode": "invalid"}, {"detail": "invalid"}])
 def test_settings_validation(client, data):
     assert upload(client, **data).status_code == 422
+
+
+def test_automatic_tempo_mode_and_analysis_survive_reload(client):
+    response = upload(client, transcription_mode='full_mix', detail='detailed')
+    assert response.status_code == 202
+    job = response.json()
+    assert job['options']['tempo_bpm'] is None
+    assert job['options']['transcription_mode'] == 'full_mix'
+    assert job['options']['detail'] == 'detailed'
+    report = {'engine': 'isolated source model', 'tempo_bpm': 97.5, 'note_count': 42,
+              'warnings': ['Review the arrangement.']}
+    client.app.state.store.update(job['job_id'], analysis=report)
+    assert client.get(response.headers['Location']).json()['analysis'] == report
+
+
+def test_example_is_a_real_nonempty_wav(client):
+    import io
+    import wave
+
+    response = client.get('/api/example')
+    assert response.status_code == 200
+    assert response.headers['content-type'] == 'audio/wav'
+    with wave.open(io.BytesIO(response.content)) as audio:
+        assert 10 <= audio.getnframes() / audio.getframerate() <= 15
+        assert audio.getnchannels() == 2
+
+
+def test_playback_download_is_available_from_manifest(client, settings):
+    job = upload(client).json()
+    directory = settings.jobs_dir / job['job_id'] / 'outputs'
+    directory.mkdir()
+    payload = '{"duration":2,"tempo_bpm":120,"notes":[]}'
+    (directory / 'playback.json').write_text(payload)
+    client.app.state.store.update(job['job_id'], status='completed', artifacts=[
+        {'name': 'playback.json', 'label': 'Score playback', 'media_type': 'application/json'}])
+    complete = client.get(f"/api/jobs/{job['job_id']}").json()
+    assert client.get(complete['download_urls']['playback']).text == payload
 
 
 def test_queue_capacity_and_retry_header(client, settings):

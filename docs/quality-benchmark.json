@@ -1,0 +1,70 @@
+{
+  "fixture": "Original 96 BPM, 20-note piano study rendered with MuseScore General; full_mix adds synthetic percussion.",
+  "method": "One-to-one equal-pitch matches with onset difference at most 120 ms. This small fixture does not measure offsets, notation readability, general-song accuracy, or competitor parity.",
+  "runtime_environment": "Linux amd64 Docker under Apple Silicon emulation; concurrent verification influenced wall time.",
+  "piano": {
+    "expected_notes": 20,
+    "detected_notes": 21,
+    "matched_notes": 20,
+    "pitch_onset_precision": 0.9524,
+    "pitch_onset_recall": 1.0,
+    "pitch_onset_f1": 0.9756,
+    "mean_onset_error_seconds": 0.0131,
+    "runtime_seconds": 248.12,
+    "analysis": {
+      "engine": "High-resolution piano CRNN",
+      "tempo_bpm": 96.28,
+      "note_count": 21,
+      "raw_note_count": 21,
+      "key_signature": "C major",
+      "transcription_mode": "piano",
+      "timing_offset_seconds": 0.011928179962963907,
+      "duration_seconds": 11.853786848072563,
+      "sources": [
+        "piano"
+      ],
+      "warnings": [
+        "Tempo is estimated. Check the beat, time signature and rhythm, especially for rubato or swing."
+      ]
+    }
+  },
+  "previous_basic_pitch": {
+    "expected_notes": 20,
+    "detected_notes": 26,
+    "matched_notes": 20,
+    "pitch_onset_precision": 0.7692,
+    "pitch_onset_recall": 1.0,
+    "pitch_onset_f1": 0.8696,
+    "mean_onset_error_seconds": 0.01,
+    "runtime_seconds": 3.1
+  },
+  "full_mix_with_percussion": {
+    "expected_notes": 20,
+    "detected_notes": 22,
+    "matched_notes": 19,
+    "pitch_onset_precision": 0.8636,
+    "pitch_onset_recall": 0.95,
+    "pitch_onset_f1": 0.9048,
+    "mean_onset_error_seconds": 0.0099,
+    "runtime_seconds": 144.68,
+    "analysis": {
+      "engine": "Demucs htdemucs + Basic Pitch on isolated sources",
+      "tempo_bpm": 96.2,
+      "note_count": 22,
+      "raw_note_count": 22,
+      "key_signature": "C major",
+      "transcription_mode": "full_mix",
+      "timing_offset_seconds": 0.010014293550833908,
+      "duration_seconds": 11.853786848072563,
+      "sources": [
+        "vocals",
+        "bass",
+        "other"
+      ],
+      "warnings": [
+        "Tempo is estimated. Check the beat, time signature and rhythm, especially for rubato or swing.",
+        "Full-song mode makes a piano arrangement from separated vocals, bass and accompaniment. It cannot recover an exact original piano score; review overlapping instruments and missing notes."
+      ]
+    }
+  }
+}

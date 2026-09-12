@@ -23,6 +23,8 @@ async def upload_audio(
     tempo_bpm: Annotated[float | None, Form(ge=30, le=240)] = None,
     time_signature: Annotated[Literal['4/4', '3/4', '6/8'], Form()] = '4/4',
     grid: Annotated[Literal['eighth', 'sixteenth'], Form()] = 'sixteenth',
+    transcription_mode: Annotated[Literal['piano', 'full_mix', 'melody'], Form()] = 'piano',
+    detail: Annotated[Literal['balanced', 'detailed'], Form()] = 'balanced',
 ):
     settings = request.app.state.settings
     store = request.app.state.store
@@ -36,8 +38,8 @@ async def upload_audio(
         if extension not in SUPPORTED_AUDIO_EXTENSIONS:
             raise HTTPException(415, 'Choose a WAV, MP3, FLAC, OGG, M4A, AAC, or AIFF file.')
         try:
-            options = ScoreOptions(tempo_bpm=tempo_bpm if tempo_bpm is not None else settings.default_tempo_bpm,
-                                   time_signature=time_signature, grid=grid)
+            options = ScoreOptions(tempo_bpm=tempo_bpm, time_signature=time_signature,
+                                   grid=grid, transcription_mode=transcription_mode, detail=detail)
         except ValidationError as exc:
             raise HTTPException(422, 'Invalid score settings.') from exc
         checks = dependencies(settings)

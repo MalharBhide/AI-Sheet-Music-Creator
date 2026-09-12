@@ -1,0 +1,147 @@
+import sys
+from types import SimpleNamespace
+
+import numpy as np
+import pytest
+import soundfile as sf
+
+from app.services.audio_analysis import (
+    clean_notes,
+    estimate_grid_phase,
+    estimate_key,
+    estimate_tempo,
+    reduce_accompaniment,
+)
+
+
+def n(pitch, start=0, end=1, velocity=90):
+    return SimpleNamespace(pitch=pitch, start=start, end=end, velocity=velocity)
+
+
+def cleaned(notes, role='piano', detail='balanced'):
+    return clean_notes(notes, role=role, detail=detail, tempo_bpm=120, grid='sixteenth')
+
+
+def test_cleaner_keeps_piano_chords_but_removes_glitches_and_duplicate_attacks():
+    notes = [n(60), n(64), n(67), n(60, .015, .9), n(72, .1, .13), n(80, velocity=3),
+             n(20), n(70, float('nan'), 1)]
+    assert [(v.pitch, v.start, v.end) for v in cleaned(notes)] == [
+        (60, 0, 1), (64, 0, 1), (67, 0, 1)]
+
+
+def test_repeated_piano_key_trims_old_note_without_deleting_new_attack():
+    notes = cleaned([n(60, 0, 2), n(60, 1, 3)])
+    assert [(v.start, v.end) for v in notes] == [(0, 1), (1, 3)]
+
+
+def test_common_grid_phase_prevents_jitter_from_turning_quarters_into_uneven_rhythm():
+    notes = [n(60 + i % 5, .0625 + .5 * i + (-.005 if i % 2 else .005),
+               .4 + .5 * i) for i in range(20)]
+    offset = estimate_grid_phase(notes, tempo_bpm=120, grid='sixteenth')
+    assert abs(offset) == pytest.approx(.0625)
+    for item in notes:
+        item.start = max(0, item.start - offset)
+        item.end = max(item.start, item.end - offset)
+    result = cleaned(notes)
+    assert np.diff([item.start for item in result]) == pytest.approx(np.full(19, .5))
+
+
+def test_phase_correction_is_zero_for_aligned_or_irregular_onsets():
+    aligned = [n(60, .5 * i, .5 * i + .4) for i in range(20)]
+    assert estimate_grid_phase(aligned, tempo_bpm=120, grid='sixteenth') == pytest.approx(0)
+    irregular = [n(60, i * .5 + (i % 16) * .125 / 16, i * .5 + .4) for i in range(32)]
+    assert estimate_grid_phase(irregular, tempo_bpm=120, grid='sixteenth') == 0
+
+
+def test_melody_selects_salient_line_and_releases_old_pitch():
+    notes = cleaned([n(60, 0, 2), n(72, 0, 1, 50), n(62, 1, 3), n(74, 1, 3, 85)],
+                    role='vocals')
+    assert [(v.pitch, v.start, v.end) for v in notes] == [(60, 0, 1), (62, 1, 3)]
+
+
+def test_bass_does_not_keep_vocal_or_upper_harmonics():
+    notes = cleaned([n(36), n(72, velocity=110)], role='bass')
+    assert [v.pitch for v in notes] == [36]
+
+
+def test_accompaniment_reduction_limits_actual_sounding_polyphony():
+    notes = cleaned([n(60 + index, index * .25, 4, 60 + index) for index in range(8)],
+                    role='other')
+    result = reduce_accompaniment(notes, detail='balanced')
+    for at in np.arange(0, 4, .05):
+        assert sum(item.start <= at < item.end for item in result) <= 3
+    assert result[-1].pitch == 67
+
+
+def test_detailed_accompaniment_can_retain_five_notes():
+    notes = cleaned([n(60 + i) for i in range(8)], role='other', detail='detailed')
+    assert len(notes) == 5
+
+
+def test_tempo_override_does_not_import_or_read_audio(tmp_path, monkeypatch):
+    monkeypatch.setitem(sys.modules, 'librosa', None)
+    assert estimate_tempo(tmp_path / 'does-not-exist.wav', 87) == (87.0, [])
+
+
+def test_tempo_analysis_samples_bounded_beginning_middle_and_end(tmp_path, monkeypatch):
+    audio = tmp_path / 'long.wav'
+    sf.write(str(audio), np.full(22050 * 240, .01, dtype='float32'), 22050)
+    lengths = []
+
+    def envelope(*, y, **kwargs):
+        lengths.append(len(y))
+        return np.ones(100)
+
+    librosa = SimpleNamespace(onset=SimpleNamespace(onset_strength=envelope),
+                              beat=SimpleNamespace(beat_track=lambda **kwargs: (np.array([96.2]), np.arange(20))))
+    monkeypatch.setitem(sys.modules, 'librosa', librosa)
+    bpm, warnings = estimate_tempo(audio, None)
+    assert bpm == 96.2
+    assert lengths == [30 * 22050] * 3
+    assert warnings
+
+
+def test_tempo_does_not_average_half_and_double_time_into_unobserved_bpm(tmp_path, monkeypatch):
+    audio = tmp_path / 'ambiguous.wav'
+    samples = np.full(22050 * 100, .01, dtype='float32')
+    samples[:22050 * 30] = 0
+    sf.write(str(audio), samples, 22050)
+    candidates = iter([90.0, 180.0])
+    librosa = SimpleNamespace(onset=SimpleNamespace(onset_strength=lambda **kwargs: np.ones(100)),
+                              beat=SimpleNamespace(beat_track=lambda **kwargs: (next(candidates), np.arange(20))))
+    monkeypatch.setitem(sys.modules, 'librosa', librosa)
+    bpm, warnings = estimate_tempo(audio, None)
+    assert bpm in (90, 180)
+    assert any('Different sections' in message for message in warnings)
+
+
+def test_silence_reports_tempo_fallback(tmp_path):
+    audio = tmp_path / 'silent.wav'
+    sf.write(str(audio), np.zeros(22050), 22050)
+    bpm, warnings = estimate_tempo(audio, None)
+    assert bpm == 120
+    assert 'could not be detected' in warnings[0]
+
+
+def test_c_major_profile_estimates_key_without_changing_pitches():
+    notes = [n(pitch, end=weight) for pitch, weight in
+             [(60, 4), (62, .8), (64, 2), (65, 1), (67, 3), (69, .8), (71, .8)]]
+    assert estimate_key(notes) == 'C major'
+    assert [item.pitch for item in notes] == [60, 62, 64, 65, 67, 69, 71]
+    assert estimate_key([n(60)]) is None
+
+
+@pytest.mark.parametrize('bpm', [80, 100, 120, 150])
+def test_real_beat_tracker_finds_regular_click_tempo(tmp_path, bpm):
+    pytest.importorskip('librosa')
+    rate = 22050
+    samples = np.zeros(20 * rate, dtype='float32')
+    rng = np.random.default_rng(22)
+    for at in np.arange(.5, 19.5, 60 / bpm):
+        onset = int(at * rate)
+        click = rng.normal(0, .2, 600) * np.exp(-np.arange(600) / 80)
+        samples[onset:onset + 600] += click
+    audio = tmp_path / 'clicks.wav'
+    sf.write(str(audio), samples, rate)
+    detected, _ = estimate_tempo(audio, None)
+    assert detected == pytest.approx(bpm, abs=3)

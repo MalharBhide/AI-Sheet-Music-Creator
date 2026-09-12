@@ -1,5 +1,20 @@
 # Verification
 
+## Transcription studio overhaul — 2026-09-11
+
+The application now uses a dedicated high-resolution piano model for solo piano, Demucs four-source separation before full-song arrangement, and a melody mode. Automatic tempo estimation, common onset-grid alignment, source-specific cleanup, and estimated key spelling replace the single fixed-tempo pipeline. The UI includes a complete studio, score playback with seeking/speed/volume, original-recording comparison, and a bundled original piano study.
+
+- Final native ARM64 backend suite: **109 passed in 163 seconds**, including all six native integration cases. The cases exercise WAV, a 181-second stereo VBR MP3, a 0.125-second MP3, a silent MP3, full-song mode on MP3, and multipage rendering through real models and native tools. The regression suite also covers stereo preservation, mode validation, schema upgrades, tied-note playback, grid-phase correction, and more than 20,000 notes. The large-score fixture uses PrettyMIDI so the test measures the application rather than music21's slow fixture export. The earlier AMD64 regression run passed all 103 non-integration tests.
+- Frontend: **21 tests passed**, including unlimited-upload regressions and a two-hour playback fixture. Production TypeScript/Vite builds passed.
+- Backend lint and whitespace checks passed.
+- Native ARM64 Docker image built successfully; all model imports and `pip check` passed. Compose now builds for the host architecture instead of forcing Intel emulation on Apple Silicon. The AMD64 image also built successfully.
+- A real four-minute MP3 completed the full-song pipeline and produced a five-page PDF, five SVG pages, MusicXML, MIDI, SVG ZIP and playback JSON. Every file downloaded through Nginx; all 1,264 playback notes matched the canonical MIDI pitches, onsets and releases. Browser checks verified play/pause, 90-second seeking, speed selection, pagination and the responsive 390px layout.
+- The benchmark uses real model inference on an original 96 BPM, 20-note soundfont-rendered study. The final piano engine matched 20/20 expected notes with 1 extra; the prior Basic Pitch path matched 20/20 with 6 extras. Pitch/onset F1 was 0.9756 vs 0.8696, using a 120 ms matching tolerance. Automatic tempo was 96.28 BPM and estimated key was correctly C major.
+- A separate piano-plus-synthetic-percussion input completed real Demucs separation and transcription: 19/20 expected notes matched, 3 extra, F1=0.9048. This is a limited arrangement smoke test, not a representative commercial-song benchmark.
+- An initial benchmark exposed missed notes at the start of a recording. Adding silent model context recovered both opening notes; the context is removed from output times.
+
+These measurements do not establish accuracy on arbitrary music, exact note offsets, readable rhythm or hand assignment, or parity with Songscription. The piano engine took 248 seconds on the emulated Intel Docker runtime; that wall time included local verification overhead. Use the saved [measurements](docs/quality-benchmark.json), [reproduction script](scripts/benchmark_transcription.py), and [primary-source research](docs/transcription-research.md) for the scope and method.
+
 ## Website upload regression — 2026-09-10
 
 The reported “Choose a non-empty file up to 0 MB” message was traced to the old frontend in commit `c725d9c`. The current backend uses zero to mean unlimited. Updated the local checkout from the already-merged GitHub main, extracted upload validation into a tested helper, and rebuilt both Docker services.

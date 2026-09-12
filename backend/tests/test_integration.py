@@ -14,7 +14,7 @@ from main import create_app, dependencies
 
 @pytest.mark.integration
 @pytest.mark.skipif(os.environ.get('RUN_PIPELINE_INTEGRATION') != '1', reason='Set RUN_PIPELINE_INTEGRATION=1 to run the complete native pipeline')
-@pytest.mark.parametrize('encoding', ['wav', 'mp3-vbr-long', 'mp3-short', 'mp3-silent'])
+@pytest.mark.parametrize('encoding', ['wav', 'mp3-vbr-long', 'mp3-short', 'mp3-silent', 'full-mix-mp3'])
 def test_audio_upload_to_all_download_formats(tmp_path, encoding):
     settings = Settings(storage_root=tmp_path / 'data', _env_file=None)
     assert all(dependencies(settings).values()), 'Install every native and Python dependency before running this integration gate.'
@@ -24,11 +24,15 @@ def test_audio_upload_to_all_download_formats(tmp_path, encoding):
     spec.loader.exec_module(module)
     audio = tmp_path / 'sample.wav'
     module.make_sample(audio)
+    if encoding == 'full-mix-mp3':
+        audio.write_bytes((Path(__file__).resolve().parents[1] / 'app/assets/piano-study.wav').read_bytes())
     if encoding != 'wav':
         mp3 = tmp_path / 'sample.mp3'
         # Exercise the former 180-second failure through the real API and every
         # native stage. Sparse piano avoids turning this into a quality benchmark.
-        filters = ['-af', 'apad=whole_dur=181.125'] if encoding == 'mp3-vbr-long' else ['-t', '0.125']
+        filters = [] if encoding == 'full-mix-mp3' else ['-t', '0.125']
+        if encoding == 'mp3-vbr-long':
+            filters = ['-af', 'apad=whole_dur=181.125']
         if encoding == 'mp3-silent':
             filters = ['-af', 'volume=0']
         subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(audio), *filters,
@@ -36,7 +40,9 @@ def test_audio_upload_to_all_download_formats(tmp_path, encoding):
                         str(mp3)], check=True)
         audio = mp3
     with TestClient(create_app(settings)) as client:
-        result = client.post('/api/upload', files={'file': (audio.name, audio.read_bytes(), 'application/octet-stream')})
+        result = client.post('/api/upload', files={'file': (audio.name, audio.read_bytes(), 'application/octet-stream')},
+                             data={'tempo_bpm': '96' if encoding == 'full-mix-mp3' else '120',
+                                   'transcription_mode': 'full_mix' if encoding == 'full-mix-mp3' else 'piano'})
         assert result.status_code == 202, result.text
         url = result.headers['Location']
         deadline = time.monotonic() + 900
@@ -46,7 +52,10 @@ def test_audio_upload_to_all_download_formats(tmp_path, encoding):
                 break
             time.sleep(1)
         assert job['status'] == 'done', job
-        expected = {'application/pdf', 'image/svg+xml', 'audio/midi', 'application/vnd.recordare.musicxml+xml', 'application/zip'}
+        if encoding == 'full-mix-mp3':
+            assert job['analysis']['engine'].startswith('Demucs')
+            assert job['analysis']['note_count'] > 0
+        expected = {'application/pdf', 'image/svg+xml', 'audio/midi', 'application/vnd.recordare.musicxml+xml', 'application/zip', 'application/json'}
         assert {a['media_type'] for a in job['artifacts']} == expected
         if encoding == 'mp3-silent':
             from xml.etree import ElementTree
@@ -64,7 +73,7 @@ def test_audio_upload_to_all_download_formats(tmp_path, encoding):
             assert response.status_code == 200
             assert response.content
         assert not list((settings.jobs_dir / job['job_id'] / 'upload').iterdir())
-        assert not list((settings.jobs_dir / job['job_id'] / 'work').iterdir())
+        assert not (settings.jobs_dir / job['job_id'] / 'work').exists()
 
 
 @pytest.mark.integration

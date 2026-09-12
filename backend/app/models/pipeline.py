@@ -6,9 +6,11 @@ Status = Literal["queued", "processing", "completed", "failed"]
 
 
 class ScoreOptions(BaseModel):
-    tempo_bpm: float = Field(default=120, ge=30, le=240, allow_inf_nan=False)
+    tempo_bpm: float | None = Field(default=None, ge=30, le=240, allow_inf_nan=False)
     time_signature: Literal["4/4", "3/4", "6/8"] = "4/4"
     grid: Literal["eighth", "sixteenth"] = "sixteenth"
+    transcription_mode: Literal["piano", "full_mix", "melody"] = "piano"
+    detail: Literal["balanced", "detailed"] = "balanced"
 
 
 class Artifact(BaseModel):

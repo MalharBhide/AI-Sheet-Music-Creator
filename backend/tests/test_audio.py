@@ -36,6 +36,21 @@ def test_real_ffmpeg_decodes_to_model_format(tmp_path, settings):
 
 
 @needs_ffmpeg
+def test_full_mix_decoding_preserves_stereo_for_separation(tmp_path, settings):
+    import numpy as np
+
+    source, output = tmp_path / 'stereo.wav', tmp_path / 'work/input.wav'
+    samples = np.column_stack((np.full(44100, .1), np.full(44100, -.1)))
+    sf.write(str(source), samples, 44100)
+    assert normalize_audio(source, output, settings, preserve_stereo=True) == 1
+    decoded, rate = sf.read(str(output))
+    assert rate == 44100
+    assert decoded.shape == (44100, 2)
+    assert decoded[:, 0].mean() == pytest.approx(.1, abs=.0001)
+    assert decoded[:, 1].mean() == pytest.approx(-.1, abs=.0001)
+
+
+@needs_ffmpeg
 def test_long_audio_is_rejected_instead_of_silently_truncated(tmp_path, settings):
     source, output = tmp_path / 'input.wav', tmp_path / 'work/input.wav'
     wav(source, 5)

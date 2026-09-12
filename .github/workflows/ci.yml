@@ -1,4 +1,4 @@
-name: Verify audio-to-sheet-music MVP
+name: Verify Piano Scribe
 
 on:
   push:
@@ -41,4 +41,4 @@ jobs:
       - run: |
           docker compose run --rm --no-deps \
             -e RUN_PIPELINE_INTEGRATION=1 -v "$PWD:/src:ro" backend \
-            sh -c 'pip install --user pytest httpx && python -m pytest -p no:cacheprovider -q /src/backend/tests/test_integration.py'
+            sh -c 'pip install --user "pytest>=8.3,<9" httpx && python -m pytest -p no:cacheprovider -q /src/backend/tests/test_integration.py'

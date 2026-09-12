@@ -6,7 +6,19 @@ export type GeneratedFiles = {
   pdf?: string | null;
   svg?: string | null;
   svg_zip?: string | null;
+  playback?: string | null;
 };
+
+export type ScoreOptions = {
+  transcription_mode: "piano" | "full_mix" | "melody";
+  detail: "balanced" | "detailed";
+  tempo_bpm?: number;
+  time_signature: "4/4" | "3/4" | "6/8";
+  grid: "eighth" | "sixteenth";
+};
+
+export type PlaybackNote = { pitch: number; start: number; end: number; velocity: number };
+export type PlaybackData = { duration: number; tempo_bpm: number; notes: PlaybackNote[] };
 
 export type Job = {
   job_id: string;
@@ -19,6 +31,14 @@ export type Job = {
   files: GeneratedFiles;
   download_urls: GeneratedFiles;
   svg_pages: string[];
+  analysis?: {
+    tempo_bpm?: number;
+    key_signature?: string;
+    engine?: string;
+    note_count?: number;
+    warnings?: string[];
+    transcription_mode?: string;
+  } | null;
 };
 
 export type Health = {
@@ -54,9 +74,12 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   }
 }
 
-export function uploadAudio(file: File, onProgress?: (percent: number) => void): Promise<Job> {
+export function uploadAudio(file: File, onProgress?: (percent: number) => void, options?: ScoreOptions): Promise<Job> {
   const formData = new FormData();
   formData.append("file", file);
+  if (options) Object.entries(options).forEach(([key, value]) => {
+    if (value !== undefined) formData.append(key, String(value));
+  });
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open("POST", API_BASE + "/upload");
@@ -83,6 +106,12 @@ export function uploadAudio(file: File, onProgress?: (percent: number) => void):
 export const fetchJob = (jobId: string, signal?: AbortSignal) =>
   request<Job>("/jobs/" + encodeURIComponent(jobId), { signal });
 export const fetchHealth = (signal?: AbortSignal) => request<Health>("/health", { signal });
+
+export async function fetchExample(): Promise<File> {
+  const response = await fetch(API_BASE + "/example");
+  if (!response.ok) throw new Error("The example is unavailable. Please choose your own recording.");
+  return new File([await response.blob()], "Piano study.wav", { type: "audio/wav" });
+}
 
 export function apiUrl(path?: string | null): string | null {
   if (!path) return null;

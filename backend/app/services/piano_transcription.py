@@ -5,18 +5,28 @@ from tempfile import TemporaryDirectory
 import soundfile as sf
 
 from app.models import PipelineError, ScoreOptions
+from app.services.audio_analysis import (
+    clean_notes,
+    estimate_grid_phase,
+    estimate_key,
+    estimate_tempo,
+    reduce_accompaniment,
+)
 
 CHUNK_SECONDS = 30
 CONTEXT_SECONDS = 1
 MINIMUM_INPUT_SECONDS = 1
 
 
-def _audio_chunks(audio_path: Path, chunk_path: Path) -> Iterator[tuple[float, float, float]]:
+def _audio_chunks(audio_path: Path, chunk_path: Path, *,
+                  allow_stereo: bool = False) -> Iterator[tuple[float, float, float]]:
     """Yield (read offset, core start, core end), keeping only one PCM chunk in RAM."""
     import numpy as np
 
     with sf.SoundFile(str(audio_path)) as audio:
-        if audio.samplerate != 22050 or audio.channels != 1:
+        normalized = audio.samplerate == 22050 and audio.channels == 1
+        stereo_source = allow_stereo and audio.samplerate == 44100 and audio.channels == 2
+        if not normalized and not stereo_source:
             raise PipelineError("Transcription needs audio normalized to mono at 22050 Hz.")
         if not audio.frames:
             raise PipelineError("The recording did not contain any audio samples.")
@@ -32,7 +42,8 @@ def _audio_chunks(audio_path: Path, chunk_path: Path) -> Iterator[tuple[float, f
             # for sub-frame recordings. Later clipping removes all padded time.
             minimum_frames = MINIMUM_INPUT_SECONDS * audio.samplerate
             if len(samples) < minimum_frames:
-                samples = np.pad(samples, (0, minimum_frames - len(samples)))
+                padding = ((0, minimum_frames - len(samples)), (0, 0)) if samples.ndim == 2 else (0, minimum_frames - len(samples))
+                samples = np.pad(samples, padding)
             sf.write(str(chunk_path), samples, audio.samplerate, subtype="PCM_16")
             yield (read_start / audio.samplerate, core_start / audio.samplerate,
                    core_end / audio.samplerate)
@@ -65,41 +76,161 @@ def _append_chunk_notes(instrument, chunk_midi, offset: float, core_start: float
     return next_boundary
 
 
-def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
-               progress_callback: Callable[[float], None] | None = None) -> None:
-    # Heavy ML imports stay in the isolated child process, never in the HTTP server.
-    try:
-        import pretty_midi
-        from basic_pitch import ICASSP_2022_MODEL_PATH
-        from basic_pitch.inference import Model, predict
-    except ImportError as exc:
-        raise PipelineError("Transcription is unavailable. Install the backend transcription dependencies.") from exc
+class _PianoEngine:
+    """Dedicated onset/offset/velocity model trained on piano, with CPU inference."""
+    name = "High-resolution piano CRNN"
 
-    model = Model(ICASSP_2022_MODEL_PATH)
-    midi = pretty_midi.PrettyMIDI(initial_tempo=options.tempo_bpm)
-    piano = pretty_midi.Instrument(program=0, name="Piano")
-    midi.instruments.append(piano)
+    def __init__(self, checkpoint: Path | None, detail: str):
+        if checkpoint is None or not checkpoint.is_file() or checkpoint.stat().st_size < 160_000_000:
+            raise PipelineError("The high-resolution piano model is not installed. Run the server model setup and configure PIANO_MODEL_PATH, then retry.")
+        try:
+            import torch
+            from piano_transcription_inference import PianoTranscription
+        except ImportError as exc:
+            raise PipelineError("Piano transcription needs the high-resolution piano dependencies. Install the backend transcription extra and retry.") from exc
+        try:
+            torch.set_num_threads(min(4, torch.get_num_threads()))
+            # A checked path prevents upstream from shelling out to wget and
+            # silently downloading weights into the process user's home folder.
+            self.model = PianoTranscription(device="cpu", checkpoint_path=str(checkpoint))
+            self.model.onset_threshold = 0.3 if detail == "balanced" else 0.25
+        except Exception as exc:
+            raise PipelineError("The piano model could not be loaded. Reinstall its checkpoint and check the server worker log.") from exc
+
+    def predict(self, path: Path, role: str, bpm: float):
+        import numpy as np
+        import pretty_midi
+        from scipy.signal import resample_poly
+
+        samples, rate = sf.read(str(path), dtype="float32")
+        samples = resample_poly(samples, 320, 441) if rate == 22050 else samples
+        # Onset regression needs frames on both sides of an attack. A file that
+        # begins immediately with a chord otherwise loses its opening notes.
+        # Supply real silence as left context, then remove it from event times.
+        prefix_seconds = 0.25
+        samples = np.pad(samples, (int(16000 * prefix_seconds), 0))
+        result = self.model.transcribe(samples, None)
+        midi = pretty_midi.PrettyMIDI(initial_tempo=bpm)
+        piano = pretty_midi.Instrument(program=0)
+        for event in result["est_note_events"]:
+            start = max(0, float(event["onset_time"]) - prefix_seconds)
+            end = float(event["offset_time"]) - prefix_seconds
+            if end > start and 21 <= int(event["midi_note"]) <= 108:
+                piano.notes.append(pretty_midi.Note(velocity=max(1, min(127, int(event["velocity"]))),
+                                                   pitch=int(event["midi_note"]),
+                                                   start=start, end=end))
+        midi.instruments.append(piano)
+        return midi
+
+
+class _GeneralEngine:
+    name = "Basic Pitch on isolated sources"
+
+    def __init__(self, detail: str):
+        try:
+            from basic_pitch import ICASSP_2022_MODEL_PATH
+            from basic_pitch.inference import Model, predict
+        except ImportError as exc:
+            raise PipelineError("Transcription is unavailable. Install the backend transcription dependencies.") from exc
+        self.model = Model(ICASSP_2022_MODEL_PATH)
+        self.predict_function = predict
+        self.detail = detail
+
+    def predict(self, path: Path, role: str, bpm: float):
+        import pretty_midi
+
+        limits = {"bass": (21, 60), "vocals": (45, 96), "melody": (45, 96),
+                  "other": (36, 96)}
+        low, high = limits[role]
+        arrays, midi, events = self.predict_function(
+            str(path), model_or_model_path=self.model,
+            minimum_frequency=float(pretty_midi.note_number_to_hz(low)),
+            maximum_frequency=float(pretty_midi.note_number_to_hz(high)),
+            onset_threshold=0.5 if self.detail == "balanced" else 0.4,
+            frame_threshold=0.3 if self.detail == "balanced" else 0.25,
+            minimum_note_length=90.0 if self.detail == "balanced" else 60.0,
+            multiple_pitch_bends=False, melodia_trick=self.detail == "detailed", midi_tempo=bpm,
+        )
+        del arrays, events
+        return midi
+
+
+def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
+               progress_callback: Callable[[float], None] | None = None,
+               piano_model_path: Path | None = None) -> dict:
+    """Separate full mixes before inference; use a dedicated model for solo piano.
+
+    Full-mix output is a piano arrangement, not an exact original piano score.
+    No unavailable engine is silently replaced with a different one.
+    """
+    import pretty_midi
+
+    bpm, warnings = estimate_tempo(audio_path, options.tempo_bpm)
+    mode, detail = options.transcription_mode, options.detail
+    separator = None
+    if mode == "piano":
+        engine = _PianoEngine(piano_model_path, detail)
+        roles = ["piano"]
+    else:
+        engine = _GeneralEngine(detail)
+        roles = ["melody"]
+        if mode == "full_mix":
+            from app.services.source_separation import StemSeparator
+
+            separator = StemSeparator()
+            roles = ["vocals", "bass", "other"]
+            warnings.append("Full-song mode makes a piano arrangement from separated vocals, bass and accompaniment. It cannot recover an exact original piano score; review overlapping instruments and missing notes.")
+    midi = pretty_midi.PrettyMIDI(initial_tempo=bpm, resolution=480)
+    numerator, denominator = map(int, options.time_signature.split("/"))
+    midi.time_signature_changes.append(pretty_midi.TimeSignature(numerator, denominator, 0))
+    parts = {role: pretty_midi.Instrument(program=0, name=role.title()) for role in roles}
+    boundaries = {role: {} for role in roles}
     duration = sf.info(str(audio_path)).duration
-    boundary_notes = {}
     with TemporaryDirectory(prefix="transcription-", dir=audio_path.parent) as temporary:
-        chunk_path = Path(temporary) / "chunk.wav"
-        for offset, core_start, core_end in _audio_chunks(audio_path, chunk_path):
-            model_output, chunk_midi, note_events = predict(
-                str(chunk_path),
-                model_or_model_path=model,
-                minimum_frequency=27.5,  # A0, bottom of a standard piano.
-                maximum_frequency=4186.01,  # C8.
-                minimum_note_length=100.0,
-                multiple_pitch_bends=False,
-                midi_tempo=options.tempo_bpm,
-            )
-            boundary_notes = _append_chunk_notes(piano, chunk_midi, offset, core_start,
-                                                 core_end, boundary_notes)
-            # Dense model arrays are the expensive part; never accumulate them.
-            del model_output, chunk_midi, note_events
+        directory = Path(temporary)
+        chunk_path = directory / "chunk.wav"
+        for offset, core_start, core_end in _audio_chunks(audio_path, chunk_path,
+                                                        allow_stereo=mode == "full_mix"):
+            import numpy as np
+
+            samples, _ = sf.read(str(chunk_path), dtype="float32")
+            has_signal = bool(np.max(np.abs(samples)) >= 1e-6)
+            del samples
+            sources = (separator.separate(chunk_path, directory) if separator else {roles[0]: chunk_path}) if has_signal else {}
+            for role in roles:
+                if role not in sources:
+                    boundaries[role] = {}
+                    continue
+                chunk_midi = engine.predict(sources[role], role, bpm)
+                boundaries[role] = _append_chunk_notes(parts[role], chunk_midi, offset,
+                                                       core_start, core_end, boundaries[role])
+                del chunk_midi
             if progress_callback:
                 progress_callback(min(1.0, core_end / duration))
-    # Silence is a valid recording: write an empty MIDI and let notation create rests.
-    piano.notes.sort(key=lambda note: (note.start, note.pitch, note.end))
+
+    raw_count = sum(len(part.notes) for part in parts.values())
+    timing_offset = estimate_grid_phase([item for part in parts.values() for item in part.notes],
+                                        tempo_bpm=bpm, grid=options.grid)
+    for role, part in parts.items():
+        for item in part.notes:
+            item.start = max(0, item.start - timing_offset)
+            item.end = max(item.start, item.end - timing_offset)
+        part.notes = clean_notes(part.notes, role=role, detail=detail, tempo_bpm=bpm,
+                                 grid=options.grid)
+        if role == "other":
+            part.notes = reduce_accompaniment(part.notes, detail=detail)
+        for item in part.notes:
+            item.end = min(duration, item.end)
+        part.notes = [item for item in part.notes if item.end > item.start]
+        midi.instruments.append(part)
+    notes = [item for part in midi.instruments for item in part.notes]
+    key_signature = estimate_key(notes)
+    if not notes:
+        warnings.append("No pitched notes were detected. Silence, percussion, very short clips or an unsuitable source may produce a score of rests.")
     midi_path.parent.mkdir(parents=True, exist_ok=True)
     midi.write(str(midi_path))
+    return {"engine": f"Demucs htdemucs + {engine.name}" if separator else engine.name,
+            "tempo_bpm": bpm, "note_count": len(notes), "raw_note_count": raw_count,
+            "key_signature": key_signature, "transcription_mode": mode,
+            "timing_offset_seconds": timing_offset,
+            "duration_seconds": duration, "sources": list(parts), "warnings": warnings}

@@ -11,7 +11,8 @@ from app.models import PipelineError
 logger = logging.getLogger(__name__)
 
 
-def normalize_audio(source: Path, destination: Path, settings: Settings) -> float:
+def normalize_audio(source: Path, destination: Path, settings: Settings, *,
+                    preserve_stereo: bool = False) -> float:
     """Stream the complete recording to disk, trusting decoded frames over duration tags."""
     destination.parent.mkdir(parents=True, exist_ok=True)
     command = [
@@ -20,7 +21,9 @@ def normalize_audio(source: Path, destination: Path, settings: Settings) -> floa
         "-format_whitelist", "wav,mp3,flac,ogg,mov,mp4,m4a,3gp,3g2,mj2,aac,aiff",
         "-i", str(source.resolve()),
         "-map", "0:a:0", "-vn", "-sn", "-dn", "-map_metadata", "-1",
-        "-ac", "1", "-ar", "22050",
+        # Source separation benefits from stereo placement and full-bandwidth
+        # input; individual transcription models still use mono22.05kHz.
+        "-ac", "2" if preserve_stereo else "1", "-ar", "44100" if preserve_stereo else "22050",
     ]
     # An administrator can opt into a cap. Zero means no duration limit.
     if settings.max_audio_seconds:

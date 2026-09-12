@@ -1,7 +1,7 @@
 import logging
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import Settings
@@ -41,6 +41,14 @@ def create_app(settings: Settings | None = None, *, start_worker: bool = True) -
     app.include_router(uploads.router)
     app.include_router(jobs.router)
     app.include_router(downloads.router)
+
+    @app.get('/api/example')
+    def example():
+        from app.services.example_audio import piano_example
+
+        return Response(piano_example(), media_type='audio/wav',
+                        headers={'Content-Disposition': 'attachment; filename="Piano study.wav"',
+                                 'Cache-Control': 'public, max-age=86400'})
 
     @app.get('/health', include_in_schema=False)
     @app.get('/api/health')

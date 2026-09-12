@@ -43,6 +43,32 @@ def test_restart_recovery_and_retention(settings):
     assert not directory.exists()
 
 
+def test_schema_upgrade_preserves_existing_completed_jobs(settings):
+    import json
+    import sqlite3
+
+    settings.database_path.parent.mkdir(parents=True)
+    job_id = str(uuid4())
+    # Exercise the exact schema used before analysis reports were introduced.
+    with sqlite3.connect(settings.database_path) as db:
+        db.execute('''CREATE TABLE jobs (
+            id TEXT PRIMARY KEY, filename TEXT NOT NULL, input_name TEXT NOT NULL,
+            status TEXT NOT NULL, stage TEXT NOT NULL, progress INTEGER NOT NULL,
+            created_at REAL NOT NULL, updated_at REAL NOT NULL, options TEXT NOT NULL,
+            error TEXT, artifacts TEXT NOT NULL DEFAULT '[]')''')
+        db.execute('INSERT INTO jobs VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                   (job_id, 'old.mp3', 'upload/input.mp3', 'completed', 'completed', 100,
+                    time.time(), time.time(), json.dumps({'tempo_bpm': 120,
+                    'time_signature': '4/4', 'grid': 'sixteenth'}), None, '[]'))
+    store = JobStore(settings.database_path)
+    store.initialize()
+    store.initialize()
+    restored = store.get(job_id)
+    assert restored['status'] == 'completed'
+    assert restored['analysis'] == {}
+    assert ScoreOptions.model_validate(restored['options']).transcription_mode == 'piano'
+
+
 def test_coordinator_runs_actual_child_process(settings):
     store, job_id, directory = seed(settings)
     runner = JobRunner(settings, store)
@@ -65,28 +91,39 @@ def test_late_render_failure_preserves_downloadable_intermediate_files(settings,
 
     store, job_id, directory = seed(settings)
     store.claim_next()
-    monkeypatch.setattr('app.workers.transcription_worker.normalize_audio', lambda *args: 200.0)
+    monkeypatch.setattr('app.workers.transcription_worker.normalize_audio', lambda *args, **kwargs: 200.0)
 
-    def transcribe(audio, destination, options, *, progress_callback):
+    def transcribe(audio, destination, options, *, progress_callback, piano_model_path):
         destination.write_bytes(b'MThd')
         progress_callback(.5)
         assert store.get(job_id)['progress'] == 44
         progress_callback(1)
+        return {'tempo_bpm': 96, 'key_signature': 'G', 'engine': 'test', 'warnings': []}
 
-    def notate(source, destination, options, title, *, duration_seconds):
+    def notate(source, destination, options, title, *, duration_seconds, key_signature):
         assert duration_seconds == 200.0
+        assert options.tempo_bpm == 96
+        assert key_signature == 'G'
         destination.write_text('<score-partwise/>')
+
+    def playback(xml, midi, destination, tempo):
+        assert tempo == 96
+        destination.write_text('{"notes":[]}')
+        return {'notes': []}
 
     def render(*args):
         raise PipelineError('Renderer unavailable')
 
     monkeypatch.setattr('app.workers.transcription_worker.transcribe', transcribe)
     monkeypatch.setattr('app.services.midi_to_score.midi_to_musicxml', notate)
+    monkeypatch.setattr('app.workers.transcription_worker.export_score_playback', playback)
     monkeypatch.setattr('app.workers.transcription_worker.render_score', render)
     process_job(job_id, settings)
     job = store.get(job_id)
     assert job['status'] == 'failed'
-    assert {a['name'] for a in job['artifacts']} == {'transcription.mid', 'score.musicxml'}
+    assert {a['name'] for a in job['artifacts']} == {'transcription.mid', 'score.musicxml', 'playback.json'}
+    assert job['analysis']['tempo_bpm'] == 96
+    assert job['options']['tempo_bpm'] == 96
     assert (directory / 'outputs/transcription.mid').exists()
     assert (directory / 'outputs/score.musicxml').exists()
     assert not (directory / 'upload/input.wav').exists()

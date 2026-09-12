@@ -8,6 +8,7 @@ from music21 import (
     chord,
     clef,
     instrument,
+    key,
     layout,
     metadata,
     meter,
@@ -109,7 +110,8 @@ def _voices(groups: dict) -> list[list[_Span]]:
     return voices or [[]]
 
 
-def _add_span(voices: list[stream.Voice], span: _Span, bar_ticks: int, grid: int) -> None:
+def _add_span(voices: list[stream.Voice], span: _Span, bar_ticks: int, grid: int,
+              tonal_key: key.Key | None = None) -> None:
     """Split a sounding event at barlines and attach ties to individual chord notes."""
     position = span.start
     while position < span.end:
@@ -118,6 +120,16 @@ def _add_span(voices: list[stream.Voice], span: _Span, bar_ticks: int, grid: int
         notes = []
         for pitch in span.pitches:
             item = note.Note(pitch)
+            if tonal_key is not None:
+                # MIDI stores no spelling. Prefer the estimated key's diatonic
+                # spelling, then its accidental direction for chromatic notes.
+                diatonic = next((p for p in tonal_key.pitches if p.pitchClass == pitch % 12), None)
+                if diatonic is not None:
+                    item.pitch.name = diatonic.name
+                    # Changing B to C-flat (or C to B-sharp) can cross an octave.
+                    item.pitch.octave += (pitch - item.pitch.midi) // 12
+                elif tonal_key.sharps < 0 and item.pitch.accidental and item.pitch.accidental.alter > 0:
+                    item.pitch = item.pitch.getEnharmonic()
             before = position > span.start or pitch in span.tied_from
             after = stop < span.end or pitch in span.tied_to
             if before or after:
@@ -130,7 +142,8 @@ def _add_span(voices: list[stream.Voice], span: _Span, bar_ticks: int, grid: int
 
 
 def midi_to_musicxml(midi_path: Path, xml_path: Path, options: ScoreOptions, title: str,
-                     *, duration_seconds: float | None = None) -> None:
+                     *, duration_seconds: float | None = None,
+                     key_signature: str | None = None) -> None:
     """Quantize a whole recording into two piano staves, including its silent time.
 
     Ordinary polyphony uses independent voices. Dense passages use chord segments
@@ -139,9 +152,14 @@ def midi_to_musicxml(midi_path: Path, xml_path: Path, options: ScoreOptions, tit
     repeatedly scanning a full recording while filling rests and splitting ties.
     """
     grid = 4 if options.grid == "sixteenth" else 2
+    effective_tempo = options.tempo_bpm or 120.0
+    tonal_key = None
+    if key_signature:
+        tonic, mode = key_signature.rsplit(" ", 1)
+        tonal_key = key.Key(tonic, mode)
     grouped, last_tick = _read_notes(midi_path, grid)
     if duration_seconds is not None and math.isfinite(duration_seconds) and duration_seconds > 0:
-        last_tick = max(last_tick, math.ceil(duration_seconds * options.tempo_bpm / 60 * grid))
+        last_tick = max(last_tick, math.ceil(duration_seconds * effective_tempo / 60 * grid))
 
     score = stream.Score(id="piano-score")
     score.metadata = metadata.Metadata(title=title[:120], composer="")
@@ -156,12 +174,14 @@ def midi_to_musicxml(midi_path: Path, xml_path: Path, options: ScoreOptions, tit
         measures = [stream.Measure(number=i + 1) for i in range(measure_count)]
         measures[0].insert(0, clef.TrebleClef() if index == 0 else clef.BassClef())
         measures[0].insert(0, meter.TimeSignature(options.time_signature))
+        if tonal_key is not None:
+            measures[0].insert(0, key.Key(tonal_key.tonic.name, tonal_key.mode))
         if index == 0:
-            measures[0].insert(0, tempo.MetronomeMark(number=options.tempo_bpm))
+            measures[0].insert(0, tempo.MetronomeMark(number=effective_tempo))
         for voice_index, spans in enumerate(_voices(groups)):
             voices = [stream.Voice(id=voice_index + 1) for _ in measures]
             for span in spans:
-                _add_span(voices, span, bar_ticks, grid)
+                _add_span(voices, span, bar_ticks, grid, tonal_key)
             for measure, voice in zip(measures, voices, strict=True):
                 voice.makeRests(fillGaps=True, timeRangeFromBarDuration=False,
                                 refStreamOrTimeRange=[0, bar_ticks / grid], inPlace=True)

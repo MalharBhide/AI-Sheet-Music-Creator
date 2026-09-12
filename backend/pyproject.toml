@@ -16,21 +16,41 @@ dependencies = [
   "numpy>=1.26.4,<2",
   "pypdf>=5.4,<7",
   "soundfile>=0.12,<1",
+  "pretty-midi>=0.2.11,<1",
 ]
 
 [project.optional-dependencies]
 transcription = [
   "basic-pitch==0.4.0",
+  # TensorFlow's Linux ARM wheel delegates its runtime to the AWS CPU package.
+  "tensorflow-cpu-aws==2.15.0; sys_platform == 'linux' and platform_machine == 'aarch64'",
+  "piano-transcription-inference==0.0.6",
+  "torch==2.5.1",
+  "torchaudio==2.5.1",
+  "torchlibrosa>=0.1,<0.2",
+  "demucs==4.0.1",
   # Basic Pitch pins resampy <0.4.3, which imports the removed pkg_resources API.
   "setuptools>=75,<81",
 ]
-dev = ["pytest>=8.3,<9", "httpx>=0.28,<1", "ruff>=0.11,<1", "pretty-midi>=0.2.11,<1"]
+dev = ["pytest>=8.3,<9", "httpx>=0.28,<1", "ruff>=0.11,<1"]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+torchaudio = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
 
 [tool.setuptools.packages.find]
 include = ["app*"]
 
 [tool.setuptools]
 py-modules = ["main"]
+
+[tool.setuptools.package-data]
+app = ["assets/*.wav"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

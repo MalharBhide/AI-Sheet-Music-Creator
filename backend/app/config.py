@@ -24,9 +24,9 @@ class Settings(BaseSettings):
     job_timeout_seconds: int = Field(default=0, ge=0)
     render_timeout_seconds: int = Field(default=0, ge=0)
     retention_hours: int = Field(default=24, ge=1, le=720)
-    default_tempo_bpm: int = Field(default=120, ge=30, le=240)
     ffmpeg_bin: str = 'ffmpeg'
     musescore_bin: str | None = None
+    piano_model_path: Path = Path.home() / '.cache/piano-scribe/piano.pth'
 
     @field_validator('cors_origins', mode='before')
     @classmethod

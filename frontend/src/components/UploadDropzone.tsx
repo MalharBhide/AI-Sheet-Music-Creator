@@ -1,5 +1,5 @@
 import { ChangeEvent, DragEvent, useRef, useState } from "react";
-import { UploadCloud } from "lucide-react";
+import { ArrowUp, Check, FileAudio2 } from "lucide-react";
 
 const acceptedAudioTypes = [
   "audio/mpeg",
@@ -13,10 +13,12 @@ const acceptedAudioTypes = [
 
 export default function UploadDropzone({
   onUpload,
-  disabled
+  disabled,
+  file
 }: {
   onUpload: (file: File) => void;
   disabled?: boolean;
+  file?: File | null;
 }) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -56,6 +58,7 @@ export default function UploadDropzone({
       onDrop={handleDrop}
       role="button"
       aria-disabled={disabled}
+      aria-label={file ? "Change audio recording" : "Choose an audio recording"}
       tabIndex={disabled ? -1 : 0}
       onKeyDown={(event) => {
         if (event.key === "Enter" || event.key === " ") {
@@ -71,11 +74,12 @@ export default function UploadDropzone({
         onChange={handleInput}
         disabled={disabled}
       />
-      <UploadCloud aria-hidden="true" size={30} />
-      <div>
-        <h2>Choose an audio file</h2>
-        <p>Drop it here or click to browse. Clear solo piano works best.</p>
+      <span className="upload-symbol">{file ? <FileAudio2 aria-hidden="true" size={26} /> : <ArrowUp aria-hidden="true" size={26} />}</span>
+      <div className="dropzone-copy">
+        <h2>{file ? file.name : "Drop your audio here"}</h2>
+        <p>{file ? `${file.size >= 1024 * 1024 ? (file.size / (1024 * 1024)).toFixed(1) + " MB" : Math.max(1, Math.round(file.size / 1024)) + " KB"} · Click to replace` : <>or <span>browse files</span> from your device</>}</p>
       </div>
+      {file ? <span className="file-selected"><Check size={12} /> READY TO UPLOAD</span> : <span className="file-types">MP3 · WAV · M4A · FLAC + more</span>}
     </div>
   );
 }

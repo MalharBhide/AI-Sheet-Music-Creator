@@ -1,7 +1,6 @@
 services:
   backend:
     build: ./backend
-    platform: linux/amd64
     init: true
     ports:
       - "127.0.0.1:8000:8000"
