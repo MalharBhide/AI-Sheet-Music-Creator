@@ -159,7 +159,7 @@ def test_missing_piano_model_does_not_silently_use_basic_pitch(tmp_path, fake_in
 
 def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
         tmp_path, fake_inference, monkeypatch):
-    from app.services import source_separation
+    from app.services import source_separation, vocal_melody
 
     audio, output = tmp_path / 'input.wav', tmp_path / 'out.mid'
     sf.write(str(audio), np.full(22050 * 2, .01), 22050)
@@ -171,8 +171,15 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
             return {role: path for role in ['vocals', 'bass', 'other', 'drums']}
 
     monkeypatch.setattr(source_separation, 'StemSeparator', Separator)
+    # This test isolates routing and cleanup; the trained decoder is exercised
+    # separately with real acoustic arrays and in native integration tests.
+    class VocalModel:
+        def predict(self, path, acoustic, bpm):
+            return midi(note(72, 0, .4), note(74, .5, .9))
+
+    monkeypatch.setattr(vocal_melody, 'VocalMelody', VocalModel)
     fake_inference.results.extend([
-        [(72, 0, .4), (84, 0, .4), (74, .5, .9)],
+        [],  # Vocal decoding must still run when Basic Pitch emits no events.
         [(36, 0, 1), (48, 0, 1)],
         [(60, 0, 1), (64, 0, 1), (67, 0, 1), (71, 0, 1)],
     ])

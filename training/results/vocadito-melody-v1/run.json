@@ -1,0 +1,37 @@
+{
+  "completed_at": "2026-09-13T21:53:51.842178+00:00",
+  "platform": "Linux ARM64 / CPU",
+  "python": "3.11",
+  "torch": "2.5.1",
+  "basic_pitch": "0.4.0",
+  "librosa": "0.11.0",
+  "mir_eval": "0.8.2",
+  "parameters": 2187,
+  "epochs": 30,
+  "batch_size": 4,
+  "window_frames": 256,
+  "sample_rate": 22050,
+  "feature_rate_hz": 50,
+  "steps_per_epoch": 60,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "gradient_clip": 3,
+  "onset_loss_weight": 0.3,
+  "onset_positive_weight": 8,
+  "split_duration_seconds": {
+    "train": 555.0314285714286,
+    "validation": 143.59297052154193,
+    "test": 118.504126984127
+  },
+  "baseline_commit": "d7dd74f",
+  "scope": "Monophonic vocal recognition before score quantization",
+  "source_checkpoint": "backend/app/assets/vocal-melody-v1.pt",
+  "source_sha256": {
+    "training/prepare_vocadito.py": "d587596decd1070183455c9e2fbb2af652e524f3dc92c013f489c4de3ea4d94a",
+    "training/cache_vocadito.py": "6a86c43b52578d07880cd42a965dab149d346a5cc56b861dc6a1c3e70a068254",
+    "training/train_melody.py": "d5a912b031e133723136878a37d4525bd96adbbe8f0873c2926b78010c25d8df",
+    "training/stress_melody.py": "2b00752d3d658890d1ff91f9e75f6f64fcbf5eb5d5c06458e049e69bd8147f3e",
+    "backend/app/services/melody_decoder.py": "fcc22608ab635f0569b9af3e76ab23fbe37b125e148618e65a065c6e354d4387"
+  }
+}

@@ -1,0 +1,18 @@
+Vocadito melody decoder v1 (vocal-melody-v1.pt)
+
+Copyright 2026 Piano Scribe contributors.
+This newly trained checkpoint is licensed under Creative Commons Attribution 4.0:
+https://creativecommons.org/licenses/by/4.0/
+
+Training data: Vocadito, Zenodo record 5578807 (CC BY 4.0).
+Authors: Rachel Bittner, Katherine Pasalo, Juan Jose Bosch,
+Gabriel Meseguer Brocal, and David Rubinstein.
+Source: https://zenodo.org/records/5578807
+
+The checkpoint contains a new supervised melody decoder trained on human note
+annotations, using frozen acoustic features. It does not contain the dataset
+recordings or the upstream Basic Pitch/Demucs model weights. Those upstream
+models retain their respective licenses.
+
+Architecture, training, evaluation and limitations:
+https://github.com/MalharBhide/AI-Sheet-Music-Creator/blob/main/docs/melody-model-card.md

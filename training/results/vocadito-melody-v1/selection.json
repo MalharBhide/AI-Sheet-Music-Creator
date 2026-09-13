@@ -1,0 +1,11 @@
+{
+  "epoch": 30,
+  "decoder": {
+    "smoothing": 5,
+    "minimum": 0.06,
+    "onset_threshold": 0.8
+  },
+  "checkpoint_sha256": "60209b56b6618335f22d1e4e9fc4604d7a2e501df3242d4a18e3df01d81034f9",
+  "selection": "Minimum validation frame cross entropy, then maximum validation note onset F1",
+  "test_evaluated": true
+}

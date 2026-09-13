@@ -1,5 +1,47 @@
 # Verification
 
+## Trained vocal melody model — 2026-09-13
+
+Built the [audio-to-piano framework](docs/transcription-framework.md), downloaded
+checksum-verified CC BY 4.0 Vocadito recordings, and actually trained a
+2,187-parameter temporal neural decoder for 30 epochs/1,800 updates. Training
+uses 26 recordings; eight validation and six test recordings have separate
+singer IDs. The shipped checkpoint is used for **every Full song upload's vocal
+melody**, independent of song name or file format. No user recording was used
+for fitting or choosing model settings.
+
+- Held-out real singing, macro averages: correct pitch **63.1% → 73.4%**, false
+  silence **23.6% → 15.0%**, note-onset F1 **.525 → .622**, onset/offset F1
+  **.388 → .504**. Every test recording improved in pitch recall and onset F1.
+- The frozen model also improved on held-out real voices mixed with procedural
+  accompaniment and passed through Demucs: onset F1 **.518 → .618**, false
+  silence **22.8% → 15.1%**. This controlled stress test is not a benchmark of
+  commercial-song arrangements. The test singers are the same as the clean test.
+- Training data, exact splits, optimizer history, checkpoint hash, individual
+  failures, two annotators' results and reproduction commands are retained in
+  the [model card](docs/melody-model-card.md) and [training directory](training/README.md).
+- **145 regression checks passed**, including eight decoder contracts; **all
+  six native integration checks passed** through real models, FFmpeg and
+  MuseScore. Native coverage includes WAV, 181-second stereo VBR MP3, 0.125-second
+  MP3, silence, full-song MP3 and multipage rendering. Backend/training lint and
+  diff whitespace checks passed. Targeted readiness/routing tests also passed
+  after adding the packaged-model check.
+- The model is packaged in the backend wheel, verified by SHA-256 at runtime,
+  and loaded with `weights_only=True`. Existing overlapping audio windows keep
+  model input bounded; there is no new recording-length or upload-size cap.
+- Rebuilt the local backend and regenerated the user's complete 240.7-second
+  MP3 at the same 97 BPM/eighth-note settings as the prior score. Job
+  `6c14a15d-72d7-4d2f-9524-0c8f94c0a1b8` completed with the new model, four score
+  pages and 1,090 playback notes. All six download formats were nonempty.
+  Browser checks confirmed playback, click-to-seek and keyboard seeking.
+  This unannotated recording was an operational check, not training data or an
+  accuracy benchmark. The previous result remains available for comparison.
+
+These tests establish a measured improvement in vocal recognition and working
+exports. They do not establish that a full commercial mix has become an accurate
+piano arrangement. Six held-out recordings are a small test set; further tuning
+requires new independent test data and labeled real mixtures.
+
 ## Vocal refinement and beat interpretation — 2026-09-13
 
 The previous full-song melody selector could replace a sustained vocal fundamental with a later overtone attack, or re-attack the same piano key on each vibrato cycle. Isolated vocals now receive an independent pYIN pitch check before quantization. Conflicting harmonics are rejected when tracking is reliable; supported note spans trim outer tails. Repeated same-pitch detections join only with continuous voicing and no renewed amplitude attack. Uncertain tracking retains the neural event. The weights and polyphonic piano/accompaniment engines are unchanged.

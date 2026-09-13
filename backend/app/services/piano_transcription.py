@@ -136,6 +136,7 @@ class _GeneralEngine:
         self.model = Model(ICASSP_2022_MODEL_PATH)
         self.predict_function = predict
         self.detail = detail
+        self.vocal_model = None
 
     def predict(self, path: Path, role: str, bpm: float):
         import pretty_midi
@@ -152,11 +153,14 @@ class _GeneralEngine:
             minimum_note_length=90.0 if self.detail == "balanced" else 60.0,
             multiple_pitch_bends=False, melodia_trick=self.detail == "detailed", midi_tempo=bpm,
         )
-        del arrays, events
         if role == "vocals":
-            from app.services.vocal_refinement import refine_vocals
+            from app.services.vocal_melody import VocalMelody
 
-            refine_vocals(path, midi)
+            if self.vocal_model is None:
+                self.vocal_model = VocalMelody()
+            # Decode continuous evidence, including frames for which Basic
+            # Pitch's generic event thresholds emitted no note at all.
+            return self.vocal_model.predict(path, arrays, bpm)
         return midi
 
 
@@ -236,7 +240,7 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
         warnings.append("No pitched notes were detected. Silence, percussion, very short clips or an unsuitable source may produce a score of rests.")
     midi_path.parent.mkdir(parents=True, exist_ok=True)
     midi.write(str(midi_path))
-    return {"engine": f"Demucs htdemucs + {engine.name} + pYIN vocal refinement" if separator else engine.name,
+    return {"engine": f"Demucs htdemucs + {engine.name} + Vocadito melody decoder v1" if separator else engine.name,
             "tempo_bpm": bpm, "note_count": len(notes), "raw_note_count": raw_count,
             "key_signature": key_signature, "transcription_mode": mode,
             "timing_offset_seconds": timing_offset,

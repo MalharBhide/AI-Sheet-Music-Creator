@@ -50,7 +50,7 @@ include = ["app*"]
 py-modules = ["main"]
 
 [tool.setuptools.package-data]
-app = ["assets/*.wav"]
+app = ["assets/*.wav", "assets/*.pt", "assets/*.LICENSE.txt"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

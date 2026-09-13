@@ -5,6 +5,7 @@ from uuid import UUID
 from fastapi import HTTPException, Request
 
 from app.config import Settings
+from app.services.vocal_melody import CHECKPOINT
 
 
 def dependencies(settings: Settings) -> dict[str, bool]:
@@ -12,6 +13,7 @@ def dependencies(settings: Settings) -> dict[str, bool]:
             'basic_pitch': importlib.util.find_spec('basic_pitch') is not None,
             'piano_transcription': importlib.util.find_spec('piano_transcription_inference') is not None,
             'piano_model': settings.piano_model_path.is_file(),
+            'vocal_model': CHECKPOINT.is_file(),
             'source_separation': importlib.util.find_spec('demucs') is not None,
             'music21': importlib.util.find_spec('music21') is not None,
             'musescore': settings.renderer() is not None}

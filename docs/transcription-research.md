@@ -1,5 +1,15 @@
 # Audio-to-score system research
 
+## Supervised melody model — September 13, 2026
+
+The earlier pYIN event filter below is now the comparison baseline. Full-song
+vocals use a newly trained temporal decoder, with published dataset provenance,
+singer-disjoint splits, held-out real-singing results and a controlled separation
+test. Read the [framework](transcription-framework.md),
+[training procedure](../training/README.md) and [model card](melody-model-card.md).
+The measured improvement applies to vocal recognition; the model does not learn
+the complete piano arrangement or establish commercial-product parity.
+
 ## Follow-up: vocal continuity and beat evidence — September 13, 2026
 
 Basic Pitch exposes polyphonic pitch, onset and contour estimates and documents its strongest use case as one instrument at a time ([official repository](https://github.com/spotify/basic-pitch)). Its note events alone do not establish which harmonic is the sung fundamental, or whether a vibrato cycle is a new piano attack. Librosa's [pYIN documentation](https://librosa.org/doc/0.11.0/generated/librosa.pyin.html) describes a fundamental-frequency estimator using probabilistic YIN candidates and Viterbi decoding of pitch and voicing. This provides an independent monophonic check using dependencies already installed in the application.
