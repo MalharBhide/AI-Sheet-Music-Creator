@@ -6,6 +6,7 @@ import pytest
 import soundfile as sf
 
 from app.services.audio_analysis import (
+    _tempo_from_onsets,
     balance_piano_arrangement,
     clean_notes,
     estimate_grid_phase,
@@ -121,7 +122,7 @@ def test_tempo_does_not_average_half_and_double_time_into_unobserved_bpm(tmp_pat
     samples = np.full(22050 * 100, .01, dtype='float32')
     samples[:22050 * 30] = 0
     sf.write(str(audio), samples, 22050)
-    candidates = iter([90.0, 180.0])
+    candidates = iter([90.0] * 4 + [180.0] * 4)
     librosa = SimpleNamespace(onset=SimpleNamespace(onset_strength=lambda **kwargs: np.ones(100)),
                               beat=SimpleNamespace(beat_track=lambda **kwargs: (next(candidates), np.arange(20))))
     monkeypatch.setitem(sys.modules, 'librosa', librosa)
@@ -160,3 +161,19 @@ def test_real_beat_tracker_finds_regular_click_tempo(tmp_path, bpm):
     sf.write(str(audio), samples, rate)
     detected, _ = estimate_tempo(audio, None)
     assert detected == pytest.approx(bpm, abs=3)
+
+
+def test_competing_syncopated_pulse_does_not_force_the_120_bpm_prior():
+    librosa = pytest.importorskip('librosa')
+    rate = 22050
+    frames = np.arange(30 * rate // 256)
+    envelope = np.zeros(len(frames))
+    # Main beat at 96 BPM, with a competing 128 BPM rhythmic layer. The former
+    # single-prior tracker selects ~129; compare acoustic support instead.
+    for spacing, strength in [(.625, 2.25), (.46875, 2)]:
+        for at in np.arange(.3, 29.5, spacing):
+            envelope += strength * np.exp(-.5 * ((frames - at * rate / 256) / 1.2) ** 2)
+    old, _ = librosa.beat.beat_track(onset_envelope=envelope, sr=rate,
+                                   hop_length=256, trim=False)
+    assert float(np.asarray(old).reshape(-1)[0]) == pytest.approx(129, abs=2)
+    assert _tempo_from_onsets(envelope, rate) == pytest.approx(96, abs=.2)

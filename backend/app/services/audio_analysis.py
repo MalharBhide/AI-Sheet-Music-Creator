@@ -8,6 +8,38 @@ import numpy as np
 import soundfile as sf
 
 
+def _tempo_from_onsets(envelope: np.ndarray, sample_rate: int) -> float | None:
+    """Compare beat hypotheses against the audio instead of one 120 BPM prior."""
+    import librosa
+    from scipy.stats import theilslopes
+
+    hypotheses = []
+    for prior in (60, 90, 120, 180):
+        tempo, beats = librosa.beat.beat_track(onset_envelope=envelope,
+                                             sr=sample_rate, hop_length=256,
+                                             trim=True, start_bpm=prior)
+        bpm = float(np.asarray(tempo).reshape(-1)[0])
+        if len(beats) < 4 or not 30 <= bpm <= 240:
+            continue
+        spacing = float(theilslopes(beats)[0])
+        fitted = 60 * sample_rate / (256 * spacing) if spacing > 0 else bpm
+        if abs(fitted - bpm) < 0.08 * bpm:
+            bpm = fitted
+        if not 30 <= bpm <= 240:
+            continue
+        # Strong attacks support a beat. Reward covering the recording's attacks
+        # as well, so merely choosing every second strong beat does not win.
+        strengths = np.array([np.max(envelope[max(0, b - 2):b + 3]) for b in beats])
+        regularity = np.median(np.abs(np.diff(beats) - np.median(np.diff(beats))))
+        regularity /= max(1.0, float(np.median(np.diff(beats))))
+        support = float(strengths.mean() * np.sqrt(strengths.sum() / envelope.sum()))
+        support *= max(0.0, 1 - 4 * regularity)
+        hypotheses.append((support, bpm))
+    if not hypotheses:
+        return None
+    return max(hypotheses, key=lambda item: (item[0], -abs(item[1] - 120)))[1]
+
+
 def estimate_tempo(audio_path: Path, requested: float | None) -> tuple[float, list[str]]:
     """Estimate one stable score tempo from at most three 30 second excerpts.
 
@@ -35,25 +67,25 @@ def estimate_tempo(audio_path: Path, requested: float | None) -> tuple[float, li
                                                    hop_length=256)
             if not np.any(envelope):
                 continue
-            tempo, beats = librosa.beat.beat_track(onset_envelope=envelope,
-                                                 sr=audio.samplerate, hop_length=256,
-                                                 trim=False)
-            bpm = float(np.asarray(tempo).reshape(-1)[0])
-            if len(beats) >= 4 and 30 <= bpm <= 240:
-                # The returned tempo is limited by the analysis frame size.
-                # Fitting detected beat positions yields much finer timing than
-                # carrying that quantization error through a long score.
-                spacing = float(np.polyfit(np.arange(len(beats)), beats, 1)[0])
-                fitted = 60 * audio.samplerate / (256 * spacing) if spacing > 0 else bpm
-                if abs(fitted - bpm) < 0.08 * bpm:
-                    bpm = fitted
+            bpm = _tempo_from_onsets(envelope, audio.samplerate)
+            if bpm is not None:
                 candidates.append(bpm)
     if not candidates:
         return 120.0, ["A steady tempo could not be detected; 120 BPM was used. Set the tempo manually for a better rhythmic result."]
     # Select an observed tempo instead of averaging incompatible beat levels.
     # For example, 90 and 180 BPM are an ambiguity; their median135 is neither.
-    bpm = min(candidates, key=lambda candidate: (
+    anchor = min(candidates, key=lambda candidate: (
         sum(abs(math.log(candidate / other)) for other in candidates), abs(candidate - 120)))
+    # Sections can latch onto alternate beats or twice the beat rate. Align
+    # only clear octave ambiguities before consensus; never average 90 and 180.
+    aligned = []
+    for candidate in candidates:
+        nearest = min((candidate / 2, candidate, candidate * 2),
+                      key=lambda value: abs(math.log(value / anchor)))
+        aligned.append(nearest if 30 <= nearest <= 240 and abs(nearest / anchor - 1) < .08
+                       else candidate)
+    bpm = min(aligned, key=lambda candidate: sum(abs(math.log(candidate / other))
+                                               for other in aligned))
     # Snap tiny numerical offsets from an integer metronome, but retain genuine
     # fractional tempi so timing does not drift through a long recording.
     rounded = round(bpm)

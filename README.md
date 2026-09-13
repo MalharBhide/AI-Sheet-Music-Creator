@@ -37,14 +37,18 @@ If an old open tab still displays **“Choose a non-empty file up to 0 MB”**, 
 | Mode | Pipeline | Best use |
 | --- | --- | --- |
 | **Solo piano** (`piano`) | High-resolution piano CRNN → note cleanup → grand-staff notation | Clear recordings of piano notes; uses a dedicated piano onset/offset model |
-| **Full song** (`full_mix`) | Demucs four-stem separation → Basic Pitch on vocals, bass, and accompaniment → piano reduction | A playable draft from a mixed song; drum detections are excluded from pitched notation |
+| **Full song** (`full_mix`) | Demucs separation → Basic Pitch → pYIN vocal check → piano reduction | A playable draft from vocals, bass and accompaniment; drums are excluded from pitched notation |
 | **Melody** (`melody`) | Basic Pitch → single-line selection and cleanup | A clear solo instrument or isolated melody; this mode does not perform source separation |
 
 The website initially selects **Full song**. The API defaults to **Solo piano** when `transcription_mode` is omitted, preserving compatibility with existing callers.
 
 Full-song mode creates a piano arrangement of detected material. Separated accompaniment can contain several instruments and artifacts; it is not an isolated original piano part. Balanced detail reduces clutter, while more detail keeps additional detections. Both need musical review, especially for dense mixes, heavy reverb, pedal, repeated notes, and overlapping vocals.
 
-Tempo is estimated automatically from bounded excerpts unless you supply a 30–240 BPM override. If a steady tempo cannot be found, the system uses 120 BPM and reports a warning. The score currently uses one tempo throughout, so rubato, swing, tempo changes, and half/double-time interpretations may need manual correction. Time signature is selected by the user, with `4/4` as the default; it is not automatically detected.
+An independent pYIN fundamental-frequency track checks isolated vocal notes before score cleanup. It rejects strongly contradicted harmonics, trims unsupported outer tails, and joins false repeated attacks only when pitch and amplitude remain continuous. Breaths and new amplitude attacks preserve repeated notes; uncertain pitch tracking preserves the neural detection. This refinement is specific to the separated vocal part, not the polyphonic accompaniment or solo-piano engine. It uses existing dependencies and bounded audio chunks, without downloading another checkpoint. Re-upload an older recording to apply these changes.
+
+Tempo is estimated automatically from bounded excerpts unless you supply a 30–240 BPM override. The estimator compares several beat-speed hypotheses against onset strength and coverage, fits timing robustly, and reconciles clear half/double-time differences between excerpts. If a steady tempo cannot be found, the system uses 120 BPM and reports a warning. The score currently uses one tempo throughout, so rubato, swing, tempo changes, and beat-level interpretations may need manual correction. Time signature is selected by the user, with `4/4` as the default; it is not automatically detected.
+
+The [vocal regression benchmark](docs/vocal-quality-benchmark.json) compares identical neural predictions with and without refinement on seven original synthesized phrases. Across 70 reference notes, pitch/onset F1 increased from **0.7558 to 0.9420** and pitch/onset/offset F1 from **0.4767 to 0.8696**. These controlled fixtures cover harmonics, vibrato, breath-like noise and repeated attacks; they do not measure real singing or full-song arrangement accuracy. Reproduce them with `PYTHONPATH=backend python scripts/benchmark_vocals.py /tmp/vocal-quality` in the complete backend runtime.
 
 The system estimates a key from detected pitch durations when the evidence is sufficient. This guides notation and does not change detected pitches. Rhythm is quantized to the chosen grid, with cleanup for duplicate detections and overlapping notes. Grand-staff notation preserves chords, rests, voices, and barline ties, but hand assignment, spelling, beat alignment, and phrasing may still need editing.
 

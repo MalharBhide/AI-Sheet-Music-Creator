@@ -1,5 +1,13 @@
 # Audio-to-score system research
 
+## Follow-up: vocal continuity and beat evidence — September 13, 2026
+
+Basic Pitch exposes polyphonic pitch, onset and contour estimates and documents its strongest use case as one instrument at a time ([official repository](https://github.com/spotify/basic-pitch)). Its note events alone do not establish which harmonic is the sung fundamental, or whether a vibrato cycle is a new piano attack. Librosa's [pYIN documentation](https://librosa.org/doc/0.11.0/generated/librosa.pyin.html) describes a fundamental-frequency estimator using probabilistic YIN candidates and Viterbi decoding of pitch and voicing. This provides an independent monophonic check using dependencies already installed in the application.
+
+The implemented refinement applies that check only to separated vocals. Strong conflicting pitch evidence rejects an event; matching evidence bounds its outer duration. Continuous same-pitch events merge only when no breath or amplitude re-attack is observed. Uncertain tracking preserves neural events. This is a conservative combination of detectors and acoustic evidence, not a newly trained model or a replacement for source separation. Singing with overlapping voices, consonant changes without clear amplitude attacks, and expressive pitch motion remain limitations.
+
+The accompanying [reproducible benchmark](vocal-quality-benchmark.json) records improvements on seven original synthesized vocal-like phrases, including the failure cases. It does not establish improved accuracy on an annotated real-song corpus. Beat estimation was also revised after a reproducible competing-pulse fixture showed that a single 120 BPM prior could select the wrong rhythmic layer. Candidate beats are now compared against the audio, with robust interval fitting and half/double-time reconciliation across excerpts.
+
 ## Findings and engineering decision
 
 A useful transcription product needs to identify the intended musical part, detect notes, interpret rhythm, produce playable notation, and let a musician hear and correct the result. A downloadable PDF proves only that engraving succeeded. It does not establish that the underlying notes, meter, or arrangement are correct.

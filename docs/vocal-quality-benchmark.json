@@ -1,0 +1,258 @@
+{
+  "date": "2026-09-13",
+  "scope": "Seven original synthesized monophonic vocal-like phrases, 70 known notes. Not a benchmark of real singers, separation quality, or full piano arrangements.",
+  "method": "Real Basic Pitch 0.4.0 baseline versus the same predictions checked by pYIN and acoustic continuity, then identical score quantization. Pitch/onset tolerance 80 ms; offset tolerance max(50 ms, 20% of reference duration).",
+  "aggregate": {
+    "baseline": {
+      "expected_notes": 70,
+      "detected_notes": 102,
+      "pitch_onset": {
+        "matched_notes": 65,
+        "precision": 0.6373,
+        "recall": 0.9286,
+        "f1": 0.7558
+      },
+      "pitch_onset_offset": {
+        "matched_notes": 41,
+        "precision": 0.402,
+        "recall": 0.5857,
+        "f1": 0.4767
+      }
+    },
+    "refined": {
+      "expected_notes": 70,
+      "detected_notes": 68,
+      "pitch_onset": {
+        "matched_notes": 65,
+        "precision": 0.9559,
+        "recall": 0.9286,
+        "f1": 0.942
+      },
+      "pitch_onset_offset": {
+        "matched_notes": 60,
+        "precision": 0.8824,
+        "recall": 0.8571,
+        "f1": 0.8696
+      }
+    }
+  },
+  "fixtures": {
+    "clear-low": {
+      "baseline": {
+        "expected_notes": 10,
+        "detected_notes": 9,
+        "pitch_onset": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        },
+        "pitch_onset_offset": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        }
+      },
+      "refined": {
+        "expected_notes": 10,
+        "detected_notes": 9,
+        "pitch_onset": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        },
+        "pitch_onset_offset": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        }
+      },
+      "runtime_seconds": 1.5
+    },
+    "clear-high": {
+      "baseline": {
+        "expected_notes": 10,
+        "detected_notes": 10,
+        "pitch_onset": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "pitch_onset_offset": {
+          "precision": 0.7,
+          "recall": 0.7,
+          "f1": 0.7
+        }
+      },
+      "refined": {
+        "expected_notes": 10,
+        "detected_notes": 10,
+        "pitch_onset": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "pitch_onset_offset": {
+          "precision": 0.7,
+          "recall": 0.7,
+          "f1": 0.7
+        }
+      },
+      "runtime_seconds": 0.55
+    },
+    "strong-overtone": {
+      "baseline": {
+        "expected_notes": 10,
+        "detected_notes": 14,
+        "pitch_onset": {
+          "precision": 0.7143,
+          "recall": 1.0,
+          "f1": 0.8333
+        },
+        "pitch_onset_offset": {
+          "precision": 0.5,
+          "recall": 0.7,
+          "f1": 0.5833
+        }
+      },
+      "refined": {
+        "expected_notes": 10,
+        "detected_notes": 10,
+        "pitch_onset": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "pitch_onset_offset": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "runtime_seconds": 0.96
+    },
+    "fast-overtone": {
+      "baseline": {
+        "expected_notes": 10,
+        "detected_notes": 10,
+        "pitch_onset": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "pitch_onset_offset": {
+          "precision": 0.9,
+          "recall": 0.9,
+          "f1": 0.9
+        }
+      },
+      "refined": {
+        "expected_notes": 10,
+        "detected_notes": 10,
+        "pitch_onset": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "pitch_onset_offset": {
+          "precision": 0.9,
+          "recall": 0.9,
+          "f1": 0.9
+        }
+      },
+      "runtime_seconds": 0.44
+    },
+    "wide-vibrato": {
+      "baseline": {
+        "expected_notes": 10,
+        "detected_notes": 25,
+        "pitch_onset": {
+          "precision": 0.4,
+          "recall": 1.0,
+          "f1": 0.5714
+        },
+        "pitch_onset_offset": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "refined": {
+        "expected_notes": 10,
+        "detected_notes": 10,
+        "pitch_onset": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "pitch_onset_offset": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "runtime_seconds": 0.77
+    },
+    "breathy": {
+      "baseline": {
+        "expected_notes": 10,
+        "detected_notes": 25,
+        "pitch_onset": {
+          "precision": 0.28,
+          "recall": 0.7,
+          "f1": 0.4
+        },
+        "pitch_onset_offset": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "refined": {
+        "expected_notes": 10,
+        "detected_notes": 10,
+        "pitch_onset": {
+          "precision": 0.7,
+          "recall": 0.7,
+          "f1": 0.7
+        },
+        "pitch_onset_offset": {
+          "precision": 0.6,
+          "recall": 0.6,
+          "f1": 0.6
+        }
+      },
+      "runtime_seconds": 0.55
+    },
+    "rearticulated": {
+      "baseline": {
+        "expected_notes": 10,
+        "detected_notes": 9,
+        "pitch_onset": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        },
+        "pitch_onset_offset": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        }
+      },
+      "refined": {
+        "expected_notes": 10,
+        "detected_notes": 9,
+        "pitch_onset": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        },
+        "pitch_onset_offset": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        }
+      },
+      "runtime_seconds": 0.57
+    }
+  }
+}

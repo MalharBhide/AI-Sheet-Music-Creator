@@ -153,6 +153,10 @@ class _GeneralEngine:
             multiple_pitch_bends=False, melodia_trick=self.detail == "detailed", midi_tempo=bpm,
         )
         del arrays, events
+        if role == "vocals":
+            from app.services.vocal_refinement import refine_vocals
+
+            refine_vocals(path, midi)
         return midi
 
 
@@ -232,7 +236,7 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
         warnings.append("No pitched notes were detected. Silence, percussion, very short clips or an unsuitable source may produce a score of rests.")
     midi_path.parent.mkdir(parents=True, exist_ok=True)
     midi.write(str(midi_path))
-    return {"engine": f"Demucs htdemucs + {engine.name}" if separator else engine.name,
+    return {"engine": f"Demucs htdemucs + {engine.name} + pYIN vocal refinement" if separator else engine.name,
             "tempo_bpm": bpm, "note_count": len(notes), "raw_note_count": raw_count,
             "key_signature": key_signature, "transcription_mode": mode,
             "timing_offset_seconds": timing_offset,
