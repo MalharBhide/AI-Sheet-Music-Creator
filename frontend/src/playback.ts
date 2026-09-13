@@ -1,5 +1,29 @@
 export type NoteEvent = { pitch: number; start: number; end: number; velocity: number };
-export type ScoreAudio = { duration: number; tempo_bpm: number; notes: NoteEvent[] };
+export type ScorePosition = { time: number; page: number; x: number; y: number; height: number };
+export type ScoreAudio = { duration: number; tempo_bpm: number; notes: NoteEvent[]; positions?: ScorePosition[] };
+
+export function scorePositionAt(positions: ScorePosition[], time: number): ScorePosition | null {
+  let low = 0, high = positions.length;
+  while (low < high) {
+    const middle = (low + high) >>> 1;
+    if (positions[middle].time <= time) low = middle + 1;
+    else high = middle;
+  }
+  return positions[low - 1] ?? null;
+}
+
+export function scorePositionNear(positions: ScorePosition[], page: number, x: number, y: number): ScorePosition | null {
+  if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+  let best: ScorePosition | null = null, distance = Infinity;
+  for (const point of positions) {
+    if (point.page !== page) continue;
+    // Choose the nearest staff system first, then its nearest musical onset.
+    const vertical = Math.max(point.y - y, y - point.y - point.height, 0);
+    const candidate = vertical * 100 + Math.abs(point.x - x);
+    if (candidate < distance) { distance = candidate; best = point; }
+  }
+  return best;
+}
 
 export function normalizePlayback(value: unknown): ScoreAudio {
   if (!value || typeof value !== "object") throw new Error("The score audio could not be read.");
@@ -12,7 +36,14 @@ export function normalizePlayback(value: unknown): ScoreAudio {
     .map(note => ({ ...note, velocity: Number.isFinite(note.velocity) ? Math.max(1, Math.min(127, note.velocity)) : 80 }))
     .sort((a, b) => a.start - b.start || a.pitch - b.pitch);
   const duration = notes.reduce((end, note) => Math.max(end, note.end), data.duration!);
-  return { notes, duration, tempo_bpm: Number.isFinite(data.tempo_bpm) ? data.tempo_bpm! : 120 };
+  const positions = Array.isArray(data.positions) && data.positions.every((p, i, all) => p
+    && Number.isFinite(p.time) && p.time >= 0 && p.time <= duration + 0.1
+    && Number.isInteger(p.page) && p.page >= 0
+    && Number.isFinite(p.x) && p.x >= 0 && p.x <= 1
+    && Number.isFinite(p.y) && p.y >= 0 && p.y < 1
+    && Number.isFinite(p.height) && p.height > 0 && p.y + p.height <= 1.01
+    && (!i || p.time >= all[i - 1].time)) ? data.positions : [];
+  return { notes, duration, tempo_bpm: Number.isFinite(data.tempo_bpm) ? data.tempo_bpm! : 120, positions };
 }
 
 export function firstNoteAt(notes: NoteEvent[], position: number): number {

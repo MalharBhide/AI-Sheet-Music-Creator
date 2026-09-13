@@ -1,5 +1,17 @@
 # Verification
 
+## Score following, click-to-seek and simpler studio — 2026-09-13
+
+The player and sheet preview now share the audio clock and MuseScore's engraved segment positions. A green cursor follows musical onsets, scrolls between staff systems, and turns pages. Clicking the score seeks to the nearest onset on that page and staff system while preserving play/pause. The layout puts playback beside the score, emphasizes PDF download, and collapses advanced settings, secondary formats, transcription notes and history.
+
+- Backend regression suite: **124 passed**, with six native cases deselected. Frontend: **26 tests passed**, with TypeScript/Vite production build and backend lint passing.
+- The updated native multipage renderer test passed through real music21 and MuseScore. It checks automatic position export across every PDF/SVG page and verifies that half-beat note timestamps stay on the same 120 BPM audio clock. Audio-model inference was not rerun for this presentation change.
+- Added timing, nearest-onset, invalid-map and optional-renderer-failure regressions. A missing position map preserves audio and downloads instead of displaying a guessed cursor.
+- Added position maps to all three existing completed local scores without rerunning transcription or changing their notes. Browser checks on the eight-page result verified paused and playing click-to-seek, keyboard note navigation, seeking across pages, automatic following, manual page browsing and resuming following.
+- Checked the score and upload layouts at desktop and 390px phone width. Zoomed score clicking works with no horizontal overflow of the overall mobile page. A navigation check exposed duplicate React component keys that could leave the previous player visible after **New score**; player and preview now have separate keys.
+
+This change synchronizes the existing synthesized score with its notation. It does not change transcription accuracy or the piano sound engine. Scores rendered without MuseScore 3 segment positions retain manual page navigation.
+
 ## Piano sustain, dynamics and export fixes — 2026-09-12
 
 The reported held-note sound had several concrete causes. Browser synthesis decayed to a constant sustain floor, score export flattened all velocities to 90, and music21's generic MIDI export re-attacked individual pitches when a tied chord changed membership. The revised exporter follows each pitch's ties within its staff/voice, preserves per-note MusicXML dynamics, and retains meter/key metadata. Full-song arrangements now balance the vocal melody above bass and accompaniment. The synthesized piano decays toward silence while held, damps on release, and resumes its existing decay when seeking.

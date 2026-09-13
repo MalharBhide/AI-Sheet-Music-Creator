@@ -20,11 +20,11 @@ Docker includes Python 3.11 and Debian Bookworm's [MuseScore 3 package](https://
 
 ## Using the studio
 
-1. Drop or choose a WAV, MP3, FLAC, OGG, M4A, AAC, or AIFF recording. **Try a piano example** submits an original 96 BPM piano study through the real transcription pipeline. The bundled recording is rendered by MuseScore from the reproducible quality fixture in `scripts/benchmark_transcription.py`.
-2. Select **Full song**, **Solo piano**, or **Melody**, then choose balanced or more detailed notation. Under **Tempo & rhythm**, optionally enter a tempo, choose a time signature, and select an eighth- or sixteenth-note grid.
-3. Click **Create sheet music**. The studio shows actual upload and processing progress and reconnects after temporary network interruptions.
-4. Read the score with page and zoom controls. Use the synthesized piano player to play/pause, restart, seek, change playback speed, and adjust volume. The player sounds the final score's notes. For a recording uploaded in the current session, expand the original-audio comparison to listen to the source.
-5. Download a PDF to read or print, MusicXML to edit in a notation application, or MIDI for music software. Vector downloads include the first SVG page and a ZIP of every SVG page.
+1. Drop or choose a WAV, MP3, FLAC, OGG, M4A, AAC, or AIFF recording. **Try an example instead** submits an original 96 BPM piano study through the real transcription pipeline. The bundled recording is rendered by MuseScore from the reproducible quality fixture in `scripts/benchmark_transcription.py`.
+2. Select **Full song**, **Solo piano**, or **Melody**. Expand **More options** to adjust notation detail, tempo, time signature, or the note grid.
+3. Click **Create piano score**. The studio shows actual upload and processing progress and reconnects after temporary network interruptions.
+4. Press **Play** to hear the score. A green cursor follows the music and turns pages automatically. Click a note to jump to that moment; playback continues if playing and stays paused if paused. The score also supports left/right arrow keys. Page controls let you browse independently; **Follow playback** returns to the current music. Zoom and playback speed remain available beside the score. For a recording uploaded in the current session, expand the original-audio comparison to listen to the source.
+5. **Download sheet music** saves the PDF. Expand **Other formats** for editable MusicXML, MIDI, the first SVG page, or a ZIP of every SVG page.
 
 The URL contains the job ID, so reloading or returning to that URL restores the job. Recent transcription links are stored on this device in the browser's local storage. Generated files are available for **24 hours after processing finishes** by default; an older history entry may remain after its files expire. Original-audio comparison is available only while the uploaded file remains in the current page session. The server deletes source audio after processing.
 
@@ -173,8 +173,15 @@ The public state sequence is `queued → preprocessing → transcribing → scor
 {
   "duration": 8.0,
   "tempo_bpm": 120.0,
-  "notes": [{ "pitch": 60, "start": 0.0, "end": 0.5, "velocity": 80 }]
+  "notes": [{ "pitch": 60, "start": 0.0, "end": 0.5, "velocity": 80 }],
+  "positions": [{ "time": 0.0, "page": 0, "x": 0.2, "y": 0.15, "height": 0.1 }]
 }
+```
+
+`positions` is optional: MuseScore 3's segment-position export supplies onset times in seconds, zero-based page numbers, and coordinates normalized to each SVG page. The cursor spans the staff system. Invalid or unavailable maps leave audio and downloads usable, with manual page browsing. The Docker renderer exports positions at an explicit 300 DPI to match its SVG coordinate scale. To add following to unexpired scores created before this feature, without rerunning transcription:
+
+```bash
+docker compose exec backend python -m app.services.score_positions
 ```
 
 Downloads return 409 when a requested file is not yet ready. Expired or unavailable files return 404 after the job finishes. A full queue returns 429 with `Retry-After`.

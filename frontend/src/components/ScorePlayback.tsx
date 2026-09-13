@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { Headphones, Loader2, Pause, Play, RotateCcw, Volume2 } from "lucide-react";
 import { formatTime, normalizePlayback, ScoreAudio, ScorePlayer } from "../playback";
 
-export default function ScorePlayback({ url, originalUrl, onPlaying }: {
-  url?: string | null; originalUrl?: string | null; onPlaying?: (playing: boolean) => void;
+export default function ScorePlayback({ url, originalUrl, onPositionChange, onScoreLoaded, seekRequest }: {
+  url?: string | null; originalUrl?: string | null;
+  onPositionChange: (position: number) => void; onScoreLoaded: (score: ScoreAudio | null) => void;
+  seekRequest: { time: number } | null;
 }) {
   const [score, setScore] = useState<ScoreAudio | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -18,25 +20,25 @@ export default function ScorePlayback({ url, originalUrl, onPlaying }: {
 
   useEffect(() => {
     const controller = new AbortController();
-    setScore(null); setError(null); setPosition(0); setIsPlaying(false);
+    setScore(null); onScoreLoaded(null); setError(null); setPosition(0); setIsPlaying(false);
     if (url) fetch(url, { signal: controller.signal }).then(async response => {
       if (!response.ok) throw new Error("Score audio is unavailable. Download the MIDI to listen in your music app.");
       const result = normalizePlayback(await response.json());
-      if (!controller.signal.aborted) setScore(result);
+      if (!controller.signal.aborted) { setScore(result); onScoreLoaded(result); }
     }).catch(err => {
       if (!controller.signal.aborted) setError(err instanceof Error ? err.message : "Score audio could not be loaded.");
     });
     return () => { operation.current++; controller.abort(); player.current?.dispose(); player.current = null; };
-  }, [url, retry]);
+  }, [url, retry, onScoreLoaded]);
 
-  useEffect(() => { onPlaying?.(isPlaying); }, [isPlaying, onPlaying]);
+  useEffect(() => { onPositionChange(position); }, [position, onPositionChange]);
 
   useEffect(() => {
     if (!isPlaying) return;
     let frame = 0;
     function update() {
       const current = player.current?.position ?? 0;
-      setPosition(current);
+      setPosition(Math.floor(current * 20) / 20);
       if (score && current >= score.duration) { player.current?.pause(); setIsPlaying(false); }
       else frame = requestAnimationFrame(update);
     }
@@ -77,9 +79,13 @@ export default function ScorePlayback({ url, originalUrl, onPlaying }: {
     if (isPlaying) void play(next);
   }
 
+  useEffect(() => {
+    if (seekRequest && score) seek(seekRequest.time);
+  }, [seekRequest]);
+
   const available = !!score?.notes.length;
   return <div className={`playback-panel ${!url ? "playback-unavailable" : ""}`} aria-label="Score playback">
-    <div className="playback-label"><span><Headphones size={14} aria-hidden="true" /> LISTEN TO YOUR SCORE</span><span className="instrument-label">Synthesized piano</span></div>
+    <div className="playback-label"><span><Headphones size={16} aria-hidden="true" /> Listen to your score</span></div>
     {error && <div className="playback-error" role="alert">{error} {!score && <button className="text-button" onClick={() => setRetry(value => value + 1)}>Retry</button>}</div>}
     <div className="transport">
       <button className="icon-button restart-button" aria-label="Restart playback" disabled={!available} onClick={() => seek(0)}><RotateCcw size={17} aria-hidden="true" /></button>

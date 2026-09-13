@@ -79,4 +79,7 @@ def render_score(xml_path: Path, directory: Path, settings: Settings) -> list[di
             if artifact["media_type"] == "image/svg+xml":
                 archive.write(directory / artifact["name"], artifact["name"])
     artifacts.append({"name": "score-svgs.zip", "label": "All SVG pages", "media_type": "application/zip"})
+    from app.services.score_positions import attach_score_positions
+
+    attach_score_positions(xml_path, directory, settings)
     return artifacts

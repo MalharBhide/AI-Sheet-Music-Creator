@@ -1,5 +1,6 @@
 """Opt-in integration gate: no substitutions for FFmpeg, Basic Pitch, music21 or MuseScore."""
 import importlib.util
+import json
 import os
 import subprocess
 import time
@@ -89,6 +90,7 @@ def test_native_renderer_preserves_multiple_pages(tmp_path):
 
     from app.models import ScoreOptions
     from app.services.midi_to_score import midi_to_musicxml
+    from app.services.playback import export_score_playback
     from app.services.score_render import render_score
 
     settings = Settings(storage_root=tmp_path, _env_file=None)
@@ -100,7 +102,17 @@ def test_native_renderer_preserves_multiple_pages(tmp_path):
     score.write('midi', fp=str(midi))
     xml = tmp_path / 'score.musicxml'
     midi_to_musicxml(midi, xml, ScoreOptions(), 'Multi-page integration test')
+    export_score_playback(xml, midi, tmp_path / 'playback.json', 120)
     artifacts = render_score(xml, tmp_path, settings)
     page_count = len(PdfReader(tmp_path / 'score.pdf').pages)
     assert page_count > 1
     assert sum(a['media_type'] == 'image/svg+xml' for a in artifacts) == page_count
+    playback = json.loads((tmp_path / 'playback.json').read_text())
+    positions = playback['positions']
+    assert {position['page'] for position in positions} == set(range(page_count))
+    assert positions[0]['time'] == 0
+    assert positions[-1]['time'] <= playback['duration']
+    # A half-beat note at 120 BPM starts every quarter second. Engraver
+    # timestamps must use the same audio clock, including later pages.
+    for position in positions:
+        assert position['time'] == pytest.approx(round(position['time'] * 4) / 4, abs=.002)
