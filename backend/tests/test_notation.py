@@ -153,3 +153,24 @@ def test_estimated_flat_key_spells_notes_without_changing_sounding_pitch(tmp_pat
     assert tree.findtext('.//pitch/alter') == '-1'
     parsed = converter.parse(str(xml))
     assert [p.pitch.midi for p in parsed.parts[0].flatten().notes] == [70, 74, 77]
+
+
+def test_musicxml_preserves_per_pitch_dynamics_through_chords_and_barlines(tmp_path):
+    import pretty_midi
+
+    midi, xml = tmp_path / 'dynamics.mid', tmp_path / 'dynamics.musicxml'
+    source = pretty_midi.PrettyMIDI(initial_tempo=120)
+    piano = pretty_midi.Instrument(0)
+    velocities = {48: 68, 60: 40, 64: 55, 67: 104}
+    piano.notes = [pretty_midi.Note(velocity, pitch, 0, 3)
+                   for pitch, velocity in velocities.items()]
+    source.instruments.append(piano)
+    source.write(str(midi))
+    midi_to_musicxml(midi, xml, ScoreOptions(), 'Piano dynamics')
+    tree = ET.parse(xml)
+    assert all(element.get('dynamics') for element in tree.findall('.//note')
+               if element.find('pitch') is not None)
+    parsed = converter.parse(str(xml))
+    for element in parsed.recurse().notes:
+        for pitched_note in element.notes if isinstance(element, chord.Chord) else [element]:
+            assert pitched_note.volume.velocity == velocities[pitched_note.pitch.midi]

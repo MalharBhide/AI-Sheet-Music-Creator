@@ -74,6 +74,11 @@ def test_audio_upload_to_all_download_formats(tmp_path, encoding):
             assert response.content
         assert not list((settings.jobs_dir / job['job_id'] / 'upload').iterdir())
         assert not (settings.jobs_dir / job['job_id'] / 'work').exists()
+    # The worker can still be exiting when TestClient stops the coordinator.
+    # A completed result must remain completed after the server shuts down.
+    from app.services.job_store import JobStore
+
+    assert JobStore(settings.database_path).get(job['job_id'])['status'] == 'completed'
 
 
 @pytest.mark.integration

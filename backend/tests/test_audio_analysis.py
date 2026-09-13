@@ -6,6 +6,7 @@ import pytest
 import soundfile as sf
 
 from app.services.audio_analysis import (
+    balance_piano_arrangement,
     clean_notes,
     estimate_grid_phase,
     estimate_key,
@@ -76,6 +77,20 @@ def test_accompaniment_reduction_limits_actual_sounding_polyphony():
 def test_detailed_accompaniment_can_retain_five_notes():
     notes = cleaned([n(60 + i) for i in range(8)], role='other', detail='detailed')
     assert len(notes) == 5
+
+
+def test_arrangement_places_melody_above_accompaniment_without_changing_notes():
+    parts = {role: SimpleNamespace(notes=[n(60, 0, 8, 40), n(64, 8, 9, 100)])
+             for role in ('vocals', 'bass', 'other')}
+    balance_piano_arrangement(parts)
+    assert min(item.velocity for item in parts['vocals'].notes) > max(
+        item.velocity for item in parts['other'].notes)
+    assert [item.velocity for item in parts['bass'].notes] == [54, 82]
+    for part in parts.values():
+        assert [(item.pitch, item.start, item.end) for item in part.notes] == [(60, 0, 8), (64, 8, 9)]
+        assert part.notes[0].velocity < part.notes[1].velocity
+    # Missing stems and silent recordings are valid.
+    balance_piano_arrangement({'vocals': SimpleNamespace(notes=[])})
 
 
 def test_tempo_override_does_not_import_or_read_audio(tmp_path, monkeypatch):

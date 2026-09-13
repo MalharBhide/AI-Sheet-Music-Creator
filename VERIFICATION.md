@@ -1,5 +1,20 @@
 # Verification
 
+## Piano sustain, dynamics and export fixes — 2026-09-12
+
+The reported held-note sound had several concrete causes. Browser synthesis decayed to a constant sustain floor, score export flattened all velocities to 90, and music21's generic MIDI export re-attacked individual pitches when a tied chord changed membership. The revised exporter follows each pitch's ties within its staff/voice, preserves per-note MusicXML dynamics, and retains meter/key metadata. Full-song arrangements now balance the vocal melody above bass and accompaniment. The synthesized piano decays toward silence while held, damps on release, and resumes its existing decay when seeking.
+
+- Re-exporting the user's existing MusicXML reduced playback from **1,951 to 1,359 attacks**, removing **592 false attacks** without rerunning the model or deleting its written pitches. A controlled dense passage now retains eight original attacks instead of manufacturing 64.
+- A locally tested 45-second excerpt produced 208 source notes and 207 score notes (one coincident duplicate merged), with 53 distinct velocities preserved through MusicXML and MIDI. No user recording or excerpt is checked into the repository.
+- A fresh full-length upload through the rebuilt website completed with **1,359 notes, eight pages and 66 distinct velocities (40–106)**. All six download formats returned valid, nonempty files; PDF/SVG/ZIP page counts agreed. Canonical MIDI and browser playback matched every pitch and velocity, with onset/release differences no greater than one microsecond from JSON rounding.
+- Browser checks confirmed play, pause and seeking to 90 seconds on the regenerated score. The website was left on the new result, paused at the beginning.
+- Playback tests cover sparse and dense chords, repeated keys, independent unison releases, per-note velocities, meter/key, fractional tempo encoding, and a sparse note beyond six hours. Canonical export no longer reparses MIDI into a dense tick-to-time array proportional to recording length. This is an export regression, not a six-hour model-inference benchmark.
+- Final backend regression suite: **117 passed**. All six native pipeline cases completed, covering WAV, long/short/silent MP3, full-song mode, and multipage rendering. Frontend: **23 tests passed**, with TypeScript/Vite production build and backend lint passing.
+- Native testing also exposed a shutdown race: the coordinator could overwrite a completed result while its worker was exiting. Failure updates now atomically preserve terminal results and the original worker error. Dedicated shutdown regressions pass, including a fresh native MP3/API check asserting the saved result remains completed after shutdown.
+- Updated the development lockfile and native CI test install to use `httpx2`, required by the pinned Starlette runtime's test client.
+
+These checks establish timing/export correctness and a more useful piano balance. They do not establish that all detected pitches and rhythms match the original song. Full-mix transcription remains an approximate arrangement, and the browser instrument remains synthesized rather than a sampled acoustic piano.
+
 ## Transcription studio overhaul — 2026-09-11
 
 The application now uses a dedicated high-resolution piano model for solo piano, Demucs four-source separation before full-song arrangement, and a melody mode. Automatic tempo estimation, common onset-grid alignment, source-specific cleanup, and estimated key spelling replace the single fixed-tempo pipeline. The UI includes a complete studio, score playback with seeking/speed/volume, original-recording comparison, and a bundled original piano study.

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { firstNoteAt, formatTime, normalizePlayback, noteSchedule, playbackPosition, ScorePlayer } from "../src/playback.ts";
+import { firstNoteAt, formatTime, normalizePlayback, noteSchedule, pianoDecay, pianoEnvelopeAt, playbackPosition, ScorePlayer } from "../src/playback.ts";
 
 const note = { pitch: 60, start: 2, end: 6, velocity: 90 };
 
@@ -39,6 +39,22 @@ test("time labels remain readable beyond an hour", () => {
   assert.equal(formatTime(NaN), "0:00");
 });
 
+test("a piano string decays while held instead of sustaining an organ-like tone", () => {
+  const peak = pianoEnvelopeAt(60, 100, 0.006);
+  assert.ok(pianoEnvelopeAt(60, 100, 0.2) < peak * 0.6, "the hammer attack dies away quickly");
+  assert.ok(pianoEnvelopeAt(60, 100, 2) > peak * 0.01, "a genuine long note still rings");
+  assert.ok(pianoEnvelopeAt(60, 100, 10) < peak * 0.001, "there is no fixed sustain floor");
+  assert.ok(pianoDecay(36) > pianoDecay(84), "bass strings ring longer than treble strings");
+  assert.ok(pianoEnvelopeAt(60, 110, 0.1) > pianoEnvelopeAt(60, 40, 0.1), "velocity controls dynamics");
+});
+
+test("releasing a key damps its tail without extending short notes into the next chord", () => {
+  const releaseLevel = pianoEnvelopeAt(48, 100, 0.25);
+  assert.equal(pianoEnvelopeAt(48, 100, 0.25, 0.25), releaseLevel);
+  assert.ok(pianoEnvelopeAt(48, 100, 0.55, 0.25) < releaseLevel * 0.005);
+  assert.ok(pianoEnvelopeAt(48, 100, 0.55) > releaseLevel * 0.2, "the same key held down retains a natural decay");
+});
+
 test("the audio scheduler bounds voices, resumes held notes, and cancels stale starts", async () => {
   const previousAudioContext = globalThis.AudioContext;
   const previousWindow = globalThis.window;
@@ -47,14 +63,22 @@ test("the audio scheduler bounds voices, resumes held notes, and cancels stale s
   let context: FakeContext;
   let deferResume = false;
   const resumes: (() => void)[] = [];
-  const parameter = () => ({ value: 0, setValueAtTime() {}, linearRampToValueAtTime() {}, setTargetAtTime() {} });
+  type Automation = { kind: string; value: number; time: number; constant?: number };
+  const gains: { events: Automation[] }[] = [];
+  const parameter = () => ({ value: 0, events: [] as Automation[],
+    setValueAtTime(value: number, time: number) { this.events.push({ kind: "set", value, time }); },
+    linearRampToValueAtTime(value: number, time: number) { this.events.push({ kind: "ramp", value, time }); },
+    setTargetAtTime(value: number, time: number, constant: number) { this.events.push({ kind: "target", value, time, constant }); }
+  });
   class FakeContext {
     currentTime = 0;
+    sampleRate = 48000;
     destination = {};
     closed = false;
     constructor() { context = this; }
-    createGain() { return { gain: parameter(), connect() {}, disconnect() {} }; }
+    createGain() { const gain = parameter(); gains.push(gain); return { gain, connect() {}, disconnect() {} }; }
     createDynamicsCompressor() { return { threshold: parameter(), ratio: parameter(), connect() {} }; }
+    createBiquadFilter() { return { type: "lowpass", Q: parameter(), frequency: parameter(), connect() {}, disconnect() {} }; }
     createPeriodicWave() { return {}; }
     createOscillator() {
       const oscillator = { frequency: parameter(), started: undefined as number | undefined, stopped: undefined as number | undefined, onended: undefined as (() => void) | undefined,
@@ -76,6 +100,8 @@ test("the audio scheduler bounds voices, resumes held notes, and cancels stale s
     ] });
     await player.play(0, 1);
     assert.equal(oscillators.length, 1, "an hour-later note is not instantiated");
+    assert.ok(gains.slice(1, 3).flatMap(gain => gain.events).filter(event => event.kind === "target").every(event => event.value === 0),
+      "both acoustic components decay toward silence during the note and after release");
     context!.currentTime = 0.9;
     tick?.();
     assert.equal(oscillators.length, 2);
@@ -83,9 +109,15 @@ test("the audio scheduler bounds voices, resumes held notes, and cancels stale s
     assert.ok(Math.abs(player.pause() - 0.86) < 0.001);
     assert.equal(tick, undefined);
     assert.equal(oscillators[0].stopped, 0);
+    const beforeSeek = gains.length;
     await player.play(1.5, 0.5);
     assert.equal(oscillators.length, 4, "both held chord notes resume at a seek point");
     assert.equal(oscillators[2].frequency.value, 440 * 2 ** ((60 - 69) / 12));
+    const resumedAmplitude = gains[beforeSeek].events[0].value + gains[beforeSeek + 1].events[0].value;
+    assert.ok(Math.abs(resumedAmplitude - pianoEnvelopeAt(60, 90, 3)) < 1e-10,
+      "a sought note resumes its elapsed acoustic decay at the chosen playback speed");
+    assert.ok(gains.slice(beforeSeek, beforeSeek + 2).every(gain => !gain.events.some(event => event.kind === "ramp")),
+      "resuming a held key does not schedule a fresh hammer attack");
     assert.equal(await player.play(7200, 1), false, "seeking to the end does not restart or schedule notes");
     assert.equal(player.position, 7200);
     assert.equal(tick, undefined);

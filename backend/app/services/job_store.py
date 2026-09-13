@@ -92,7 +92,13 @@ class JobStore:
 
     def fail(self, job_id: str, message: str) -> None:
         # Completed earlier stages remain useful if a later stage fails.
-        self.update(job_id, status="failed", stage="failed", error=message)
+        # A worker may finish while the coordinator is shutting down. Terminal
+        # results must survive that race, including the original failure reason.
+        with closing(self.connect()) as db, db:
+            db.execute("""UPDATE jobs SET status = 'failed', stage = 'failed',
+                       error = ?, updated_at = ?
+                       WHERE id = ? AND status IN ('queued', 'processing')""",
+                       (message, time.time(), job_id))
 
     def recover_interrupted(self) -> None:
         with closing(self.connect()) as db, db:

@@ -1,4 +1,5 @@
 import math
+import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict, deque
 from dataclasses import dataclass
 from pathlib import Path
@@ -29,6 +30,7 @@ class _Span:
     pitches: tuple[int, ...]
     tied_from: frozenset[int] = frozenset()
     tied_to: frozenset[int] = frozenset()
+    velocities: tuple[tuple[int, int], ...] = ()
 
 
 def _read_notes(midi_path: Path, grid: int) -> tuple[list[dict], int]:
@@ -39,7 +41,7 @@ def _read_notes(midi_path: Path, grid: int) -> tuple[list[dict], int]:
         source.read()
     finally:
         source.close()
-    grouped: list[dict] = [defaultdict(set), defaultdict(set)]
+    grouped: list[dict] = [defaultdict(dict), defaultdict(dict)]
     last_tick = 0
     for track in source.tracks:
         elapsed = 0
@@ -48,19 +50,20 @@ def _read_notes(midi_path: Path, grid: int) -> tuple[list[dict], int]:
             if isinstance(event, midi.DeltaTime):
                 elapsed += event.time
             elif event.isNoteOn():
-                active[(event.channel, event.pitch)].append(elapsed)
+                active[(event.channel, event.pitch)].append((elapsed, event.velocity))
             elif event.isNoteOff():
                 starts = active[(event.channel, event.pitch)]
                 if not starts:
                     continue
-                onset = starts.popleft()
+                onset, velocity = starts.popleft()
                 pitch = event.pitch
                 if not 21 <= pitch <= 108:
                     continue
                 start = max(0, int(math.floor(onset * grid / source.ticksPerQuarterNote + 0.5)))
                 end = max(start + 1, int(math.floor(
                     elapsed * grid / source.ticksPerQuarterNote + 0.5)))
-                grouped[0 if pitch >= 60 else 1][(start, end)].add(pitch)
+                pitches = grouped[0 if pitch >= 60 else 1][(start, end)]
+                pitches[pitch] = max(pitches.get(pitch, 0), velocity)
                 last_tick = max(last_tick, end)
     return grouped, last_tick
 
@@ -72,23 +75,28 @@ def _chord_segments(groups: dict) -> list[_Span]:
     A repeated piano pitch starts a new attack even if an earlier detection of the
     same key overlaps it. This avoids requiring unsupported fifth/sixth voices.
     """
-    events = defaultdict(lambda: (Counter(), Counter()))
+    events = defaultdict(lambda: (Counter(), Counter(), {}))
     for (start, end), pitches in groups.items():
-        events[start][0].update(pitches)
-        events[end][1].update(pitches)
+        events[start][0].update(pitches.keys())
+        events[end][1].update(pitches.keys())
+        for pitch, velocity in pitches.items():
+            events[start][2][pitch] = max(events[start][2].get(pitch, 0), velocity)
     active: Counter = Counter()
+    velocities: dict[int, int] = {}
     previous = 0
     tied_from: frozenset[int] = frozenset()
     spans = []
-    for position, (starts, stops) in sorted(events.items()):
+    for position, (starts, stops, new_velocities) in sorted(events.items()):
         sounding = frozenset(active)
+        sounding_velocities = tuple((pitch, velocities[pitch]) for pitch in sorted(sounding))
         active.subtract(stops)
         active.update(starts)
         active = +active  # Remove zero counters after note-offs.
         continuing = sounding.intersection(active).difference(starts)
         if sounding and position > previous:
             spans.append(_Span(previous, position, tuple(sorted(sounding)), tied_from,
-                               frozenset(continuing)))
+                               frozenset(continuing), sounding_velocities))
+        velocities.update(new_velocities)
         tied_from = frozenset(continuing)
         previous = position
     return spans
@@ -105,7 +113,8 @@ def _voices(groups: dict) -> list[list[_Span]]:
             voice_index = len(voices)
             voices.append([])
             ends.append(0)
-        voices[voice_index].append(_Span(start, end, tuple(sorted(pitches))))
+        voices[voice_index].append(_Span(start, end, tuple(sorted(pitches)),
+                                        velocities=tuple(sorted(pitches.items()))))
         ends[voice_index] = end
     return voices or [[]]
 
@@ -114,12 +123,15 @@ def _add_span(voices: list[stream.Voice], span: _Span, bar_ticks: int, grid: int
               tonal_key: key.Key | None = None) -> None:
     """Split a sounding event at barlines and attach ties to individual chord notes."""
     position = span.start
+    velocities = dict(span.velocities)
     while position < span.end:
         measure_index, offset = divmod(position, bar_ticks)
         stop = min(span.end, (measure_index + 1) * bar_ticks)
         notes = []
         for pitch in span.pitches:
             item = note.Note(pitch)
+            item.volume.velocity = velocities.get(pitch, 90)
+            item.volume.velocityIsRelative = False
             if tonal_key is not None:
                 # MIDI stores no spelling. Prefer the estimated key's diatonic
                 # spelling, then its accidental direction for chromatic notes.
@@ -198,4 +210,20 @@ def midi_to_musicxml(midi_path: Path, xml_path: Path, options: ScoreOptions, tit
         staves.append(staff)
         score.insert(0, staff)
     score.insert(0, layout.StaffGroup(staves, name="Piano", symbol="brace", barTogether=True))
+    # music21's MusicXML exporter reads a chord's shared volume for every pitch,
+    # ignoring individual note volumes. Preserve those values by note identity
+    # and write the standard per-note dynamics attribute after export.
+    velocities = {}
+    for element in score.recurse().notes:
+        for pitched_note in element.notes if isinstance(element, chord.Chord) else [element]:
+            identifier = f'piano-note-{len(velocities)}'
+            pitched_note.id = identifier
+            velocities[identifier] = pitched_note.volume.velocity
     score.write("musicxml", fp=str(xml_path))
+    tree = ET.parse(xml_path)
+    for element in tree.iter('note'):
+        velocity = velocities.get(element.get('id'))
+        if velocity is not None:
+            element.set('dynamics', f'{velocity * 100 / 90:.4f}')
+            del element.attrib['id']
+    tree.write(xml_path, encoding='utf-8', xml_declaration=True)

@@ -161,3 +161,36 @@ def test_disabled_job_deadline_allows_long_running_child(settings, monkeypatch):
     monkeypatch.setattr('app.workers.job_runner.subprocess.Popen', lambda *args, **kwargs: Child())
     runner.execute(job)
     assert store.get(job_id)['status'] == 'completed'
+
+
+def test_shutdown_does_not_turn_a_completed_score_into_a_failure(settings, monkeypatch):
+    store, job_id, directory = seed(settings)
+    job = store.claim_next()
+    runner = JobRunner(settings, store)
+
+    class Child:
+        def poll(self):
+            return None  # The process is still exiting after saving its result.
+
+    def finish_while_shutting_down(_):
+        store.update(job_id, status='completed', stage='completed', progress=100,
+                     artifacts=[{'name': 'score.pdf'}])
+        return True
+
+    monkeypatch.setattr(runner.stopping, 'wait', finish_while_shutting_down)
+    monkeypatch.setattr(runner, 'kill', lambda process: None)
+    monkeypatch.setattr('app.workers.job_runner.subprocess.Popen', lambda *a, **k: Child())
+    runner.execute(job)
+    saved = store.get(job_id)
+    assert saved['status'] == saved['stage'] == 'completed'
+    assert saved['error'] is None
+    assert saved['artifacts'] == [{'name': 'score.pdf'}]
+    assert not (directory / 'upload/input.wav').exists()
+
+
+def test_late_coordinator_failure_preserves_the_original_worker_error(settings):
+    store, job_id, _ = seed(settings)
+    store.claim_next()
+    store.fail(job_id, 'The audio could not be decoded.')
+    store.fail(job_id, 'Processing was interrupted by a server shutdown.')
+    assert store.get(job_id)['error'] == 'The audio could not be decoded.'

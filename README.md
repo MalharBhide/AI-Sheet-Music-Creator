@@ -50,6 +50,8 @@ The system estimates a key from detected pitch durations when the evidence is su
 
 MusicXML is the final notation source. Its exported MIDI and playback JSON drive the website's synthesized piano, so completed-score playback agrees with the score rather than an unrelated raw model output. MIDI is also made available earlier in processing as a recoverable intermediate; if a job fails before score export finishes, that partial MIDI may not yet include final notation changes. Available artifacts remain downloadable when a later stage fails. Silence or a source with no detected pitches can produce a rest-only score with a warning.
 
+Score export follows ties for each pitch, including chords whose membership changes, and preserves individual note velocities. Full-song arrangements place the vocal melody above a quieter bass and accompaniment while retaining local dynamic variation. Browser piano tones decay while a key is held and damp on release; seeking resumes the existing decay. These changes improve playback and arrangement balance, but do not correct every pitch or rhythm detected by the model. Previously completed files need a new transcription to include the export and balance changes.
+
 ## Manual development setup
 
 Use **Python 3.11** and **Node.js 24**. The transcription dependency set is pinned for Python 3.11; Python 3.12 is not supported by this setup.

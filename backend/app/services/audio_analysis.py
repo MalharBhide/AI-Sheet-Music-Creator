@@ -186,6 +186,24 @@ def reduce_accompaniment(notes: list, *, detail: str) -> list:
     return [item for item in output if item.end > item.start]
 
 
+def balance_piano_arrangement(parts: dict) -> None:
+    """Give the lead a foreground dynamic while keeping expressive variation.
+
+    Separate model passes do not produce comparable instrument loudness. Center
+    each role on a piano dynamic, retaining local velocity differences within a
+    modest range. This is an arrangement choice, not a confidence calibration.
+    Timing, pitch and genuine held notes are left intact.
+    """
+    for role, target in {"vocals": 92, "bass": 68, "other": 54}.items():
+        part = parts.get(role)
+        if part is None or not part.notes:
+            continue
+        center = float(np.median([item.velocity for item in part.notes]))
+        for item in part.notes:
+            deviation = max(-14, min(14, (item.velocity - center) * 0.6))
+            item.velocity = round(target + deviation)
+
+
 def estimate_key(notes: list) -> str | None:
     """Pitch-duration profile estimate; this never changes detected pitches."""
     from music21 import analysis, note, stream

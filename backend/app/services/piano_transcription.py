@@ -6,6 +6,7 @@ import soundfile as sf
 
 from app.models import PipelineError, ScoreOptions
 from app.services.audio_analysis import (
+    balance_piano_arrangement,
     clean_notes,
     estimate_grid_phase,
     estimate_key,
@@ -223,6 +224,8 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
             item.end = min(duration, item.end)
         part.notes = [item for item in part.notes if item.end > item.start]
         midi.instruments.append(part)
+    if mode == "full_mix":
+        balance_piano_arrangement(parts)
     notes = [item for part in midi.instruments for item in part.notes]
     key_signature = estimate_key(notes)
     if not notes:
