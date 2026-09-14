@@ -11,7 +11,10 @@ the piano CRNN or a complete audio-to-arrangement model.
 | Corpus | Labels and intended use | Decision |
 | --- | --- | --- |
 | [Vocadito](https://zenodo.org/records/5578807) | 40 real singing recordings, frame pitch and two independent note annotations | Downloaded, checksum verified; first melody training/evaluation corpus |
-| [MAESTRO v3](https://magenta.withgoogle.com/datasets/maestro) | 198.7 hours of aligned piano audio/MIDI | Future solo-piano fine-tuning; 101 GB download and CC BY-NC-SA 4.0 terms; not downloaded for this vocal experiment |
+| [VocalSet & Annotated VocalSet](https://zenodo.org/records/10200775) | Reviewed pitch/boundary annotations, 20 singers, varied techniques | CC BY 4.0; pinned revision downloaded and checked for the context-model experiment |
+| [Children's Song Dataset](https://zenodo.org/records/4916302) | Labeled singing phrases | Dataset is CC BY-NC-SA 4.0, despite the paper's separate license; excluded from this potentially commercial service |
+| [DALI](https://github.com/gabolsgabs/DALI) | Aligned lyrics and melody notes | Non-commercial dataset terms; excluded from new training |
+| [MAESTRO v3](https://magenta.withgoogle.com/datasets/maestro) | 198.7 hours of aligned piano audio/MIDI | CC BY-NC-SA 4.0; excluded from new training for this potentially commercial service |
 | [MedleyVox](https://github.com/jeonchangbin49/MedleyVox) | Multiple-singer separation evaluation | Relevant to separation failures, not a substitute for paired piano-arrangement labels |
 
 Vocadito is CC BY 4.0; credit Rachel Bittner, Katherine Pasalo, Juan José Bosch,
@@ -90,3 +93,75 @@ the distinction between melody recognition and a complete piano arrangement.
 
 The released checkpoint, measured improvements and known failures are documented
 in the [model card](../docs/melody-model-card.md).
+
+## Larger commercial-compatible experiment
+
+**Status:** training and frozen testing are complete. The candidate failed its
+false-voicing release gate and remains a research artifact. See the
+[results and release decision](../docs/context-melody-experiment.md).
+
+The context experiment adds 288 VocalSet excerpts (3,260.58 seconds) to the
+original 26 Vocadito training clips (555.16 seconds). VocalSet validation uses
+48 clips from four other singers, and the new test reserves 48 clips from four
+unseen singers. The earlier six-clip Vocadito test is not reused for fitting or
+selection. All clips from each singer stay together. Shared scales and excerpts
+mean this is **singer-disjoint, not composition-disjoint**.
+
+The revised archive is pinned to Zenodo record 10200775, publisher MD5
+`8d39344bbc775aa040840783ae73cfa4`. Credit original audio authors Julia Wilkins,
+Prem Seetharaman, Alison Wahl and Bryan Pardo; annotation authors Behnam Faghih
+and Joseph Timoney; revised archive author Santiago Donaher. The original audio,
+annotations and revised combined record carry CC BY 4.0. Data are kept locally
+under `.training/`; user MP3s are diagnostic inputs only and never enter fitting.
+
+The [annotation paper](https://www.mdpi.com/2076-3417/12/18/9257) describes
+semi-automatic pitch/boundary labels with manual review. Its estimated pitches
+partly originate from pYIN, also an input to this model; that dependence limits
+the benchmark's independence. Labels are not a musician-approved piano
+arrangement. The loader chooses the `extended 2` variant before evaluation,
+requires coherent nominal/performed pitch agreement, excludes speech and
+ambiguous audio, and uses one constant semitone transposition per recording.
+It never sets reference pitches from app predictions. This quality-filtered
+sample does not represent every file in VocalSet.
+
+**Clock audit:** the revised audio and annotations have a 2:1 duration mismatch
+for all 12 selected `m9` validation recordings. Correct note times by exactly
+0.5, inferred from file duration versus the annotation's `Total Duration`, before
+cropping. A 2% tolerance admits only 1x, 0.5x or 2x clock ratios; other mismatches
+stop preparation for review. Singer splits and acoustic features remain fixed.
+No selected training or test recording needed this correction. The initial
+experiment with unreconciled validation clocks is invalid for model selection.
+
+```bash
+python training/prepare_vocalset.py .training
+python training/cache_vocalset.py .training --workers 2
+python training/train_context_melody.py .training --epochs 30 --rehearsal
+python training/train_context_melody.py .training --test
+python training/stress_context_melody.py .training
+python -m pytest -q training/test_context_melody.py
+```
+
+Only an older pre-audit cache needs `repair_vocalset_clocks.py .training`; new
+caches reconcile clocks on creation. Preserve rejected runs before starting a
+new experiment; do not delete or reuse consumed test reports.
+
+The candidate adds a 1.26-second pitch-shared context branch to V1, initially
+outputting zero correction. It has 5,853 total parameters. An unconstrained
+fine-tune improved exercise recognition but regressed on natural-song
+validation; it was rejected before testing. The rehearsal variant freezes V1's
+2,187 parameters, trains the remaining 3,666, and adds distillation on **training
+phrases only** to preserve existing pitch distributions and attack logits.
+Balanced sampling draws equally from the two corpora. Short examples are
+padded with ignored targets, never mislabeled as silence.
+
+Model selection uses mean validation frame loss across both corpora, then mean
+note/offset F1, preferring decoder settings that satisfy the natural-song
+validation regression gate. Evaluation compares directly against deployed V1,
+not the weaker pre-V1 detector. The frozen separation stress check uses the first
+two test clips per singer in the fixed manifest, adds independently generated
+backing at −3 dB RMS and runs Demucs. It is a controlled artifact test, not a
+commercial-song accuracy measurement.
+
+`audit_arrangement.py` separately measures detected versus retained notes for
+each source. It can reuse saved raw MIDI with `--reuse` and compare `--grid
+eighth` against `--grid sixteenth`. Note retention is not note correctness.

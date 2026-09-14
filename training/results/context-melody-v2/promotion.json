@@ -1,0 +1,18 @@
+{
+  "released": false,
+  "runtime_checkpoint": "vocal-melody-v1.pt",
+  "reason": "False voicing increased by 0.022479, above the pre-test 0.02 maximum increase. Passing the separated subset does not override the clean-test failure.",
+  "checkpoint_sha256": "85993789a7d62faa4a32825b8201790e8223b814c472a48f4d5f19776f8f01fc",
+  "gates": {
+    "note_f1": true,
+    "offset_f1": true,
+    "pitch_recall": true,
+    "false_silence": true,
+    "false_voicing": false,
+    "vocadito_validation": true,
+    "vocadito_offsets": true,
+    "vocadito_false_voicing": true
+  },
+  "test_consumed": true,
+  "next_evaluation": "Any further fitting or threshold selection needs fresh independent evaluation; these test results are no longer a tuning-blind benchmark."
+}

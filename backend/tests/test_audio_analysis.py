@@ -7,11 +7,13 @@ import soundfile as sf
 
 from app.services.audio_analysis import (
     _tempo_from_onsets,
+    arrange_melody_register,
     balance_piano_arrangement,
     clean_notes,
     estimate_grid_phase,
     estimate_key,
     estimate_tempo,
+    preserve_melody_releases,
     reduce_accompaniment,
 )
 
@@ -64,6 +66,41 @@ def test_melody_selects_salient_line_and_releases_old_pitch():
 def test_bass_does_not_keep_vocal_or_upper_harmonics():
     notes = cleaned([n(36), n(72, velocity=110)], role='bass')
     assert [v.pitch for v in notes] == [36]
+
+
+def test_trained_vocal_cleanup_preserves_fast_notes_and_low_singers():
+    result = cleaned([n(41, 0, .08), n(43, .13, .21), n(45, .26, .34)], role='vocals')
+    assert [item.pitch for item in result] == [41, 43, 45]
+    assert [item.start for item in result] == [0, .125, .25]
+
+
+def test_low_sung_melody_moves_as_a_whole_line_without_filling_rests():
+    lead = SimpleNamespace(notes=[n(48, 0, .2), n(52, 1, 1.3), n(55, 2, 2.2)])
+    bass = SimpleNamespace(notes=[n(36)])
+    assert arrange_melody_register({'vocals': lead, 'bass': bass}) == 12
+    assert [(item.pitch, item.start, item.end) for item in lead.notes] == [
+        (60, 0, .2), (64, 1, 1.3), (67, 2, 2.2)]
+    assert bass.notes[0].pitch == 36
+    assert arrange_melody_register({'vocals': lead}) == 0
+    assert arrange_melody_register({'piano': bass}) == 0
+    assert arrange_melody_register({'vocals': SimpleNamespace(notes=[])}) == 0
+
+
+def test_melody_register_preserves_wide_high_excursions():
+    lead = SimpleNamespace(notes=[n(48, 0, 10), n(90, 11, 12)])
+    assert arrange_melody_register({'vocals': lead}) == 0
+    assert [item.pitch for item in lead.notes] == [48, 90]
+
+
+def test_support_cannot_hold_or_reattack_a_melody_key_through_its_release():
+    lead = SimpleNamespace(notes=[n(64, 1, 2), n(64, 3, 4)])
+    support = SimpleNamespace(notes=[n(64, 0, 8), n(64, 1, 1.5), n(64, 1.5, 6),
+                                      n(64, 2, 2.5), n(67, 0, 8)])
+    assert preserve_melody_releases({'vocals': lead, 'other': support}) == 3
+    assert [(item.pitch, item.start, item.end) for item in support.notes] == [
+        (64, 0, 1), (64, 2, 2.5), (67, 0, 8)]
+    assert [(item.start, item.end) for item in lead.notes] == [(1, 2), (3, 4)]
+    assert preserve_melody_releases({'piano': support}) == 0
 
 
 def test_accompaniment_reduction_limits_actual_sounding_polyphony():

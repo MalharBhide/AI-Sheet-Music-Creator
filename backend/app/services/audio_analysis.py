@@ -1,6 +1,7 @@
 """Bounded audio analysis and musical cleanup shared by transcription engines."""
 
 import math
+from bisect import bisect_left
 from collections import defaultdict
 from pathlib import Path
 
@@ -107,9 +108,11 @@ def clean_notes(notes: list, *, role: str, detail: str, tempo_bpm: float,
     import pretty_midi
 
     step = 60 / tempo_bpm / (4 if grid == "sixteenth" else 2)
-    minimum = 0.045 if role == "piano" or detail == "detailed" else 0.09
+    # The supervised vocal decoder already rejects brief pitch glitches. A
+    # second generic 90 ms filter deletes legitimate fast melody notes.
+    minimum = 0.045 if role in ("piano", "vocals") or detail == "detailed" else 0.09
     velocity_floor = 12 if role == "piano" else 24 if detail == "detailed" else 32
-    ranges = {"piano": (21, 108), "melody": (45, 96), "vocals": (45, 96),
+    ranges = {"piano": (21, 108), "melody": (45, 96), "vocals": (21, 108),
               "bass": (21, 60), "other": (36, 96)}
     low, high = ranges[role]
     valid = []
@@ -234,6 +237,66 @@ def balance_piano_arrangement(parts: dict) -> None:
         for item in part.notes:
             deviation = max(-14, min(14, (item.velocity - center) * 0.6))
             item.velocity = round(target + deviation)
+
+
+def arrange_melody_register(parts: dict) -> int:
+    """Place a low sung melody in the piano's middle register, consistently.
+
+    One whole-line octave transposition preserves intervals and phrasing. Never
+    fold individual notes into an octave or alter a solo piano transcription.
+    The caller records this arrangement choice separately from recognition.
+    """
+    lead = parts.get('vocals')
+    if lead is None or not lead.notes:
+        return 0
+    pitches = np.asarray([item.pitch for item in lead.notes])
+    durations = np.asarray([item.end - item.start for item in lead.notes])
+    order = np.argsort(pitches)
+    median = pitches[order[np.searchsorted(np.cumsum(durations[order]), durations.sum() / 2)]]
+    shift = max(0, math.ceil((60 - int(median)) / 12)) * 12
+    # Preserve high excursions and stay in a comfortable piano register.
+    shift = min(shift, max(0, (96 - int(pitches.max())) // 12) * 12)
+    for item in lead.notes:
+        item.pitch += shift
+    return shift
+
+
+def preserve_melody_releases(parts: dict) -> int:
+    """Give melody attacks/releases priority when support uses the same key.
+
+    A piano has one damper per key: a long supporting note can otherwise hold a
+    melody key past its intended release. End earlier support at the melody
+    attack and omit support attacks inside that note. Never invent a new attack
+    at the end of the melody or shorten the melody itself.
+    """
+    lead = parts.get('vocals')
+    if lead is None or not lead.notes:
+        return 0
+    by_pitch = defaultdict(list)
+    for item in sorted(lead.notes, key=lambda item: item.start):
+        by_pitch[item.pitch].append(item)
+    starts = {pitch: [item.start for item in notes] for pitch, notes in by_pitch.items()}
+    changed = 0
+    for role in ('bass', 'other'):
+        part = parts.get(role)
+        if part is None:
+            continue
+        kept = []
+        for item in part.notes:
+            notes = by_pitch.get(item.pitch, [])
+            if notes:
+                index = bisect_left(starts[item.pitch], item.start)
+                inside = (index > 0 and notes[index - 1].end > item.start)
+                simultaneous = index < len(notes) and notes[index].start == item.start
+                if inside or simultaneous:
+                    changed += 1
+                    continue
+                if index < len(notes) and notes[index].start < item.end:
+                    item.end = notes[index].start
+                    changed += 1
+            kept.append(item)
+        part.notes = kept
+    return changed
 
 
 def estimate_key(notes: list) -> str | None:

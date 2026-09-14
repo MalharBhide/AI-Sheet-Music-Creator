@@ -1,0 +1,337 @@
+{
+  "aggregate": {
+    "baseline": {
+      "voiced_pitch_recall": 0.6122428703189065,
+      "false_silence": 0.15700742310156834,
+      "false_voicing": 0.15650611996856553,
+      "notes": {
+        "precision": 0.1630677406832298,
+        "recall": 0.23015873015873017,
+        "f1": 0.18715530428818883
+      },
+      "notes_with_offsets": {
+        "precision": 0.12710678700828157,
+        "recall": 0.16189309056956117,
+        "f1": 0.14026198752848168
+      }
+    },
+    "trained": {
+      "voiced_pitch_recall": 0.6863602166037577,
+      "false_silence": 0.09130890375783426,
+      "false_voicing": 0.16929933636755118,
+      "notes": {
+        "precision": 0.2800530733813831,
+        "recall": 0.37057267351385,
+        "f1": 0.3145873964370762
+      },
+      "notes_with_offsets": {
+        "precision": 0.24347108506714032,
+        "recall": 0.3069366635543106,
+        "f1": 0.26859985885226606
+      }
+    }
+  },
+  "tracks": [
+    {
+      "track": "f9_arpeggios_belt_a",
+      "baseline": {
+        "notes": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "notes_with_offsets": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "voiced_pitch_recall": 0.575,
+        "false_silence": 0.18,
+        "false_voicing": 0.2,
+        "reference_notes": 7,
+        "estimated_notes": 13
+      },
+      "trained": {
+        "notes": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "notes_with_offsets": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "voiced_pitch_recall": 0.71,
+        "false_silence": 0.11,
+        "false_voicing": 0.2,
+        "reference_notes": 7,
+        "estimated_notes": 12
+      }
+    },
+    {
+      "track": "f9_scales_breathy_a",
+      "baseline": {
+        "notes": {
+          "precision": 0.20833333333333334,
+          "recall": 0.29411764705882354,
+          "f1": 0.24390243902439027
+        },
+        "notes_with_offsets": {
+          "precision": 0.16666666666666666,
+          "recall": 0.23529411764705882,
+          "f1": 0.19512195121951217
+        },
+        "voiced_pitch_recall": 0.7346938775510204,
+        "false_silence": 0.02040816326530612,
+        "false_voicing": 0.3939393939393939,
+        "reference_notes": 17,
+        "estimated_notes": 24
+      },
+      "trained": {
+        "notes": {
+          "precision": 0.375,
+          "recall": 0.5294117647058824,
+          "f1": 0.4390243902439025
+        },
+        "notes_with_offsets": {
+          "precision": 0.3333333333333333,
+          "recall": 0.47058823529411764,
+          "f1": 0.39024390243902435
+        },
+        "voiced_pitch_recall": 0.75,
+        "false_silence": 0.017857142857142856,
+        "false_voicing": 0.3939393939393939,
+        "reference_notes": 17,
+        "estimated_notes": 24
+      }
+    },
+    {
+      "track": "f5_scales_straight_u",
+      "baseline": {
+        "notes": {
+          "precision": 0.6666666666666666,
+          "recall": 0.7058823529411765,
+          "f1": 0.6857142857142857
+        },
+        "notes_with_offsets": {
+          "precision": 0.6666666666666666,
+          "recall": 0.7058823529411765,
+          "f1": 0.6857142857142857
+        },
+        "voiced_pitch_recall": 0.8527918781725888,
+        "false_silence": 0.025380710659898477,
+        "false_voicing": 0.1320754716981132,
+        "reference_notes": 17,
+        "estimated_notes": 18
+      },
+      "trained": {
+        "notes": {
+          "precision": 0.8235294117647058,
+          "recall": 0.8235294117647058,
+          "f1": 0.8235294117647058
+        },
+        "notes_with_offsets": {
+          "precision": 0.8235294117647058,
+          "recall": 0.8235294117647058,
+          "f1": 0.8235294117647058
+        },
+        "voiced_pitch_recall": 0.8730964467005076,
+        "false_silence": 0.02030456852791878,
+        "false_voicing": 0.1320754716981132,
+        "reference_notes": 17,
+        "estimated_notes": 17
+      }
+    },
+    {
+      "track": "f5_row_vibrato",
+      "baseline": {
+        "notes": {
+          "precision": 0.13043478260869565,
+          "recall": 0.2222222222222222,
+          "f1": 0.16438356164383558
+        },
+        "notes_with_offsets": {
+          "precision": 0.06521739130434782,
+          "recall": 0.1111111111111111,
+          "f1": 0.08219178082191779
+        },
+        "voiced_pitch_recall": 0.5809128630705395,
+        "false_silence": 0.343015214384509,
+        "false_voicing": 0.03550295857988166,
+        "reference_notes": 27,
+        "estimated_notes": 46
+      },
+      "trained": {
+        "notes": {
+          "precision": 0.16279069767441862,
+          "recall": 0.25925925925925924,
+          "f1": 0.2
+        },
+        "notes_with_offsets": {
+          "precision": 0.11627906976744186,
+          "recall": 0.18518518518518517,
+          "f1": 0.14285714285714285
+        },
+        "voiced_pitch_recall": 0.7593360995850622,
+        "false_silence": 0.18948824343015214,
+        "false_voicing": 0.04142011834319527,
+        "reference_notes": 27,
+        "estimated_notes": 43
+      }
+    },
+    {
+      "track": "m11_caro_straight",
+      "baseline": {
+        "notes": {
+          "precision": 0.15625,
+          "recall": 0.3333333333333333,
+          "f1": 0.2127659574468085
+        },
+        "notes_with_offsets": {
+          "precision": 0.046875,
+          "recall": 0.1,
+          "f1": 0.06382978723404256
+        },
+        "voiced_pitch_recall": 0.4376876876876877,
+        "false_silence": 0.1704204204204204,
+        "false_voicing": 0.1130952380952381,
+        "reference_notes": 30,
+        "estimated_notes": 64
+      },
+      "trained": {
+        "notes": {
+          "precision": 0.1791044776119403,
+          "recall": 0.4,
+          "f1": 0.24742268041237114
+        },
+        "notes_with_offsets": {
+          "precision": 0.07462686567164178,
+          "recall": 0.16666666666666666,
+          "f1": 0.10309278350515463
+        },
+        "voiced_pitch_recall": 0.49624624624624625,
+        "false_silence": 0.0503003003003003,
+        "false_voicing": 0.14285714285714285,
+        "reference_notes": 30,
+        "estimated_notes": 67
+      }
+    },
+    {
+      "track": "m11_long_forte_e",
+      "baseline": {
+        "notes": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "notes_with_offsets": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "voiced_pitch_recall": 0.5432525951557093,
+        "false_silence": 0.11764705882352941,
+        "false_voicing": 0.02666666666666667,
+        "reference_notes": 3,
+        "estimated_notes": 9
+      },
+      "trained": {
+        "notes": {
+          "precision": 0.5,
+          "recall": 0.6666666666666666,
+          "f1": 0.5714285714285715
+        },
+        "notes_with_offsets": {
+          "precision": 0.5,
+          "recall": 0.6666666666666666,
+          "f1": 0.5714285714285715
+        },
+        "voiced_pitch_recall": 0.6124567474048442,
+        "false_silence": 0.020761245674740483,
+        "false_voicing": 0.09333333333333334,
+        "reference_notes": 3,
+        "estimated_notes": 4
+      }
+    },
+    {
+      "track": "m5_arpeggios_straight_a",
+      "baseline": {
+        "notes": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "notes_with_offsets": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "voiced_pitch_recall": 0.6,
+        "false_silence": 0.12,
+        "false_voicing": 0.23076923076923078,
+        "reference_notes": 7,
+        "estimated_notes": 10
+      },
+      "trained": {
+        "notes": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "notes_with_offsets": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "voiced_pitch_recall": 0.64,
+        "false_silence": 0.09333333333333334,
+        "false_voicing": 0.23076923076923078,
+        "reference_notes": 7,
+        "estimated_notes": 11
+      }
+    },
+    {
+      "track": "m5_arpeggios_f_fast_piano_o",
+      "baseline": {
+        "notes": {
+          "precision": 0.14285714285714285,
+          "recall": 0.2857142857142857,
+          "f1": 0.19047619047619047
+        },
+        "notes_with_offsets": {
+          "precision": 0.07142857142857142,
+          "recall": 0.14285714285714285,
+          "f1": 0.09523809523809523
+        },
+        "voiced_pitch_recall": 0.5736040609137056,
+        "false_silence": 0.27918781725888325,
+        "false_voicing": 0.12,
+        "reference_notes": 7,
+        "estimated_notes": 14
+      },
+      "trained": {
+        "notes": {
+          "precision": 0.2,
+          "recall": 0.2857142857142857,
+          "f1": 0.23529411764705882
+        },
+        "notes_with_offsets": {
+          "precision": 0.1,
+          "recall": 0.14285714285714285,
+          "f1": 0.11764705882352941
+        },
+        "voiced_pitch_recall": 0.649746192893401,
+        "false_silence": 0.22842639593908629,
+        "false_voicing": 0.12,
+        "reference_notes": 7,
+        "estimated_notes": 10
+      }
+    }
+  ],
+  "checkpoint_sha256": "85993789a7d62faa4a32825b8201790e8223b814c472a48f4d5f19776f8f01fc",
+  "backing_level_db": -3,
+  "selection": "First two recordings per test singer in frozen manifest",
+  "description": "Real unseen singing with procedural backing passed through Demucs; not commercial mixed-song accuracy",
+  "passes": true
+}

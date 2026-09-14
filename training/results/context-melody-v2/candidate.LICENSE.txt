@@ -1,0 +1,25 @@
+Context melody candidate v2 — RESEARCH ARTIFACT, NOT RELEASED IN THE APP
+
+Copyright 2026 Piano Scribe contributors.
+Licensed under Creative Commons Attribution 4.0:
+https://creativecommons.org/licenses/by/4.0/
+
+This checkpoint extends the project's CC BY 4.0 vocal-melody-v1 checkpoint.
+Supervised fitting uses these CC BY 4.0 datasets:
+
+Vocadito — Rachel Bittner, Katherine Pasalo, Juan Jose Bosch,
+Gabriel Meseguer Brocal and David Rubinstein.
+https://zenodo.org/records/5578807
+
+VocalSet audio — Julia Wilkins, Prem Seetharaman, Alison Wahl and Bryan Pardo.
+https://zenodo.org/records/1442513
+Annotated VocalSet — Behnam Faghih and Joseph Timoney.
+https://zenodo.org/records/7061507
+Revised combined VocalSet & Annotated VocalSet archive — Santiago Donaher.
+https://zenodo.org/records/10200775
+
+The weights contain no training audio or upstream Basic Pitch/Demucs weights.
+Upstream models retain their own licenses. Changes consist of a trained temporal
+residual branch; the original V1 parameters remain frozen in this candidate.
+The model failed its false-voicing release gate. See:
+https://github.com/MalharBhide/AI-Sheet-Music-Creator/blob/main/docs/context-melody-experiment.md

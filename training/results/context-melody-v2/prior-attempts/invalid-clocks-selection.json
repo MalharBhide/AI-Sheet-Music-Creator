@@ -1,0 +1,11 @@
+{
+  "epoch": 30,
+  "decoder": {
+    "smoothing": 5,
+    "minimum": 0.1,
+    "onset_threshold": 0.8
+  },
+  "checkpoint_sha256": "d5b97c230079c9facb99e3ea352671fcffe2083830b03f92af5266ad643c2123",
+  "selection": "Lowest equally weighted corpus validation pitch CE; then highest mean onset/offset F1 across both validation corpora",
+  "test_evaluated": false
+}

@@ -6,11 +6,13 @@ import soundfile as sf
 
 from app.models import PipelineError, ScoreOptions
 from app.services.audio_analysis import (
+    arrange_melody_register,
     balance_piano_arrangement,
     clean_notes,
     estimate_grid_phase,
     estimate_key,
     estimate_tempo,
+    preserve_melody_releases,
     reduce_accompaniment,
 )
 
@@ -220,20 +222,36 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
     raw_count = sum(len(part.notes) for part in parts.values())
     timing_offset = estimate_grid_phase([item for part in parts.values() for item in part.notes],
                                         tempo_bpm=bpm, grid=options.grid)
+    retained = {}
     for role, part in parts.items():
         for item in part.notes:
             item.start = max(0, item.start - timing_offset)
             item.end = max(item.start, item.end - timing_offset)
+        before = len(part.notes)
+        if role == 'vocals' and options.grid == 'eighth':
+            precise_count = len(clean_notes(part.notes, role=role, detail=detail,
+                                            tempo_bpm=bpm, grid='sixteenth'))
+        else:
+            precise_count = 0
         part.notes = clean_notes(part.notes, role=role, detail=detail, tempo_bpm=bpm,
                                  grid=options.grid)
+        if precise_count > len(part.notes) + max(2, before * .1):
+            warnings.append('The simple eighth-note rhythm merges some fast melody notes. Choose Precise rhythm to retain more of the tune.')
         if role == "other":
             part.notes = reduce_accompaniment(part.notes, detail=detail)
         for item in part.notes:
             item.end = min(duration, item.end)
         part.notes = [item for item in part.notes if item.end > item.start]
+        retained[role] = {'detected': before, 'score': len(part.notes)}
         midi.instruments.append(part)
+    melody_shift = 0
+    support_changes = 0
     if mode == "full_mix":
+        melody_shift = arrange_melody_register(parts)
+        support_changes = preserve_melody_releases(parts)
         balance_piano_arrangement(parts)
+        for role, part in parts.items():
+            retained[role]['score'] = len(part.notes)
     notes = [item for part in midi.instruments for item in part.notes]
     key_signature = estimate_key(notes)
     if not notes:
@@ -244,4 +262,6 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
             "tempo_bpm": bpm, "note_count": len(notes), "raw_note_count": raw_count,
             "key_signature": key_signature, "transcription_mode": mode,
             "timing_offset_seconds": timing_offset,
+            "melody_octave_shift": melody_shift // 12, "notes_by_source": retained,
+            "support_notes_changed_for_melody": support_changes,
             "duration_seconds": duration, "sources": list(parts), "warnings": warnings}

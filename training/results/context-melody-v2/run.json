@@ -1,0 +1,31 @@
+{
+  "seed": 260914,
+  "parameters": 5853,
+  "architecture": "V1 plus pitch-shared 1.26 second temporal residual branch",
+  "warm_start_sha256": "60209b56b6618335f22d1e4e9fc4604d7a2e501df3242d4a18e3df01d81034f9",
+  "train_tracks": [
+    26,
+    288
+  ],
+  "validation_tracks": [
+    8,
+    48
+  ],
+  "train_seconds": [
+    555.16,
+    3260.580000000001
+  ],
+  "epochs": 30,
+  "updates_per_epoch": 60,
+  "batch": 4,
+  "window_frames": 256,
+  "optimizer": "AdamW",
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "sampling": "Equal corpus probability, then uniform recordings and crops",
+  "augmentation": "None; natural variation from distinct singers and techniques",
+  "rehearsal": true,
+  "trainable_parameters": 3666,
+  "rehearsal_loss": "Frozen V1 backbone, 2x frame KL plus 0.2x voiced attack-logit MSE on an additional Vocadito training crop per update",
+  "test_gate": "VocalSet note and offset F1 improve; pitch recall does not regress; false silence increases by at most 0.02. Vocadito validation note F1 regression at most 0.02."
+}

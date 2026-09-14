@@ -219,3 +219,34 @@ def test_piano_adapter_resamples_and_uses_model_note_events(tmp_path, monkeypatc
     assert lengths == [20000]
     assert [(n.pitch, n.start, n.end, n.velocity) for n in result.instruments[0].notes] == [
         (60, .125, .875, 82), (64, .125, .5, 69)]
+
+
+def test_full_mix_reports_coarse_rhythm_loss_and_whole_melody_transposition(
+        tmp_path, fake_inference, monkeypatch):
+    from app.services import source_separation, vocal_melody
+
+    class Separator:
+        def separate(self, path, directory):
+            return {'vocals': path}
+
+    class VocalModel:
+        def predict(self, path, acoustic, bpm):
+            return midi(*(note(41 + i, i * .125, i * .125 + .08) for i in range(12)))
+
+    monkeypatch.setattr(source_separation, 'StemSeparator', Separator)
+    monkeypatch.setattr(vocal_melody, 'VocalMelody', VocalModel)
+    audio = tmp_path / 'song.wav'
+    sf.write(audio, np.full(22050 * 2, .01), 22050)
+    reports = []
+    for grid in ('eighth', 'sixteenth'):
+        fake_inference.results.append([])
+        output = tmp_path / f'{grid}.mid'
+        reports.append(transcribe(audio, output, ScoreOptions(
+            tempo_bpm=120, transcription_mode='full_mix', grid=grid)))
+    assert reports[0]['notes_by_source']['vocals'] == {'detected': 12, 'score': 7}
+    assert any('Precise rhythm' in warning for warning in reports[0]['warnings'])
+    assert reports[1]['notes_by_source']['vocals'] == {'detected': 12, 'score': 12}
+    assert not any('Precise rhythm' in warning for warning in reports[1]['warnings'])
+    assert reports[1]['melody_octave_shift'] == 2
+    output = fake_inference.pretty_midi.PrettyMIDI(str(tmp_path / 'sixteenth.mid'))
+    assert [item.pitch for item in output.instruments[0].notes] == list(range(65, 77))

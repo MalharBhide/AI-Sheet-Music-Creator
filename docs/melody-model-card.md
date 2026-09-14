@@ -1,5 +1,9 @@
 # Vocadito melody decoder v1
 
+V1 remains the deployed recognition model. A larger context-model experiment
+was trained and tested but failed its false-voicing release gate; see the
+[experiment and released arrangement fixes](context-melody-experiment.md).
+
 ## Purpose and release
 
 The full-song pipeline now uses a trained monophonic decoder for the separated

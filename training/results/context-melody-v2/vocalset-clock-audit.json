@@ -1,0 +1,67 @@
+{
+  "rule": "Exact 1x, 0.5x or 2x audio-duration/annotation-duration ratio within 2%; no prediction-based alignment",
+  "changes": [
+    {
+      "split": "validation",
+      "track": "m9_arpeggios_c_slow_piano_i",
+      "factor": 0.5
+    },
+    {
+      "split": "validation",
+      "track": "m9_arpeggios_breathy_i",
+      "factor": 0.5
+    },
+    {
+      "split": "validation",
+      "track": "m9_dona_straight",
+      "factor": 0.5
+    },
+    {
+      "split": "validation",
+      "track": "m9_scales_c_fast_piano_e",
+      "factor": 0.5
+    },
+    {
+      "split": "validation",
+      "track": "m9_scales_belt_u",
+      "factor": 0.5
+    },
+    {
+      "split": "validation",
+      "track": "m9_scales_c_slow_piano_i",
+      "factor": 0.5
+    },
+    {
+      "split": "validation",
+      "track": "m9_caro_straight",
+      "factor": 0.5
+    },
+    {
+      "split": "validation",
+      "track": "m9_dona_vibrato",
+      "factor": 0.5
+    },
+    {
+      "split": "validation",
+      "track": "m9_scales_c_slow_forte_e",
+      "factor": 0.5
+    },
+    {
+      "split": "validation",
+      "track": "m9_arpeggios_straight_u",
+      "factor": 0.5
+    },
+    {
+      "split": "validation",
+      "track": "m9_scales_breathy_a",
+      "factor": 0.5
+    },
+    {
+      "split": "validation",
+      "track": "m9_row_straight",
+      "factor": 0.5
+    }
+  ],
+  "split_unchanged": true,
+  "test_predictions_inspected": false
+}

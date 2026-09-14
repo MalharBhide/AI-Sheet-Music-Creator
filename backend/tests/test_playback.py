@@ -5,6 +5,7 @@ import pytest
 from music21 import chord, note, stream, tempo, tie
 
 from app.models import ScoreOptions
+from app.services.audio_analysis import preserve_melody_releases
 from app.services.midi_to_score import midi_to_musicxml
 from app.services.playback import export_score_playback
 
@@ -73,6 +74,18 @@ def roundtrip_notes(tmp_path, notes):
 def test_sparse_voices_preserve_sustain_releases_and_individual_velocities(tmp_path):
     notes = [(60, 0, 4, 70), (64, .5, 1, 50), (65, 1.5, 2, 100), (67, 2.5, 3, 80)]
     assert sorted(roundtrip_notes(tmp_path, notes)) == sorted(notes)
+
+
+def test_melody_priority_survives_notation_and_browser_playback_export(tmp_path):
+    lead, support = pretty_midi.Instrument(0), pretty_midi.Instrument(0)
+    lead.notes = [pretty_midi.Note(92, 64, 1, 1.5), pretty_midi.Note(92, 64, 2, 2.5)]
+    support.notes = [pretty_midi.Note(54, 64, 0, 4), pretty_midi.Note(54, 67, 0, 4)]
+    preserve_melody_releases({'vocals': lead, 'other': support})
+    arranged = [(n.pitch, n.start, n.end, n.velocity) for part in (lead, support) for n in part.notes]
+    result = roundtrip_notes(tmp_path, arranged)
+    assert sorted(item for item in result if item[0] == 64) == [
+        (64, 0, 1, 54), (64, 1, 1.5, 92), (64, 2, 2.5, 92)]
+    assert (67, 0, 4, 54) in result
 
 
 def test_changing_dense_chords_do_not_manufacture_reattacks(tmp_path):

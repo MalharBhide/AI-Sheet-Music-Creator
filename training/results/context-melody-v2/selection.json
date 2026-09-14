@@ -1,0 +1,11 @@
+{
+  "epoch": 30,
+  "decoder": {
+    "smoothing": 5,
+    "minimum": 0.06,
+    "onset_threshold": 0.8
+  },
+  "checkpoint_sha256": "85993789a7d62faa4a32825b8201790e8223b814c472a48f4d5f19776f8f01fc",
+  "selection": "Lowest equally weighted corpus validation pitch CE; then highest mean onset/offset F1 across both validation corpora, preferring configs that pass the Vocadito validation regression gate",
+  "test_evaluated": true
+}
