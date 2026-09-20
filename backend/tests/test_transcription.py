@@ -159,7 +159,7 @@ def test_missing_piano_model_does_not_silently_use_basic_pitch(tmp_path, fake_in
 
 def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
         tmp_path, fake_inference, monkeypatch):
-    from app.services import source_separation, vocal_melody
+    from app.services import accompaniment_verifier, source_separation, vocal_melody
 
     audio, output = tmp_path / 'input.wav', tmp_path / 'out.mid'
     sf.write(str(audio), np.full(22050 * 2, .01), 22050)
@@ -178,10 +178,19 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
             return midi(note(72, 0, .4), note(74, .5, .9))
 
     monkeypatch.setattr(vocal_melody, 'VocalMelody', VocalModel)
+    class NoteVerifier:
+        name = 'Test verifier'
+
+        def filter(self, path, acoustic, output):
+            assert [n.pitch for n in output.instruments[0].notes] == [60, 64, 67, 71]
+            output.instruments[0].notes.pop()
+            return 1
+
+    monkeypatch.setattr(accompaniment_verifier, 'AccompanimentVerifier', NoteVerifier)
     fake_inference.results.extend([
         [],  # Vocal decoding must still run when Basic Pitch emits no events.
         [(36, 0, 1), (48, 0, 1)],
-        [(60, 0, 1), (64, 0, 1), (67, 0, 1), (71, 0, 1)],
+        [(35, 0, 1), (60, 0, 1), (64, 0, 1), (67, 0, 1), (71, 0, 1), (96, 0, 1)],
     ])
     report = transcribe(audio, output,
                         ScoreOptions(tempo_bpm=120, transcription_mode='full_mix'))
@@ -192,6 +201,10 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
     assert [len(part.notes) for part in result.instruments] == [2, 1, 3]
     assert report['sources'] == ['vocals', 'bass', 'other']
     assert report['engine'].startswith('Demucs htdemucs')
+    assert report['accompaniment_verification'] == {
+        'model': 'Test verifier', 'window_candidates': 4, 'window_rejections': 1}
+    assert fake_inference.calls[2][1]['minimum_frequency'] is None
+    assert fake_inference.calls[2][1]['maximum_frequency'] is None
     assert 'arrangement' in report['warnings'][0]
 
 
@@ -250,3 +263,19 @@ def test_full_mix_reports_coarse_rhythm_loss_and_whole_melody_transposition(
     assert reports[1]['melody_octave_shift'] == 2
     output = fake_inference.pretty_midi.PrettyMIDI(str(tmp_path / 'sixteenth.mid'))
     assert [item.pitch for item in output.instruments[0].notes] == list(range(65, 77))
+
+
+def test_detailed_accompaniment_keeps_its_validated_detector_path(tmp_path, fake_inference):
+    from app.services.piano_transcription import _GeneralEngine
+
+    path = tmp_path / 'audio.wav'
+    sf.write(path, np.full(22050, .01), 22050)
+    fake_inference.results.append([(60, .1, .5)])
+    engine = _GeneralEngine('detailed')
+    output = engine.predict(path, 'other', 120)
+    assert output.instruments[0].notes[0].pitch == 60
+    assert engine.note_verifier is None
+    assert engine.verification is None
+    parameters = fake_inference.calls[0][1]
+    assert parameters['minimum_frequency'] is not None
+    assert parameters['melodia_trick'] is True

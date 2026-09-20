@@ -1,0 +1,167 @@
+{
+  "items": [
+    {
+      "id": "oxford-10",
+      "corpus": "oxford-piano",
+      "audio": "note-verifier-oxford/10.wav",
+      "reference": {
+        "sha256": "6e0b2351ecb6caa1fc097053cfdf470444dc6f5eb75fa31f367bcd00191d76f0",
+        "note_count": 44
+      },
+      "evaluation_window": [
+        15.25,
+        29.75
+      ]
+    },
+    {
+      "id": "oxford-21",
+      "corpus": "oxford-piano",
+      "audio": "note-verifier-oxford/21.wav",
+      "reference": {
+        "sha256": "3534bde76bb39f1f1da93672fe659868e39917b428bf13a9033d01748546880f",
+        "note_count": 32
+      },
+      "evaluation_window": [
+        15.25,
+        29.75
+      ]
+    },
+    {
+      "id": "oxford-23",
+      "corpus": "oxford-piano",
+      "audio": "note-verifier-oxford/23.wav",
+      "reference": {
+        "sha256": "026f97f5e413ff4c58c3d5ce2428a893b7428a0d1dca8d8df97d1a0c7732c27c",
+        "note_count": 54
+      },
+      "evaluation_window": [
+        15.25,
+        29.75
+      ]
+    },
+    {
+      "id": "oxford-24",
+      "corpus": "oxford-piano",
+      "audio": "note-verifier-oxford/24.wav",
+      "reference": {
+        "sha256": "50c37fee6e1ad49fbc0dba21f3b85de331958ea91782f3d8b7abeab4de112113",
+        "note_count": 60
+      },
+      "evaluation_window": [
+        15.25,
+        29.75
+      ]
+    },
+    {
+      "id": "oxford-25",
+      "corpus": "oxford-piano",
+      "audio": "note-verifier-oxford/25.wav",
+      "reference": {
+        "sha256": "d4264a203a183be51c9ca071f65f7cf096b3bbacb15692172f3eefa98ffb2d01",
+        "note_count": 31
+      },
+      "evaluation_window": [
+        15.25,
+        29.75
+      ]
+    },
+    {
+      "id": "oxford-26",
+      "corpus": "oxford-piano",
+      "audio": "note-verifier-oxford/26.wav",
+      "reference": {
+        "sha256": "d6a48ab31c8f95ac6a31daba15ca6b40ff7bcc6f23b05fa809f995bd8204e8c1",
+        "note_count": 37
+      },
+      "evaluation_window": [
+        15.25,
+        29.75
+      ]
+    },
+    {
+      "id": "oxford-27",
+      "corpus": "oxford-piano",
+      "audio": "note-verifier-oxford/27.wav",
+      "reference": {
+        "sha256": "a50aeaca7434c50a0e7356453a3cbe1b444e88c51349bdf9349eb2af8b405419",
+        "note_count": 36
+      },
+      "evaluation_window": [
+        15.25,
+        29.75
+      ]
+    },
+    {
+      "id": "oxford-5",
+      "corpus": "oxford-piano",
+      "audio": "note-verifier-oxford/5.wav",
+      "reference": {
+        "sha256": "e0370dccf0f09d0dfa2d2ba5983fe05b1dccfe292762b662e783b9bdc795ed39",
+        "note_count": 63
+      },
+      "evaluation_window": [
+        15.25,
+        29.75
+      ]
+    }
+  ],
+  "clock": [
+    {
+      "id": "10",
+      "shift_seconds": -0.3749999999999998,
+      "calibration_onsets": 41,
+      "score": 0.6540094017982483,
+      "boundary": false
+    },
+    {
+      "id": "21",
+      "shift_seconds": -0.35999999999999976,
+      "calibration_onsets": 14,
+      "score": 0.6969046592712402,
+      "boundary": false
+    },
+    {
+      "id": "23",
+      "shift_seconds": -0.21999999999999964,
+      "calibration_onsets": 46,
+      "score": 0.6035310626029968,
+      "boundary": false
+    },
+    {
+      "id": "24",
+      "shift_seconds": -0.24999999999999967,
+      "calibration_onsets": 52,
+      "score": 0.5684804916381836,
+      "boundary": false
+    },
+    {
+      "id": "25",
+      "shift_seconds": -0.2699999999999997,
+      "calibration_onsets": 19,
+      "score": 0.8376039862632751,
+      "boundary": false
+    },
+    {
+      "id": "26",
+      "shift_seconds": -0.3849999999999998,
+      "calibration_onsets": 29,
+      "score": 0.6703052520751953,
+      "boundary": false
+    },
+    {
+      "id": "27",
+      "shift_seconds": -0.2949999999999997,
+      "calibration_onsets": 37,
+      "score": 0.6904552578926086,
+      "boundary": false
+    },
+    {
+      "id": "5",
+      "shift_seconds": -0.1899999999999996,
+      "calibration_onsets": 44,
+      "score": 0.7869883179664612,
+      "boundary": false
+    }
+  ],
+  "alignment": "Fixed CQT onset alignment on 0\u201315s, shift -0.6..0.2s at 5ms resolution; evaluate only 15.25\u201329.75s. No transcription predictions used."
+}

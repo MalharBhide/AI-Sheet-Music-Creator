@@ -4,6 +4,8 @@ Piano Scribe turns recordings into editable piano sheet music, with a browser st
 
 The transcription design is informed by an [extensive review of Songscription, Klangio, AnthemScore, ScoreCloud, and open-source models](docs/transcription-research.md). The report distinguishes documented product features from measured accuracy. A completed PDF is a working output, not evidence that every note is correct.
 
+Balanced full-song accompaniment now also uses a trained note verifier to reject unsupported candidate notes. See its [model card and measured limits](docs/accompaniment-verifier.md). Re-upload a recording to apply it to an older score.
+
 Full-song melody recognition now includes a locally trained neural decoder. See the [transcription framework](docs/transcription-framework.md), [training workflow](training/README.md), and [model card with held-out results](docs/melody-model-card.md).
 
 ## Quick start with Docker

@@ -131,3 +131,25 @@ uv run ruff check app tests main.py
 ```
 
 The GitHub Actions native-pipeline job runs the same integration suite in the backend Docker image.
+
+## Accompaniment verifier — 2026-09-20
+
+- Trained two 961-parameter classifiers on commercially compatible labeled data;
+  rejected the initial thresholds because the digital-piano recall regression
+  exceeded the predeclared gate. Expanded training contains 327 clips and 45,825
+  unambiguous candidate events. The final release uses the expanded weights with
+  a validation-selected conservative threshold of 0.10.
+- Preserved all rejected and final experiment records in
+  `training/results/accompaniment-verifier-v2/`. Prior tests are labeled consumed
+  regressions. The final previously unscored Oxford sections reduced false
+  detections 105→74, retained 615/623 previously correct detections, and improved
+  F1 0.8750→0.8881. Same recordings/performers as the prior Oxford check: no new
+  performer-independence claim. Full measured limits are in the model card.
+- Backend regression suite: **146 passed, six opt-in cases skipped**. The six
+  real native integration cases then **all passed** (142 seconds), covering
+  normal audio, long VBR MP3, subsecond MP3, silent MP3, full-mix MP3, and multipage
+  rendering. All download formats and playback positions remained valid.
+- Supervision/feature regression tests: **four passed**. Python lint passed.
+- Production scope: balanced full-song accompaniment on every uploaded file;
+  bounded windows, checked checkpoint hash, unchanged retained note events.
+  Other transcription/detail modes retain their previous models.

@@ -1,0 +1,27 @@
+Accompaniment note verifier v2 (accompaniment-verifier-v2.pt)
+
+Copyright 2026 Piano Scribe contributors.
+This newly trained checkpoint is licensed under Creative Commons Attribution 4.0:
+https://creativecommons.org/licenses/by/4.0/
+
+Training corpora (CC BY 4.0):
+GuitarSet 1.1.0, Qingyang Xi, Rachel M. Bittner, Johan Pauwels, Xuzhou Ye,
+and Juan P. Bello. https://zenodo.org/records/3371780
+Vienna 4x22 Piano Corpus, Werner Goebl. https://doi.org/10.21939/4X22
+
+Additional training: original procedural piano phrases, rendered by MuseScore
+with MuseScore General soundfont. Soundfont authors include S. Christian Collins,
+Frank Wen and Michael Cowgill; MIT/PD/CC0 sources. The accompanying soundfont
+notice is in training/results/accompaniment-verifier-v2/soundfont-copyright.txt.
+No source audio or soundfont samples are included in this checkpoint.
+
+Evaluation only: Oxford MIDItest, A. Sophia Koepke, Olivia Wiles, Yael Moses,
+and Andrew Zisserman, Sight to sound (ICASSP 2020), CC BY 4.0.
+https://www.robots.ox.ac.uk/~vgg/research/sighttosound/
+
+This is a new event-classification network trained on frozen acoustic features.
+It does not contain Basic Pitch or Demucs weights; those retain their licenses.
+The final threshold was selected on validation data after two rejected attempts.
+Prior tests are documented as consumed regression checks, not fresh evaluations.
+
+Training methods, results and limitations: docs/accompaniment-verifier.md

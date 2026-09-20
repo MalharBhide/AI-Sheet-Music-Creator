@@ -1,0 +1,14 @@
+{
+  "promoted": true,
+  "checkpoint_sha256": "2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60",
+  "checkpoint": "backend/app/assets/accompaniment-verifier-v2.pt",
+  "threshold": 0.1,
+  "gates": {
+    "performer-test": true,
+    "oxford-regression": true,
+    "separated-regression": true,
+    "extended-piano-test": true
+  },
+  "scope": "Balanced full_mix accompaniment only. All filenames/codecs processed identically. Dedicated solo-piano, vocal, bass and detailed paths keep their prior recognition models.",
+  "limitations": "Prior tests are consumed regressions. Extended Oxford is previously unscored events from the same recordings, not an independent-performer test."
+}

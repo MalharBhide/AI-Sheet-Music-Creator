@@ -1,0 +1,9 @@
+{
+  "checkpoint_sha256": "2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60",
+  "threshold": 0.1,
+  "source_checkpoint_sha256": "30d39214e05aa7f8de9db62b809d805c707744712ae2fa52b5b0ce360ef6f307",
+  "validation_recall_margin": 0.0025,
+  "selection": "Maximum macro-corpus validation F1 with per-corpus recall loss <= configured margin and nondecreasing F1. Weights unchanged.",
+  "limitations": "Recalibration follows observed domain failures; prior tests are consumed regression checks, not fresh tests.",
+  "fresh_segment_test": "Oxford audio 30\u201360s from all eight recordings; clocks fixed from 0\u201315s; same recording/performer, different events. No new performer-independence claim."
+}

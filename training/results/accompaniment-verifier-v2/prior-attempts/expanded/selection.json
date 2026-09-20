@@ -1,0 +1,8 @@
+{
+  "checkpoint_sha256": "30d39214e05aa7f8de9db62b809d805c707744712ae2fa52b5b0ce360ef6f307",
+  "threshold": 0.22,
+  "epoch": 48,
+  "validation_recall_margin": 0.01,
+  "selection": "Minimum corpus-balanced validation BCE; then maximum macro-corpus validation F1 subject to recall loss <= configured margin and nondecreasing F1 for each corpus",
+  "test_not_evaluated": true
+}

@@ -139,6 +139,8 @@ class _GeneralEngine:
         self.predict_function = predict
         self.detail = detail
         self.vocal_model = None
+        self.note_verifier = None
+        self.verification = None
 
     def predict(self, path: Path, role: str, bpm: float):
         import pretty_midi
@@ -146,10 +148,14 @@ class _GeneralEngine:
         limits = {"bass": (21, 60), "vocals": (45, 96), "melody": (45, 96),
                   "other": (36, 96)}
         low, high = limits[role]
+        verify = role == 'other' and self.detail == 'balanced'
         arrays, midi, events = self.predict_function(
             str(path), model_or_model_path=self.model,
-            minimum_frequency=float(pretty_midi.note_number_to_hz(low)),
-            maximum_frequency=float(pretty_midi.note_number_to_hz(high)),
+            # Basic Pitch zeros out constrained bands in its returned arrays.
+            # Retain full evidence for the verifier, exactly as during training,
+            # and apply the arrangement's pitch bounds to events afterwards.
+            minimum_frequency=None if verify else float(pretty_midi.note_number_to_hz(low)),
+            maximum_frequency=None if verify else float(pretty_midi.note_number_to_hz(high)),
             onset_threshold=0.5 if self.detail == "balanced" else 0.4,
             frame_threshold=0.3 if self.detail == "balanced" else 0.25,
             minimum_note_length=90.0 if self.detail == "balanced" else 60.0,
@@ -163,6 +169,18 @@ class _GeneralEngine:
             # Decode continuous evidence, including frames for which Basic
             # Pitch's generic event thresholds emitted no note at all.
             return self.vocal_model.predict(path, arrays, bpm)
+        if verify:
+            from app.services.accompaniment_verifier import AccompanimentVerifier
+
+            if self.note_verifier is None:
+                self.note_verifier = AccompanimentVerifier()
+                self.verification = {'model': self.note_verifier.name,
+                                     'window_candidates': 0, 'window_rejections': 0}
+            for part in midi.instruments:
+                # Basic Pitch's maximum_frequency bound is exclusive.
+                part.notes = [n for n in part.notes if low <= n.pitch < high]
+            self.verification['window_candidates'] += sum(len(p.notes) for p in midi.instruments)
+            self.verification['window_rejections'] += self.note_verifier.filter(path, arrays, midi)
         return midi
 
 
@@ -258,7 +276,12 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
         warnings.append("No pitched notes were detected. Silence, percussion, very short clips or an unsuitable source may produce a score of rests.")
     midi_path.parent.mkdir(parents=True, exist_ok=True)
     midi.write(str(midi_path))
-    return {"engine": f"Demucs htdemucs + {engine.name} + Vocadito melody decoder v1" if separator else engine.name,
+    engine_name = f"Demucs htdemucs + {engine.name} + Vocadito melody decoder v1" if separator else engine.name
+    verification = getattr(engine, 'verification', None)
+    if verification:
+        engine_name += f" + {verification['model']}"
+    return {"engine": engine_name,
+            "accompaniment_verification": verification,
             "tempo_bpm": bpm, "note_count": len(notes), "raw_note_count": raw_count,
             "key_signature": key_signature, "transcription_mode": mode,
             "timing_offset_seconds": timing_offset,

@@ -165,3 +165,47 @@ commercial-song accuracy measurement.
 `audit_arrangement.py` separately measures detected versus retained notes for
 each source. It can reuse saved raw MIDI with `--reuse` and compare `--grid
 eighth` against `--grid sixteenth`. Note retention is not note correctness.
+
+## Accompaniment note verification
+
+See [the verifier model card](../docs/accompaniment-verifier.md) for the two rejected
+candidates, final conservative release, data rights, and consumed-test caveats.
+The 961-parameter event classifier uses pitch-relative acoustic evidence; Basic
+Pitch/Demucs are frozen. User recordings are not training examples.
+
+In the same Python 3.11 transcription environment with `mir_eval` installed:
+
+```bash
+python training/prepare_note_data.py .training
+python training/make_verifier_piano.py .training
+python training/cache_note_verifier.py .training --workers 2
+python training/train_note_verifier.py .training --recall-margin .02
+python training/prepare_verifier_tests.py .training
+python training/prepare_verifier_tests.py .training --stems validation
+python training/train_note_verifier.py .training --test
+python training/test_note_verifier.py .training .training/note-verifier-oxford/manifest.json oxford-test
+python training/test_note_verifier.py .training .training/note-verifier-stems-validation/manifest.json separated-validation
+
+python training/prepare_vienna.py .training
+python training/prepare_vienna.py .training --align
+python training/cache_note_verifier.py .training --workers 2
+python training/train_note_verifier.py .training --run note-verifier-v2
+python training/prepare_verifier_tests.py .training --stems test
+python training/train_note_verifier.py .training --run note-verifier-v2 --test
+python training/test_note_verifier.py .training .training/note-verifier-oxford/manifest.json oxford-regression --run note-verifier-v2
+python training/test_note_verifier.py .training .training/note-verifier-stems-test/manifest.json separated-test --run note-verifier-v2
+
+python training/calibrate_note_verifier.py .training
+python training/prepare_extended_piano_test.py .training
+python training/train_note_verifier.py .training --run note-verifier-v2-conservative --test
+python training/test_note_verifier.py .training .training/note-verifier-oxford/manifest.json oxford-regression --run note-verifier-v2-conservative
+python training/test_note_verifier.py .training .training/note-verifier-stems-test/manifest.json separated-regression --run note-verifier-v2-conservative
+python training/test_note_verifier.py .training .training/note-verifier-oxford-extended/manifest.json extended-piano-test --run note-verifier-v2-conservative
+python -m pytest -q training/test_note_evidence.py backend/tests/test_note_verifier.py
+```
+
+Commands refuse to overwrite experiment directories or consumed evaluation
+reports. The sequence reproduces an already completed experiment; its test sets
+are **not fresh benchmarks for future tuning**. Downloaded recordings, feature
+caches and full reference labels remain in ignored `.training/`. Committed split
+manifests contain reference hashes and counts, not recording media.
