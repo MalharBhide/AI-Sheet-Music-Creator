@@ -169,7 +169,9 @@ eighth` against `--grid sixteenth`. Note retention is not note correctness.
 ## Accompaniment note verification
 
 See [the verifier model card](../docs/accompaniment-verifier.md) for the two rejected
-candidates, final conservative release, data rights, and consumed-test caveats.
+candidates, corrected clock audit, data rights, and consumed-test caveats.
+The historical V2 Vienna assessment is invalid; no corrected candidate has yet
+passed comparison with the current release.
 The 961-parameter event classifier uses pitch-relative acoustic evidence; Basic
 Pitch/Demucs are frozen. User recordings are not training examples.
 
@@ -209,3 +211,23 @@ reports. The sequence reproduces an already completed experiment; its test sets
 are **not fresh benchmarks for future tuning**. Downloaded recordings, feature
 caches and full reference labels remain in ignored `.training/`. Committed split
 manifests contain reference hashes and counts, not recording media.
+
+
+### Corrected accompaniment experiments
+
+The original V2 Chopin training labels used stale silence offsets. `prepare_vienna.py --align` now handles trimmed audio, calibrates from seconds 0–15, and excludes those seconds from supervision. `audit_verifier_labels.py` checks training and validation compositions separately before fitting; a good corpus average cannot hide a nearly unaligned work.
+
+For the saved V2 experiment, preserve the earlier artifacts and rebuild in an isolated directory:
+
+```bash
+python training/repair_verifier_clocks.py .training
+python training/cache_note_verifier.py .training/note-verifier-v3-data --workers 2
+python training/train_note_verifier.py .training/note-verifier-v3-data --run note-verifier-v3 --positive-weight 4 --protect-recordings --recall-margin .0025
+python training/evaluate_verifier_regression.py .training/note-verifier-v3-data
+python training/train_verifier_forest.py .training/note-verifier-v3-data
+python training/evaluate_verifier_regression.py .training/note-verifier-v3-data --run note-verifier-v4
+python training/evaluate_verifier_regression.py .training/note-verifier-v3-data --run note-verifier-consensus
+python training/verifier_release_gate.py .training/note-verifier-v3-data/note-verifier-consensus/regression.json
+```
+
+Run with `PYTHONPATH=backend:training` and the transcription dependencies plus `mir_eval` and `scikit-learn`. The corrected candidate decoder lives in a shared helper but is used only by these offline experiments, not the deployed V2 path. Both trained candidates and their consensus were rejected. Do not copy their checkpoints into the app. The stricter gate checks individual recordings and compares precision/recall/F1 against the current release, not just the original detector. All evaluation recordings have been consumed; new future accuracy claims need additional independent recordings.

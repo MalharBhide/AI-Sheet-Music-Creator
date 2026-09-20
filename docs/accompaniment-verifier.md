@@ -1,5 +1,7 @@
 # Learning to reject extra accompaniment notes
 
+**2026-09-20 correction:** V2 used incorrect clocks for the trimmed Chopin recordings. Its old Vienna scores and the conclusion that all release checks passed are withdrawn. V2 remains the current runtime while corrected candidates are evaluated; none of this audit’s candidates is a demonstrated improvement over it. See the correction below.
+
 This experiment targets false notes from Basic Pitch on the separated accompaniment. A small neural verifier estimates whether each detected note is supported by the audio. It learns from labeled events; it does not use a song title, filename, key signature, or a list of allowed notes. Vocal melody recognition and the dedicated solo-piano model are separate systems.
 
 ## Evidence and training
@@ -15,7 +17,7 @@ Selection uses validation loss for the checkpoint, followed by validation F1 for
 - **GuitarSet 1.1.0**, Qingyang Xi, Rachel M. Bittner, Johan Pauwels, Xuzhou Ye and Juan P. Bello. [Publisher record](https://zenodo.org/records/3371780), CC BY 4.0. Real microphone audio and hexaphonic-derived note annotations. Players 00–03 train; 04 validates; 05 tests. Exclude publisher-reported annotation problems in `04_BN3-154-E_comp`, `04_Jazz1-200-B_comp`, and `02_Funk2-119-G_comp` before prediction. This is performer-disjoint for the verifier; shared progressions and possible Basic Pitch pretraining overlap limit independence.
 - **40 original piano phrases**, procedural compositions rendered by MuseScore. Seeds 00–31 train, 32–39 validate. Reference events come from the same MusicXML used for rendering. These are synthetic training examples, not evidence of real-performance accuracy. The installed MuseScore General soundfont has MIT/PD/CC0 provenance; preserve the bundled soundfont attribution.
 - **Oxford MIDItest**, A. Sophia Koepke, Olivia Wiles, Yael Moses and Andrew Zisserman, *Sight to sound* (ICASSP 2020). [Publisher page and license](https://www.robots.ox.ac.uk/~vgg/research/sighttosound/), CC BY 4.0. Eight actual digital-piano MIDI/audio pairs, not PianoYT pseudo-labels. Initially a separate instrument test; after the first failure it becomes a consumed regression benchmark.
-- **Vienna 4x22**, Werner Goebl. [Publisher record](https://datasets.mdw.ac.at/datasets/dataset/98ea25fa-2468-43ff-929b-3c926e163583), [DOI 10.21939/4X22](https://doi.org/10.21939/4X22), CC BY 4.0. Real acoustic-piano performances with instrument-recorded labels. Players 01–14 train, 15–18 validate, 19–22 form a fresh test. Exclude synthesized average performer 23. Scores and recording instrument are shared across performers; this is not composition- or instrument-disjoint.
+- **Vienna 4x22**, Werner Goebl. [Publisher record](https://datasets.mdw.ac.at/datasets/dataset/98ea25fa-2468-43ff-929b-3c926e163583), [DOI 10.21939/4X22](https://doi.org/10.21939/4X22), CC BY 4.0. Real acoustic-piano performances with instrument-recorded labels. Players 01–14 train, 15–18 validate, 19–22 were originally a test and are now consumed regression recordings. Exclude synthesized average performer 23. Scores and recording instrument are shared across performers; this is not composition- or instrument-disjoint.
 
 No user uploads, commercial song recordings, MAESTRO, CSD, or MAPS enter this new training run. Local user recordings may be inspected as unlabeled diagnostics; note-count changes on them are not accuracy measurements.
 
@@ -36,7 +38,7 @@ Training: 271 clips, 36,688 unambiguous candidate events, 50 epochs × 80 update
 
 Guitar false positives fell 42.8%, but Oxford lost 9.24 percentage points of recall, exceeding the predeclared maximum of 2. **This checkpoint was not deployed.** Its tests are consumed. The second attempt adds real piano training and tightens validation recall loss to at most 1 percentage point. Repeated measurements on the first tests must be labeled regression results, not fresh held-out success.
 
-## Expanded training and conservative release
+## Historical V2 release (Vienna assessment invalid)
 
 The expanded network was trained from scratch for 50 epochs × 80 updates on 327 clips and 45,825 unambiguous candidate events. There are 92 validation clips, including ten separated accompaniment examples. Epoch 48 had the lowest validation loss. Threshold 0.22 passed the fresh Vienna test and separated-guitar test, but its Oxford regression recall loss was 3.08 percentage points, so that candidate was also rejected.
 
@@ -50,9 +52,9 @@ The released weights are the expanded network, recalibrated **using validation o
 | Separated accompaniment regression, ten excerpts | 413 → 375 | 996 → 996 | 77.36% → 78.52% |
 | Previously unscored Oxford sections, eight excerpts | 105 → 74 | 623 → 615 | 87.50% → 88.81% |
 
-All original release guards pass at this conservative setting: guitar false positives decrease at least 10% and precision improves; every corpus has nondecreasing F1 and recall loss at most 2 percentage points. The final section test reduced false detections 29.5% with 1.15 percentage points less recall. The conservative verifier improves precision modestly and does not solve missing notes or all wrong notes. The low Vienna baseline also makes clear that the generic detector remains weak on some real acoustic piano. These numbers are not full-song arrangement accuracy.
+**Historical conclusion, withdrawn after the clock audit:** All original release guards appeared to pass at this conservative setting: guitar false positives decrease at least 10% and precision improves; every corpus has nondecreasing F1 and recall loss at most 2 percentage points. The final section test reduced false detections 29.5% with 1.15 percentage points less recall. The conservative verifier improves precision modestly and does not solve missing notes or all wrong notes. The low Vienna baseline was subsequently traced to invalid clocks; it cannot support a detector-accuracy conclusion. These numbers are not full-song arrangement accuracy.
 
-For Vienna, use the publisher's per-recording `FirstOnsets.txt` anchors to align the first MIDI onset to audio, then score 0.25–29.75 s. Exclude `1st-3rd` special Ballade variants as well as performer 23, avoiding duplicate performances. An initial exploratory CQT alignment failed before any Vienna feature extraction/training; it was replaced by the supplied anchors, whose offsets are retained in the audit. No test-prediction-derived clock adjustment is used.
+The historical V2 run used the publisher's per-recording `FirstOnsets.txt` anchors to align the first MIDI onset to audio, then scored 0.25–29.75 s. **Do not reuse that clock method for the trimmed Chopin audio.** Exclude `1st-3rd` special Ballade variants as well as performer 23, avoiding duplicate performances. An initial exploratory CQT alignment failed before any Vienna feature extraction/training; it was replaced by the supplied anchors, whose offsets are retained in the audit. No test-prediction-derived clock adjustment is used.
 
 ### Runtime scope
 
@@ -61,3 +63,28 @@ The checked checkpoint runs on the `other` accompaniment stem for **every balanc
 The Detailed option, solo-piano CRNN, vocal melody model and bass detector retain their existing recognition paths. No evidence here establishes that the verifier is safe on those other candidate distributions. `analysis.accompaniment_verification` reports its model and window-level candidate/rejection counts; overlap-context notes can appear in multiple windows, so these counters are not unique final-score note totals. Existing completed jobs keep their original artifacts and need retranscription to use the model.
 
 The production checkpoint SHA-256 is `2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60`. [Run records](../training/results/accompaniment-verifier-v2) retain the rejected attempts, selection history, licenses, source checksums, reference hashes, per-recording results and promotion decision.
+
+
+## Corrected labels and retraining audit
+
+The Chopin WAV files start at the music, while the publisher's older FirstOnsets anchors include removed silence. This shifted correct piano notes away from their labels and taught V2 to reject some valid notes. Mozart and Schubert retain the initial silence. The corrected preparation treats those cases separately, refines clocks from CQT onset evidence in seconds 0–15, and supervises/evaluates only seconds 15.25–29.75. Calibration does not use transcription predictions. All 88 clock corrections are recorded; residual spectral adjustments are between −0.005 and +0.020 seconds.
+
+A second issue was candidate decoding. V2 applies pitch bounds after unconstrained MIDI decoding, which is not identical to Basic Pitch's original bounded decoder. Corrected experiments decode copies with the original bounds, preserving the unmodified acoustic arrays for features. This helper is tested against the original decoder. It is **not wired into the current runtime**, because the replacement candidates were not promoted.
+
+Retraining uses 327 clips and 41,744 unambiguous candidates, with 92 validation clips. No test recording enters fitting. The corrected Vienna composition-level detector F1 ranges from 0.788 to 0.863 across training and validation groups; a new label audit rejects grossly misaligned groups before fitting.
+
+- **Neural candidate:** 961 parameters, 50 epochs × 80 updates, positive loss weight 4; epoch 48, validation-selected threshold 0.02. One guitar recording regressed: one correct and one false note were removed, slightly reducing its F1. Rejected.
+- **Tree candidate:** 128 ExtraTrees, maximum depth 12, minimum leaf size 8; equal corpus/recording weights and positive weight 4. Validation selected threshold 0.12. One Oxford excerpt lost a correct note without removing a false note. Rejected.
+- **Consensus:** reject only when both frozen candidates agree at their unchanged thresholds. This post-failure development experiment retains all 9,825 originally correct detections across 102 regression excerpts, but removes only 13 false notes. It leaves substantially more false detections than deployed V2, so it is also rejected.
+
+| Regression corpus | Original correct / false notes | Neural correct / false | Tree correct / false | Deployed V2 correct / false |
+| --- | --- | --- | --- | --- |
+| Guitar, 60 excerpts | 6,646 / 2,309 | 6,645 / 2,253 | 6,646 / 2,254 | 6,635 / 1,947 |
+| Vienna piano, 16 excerpts | 1,248 / 222 | 1,248 / 217 | 1,248 / 213 | 1,216 / 173 |
+| Oxford piano, eight excerpts | 312 / 67 | 312 / 66 | 312 / 63 | 310 / 44 |
+| Later Oxford sections, eight excerpts | 623 / 104 | 623 / 96 | 622 / 100 | 615 / 73 |
+| Separated guitar, ten excerpts | 996 / 413 | 996 / 403 | 996 / 408 | 996 / 375 |
+
+All systems above use the same corrected references and scoring windows. V2 has its actual post-decoding pitch constraint; the new candidates use the original bounded decoder. These are consumed regression sets, not a fresh generalization benchmark. The table exposes the tradeoff: current V2 removes more false notes but also loses correct notes, especially on acoustic piano. The corrected candidates have not solved both problems simultaneously. Durations, perceptual arrangement quality, and commercial mixed-song accuracy are not established by these onset/pitch metrics.
+
+The new release gate checks each recording against the original detector, then requires nondecreasing precision, recall and F1 against both the original detector and current release in every corpus, plus an actual false-note reduction versus the current release. This stricter gate was added after observing the failures; it is an engineering regression requirement, not a pre-registered scientific result. No runtime model or deployed note-decoding behavior changed in this audit. [Reproducible results and rejection decisions](../training/results/accompaniment-clock-correction/).

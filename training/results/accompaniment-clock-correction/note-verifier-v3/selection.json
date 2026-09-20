@@ -1,0 +1,9 @@
+{
+  "checkpoint_sha256": "f54663bbfe27f7e5df2c5789801d6f622102bb5f5e05195b1f65bee34ac189ca",
+  "threshold": 0.02,
+  "epoch": 48,
+  "validation_recall_margin": 0.0025,
+  "protect_each_recording": true,
+  "selection": "Minimum corpus-balanced validation BCE; then maximum macro-corpus validation F1 subject to configured recall/F1 guards. When enabled, every validation recording must also have nondecreasing F1 and recall loss <= 0.01.",
+  "test_not_evaluated": true
+}

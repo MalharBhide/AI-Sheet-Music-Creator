@@ -132,7 +132,9 @@ uv run ruff check app tests main.py
 
 The GitHub Actions native-pipeline job runs the same integration suite in the backend Docker image.
 
-## Accompaniment verifier — 2026-09-20
+## Historical accompaniment verifier V2 — 2026-09-20
+
+**Correction:** the Vienna clock assessment below was invalid for trimmed Chopin audio. See the correction audit; the original promotion decision is preserved as history, not current validation evidence.
 
 - Trained two 961-parameter classifiers on commercially compatible labeled data;
   rejected the initial thresholds because the digital-piano recall regression
@@ -153,3 +155,32 @@ The GitHub Actions native-pipeline job runs the same integration suite in the ba
 - Production scope: balanced full-song accompaniment on every uploaded file;
   bounded windows, checked checkpoint hash, unchanged retained note events.
   Other transcription/detail modes retain their previous models.
+
+
+## Accompaniment clock correction and retraining — 2026-09-20
+
+- Identified stale silence offsets in trimmed Chopin recordings. Corrected the
+  preparation and rebuilt 495 feature caches in an isolated experiment directory.
+  Fresh preparation reproduced all 88 repaired reference lists exactly.
+  Training/validation clock checks now operate per composition, so unrelated
+  well-aligned works cannot hide broken labels.
+- Trained a 961-parameter neural candidate on 327 clips / 41,744 unambiguous
+  events for 50 epochs, and a 128-tree ensemble on the same corrected examples.
+  Their validation-selected thresholds were 0.02 and 0.12. Each failed one
+  individual regression recording; neither was promoted.
+- A fixed consensus retained all 9,825 originally correct detections across
+  102 regression excerpts, but removed only 13 false detections and underperformed
+  the current V2 release on false-note removal. It was also rejected. Original
+  frozen measurements and separate stricter promotion decisions are retained in
+  `training/results/accompaniment-clock-correction/`.
+- Added model-promotion checks for individual-recording degradation, comparison
+  with the deployed model, and an actual reduction in false notes. These are
+  regression controls, not proof of accuracy on unseen commercial mixes.
+- Backend and training regression suite: **158 passed, six opt-in native cases
+  skipped**. Candidate helper matches the original Basic Pitch bounded decoder
+  without mutating acoustic evidence. Forest export predictions matched sklearn
+  within 1e-12. Lint passed. No production model, runtime routing, or website
+  behavior changed, so native end-to-end cases from V2 were not rerun.
+- Reviewed SheetSage2: pretrained model, not a labeled training corpus; its
+  non-commercial weights and parent model do not fit the project's current
+  commercial plans. Nothing was downloaded or integrated.

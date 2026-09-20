@@ -10,6 +10,7 @@ import librosa
 import mir_eval
 import numpy as np
 import torch
+from audit_verifier_labels import audit
 from note_verifier_model import NoteVerifier
 from torch.nn import functional as F
 
@@ -78,7 +79,8 @@ def passes_guard(result):
                for row in result['aggregate'].values())
 
 
-def train(directory, epochs, run_name='note-verifier-v1', recall_margin=.01):
+def train(directory, epochs, run_name='note-verifier-v1', recall_margin=.01,
+          positive_weight=2., protect_recordings=False):
     output = directory / run_name
     if output.exists():
         raise ValueError('Preserve earlier attempts: output directory already exists')
@@ -87,6 +89,7 @@ def train(directory, epochs, run_name='note-verifier-v1', recall_margin=.01):
     torch.manual_seed(SEED)
     rng = np.random.default_rng(SEED)
     training, validation = load_data(directory, 'train'), load_data(directory, 'validation')
+    write(output / 'label-audit.json', audit(training, validation))
     pools = []
     for corpus in sorted({item['corpus'] for item in training}):
         items = [item for item in training if item['corpus'] == corpus]
@@ -112,14 +115,14 @@ def train(directory, epochs, run_name='note-verifier-v1', recall_margin=.01):
                        for index in [rng.integers(len(x), size=256)]]
             x, y = (torch.cat([batch[k] for batch in batches]) for k in (0, 1))
             optimizer.zero_grad()
-            loss = F.binary_cross_entropy_with_logits(model(x), y, pos_weight=torch.tensor(2.))
+            loss = F.binary_cross_entropy_with_logits(model(x), y, pos_weight=torch.tensor(positive_weight))
             loss.backward()
             optimizer.step()
             losses.append(float(loss.detach()))
         model.eval()
         with torch.inference_mode():
             val_loss = float(torch.stack([F.binary_cross_entropy_with_logits(model(x), y,
-                pos_weight=torch.tensor(2.)) for x, y in val_pools]).mean())
+                pos_weight=torch.tensor(positive_weight)) for x, y in val_pools]).mean())
         history.append({'epoch': epoch + 1, 'train_loss': float(np.mean(losses)), 'validation_loss': val_loss})
         if val_loss < best:
             best, state, best_epoch = val_loss, copy.deepcopy(model.state_dict()), epoch + 1
@@ -132,6 +135,11 @@ def train(directory, epochs, run_name='note-verifier-v1', recall_margin=.01):
     for threshold in np.arange(0., .801, .02):
         result = evaluate(validation, predictions, float(threshold))
         eligible = passes_guard(result) and all(row['trained']['recall'] >= row['baseline']['recall'] - recall_margin for row in result['aggregate'].values())
+        if protect_recordings:
+            eligible = eligible and all(
+                row['trained']['f1'] >= row['baseline']['f1']
+                and row['trained']['recall'] >= row['baseline']['recall'] - .01
+                for row in result['per_recording'])
         f1 = float(np.mean([r['trained']['f1'] for r in result['aggregate'].values()]))
         thresholds.append({'threshold': float(threshold), 'eligible': eligible,
                            'aggregate': result['aggregate']})
@@ -145,10 +153,13 @@ def train(directory, epochs, run_name='note-verifier-v1', recall_margin=.01):
     write(output / 'validation.json', selection)
     write(output / 'threshold-search.json', thresholds)
     write(output / 'selection.json', {'checkpoint_sha256': digest, 'threshold': chosen,
-        'epoch': best_epoch, 'validation_recall_margin': recall_margin, 'selection': 'Minimum corpus-balanced validation BCE; then maximum macro-corpus validation F1 subject to recall loss <= configured margin and nondecreasing F1 for each corpus',
+        'epoch': best_epoch, 'validation_recall_margin': recall_margin,
+        'protect_each_recording': protect_recordings,
+        'selection': 'Minimum corpus-balanced validation BCE; then maximum macro-corpus validation F1 subject to configured recall/F1 guards. When enabled, every validation recording must also have nondecreasing F1 and recall loss <= 0.01.',
         'test_not_evaluated': True})
     write(output / 'run.json', {'seed': SEED, 'epochs': epochs, 'updates_per_epoch': 80,
         'parameters': sum(p.numel() for p in model.parameters()), 'training_clips': len(training),
+        'positive_loss_weight': positive_weight,
         'training_candidates': len(all_x), 'validation_clips': len(validation),
         'trainable': 'All verifier weights; Basic Pitch frozen', 'features': list(FEATURE_NAMES),
         'ambiguity': 'Exclude unmatched same-pitch near-onset/overlapping events from training loss only',
@@ -189,7 +200,10 @@ if __name__ == '__main__':
     parser.add_argument('directory', type=Path)
     parser.add_argument('--test', action='store_true')
     parser.add_argument('--recall-margin', type=float, default=.01)
+    parser.add_argument('--positive-weight', type=float, default=2.)
+    parser.add_argument('--protect-recordings', action='store_true')
     parser.add_argument('--run', default='note-verifier-v1')
     parser.add_argument('--epochs', type=int, default=50)
     args = parser.parse_args()
-    (test(args.directory, args.run) if args.test else train(args.directory, args.epochs, args.run, args.recall_margin))
+    (test(args.directory, args.run) if args.test else train(args.directory, args.epochs, args.run,
+        args.recall_margin, args.positive_weight, args.protect_recordings))

@@ -77,6 +77,7 @@ def prepare_split(directory):
     import numpy as np
     import pretty_midi
     import soundfile as sf
+    from repair_verifier_clocks import refine
 
     manifest = json.loads((directory / 'note-verifier-v1/split.json').read_text())
     manifest['previously_consumed_tests'] = ['GuitarSet player 05', 'Oxford MIDItest; regression only after first candidate']
@@ -102,11 +103,16 @@ def prepare_split(directory):
         anchors = {int(line.split()[0]): float(line.split()[1])
                    for line in onset_files[0].read_text().splitlines()
                    if line.strip() and not line.startswith('%')}
-        shift = anchors[player] - float(reference[:, 0].min())
-        record = {'shift_seconds': shift, 'publisher_first_onset': anchors[player],
+        # Chopin audio has been trimmed; publisher anchors refer to untrimmed
+        # recordings. Calibrate on 0–15s, then exclude that region from labels.
+        initial = (0. if path.stem.startswith('Chopin_') else anchors[player]) - float(reference[:, 0].min())
+        reference[:, :2] += initial
+        delta, score = refine(samples, rate, reference)
+        reference[:, :2] += delta
+        record = {'shift_seconds': initial + delta, 'publisher_first_onset': anchors[player],
+                  'initial_shift': initial, 'spectral_correction': delta, 'score': score,
                   'source': str(onset_files[0].relative_to(directory))}
-        reference[:, :2] += shift
-        reference = reference[(reference[:, 0] >= .25) & (reference[:, 0] < 29.75)]
+        reference = reference[(reference[:, 0] >= 15.25) & (reference[:, 0] < 29.75)]
         reference[:, 1] = np.minimum(reference[:, 1], 30)
         name = 'vienna-' + path.stem
         audio = output / (name + '.wav')
@@ -114,12 +120,13 @@ def prepare_split(directory):
         group = 'train' if player <= 14 else 'validation' if player <= 18 else 'test'
         manifest['tracks'][group].append({'id': name, 'corpus': 'vienna-piano', 'player': player,
             'audio': str(audio.relative_to(directory)), 'reference': reference.tolist(),
-            'evaluation_window': [.25, 29.75]})
+            'evaluation_window': [15.25, 29.75]})
         audit.append({'id': name, **record})
     if len(audit) != 88:
         raise ValueError(f'Expected 88 real performances, found {len(audit)}')
     manifest['tracks']['validation'].extend(json.loads((directory / 'note-verifier-stems-validation/manifest.json').read_text())['items'])
-    manifest['clock_alignment'] = 'Vienna: publisher FirstOnsets.txt anchors align the first MIDI onset; evaluate 0.25–29.75s. Exclude special 1st-3rd Ballade variants.'
+    manifest['clock_version'] = 2
+    manifest['clock_alignment'] = 'Vienna: correct trimmed Chopin clocks; audio-only CQT calibration on 0–15s; labels only 15.25–29.75s. Exclude special 1st-3rd Ballade variants.'
     (directory / 'vienna-clock-audit.json').write_text(json.dumps(audit, indent=2) + '\n')
     (directory / 'note-verifier-split.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print(json.dumps({'counts': {k: len(v) for k, v in manifest['tracks'].items()}}), flush=True)

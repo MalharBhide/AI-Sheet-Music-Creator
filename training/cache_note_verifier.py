@@ -107,6 +107,10 @@ def cache_one(task):
         acoustic, midi, _ = predict(str(audio), model_or_model_path=_MODEL,
             onset_threshold=.5, frame_threshold=.3, minimum_note_length=90,
             multiple_pitch_bends=False, melodia_trick=False)
+        if item.get('candidate_decoder') == 'bounded-accompaniment-v1':
+            from app.services.accompaniment_candidates import decode_candidates
+
+            midi = decode_candidates(acoustic)
         notes = [n for part in midi.instruments for n in part.notes]
         x = note_features(samples, rate, acoustic, notes)
     audio.unlink()

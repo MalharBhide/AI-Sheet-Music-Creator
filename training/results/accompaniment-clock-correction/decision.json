@@ -1,0 +1,10 @@
+{
+  "promoted": false,
+  "production_model": "accompaniment-verifier-v2",
+  "reason": "Both retrained candidates fail a per-recording guard; their consensus preserves original detections but leaves more false notes than the deployed model. No demonstrated non-regressing replacement.",
+  "training_labels_corrected": true,
+  "runtime_candidate_change_shipped": false,
+  "prior_vienna_scores_invalid": true,
+  "data_provenance": "../accompaniment-verifier-v2/note-data-source.json and vienna-source.json",
+  "checkpoints": "Full candidates retained locally in ignored .training/note-verifier-v3-data; committed selection files record their SHA-256 values."
+}
