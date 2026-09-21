@@ -72,11 +72,13 @@ export default function ScorePlayback({ url, originalUrl, onPositionChange, onSc
   }
 
   function seek(next: number) {
-    if (score && next >= score.duration) {
-      pause(); setPosition(score.duration); return;
-    }
+    if (!score) return;
+    operation.current++;
+    next = Math.max(0, Math.min(score.duration, next));
+    player.current?.seek(next);
     setPosition(next);
-    if (isPlaying) void play(next);
+    if (isPlaying && next < score.duration) void play(next);
+    else setIsPlaying(false);
   }
 
   useEffect(() => {

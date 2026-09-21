@@ -143,7 +143,12 @@ export default function App() {
   }
 
   function reset() { setJobId(null); setJob(null); setFile(null); setError(null); updateUrl(null); }
-  function openRecent(id: string) { setJob(null); setFile(null); setJobId(id); setError(null); updateUrl(id); }
+  function openRecent(id: string) {
+    // Re-selecting the current score must not clear the result: jobId would stay
+    // unchanged, so its completed polling effect would never load it again.
+    if (id === jobId) return;
+    setJob(null); setFile(null); setJobId(id); setError(null); updateUrl(id);
+  }
   const previewUrls = (job?.svg_pages ?? []).map(path => apiUrl(path)!);
   if (!previewUrls.length && job?.download_urls.svg) previewUrls.push(apiUrl(job.download_urls.svg)!);
   const busy = isUploading || loadingExample;

@@ -184,3 +184,16 @@ The GitHub Actions native-pipeline job runs the same integration suite in the ba
 - Reviewed SheetSage2: pretrained model, not a labeled training corpus; its
   non-commercial weights and parent model do not fit the project's current
   commercial plans. Nothing was downloaded or integrated.
+
+
+## Playback functional audit — 2026-09-21
+
+- Fixed reselecting the current Recent score clearing the loaded job without
+  triggering another fetch.
+- Fixed seeking while audio resume is pending: invalidate the stale start and
+  update the paused audio clock before resuming at the requested position.
+- Subagent audit: 26 frontend tests, TypeScript/Vite production build, and 77
+  backend API/job/audio/render/playback/position tests passed. An isolated browser
+  preview verified current-score re-selection, play/pause, and paused sheet seek.
+- Scope is these reproduced failures; this is not a claim that all functional
+  errors are eliminated. Model experiments are separate from these UI fixes.

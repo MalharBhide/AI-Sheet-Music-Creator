@@ -174,6 +174,14 @@ export class ScorePlayer {
     return this.startPosition;
   }
 
+  seek(position: number) {
+    // Update the audio clock even while paused, and invalidate a pending resume
+    // before it can start voices at the position that preceded this seek.
+    this.pause();
+    this.startPosition = Math.max(0, Math.min(this.score.duration, position));
+    return this.startPosition;
+  }
+
   dispose() {
     this.disposed = true;
     this.pause();

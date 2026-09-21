@@ -129,6 +129,15 @@ test("the audio scheduler bounds voices, resumes held notes, and cancels stale s
     assert.equal(await pendingStart, false, "pause cancels an in-flight context resume");
     assert.equal(oscillators.length, 4);
 
+    const startBeforeSeek = player.play(0, 1);
+    assert.equal(player.seek(12), 12);
+    resumes.shift()!();
+    assert.equal(await startBeforeSeek, false, "a paused seek cancels pending audio permission/resume");
+    assert.equal(oscillators.length, 4, "stale playback cannot create voices after seeking");
+    assert.equal(player.pause(), 12, "pausing for the original recording preserves the sought position");
+    assert.equal(player.seek(9999), 7200, "seek is clamped to the end");
+    assert.equal(player.seek(-1), 0, "seek is clamped to the start");
+
     const olderSeek = player.play(0, 1);
     const newerSeek = player.play(1.5, 0.5);
     resumes[1]();
