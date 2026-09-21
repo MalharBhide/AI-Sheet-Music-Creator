@@ -1,0 +1,263 @@
+{
+  "checkpoint_sha256": [
+    "d06bbe84ee9ad251960969e0097b217e340d52562ecf178295d7c4ae57c6ee8d",
+    "381c150b19bdb223fc9e85f88b78dd69892b0de5c7591189967f30b59a26a8e7"
+  ],
+  "prune": 0.01,
+  "rescue": 1.01,
+  "passes": true,
+  "failed_recordings": [],
+  "aggregate": {
+    "oxford-later-piano": {
+      "previous_v2": {
+        "precision": 0.892436974789916,
+        "recall": 0.9092465753424658,
+        "f1": 0.9007633587786259,
+        "true_positives": 531,
+        "false_positives": 64,
+        "predicted": 595,
+        "reference": 584,
+        "seconds": 186.0320634920635,
+        "false_positives_per_minute": 20.641603000677474
+      },
+      "trained": {
+        "precision": 0.892436974789916,
+        "recall": 0.9092465753424658,
+        "f1": 0.9007633587786259,
+        "true_positives": 531,
+        "false_positives": 64,
+        "predicted": 595,
+        "reference": 584,
+        "seconds": 186.0320634920635,
+        "false_positives_per_minute": 20.641603000677474
+      }
+    }
+  },
+  "per_recording": [
+    {
+      "id": "oxford-later-10",
+      "corpus": "oxford-later-piano",
+      "previous_v2": {
+        "precision": 0.9021739130434783,
+        "recall": 0.9021739130434783,
+        "f1": 0.9021739130434783,
+        "true_positives": 83,
+        "false_positives": 9,
+        "predicted": 92,
+        "reference": 92,
+        "seconds": 29.5,
+        "false_positives_per_minute": 18.305084745762713
+      },
+      "trained": {
+        "precision": 0.9021739130434783,
+        "recall": 0.9021739130434783,
+        "f1": 0.9021739130434783,
+        "true_positives": 83,
+        "false_positives": 9,
+        "predicted": 92,
+        "reference": 92,
+        "seconds": 29.5,
+        "false_positives_per_minute": 18.305084745762713
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "oxford-later-21",
+      "corpus": "oxford-later-piano",
+      "previous_v2": {
+        "precision": 0.7457627118644068,
+        "recall": 0.8,
+        "f1": 0.7719298245614035,
+        "true_positives": 44,
+        "false_positives": 15,
+        "predicted": 59,
+        "reference": 55,
+        "seconds": 29.5,
+        "false_positives_per_minute": 30.508474576271187
+      },
+      "trained": {
+        "precision": 0.7457627118644068,
+        "recall": 0.8,
+        "f1": 0.7719298245614035,
+        "true_positives": 44,
+        "false_positives": 15,
+        "predicted": 59,
+        "reference": 55,
+        "seconds": 29.5,
+        "false_positives_per_minute": 30.508474576271187
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "oxford-later-23",
+      "corpus": "oxford-later-piano",
+      "previous_v2": {
+        "precision": 0.9663865546218487,
+        "recall": 0.9583333333333334,
+        "f1": 0.9623430962343096,
+        "true_positives": 115,
+        "false_positives": 4,
+        "predicted": 119,
+        "reference": 120,
+        "seconds": 29.5,
+        "false_positives_per_minute": 8.135593220338983
+      },
+      "trained": {
+        "precision": 0.9663865546218487,
+        "recall": 0.9583333333333334,
+        "f1": 0.9623430962343096,
+        "true_positives": 115,
+        "false_positives": 4,
+        "predicted": 119,
+        "reference": 120,
+        "seconds": 29.5,
+        "false_positives_per_minute": 8.135593220338983
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "oxford-later-24",
+      "corpus": "oxford-later-piano",
+      "previous_v2": {
+        "precision": 0.9435483870967742,
+        "recall": 0.9435483870967742,
+        "f1": 0.9435483870967742,
+        "true_positives": 117,
+        "false_positives": 7,
+        "predicted": 124,
+        "reference": 124,
+        "seconds": 29.5,
+        "false_positives_per_minute": 14.23728813559322
+      },
+      "trained": {
+        "precision": 0.9435483870967742,
+        "recall": 0.9435483870967742,
+        "f1": 0.9435483870967742,
+        "true_positives": 117,
+        "false_positives": 7,
+        "predicted": 124,
+        "reference": 124,
+        "seconds": 29.5,
+        "false_positives_per_minute": 14.23728813559322
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "oxford-later-25",
+      "corpus": "oxford-later-piano",
+      "previous_v2": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "true_positives": 4,
+        "false_positives": 2,
+        "predicted": 6,
+        "reference": 4,
+        "seconds": 5.505351473922903,
+        "false_positives_per_minute": 21.796973466344845
+      },
+      "trained": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "true_positives": 4,
+        "false_positives": 2,
+        "predicted": 6,
+        "reference": 4,
+        "seconds": 5.505351473922903,
+        "false_positives_per_minute": 21.796973466344845
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "oxford-later-26",
+      "corpus": "oxford-later-piano",
+      "previous_v2": {
+        "precision": 0.7368421052631579,
+        "recall": 0.8235294117647058,
+        "f1": 0.7777777777777778,
+        "true_positives": 14,
+        "false_positives": 5,
+        "predicted": 19,
+        "reference": 17,
+        "seconds": 10.518684807256236,
+        "false_positives_per_minute": 28.520675873189703
+      },
+      "trained": {
+        "precision": 0.7368421052631579,
+        "recall": 0.8235294117647058,
+        "f1": 0.7777777777777778,
+        "true_positives": 14,
+        "false_positives": 5,
+        "predicted": 19,
+        "reference": 17,
+        "seconds": 10.518684807256236,
+        "false_positives_per_minute": 28.520675873189703
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "oxford-later-27",
+      "corpus": "oxford-later-piano",
+      "previous_v2": {
+        "precision": 0.8775510204081632,
+        "recall": 0.7962962962962963,
+        "f1": 0.8349514563106796,
+        "true_positives": 43,
+        "false_positives": 6,
+        "predicted": 49,
+        "reference": 54,
+        "seconds": 22.508027210884354,
+        "false_positives_per_minute": 15.994293796922035
+      },
+      "trained": {
+        "precision": 0.8775510204081632,
+        "recall": 0.7962962962962963,
+        "f1": 0.8349514563106796,
+        "true_positives": 43,
+        "false_positives": 6,
+        "predicted": 49,
+        "reference": 54,
+        "seconds": 22.508027210884354,
+        "false_positives_per_minute": 15.994293796922035
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "oxford-later-5",
+      "corpus": "oxford-later-piano",
+      "previous_v2": {
+        "precision": 0.8740157480314961,
+        "recall": 0.940677966101695,
+        "f1": 0.9061224489795918,
+        "true_positives": 111,
+        "false_positives": 16,
+        "predicted": 127,
+        "reference": 118,
+        "seconds": 29.5,
+        "false_positives_per_minute": 32.54237288135593
+      },
+      "trained": {
+        "precision": 0.8740157480314961,
+        "recall": 0.940677966101695,
+        "f1": 0.9061224489795918,
+        "true_positives": 111,
+        "false_positives": 16,
+        "predicted": 127,
+        "reference": 118,
+        "seconds": 29.5,
+        "false_positives_per_minute": 32.54237288135593
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    }
+  ],
+  "status": "Previously unscored later windows, same performers/compositions"
+}

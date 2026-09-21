@@ -6,6 +6,7 @@ from fastapi import HTTPException, Request
 
 from app.config import Settings
 from app.services.accompaniment_verifier import CHECKPOINT as ACCOMPANIMENT_CHECKPOINT
+from app.services.accompaniment_verifier import CONTEXT_CHECKPOINTS
 from app.services.vocal_melody import CHECKPOINT
 
 
@@ -16,6 +17,7 @@ def dependencies(settings: Settings) -> dict[str, bool]:
             'piano_model': settings.piano_model_path.is_file(),
             'vocal_model': CHECKPOINT.is_file(),
             'accompaniment_model': ACCOMPANIMENT_CHECKPOINT.is_file(),
+            'accompaniment_context_models': all(path.is_file() for path, _ in CONTEXT_CHECKPOINTS),
             'source_separation': importlib.util.find_spec('demucs') is not None,
             'music21': importlib.util.find_spec('music21') is not None,
             'musescore': settings.renderer() is not None}

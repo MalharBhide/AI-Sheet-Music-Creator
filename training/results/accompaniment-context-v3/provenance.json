@@ -1,0 +1,78 @@
+{
+  "models": [
+    {
+      "name": "original",
+      "split_sha256": "c53be6d339f16f8c04243941cd078c97a9054b25791f1bed7af51b54cfd82d3c",
+      "source_model_sha256": "b9495bd2bedba360842e7913de0f5cef0640ac08175c53f0fec6a89a12d8e09e",
+      "counts": {
+        "train": {
+          "guitarset": 239,
+          "original-piano": 32,
+          "vienna-piano": 56
+        },
+        "validation": {
+          "guitarset": 58,
+          "original-piano": 8,
+          "vienna-piano": 16,
+          "separated-guitar": 10
+        },
+        "test": {
+          "guitarset": 60,
+          "vienna-piano": 16
+        }
+      }
+    },
+    {
+      "name": "expanded",
+      "split_sha256": "e4b8bf6ecfb0886d061fedde8d779a6e49db6ec4aaa7fb879b5c35a9425f0506",
+      "source_model_sha256": "d437231cdcf97b9ef220cf9e0f8126a0a33bdd0c3da6c29622f517f45e8fba53",
+      "counts": {
+        "train": {
+          "guitarset": 239,
+          "original-piano": 96,
+          "vienna-piano": 56,
+          "separated-guitar": 40
+        },
+        "validation": {
+          "guitarset": 58,
+          "original-piano": 24,
+          "vienna-piano": 16,
+          "separated-guitar": 10
+        },
+        "test": {
+          "guitarset": 60,
+          "vienna-piano": 16
+        }
+      }
+    }
+  ],
+  "training": {
+    "seed": 260921,
+    "trees": 300,
+    "leaf_candidates": [
+      15,
+      31
+    ],
+    "minimum_leaf_events": 20,
+    "learning_rate": 0.05,
+    "l2": 1.0,
+    "positive_weight": 2.0,
+    "weighting": "Equal corpora and equal recordings within corpus",
+    "training_clips": 431,
+    "training_events": 52694,
+    "validation_clips": 108,
+    "sklearn_version": "1.9.0",
+    "test_used_for_selection": false
+  },
+  "features": 52,
+  "trees_per_head": 300,
+  "leaves_per_tree": 31,
+  "shared_training_data": true,
+  "source_clocks": "Corrected Vienna clock audit; first 15 seconds excluded from supervised/evaluated notes",
+  "final_evaluation_plan": "Oxford 60\u201390 seconds selected before inference. Replaced an unexecuted plan to use first 15 seconds, which were unsuitable because clock calibration used them. No final-check note predictions were consulted for this change.",
+  "status_correction": "agreement-margin/fresh.json is a regression rerun of the 16 later Vienna sections already consumed by agreement-rejected/fresh.json. Only agreement-margin/oxford-final.json was newly scored after margin freeze. All sets are now consumed.",
+  "checkpoints": {
+    "accompaniment-context-original.npz": "381c150b19bdb223fc9e85f88b78dd69892b0de5c7591189967f30b59a26a8e7",
+    "accompaniment-context-expanded.npz": "d06bbe84ee9ad251960969e0097b217e340d52562ecf178295d7c4ae57c6ee8d"
+  }
+}

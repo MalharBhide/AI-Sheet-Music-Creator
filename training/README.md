@@ -170,8 +170,10 @@ eighth` against `--grid sixteenth`. Note retention is not note correctness.
 
 See [the verifier model card](../docs/accompaniment-verifier.md) for the two rejected
 candidates, corrected clock audit, data rights, and consumed-test caveats.
-The historical V2 Vienna assessment is invalid; no corrected candidate has yet
-passed comparison with the current release.
+The historical V2 Vienna assessment is invalid. Corrected full replacements were
+rejected; the later [V3 context correction](../docs/accompaniment-context-v3.md)
+preserves V2 and adds a narrowly applied learned filter. Its reproduction commands,
+failed attempts and modest measured improvement are documented separately.
 The 961-parameter event classifier uses pitch-relative acoustic evidence; Basic
 Pitch/Demucs are frozen. User recordings are not training examples.
 

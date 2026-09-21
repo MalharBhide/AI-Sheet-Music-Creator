@@ -11,7 +11,7 @@ from pathlib import Path
 
 import numpy as np
 
-from app.services.note_evidence import FEATURE_VERSION
+from app.services.note_evidence import CONTEXT_VERSION, FEATURE_VERSION
 
 # Exclude publisher-documented annotation errors before inspecting predictions.
 EXCLUDED = ['04_BN3-154-E_comp', '04_Jazz1-200-B_comp', '02_Funk2-119-G_comp']
@@ -94,9 +94,10 @@ def cache_one(task):
     cache = directory / 'note-verifier-features'
     path = cache / (item['id'] + '.npz')
     digest = hashlib.sha256(json.dumps(item, sort_keys=True).encode()).hexdigest()
+    version = CONTEXT_VERSION if item.get('context_features') else FEATURE_VERSION
     if path.exists():
         with np.load(path) as saved:
-            if str(saved['version']) == FEATURE_VERSION and str(saved['identity']) == digest:
+            if str(saved['version']) == version and str(saved['identity']) == digest:
                 return {'cached': item['id'], 'reused': True}
     if _MODEL is None:
         _MODEL = Model(ICASSP_2022_MODEL_PATH)
@@ -107,12 +108,14 @@ def cache_one(task):
         acoustic, midi, _ = predict(str(audio), model_or_model_path=_MODEL,
             onset_threshold=.5, frame_threshold=.3, minimum_note_length=90,
             multiple_pitch_bends=False, melodia_trick=False)
+        legacy_notes = [n for part in midi.instruments for n in part.notes if 36 <= n.pitch < 96]
         if item.get('candidate_decoder') == 'bounded-accompaniment-v1':
             from app.services.accompaniment_candidates import decode_candidates
 
             midi = decode_candidates(acoustic)
         notes = [n for part in midi.instruments for n in part.notes]
-        x = note_features(samples, rate, acoustic, notes)
+        x = note_features(samples, rate, acoustic, notes, include_context=item.get('context_features', False))
+        legacy_x = note_features(samples, rate, acoustic, legacy_notes) if item.get('context_features') else None
     audio.unlink()
     events = np.asarray([[n.start, n.end, n.pitch, n.velocity] for n in notes]).reshape(-1, 4)
     reference = np.asarray(item['reference'], dtype=float).reshape(-1, 3)
@@ -121,8 +124,16 @@ def cache_one(task):
         keep = (events[:, 0] >= start) & (events[:, 0] < stop)
         events, x = events[keep], x[keep]
     y, mask = targets(reference, events)
+    extra = {}
+    if legacy_x is not None:
+        legacy_events = np.asarray([[n.start, n.end, n.pitch, n.velocity] for n in legacy_notes]).reshape(-1, 4)
+        if 'evaluation_window' in item:
+            start, stop = item['evaluation_window']
+            keep = (legacy_events[:, 0] >= start) & (legacy_events[:, 0] < stop)
+            legacy_events, legacy_x = legacy_events[keep], legacy_x[keep]
+        extra = {'legacy_events': legacy_events, 'legacy_x': legacy_x}
     np.savez_compressed(path, x=x, events=events, reference=reference, y=y, mask=mask,
-                        seconds=(item['evaluation_window'][1] - item['evaluation_window'][0]) if 'evaluation_window' in item else len(samples) / rate, version=FEATURE_VERSION, identity=digest)
+                        seconds=(item['evaluation_window'][1] - item['evaluation_window'][0]) if 'evaluation_window' in item else len(samples) / rate, version=version, identity=digest, **extra)
     # Do not expose test label counts while preparing features.
     return {'cached': item['id'], 'notes': len(events)}
 

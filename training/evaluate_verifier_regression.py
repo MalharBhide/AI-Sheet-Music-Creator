@@ -17,6 +17,8 @@ from note_verifier_model import NoteVerifier
 from train_note_verifier import aggregate, frozen, load_data, metrics, probabilities, write
 from verifier_release_gate import decision
 
+from app.services.note_context_model import ContextNoteModel
+
 
 def failures(rows):
     return [row['id'] for row in rows if
@@ -29,8 +31,16 @@ def run(directory, run_name='note-verifier-v3'):
     if output.exists():
         raise ValueError('Preserve the frozen regression result')
     forest_path = directory / run_name / 'candidate.json'
+    context_path = directory / run_name / 'candidate.npz'
     consensus = run_name == 'note-verifier-consensus'
-    if consensus:
+    if context_path.exists():
+        digest = hashlib.sha256(context_path.read_bytes()).hexdigest()
+        if digest != json.loads((directory / run_name / 'selection.json').read_text())['checkpoint_sha256']:
+            raise ValueError('Context model changed after validation freeze')
+        with np.load(context_path, allow_pickle=False) as arrays:
+            model = ContextNoteModel(arrays)
+        saved = {'threshold': model.threshold}
+    elif consensus:
         model, saved, digest = frozen(directory, 'note-verifier-v3')
         forest_path = directory / 'note-verifier-v4/candidate.json'
         forest_saved = json.loads(forest_path.read_text())
@@ -64,11 +74,13 @@ def run(directory, run_name='note-verifier-v3'):
         for entry in manifest['items']:
             entry['audio'] = '../' + entry['audio']
             entry['candidate_decoder'] = 'bounded-accompaniment-v1'
+            if context_path.exists():
+                entry['context_features'] = True
             cache_one((str(directory), entry))
             with np.load(directory / 'note-verifier-features' / (entry['id'] + '.npz')) as cached:
                 items.append({**entry, **{k: cached[k] for k in ('x', 'events', 'reference', 'seconds')}})
             print(json.dumps({'cached': entry['id']}), flush=True)
-    scores = ([model.probability(item['x']) for item in items] if forest_path.exists() and not consensus
+    scores = ([model.probability(item['x']) for item in items] if context_path.exists() or (forest_path.exists() and not consensus)
               else probabilities(model, items, saved['mean'].numpy(), saved['scale'].numpy()))
     if consensus:
         # A retained-note mask, not a calibrated probability.

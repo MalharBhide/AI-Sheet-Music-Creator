@@ -1,6 +1,6 @@
 # Learning to reject extra accompaniment notes
 
-**2026-09-20 correction:** V2 used incorrect clocks for the trimmed Chopin recordings. Its old Vienna scores and the conclusion that all release checks passed are withdrawn. V2 remains the current runtime while corrected candidates are evaluated; none of this audit’s candidates is a demonstrated improvement over it. See the correction below.
+**2026-09-20 correction:** V2 used incorrect clocks for the trimmed Chopin recordings. Its old Vienna scores and the conclusion that all release checks passed are withdrawn. The corrected full replacements below were rejected. The subsequent [V3 context correction](accompaniment-context-v3.md) retains V2 and adds a conservative learned filter; it documents its separate measurements and limitations.
 
 This experiment targets false notes from Basic Pitch on the separated accompaniment. A small neural verifier estimates whether each detected note is supported by the audio. It learns from labeled events; it does not use a song title, filename, key signature, or a list of allowed notes. Vocal melody recognition and the dedicated solo-piano model are separate systems.
 

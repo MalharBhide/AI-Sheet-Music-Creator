@@ -1,0 +1,32 @@
+{
+  "promoted": true,
+  "date": "2026-09-21",
+  "scope": "V2 plus two conservative context heads; balanced full-song accompaniment only",
+  "prune": 0.01,
+  "v2_ceiling": 0.2,
+  "validation_clips": 108,
+  "evaluation_clips": 126,
+  "all_previously_matched_references_preserved": true,
+  "no_recording_false_positive_increase": true,
+  "backend_training_tests_passed": 163,
+  "native_integration_tests_passed": 6,
+  "website_job_id": "99131bd6-b6bd-4c7c-91bc-a32bd064aa60",
+  "source_sha256": {
+    "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+    "backend/app/services/note_context_model.py": "d5dd4daff4fd81b4b05286fec20a3685e8da14356d5673e1b10253670c8256f5",
+    "backend/app/services/accompaniment_verifier.py": "66d41b240dab48425a8b0969658c5c0fc77e950b4e134828c05e004ff3d34cb4",
+    "training/evaluate_context_correction.py": "5ca153171ef1767f89547c59b9705cef366788c151b704173c4f21af475afd32",
+    "training/export_context_verifier.py": "b409e8e5b924a9d3be0d35a6035e8b7410af607eb44b57bcebe4a7631b4d1213",
+    "training/prepare_context_dataset.py": "6dd2dbab08d32ac68c15a1ee975af08eb2c722f2e37acd95c55900ab24579788",
+    "training/prepare_context_piano.py": "b4fe0755a180dcd1477974742b26d1f516516ebf2304d076593115d62fdbf05e",
+    "training/select_context_correction.py": "bca46bc29568d9e9aff769613ffda0aa6d209d1ffdeec1abd7ad91827630db85",
+    "training/stress_context_melody.py": "f49350f97ab978cd761faf46e0f7e6cbccf52d5422894d13d4ca0b6d7f0b8212",
+    "training/test_context_melody.py": "7b124d1e00c5efaa0073e4d4cd752f9cd40736c00e5a7f259879863fee954b12",
+    "training/test_context_model.py": "550889b39e19f35a3bf2e646b192177b551ba54c5a49b1ae476e3ec35ebc42be",
+    "training/train_context_melody.py": "4492dd6c54c1a352310cb86daeea4e2fc68dc49d87eab8c78663addd269714bf",
+    "training/train_context_verifier.py": "1b8331834a401f69e6cb8f4d64655fe925d6cce0a5de5c20465cb373db5a67a3",
+    "training/select_agreement_correction.py": "b47cbbf4dd8cce5b38962912a75fd47c8e52248e74eaf7db4c0826c6d9420995",
+    "training/freeze_correction_margin.py": "f88784a877585e45f935b2b71503c5d1b23168b52dc827b049a3e37328c9c3e9"
+  },
+  "limitations": "15 fewer false positives across 126 excerpts (0.49%); 118 consumed regressions, eight new sections from already-seen recordings; not an independent-performer or commercial-mixture accuracy estimate."
+}

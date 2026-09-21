@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 from cache_note_verifier import targets
 
-from app.services.note_evidence import FEATURE_NAMES, note_features
+from app.services.note_evidence import CONTEXT_NAMES, FEATURE_NAMES, note_features
 
 
 def test_supervision_does_not_train_late_correct_pitch_as_a_false_note():
@@ -46,3 +46,18 @@ def test_features_validate_audio_and_preserve_real_note_attributes():
     samples[0] = np.nan
     with pytest.raises(ValueError, match='finite'):
         note_features(samples, 22050, arrays, notes)
+
+
+def test_context_keeps_legacy_features_exact_and_handles_pitch_boundaries():
+    notes = [SimpleNamespace(start=0., end=.3, pitch=21, velocity=50),
+             SimpleNamespace(start=.4, end=1., pitch=108, velocity=100)]
+    time = np.arange(22050) / 22050
+    samples = (.1 * np.sin(2 * np.pi * 440 * time)).astype(np.float32)
+    rng = np.random.default_rng(17)
+    arrays = {'note': rng.random((87, 88)), 'onset': rng.random((87, 88))}
+    original = note_features(samples, 22050, arrays, notes)
+    context = note_features(samples, 22050, arrays, notes, include_context=True)
+    assert context.shape == (2, len(FEATURE_NAMES) + len(CONTEXT_NAMES))
+    np.testing.assert_array_equal(original, context[:, :len(FEATURE_NAMES)])
+    assert np.isfinite(context).all()
+    assert note_features(np.array([]), 22050, {}, [], include_context=True).shape == (0, 52)

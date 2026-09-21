@@ -1,5 +1,48 @@
 # Verification
 
+## Conservative accompaniment context correction — 2026-09-21
+
+Released two newly trained boosted-tree context classifiers alongside the existing
+V2 neural verifier. They remove a note only when both assign a score below .01,
+V2's retained score is at most .20, and the event exactly matches the training
+decoder. The correction applies to every balanced full-song upload. Vocal melody,
+bass and dedicated piano inference are unchanged. The [model card](docs/accompaniment-context-v3.md)
+records training data, commercial-compatible attribution, rejected candidates,
+post-failure selection decisions, and all evaluation limitations.
+
+- On 126 evaluated excerpts, false notes decreased **3,047 → 3,032 (0.49%)**.
+  All **12,301** previously matched notes remained matched, with no per-recording
+  increase in false positives. This is a modest improvement. The last eight
+  Oxford sections were newly scored after freeze and showed unchanged accuracy;
+  the other 118 were consumed regressions. These are candidate-note measurements,
+  not a claim of accurate commercial-song piano arrangements.
+- A broader correction was rejected after losing two correct notes on later
+  piano excerpts, despite passing the earlier regression set. Rejected artifacts
+  and decisions remain archived. Full-replacement release gates were not relaxed.
+- **163 backend/training checks passed**, plus **all six native integration cases**
+  using actual models, FFmpeg and MuseScore: WAV, 181-second stereo VBR MP3,
+  0.125-second MP3, silent MP3, full-song MP3, and multipage score rendering.
+  Backend/training lint and diff checks passed. Tests cover exact candidate
+  matching, both-head agreement, confident-note preservation, feature parity,
+  malformed model files, and retained note/instrument identity.
+- The debugging subagent independently verified 14,163 shared validation events
+  have bit-identical legacy features; two unmatched events preserve V2 decisions.
+  Earlier frontend fixes for Recent-score re-selection and pending playback seeks
+  are already pushed and deployed, with 26 frontend tests and production build
+  passing. This is a bounded audit, not proof that every code path is error-free.
+- Rebuilt the local backend and uploaded an actual stereo VBR MP3 through the
+  deployed frontend proxy. Job `99131bd6-b6bd-4c7c-91bc-a32bd064aa60` completed with
+  the V3 engine, 22 playback notes and 31 score positions. PDF, MusicXML, MIDI,
+  SVG, ZIP and playback JSON were nonempty and parsed successfully; MIDI and
+  playback event counts matched. Browser checks verified advancing playback,
+  click-to-seek, keyboard seeking while playing, and restart to paused time zero.
+  The sample is an operational check, not additional accuracy evidence.
+
+Numerical model arrays are packaged in the backend wheel and checked by SHA-256
+before inference. Readiness includes both model files. No new upload or overall
+audio-length cap was introduced. Existing scores need a new transcription to
+receive the model update.
+
 ## Trained vocal melody model — 2026-09-13
 
 Built the [audio-to-piano framework](docs/transcription-framework.md), downloaded

@@ -14,7 +14,7 @@ from audit_verifier_labels import audit
 from note_verifier_model import NoteVerifier
 from torch.nn import functional as F
 
-from app.services.note_evidence import FEATURE_NAMES, FEATURE_VERSION
+from app.services.note_evidence import CONTEXT_VERSION, FEATURE_NAMES, FEATURE_VERSION
 
 SEED = 260920
 
@@ -29,9 +29,13 @@ def load_data(directory, group):
     for entry in manifest['tracks'][group]:
         with np.load(directory / 'note-verifier-features' / (entry['id'] + '.npz')) as saved:
             digest = hashlib.sha256(json.dumps(entry, sort_keys=True).encode()).hexdigest()
-            if str(saved['version']) != FEATURE_VERSION or str(saved['identity']) != digest:
+            version = CONTEXT_VERSION if entry.get('context_features') else FEATURE_VERSION
+            if str(saved['version']) != version or str(saved['identity']) != digest:
                 raise ValueError('Stale feature cache')
-            items.append({**entry, **{k: saved[k] for k in ('x', 'y', 'mask', 'events', 'reference', 'seconds')}})
+            fields = ['x', 'y', 'mask', 'events', 'reference', 'seconds']
+            if 'legacy_x' in saved:
+                fields.extend(['legacy_x', 'legacy_events'])
+            items.append({**entry, **{k: saved[k] for k in fields}})
     return items
 
 

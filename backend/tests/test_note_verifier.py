@@ -8,6 +8,7 @@ import soundfile as sf
 
 from app.models import PipelineError
 from app.services import accompaniment_verifier as service
+from app.services.note_context_model import correction_keep, shared_events
 
 
 def test_missing_checkpoint_fails_explicitly(monkeypatch, tmp_path):
@@ -27,12 +28,80 @@ def test_filter_preserves_retained_notes_and_instrument_assignment(monkeypatch, 
              for i, p in enumerate([60, 72, 64, 79])]
     midi = SimpleNamespace(instruments=[SimpleNamespace(notes=notes[:2]), SimpleNamespace(notes=notes[2:])])
     before = [vars(n).copy() for n in notes]
-    monkeypatch.setattr(service, 'note_features', lambda *args: np.zeros((4, 26), dtype=np.float32))
+    monkeypatch.setattr(service, 'note_features', lambda *args, **kwargs: np.zeros((4, 52), dtype=np.float32))
+    monkeypatch.setattr(service, 'decode_candidates', lambda _: midi)
+    verifier.context_models = [SimpleNamespace(threshold=model.threshold, probability=lambda x: np.ones(len(x)))
+                               for model in verifier.context_models]
     verifier.model = lambda x: torch.tensor([2., -5., 1., -4.])
     assert verifier.filter(path, {}, midi) == 2
     assert midi.instruments[0].notes == [notes[0]]
     assert midi.instruments[1].notes == [notes[2]]
     assert [vars(n) for n in notes] == before
+
+
+def test_context_correction_matches_runtime_without_changing_unshared_or_confident_notes(monkeypatch, tmp_path):
+    torch = pytest.importorskip('torch')
+    verifier = service.AccompanimentVerifier()
+    path = tmp_path / 'window.wav'
+    sf.write(path, np.zeros(22050), 22050)
+    notes = [SimpleNamespace(pitch=60 + i, start=.1 * i, end=.5 + .1 * i, velocity=70 + i)
+             for i in range(8)]
+    midi = SimpleNamespace(instruments=[SimpleNamespace(notes=notes[:4]), SimpleNamespace(notes=notes[4:])])
+    before = [vars(n).copy() for n in notes]
+    # Decoder order is unrelated to instrument order. The almost identical
+    # fifth candidate differs in velocity and must not receive a correction.
+    bounded_notes = [SimpleNamespace(**before[i]) for i in [7, 3, 1, 6, 0, 2, 5]]
+    bounded_notes.append(SimpleNamespace(**{**before[4], 'velocity': notes[4].velocity + 1}))
+    bounded = SimpleNamespace(instruments=[SimpleNamespace(notes=bounded_notes)])
+    monkeypatch.setattr(service, 'decode_candidates', lambda _: bounded)
+    x = np.arange(8 * 52, dtype=np.float32).reshape(8, 52) / 100
+
+    def features(samples, rate, acoustic, candidates, *, include_context=False):
+        assert include_context and candidates == notes and rate == 22050
+        return x
+
+    monkeypatch.setattr(service, 'note_features', features)
+    previous = np.array([.8, .15, .15, .15, .15, .05, .2, .2001])
+    prune = verifier.context_models[0].threshold
+    low, high = prune / 5, min(1., prune * 2)
+    context = np.array([[low, low, low, high, low, .8, low, low],
+                        [low, low, high, low, low, .8, low, low]])
+
+    def old_model(features):
+        np.testing.assert_array_equal(features.numpy(), (x[:, :26] - verifier.mean) / verifier.scale)
+        return torch.from_numpy(np.log(previous / (1 - previous)))
+
+    def context_model(index):
+        def probability(features):
+            np.testing.assert_array_equal(features, x)
+            return context[index]
+        return SimpleNamespace(threshold=prune, probability=probability)
+
+    verifier.model = old_model
+    verifier.context_models = [context_model(0), context_model(1)]
+    events = [[n.start, n.end, n.pitch, n.velocity] for n in notes]
+    bounded_events = [[n.start, n.end, n.pitch, n.velocity] for n in bounded_notes]
+    shared = shared_events(events, bounded_events)
+    np.testing.assert_array_equal(shared, [True, True, True, True, False, True, True, True])
+    expected = correction_keep(previous, context, shared, prune=prune)
+    np.testing.assert_array_equal(expected, [True, False, True, True, True, False, False, True])
+    assert verifier.filter(path, {}, midi) == 3
+    assert midi.instruments[0].notes == [notes[0], notes[2], notes[3]]
+    assert midi.instruments[1].notes == [notes[4], notes[7]]
+    assert [n for part in midi.instruments for n in part.notes] == [n for n, keep in zip(notes, expected, strict=True) if keep]
+    assert [vars(n) for n in notes] == before
+
+
+@pytest.mark.parametrize('damaged_index', [0, 1])
+def test_damaged_context_checkpoint_fails_explicitly(monkeypatch, tmp_path, damaged_index):
+    pytest.importorskip('torch')
+    damaged = tmp_path / 'damaged.npz'
+    damaged.write_bytes(b'not the checked context model')
+    checkpoints = list(service.CONTEXT_CHECKPOINTS)
+    checkpoints[damaged_index] = (damaged, checkpoints[damaged_index][1])
+    monkeypatch.setattr(service, 'CONTEXT_CHECKPOINTS', tuple(checkpoints))
+    with pytest.raises(PipelineError, match='context model is missing or damaged'):
+        service.AccompanimentVerifier()
 
 
 def test_rejects_unbounded_and_non_normalized_audio(tmp_path):
