@@ -43,11 +43,15 @@ def run(path, output, tempo, grid='sixteenth', reuse=False):
             midi.write(str(output / f'{role}-raw.mid'))
         part = pretty_midi.Instrument(0, name=role)
         part.notes = clean_notes(notes, role=role, detail='balanced', tempo_bpm=tempo, grid=grid)
-        if role == 'other':
-            part.notes = reduce_accompaniment(part.notes, detail='balanced')
         parts[role] = part
         report[role] = {'raw': summarize(notes), 'score': summarize(part.notes)}
     shift = arrange_melody_register(parts)
+    if 'other' in parts:
+        parts['other'].notes = reduce_accompaniment(
+            parts['other'].notes, detail='balanced',
+            melody=parts['vocals'].notes if 'vocals' in parts else None)
+    for role, part in parts.items():
+        report[role]['score'] = summarize(part.notes)
     support_changes = preserve_melody_releases(parts)
     balance_piano_arrangement(parts)
     for role, part in parts.items():

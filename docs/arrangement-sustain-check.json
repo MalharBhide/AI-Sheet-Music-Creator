@@ -1,0 +1,54 @@
+{
+  "scope": "Arrangement-only comparison on the same cached raw detections, not labeled transcription accuracy. No uploaded recording is used for fitting.",
+  "baseline_commit": "5d45c0c",
+  "melody_comparison": "Exact equality of pitch, onset, release and velocity after the complete arrangement",
+  "results": [
+    {
+      "clip": "cached-diagnostic-excerpt-1",
+      "before": {
+        "notes": {
+          "vocals": 69,
+          "bass": 16,
+          "other": 143
+        },
+        "reduction_shortened_notes": 18,
+        "accompaniment_seconds": 62.11656441717787
+      },
+      "after": {
+        "notes": {
+          "vocals": 69,
+          "bass": 16,
+          "other": 83
+        },
+        "reduction_shortened_notes": 0,
+        "accompaniment_seconds": 43.06748466257669
+      },
+      "melody_unchanged": true,
+      "retained_notes_with_restored_hold": 6
+    },
+    {
+      "clip": "cached-diagnostic-excerpt-2",
+      "before": {
+        "notes": {
+          "vocals": 53,
+          "bass": 9,
+          "other": 80
+        },
+        "reduction_shortened_notes": 2,
+        "accompaniment_seconds": 51.80412371134024
+      },
+      "after": {
+        "notes": {
+          "vocals": 53,
+          "bass": 9,
+          "other": 48
+        },
+        "reduction_shortened_notes": 0,
+        "accompaniment_seconds": 37.11340206185566
+      },
+      "melody_unchanged": true,
+      "retained_notes_with_restored_hold": 0
+    }
+  ],
+  "limits": "Selected backing notes retain detected quantized duration. Incorrect detector pitches/releases and undetected holds remain possible. Chunk-tail preservation is separately tested with controlled boundary cases."
+}

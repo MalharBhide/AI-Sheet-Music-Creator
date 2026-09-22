@@ -56,10 +56,16 @@ def _append_chunk_notes(instrument, chunk_midi, offset: float, core_start: float
                         core_end: float, boundary_notes: dict) -> dict:
     """Keep each window's core once, joining sustained pitches across its boundary."""
     next_boundary = {}
+    for previous in boundary_notes.values():
+        # The preceding window already heard this tail in its right context.
+        # Preserve it if the next window misses the continuation, but never
+        # extend beyond the new core (which may be the recording's final core).
+        previous.end = min(core_end, max(previous.end, getattr(previous, '_context_end', previous.end)))
     notes = sorted((note for part in chunk_midi.instruments for note in part.notes),
                    key=lambda note: (note.start, note.pitch, note.end))
     for note in notes:
         original_start = offset + note.start
+        original_end = offset + note.end
         start = max(core_start, original_start)
         end = min(core_end, offset + note.end)
         if end <= start:
@@ -68,13 +74,16 @@ def _append_chunk_notes(instrument, chunk_midi, offset: float, core_start: float
         previous = boundary_notes.get(note.pitch)
         if previous is not None and original_start < core_start and start == core_start:
             # A new onset at/after the seam remains a separate repeated note.
-            previous.end = end
+            previous.end = max(previous.end, end)
             current = previous
             boundary_notes.pop(note.pitch, None)
         else:
+            if previous is not None and previous.end > start:
+                previous.end = start  # Preserve an actual new attack on this key.
             instrument.notes.append(note)
             current = note
         if end == core_end:
+            current._context_end = min(original_end, core_end + CONTEXT_SECONDS)
             next_boundary[note.pitch] = current
     return next_boundary
 
@@ -255,8 +264,6 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
                                  grid=options.grid)
         if precise_count > len(part.notes) + max(2, before * .1):
             warnings.append('The simple eighth-note rhythm merges some fast melody notes. Choose Precise rhythm to retain more of the tune.')
-        if role == "other":
-            part.notes = reduce_accompaniment(part.notes, detail=detail)
         for item in part.notes:
             item.end = min(duration, item.end)
         part.notes = [item for item in part.notes if item.end > item.start]
@@ -266,6 +273,8 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
     support_changes = 0
     if mode == "full_mix":
         melody_shift = arrange_melody_register(parts)
+        parts['other'].notes = reduce_accompaniment(
+            parts['other'].notes, detail=detail, melody=parts['vocals'].notes)
         support_changes = preserve_melody_releases(parts)
         balance_piano_arrangement(parts)
         for role, part in parts.items():

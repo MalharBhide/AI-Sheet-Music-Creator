@@ -1,5 +1,48 @@
 # Verification
 
+## Melody-first reduction and held-note preservation — 2026-09-21
+
+The previous accompaniment reducer interrupted an active note whenever a louder
+candidate arrived. This could convert a detected one-second hold into a short
+fragment. It now selects complete supporting lines using duration and velocity,
+preserving the detected onset and release of every selected note. Balanced
+full-song arrangements keep at most two supporting voices below the melody;
+bass remains separate. With no detected vocal melody, three backing voices
+remain available. Detailed mode retains its five-voice allowance. Passages
+already within their voice allowance are not thinned further.
+
+The chunk merger also discarded a detected right-context tail when the next
+window missed the continuation. It now retains that already-detected tail,
+bounded by the next core and recording end, while preserving new attacks on the
+same key. This does not extrapolate an undetected sustain through silence.
+
+- On two cached diagnostic excerpts, accompaniment counts changed **143 → 83**
+  and **80 → 48**. All 69 and 53 melody events respectively retained exactly the
+  same pitches, onsets, releases and dynamics. Reduction-induced shortened notes
+  changed **18 → 0** and **2 → 0**. Six retained notes in the first excerpt regained
+  their detected holds, including one changed from approximately 0.28 to 1.10
+  seconds. [Comparison record](docs/arrangement-sustain-check.json).
+- These are arrangement comparisons on identical raw detections, not ground-truth
+  pitch-accuracy measurements. Fewer backing notes do not prove that all removed
+  pitches were incorrect, and the detected melody can still contain mistakes.
+- Focused tests cover complete held-note selection, active-melody priority,
+  preserving already-sparse passages, missed seam continuations, genuine repeated
+  attacks, final-file clipping and the revised full-song source routing.
+- **162 backend tests passed**, including all six native pipeline cases through
+  real models, FFmpeg and MuseScore. Backend and diagnostic-helper lint passed.
+- Rebuilt the local backend and regenerated the full 145-second user recording
+  at the same 163 BPM and sixteenth-note grid. Job
+  `33ec59af-04c0-4d95-99a9-fe902ad5540b` completed with **335 backing notes**
+  (previously 459), **286 melody notes** (previously 285), and the same 102 bass
+  notes. Its 722 playback notes have 980 score positions across six pages.
+  PDF, MusicXML, MIDI, SVG, ZIP and playback JSON passed parsing/integrity checks;
+  MIDI and playback note counts matched. These are operational and arrangement
+  checks, not evidence that the remaining pitches match the original song.
+- Browser verification on 2026-09-22 confirmed advancing playback, page following,
+  clicking the sheet to seek, keyboard seeking while paused, and page navigation.
+  The regenerated score was left paused at the beginning. This release changes
+  arrangement and chunk merging; it does not introduce newly trained weights.
+
 ## Conservative accompaniment context correction — 2026-09-21
 
 Released two newly trained boosted-tree context classifiers alongside the existing

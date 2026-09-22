@@ -1,7 +1,7 @@
 """Bounded audio analysis and musical cleanup shared by transcription engines."""
 
 import math
-from bisect import bisect_left
+from bisect import bisect_left, bisect_right
 from collections import defaultdict
 from pathlib import Path
 
@@ -199,26 +199,61 @@ def estimate_grid_phase(notes: list, *, tempo_bpm: float, grid: str) -> float:
     return float(np.angle(resultant) * step / (2 * np.pi))
 
 
-def reduce_accompaniment(notes: list, *, detail: str) -> list:
-    """Cap simultaneously sounding accompaniment, not only simultaneous attacks."""
+def reduce_accompaniment(notes: list, *, detail: str, melody: list | None = None) -> list:
+    """Choose complete supporting lines without stealing a held note's release.
+
+    Each pass selects a non-overlapping line by weighted interval scheduling.
+    Duration times velocity favors sustained support over tiny loud fragments.
+    Balanced arrangements keep two supporting voices below an available melody;
+    the separate bass and melody are never reduced here. This is arrangement,
+    not a new claim about which detected pitches are correct.
+    """
     import pretty_midi
 
-    limit = 5 if detail == "detailed" else 3
-    active = []
-    output = []
-    for item in sorted(notes, key=lambda n: (n.start, -n.velocity)):
-        active = [old for old in active if old.end > item.start]
-        if len(active) >= limit:
-            weakest = min(active, key=lambda n: n.velocity)
-            if item.velocity <= weakest.velocity:
-                continue
-            weakest.end = item.start
-            active.remove(weakest)
-        new = pretty_midi.Note(velocity=item.velocity, pitch=item.pitch,
-                              start=item.start, end=item.end)
-        output.append(new)
-        active.append(new)
-    return [item for item in output if item.end > item.start]
+    limit = 5 if detail == 'detailed' else 2 if melody else 3
+    candidates = sorted(notes, key=lambda n: (n.end, n.start, n.pitch))
+    if detail == 'balanced' and melody:
+        # clean_notes has already made this line monophonic, so endpoints are
+        # sorted too. Consider the entire overlap, not just the support attack.
+        lead = sorted(melody, key=lambda n: n.start)
+        starts, ends = [n.start for n in lead], [n.end for n in lead]
+        candidates = [item for item in candidates
+                      if all(item.pitch < n.pitch for n in lead[
+                          bisect_right(ends, item.start):bisect_left(starts, item.end)])]
+    # Do not thin a passage that already fits: repeated maximum-weight line
+    # selection is a reduction heuristic, not an optimal multi-voice partition.
+    active, peak = 0, 0
+    for _, change in sorted((at, change) for item in candidates
+                             for at, change in ((item.start, 1), (item.end, -1))):
+        active += change
+        peak = max(peak, active)
+    selected = candidates if peak <= limit else []
+    remaining = [] if peak <= limit else candidates
+    for _ in range(limit):
+        candidates = remaining
+        if not candidates:
+            break
+        ends = [n.end for n in candidates]
+        scores = [0.]
+        predecessors, take = [], []
+        for index, item in enumerate(candidates):
+            previous = bisect_right(ends, item.start, hi=index)
+            score = scores[previous] + (item.end - item.start) * item.velocity
+            predecessors.append(previous)
+            take.append(score > scores[-1])
+            scores.append(max(scores[-1], score))
+        chosen, index = set(), len(candidates)
+        while index:
+            if take[index - 1]:
+                chosen.add(index - 1)
+                index = predecessors[index - 1]
+            else:
+                index -= 1
+        selected.extend(candidates[i] for i in sorted(chosen))
+        remaining = [item for i, item in enumerate(candidates) if i not in chosen]
+    return [pretty_midi.Note(velocity=item.velocity, pitch=item.pitch,
+                             start=item.start, end=item.end)
+            for item in sorted(selected, key=lambda n: (n.start, n.pitch))]
 
 
 def balance_piano_arrangement(parts: dict) -> None:

@@ -71,6 +71,24 @@ def test_new_onset_at_boundary_remains_a_separate_note():
     assert [(n.start, n.end) for n in piano.notes] == [(29, 30), (30, 31)]
 
 
+def test_detected_context_tail_survives_a_missing_continuation():
+    piano = SimpleNamespace(notes=[])
+    boundary = _append_chunk_notes(piano, midi(note(60, 28, 31)), 0, 0, 30, {})
+    _append_chunk_notes(piano, midi(), 29, 30, 60, boundary)
+    assert [(n.start, n.end) for n in piano.notes] == [(28, 31)]
+
+
+def test_context_tail_stops_at_a_new_attack_or_recording_end():
+    for final, events, expected in [
+        (60, (note(60, 1.25, 2),), [(28, 30.25), (30.25, 31)]),
+        (30.125, (), [(28, 30.125)]),
+    ]:
+        piano = SimpleNamespace(notes=[])
+        boundary = _append_chunk_notes(piano, midi(note(60, 28, 31)), 0, 0, 30, {})
+        _append_chunk_notes(piano, midi(*events), 29, 30, final, boundary)
+        assert [(n.start, n.end) for n in piano.notes] == expected
+
+
 def test_padding_predictions_are_clipped_or_discarded():
     piano = SimpleNamespace(notes=[])
     _append_chunk_notes(piano, midi(note(60, -.01, .5), note(64, .2, .7)), 0, 0, .125, {})
@@ -198,7 +216,7 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
     assert len(fake_inference.calls) == 3
     result = fake_inference.pretty_midi.PrettyMIDI(str(output))
     assert [part.name for part in result.instruments] == ['Vocals', 'Bass', 'Other']
-    assert [len(part.notes) for part in result.instruments] == [2, 1, 3]
+    assert [len(part.notes) for part in result.instruments] == [2, 1, 2]
     assert report['sources'] == ['vocals', 'bass', 'other']
     assert report['engine'].startswith('Demucs htdemucs')
     assert report['accompaniment_verification'] == {

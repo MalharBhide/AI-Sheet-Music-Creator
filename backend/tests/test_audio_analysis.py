@@ -109,7 +109,31 @@ def test_accompaniment_reduction_limits_actual_sounding_polyphony():
     result = reduce_accompaniment(notes, detail='balanced')
     for at in np.arange(0, 4, .05):
         assert sum(item.start <= at < item.end for item in result) <= 3
-    assert result[-1].pitch == 67
+    assert all(item.end == 4 for item in result)
+
+
+def test_accompaniment_keeps_complete_holds_instead_of_stealing_for_loud_fragments():
+    notes = [n(60, 0, 4, 60), n(64, 0, 4, 70),
+             n(67, 1, 1.125, 110), n(69, 2, 2.125, 110), n(71, 3, 3.125, 110)]
+    before = [vars(item).copy() for item in notes]
+    result = reduce_accompaniment(notes, detail='balanced', melody=[n(80, 0, 4)])
+    assert [(item.pitch, item.start, item.end) for item in result] == [(60, 0, 4), (64, 0, 4)]
+    assert [vars(item) for item in notes] == before
+
+
+def test_arrangement_does_not_thin_a_passage_that_already_fits():
+    notes = [n(60, 0, 2, 100), n(62, 1, 3, 40), n(64, 2, 4, 40), n(65, 3, 5, 100)]
+    result = reduce_accompaniment(notes, detail='balanced', melody=[n(80, 0, 5)])
+    assert [(item.pitch, item.start, item.end) for item in result] == [
+        (item.pitch, item.start, item.end) for item in notes]
+
+
+def test_support_stays_below_melody_for_the_entire_overlap_and_keeps_rest_fills():
+    melody = [n(72, 0, 2), n(67, 2, 3)]
+    notes = [n(64, 0, 3), n(69, 0, 3), n(72, 0, 2), n(70, 3, 4)]
+    result = reduce_accompaniment(notes, detail='balanced', melody=melody)
+    assert [(item.pitch, item.start, item.end) for item in result] == [(64, 0, 3), (70, 3, 4)]
+    assert [(item.pitch, item.start, item.end) for item in melody] == [(72, 0, 2), (67, 2, 3)]
 
 
 def test_detailed_accompaniment_can_retain_five_notes():

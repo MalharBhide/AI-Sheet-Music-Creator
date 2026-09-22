@@ -6,6 +6,13 @@ The transcription design is informed by an [extensive review of Songscription, K
 
 Balanced full-song accompaniment now also uses a trained note verifier to reject unsupported candidate notes. See its [model card and measured limits](docs/accompaniment-verifier.md). Re-upload a recording to apply it to an older score.
 
+Balanced arrangements give the detected melody priority: backing stays below it
+and uses at most two simultaneous voices, alongside the separate bass. The
+reduction selects complete notes instead of cutting a held note short whenever
+a louder note appears. When no vocal melody is detected, three backing voices
+remain available. This simplifies the arrangement; it does not certify that the
+detected melody or harmony is correct.
+
 Full-song melody recognition now includes a locally trained neural decoder. See the [transcription framework](docs/transcription-framework.md), [training workflow](training/README.md), and [model card with held-out results](docs/melody-model-card.md).
 
 ## Quick start with Docker
