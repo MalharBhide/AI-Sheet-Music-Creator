@@ -1,5 +1,23 @@
 # Verification
 
+## Relationship-aware model experiment — not released
+
+Added 56 licensed piano training passages and 15 validation passages, retaining
+the existing performer splits and audited clocks. Trained a model with 20 new
+relative note-relationship features. Corrected a cropped-cache context mismatch
+by using a two-second neighborhood and protecting incomplete-context edge notes.
+
+The frozen final candidate removed **20 false notes** on 142 regression excerpts
+but also lost **one correct note**. It failed the per-recording preservation gate
+and was not deployed. An earlier candidate and the superseded unbounded-feature
+attempt are archived as well. V4 weights and website behavior remain unchanged.
+No user recordings, score regeneration or website transcription jobs were used.
+See the [experiment report](docs/relational-verifier-experiment.md) for metrics,
+data scope, rejected checkpoints and reproducibility.
+**13 focused model-workflow tests passed**, including crop/full-context parity,
+edge-note preservation, transposition and event-order invariance, and comparison
+against the actual V4 baseline. Training-code lint and diff checks passed.
+
 ## Trained residual false-note filter — 2026-09-22
 
 Trained a 300-tree classifier on 50,442 labeled, V3-retained candidate events

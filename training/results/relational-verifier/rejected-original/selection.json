@@ -1,0 +1,15 @@
+{
+  "selected": true,
+  "checkpoint_sha256": "e25f874aa8c03e629b812fed40a3896ab430021426f64271e830f2515a40fedb",
+  "threshold": 0.015,
+  "ceiling": 0.5,
+  "baseline_hashes": {
+    "accompaniment-verifier-v2.pt": "2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60",
+    "accompaniment-context-expanded.npz": "d06bbe84ee9ad251960969e0097b217e340d52562ecf178295d7c4ae57c6ee8d",
+    "accompaniment-context-original.npz": "381c150b19bdb223fc9e85f88b78dd69892b0de5c7591189967f30b59a26a8e7",
+    "accompaniment-residual-v4.npz": "ad958557c44312c8d082b9339801ae794a7673956f098106f7fb6381fa3cd24d"
+  },
+  "feature_version": "note-relations-v1",
+  "test_not_evaluated": true,
+  "selection": "Most validation false notes removed while preserving every matched reference, then halve threshold before test"
+}

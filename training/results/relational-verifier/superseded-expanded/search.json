@@ -1,0 +1,1375 @@
+[
+  {
+    "threshold": 0.0,
+    "passes": true,
+    "false_notes_removed": 0,
+    "failed_recordings": [],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  },
+  {
+    "threshold": 0.0001,
+    "passes": true,
+    "false_notes_removed": 0,
+    "failed_recordings": [],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  },
+  {
+    "threshold": 0.0003,
+    "passes": true,
+    "false_notes_removed": 0,
+    "failed_recordings": [],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  },
+  {
+    "threshold": 0.001,
+    "passes": true,
+    "false_notes_removed": 0,
+    "failed_recordings": [],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  },
+  {
+    "threshold": 0.003,
+    "passes": true,
+    "false_notes_removed": 0,
+    "failed_recordings": [],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  },
+  {
+    "threshold": 0.01,
+    "passes": true,
+    "false_notes_removed": 5,
+    "failed_recordings": [],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.7460388306181656,
+          "recall": 0.7614166951372281,
+          "f1": 0.7536493264949558,
+          "true_positives": 6686,
+          "false_positives": 2276,
+          "predicted": 8962,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.51894003618446
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.7979328165374677,
+          "recall": 0.789769820971867,
+          "f1": 0.7938303341902314,
+          "true_positives": 3088,
+          "false_positives": 782,
+          "predicted": 3870,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.75168627464399
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  },
+  {
+    "threshold": 0.02,
+    "passes": true,
+    "false_notes_removed": 18,
+    "failed_recordings": [],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.7465386333184457,
+          "recall": 0.7614166951372281,
+          "f1": 0.7539042679145289,
+          "true_positives": 6686,
+          "false_positives": 2270,
+          "predicted": 8956,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.29085847194145
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8323016319639842,
+          "recall": 0.659384752563531,
+          "f1": 0.735820895522388,
+          "true_positives": 1479,
+          "false_positives": 298,
+          "predicted": 1777,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.059066959085605
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.7987584066218314,
+          "recall": 0.789769820971867,
+          "f1": 0.7942386831275721,
+          "true_positives": 3088,
+          "false_positives": 778,
+          "predicted": 3866,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.37443979753583
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  },
+  {
+    "threshold": 0.03,
+    "passes": true,
+    "false_notes_removed": 36,
+    "failed_recordings": [],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.7476238398747623,
+          "recall": 0.7614166951372281,
+          "f1": 0.754457233130219,
+          "true_positives": 6686,
+          "false_positives": 2257,
+          "predicted": 8943,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 85.7966817494149
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8327702702702703,
+          "recall": 0.659384752563531,
+          "f1": 0.7360039810898233,
+          "true_positives": 1479,
+          "false_positives": 297,
+          "predicted": 1776,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 55.87094928472626
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.799585706887623,
+          "recall": 0.789769820971867,
+          "f1": 0.7946474523932063,
+          "true_positives": 3088,
+          "false_positives": 774,
+          "predicted": 3862,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 72.99719332042768
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  },
+  {
+    "threshold": 0.05,
+    "passes": true,
+    "false_notes_removed": 106,
+    "failed_recordings": [],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.7512359550561798,
+          "recall": 0.7614166951372281,
+          "f1": 0.7562920649284542,
+          "true_positives": 6686,
+          "false_positives": 2214,
+          "predicted": 8900,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 84.16209720567329
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8370118845500849,
+          "recall": 0.659384752563531,
+          "f1": 0.7376558603491272,
+          "true_positives": 1479,
+          "false_positives": 288,
+          "predicted": 1767,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 54.177890215492134
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7021593447505584,
+          "recall": 0.7361436377829821,
+          "f1": 0.71875,
+          "true_positives": 943,
+          "false_positives": 400,
+          "predicted": 1343,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.438805862455
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.8029121164846594,
+          "recall": 0.789769820971867,
+          "f1": 0.7962867457452295,
+          "true_positives": 3088,
+          "false_positives": 758,
+          "predicted": 3846,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 71.48820741199506
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  },
+  {
+    "threshold": 0.075,
+    "passes": true,
+    "false_notes_removed": 171,
+    "failed_recordings": [],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.7545423767069179,
+          "recall": 0.7614166951372281,
+          "f1": 0.7579639496655708,
+          "true_positives": 6686,
+          "false_positives": 2175,
+          "predicted": 8861,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 82.67956703809368
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8408186469584992,
+          "recall": 0.659384752563531,
+          "f1": 0.7391304347826086,
+          "true_positives": 1479,
+          "false_positives": 280,
+          "predicted": 1759,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 52.67294882061735
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7037313432835821,
+          "recall": 0.7361436377829821,
+          "f1": 0.7195726821823731,
+          "true_positives": 943,
+          "false_positives": 397,
+          "predicted": 1340,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 98.69301481848659
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.8060558600887496,
+          "recall": 0.789769820971867,
+          "f1": 0.7978297377599793,
+          "true_positives": 3088,
+          "false_positives": 743,
+          "predicted": 3831,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 70.07353312283949
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  },
+  {
+    "threshold": 0.1,
+    "passes": false,
+    "false_notes_removed": 223,
+    "failed_recordings": [
+      "04_Funk3-112-C#_comp",
+      "04_Rock3-148-C_comp",
+      "stem-04_Jazz1-130-D_comp"
+    ],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.7573937677053825,
+          "recall": 0.7611889306457124,
+          "f1": 0.7592866068385777,
+          "true_positives": 6684,
+          "false_positives": 2141,
+          "predicted": 8825,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 81.38710484071657
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8427350427350427,
+          "recall": 0.659384752563531,
+          "f1": 0.7398699349674838,
+          "true_positives": 1479,
+          "false_positives": 276,
+          "predicted": 1755,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 51.92047812317996
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7056179775280899,
+          "recall": 0.7353629976580797,
+          "f1": 0.7201834862385321,
+          "true_positives": 942,
+          "false_positives": 393,
+          "predicted": 1335,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 97.69862675986204
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.8081654017272966,
+          "recall": 0.789769820971867,
+          "f1": 0.7988617255206312,
+          "true_positives": 3088,
+          "false_positives": 733,
+          "predicted": 3821,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 69.1304169300691
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  },
+  {
+    "threshold": 0.15,
+    "passes": false,
+    "false_notes_removed": 322,
+    "failed_recordings": [
+      "04_Funk3-112-C#_comp",
+      "04_Rock3-148-C_comp",
+      "04_SS1-68-E_comp",
+      "vienna-Chopin_op10_no3_p18",
+      "vienna-Schubert_D783_no15_p17",
+      "stem-04_Jazz1-130-D_comp"
+    ],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.7606740293749289,
+          "recall": 0.7608472839084387,
+          "f1": 0.7607606467774994,
+          "true_positives": 6681,
+          "false_positives": 2102,
+          "predicted": 8783,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 79.90457467313696
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8475644699140401,
+          "recall": 0.659384752563531,
+          "f1": 0.7417251755265798,
+          "true_positives": 1479,
+          "false_positives": 266,
+          "predicted": 1745,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 50.03930137958648
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7136363636363636,
+          "recall": 0.7353629976580797,
+          "f1": 0.7243367935409458,
+          "true_positives": 942,
+          "false_positives": 378,
+          "predicted": 1320,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 93.96967154001997
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.8155391120507399,
+          "recall": 0.7892583120204604,
+          "f1": 0.8021835196256824,
+          "true_positives": 3086,
+          "false_positives": 698,
+          "predicted": 3784,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 65.82951025537277
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  },
+  {
+    "threshold": 0.2,
+    "passes": false,
+    "false_notes_removed": 407,
+    "failed_recordings": [
+      "04_Funk1-114-Ab_comp",
+      "04_Funk3-112-C#_comp",
+      "04_Rock1-130-A_comp",
+      "04_Rock3-148-C_comp",
+      "04_SS1-68-E_comp",
+      "vienna-Chopin_op10_no3_p18",
+      "vienna-Schubert_D783_no15_p17",
+      "stem-04_Jazz1-130-D_comp",
+      "stem-04_Rock1-130-A_comp"
+    ],
+    "aggregate": {
+      "guitarset": {
+        "candidate": {
+          "precision": 0.764308608058608,
+          "recall": 0.7603917549254071,
+          "f1": 0.7623451504253012,
+          "true_positives": 6677,
+          "false_positives": 2059,
+          "predicted": 8736,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 78.26999012939534
+        },
+        "deployed_v4": {
+          "precision": 0.7457891801450084,
+          "recall": 0.7614166951372281,
+          "f1": 0.7535219204327736,
+          "true_positives": 6686,
+          "false_positives": 2279,
+          "predicted": 8965,
+          "reference": 8781,
+          "seconds": 1578.3827210884353,
+          "false_positives_per_minute": 86.63298081830597
+        }
+      },
+      "original-piano": {
+        "candidate": {
+          "precision": 0.8509781357882624,
+          "recall": 0.659384752563531,
+          "f1": 0.7430293896006028,
+          "true_positives": 1479,
+          "false_positives": 259,
+          "predicted": 1738,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 48.722477659071046
+        },
+        "deployed_v4": {
+          "precision": 0.8308988764044943,
+          "recall": 0.659384752563531,
+          "f1": 0.7352721849366145,
+          "true_positives": 1479,
+          "false_positives": 301,
+          "predicted": 1780,
+          "reference": 2243,
+          "seconds": 318.94929705215424,
+          "false_positives_per_minute": 56.623419982163654
+        }
+      },
+      "separated-guitar": {
+        "candidate": {
+          "precision": 0.7181054239877769,
+          "recall": 0.7338017174082748,
+          "f1": 0.7258687258687259,
+          "true_positives": 940,
+          "false_positives": 369,
+          "predicted": 1309,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 91.73229840811474
+        },
+        "deployed_v4": {
+          "precision": 0.7011152416356877,
+          "recall": 0.7361436377829821,
+          "f1": 0.7182025894897182,
+          "true_positives": 943,
+          "false_positives": 402,
+          "predicted": 1345,
+          "reference": 1281,
+          "seconds": 241.35446712018143,
+          "false_positives_per_minute": 99.93599989176728
+        }
+      },
+      "vienna-piano": {
+        "candidate": {
+          "precision": 0.8211814795103779,
+          "recall": 0.7892583120204604,
+          "f1": 0.8049034950443401,
+          "true_positives": 3086,
+          "false_positives": 672,
+          "predicted": 3758,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 63.37740815416977
+        },
+        "deployed_v4": {
+          "precision": 0.7975206611570248,
+          "recall": 0.789769820971867,
+          "f1": 0.7936263171421228,
+          "true_positives": 3088,
+          "false_positives": 784,
+          "predicted": 3872,
+          "reference": 3910,
+          "seconds": 636.188843537415,
+          "false_positives_per_minute": 73.94030951319806
+        }
+      }
+    }
+  }
+]
