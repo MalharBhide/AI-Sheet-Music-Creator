@@ -24,6 +24,19 @@ def correction_keep(previous, context, shared, *, threshold=.1, ceiling=.2, prun
     return (previous >= threshold) & ~rejected
 
 
+def residual_keep(keep, previous, shared, probability, *, threshold, ceiling=.5):
+    """Reject residual false notes without restoring notes or altering strong ones."""
+    keep, previous, shared, probability = map(np.asarray, (keep, previous, shared, probability))
+    if (keep.ndim != 1 or keep.dtype.kind != 'b' or shared.dtype.kind != 'b'
+            or any(value.shape != keep.shape for value in (previous, shared, probability))
+            or not np.isfinite(previous).all() or not np.isfinite(probability).all()
+            or np.any((previous < 0) | (previous > 1))
+            or np.any((probability < 0) | (probability > 1))
+            or not 0 <= threshold <= 1 or not 0 <= ceiling <= 1):
+        raise ValueError('Invalid residual note confidence')
+    return keep & ~(shared & (previous <= ceiling) & (probability < threshold))
+
+
 class ContextNoteModel:
     def __init__(self, saved):
         if (str(saved['version']) != 'note-boosted-v1'

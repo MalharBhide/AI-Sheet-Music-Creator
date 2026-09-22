@@ -1,0 +1,13 @@
+{
+  "selected": true,
+  "checkpoint_sha256": "ad958557c44312c8d082b9339801ae794a7673956f098106f7fb6381fa3cd24d",
+  "threshold": 0.0375,
+  "ceiling": 0.5,
+  "baseline_hashes": {
+    "accompaniment-verifier-v2.pt": "2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60",
+    "accompaniment-context-expanded.npz": "d06bbe84ee9ad251960969e0097b217e340d52562ecf178295d7c4ae57c6ee8d",
+    "accompaniment-context-original.npz": "381c150b19bdb223fc9e85f88b78dd69892b0de5c7591189967f30b59a26a8e7"
+  },
+  "selection": "Most false notes removed with no matched reference loss in any validation clip; halve threshold before testing",
+  "test_not_evaluated": true
+}

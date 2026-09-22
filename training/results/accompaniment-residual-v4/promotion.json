@@ -1,0 +1,14 @@
+{
+  "promoted": true,
+  "reason": "Validation-selected frozen model preserves every previously matched reference note in every evaluation recording and reduces false notes on validation and consumed regression. New test sections unchanged.",
+  "no_post_test_tuning": true,
+  "threshold": 0.0375,
+  "v2_ceiling": 0.5,
+  "model_sha256": "ad958557c44312c8d082b9339801ae794a7673956f098106f7fb6381fa3cd24d",
+  "evaluation_counts": {
+    "validation": 108,
+    "regression": 126,
+    "fresh": 16
+  },
+  "limits": "Modest gain on consumed corpora; no independent new-performer evidence; no user-song accuracy claim."
+}

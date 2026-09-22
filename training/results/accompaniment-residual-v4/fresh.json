@@ -1,0 +1,484 @@
+{
+  "threshold": 0.0375,
+  "passes": true,
+  "false_notes_removed": 0,
+  "failed_recordings": [],
+  "aggregate": {
+    "guitarset-later": {
+      "deployed_v3": {
+        "precision": 0.6590649942987458,
+        "recall": 0.8824427480916031,
+        "f1": 0.7545691906005222,
+        "true_positives": 578,
+        "false_positives": 299,
+        "predicted": 877,
+        "reference": 655,
+        "seconds": 165.29755102040818,
+        "false_positives_per_minute": 108.53155348795862
+      },
+      "candidate": {
+        "precision": 0.6590649942987458,
+        "recall": 0.8824427480916031,
+        "f1": 0.7545691906005222,
+        "true_positives": 578,
+        "false_positives": 299,
+        "predicted": 877,
+        "reference": 655,
+        "seconds": 165.29755102040818,
+        "false_positives_per_minute": 108.53155348795862
+      }
+    }
+  },
+  "per_recording": [
+    {
+      "id": "residual-tail-05_Funk2-108-Eb_comp",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.625,
+        "recall": 0.6730769230769231,
+        "f1": 0.6481481481481481,
+        "true_positives": 35,
+        "false_positives": 21,
+        "predicted": 56,
+        "reference": 52,
+        "seconds": 5.048390022675737,
+        "false_positives_per_minute": 249.58451988465373
+      },
+      "candidate": {
+        "precision": 0.625,
+        "recall": 0.6730769230769231,
+        "f1": 0.6481481481481481,
+        "true_positives": 35,
+        "false_positives": 21,
+        "predicted": 56,
+        "reference": 52,
+        "seconds": 5.048390022675737,
+        "false_positives_per_minute": 249.58451988465373
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_Funk2-108-Eb_solo",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.7142857142857143,
+        "recall": 0.8333333333333334,
+        "f1": 0.7692307692307693,
+        "true_positives": 5,
+        "false_positives": 2,
+        "predicted": 7,
+        "reference": 6,
+        "seconds": 5.048390022675737,
+        "false_positives_per_minute": 23.769954274728924
+      },
+      "candidate": {
+        "precision": 0.7142857142857143,
+        "recall": 0.8333333333333334,
+        "f1": 0.7692307692307693,
+        "true_positives": 5,
+        "false_positives": 2,
+        "predicted": 7,
+        "reference": 6,
+        "seconds": 5.048390022675737,
+        "false_positives_per_minute": 23.769954274728924
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_Funk3-98-A_comp",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.8064516129032258,
+        "recall": 0.9433962264150944,
+        "f1": 0.8695652173913043,
+        "true_positives": 50,
+        "false_positives": 12,
+        "predicted": 62,
+        "reference": 53,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 82.96079532836036
+      },
+      "candidate": {
+        "precision": 0.8064516129032258,
+        "recall": 0.9433962264150944,
+        "f1": 0.8695652173913043,
+        "true_positives": 50,
+        "false_positives": 12,
+        "predicted": 62,
+        "reference": 53,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 82.96079532836036
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_Funk3-98-A_solo",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.95,
+        "recall": 1.0,
+        "f1": 0.9743589743589743,
+        "true_positives": 19,
+        "false_positives": 1,
+        "predicted": 20,
+        "reference": 19,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 6.913399610696697
+      },
+      "candidate": {
+        "precision": 0.95,
+        "recall": 1.0,
+        "f1": 0.9743589743589743,
+        "true_positives": 19,
+        "false_positives": 1,
+        "predicted": 20,
+        "reference": 19,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 6.913399610696697
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_Rock2-85-F_comp",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.8144329896907216,
+        "recall": 0.6929824561403509,
+        "f1": 0.7488151658767772,
+        "true_positives": 79,
+        "false_positives": 18,
+        "predicted": 97,
+        "reference": 114,
+        "seconds": 14.673197278911564,
+        "false_positives_per_minute": 73.6035902381129
+      },
+      "candidate": {
+        "precision": 0.8144329896907216,
+        "recall": 0.6929824561403509,
+        "f1": 0.7488151658767772,
+        "true_positives": 79,
+        "false_positives": 18,
+        "predicted": 97,
+        "reference": 114,
+        "seconds": 14.673197278911564,
+        "false_positives_per_minute": 73.6035902381129
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_Rock2-85-F_solo",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.8541666666666666,
+        "recall": 0.9318181818181818,
+        "f1": 0.8913043478260869,
+        "true_positives": 41,
+        "false_positives": 7,
+        "predicted": 48,
+        "reference": 44,
+        "seconds": 14.673197278911564,
+        "false_positives_per_minute": 28.623618425932797
+      },
+      "candidate": {
+        "precision": 0.8541666666666666,
+        "recall": 0.9318181818181818,
+        "f1": 0.8913043478260869,
+        "true_positives": 41,
+        "false_positives": 7,
+        "predicted": 48,
+        "reference": 44,
+        "seconds": 14.673197278911564,
+        "false_positives_per_minute": 28.623618425932797
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_SS1-68-E_comp",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.4878048780487805,
+        "recall": 1.0,
+        "f1": 0.6557377049180327,
+        "true_positives": 40,
+        "false_positives": 42,
+        "predicted": 82,
+        "reference": 40,
+        "seconds": 11.84639455782313,
+        "false_positives_per_minute": 212.72295023601427
+      },
+      "candidate": {
+        "precision": 0.4878048780487805,
+        "recall": 1.0,
+        "f1": 0.6557377049180327,
+        "true_positives": 40,
+        "false_positives": 42,
+        "predicted": 82,
+        "reference": 40,
+        "seconds": 11.84639455782313,
+        "false_positives_per_minute": 212.72295023601427
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_SS1-68-E_solo",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.8928571428571429,
+        "recall": 0.9259259259259259,
+        "f1": 0.9090909090909091,
+        "true_positives": 25,
+        "false_positives": 3,
+        "predicted": 28,
+        "reference": 27,
+        "seconds": 11.84639455782313,
+        "false_positives_per_minute": 15.194496445429591
+      },
+      "candidate": {
+        "precision": 0.8928571428571429,
+        "recall": 0.9259259259259259,
+        "f1": 0.9090909090909091,
+        "true_positives": 25,
+        "false_positives": 3,
+        "predicted": 28,
+        "reference": 27,
+        "seconds": 11.84639455782313,
+        "false_positives_per_minute": 15.194496445429591
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_SS2-107-Ab_comp",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.5714285714285714,
+        "recall": 0.8,
+        "f1": 0.6666666666666666,
+        "true_positives": 24,
+        "false_positives": 18,
+        "predicted": 42,
+        "reference": 30,
+        "seconds": 5.386394557823129,
+        "false_positives_per_minute": 200.50517807527154
+      },
+      "candidate": {
+        "precision": 0.5714285714285714,
+        "recall": 0.8,
+        "f1": 0.6666666666666666,
+        "true_positives": 24,
+        "false_positives": 18,
+        "predicted": 42,
+        "reference": 30,
+        "seconds": 5.386394557823129,
+        "false_positives_per_minute": 200.50517807527154
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_SS2-107-Ab_solo",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.9230769230769231,
+        "recall": 0.9230769230769231,
+        "f1": 0.9230769230769231,
+        "true_positives": 12,
+        "false_positives": 1,
+        "predicted": 13,
+        "reference": 13,
+        "seconds": 5.386394557823129,
+        "false_positives_per_minute": 11.139176559737308
+      },
+      "candidate": {
+        "precision": 0.9230769230769231,
+        "recall": 0.9230769230769231,
+        "f1": 0.9230769230769231,
+        "true_positives": 12,
+        "false_positives": 1,
+        "predicted": 13,
+        "reference": 13,
+        "seconds": 5.386394557823129,
+        "false_positives_per_minute": 11.139176559737308
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_SS2-88-F_comp",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.3793103448275862,
+        "recall": 0.9322033898305084,
+        "f1": 0.5392156862745098,
+        "true_positives": 55,
+        "false_positives": 90,
+        "predicted": 145,
+        "reference": 59,
+        "seconds": 13.129206349206349,
+        "false_positives_per_minute": 411.296757501753
+      },
+      "candidate": {
+        "precision": 0.3793103448275862,
+        "recall": 0.9322033898305084,
+        "f1": 0.5392156862745098,
+        "true_positives": 55,
+        "false_positives": 90,
+        "predicted": 145,
+        "reference": 59,
+        "seconds": 13.129206349206349,
+        "false_positives_per_minute": 411.296757501753
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_SS2-88-F_solo",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.9393939393939394,
+        "recall": 1.0,
+        "f1": 0.96875,
+        "true_positives": 31,
+        "false_positives": 2,
+        "predicted": 33,
+        "reference": 31,
+        "seconds": 13.129206349206349,
+        "false_positives_per_minute": 9.1399279444834
+      },
+      "candidate": {
+        "precision": 0.9393939393939394,
+        "recall": 1.0,
+        "f1": 0.96875,
+        "true_positives": 31,
+        "false_positives": 2,
+        "predicted": 33,
+        "reference": 31,
+        "seconds": 13.129206349206349,
+        "false_positives_per_minute": 9.1399279444834
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_SS3-84-Bb_comp",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.6055045871559633,
+        "recall": 0.9850746268656716,
+        "f1": 0.75,
+        "true_positives": 66,
+        "false_positives": 43,
+        "predicted": 109,
+        "reference": 67,
+        "seconds": 15.207596371882087,
+        "false_positives_per_minute": 169.65205657156062
+      },
+      "candidate": {
+        "precision": 0.6055045871559633,
+        "recall": 0.9850746268656716,
+        "f1": 0.75,
+        "true_positives": 66,
+        "false_positives": 43,
+        "predicted": 109,
+        "reference": 67,
+        "seconds": 15.207596371882087,
+        "false_positives_per_minute": 169.65205657156062
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_SS3-84-Bb_solo",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.95,
+        "recall": 0.9743589743589743,
+        "f1": 0.9620253164556962,
+        "true_positives": 38,
+        "false_positives": 2,
+        "predicted": 40,
+        "reference": 39,
+        "seconds": 15.207596371882087,
+        "false_positives_per_minute": 7.890793328909797
+      },
+      "candidate": {
+        "precision": 0.95,
+        "recall": 0.9743589743589743,
+        "f1": 0.9620253164556962,
+        "true_positives": 38,
+        "false_positives": 2,
+        "predicted": 40,
+        "reference": 39,
+        "seconds": 15.207596371882087,
+        "false_positives_per_minute": 7.890793328909797
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_SS3-98-C_comp",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.5138888888888888,
+        "recall": 0.9487179487179487,
+        "f1": 0.6666666666666666,
+        "true_positives": 37,
+        "false_positives": 35,
+        "predicted": 72,
+        "reference": 39,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 241.96898637438437
+      },
+      "candidate": {
+        "precision": 0.5138888888888888,
+        "recall": 0.9487179487179487,
+        "f1": 0.6666666666666666,
+        "true_positives": 37,
+        "false_positives": 35,
+        "predicted": 72,
+        "reference": 39,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 241.96898637438437
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    },
+    {
+      "id": "residual-tail-05_SS3-98-C_solo",
+      "corpus": "guitarset-later",
+      "deployed_v3": {
+        "precision": 0.9130434782608695,
+        "recall": 0.9545454545454546,
+        "f1": 0.9333333333333333,
+        "true_positives": 21,
+        "false_positives": 2,
+        "predicted": 23,
+        "reference": 22,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 13.826799221393394
+      },
+      "candidate": {
+        "precision": 0.9130434782608695,
+        "recall": 0.9545454545454546,
+        "f1": 0.9333333333333333,
+        "true_positives": 21,
+        "false_positives": 2,
+        "predicted": 23,
+        "reference": 22,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 13.826799221393394
+      },
+      "matched_references_preserved": true,
+      "passes": true
+    }
+  ],
+  "checkpoint_sha256": "ad958557c44312c8d082b9339801ae794a7673956f098106f7fb6381fa3cd24d",
+  "scope": "Unscored dataset tails; same test performer"
+}

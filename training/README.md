@@ -1,5 +1,11 @@
 # Supervised melody training
 
+Model development uses labeled corpus features and explicit regression gates.
+Do not retranscribe user uploads or regenerate sheet music to demonstrate a model
+update; the user can upload audio again when they want to hear the new result.
+The latest [residual false-note classifier](../docs/accompaniment-residual-v4.md)
+was trained and checked entirely with licensed datasets and cached features.
+
 This experiment trains a small temporal neural decoder on **real human-annotated
 singing**. The resulting checkpoint is used for the vocal melody of every
 Full song upload, independent of filename, file extension or song identity. Basic Pitch, pYIN and CQT supply frozen acoustic features; the new

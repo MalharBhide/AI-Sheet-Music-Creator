@@ -1,0 +1,2628 @@
+{
+  "settings": {
+    "max_iter": 300,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 40,
+    "learning_rate": 0.05,
+    "l2_regularization": 3.0,
+    "early_stopping": false,
+    "random_state": 260922
+  },
+  "positive_weight": 6.0,
+  "training_clips": 431,
+  "training_events": 50442,
+  "validation_clips": 108,
+  "baseline_hashes": {
+    "accompaniment-verifier-v2.pt": "2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60",
+    "accompaniment-context-expanded.npz": "d06bbe84ee9ad251960969e0097b217e340d52562ecf178295d7c4ae57c6ee8d",
+    "accompaniment-context-original.npz": "381c150b19bdb223fc9e85f88b78dd69892b0de5c7591189967f30b59a26a8e7"
+  },
+  "threshold_grid": [
+    0.0,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01,
+    0.02,
+    0.03,
+    0.05,
+    0.075,
+    0.1,
+    0.15,
+    0.2
+  ],
+  "selection_safety_factor": 0.5,
+  "ceiling": 0.5,
+  "test_used_for_selection": false,
+  "scope": "Only cached licensed corpus features; no user recordings",
+  "weighting": "Equal corpora and recordings before positive-event weight",
+  "training_counts": [
+    {
+      "id": "00_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "positive": 101,
+      "negative": 20
+    },
+    {
+      "id": "00_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "positive": 63,
+      "negative": 11
+    },
+    {
+      "id": "00_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "positive": 118,
+      "negative": 11
+    },
+    {
+      "id": "00_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "positive": 83,
+      "negative": 47
+    },
+    {
+      "id": "00_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "positive": 159,
+      "negative": 20
+    },
+    {
+      "id": "00_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "positive": 88,
+      "negative": 16
+    },
+    {
+      "id": "00_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "positive": 148,
+      "negative": 18
+    },
+    {
+      "id": "00_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "positive": 78,
+      "negative": 4
+    },
+    {
+      "id": "00_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "positive": 124,
+      "negative": 9
+    },
+    {
+      "id": "00_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "positive": 74,
+      "negative": 9
+    },
+    {
+      "id": "00_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "positive": 121,
+      "negative": 18
+    },
+    {
+      "id": "00_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "positive": 93,
+      "negative": 14
+    },
+    {
+      "id": "00_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "positive": 207,
+      "negative": 23
+    },
+    {
+      "id": "00_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "positive": 50,
+      "negative": 11
+    },
+    {
+      "id": "00_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "positive": 255,
+      "negative": 8
+    },
+    {
+      "id": "00_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "positive": 55,
+      "negative": 7
+    },
+    {
+      "id": "00_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "positive": 282,
+      "negative": 24
+    },
+    {
+      "id": "00_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "positive": 89,
+      "negative": 14
+    },
+    {
+      "id": "00_Funk2-119-G_comp",
+      "corpus": "guitarset",
+      "positive": 265,
+      "negative": 32
+    },
+    {
+      "id": "00_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "positive": 68,
+      "negative": 13
+    },
+    {
+      "id": "00_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "positive": 293,
+      "negative": 15
+    },
+    {
+      "id": "00_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "positive": 105,
+      "negative": 25
+    },
+    {
+      "id": "00_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "positive": 236,
+      "negative": 25
+    },
+    {
+      "id": "00_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "positive": 80,
+      "negative": 10
+    },
+    {
+      "id": "00_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "positive": 148,
+      "negative": 19
+    },
+    {
+      "id": "00_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "positive": 55,
+      "negative": 21
+    },
+    {
+      "id": "00_Jazz1-200-B_comp",
+      "corpus": "guitarset",
+      "positive": 107,
+      "negative": 2
+    },
+    {
+      "id": "00_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "positive": 43,
+      "negative": 6
+    },
+    {
+      "id": "00_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "positive": 167,
+      "negative": 33
+    },
+    {
+      "id": "00_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "positive": 68,
+      "negative": 13
+    },
+    {
+      "id": "00_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "positive": 161,
+      "negative": 7
+    },
+    {
+      "id": "00_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "positive": 81,
+      "negative": 8
+    },
+    {
+      "id": "00_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "positive": 162,
+      "negative": 34
+    },
+    {
+      "id": "00_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "positive": 59,
+      "negative": 12
+    },
+    {
+      "id": "00_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "positive": 168,
+      "negative": 13
+    },
+    {
+      "id": "00_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "positive": 68,
+      "negative": 23
+    },
+    {
+      "id": "00_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "positive": 255,
+      "negative": 16
+    },
+    {
+      "id": "00_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "positive": 71,
+      "negative": 34
+    },
+    {
+      "id": "00_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "positive": 404,
+      "negative": 7
+    },
+    {
+      "id": "00_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "positive": 152,
+      "negative": 31
+    },
+    {
+      "id": "00_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "positive": 355,
+      "negative": 33
+    },
+    {
+      "id": "00_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "positive": 116,
+      "negative": 20
+    },
+    {
+      "id": "00_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "positive": 355,
+      "negative": 31
+    },
+    {
+      "id": "00_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "positive": 67,
+      "negative": 12
+    },
+    {
+      "id": "00_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "positive": 393,
+      "negative": 24
+    },
+    {
+      "id": "00_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "positive": 128,
+      "negative": 21
+    },
+    {
+      "id": "00_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "positive": 314,
+      "negative": 4
+    },
+    {
+      "id": "00_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "positive": 126,
+      "negative": 16
+    },
+    {
+      "id": "00_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "positive": 170,
+      "negative": 29
+    },
+    {
+      "id": "00_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "positive": 58,
+      "negative": 7
+    },
+    {
+      "id": "00_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "positive": 110,
+      "negative": 33
+    },
+    {
+      "id": "00_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "positive": 99,
+      "negative": 26
+    },
+    {
+      "id": "00_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "positive": 172,
+      "negative": 15
+    },
+    {
+      "id": "00_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "positive": 91,
+      "negative": 27
+    },
+    {
+      "id": "00_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "positive": 123,
+      "negative": 25
+    },
+    {
+      "id": "00_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "positive": 68,
+      "negative": 6
+    },
+    {
+      "id": "00_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "positive": 85,
+      "negative": 18
+    },
+    {
+      "id": "00_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "positive": 84,
+      "negative": 15
+    },
+    {
+      "id": "00_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "positive": 169,
+      "negative": 39
+    },
+    {
+      "id": "00_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "positive": 98,
+      "negative": 29
+    },
+    {
+      "id": "01_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "positive": 93,
+      "negative": 25
+    },
+    {
+      "id": "01_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "positive": 56,
+      "negative": 3
+    },
+    {
+      "id": "01_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "positive": 115,
+      "negative": 25
+    },
+    {
+      "id": "01_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "positive": 62,
+      "negative": 6
+    },
+    {
+      "id": "01_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "positive": 161,
+      "negative": 22
+    },
+    {
+      "id": "01_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "positive": 100,
+      "negative": 5
+    },
+    {
+      "id": "01_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "positive": 193,
+      "negative": 41
+    },
+    {
+      "id": "01_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "positive": 108,
+      "negative": 3
+    },
+    {
+      "id": "01_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "positive": 149,
+      "negative": 14
+    },
+    {
+      "id": "01_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "positive": 82,
+      "negative": 5
+    },
+    {
+      "id": "01_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "positive": 162,
+      "negative": 27
+    },
+    {
+      "id": "01_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "positive": 100,
+      "negative": 2
+    },
+    {
+      "id": "01_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "positive": 167,
+      "negative": 26
+    },
+    {
+      "id": "01_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "positive": 108,
+      "negative": 18
+    },
+    {
+      "id": "01_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "positive": 225,
+      "negative": 25
+    },
+    {
+      "id": "01_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "positive": 88,
+      "negative": 23
+    },
+    {
+      "id": "01_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "positive": 203,
+      "negative": 35
+    },
+    {
+      "id": "01_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "positive": 155,
+      "negative": 26
+    },
+    {
+      "id": "01_Funk2-119-G_comp",
+      "corpus": "guitarset",
+      "positive": 174,
+      "negative": 56
+    },
+    {
+      "id": "01_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "positive": 114,
+      "negative": 11
+    },
+    {
+      "id": "01_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "positive": 277,
+      "negative": 21
+    },
+    {
+      "id": "01_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "positive": 124,
+      "negative": 16
+    },
+    {
+      "id": "01_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "positive": 228,
+      "negative": 39
+    },
+    {
+      "id": "01_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "positive": 124,
+      "negative": 14
+    },
+    {
+      "id": "01_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "positive": 101,
+      "negative": 4
+    },
+    {
+      "id": "01_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "positive": 64,
+      "negative": 3
+    },
+    {
+      "id": "01_Jazz1-200-B_comp",
+      "corpus": "guitarset",
+      "positive": 94,
+      "negative": 2
+    },
+    {
+      "id": "01_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "positive": 73,
+      "negative": 6
+    },
+    {
+      "id": "01_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "positive": 131,
+      "negative": 21
+    },
+    {
+      "id": "01_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "positive": 105,
+      "negative": 8
+    },
+    {
+      "id": "01_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "positive": 110,
+      "negative": 10
+    },
+    {
+      "id": "01_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "positive": 99,
+      "negative": 11
+    },
+    {
+      "id": "01_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "positive": 154,
+      "negative": 30
+    },
+    {
+      "id": "01_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "positive": 114,
+      "negative": 15
+    },
+    {
+      "id": "01_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "positive": 120,
+      "negative": 19
+    },
+    {
+      "id": "01_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "positive": 102,
+      "negative": 6
+    },
+    {
+      "id": "01_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "positive": 161,
+      "negative": 28
+    },
+    {
+      "id": "01_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "positive": 71,
+      "negative": 20
+    },
+    {
+      "id": "01_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "positive": 219,
+      "negative": 15
+    },
+    {
+      "id": "01_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "positive": 106,
+      "negative": 6
+    },
+    {
+      "id": "01_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "positive": 207,
+      "negative": 31
+    },
+    {
+      "id": "01_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "positive": 100,
+      "negative": 17
+    },
+    {
+      "id": "01_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "positive": 146,
+      "negative": 11
+    },
+    {
+      "id": "01_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "positive": 117,
+      "negative": 9
+    },
+    {
+      "id": "01_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "positive": 278,
+      "negative": 21
+    },
+    {
+      "id": "01_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "positive": 97,
+      "negative": 7
+    },
+    {
+      "id": "01_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "positive": 132,
+      "negative": 43
+    },
+    {
+      "id": "01_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "positive": 98,
+      "negative": 18
+    },
+    {
+      "id": "01_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "positive": 319,
+      "negative": 20
+    },
+    {
+      "id": "01_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "positive": 121,
+      "negative": 15
+    },
+    {
+      "id": "01_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "positive": 118,
+      "negative": 70
+    },
+    {
+      "id": "01_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "positive": 62,
+      "negative": 15
+    },
+    {
+      "id": "01_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "positive": 136,
+      "negative": 24
+    },
+    {
+      "id": "01_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "positive": 175,
+      "negative": 12
+    },
+    {
+      "id": "01_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "positive": 204,
+      "negative": 22
+    },
+    {
+      "id": "01_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "positive": 93,
+      "negative": 12
+    },
+    {
+      "id": "01_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "positive": 178,
+      "negative": 33
+    },
+    {
+      "id": "01_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "positive": 89,
+      "negative": 4
+    },
+    {
+      "id": "01_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "positive": 315,
+      "negative": 49
+    },
+    {
+      "id": "01_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "positive": 141,
+      "negative": 10
+    },
+    {
+      "id": "02_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "positive": 131,
+      "negative": 6
+    },
+    {
+      "id": "02_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "positive": 53,
+      "negative": 5
+    },
+    {
+      "id": "02_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "positive": 135,
+      "negative": 9
+    },
+    {
+      "id": "02_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "positive": 38,
+      "negative": 0
+    },
+    {
+      "id": "02_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "positive": 185,
+      "negative": 23
+    },
+    {
+      "id": "02_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "positive": 62,
+      "negative": 2
+    },
+    {
+      "id": "02_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "positive": 136,
+      "negative": 12
+    },
+    {
+      "id": "02_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "positive": 55,
+      "negative": 2
+    },
+    {
+      "id": "02_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "positive": 186,
+      "negative": 21
+    },
+    {
+      "id": "02_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "positive": 83,
+      "negative": 4
+    },
+    {
+      "id": "02_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "positive": 160,
+      "negative": 22
+    },
+    {
+      "id": "02_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "positive": 77,
+      "negative": 17
+    },
+    {
+      "id": "02_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "positive": 156,
+      "negative": 7
+    },
+    {
+      "id": "02_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "positive": 89,
+      "negative": 3
+    },
+    {
+      "id": "02_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "positive": 153,
+      "negative": 35
+    },
+    {
+      "id": "02_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "positive": 65,
+      "negative": 4
+    },
+    {
+      "id": "02_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "positive": 151,
+      "negative": 23
+    },
+    {
+      "id": "02_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "positive": 70,
+      "negative": 8
+    },
+    {
+      "id": "02_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "positive": 92,
+      "negative": 12
+    },
+    {
+      "id": "02_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "positive": 135,
+      "negative": 47
+    },
+    {
+      "id": "02_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "positive": 91,
+      "negative": 10
+    },
+    {
+      "id": "02_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "positive": 70,
+      "negative": 13
+    },
+    {
+      "id": "02_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "positive": 54,
+      "negative": 1
+    },
+    {
+      "id": "02_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "positive": 144,
+      "negative": 15
+    },
+    {
+      "id": "02_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "positive": 101,
+      "negative": 7
+    },
+    {
+      "id": "02_Jazz1-200-B_comp",
+      "corpus": "guitarset",
+      "positive": 130,
+      "negative": 17
+    },
+    {
+      "id": "02_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "positive": 39,
+      "negative": 3
+    },
+    {
+      "id": "02_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "positive": 160,
+      "negative": 16
+    },
+    {
+      "id": "02_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "positive": 44,
+      "negative": 0
+    },
+    {
+      "id": "02_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "positive": 104,
+      "negative": 17
+    },
+    {
+      "id": "02_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "positive": 53,
+      "negative": 3
+    },
+    {
+      "id": "02_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "positive": 158,
+      "negative": 12
+    },
+    {
+      "id": "02_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "positive": 83,
+      "negative": 6
+    },
+    {
+      "id": "02_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "positive": 224,
+      "negative": 34
+    },
+    {
+      "id": "02_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "positive": 68,
+      "negative": 2
+    },
+    {
+      "id": "02_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "positive": 136,
+      "negative": 26
+    },
+    {
+      "id": "02_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "positive": 60,
+      "negative": 5
+    },
+    {
+      "id": "02_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "positive": 153,
+      "negative": 9
+    },
+    {
+      "id": "02_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "positive": 61,
+      "negative": 2
+    },
+    {
+      "id": "02_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "positive": 150,
+      "negative": 73
+    },
+    {
+      "id": "02_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "positive": 60,
+      "negative": 7
+    },
+    {
+      "id": "02_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "positive": 135,
+      "negative": 27
+    },
+    {
+      "id": "02_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "positive": 60,
+      "negative": 4
+    },
+    {
+      "id": "02_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "positive": 187,
+      "negative": 23
+    },
+    {
+      "id": "02_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "positive": 88,
+      "negative": 14
+    },
+    {
+      "id": "02_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "positive": 260,
+      "negative": 31
+    },
+    {
+      "id": "02_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "positive": 61,
+      "negative": 4
+    },
+    {
+      "id": "02_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "positive": 242,
+      "negative": 83
+    },
+    {
+      "id": "02_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "positive": 55,
+      "negative": 6
+    },
+    {
+      "id": "02_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "positive": 68,
+      "negative": 38
+    },
+    {
+      "id": "02_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "positive": 38,
+      "negative": 6
+    },
+    {
+      "id": "02_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "positive": 139,
+      "negative": 36
+    },
+    {
+      "id": "02_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "positive": 85,
+      "negative": 11
+    },
+    {
+      "id": "02_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "positive": 110,
+      "negative": 23
+    },
+    {
+      "id": "02_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "positive": 43,
+      "negative": 10
+    },
+    {
+      "id": "02_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "positive": 163,
+      "negative": 8
+    },
+    {
+      "id": "02_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "positive": 72,
+      "negative": 3
+    },
+    {
+      "id": "02_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "positive": 196,
+      "negative": 38
+    },
+    {
+      "id": "02_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "positive": 94,
+      "negative": 17
+    },
+    {
+      "id": "03_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "positive": 110,
+      "negative": 40
+    },
+    {
+      "id": "03_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "positive": 54,
+      "negative": 1
+    },
+    {
+      "id": "03_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "positive": 120,
+      "negative": 22
+    },
+    {
+      "id": "03_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "positive": 59,
+      "negative": 4
+    },
+    {
+      "id": "03_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "positive": 163,
+      "negative": 17
+    },
+    {
+      "id": "03_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "positive": 67,
+      "negative": 11
+    },
+    {
+      "id": "03_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "positive": 129,
+      "negative": 18
+    },
+    {
+      "id": "03_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "positive": 70,
+      "negative": 3
+    },
+    {
+      "id": "03_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "positive": 137,
+      "negative": 39
+    },
+    {
+      "id": "03_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "positive": 68,
+      "negative": 16
+    },
+    {
+      "id": "03_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "positive": 120,
+      "negative": 13
+    },
+    {
+      "id": "03_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "positive": 58,
+      "negative": 15
+    },
+    {
+      "id": "03_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "positive": 127,
+      "negative": 25
+    },
+    {
+      "id": "03_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "positive": 89,
+      "negative": 8
+    },
+    {
+      "id": "03_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "positive": 193,
+      "negative": 53
+    },
+    {
+      "id": "03_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "positive": 90,
+      "negative": 12
+    },
+    {
+      "id": "03_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "positive": 193,
+      "negative": 25
+    },
+    {
+      "id": "03_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "positive": 91,
+      "negative": 8
+    },
+    {
+      "id": "03_Funk2-119-G_comp",
+      "corpus": "guitarset",
+      "positive": 156,
+      "negative": 32
+    },
+    {
+      "id": "03_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "positive": 80,
+      "negative": 12
+    },
+    {
+      "id": "03_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "positive": 134,
+      "negative": 16
+    },
+    {
+      "id": "03_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "positive": 90,
+      "negative": 4
+    },
+    {
+      "id": "03_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "positive": 216,
+      "negative": 39
+    },
+    {
+      "id": "03_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "positive": 85,
+      "negative": 6
+    },
+    {
+      "id": "03_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "positive": 70,
+      "negative": 6
+    },
+    {
+      "id": "03_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "positive": 66,
+      "negative": 6
+    },
+    {
+      "id": "03_Jazz1-200-B_comp",
+      "corpus": "guitarset",
+      "positive": 50,
+      "negative": 5
+    },
+    {
+      "id": "03_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "positive": 37,
+      "negative": 8
+    },
+    {
+      "id": "03_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "positive": 87,
+      "negative": 20
+    },
+    {
+      "id": "03_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "positive": 79,
+      "negative": 5
+    },
+    {
+      "id": "03_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "positive": 80,
+      "negative": 9
+    },
+    {
+      "id": "03_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "positive": 63,
+      "negative": 7
+    },
+    {
+      "id": "03_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "positive": 99,
+      "negative": 16
+    },
+    {
+      "id": "03_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "positive": 94,
+      "negative": 3
+    },
+    {
+      "id": "03_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "positive": 91,
+      "negative": 11
+    },
+    {
+      "id": "03_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "positive": 72,
+      "negative": 9
+    },
+    {
+      "id": "03_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "positive": 141,
+      "negative": 44
+    },
+    {
+      "id": "03_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "positive": 53,
+      "negative": 3
+    },
+    {
+      "id": "03_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "positive": 152,
+      "negative": 27
+    },
+    {
+      "id": "03_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "positive": 61,
+      "negative": 6
+    },
+    {
+      "id": "03_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "positive": 188,
+      "negative": 19
+    },
+    {
+      "id": "03_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "positive": 80,
+      "negative": 5
+    },
+    {
+      "id": "03_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "positive": 131,
+      "negative": 31
+    },
+    {
+      "id": "03_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "positive": 53,
+      "negative": 5
+    },
+    {
+      "id": "03_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "positive": 179,
+      "negative": 28
+    },
+    {
+      "id": "03_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "positive": 78,
+      "negative": 14
+    },
+    {
+      "id": "03_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "positive": 226,
+      "negative": 19
+    },
+    {
+      "id": "03_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "positive": 56,
+      "negative": 11
+    },
+    {
+      "id": "03_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "positive": 291,
+      "negative": 51
+    },
+    {
+      "id": "03_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "positive": 91,
+      "negative": 6
+    },
+    {
+      "id": "03_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "positive": 149,
+      "negative": 57
+    },
+    {
+      "id": "03_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "positive": 51,
+      "negative": 7
+    },
+    {
+      "id": "03_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "positive": 241,
+      "negative": 38
+    },
+    {
+      "id": "03_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "positive": 69,
+      "negative": 7
+    },
+    {
+      "id": "03_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "positive": 189,
+      "negative": 22
+    },
+    {
+      "id": "03_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "positive": 64,
+      "negative": 6
+    },
+    {
+      "id": "03_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "positive": 112,
+      "negative": 19
+    },
+    {
+      "id": "03_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "positive": 42,
+      "negative": 7
+    },
+    {
+      "id": "03_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "positive": 252,
+      "negative": 14
+    },
+    {
+      "id": "03_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "positive": 68,
+      "negative": 7
+    },
+    {
+      "id": "piano-00",
+      "corpus": "original-piano",
+      "positive": 33,
+      "negative": 2
+    },
+    {
+      "id": "piano-01",
+      "corpus": "original-piano",
+      "positive": 32,
+      "negative": 0
+    },
+    {
+      "id": "piano-02",
+      "corpus": "original-piano",
+      "positive": 31,
+      "negative": 3
+    },
+    {
+      "id": "piano-03",
+      "corpus": "original-piano",
+      "positive": 30,
+      "negative": 0
+    },
+    {
+      "id": "piano-04",
+      "corpus": "original-piano",
+      "positive": 33,
+      "negative": 1
+    },
+    {
+      "id": "piano-05",
+      "corpus": "original-piano",
+      "positive": 35,
+      "negative": 0
+    },
+    {
+      "id": "piano-06",
+      "corpus": "original-piano",
+      "positive": 35,
+      "negative": 1
+    },
+    {
+      "id": "piano-07",
+      "corpus": "original-piano",
+      "positive": 34,
+      "negative": 1
+    },
+    {
+      "id": "piano-08",
+      "corpus": "original-piano",
+      "positive": 40,
+      "negative": 1
+    },
+    {
+      "id": "piano-09",
+      "corpus": "original-piano",
+      "positive": 30,
+      "negative": 0
+    },
+    {
+      "id": "piano-10",
+      "corpus": "original-piano",
+      "positive": 30,
+      "negative": 2
+    },
+    {
+      "id": "piano-11",
+      "corpus": "original-piano",
+      "positive": 32,
+      "negative": 0
+    },
+    {
+      "id": "piano-12",
+      "corpus": "original-piano",
+      "positive": 38,
+      "negative": 1
+    },
+    {
+      "id": "piano-13",
+      "corpus": "original-piano",
+      "positive": 34,
+      "negative": 0
+    },
+    {
+      "id": "piano-14",
+      "corpus": "original-piano",
+      "positive": 33,
+      "negative": 2
+    },
+    {
+      "id": "piano-15",
+      "corpus": "original-piano",
+      "positive": 30,
+      "negative": 1
+    },
+    {
+      "id": "piano-16",
+      "corpus": "original-piano",
+      "positive": 35,
+      "negative": 0
+    },
+    {
+      "id": "piano-17",
+      "corpus": "original-piano",
+      "positive": 30,
+      "negative": 2
+    },
+    {
+      "id": "piano-18",
+      "corpus": "original-piano",
+      "positive": 35,
+      "negative": 1
+    },
+    {
+      "id": "piano-19",
+      "corpus": "original-piano",
+      "positive": 33,
+      "negative": 0
+    },
+    {
+      "id": "piano-20",
+      "corpus": "original-piano",
+      "positive": 29,
+      "negative": 2
+    },
+    {
+      "id": "piano-21",
+      "corpus": "original-piano",
+      "positive": 33,
+      "negative": 3
+    },
+    {
+      "id": "piano-22",
+      "corpus": "original-piano",
+      "positive": 37,
+      "negative": 0
+    },
+    {
+      "id": "piano-23",
+      "corpus": "original-piano",
+      "positive": 35,
+      "negative": 2
+    },
+    {
+      "id": "piano-24",
+      "corpus": "original-piano",
+      "positive": 26,
+      "negative": 0
+    },
+    {
+      "id": "piano-25",
+      "corpus": "original-piano",
+      "positive": 35,
+      "negative": 0
+    },
+    {
+      "id": "piano-26",
+      "corpus": "original-piano",
+      "positive": 35,
+      "negative": 2
+    },
+    {
+      "id": "piano-27",
+      "corpus": "original-piano",
+      "positive": 37,
+      "negative": 0
+    },
+    {
+      "id": "piano-28",
+      "corpus": "original-piano",
+      "positive": 30,
+      "negative": 1
+    },
+    {
+      "id": "piano-29",
+      "corpus": "original-piano",
+      "positive": 37,
+      "negative": 3
+    },
+    {
+      "id": "piano-30",
+      "corpus": "original-piano",
+      "positive": 38,
+      "negative": 1
+    },
+    {
+      "id": "piano-31",
+      "corpus": "original-piano",
+      "positive": 28,
+      "negative": 1
+    },
+    {
+      "id": "context-piano-000",
+      "corpus": "original-piano",
+      "positive": 85,
+      "negative": 8
+    },
+    {
+      "id": "context-piano-001",
+      "corpus": "original-piano",
+      "positive": 66,
+      "negative": 10
+    },
+    {
+      "id": "context-piano-002",
+      "corpus": "original-piano",
+      "positive": 68,
+      "negative": 14
+    },
+    {
+      "id": "context-piano-003",
+      "corpus": "original-piano",
+      "positive": 92,
+      "negative": 4
+    },
+    {
+      "id": "context-piano-004",
+      "corpus": "original-piano",
+      "positive": 82,
+      "negative": 14
+    },
+    {
+      "id": "context-piano-005",
+      "corpus": "original-piano",
+      "positive": 82,
+      "negative": 3
+    },
+    {
+      "id": "context-piano-006",
+      "corpus": "original-piano",
+      "positive": 70,
+      "negative": 9
+    },
+    {
+      "id": "context-piano-007",
+      "corpus": "original-piano",
+      "positive": 83,
+      "negative": 6
+    },
+    {
+      "id": "context-piano-008",
+      "corpus": "original-piano",
+      "positive": 74,
+      "negative": 3
+    },
+    {
+      "id": "context-piano-009",
+      "corpus": "original-piano",
+      "positive": 84,
+      "negative": 5
+    },
+    {
+      "id": "context-piano-010",
+      "corpus": "original-piano",
+      "positive": 59,
+      "negative": 6
+    },
+    {
+      "id": "context-piano-011",
+      "corpus": "original-piano",
+      "positive": 79,
+      "negative": 10
+    },
+    {
+      "id": "context-piano-012",
+      "corpus": "original-piano",
+      "positive": 66,
+      "negative": 4
+    },
+    {
+      "id": "context-piano-013",
+      "corpus": "original-piano",
+      "positive": 93,
+      "negative": 7
+    },
+    {
+      "id": "context-piano-014",
+      "corpus": "original-piano",
+      "positive": 58,
+      "negative": 17
+    },
+    {
+      "id": "context-piano-015",
+      "corpus": "original-piano",
+      "positive": 84,
+      "negative": 0
+    },
+    {
+      "id": "context-piano-016",
+      "corpus": "original-piano",
+      "positive": 71,
+      "negative": 9
+    },
+    {
+      "id": "context-piano-017",
+      "corpus": "original-piano",
+      "positive": 76,
+      "negative": 3
+    },
+    {
+      "id": "context-piano-018",
+      "corpus": "original-piano",
+      "positive": 73,
+      "negative": 11
+    },
+    {
+      "id": "context-piano-019",
+      "corpus": "original-piano",
+      "positive": 91,
+      "negative": 5
+    },
+    {
+      "id": "context-piano-020",
+      "corpus": "original-piano",
+      "positive": 53,
+      "negative": 9
+    },
+    {
+      "id": "context-piano-021",
+      "corpus": "original-piano",
+      "positive": 80,
+      "negative": 2
+    },
+    {
+      "id": "context-piano-022",
+      "corpus": "original-piano",
+      "positive": 76,
+      "negative": 11
+    },
+    {
+      "id": "context-piano-023",
+      "corpus": "original-piano",
+      "positive": 74,
+      "negative": 6
+    },
+    {
+      "id": "context-piano-024",
+      "corpus": "original-piano",
+      "positive": 71,
+      "negative": 17
+    },
+    {
+      "id": "context-piano-025",
+      "corpus": "original-piano",
+      "positive": 78,
+      "negative": 8
+    },
+    {
+      "id": "context-piano-026",
+      "corpus": "original-piano",
+      "positive": 69,
+      "negative": 10
+    },
+    {
+      "id": "context-piano-027",
+      "corpus": "original-piano",
+      "positive": 68,
+      "negative": 3
+    },
+    {
+      "id": "context-piano-028",
+      "corpus": "original-piano",
+      "positive": 73,
+      "negative": 5
+    },
+    {
+      "id": "context-piano-029",
+      "corpus": "original-piano",
+      "positive": 87,
+      "negative": 4
+    },
+    {
+      "id": "context-piano-030",
+      "corpus": "original-piano",
+      "positive": 75,
+      "negative": 5
+    },
+    {
+      "id": "context-piano-031",
+      "corpus": "original-piano",
+      "positive": 78,
+      "negative": 5
+    },
+    {
+      "id": "context-piano-032",
+      "corpus": "original-piano",
+      "positive": 82,
+      "negative": 8
+    },
+    {
+      "id": "context-piano-033",
+      "corpus": "original-piano",
+      "positive": 73,
+      "negative": 5
+    },
+    {
+      "id": "context-piano-034",
+      "corpus": "original-piano",
+      "positive": 58,
+      "negative": 2
+    },
+    {
+      "id": "context-piano-035",
+      "corpus": "original-piano",
+      "positive": 71,
+      "negative": 4
+    },
+    {
+      "id": "context-piano-036",
+      "corpus": "original-piano",
+      "positive": 79,
+      "negative": 4
+    },
+    {
+      "id": "context-piano-037",
+      "corpus": "original-piano",
+      "positive": 96,
+      "negative": 5
+    },
+    {
+      "id": "context-piano-038",
+      "corpus": "original-piano",
+      "positive": 70,
+      "negative": 17
+    },
+    {
+      "id": "context-piano-039",
+      "corpus": "original-piano",
+      "positive": 73,
+      "negative": 1
+    },
+    {
+      "id": "context-piano-040",
+      "corpus": "original-piano",
+      "positive": 69,
+      "negative": 12
+    },
+    {
+      "id": "context-piano-041",
+      "corpus": "original-piano",
+      "positive": 76,
+      "negative": 1
+    },
+    {
+      "id": "context-piano-042",
+      "corpus": "original-piano",
+      "positive": 80,
+      "negative": 6
+    },
+    {
+      "id": "context-piano-043",
+      "corpus": "original-piano",
+      "positive": 94,
+      "negative": 9
+    },
+    {
+      "id": "context-piano-044",
+      "corpus": "original-piano",
+      "positive": 80,
+      "negative": 10
+    },
+    {
+      "id": "context-piano-045",
+      "corpus": "original-piano",
+      "positive": 71,
+      "negative": 3
+    },
+    {
+      "id": "context-piano-046",
+      "corpus": "original-piano",
+      "positive": 68,
+      "negative": 11
+    },
+    {
+      "id": "context-piano-047",
+      "corpus": "original-piano",
+      "positive": 76,
+      "negative": 7
+    },
+    {
+      "id": "context-piano-048",
+      "corpus": "original-piano",
+      "positive": 78,
+      "negative": 13
+    },
+    {
+      "id": "context-piano-049",
+      "corpus": "original-piano",
+      "positive": 95,
+      "negative": 3
+    },
+    {
+      "id": "context-piano-050",
+      "corpus": "original-piano",
+      "positive": 57,
+      "negative": 15
+    },
+    {
+      "id": "context-piano-051",
+      "corpus": "original-piano",
+      "positive": 89,
+      "negative": 2
+    },
+    {
+      "id": "context-piano-052",
+      "corpus": "original-piano",
+      "positive": 74,
+      "negative": 5
+    },
+    {
+      "id": "context-piano-053",
+      "corpus": "original-piano",
+      "positive": 74,
+      "negative": 13
+    },
+    {
+      "id": "context-piano-054",
+      "corpus": "original-piano",
+      "positive": 67,
+      "negative": 7
+    },
+    {
+      "id": "context-piano-055",
+      "corpus": "original-piano",
+      "positive": 83,
+      "negative": 6
+    },
+    {
+      "id": "context-piano-056",
+      "corpus": "original-piano",
+      "positive": 84,
+      "negative": 6
+    },
+    {
+      "id": "context-piano-057",
+      "corpus": "original-piano",
+      "positive": 65,
+      "negative": 4
+    },
+    {
+      "id": "context-piano-058",
+      "corpus": "original-piano",
+      "positive": 73,
+      "negative": 12
+    },
+    {
+      "id": "context-piano-059",
+      "corpus": "original-piano",
+      "positive": 79,
+      "negative": 4
+    },
+    {
+      "id": "context-piano-060",
+      "corpus": "original-piano",
+      "positive": 81,
+      "negative": 8
+    },
+    {
+      "id": "context-piano-061",
+      "corpus": "original-piano",
+      "positive": 86,
+      "negative": 3
+    },
+    {
+      "id": "context-piano-062",
+      "corpus": "original-piano",
+      "positive": 68,
+      "negative": 14
+    },
+    {
+      "id": "context-piano-063",
+      "corpus": "original-piano",
+      "positive": 93,
+      "negative": 3
+    },
+    {
+      "id": "training-stem-00_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "positive": 94,
+      "negative": 13
+    },
+    {
+      "id": "training-stem-00_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "positive": 62,
+      "negative": 14
+    },
+    {
+      "id": "training-stem-00_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "positive": 206,
+      "negative": 25
+    },
+    {
+      "id": "training-stem-00_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "positive": 50,
+      "negative": 12
+    },
+    {
+      "id": "training-stem-00_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "positive": 138,
+      "negative": 13
+    },
+    {
+      "id": "training-stem-00_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "positive": 55,
+      "negative": 20
+    },
+    {
+      "id": "training-stem-00_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "positive": 225,
+      "negative": 16
+    },
+    {
+      "id": "training-stem-00_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "positive": 68,
+      "negative": 31
+    },
+    {
+      "id": "training-stem-00_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "positive": 164,
+      "negative": 29
+    },
+    {
+      "id": "training-stem-00_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "positive": 58,
+      "negative": 10
+    },
+    {
+      "id": "training-stem-01_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "positive": 93,
+      "negative": 18
+    },
+    {
+      "id": "training-stem-01_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "positive": 56,
+      "negative": 7
+    },
+    {
+      "id": "training-stem-01_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "positive": 161,
+      "negative": 28
+    },
+    {
+      "id": "training-stem-01_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "positive": 105,
+      "negative": 17
+    },
+    {
+      "id": "training-stem-01_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "positive": 96,
+      "negative": 6
+    },
+    {
+      "id": "training-stem-01_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "positive": 64,
+      "negative": 5
+    },
+    {
+      "id": "training-stem-01_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "positive": 150,
+      "negative": 32
+    },
+    {
+      "id": "training-stem-01_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "positive": 71,
+      "negative": 19
+    },
+    {
+      "id": "training-stem-01_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "positive": 304,
+      "negative": 13
+    },
+    {
+      "id": "training-stem-01_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "positive": 119,
+      "negative": 12
+    },
+    {
+      "id": "training-stem-02_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "positive": 120,
+      "negative": 7
+    },
+    {
+      "id": "training-stem-02_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "positive": 51,
+      "negative": 5
+    },
+    {
+      "id": "training-stem-02_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "positive": 136,
+      "negative": 6
+    },
+    {
+      "id": "training-stem-02_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "positive": 85,
+      "negative": 2
+    },
+    {
+      "id": "training-stem-02_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "positive": 121,
+      "negative": 15
+    },
+    {
+      "id": "training-stem-02_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "positive": 97,
+      "negative": 7
+    },
+    {
+      "id": "training-stem-02_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "positive": 128,
+      "negative": 24
+    },
+    {
+      "id": "training-stem-02_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "positive": 59,
+      "negative": 5
+    },
+    {
+      "id": "training-stem-02_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "positive": 230,
+      "negative": 74
+    },
+    {
+      "id": "training-stem-02_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "positive": 54,
+      "negative": 3
+    },
+    {
+      "id": "training-stem-03_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "positive": 111,
+      "negative": 39
+    },
+    {
+      "id": "training-stem-03_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "positive": 52,
+      "negative": 2
+    },
+    {
+      "id": "training-stem-03_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "positive": 124,
+      "negative": 29
+    },
+    {
+      "id": "training-stem-03_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "positive": 88,
+      "negative": 10
+    },
+    {
+      "id": "training-stem-03_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "positive": 68,
+      "negative": 6
+    },
+    {
+      "id": "training-stem-03_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "positive": 62,
+      "negative": 9
+    },
+    {
+      "id": "training-stem-03_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "positive": 138,
+      "negative": 42
+    },
+    {
+      "id": "training-stem-03_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "positive": 52,
+      "negative": 5
+    },
+    {
+      "id": "training-stem-03_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "positive": 272,
+      "negative": 60
+    },
+    {
+      "id": "training-stem-03_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "positive": 89,
+      "negative": 6
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p01",
+      "corpus": "vienna-piano",
+      "positive": 69,
+      "negative": 5
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p02",
+      "corpus": "vienna-piano",
+      "positive": 73,
+      "negative": 8
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p03",
+      "corpus": "vienna-piano",
+      "positive": 74,
+      "negative": 9
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p04",
+      "corpus": "vienna-piano",
+      "positive": 74,
+      "negative": 10
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p05",
+      "corpus": "vienna-piano",
+      "positive": 76,
+      "negative": 8
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p06",
+      "corpus": "vienna-piano",
+      "positive": 69,
+      "negative": 7
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p07",
+      "corpus": "vienna-piano",
+      "positive": 74,
+      "negative": 13
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p08",
+      "corpus": "vienna-piano",
+      "positive": 75,
+      "negative": 14
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p09",
+      "corpus": "vienna-piano",
+      "positive": 80,
+      "negative": 8
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p10",
+      "corpus": "vienna-piano",
+      "positive": 67,
+      "negative": 7
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p11",
+      "corpus": "vienna-piano",
+      "positive": 63,
+      "negative": 6
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p12",
+      "corpus": "vienna-piano",
+      "positive": 69,
+      "negative": 10
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p13",
+      "corpus": "vienna-piano",
+      "positive": 68,
+      "negative": 15
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p14",
+      "corpus": "vienna-piano",
+      "positive": 65,
+      "negative": 13
+    },
+    {
+      "id": "vienna-Chopin_op38_p01",
+      "corpus": "vienna-piano",
+      "positive": 73,
+      "negative": 3
+    },
+    {
+      "id": "vienna-Chopin_op38_p02",
+      "corpus": "vienna-piano",
+      "positive": 78,
+      "negative": 6
+    },
+    {
+      "id": "vienna-Chopin_op38_p03",
+      "corpus": "vienna-piano",
+      "positive": 53,
+      "negative": 7
+    },
+    {
+      "id": "vienna-Chopin_op38_p04",
+      "corpus": "vienna-piano",
+      "positive": 83,
+      "negative": 5
+    },
+    {
+      "id": "vienna-Chopin_op38_p05",
+      "corpus": "vienna-piano",
+      "positive": 76,
+      "negative": 5
+    },
+    {
+      "id": "vienna-Chopin_op38_p06",
+      "corpus": "vienna-piano",
+      "positive": 63,
+      "negative": 4
+    },
+    {
+      "id": "vienna-Chopin_op38_p07",
+      "corpus": "vienna-piano",
+      "positive": 85,
+      "negative": 6
+    },
+    {
+      "id": "vienna-Chopin_op38_p08",
+      "corpus": "vienna-piano",
+      "positive": 83,
+      "negative": 5
+    },
+    {
+      "id": "vienna-Chopin_op38_p09",
+      "corpus": "vienna-piano",
+      "positive": 76,
+      "negative": 4
+    },
+    {
+      "id": "vienna-Chopin_op38_p10",
+      "corpus": "vienna-piano",
+      "positive": 88,
+      "negative": 8
+    },
+    {
+      "id": "vienna-Chopin_op38_p11",
+      "corpus": "vienna-piano",
+      "positive": 56,
+      "negative": 6
+    },
+    {
+      "id": "vienna-Chopin_op38_p12",
+      "corpus": "vienna-piano",
+      "positive": 77,
+      "negative": 5
+    },
+    {
+      "id": "vienna-Chopin_op38_p13",
+      "corpus": "vienna-piano",
+      "positive": 66,
+      "negative": 13
+    },
+    {
+      "id": "vienna-Chopin_op38_p14",
+      "corpus": "vienna-piano",
+      "positive": 65,
+      "negative": 5
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p01",
+      "corpus": "vienna-piano",
+      "positive": 58,
+      "negative": 4
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p02",
+      "corpus": "vienna-piano",
+      "positive": 62,
+      "negative": 8
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p03",
+      "corpus": "vienna-piano",
+      "positive": 59,
+      "negative": 4
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p04",
+      "corpus": "vienna-piano",
+      "positive": 67,
+      "negative": 7
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p05",
+      "corpus": "vienna-piano",
+      "positive": 57,
+      "negative": 4
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p06",
+      "corpus": "vienna-piano",
+      "positive": 56,
+      "negative": 5
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p07",
+      "corpus": "vienna-piano",
+      "positive": 76,
+      "negative": 8
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p08",
+      "corpus": "vienna-piano",
+      "positive": 63,
+      "negative": 4
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p09",
+      "corpus": "vienna-piano",
+      "positive": 66,
+      "negative": 3
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p10",
+      "corpus": "vienna-piano",
+      "positive": 63,
+      "negative": 2
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p11",
+      "corpus": "vienna-piano",
+      "positive": 47,
+      "negative": 4
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p12",
+      "corpus": "vienna-piano",
+      "positive": 58,
+      "negative": 7
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p13",
+      "corpus": "vienna-piano",
+      "positive": 39,
+      "negative": 5
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p14",
+      "corpus": "vienna-piano",
+      "positive": 67,
+      "negative": 7
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p01",
+      "corpus": "vienna-piano",
+      "positive": 105,
+      "negative": 22
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p02",
+      "corpus": "vienna-piano",
+      "positive": 120,
+      "negative": 24
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p03",
+      "corpus": "vienna-piano",
+      "positive": 105,
+      "negative": 13
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p04",
+      "corpus": "vienna-piano",
+      "positive": 90,
+      "negative": 30
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p05",
+      "corpus": "vienna-piano",
+      "positive": 110,
+      "negative": 11
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p06",
+      "corpus": "vienna-piano",
+      "positive": 82,
+      "negative": 11
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p07",
+      "corpus": "vienna-piano",
+      "positive": 103,
+      "negative": 6
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p08",
+      "corpus": "vienna-piano",
+      "positive": 108,
+      "negative": 16
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p09",
+      "corpus": "vienna-piano",
+      "positive": 92,
+      "negative": 10
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p10",
+      "corpus": "vienna-piano",
+      "positive": 113,
+      "negative": 9
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p11",
+      "corpus": "vienna-piano",
+      "positive": 70,
+      "negative": 16
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p12",
+      "corpus": "vienna-piano",
+      "positive": 91,
+      "negative": 8
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p13",
+      "corpus": "vienna-piano",
+      "positive": 100,
+      "negative": 16
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p14",
+      "corpus": "vienna-piano",
+      "positive": 77,
+      "negative": 12
+    }
+  ]
+}

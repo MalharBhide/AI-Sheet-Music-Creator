@@ -8,7 +8,12 @@ import soundfile as sf
 
 from app.models import PipelineError
 from app.services.accompaniment_candidates import decode_candidates
-from app.services.note_context_model import ContextNoteModel, correction_keep, shared_events
+from app.services.note_context_model import (
+    ContextNoteModel,
+    correction_keep,
+    residual_keep,
+    shared_events,
+)
 from app.services.note_evidence import FEATURE_NAMES, FEATURE_VERSION, note_features
 
 CHECKPOINT = Path(__file__).resolve().parents[1] / 'assets' / 'accompaniment-verifier-v2.pt'
@@ -19,10 +24,12 @@ CONTEXT_CHECKPOINTS = (
     (CHECKPOINT.parent / 'accompaniment-context-original.npz',
      '381c150b19bdb223fc9e85f88b78dd69892b0de5c7591189967f30b59a26a8e7'),
 )
+RESIDUAL_CHECKPOINT = CHECKPOINT.parent / 'accompaniment-residual-v4.npz'
+RESIDUAL_SHA256 = 'ad958557c44312c8d082b9339801ae794a7673956f098106f7fb6381fa3cd24d'
 
 
 class AccompanimentVerifier:
-    name = 'Accompaniment note verifier v3'
+    name = 'Accompaniment note verifier v4'
 
     def __init__(self):
         import torch
@@ -54,6 +61,16 @@ class AccompanimentVerifier:
                 self.context_models.append(context)
             except (ValueError, KeyError, OSError) as exc:
                 raise PipelineError('The accompaniment context model is invalid. Rebuild the backend and retry.') from exc
+        if (not RESIDUAL_CHECKPOINT.is_file()
+                or hashlib.sha256(RESIDUAL_CHECKPOINT.read_bytes()).hexdigest() != RESIDUAL_SHA256):
+            raise PipelineError('The residual note model is missing or damaged. Rebuild the backend and retry.')
+        try:
+            with np.load(RESIDUAL_CHECKPOINT, allow_pickle=False) as arrays:
+                self.residual_model = ContextNoteModel(arrays)
+            if self.residual_model.threshold != .0375:
+                raise ValueError('Unexpected residual threshold')
+        except (ValueError, KeyError, OSError) as exc:
+            raise PipelineError('The residual note model is invalid. Rebuild the backend and retry.') from exc
 
     def filter(self, path, acoustic, midi):
         """Keep original pitch, timing and velocity; reject unsupported events only."""
@@ -75,8 +92,14 @@ class AccompanimentVerifier:
         bounded_events = [[n.start, n.end, n.pitch, n.velocity]
                           for part in bounded.instruments for n in part.notes]
         context = np.asarray([model.probability(x) for model in self.context_models])
-        keep = correction_keep(probability, context, shared_events(events, bounded_events),
+        shared = shared_events(events, bounded_events)
+        keep = correction_keep(probability, context, shared,
                                threshold=self.threshold, prune=self.context_models[0].threshold)
+        eligible = keep & shared & (probability <= .5)
+        residual = np.ones(len(notes))
+        if np.any(eligible):
+            residual[eligible] = self.residual_model.probability(x[eligible])
+        keep = residual_keep(keep, probability, shared, residual, threshold=self.residual_model.threshold)
         index = 0
         for part in midi.instruments:
             size = len(part.notes)

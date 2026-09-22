@@ -1,5 +1,35 @@
 # Verification
 
+## Trained residual false-note filter — 2026-09-22
+
+Trained a 300-tree classifier on 50,442 labeled, V3-retained candidate events
+from 431 licensed/original training clips. V3 decisions are preserved unless an
+exact shared, uncertain candidate is rejected by the new model. No user uploads
+were processed and no website transcription jobs or scores were created.
+
+- Validation: **3,247 → 3,214 false notes**, retaining all 10,316 matched notes.
+  The threshold was halved as a predeclared safety margin, then frozen.
+- Consumed regression: **3,032 → 3,009 false notes (0.76%)**, retaining all
+  12,301 matched notes in every one of 126 excerpts. The newly scored 16 later
+  GuitarSet sections were unchanged: 578 matches and 299 false notes. They share
+  test performers/compositions with earlier sections, so they are not an
+  independent generalization benchmark. See the [model card](docs/accompaniment-residual-v4.md).
+- Runtime parity passed on **31,156 candidate events across 250 clips**:
+  actual deployed filter decisions match offline evaluation, with all retained
+  note objects, timing, pitches, dynamics and source assignments preserved.
+  No audio inference or score generation was needed for this check.
+- **168 tests passed**; six audio-to-score integration cases were deliberately
+  skipped. Backend/model-training lint passed. Checks cover damaged weights,
+  invalid confidence values, protected notes, exact decoder matching, runtime
+  filtering, and rejecting candidates that lose correct held notes.
+- Rebuilt and deployed the backend after confirming the queue was idle. The
+  deployed process loaded V4 at threshold .0375 with a verified checkpoint hash,
+  and the frontend-proxied health endpoint reported ready. No upload or score
+  regeneration was performed for deployment verification.
+
+This is a new trained accompaniment model, not another reduction in arrangement
+density. It does not change melody inference or claim accurate full-song scores.
+
 ## Melody-first reduction and held-note preservation — 2026-09-21
 
 The previous accompaniment reducer interrupted an active note whenever a louder

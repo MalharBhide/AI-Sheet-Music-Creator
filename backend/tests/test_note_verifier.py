@@ -8,7 +8,7 @@ import soundfile as sf
 
 from app.models import PipelineError
 from app.services import accompaniment_verifier as service
-from app.services.note_context_model import correction_keep, shared_events
+from app.services.note_context_model import correction_keep, residual_keep, shared_events
 
 
 def test_missing_checkpoint_fails_explicitly(monkeypatch, tmp_path):
@@ -32,6 +32,7 @@ def test_filter_preserves_retained_notes_and_instrument_assignment(monkeypatch, 
     monkeypatch.setattr(service, 'decode_candidates', lambda _: midi)
     verifier.context_models = [SimpleNamespace(threshold=model.threshold, probability=lambda x: np.ones(len(x)))
                                for model in verifier.context_models]
+    verifier.residual_model = SimpleNamespace(threshold=.0375, probability=lambda x: np.ones(len(x)))
     verifier.model = lambda x: torch.tensor([2., -5., 1., -4.])
     assert verifier.filter(path, {}, midi) == 2
     assert midi.instruments[0].notes == [notes[0]]
@@ -79,6 +80,7 @@ def test_context_correction_matches_runtime_without_changing_unshared_or_confide
 
     verifier.model = old_model
     verifier.context_models = [context_model(0), context_model(1)]
+    verifier.residual_model = SimpleNamespace(threshold=.0375, probability=lambda x: np.ones(len(x)))
     events = [[n.start, n.end, n.pitch, n.velocity] for n in notes]
     bounded_events = [[n.start, n.end, n.pitch, n.velocity] for n in bounded_notes]
     shared = shared_events(events, bounded_events)
@@ -90,6 +92,51 @@ def test_context_correction_matches_runtime_without_changing_unshared_or_confide
     assert midi.instruments[1].notes == [notes[4], notes[7]]
     assert [n for part in midi.instruments for n in part.notes] == [n for n, keep in zip(notes, expected, strict=True) if keep]
     assert [vars(n) for n in notes] == before
+
+
+def test_residual_model_matches_evaluation_and_preserves_note_objects(monkeypatch, tmp_path):
+    torch = pytest.importorskip('torch')
+    verifier = service.AccompanimentVerifier()
+    assert verifier.name.endswith('v4')
+    path = tmp_path / 'window.wav'
+    sf.write(path, np.zeros(22050), 22050)
+    notes = [SimpleNamespace(pitch=60 + i, start=i * .1, end=1. + i * .1, velocity=80)
+             for i in range(7)]
+    original = [vars(n).copy() for n in notes]
+    midi = SimpleNamespace(instruments=[SimpleNamespace(notes=notes[:3]), SimpleNamespace(notes=notes[3:])])
+    bounded = SimpleNamespace(instruments=[SimpleNamespace(notes=[notes[i] for i in [6, 5, 4, 3, 1, 0]])])
+    monkeypatch.setattr(service, 'decode_candidates', lambda _: bounded)
+    x = np.arange(7 * 52, dtype=np.float32).reshape(7, 52) / 100
+    monkeypatch.setattr(service, 'note_features', lambda *args, **kwargs: x)
+    p = np.array([.2, .5001, .2, .05, .4, .5, .3])
+    verifier.model = lambda _: torch.from_numpy(np.log(p / (1 - p)))
+    verifier.context_models = [SimpleNamespace(threshold=.01, probability=lambda x: np.ones(len(x)))] * 2
+
+    def residual_probability(features):
+        # Confident/unshared/already-rejected events do not need another model pass.
+        np.testing.assert_array_equal(features, x[[0, 4, 5, 6]])
+        return np.array([.001, .0375, .001, .9])
+
+    verifier.residual_model = SimpleNamespace(threshold=.0375, probability=residual_probability)
+    assert verifier.filter(path, {}, midi) == 3
+    assert midi.instruments[0].notes == [notes[1], notes[2]]
+    assert midi.instruments[1].notes == [notes[4], notes[6]]
+    assert [vars(n) for n in notes] == original
+
+
+def test_residual_confidence_rejects_invalid_scores():
+    for invalid in (np.array([np.nan]), np.array([1.01]), np.array([[.1]])):
+        with pytest.raises(ValueError, match='residual'):
+            residual_keep(np.array([True]), np.array([.2]), np.array([True]), invalid, threshold=.0375)
+
+
+def test_damaged_residual_model_fails_explicitly(monkeypatch, tmp_path):
+    pytest.importorskip('torch')
+    path = tmp_path / 'residual.npz'
+    path.write_bytes(b'invalid model')
+    monkeypatch.setattr(service, 'RESIDUAL_CHECKPOINT', path)
+    with pytest.raises(PipelineError, match='residual note model is missing or damaged'):
+        service.AccompanimentVerifier()
 
 
 @pytest.mark.parametrize('damaged_index', [0, 1])
