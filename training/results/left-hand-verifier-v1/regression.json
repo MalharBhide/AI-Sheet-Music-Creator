@@ -1,0 +1,4322 @@
+{
+  "threshold": 0.05,
+  "passes": true,
+  "false_notes_removed": 10,
+  "failed_recordings": [],
+  "aggregate": {
+    "guitarset": {
+      "candidate": {
+        "precision": 0.7755698421975453,
+        "recall": 0.8401924781562619,
+        "f1": 0.8065888645757354,
+        "true_positives": 6635,
+        "false_positives": 1920,
+        "predicted": 8555,
+        "reference": 7897,
+        "seconds": 1617.714739229025,
+        "false_positives_per_minute": 71.21156604835184
+      },
+      "deployed_v4": {
+        "precision": 0.7747547874824848,
+        "recall": 0.8401924781562619,
+        "f1": 0.8061478646497783,
+        "true_positives": 6635,
+        "false_positives": 1929,
+        "predicted": 8564,
+        "reference": 7897,
+        "seconds": 1617.714739229025,
+        "false_positives_per_minute": 71.5453702642035
+      }
+    },
+    "guitarset-later": {
+      "candidate": {
+        "precision": 0.6590649942987458,
+        "recall": 0.8824427480916031,
+        "f1": 0.7545691906005222,
+        "true_positives": 578,
+        "false_positives": 299,
+        "predicted": 877,
+        "reference": 655,
+        "seconds": 165.29755102040818,
+        "false_positives_per_minute": 108.53155348795862
+      },
+      "deployed_v4": {
+        "precision": 0.6590649942987458,
+        "recall": 0.8824427480916031,
+        "f1": 0.7545691906005222,
+        "true_positives": 578,
+        "false_positives": 299,
+        "predicted": 877,
+        "reference": 655,
+        "seconds": 165.29755102040818,
+        "false_positives_per_minute": 108.53155348795862
+      }
+    },
+    "later-vienna-piano": {
+      "candidate": {
+        "precision": 0.8466101694915255,
+        "recall": 0.8307692307692308,
+        "f1": 0.8386149003147954,
+        "true_positives": 1998,
+        "false_positives": 362,
+        "predicted": 2360,
+        "reference": 2405,
+        "seconds": 415.26267573696146,
+        "false_positives_per_minute": 52.30424323942379
+      },
+      "deployed_v4": {
+        "precision": 0.8466101694915255,
+        "recall": 0.8307692307692308,
+        "f1": 0.8386149003147954,
+        "true_positives": 1998,
+        "false_positives": 362,
+        "predicted": 2360,
+        "reference": 2405,
+        "seconds": 415.26267573696146,
+        "false_positives_per_minute": 52.30424323942379
+      }
+    },
+    "oxford-later-piano": {
+      "candidate": {
+        "precision": 0.892436974789916,
+        "recall": 0.9092465753424658,
+        "f1": 0.9007633587786259,
+        "true_positives": 531,
+        "false_positives": 64,
+        "predicted": 595,
+        "reference": 584,
+        "seconds": 186.0320634920635,
+        "false_positives_per_minute": 20.641603000677474
+      },
+      "deployed_v4": {
+        "precision": 0.892436974789916,
+        "recall": 0.9092465753424658,
+        "f1": 0.9007633587786259,
+        "true_positives": 531,
+        "false_positives": 64,
+        "predicted": 595,
+        "reference": 584,
+        "seconds": 186.0320634920635,
+        "false_positives_per_minute": 20.641603000677474
+      }
+    },
+    "oxford-piano": {
+      "candidate": {
+        "precision": 0.8757062146892656,
+        "recall": 0.8683473389355743,
+        "f1": 0.8720112517580872,
+        "true_positives": 310,
+        "false_positives": 44,
+        "predicted": 354,
+        "reference": 357,
+        "seconds": 116.0,
+        "false_positives_per_minute": 22.75862068965517
+      },
+      "deployed_v4": {
+        "precision": 0.8757062146892656,
+        "recall": 0.8683473389355743,
+        "f1": 0.8720112517580872,
+        "true_positives": 310,
+        "false_positives": 44,
+        "predicted": 354,
+        "reference": 357,
+        "seconds": 116.0,
+        "false_positives_per_minute": 22.75862068965517
+      }
+    },
+    "oxford-piano-extended": {
+      "candidate": {
+        "precision": 0.8965014577259475,
+        "recall": 0.8836206896551724,
+        "f1": 0.8900144717800289,
+        "true_positives": 615,
+        "false_positives": 71,
+        "predicted": 686,
+        "reference": 696,
+        "seconds": 236.0,
+        "false_positives_per_minute": 18.050847457627118
+      },
+      "deployed_v4": {
+        "precision": 0.8965014577259475,
+        "recall": 0.8836206896551724,
+        "f1": 0.8900144717800289,
+        "true_positives": 615,
+        "false_positives": 71,
+        "predicted": 686,
+        "reference": 696,
+        "seconds": 236.0,
+        "false_positives_per_minute": 18.050847457627118
+      }
+    },
+    "separated-guitar": {
+      "candidate": {
+        "precision": 0.7275383491599707,
+        "recall": 0.8542024013722127,
+        "f1": 0.7857988165680473,
+        "true_positives": 996,
+        "false_positives": 373,
+        "predicted": 1369,
+        "reference": 1166,
+        "seconds": 241.35446712018143,
+        "false_positives_per_minute": 92.7266864667393
+      },
+      "deployed_v4": {
+        "precision": 0.727007299270073,
+        "recall": 0.8542024013722127,
+        "f1": 0.7854889589905363,
+        "true_positives": 996,
+        "false_positives": 374,
+        "predicted": 1370,
+        "reference": 1166,
+        "seconds": 241.35446712018143,
+        "false_positives_per_minute": 92.97528348139542
+      }
+    },
+    "vienna-piano": {
+      "candidate": {
+        "precision": 0.8805213613323678,
+        "recall": 0.8539325842696629,
+        "f1": 0.8670231729055259,
+        "true_positives": 1216,
+        "false_positives": 165,
+        "predicted": 1381,
+        "reference": 1424,
+        "seconds": 232.0,
+        "false_positives_per_minute": 42.672413793103445
+      },
+      "deployed_v4": {
+        "precision": 0.8805213613323678,
+        "recall": 0.8539325842696629,
+        "f1": 0.8670231729055259,
+        "true_positives": 1216,
+        "false_positives": 165,
+        "predicted": 1381,
+        "reference": 1424,
+        "seconds": 232.0,
+        "false_positives_per_minute": 42.672413793103445
+      }
+    }
+  },
+  "per_recording": [
+    {
+      "id": "05_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.7853107344632768,
+        "recall": 0.9391891891891891,
+        "f1": 0.8553846153846154,
+        "true_positives": 139,
+        "false_positives": 38,
+        "predicted": 177,
+        "reference": 148,
+        "seconds": 22.32439909297052,
+        "false_positives_per_minute": 102.13040855007486
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7853107344632768,
+        "recall": 0.9391891891891891,
+        "f1": 0.8553846153846154,
+        "true_positives": 139,
+        "false_positives": 38,
+        "predicted": 177,
+        "reference": 148,
+        "seconds": 22.32439909297052,
+        "false_positives_per_minute": 102.13040855007486
+      }
+    },
+    {
+      "id": "05_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8775510204081632,
+        "recall": 0.9772727272727273,
+        "f1": 0.9247311827956989,
+        "true_positives": 43,
+        "false_positives": 6,
+        "predicted": 49,
+        "reference": 44,
+        "seconds": 22.32439909297052,
+        "false_positives_per_minute": 16.12585398159077
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8775510204081632,
+        "recall": 0.9772727272727273,
+        "f1": 0.9247311827956989,
+        "true_positives": 43,
+        "false_positives": 6,
+        "predicted": 49,
+        "reference": 44,
+        "seconds": 22.32439909297052,
+        "false_positives_per_minute": 16.12585398159077
+      }
+    },
+    {
+      "id": "05_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.6818181818181818,
+        "recall": 0.9375,
+        "f1": 0.7894736842105263,
+        "true_positives": 90,
+        "false_positives": 42,
+        "predicted": 132,
+        "reference": 96,
+        "seconds": 19.58562358276644,
+        "false_positives_per_minute": 128.66580373868564
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.6818181818181818,
+        "recall": 0.9375,
+        "f1": 0.7894736842105263,
+        "true_positives": 90,
+        "false_positives": 42,
+        "predicted": 132,
+        "reference": 96,
+        "seconds": 19.58562358276644,
+        "false_positives_per_minute": 128.66580373868564
+      }
+    },
+    {
+      "id": "05_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.6756756756756757,
+        "recall": 0.9259259259259259,
+        "f1": 0.78125,
+        "true_positives": 25,
+        "false_positives": 12,
+        "predicted": 37,
+        "reference": 27,
+        "seconds": 19.58562358276644,
+        "false_positives_per_minute": 36.76165821105304
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.6756756756756757,
+        "recall": 0.9259259259259259,
+        "f1": 0.78125,
+        "true_positives": 25,
+        "false_positives": 12,
+        "predicted": 37,
+        "reference": 27,
+        "seconds": 19.58562358276644,
+        "false_positives_per_minute": 36.76165821105304
+      }
+    },
+    {
+      "id": "05_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.7833333333333333,
+        "recall": 0.9306930693069307,
+        "f1": 0.8506787330316742,
+        "true_positives": 188,
+        "false_positives": 52,
+        "predicted": 240,
+        "reference": 202,
+        "seconds": 29.30639455782313,
+        "false_positives_per_minute": 106.46140704357434
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7833333333333333,
+        "recall": 0.9306930693069307,
+        "f1": 0.8506787330316742,
+        "true_positives": 188,
+        "false_positives": 52,
+        "predicted": 240,
+        "reference": 202,
+        "seconds": 29.30639455782313,
+        "false_positives_per_minute": 106.46140704357434
+      }
+    },
+    {
+      "id": "05_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8095238095238095,
+        "recall": 0.9855072463768116,
+        "f1": 0.8888888888888888,
+        "true_positives": 68,
+        "false_positives": 16,
+        "predicted": 84,
+        "reference": 69,
+        "seconds": 29.30639455782313,
+        "false_positives_per_minute": 32.75735601340749
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8095238095238095,
+        "recall": 0.9855072463768116,
+        "f1": 0.8888888888888888,
+        "true_positives": 68,
+        "false_positives": 16,
+        "predicted": 84,
+        "reference": 69,
+        "seconds": 29.30639455782313,
+        "false_positives_per_minute": 32.75735601340749
+      }
+    },
+    {
+      "id": "05_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.7439613526570048,
+        "recall": 0.8901734104046243,
+        "f1": 0.8105263157894737,
+        "true_positives": 154,
+        "false_positives": 53,
+        "predicted": 207,
+        "reference": 173,
+        "seconds": 23.13002267573696,
+        "false_positives_per_minute": 137.4836525057008
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7439613526570048,
+        "recall": 0.8901734104046243,
+        "f1": 0.8105263157894737,
+        "true_positives": 154,
+        "false_positives": 53,
+        "predicted": 207,
+        "reference": 173,
+        "seconds": 23.13002267573696,
+        "false_positives_per_minute": 137.4836525057008
+      }
+    },
+    {
+      "id": "05_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9285714285714286,
+        "recall": 0.9701492537313433,
+        "f1": 0.948905109489051,
+        "true_positives": 65,
+        "false_positives": 5,
+        "predicted": 70,
+        "reference": 67,
+        "seconds": 23.13002267573696,
+        "false_positives_per_minute": 12.970155896764226
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9285714285714286,
+        "recall": 0.9701492537313433,
+        "f1": 0.948905109489051,
+        "true_positives": 65,
+        "false_positives": 5,
+        "predicted": 70,
+        "reference": 67,
+        "seconds": 23.13002267573696,
+        "false_positives_per_minute": 12.970155896764226
+      }
+    },
+    {
+      "id": "05_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8186274509803921,
+        "recall": 0.9542857142857143,
+        "f1": 0.8812664907651715,
+        "true_positives": 167,
+        "false_positives": 37,
+        "predicted": 204,
+        "reference": 175,
+        "seconds": 30.0,
+        "false_positives_per_minute": 74.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8186274509803921,
+        "recall": 0.9542857142857143,
+        "f1": 0.8812664907651715,
+        "true_positives": 167,
+        "false_positives": 37,
+        "predicted": 204,
+        "reference": 175,
+        "seconds": 30.0,
+        "false_positives_per_minute": 74.0
+      }
+    },
+    {
+      "id": "05_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8153846153846154,
+        "recall": 0.9464285714285714,
+        "f1": 0.8760330578512396,
+        "true_positives": 53,
+        "false_positives": 12,
+        "predicted": 65,
+        "reference": 56,
+        "seconds": 30.0,
+        "false_positives_per_minute": 24.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8153846153846154,
+        "recall": 0.9464285714285714,
+        "f1": 0.8760330578512396,
+        "true_positives": 53,
+        "false_positives": 12,
+        "predicted": 65,
+        "reference": 56,
+        "seconds": 30.0,
+        "false_positives_per_minute": 24.0
+      }
+    },
+    {
+      "id": "05_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.7571428571428571,
+        "recall": 0.8594594594594595,
+        "f1": 0.8050632911392405,
+        "true_positives": 159,
+        "false_positives": 51,
+        "predicted": 210,
+        "reference": 185,
+        "seconds": 24.93201814058957,
+        "false_positives_per_minute": 122.73374673261168
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7535545023696683,
+        "recall": 0.8594594594594595,
+        "f1": 0.803030303030303,
+        "true_positives": 159,
+        "false_positives": 52,
+        "predicted": 211,
+        "reference": 185,
+        "seconds": 24.93201814058957,
+        "false_positives_per_minute": 125.1402907861923
+      }
+    },
+    {
+      "id": "05_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8852459016393442,
+        "recall": 0.9642857142857143,
+        "f1": 0.9230769230769231,
+        "true_positives": 54,
+        "false_positives": 7,
+        "predicted": 61,
+        "reference": 56,
+        "seconds": 24.93201814058957,
+        "false_positives_per_minute": 16.845808375064347
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8852459016393442,
+        "recall": 0.9642857142857143,
+        "f1": 0.9230769230769231,
+        "true_positives": 54,
+        "false_positives": 7,
+        "predicted": 61,
+        "reference": 56,
+        "seconds": 24.93201814058957,
+        "false_positives_per_minute": 16.845808375064347
+      }
+    },
+    {
+      "id": "05_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.7988505747126436,
+        "recall": 0.7679558011049724,
+        "f1": 0.7830985915492957,
+        "true_positives": 139,
+        "false_positives": 35,
+        "predicted": 174,
+        "reference": 181,
+        "seconds": 25.258412698412698,
+        "false_positives_per_minute": 83.1406163591574
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7988505747126436,
+        "recall": 0.7679558011049724,
+        "f1": 0.7830985915492957,
+        "true_positives": 139,
+        "false_positives": 35,
+        "predicted": 174,
+        "reference": 181,
+        "seconds": 25.258412698412698,
+        "false_positives_per_minute": 83.1406163591574
+      }
+    },
+    {
+      "id": "05_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "f1": 0.8333333333333334,
+        "true_positives": 50,
+        "false_positives": 10,
+        "predicted": 60,
+        "reference": 60,
+        "seconds": 25.258412698412698,
+        "false_positives_per_minute": 23.75446181690212
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "f1": 0.8333333333333334,
+        "true_positives": 50,
+        "false_positives": 10,
+        "predicted": 60,
+        "reference": 60,
+        "seconds": 25.258412698412698,
+        "false_positives_per_minute": 23.75446181690212
+      }
+    },
+    {
+      "id": "05_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8895348837209303,
+        "recall": 0.864406779661017,
+        "f1": 0.8767908309455588,
+        "true_positives": 153,
+        "false_positives": 19,
+        "predicted": 172,
+        "reference": 177,
+        "seconds": 29.688390022675737,
+        "false_positives_per_minute": 38.39884881360282
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8895348837209303,
+        "recall": 0.864406779661017,
+        "f1": 0.8767908309455588,
+        "true_positives": 153,
+        "false_positives": 19,
+        "predicted": 172,
+        "reference": 177,
+        "seconds": 29.688390022675737,
+        "false_positives_per_minute": 38.39884881360282
+      }
+    },
+    {
+      "id": "05_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8888888888888888,
+        "recall": 0.8275862068965517,
+        "f1": 0.8571428571428571,
+        "true_positives": 48,
+        "false_positives": 6,
+        "predicted": 54,
+        "reference": 58,
+        "seconds": 29.688390022675737,
+        "false_positives_per_minute": 12.125952256927206
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8888888888888888,
+        "recall": 0.8275862068965517,
+        "f1": 0.8571428571428571,
+        "true_positives": 48,
+        "false_positives": 6,
+        "predicted": 54,
+        "reference": 58,
+        "seconds": 29.688390022675737,
+        "false_positives_per_minute": 12.125952256927206
+      }
+    },
+    {
+      "id": "05_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.7918781725888325,
+        "recall": 0.8125,
+        "f1": 0.8020565552699229,
+        "true_positives": 156,
+        "false_positives": 41,
+        "predicted": 197,
+        "reference": 192,
+        "seconds": 30.0,
+        "false_positives_per_minute": 82.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7918781725888325,
+        "recall": 0.8125,
+        "f1": 0.8020565552699229,
+        "true_positives": 156,
+        "false_positives": 41,
+        "predicted": 197,
+        "reference": 192,
+        "seconds": 30.0,
+        "false_positives_per_minute": 82.0
+      }
+    },
+    {
+      "id": "05_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9298245614035088,
+        "recall": 0.9814814814814815,
+        "f1": 0.954954954954955,
+        "true_positives": 53,
+        "false_positives": 4,
+        "predicted": 57,
+        "reference": 54,
+        "seconds": 30.0,
+        "false_positives_per_minute": 8.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9298245614035088,
+        "recall": 0.9814814814814815,
+        "f1": 0.954954954954955,
+        "true_positives": 53,
+        "false_positives": 4,
+        "predicted": 57,
+        "reference": 54,
+        "seconds": 30.0,
+        "false_positives_per_minute": 8.0
+      }
+    },
+    {
+      "id": "05_Funk2-119-G_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8457142857142858,
+        "recall": 0.8409090909090909,
+        "f1": 0.8433048433048433,
+        "true_positives": 148,
+        "false_positives": 27,
+        "predicted": 175,
+        "reference": 176,
+        "seconds": 30.0,
+        "false_positives_per_minute": 54.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8457142857142858,
+        "recall": 0.8409090909090909,
+        "f1": 0.8433048433048433,
+        "true_positives": 148,
+        "false_positives": 27,
+        "predicted": 175,
+        "reference": 176,
+        "seconds": 30.0,
+        "false_positives_per_minute": 54.0
+      }
+    },
+    {
+      "id": "05_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9375,
+        "recall": 0.9278350515463918,
+        "f1": 0.9326424870466321,
+        "true_positives": 90,
+        "false_positives": 6,
+        "predicted": 96,
+        "reference": 97,
+        "seconds": 30.0,
+        "false_positives_per_minute": 12.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9375,
+        "recall": 0.9278350515463918,
+        "f1": 0.9326424870466321,
+        "true_positives": 90,
+        "false_positives": 6,
+        "predicted": 96,
+        "reference": 97,
+        "seconds": 30.0,
+        "false_positives_per_minute": 12.0
+      }
+    },
+    {
+      "id": "05_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8481012658227848,
+        "recall": 0.7486033519553073,
+        "f1": 0.7952522255192879,
+        "true_positives": 134,
+        "false_positives": 24,
+        "predicted": 158,
+        "reference": 179,
+        "seconds": 30.0,
+        "false_positives_per_minute": 48.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8481012658227848,
+        "recall": 0.7486033519553073,
+        "f1": 0.7952522255192879,
+        "true_positives": 134,
+        "false_positives": 24,
+        "predicted": 158,
+        "reference": 179,
+        "seconds": 30.0,
+        "false_positives_per_minute": 48.0
+      }
+    },
+    {
+      "id": "05_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9365079365079365,
+        "recall": 0.9516129032258065,
+        "f1": 0.944,
+        "true_positives": 59,
+        "false_positives": 4,
+        "predicted": 63,
+        "reference": 62,
+        "seconds": 30.0,
+        "false_positives_per_minute": 8.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9365079365079365,
+        "recall": 0.9516129032258065,
+        "f1": 0.944,
+        "true_positives": 59,
+        "false_positives": 4,
+        "predicted": 63,
+        "reference": 62,
+        "seconds": 30.0,
+        "false_positives_per_minute": 8.0
+      }
+    },
+    {
+      "id": "05_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.7746478873239436,
+        "recall": 0.859375,
+        "f1": 0.8148148148148148,
+        "true_positives": 110,
+        "false_positives": 32,
+        "predicted": 142,
+        "reference": 128,
+        "seconds": 30.0,
+        "false_positives_per_minute": 64.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7746478873239436,
+        "recall": 0.859375,
+        "f1": 0.8148148148148148,
+        "true_positives": 110,
+        "false_positives": 32,
+        "predicted": 142,
+        "reference": 128,
+        "seconds": 30.0,
+        "false_positives_per_minute": 64.0
+      }
+    },
+    {
+      "id": "05_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9148936170212766,
+        "recall": 0.9555555555555556,
+        "f1": 0.9347826086956522,
+        "true_positives": 43,
+        "false_positives": 4,
+        "predicted": 47,
+        "reference": 45,
+        "seconds": 30.0,
+        "false_positives_per_minute": 8.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9148936170212766,
+        "recall": 0.9555555555555556,
+        "f1": 0.9347826086956522,
+        "true_positives": 43,
+        "false_positives": 4,
+        "predicted": 47,
+        "reference": 45,
+        "seconds": 30.0,
+        "false_positives_per_minute": 8.0
+      }
+    },
+    {
+      "id": "05_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.924812030075188,
+        "recall": 0.8723404255319149,
+        "f1": 0.8978102189781022,
+        "true_positives": 123,
+        "false_positives": 10,
+        "predicted": 133,
+        "reference": 141,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 27.09144745733558
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.924812030075188,
+        "recall": 0.8723404255319149,
+        "f1": 0.8978102189781022,
+        "true_positives": 123,
+        "false_positives": 10,
+        "predicted": 133,
+        "reference": 141,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 27.09144745733558
+      }
+    },
+    {
+      "id": "05_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.828125,
+        "recall": 0.9137931034482759,
+        "f1": 0.8688524590163934,
+        "true_positives": 53,
+        "false_positives": 11,
+        "predicted": 64,
+        "reference": 58,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 29.800592203069137
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.828125,
+        "recall": 0.9137931034482759,
+        "f1": 0.8688524590163934,
+        "true_positives": 53,
+        "false_positives": 11,
+        "predicted": 64,
+        "reference": 58,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 29.800592203069137
+      }
+    },
+    {
+      "id": "05_Jazz1-200-B_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.7878787878787878,
+        "recall": 0.5942857142857143,
+        "f1": 0.6775244299674267,
+        "true_positives": 104,
+        "false_positives": 28,
+        "predicted": 132,
+        "reference": 175,
+        "seconds": 14.4,
+        "false_positives_per_minute": 116.66666666666666
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7819548872180451,
+        "recall": 0.5942857142857143,
+        "f1": 0.6753246753246753,
+        "true_positives": 104,
+        "false_positives": 29,
+        "predicted": 133,
+        "reference": 175,
+        "seconds": 14.4,
+        "false_positives_per_minute": 120.83333333333333
+      }
+    },
+    {
+      "id": "05_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9795918367346939,
+        "recall": 0.96,
+        "f1": 0.9696969696969697,
+        "true_positives": 48,
+        "false_positives": 1,
+        "predicted": 49,
+        "reference": 50,
+        "seconds": 14.4,
+        "false_positives_per_minute": 4.166666666666667
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9795918367346939,
+        "recall": 0.96,
+        "f1": 0.9696969696969697,
+        "true_positives": 48,
+        "false_positives": 1,
+        "predicted": 49,
+        "reference": 50,
+        "seconds": 14.4,
+        "false_positives_per_minute": 4.166666666666667
+      }
+    },
+    {
+      "id": "05_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.855,
+        "recall": 0.75,
+        "f1": 0.7990654205607477,
+        "true_positives": 171,
+        "false_positives": 29,
+        "predicted": 200,
+        "reference": 228,
+        "seconds": 30.0,
+        "false_positives_per_minute": 58.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.855,
+        "recall": 0.75,
+        "f1": 0.7990654205607477,
+        "true_positives": 171,
+        "false_positives": 29,
+        "predicted": 200,
+        "reference": 228,
+        "seconds": 30.0,
+        "false_positives_per_minute": 58.0
+      }
+    },
+    {
+      "id": "05_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9239130434782609,
+        "recall": 0.8762886597938144,
+        "f1": 0.8994708994708994,
+        "true_positives": 85,
+        "false_positives": 7,
+        "predicted": 92,
+        "reference": 97,
+        "seconds": 30.0,
+        "false_positives_per_minute": 14.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9239130434782609,
+        "recall": 0.8762886597938144,
+        "f1": 0.8994708994708994,
+        "true_positives": 85,
+        "false_positives": 7,
+        "predicted": 92,
+        "reference": 97,
+        "seconds": 30.0,
+        "false_positives_per_minute": 14.0
+      }
+    },
+    {
+      "id": "05_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8682634730538922,
+        "recall": 0.5870445344129555,
+        "f1": 0.7004830917874396,
+        "true_positives": 145,
+        "false_positives": 22,
+        "predicted": 167,
+        "reference": 247,
+        "seconds": 20.532018140589567,
+        "false_positives_per_minute": 64.2898321519843
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8682634730538922,
+        "recall": 0.5870445344129555,
+        "f1": 0.7004830917874396,
+        "true_positives": 145,
+        "false_positives": 22,
+        "predicted": 167,
+        "reference": 247,
+        "seconds": 20.532018140589567,
+        "false_positives_per_minute": 64.2898321519843
+      }
+    },
+    {
+      "id": "05_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.921875,
+        "recall": 0.9672131147540983,
+        "f1": 0.944,
+        "true_positives": 59,
+        "false_positives": 5,
+        "predicted": 64,
+        "reference": 61,
+        "seconds": 20.532018140589567,
+        "false_positives_per_minute": 14.61132548908734
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.921875,
+        "recall": 0.9672131147540983,
+        "f1": 0.944,
+        "true_positives": 59,
+        "false_positives": 5,
+        "predicted": 64,
+        "reference": 61,
+        "seconds": 20.532018140589567,
+        "false_positives_per_minute": 14.61132548908734
+      }
+    },
+    {
+      "id": "05_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.7865612648221344,
+        "recall": 0.8468085106382979,
+        "f1": 0.8155737704918032,
+        "true_positives": 199,
+        "false_positives": 54,
+        "predicted": 253,
+        "reference": 235,
+        "seconds": 28.023219954648525,
+        "false_positives_per_minute": 115.61840520980334
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7865612648221344,
+        "recall": 0.8468085106382979,
+        "f1": 0.8155737704918032,
+        "true_positives": 199,
+        "false_positives": 54,
+        "predicted": 253,
+        "reference": 235,
+        "seconds": 28.023219954648525,
+        "false_positives_per_minute": 115.61840520980334
+      }
+    },
+    {
+      "id": "05_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9036144578313253,
+        "recall": 0.974025974025974,
+        "f1": 0.9375,
+        "true_positives": 75,
+        "false_positives": 8,
+        "predicted": 83,
+        "reference": 77,
+        "seconds": 28.023219954648525,
+        "false_positives_per_minute": 17.12865262367457
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9036144578313253,
+        "recall": 0.974025974025974,
+        "f1": 0.9375,
+        "true_positives": 75,
+        "false_positives": 8,
+        "predicted": 83,
+        "reference": 77,
+        "seconds": 28.023219954648525,
+        "false_positives_per_minute": 17.12865262367457
+      }
+    },
+    {
+      "id": "05_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.837696335078534,
+        "recall": 0.7048458149779736,
+        "f1": 0.7655502392344498,
+        "true_positives": 160,
+        "false_positives": 31,
+        "predicted": 191,
+        "reference": 227,
+        "seconds": 25.6,
+        "false_positives_per_minute": 72.65625
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.837696335078534,
+        "recall": 0.7048458149779736,
+        "f1": 0.7655502392344498,
+        "true_positives": 160,
+        "false_positives": 31,
+        "predicted": 191,
+        "reference": 227,
+        "seconds": 25.6,
+        "false_positives_per_minute": 72.65625
+      }
+    },
+    {
+      "id": "05_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.927536231884058,
+        "recall": 0.927536231884058,
+        "f1": 0.927536231884058,
+        "true_positives": 64,
+        "false_positives": 5,
+        "predicted": 69,
+        "reference": 69,
+        "seconds": 25.6,
+        "false_positives_per_minute": 11.71875
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.927536231884058,
+        "recall": 0.927536231884058,
+        "f1": 0.927536231884058,
+        "true_positives": 64,
+        "false_positives": 5,
+        "predicted": 69,
+        "reference": 69,
+        "seconds": 25.6,
+        "false_positives_per_minute": 11.71875
+      }
+    },
+    {
+      "id": "05_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9270833333333334,
+        "recall": 0.8557692307692307,
+        "f1": 0.89,
+        "true_positives": 267,
+        "false_positives": 21,
+        "predicted": 288,
+        "reference": 312,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 56.89203966040472
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9175257731958762,
+        "recall": 0.8557692307692307,
+        "f1": 0.8855721393034826,
+        "true_positives": 267,
+        "false_positives": 24,
+        "predicted": 291,
+        "reference": 312,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 65.0194738976054
+      }
+    },
+    {
+      "id": "05_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.890625,
+        "recall": 0.95,
+        "f1": 0.9193548387096774,
+        "true_positives": 57,
+        "false_positives": 7,
+        "predicted": 64,
+        "reference": 60,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 18.964013220134905
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.890625,
+        "recall": 0.95,
+        "f1": 0.9193548387096774,
+        "true_positives": 57,
+        "false_positives": 7,
+        "predicted": 64,
+        "reference": 60,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 18.964013220134905
+      }
+    },
+    {
+      "id": "05_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.958139534883721,
+        "recall": 0.7686567164179104,
+        "f1": 0.8530020703933747,
+        "true_positives": 206,
+        "false_positives": 9,
+        "predicted": 215,
+        "reference": 268,
+        "seconds": 30.0,
+        "false_positives_per_minute": 18.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.958139534883721,
+        "recall": 0.7686567164179104,
+        "f1": 0.8530020703933747,
+        "true_positives": 206,
+        "false_positives": 9,
+        "predicted": 215,
+        "reference": 268,
+        "seconds": 30.0,
+        "false_positives_per_minute": 18.0
+      }
+    },
+    {
+      "id": "05_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8673469387755102,
+        "recall": 0.8854166666666666,
+        "f1": 0.8762886597938144,
+        "true_positives": 85,
+        "false_positives": 13,
+        "predicted": 98,
+        "reference": 96,
+        "seconds": 30.0,
+        "false_positives_per_minute": 26.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8673469387755102,
+        "recall": 0.8854166666666666,
+        "f1": 0.8762886597938144,
+        "true_positives": 85,
+        "false_positives": 13,
+        "predicted": 98,
+        "reference": 96,
+        "seconds": 30.0,
+        "false_positives_per_minute": 26.0
+      }
+    },
+    {
+      "id": "05_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9333333333333333,
+        "recall": 0.6086956521739131,
+        "f1": 0.7368421052631579,
+        "true_positives": 280,
+        "false_positives": 20,
+        "predicted": 300,
+        "reference": 460,
+        "seconds": 27.041632653061225,
+        "false_positives_per_minute": 44.37601883716718
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9333333333333333,
+        "recall": 0.6086956521739131,
+        "f1": 0.7368421052631579,
+        "true_positives": 280,
+        "false_positives": 20,
+        "predicted": 300,
+        "reference": 460,
+        "seconds": 27.041632653061225,
+        "false_positives_per_minute": 44.37601883716718
+      }
+    },
+    {
+      "id": "05_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8777777777777778,
+        "recall": 0.9186046511627907,
+        "f1": 0.8977272727272727,
+        "true_positives": 79,
+        "false_positives": 11,
+        "predicted": 90,
+        "reference": 86,
+        "seconds": 27.041632653061225,
+        "false_positives_per_minute": 24.40681036044195
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8777777777777778,
+        "recall": 0.9186046511627907,
+        "f1": 0.8977272727272727,
+        "true_positives": 79,
+        "false_positives": 11,
+        "predicted": 90,
+        "reference": 86,
+        "seconds": 27.041632653061225,
+        "false_positives_per_minute": 24.40681036044195
+      }
+    },
+    {
+      "id": "05_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.7988165680473372,
+        "recall": 0.645933014354067,
+        "f1": 0.7142857142857143,
+        "true_positives": 135,
+        "false_positives": 34,
+        "predicted": 169,
+        "reference": 209,
+        "seconds": 30.0,
+        "false_positives_per_minute": 68.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7988165680473372,
+        "recall": 0.645933014354067,
+        "f1": 0.7142857142857143,
+        "true_positives": 135,
+        "false_positives": 34,
+        "predicted": 169,
+        "reference": 209,
+        "seconds": 30.0,
+        "false_positives_per_minute": 68.0
+      }
+    },
+    {
+      "id": "05_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9358974358974359,
+        "recall": 0.9240506329113924,
+        "f1": 0.9299363057324841,
+        "true_positives": 73,
+        "false_positives": 5,
+        "predicted": 78,
+        "reference": 79,
+        "seconds": 30.0,
+        "false_positives_per_minute": 10.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9358974358974359,
+        "recall": 0.9240506329113924,
+        "f1": 0.9299363057324841,
+        "true_positives": 73,
+        "false_positives": 5,
+        "predicted": 78,
+        "reference": 79,
+        "seconds": 30.0,
+        "false_positives_per_minute": 10.0
+      }
+    },
+    {
+      "id": "05_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9335548172757475,
+        "recall": 0.7594594594594595,
+        "f1": 0.8375558867362146,
+        "true_positives": 281,
+        "false_positives": 20,
+        "predicted": 301,
+        "reference": 370,
+        "seconds": 30.0,
+        "false_positives_per_minute": 40.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9335548172757475,
+        "recall": 0.7594594594594595,
+        "f1": 0.8375558867362146,
+        "true_positives": 281,
+        "false_positives": 20,
+        "predicted": 301,
+        "reference": 370,
+        "seconds": 30.0,
+        "false_positives_per_minute": 40.0
+      }
+    },
+    {
+      "id": "05_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9508196721311475,
+        "recall": 0.9666666666666667,
+        "f1": 0.9586776859504132,
+        "true_positives": 58,
+        "false_positives": 3,
+        "predicted": 61,
+        "reference": 60,
+        "seconds": 30.0,
+        "false_positives_per_minute": 6.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9508196721311475,
+        "recall": 0.9666666666666667,
+        "f1": 0.9586776859504132,
+        "true_positives": 58,
+        "false_positives": 3,
+        "predicted": 61,
+        "reference": 60,
+        "seconds": 30.0,
+        "false_positives_per_minute": 6.0
+      }
+    },
+    {
+      "id": "05_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.5669856459330144,
+        "recall": 0.9518072289156626,
+        "f1": 0.7106446776611695,
+        "true_positives": 237,
+        "false_positives": 181,
+        "predicted": 418,
+        "reference": 249,
+        "seconds": 25.940816326530612,
+        "false_positives_per_minute": 418.64526787821575
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.5656324582338902,
+        "recall": 0.9518072289156626,
+        "f1": 0.7095808383233533,
+        "true_positives": 237,
+        "false_positives": 182,
+        "predicted": 419,
+        "reference": 249,
+        "seconds": 25.940816326530612,
+        "false_positives_per_minute": 420.9582251593108
+      }
+    },
+    {
+      "id": "05_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8805970149253731,
+        "recall": 0.9672131147540983,
+        "f1": 0.921875,
+        "true_positives": 59,
+        "false_positives": 8,
+        "predicted": 67,
+        "reference": 61,
+        "seconds": 25.940816326530612,
+        "false_positives_per_minute": 18.503658248760917
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8805970149253731,
+        "recall": 0.9672131147540983,
+        "f1": 0.921875,
+        "true_positives": 59,
+        "false_positives": 8,
+        "predicted": 67,
+        "reference": 61,
+        "seconds": 25.940816326530612,
+        "false_positives_per_minute": 18.503658248760917
+      }
+    },
+    {
+      "id": "05_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.3684210526315789,
+        "recall": 0.9607843137254902,
+        "f1": 0.532608695652174,
+        "true_positives": 98,
+        "false_positives": 168,
+        "predicted": 266,
+        "reference": 102,
+        "seconds": 28.8,
+        "false_positives_per_minute": 350.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.36704119850187267,
+        "recall": 0.9607843137254902,
+        "f1": 0.5311653116531165,
+        "true_positives": 98,
+        "false_positives": 169,
+        "predicted": 267,
+        "reference": 102,
+        "seconds": 28.8,
+        "false_positives_per_minute": 352.0833333333333
+      }
+    },
+    {
+      "id": "05_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.7887323943661971,
+        "recall": 0.9333333333333333,
+        "f1": 0.8549618320610687,
+        "true_positives": 56,
+        "false_positives": 15,
+        "predicted": 71,
+        "reference": 60,
+        "seconds": 28.8,
+        "false_positives_per_minute": 31.25
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7887323943661971,
+        "recall": 0.9333333333333333,
+        "f1": 0.8549618320610687,
+        "true_positives": 56,
+        "false_positives": 15,
+        "predicted": 71,
+        "reference": 60,
+        "seconds": 28.8,
+        "false_positives_per_minute": 31.25
+      }
+    },
+    {
+      "id": "05_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.507537688442211,
+        "recall": 0.9901960784313726,
+        "f1": 0.6710963455149501,
+        "true_positives": 101,
+        "false_positives": 98,
+        "predicted": 199,
+        "reference": 102,
+        "seconds": 30.0,
+        "false_positives_per_minute": 196.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.507537688442211,
+        "recall": 0.9901960784313726,
+        "f1": 0.6710963455149501,
+        "true_positives": 101,
+        "false_positives": 98,
+        "predicted": 199,
+        "reference": 102,
+        "seconds": 30.0,
+        "false_positives_per_minute": 196.0
+      }
+    },
+    {
+      "id": "05_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.6818181818181818,
+        "recall": 0.8823529411764706,
+        "f1": 0.7692307692307693,
+        "true_positives": 45,
+        "false_positives": 21,
+        "predicted": 66,
+        "reference": 51,
+        "seconds": 30.0,
+        "false_positives_per_minute": 42.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.6818181818181818,
+        "recall": 0.8823529411764706,
+        "f1": 0.7692307692307693,
+        "true_positives": 45,
+        "false_positives": 21,
+        "predicted": 66,
+        "reference": 51,
+        "seconds": 30.0,
+        "false_positives_per_minute": 42.0
+      }
+    },
+    {
+      "id": "05_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.6363636363636364,
+        "recall": 0.8888888888888888,
+        "f1": 0.7417218543046358,
+        "true_positives": 168,
+        "false_positives": 96,
+        "predicted": 264,
+        "reference": 189,
+        "seconds": 30.0,
+        "false_positives_per_minute": 192.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.6363636363636364,
+        "recall": 0.8888888888888888,
+        "f1": 0.7417218543046358,
+        "true_positives": 168,
+        "false_positives": 96,
+        "predicted": 264,
+        "reference": 189,
+        "seconds": 30.0,
+        "false_positives_per_minute": 192.0
+      }
+    },
+    {
+      "id": "05_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.918918918918919,
+        "recall": 0.918918918918919,
+        "f1": 0.918918918918919,
+        "true_positives": 68,
+        "false_positives": 6,
+        "predicted": 74,
+        "reference": 74,
+        "seconds": 30.0,
+        "false_positives_per_minute": 12.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.918918918918919,
+        "recall": 0.918918918918919,
+        "f1": 0.918918918918919,
+        "true_positives": 68,
+        "false_positives": 6,
+        "predicted": 74,
+        "reference": 74,
+        "seconds": 30.0,
+        "false_positives_per_minute": 12.0
+      }
+    },
+    {
+      "id": "05_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.41638225255972694,
+        "recall": 0.9037037037037037,
+        "f1": 0.5700934579439252,
+        "true_positives": 122,
+        "false_positives": 171,
+        "predicted": 293,
+        "reference": 135,
+        "seconds": 30.0,
+        "false_positives_per_minute": 342.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.41638225255972694,
+        "recall": 0.9037037037037037,
+        "f1": 0.5700934579439252,
+        "true_positives": 122,
+        "false_positives": 171,
+        "predicted": 293,
+        "reference": 135,
+        "seconds": 30.0,
+        "false_positives_per_minute": 342.0
+      }
+    },
+    {
+      "id": "05_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9516129032258065,
+        "recall": 0.9672131147540983,
+        "f1": 0.959349593495935,
+        "true_positives": 59,
+        "false_positives": 3,
+        "predicted": 62,
+        "reference": 61,
+        "seconds": 30.0,
+        "false_positives_per_minute": 6.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9365079365079365,
+        "recall": 0.9672131147540983,
+        "f1": 0.9516129032258065,
+        "true_positives": 59,
+        "false_positives": 4,
+        "predicted": 63,
+        "reference": 61,
+        "seconds": 30.0,
+        "false_positives_per_minute": 8.0
+      }
+    },
+    {
+      "id": "05_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.6085106382978723,
+        "recall": 1.0,
+        "f1": 0.7566137566137566,
+        "true_positives": 143,
+        "false_positives": 92,
+        "predicted": 235,
+        "reference": 143,
+        "seconds": 30.0,
+        "false_positives_per_minute": 184.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.6059322033898306,
+        "recall": 1.0,
+        "f1": 0.7546174142480211,
+        "true_positives": 143,
+        "false_positives": 93,
+        "predicted": 236,
+        "reference": 143,
+        "seconds": 30.0,
+        "false_positives_per_minute": 186.0
+      }
+    },
+    {
+      "id": "05_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.8734177215189873,
+        "recall": 0.971830985915493,
+        "f1": 0.92,
+        "true_positives": 69,
+        "false_positives": 10,
+        "predicted": 79,
+        "reference": 71,
+        "seconds": 30.0,
+        "false_positives_per_minute": 20.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8734177215189873,
+        "recall": 0.971830985915493,
+        "f1": 0.92,
+        "true_positives": 69,
+        "false_positives": 10,
+        "predicted": 79,
+        "reference": 71,
+        "seconds": 30.0,
+        "false_positives_per_minute": 20.0
+      }
+    },
+    {
+      "id": "05_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.4915254237288136,
+        "recall": 0.9235668789808917,
+        "f1": 0.6415929203539823,
+        "true_positives": 145,
+        "false_positives": 150,
+        "predicted": 295,
+        "reference": 157,
+        "seconds": 30.0,
+        "false_positives_per_minute": 300.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.4915254237288136,
+        "recall": 0.9235668789808917,
+        "f1": 0.6415929203539823,
+        "true_positives": 145,
+        "false_positives": 150,
+        "predicted": 295,
+        "reference": 157,
+        "seconds": 30.0,
+        "false_positives_per_minute": 300.0
+      }
+    },
+    {
+      "id": "05_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "candidate": {
+        "precision": 0.9459459459459459,
+        "recall": 1.0,
+        "f1": 0.9722222222222222,
+        "true_positives": 70,
+        "false_positives": 4,
+        "predicted": 74,
+        "reference": 70,
+        "seconds": 30.0,
+        "false_positives_per_minute": 8.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9459459459459459,
+        "recall": 1.0,
+        "f1": 0.9722222222222222,
+        "true_positives": 70,
+        "false_positives": 4,
+        "predicted": 74,
+        "reference": 70,
+        "seconds": 30.0,
+        "false_positives_per_minute": 8.0
+      }
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p19",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.872093023255814,
+        "recall": 0.9259259259259259,
+        "f1": 0.8982035928143712,
+        "true_positives": 75,
+        "false_positives": 11,
+        "predicted": 86,
+        "reference": 81,
+        "seconds": 14.5,
+        "false_positives_per_minute": 45.51724137931034
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.872093023255814,
+        "recall": 0.9259259259259259,
+        "f1": 0.8982035928143712,
+        "true_positives": 75,
+        "false_positives": 11,
+        "predicted": 86,
+        "reference": 81,
+        "seconds": 14.5,
+        "false_positives_per_minute": 45.51724137931034
+      }
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p20",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.7916666666666666,
+        "recall": 0.7702702702702703,
+        "f1": 0.7808219178082192,
+        "true_positives": 57,
+        "false_positives": 15,
+        "predicted": 72,
+        "reference": 74,
+        "seconds": 14.5,
+        "false_positives_per_minute": 62.06896551724138
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7916666666666666,
+        "recall": 0.7702702702702703,
+        "f1": 0.7808219178082192,
+        "true_positives": 57,
+        "false_positives": 15,
+        "predicted": 72,
+        "reference": 74,
+        "seconds": 14.5,
+        "false_positives_per_minute": 62.06896551724138
+      }
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p21",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.8831168831168831,
+        "recall": 0.8831168831168831,
+        "f1": 0.8831168831168831,
+        "true_positives": 68,
+        "false_positives": 9,
+        "predicted": 77,
+        "reference": 77,
+        "seconds": 14.5,
+        "false_positives_per_minute": 37.241379310344826
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8831168831168831,
+        "recall": 0.8831168831168831,
+        "f1": 0.8831168831168831,
+        "true_positives": 68,
+        "false_positives": 9,
+        "predicted": 77,
+        "reference": 77,
+        "seconds": 14.5,
+        "false_positives_per_minute": 37.241379310344826
+      }
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p22",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.8222222222222222,
+        "recall": 0.9367088607594937,
+        "f1": 0.8757396449704142,
+        "true_positives": 74,
+        "false_positives": 16,
+        "predicted": 90,
+        "reference": 79,
+        "seconds": 14.5,
+        "false_positives_per_minute": 66.20689655172414
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8222222222222222,
+        "recall": 0.9367088607594937,
+        "f1": 0.8757396449704142,
+        "true_positives": 74,
+        "false_positives": 16,
+        "predicted": 90,
+        "reference": 79,
+        "seconds": 14.5,
+        "false_positives_per_minute": 66.20689655172414
+      }
+    },
+    {
+      "id": "vienna-Chopin_op38_p19",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.8936170212765957,
+        "recall": 0.875,
+        "f1": 0.8842105263157894,
+        "true_positives": 84,
+        "false_positives": 10,
+        "predicted": 94,
+        "reference": 96,
+        "seconds": 14.5,
+        "false_positives_per_minute": 41.37931034482759
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8936170212765957,
+        "recall": 0.875,
+        "f1": 0.8842105263157894,
+        "true_positives": 84,
+        "false_positives": 10,
+        "predicted": 94,
+        "reference": 96,
+        "seconds": 14.5,
+        "false_positives_per_minute": 41.37931034482759
+      }
+    },
+    {
+      "id": "vienna-Chopin_op38_p20",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.8736842105263158,
+        "recall": 0.8058252427184466,
+        "f1": 0.8383838383838383,
+        "true_positives": 83,
+        "false_positives": 12,
+        "predicted": 95,
+        "reference": 103,
+        "seconds": 14.5,
+        "false_positives_per_minute": 49.6551724137931
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8736842105263158,
+        "recall": 0.8058252427184466,
+        "f1": 0.8383838383838383,
+        "true_positives": 83,
+        "false_positives": 12,
+        "predicted": 95,
+        "reference": 103,
+        "seconds": 14.5,
+        "false_positives_per_minute": 49.6551724137931
+      }
+    },
+    {
+      "id": "vienna-Chopin_op38_p21",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8064516129032258,
+        "f1": 0.819672131147541,
+        "true_positives": 75,
+        "false_positives": 15,
+        "predicted": 90,
+        "reference": 93,
+        "seconds": 14.5,
+        "false_positives_per_minute": 62.06896551724138
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8064516129032258,
+        "f1": 0.819672131147541,
+        "true_positives": 75,
+        "false_positives": 15,
+        "predicted": 90,
+        "reference": 93,
+        "seconds": 14.5,
+        "false_positives_per_minute": 62.06896551724138
+      }
+    },
+    {
+      "id": "vienna-Chopin_op38_p22",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.8586956521739131,
+        "recall": 0.8494623655913979,
+        "f1": 0.8540540540540541,
+        "true_positives": 79,
+        "false_positives": 13,
+        "predicted": 92,
+        "reference": 93,
+        "seconds": 14.5,
+        "false_positives_per_minute": 53.793103448275865
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8586956521739131,
+        "recall": 0.8494623655913979,
+        "f1": 0.8540540540540541,
+        "true_positives": 79,
+        "false_positives": 13,
+        "predicted": 92,
+        "reference": 93,
+        "seconds": 14.5,
+        "false_positives_per_minute": 53.793103448275865
+      }
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p19",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.9333333333333333,
+        "recall": 0.875,
+        "f1": 0.9032258064516129,
+        "true_positives": 56,
+        "false_positives": 4,
+        "predicted": 60,
+        "reference": 64,
+        "seconds": 14.5,
+        "false_positives_per_minute": 16.551724137931036
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9333333333333333,
+        "recall": 0.875,
+        "f1": 0.9032258064516129,
+        "true_positives": 56,
+        "false_positives": 4,
+        "predicted": 60,
+        "reference": 64,
+        "seconds": 14.5,
+        "false_positives_per_minute": 16.551724137931036
+      }
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p20",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.9322033898305084,
+        "recall": 0.8870967741935484,
+        "f1": 0.9090909090909091,
+        "true_positives": 55,
+        "false_positives": 4,
+        "predicted": 59,
+        "reference": 62,
+        "seconds": 14.5,
+        "false_positives_per_minute": 16.551724137931036
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9322033898305084,
+        "recall": 0.8870967741935484,
+        "f1": 0.9090909090909091,
+        "true_positives": 55,
+        "false_positives": 4,
+        "predicted": 59,
+        "reference": 62,
+        "seconds": 14.5,
+        "false_positives_per_minute": 16.551724137931036
+      }
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p21",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.9264705882352942,
+        "recall": 0.9402985074626866,
+        "f1": 0.9333333333333333,
+        "true_positives": 63,
+        "false_positives": 5,
+        "predicted": 68,
+        "reference": 67,
+        "seconds": 14.5,
+        "false_positives_per_minute": 20.689655172413794
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9264705882352942,
+        "recall": 0.9402985074626866,
+        "f1": 0.9333333333333333,
+        "true_positives": 63,
+        "false_positives": 5,
+        "predicted": 68,
+        "reference": 67,
+        "seconds": 14.5,
+        "false_positives_per_minute": 20.689655172413794
+      }
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p22",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.9841269841269841,
+        "recall": 0.9393939393939394,
+        "f1": 0.9612403100775194,
+        "true_positives": 62,
+        "false_positives": 1,
+        "predicted": 63,
+        "reference": 66,
+        "seconds": 14.5,
+        "false_positives_per_minute": 4.137931034482759
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9841269841269841,
+        "recall": 0.9393939393939394,
+        "f1": 0.9612403100775194,
+        "true_positives": 62,
+        "false_positives": 1,
+        "predicted": 63,
+        "reference": 66,
+        "seconds": 14.5,
+        "false_positives_per_minute": 4.137931034482759
+      }
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p19",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.9024390243902439,
+        "recall": 0.8283582089552238,
+        "f1": 0.8638132295719845,
+        "true_positives": 111,
+        "false_positives": 12,
+        "predicted": 123,
+        "reference": 134,
+        "seconds": 14.5,
+        "false_positives_per_minute": 49.6551724137931
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9024390243902439,
+        "recall": 0.8283582089552238,
+        "f1": 0.8638132295719845,
+        "true_positives": 111,
+        "false_positives": 12,
+        "predicted": 123,
+        "reference": 134,
+        "seconds": 14.5,
+        "false_positives_per_minute": 49.6551724137931
+      }
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p20",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.872093023255814,
+        "recall": 0.7894736842105263,
+        "f1": 0.8287292817679558,
+        "true_positives": 75,
+        "false_positives": 11,
+        "predicted": 86,
+        "reference": 95,
+        "seconds": 14.5,
+        "false_positives_per_minute": 45.51724137931034
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.872093023255814,
+        "recall": 0.7894736842105263,
+        "f1": 0.8287292817679558,
+        "true_positives": 75,
+        "false_positives": 11,
+        "predicted": 86,
+        "reference": 95,
+        "seconds": 14.5,
+        "false_positives_per_minute": 45.51724137931034
+      }
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p21",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.8879310344827587,
+        "recall": 0.8046875,
+        "f1": 0.8442622950819673,
+        "true_positives": 103,
+        "false_positives": 13,
+        "predicted": 116,
+        "reference": 128,
+        "seconds": 14.5,
+        "false_positives_per_minute": 53.793103448275865
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8879310344827587,
+        "recall": 0.8046875,
+        "f1": 0.8442622950819673,
+        "true_positives": 103,
+        "false_positives": 13,
+        "predicted": 116,
+        "reference": 128,
+        "seconds": 14.5,
+        "false_positives_per_minute": 53.793103448275865
+      }
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p22",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.8727272727272727,
+        "recall": 0.8571428571428571,
+        "f1": 0.8648648648648649,
+        "true_positives": 96,
+        "false_positives": 14,
+        "predicted": 110,
+        "reference": 112,
+        "seconds": 14.5,
+        "false_positives_per_minute": 57.93103448275862
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8727272727272727,
+        "recall": 0.8571428571428571,
+        "f1": 0.8648648648648649,
+        "true_positives": 96,
+        "false_positives": 14,
+        "predicted": 110,
+        "reference": 112,
+        "seconds": 14.5,
+        "false_positives_per_minute": 57.93103448275862
+      }
+    },
+    {
+      "id": "oxford-10",
+      "corpus": "oxford-piano",
+      "candidate": {
+        "precision": 0.851063829787234,
+        "recall": 0.9090909090909091,
+        "f1": 0.8791208791208791,
+        "true_positives": 40,
+        "false_positives": 7,
+        "predicted": 47,
+        "reference": 44,
+        "seconds": 14.5,
+        "false_positives_per_minute": 28.96551724137931
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.851063829787234,
+        "recall": 0.9090909090909091,
+        "f1": 0.8791208791208791,
+        "true_positives": 40,
+        "false_positives": 7,
+        "predicted": 47,
+        "reference": 44,
+        "seconds": 14.5,
+        "false_positives_per_minute": 28.96551724137931
+      }
+    },
+    {
+      "id": "oxford-21",
+      "corpus": "oxford-piano",
+      "candidate": {
+        "precision": 0.8125,
+        "recall": 0.8125,
+        "f1": 0.8125,
+        "true_positives": 26,
+        "false_positives": 6,
+        "predicted": 32,
+        "reference": 32,
+        "seconds": 14.5,
+        "false_positives_per_minute": 24.82758620689655
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8125,
+        "recall": 0.8125,
+        "f1": 0.8125,
+        "true_positives": 26,
+        "false_positives": 6,
+        "predicted": 32,
+        "reference": 32,
+        "seconds": 14.5,
+        "false_positives_per_minute": 24.82758620689655
+      }
+    },
+    {
+      "id": "oxford-23",
+      "corpus": "oxford-piano",
+      "candidate": {
+        "precision": 0.8518518518518519,
+        "recall": 0.8518518518518519,
+        "f1": 0.8518518518518519,
+        "true_positives": 46,
+        "false_positives": 8,
+        "predicted": 54,
+        "reference": 54,
+        "seconds": 14.5,
+        "false_positives_per_minute": 33.10344827586207
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8518518518518519,
+        "recall": 0.8518518518518519,
+        "f1": 0.8518518518518519,
+        "true_positives": 46,
+        "false_positives": 8,
+        "predicted": 54,
+        "reference": 54,
+        "seconds": 14.5,
+        "false_positives_per_minute": 33.10344827586207
+      }
+    },
+    {
+      "id": "oxford-24",
+      "corpus": "oxford-piano",
+      "candidate": {
+        "precision": 0.8524590163934426,
+        "recall": 0.8666666666666667,
+        "f1": 0.859504132231405,
+        "true_positives": 52,
+        "false_positives": 9,
+        "predicted": 61,
+        "reference": 60,
+        "seconds": 14.5,
+        "false_positives_per_minute": 37.241379310344826
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8524590163934426,
+        "recall": 0.8666666666666667,
+        "f1": 0.859504132231405,
+        "true_positives": 52,
+        "false_positives": 9,
+        "predicted": 61,
+        "reference": 60,
+        "seconds": 14.5,
+        "false_positives_per_minute": 37.241379310344826
+      }
+    },
+    {
+      "id": "oxford-25",
+      "corpus": "oxford-piano",
+      "candidate": {
+        "precision": 0.9393939393939394,
+        "recall": 1.0,
+        "f1": 0.96875,
+        "true_positives": 31,
+        "false_positives": 2,
+        "predicted": 33,
+        "reference": 31,
+        "seconds": 14.5,
+        "false_positives_per_minute": 8.275862068965518
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9393939393939394,
+        "recall": 1.0,
+        "f1": 0.96875,
+        "true_positives": 31,
+        "false_positives": 2,
+        "predicted": 33,
+        "reference": 31,
+        "seconds": 14.5,
+        "false_positives_per_minute": 8.275862068965518
+      }
+    },
+    {
+      "id": "oxford-26",
+      "corpus": "oxford-piano",
+      "candidate": {
+        "precision": 0.8529411764705882,
+        "recall": 0.7837837837837838,
+        "f1": 0.8169014084507042,
+        "true_positives": 29,
+        "false_positives": 5,
+        "predicted": 34,
+        "reference": 37,
+        "seconds": 14.5,
+        "false_positives_per_minute": 20.689655172413794
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8529411764705882,
+        "recall": 0.7837837837837838,
+        "f1": 0.8169014084507042,
+        "true_positives": 29,
+        "false_positives": 5,
+        "predicted": 34,
+        "reference": 37,
+        "seconds": 14.5,
+        "false_positives_per_minute": 20.689655172413794
+      }
+    },
+    {
+      "id": "oxford-27",
+      "corpus": "oxford-piano",
+      "candidate": {
+        "precision": 0.9310344827586207,
+        "recall": 0.75,
+        "f1": 0.8307692307692308,
+        "true_positives": 27,
+        "false_positives": 2,
+        "predicted": 29,
+        "reference": 36,
+        "seconds": 14.5,
+        "false_positives_per_minute": 8.275862068965518
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9310344827586207,
+        "recall": 0.75,
+        "f1": 0.8307692307692308,
+        "true_positives": 27,
+        "false_positives": 2,
+        "predicted": 29,
+        "reference": 36,
+        "seconds": 14.5,
+        "false_positives_per_minute": 8.275862068965518
+      }
+    },
+    {
+      "id": "oxford-5",
+      "corpus": "oxford-piano",
+      "candidate": {
+        "precision": 0.921875,
+        "recall": 0.9365079365079365,
+        "f1": 0.9291338582677166,
+        "true_positives": 59,
+        "false_positives": 5,
+        "predicted": 64,
+        "reference": 63,
+        "seconds": 14.5,
+        "false_positives_per_minute": 20.689655172413794
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.921875,
+        "recall": 0.9365079365079365,
+        "f1": 0.9291338582677166,
+        "true_positives": 59,
+        "false_positives": 5,
+        "predicted": 64,
+        "reference": 63,
+        "seconds": 14.5,
+        "false_positives_per_minute": 20.689655172413794
+      }
+    },
+    {
+      "id": "oxford-extended-10",
+      "corpus": "oxford-piano-extended",
+      "candidate": {
+        "precision": 0.8850574712643678,
+        "recall": 0.8953488372093024,
+        "f1": 0.8901734104046243,
+        "true_positives": 77,
+        "false_positives": 10,
+        "predicted": 87,
+        "reference": 86,
+        "seconds": 29.5,
+        "false_positives_per_minute": 20.338983050847457
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8850574712643678,
+        "recall": 0.8953488372093024,
+        "f1": 0.8901734104046243,
+        "true_positives": 77,
+        "false_positives": 10,
+        "predicted": 87,
+        "reference": 86,
+        "seconds": 29.5,
+        "false_positives_per_minute": 20.338983050847457
+      }
+    },
+    {
+      "id": "oxford-extended-21",
+      "corpus": "oxford-piano-extended",
+      "candidate": {
+        "precision": 0.9076923076923077,
+        "recall": 0.7972972972972973,
+        "f1": 0.8489208633093526,
+        "true_positives": 59,
+        "false_positives": 6,
+        "predicted": 65,
+        "reference": 74,
+        "seconds": 29.5,
+        "false_positives_per_minute": 12.203389830508474
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9076923076923077,
+        "recall": 0.7972972972972973,
+        "f1": 0.8489208633093526,
+        "true_positives": 59,
+        "false_positives": 6,
+        "predicted": 65,
+        "reference": 74,
+        "seconds": 29.5,
+        "false_positives_per_minute": 12.203389830508474
+      }
+    },
+    {
+      "id": "oxford-extended-23",
+      "corpus": "oxford-piano-extended",
+      "candidate": {
+        "precision": 1.0,
+        "recall": 0.9568965517241379,
+        "f1": 0.9779735682819384,
+        "true_positives": 111,
+        "false_positives": 0,
+        "predicted": 111,
+        "reference": 116,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 1.0,
+        "recall": 0.9568965517241379,
+        "f1": 0.9779735682819384,
+        "true_positives": 111,
+        "false_positives": 0,
+        "predicted": 111,
+        "reference": 116,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      }
+    },
+    {
+      "id": "oxford-extended-24",
+      "corpus": "oxford-piano-extended",
+      "candidate": {
+        "precision": 1.0,
+        "recall": 0.9349593495934959,
+        "f1": 0.9663865546218487,
+        "true_positives": 115,
+        "false_positives": 0,
+        "predicted": 115,
+        "reference": 123,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 1.0,
+        "recall": 0.9349593495934959,
+        "f1": 0.9663865546218487,
+        "true_positives": 115,
+        "false_positives": 0,
+        "predicted": 115,
+        "reference": 123,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      }
+    },
+    {
+      "id": "oxford-extended-25",
+      "corpus": "oxford-piano-extended",
+      "candidate": {
+        "precision": 0.8888888888888888,
+        "recall": 0.7843137254901961,
+        "f1": 0.8333333333333334,
+        "true_positives": 40,
+        "false_positives": 5,
+        "predicted": 45,
+        "reference": 51,
+        "seconds": 29.5,
+        "false_positives_per_minute": 10.169491525423728
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8888888888888888,
+        "recall": 0.7843137254901961,
+        "f1": 0.8333333333333334,
+        "true_positives": 40,
+        "false_positives": 5,
+        "predicted": 45,
+        "reference": 51,
+        "seconds": 29.5,
+        "false_positives_per_minute": 10.169491525423728
+      }
+    },
+    {
+      "id": "oxford-extended-26",
+      "corpus": "oxford-piano-extended",
+      "candidate": {
+        "precision": 0.8840579710144928,
+        "recall": 0.9104477611940298,
+        "f1": 0.8970588235294118,
+        "true_positives": 61,
+        "false_positives": 8,
+        "predicted": 69,
+        "reference": 67,
+        "seconds": 29.5,
+        "false_positives_per_minute": 16.271186440677965
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8840579710144928,
+        "recall": 0.9104477611940298,
+        "f1": 0.8970588235294118,
+        "true_positives": 61,
+        "false_positives": 8,
+        "predicted": 69,
+        "reference": 67,
+        "seconds": 29.5,
+        "false_positives_per_minute": 16.271186440677965
+      }
+    },
+    {
+      "id": "oxford-extended-27",
+      "corpus": "oxford-piano-extended",
+      "candidate": {
+        "precision": 0.8974358974358975,
+        "recall": 0.8433734939759037,
+        "f1": 0.8695652173913043,
+        "true_positives": 70,
+        "false_positives": 8,
+        "predicted": 78,
+        "reference": 83,
+        "seconds": 29.5,
+        "false_positives_per_minute": 16.271186440677965
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8974358974358975,
+        "recall": 0.8433734939759037,
+        "f1": 0.8695652173913043,
+        "true_positives": 70,
+        "false_positives": 8,
+        "predicted": 78,
+        "reference": 83,
+        "seconds": 29.5,
+        "false_positives_per_minute": 16.271186440677965
+      }
+    },
+    {
+      "id": "oxford-extended-5",
+      "corpus": "oxford-piano-extended",
+      "candidate": {
+        "precision": 0.7068965517241379,
+        "recall": 0.8541666666666666,
+        "f1": 0.7735849056603774,
+        "true_positives": 82,
+        "false_positives": 34,
+        "predicted": 116,
+        "reference": 96,
+        "seconds": 29.5,
+        "false_positives_per_minute": 69.15254237288136
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7068965517241379,
+        "recall": 0.8541666666666666,
+        "f1": 0.7735849056603774,
+        "true_positives": 82,
+        "false_positives": 34,
+        "predicted": 116,
+        "reference": 96,
+        "seconds": 29.5,
+        "false_positives_per_minute": 69.15254237288136
+      }
+    },
+    {
+      "id": "stem-05_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "candidate": {
+        "precision": 0.7541899441340782,
+        "recall": 0.9121621621621622,
+        "f1": 0.8256880733944955,
+        "true_positives": 135,
+        "false_positives": 44,
+        "predicted": 179,
+        "reference": 148,
+        "seconds": 22.32439909297052,
+        "false_positives_per_minute": 118.25626253166564
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7541899441340782,
+        "recall": 0.9121621621621622,
+        "f1": 0.8256880733944955,
+        "true_positives": 135,
+        "false_positives": 44,
+        "predicted": 179,
+        "reference": 148,
+        "seconds": 22.32439909297052,
+        "false_positives_per_minute": 118.25626253166564
+      }
+    },
+    {
+      "id": "stem-05_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "candidate": {
+        "precision": 0.7166666666666667,
+        "recall": 0.9772727272727273,
+        "f1": 0.8269230769230769,
+        "true_positives": 43,
+        "false_positives": 17,
+        "predicted": 60,
+        "reference": 44,
+        "seconds": 22.32439909297052,
+        "false_positives_per_minute": 45.689919614507176
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7166666666666667,
+        "recall": 0.9772727272727273,
+        "f1": 0.8269230769230769,
+        "true_positives": 43,
+        "false_positives": 17,
+        "predicted": 60,
+        "reference": 44,
+        "seconds": 22.32439909297052,
+        "false_positives_per_minute": 45.689919614507176
+      }
+    },
+    {
+      "id": "stem-05_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "candidate": {
+        "precision": 0.7988505747126436,
+        "recall": 0.7679558011049724,
+        "f1": 0.7830985915492957,
+        "true_positives": 139,
+        "false_positives": 35,
+        "predicted": 174,
+        "reference": 181,
+        "seconds": 25.258412698412698,
+        "false_positives_per_minute": 83.1406163591574
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7988505747126436,
+        "recall": 0.7679558011049724,
+        "f1": 0.7830985915492957,
+        "true_positives": 139,
+        "false_positives": 35,
+        "predicted": 174,
+        "reference": 181,
+        "seconds": 25.258412698412698,
+        "false_positives_per_minute": 83.1406163591574
+      }
+    },
+    {
+      "id": "stem-05_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "candidate": {
+        "precision": 0.8064516129032258,
+        "recall": 0.8333333333333334,
+        "f1": 0.819672131147541,
+        "true_positives": 50,
+        "false_positives": 12,
+        "predicted": 62,
+        "reference": 60,
+        "seconds": 25.258412698412698,
+        "false_positives_per_minute": 28.50535418028254
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8064516129032258,
+        "recall": 0.8333333333333334,
+        "f1": 0.819672131147541,
+        "true_positives": 50,
+        "false_positives": 12,
+        "predicted": 62,
+        "reference": 60,
+        "seconds": 25.258412698412698,
+        "false_positives_per_minute": 28.50535418028254
+      }
+    },
+    {
+      "id": "stem-05_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "candidate": {
+        "precision": 0.9147286821705426,
+        "recall": 0.8368794326241135,
+        "f1": 0.8740740740740741,
+        "true_positives": 118,
+        "false_positives": 11,
+        "predicted": 129,
+        "reference": 141,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 29.800592203069137
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9147286821705426,
+        "recall": 0.8368794326241135,
+        "f1": 0.8740740740740741,
+        "true_positives": 118,
+        "false_positives": 11,
+        "predicted": 129,
+        "reference": 141,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 29.800592203069137
+      }
+    },
+    {
+      "id": "stem-05_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "candidate": {
+        "precision": 0.7761194029850746,
+        "recall": 0.896551724137931,
+        "f1": 0.832,
+        "true_positives": 52,
+        "false_positives": 15,
+        "predicted": 67,
+        "reference": 58,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 40.63717118600337
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7761194029850746,
+        "recall": 0.896551724137931,
+        "f1": 0.832,
+        "true_positives": 52,
+        "false_positives": 15,
+        "predicted": 67,
+        "reference": 58,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 40.63717118600337
+      }
+    },
+    {
+      "id": "stem-05_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "candidate": {
+        "precision": 0.867595818815331,
+        "recall": 0.7980769230769231,
+        "f1": 0.8313856427378965,
+        "true_positives": 249,
+        "false_positives": 38,
+        "predicted": 287,
+        "reference": 312,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 102.9475003378752
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8645833333333334,
+        "recall": 0.7980769230769231,
+        "f1": 0.83,
+        "true_positives": 249,
+        "false_positives": 39,
+        "predicted": 288,
+        "reference": 312,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 105.65664508360877
+      }
+    },
+    {
+      "id": "stem-05_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "candidate": {
+        "precision": 0.8,
+        "recall": 0.9333333333333333,
+        "f1": 0.8615384615384616,
+        "true_positives": 56,
+        "false_positives": 14,
+        "predicted": 70,
+        "reference": 60,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 37.92802644026981
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8,
+        "recall": 0.9333333333333333,
+        "f1": 0.8615384615384616,
+        "true_positives": 56,
+        "false_positives": 14,
+        "predicted": 70,
+        "reference": 60,
+        "seconds": 22.14721088435374,
+        "false_positives_per_minute": 37.92802644026981
+      }
+    },
+    {
+      "id": "stem-05_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "candidate": {
+        "precision": 0.3783783783783784,
+        "recall": 0.9607843137254902,
+        "f1": 0.5429362880886427,
+        "true_positives": 98,
+        "false_positives": 161,
+        "predicted": 259,
+        "reference": 102,
+        "seconds": 28.8,
+        "false_positives_per_minute": 335.4166666666667
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.3783783783783784,
+        "recall": 0.9607843137254902,
+        "f1": 0.5429362880886427,
+        "true_positives": 98,
+        "false_positives": 161,
+        "predicted": 259,
+        "reference": 102,
+        "seconds": 28.8,
+        "false_positives_per_minute": 335.4166666666667
+      }
+    },
+    {
+      "id": "stem-05_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "candidate": {
+        "precision": 0.6829268292682927,
+        "recall": 0.9333333333333333,
+        "f1": 0.7887323943661971,
+        "true_positives": 56,
+        "false_positives": 26,
+        "predicted": 82,
+        "reference": 60,
+        "seconds": 28.8,
+        "false_positives_per_minute": 54.166666666666664
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.6829268292682927,
+        "recall": 0.9333333333333333,
+        "f1": 0.7887323943661971,
+        "true_positives": 56,
+        "false_positives": 26,
+        "predicted": 82,
+        "reference": 60,
+        "seconds": 28.8,
+        "false_positives_per_minute": 54.166666666666664
+      }
+    },
+    {
+      "id": "later-Chopin_op10_no3_p19",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.8097345132743363,
+        "recall": 0.8243243243243243,
+        "f1": 0.8169642857142857,
+        "true_positives": 183,
+        "false_positives": 43,
+        "predicted": 226,
+        "reference": 222,
+        "seconds": 29.5,
+        "false_positives_per_minute": 87.45762711864407
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8097345132743363,
+        "recall": 0.8243243243243243,
+        "f1": 0.8169642857142857,
+        "true_positives": 183,
+        "false_positives": 43,
+        "predicted": 226,
+        "reference": 222,
+        "seconds": 29.5,
+        "false_positives_per_minute": 87.45762711864407
+      }
+    },
+    {
+      "id": "later-Chopin_op10_no3_p20",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.8161764705882353,
+        "recall": 0.8102189781021898,
+        "f1": 0.8131868131868132,
+        "true_positives": 111,
+        "false_positives": 25,
+        "predicted": 136,
+        "reference": 137,
+        "seconds": 29.5,
+        "false_positives_per_minute": 50.847457627118644
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8161764705882353,
+        "recall": 0.8102189781021898,
+        "f1": 0.8131868131868132,
+        "true_positives": 111,
+        "false_positives": 25,
+        "predicted": 136,
+        "reference": 137,
+        "seconds": 29.5,
+        "false_positives_per_minute": 50.847457627118644
+      }
+    },
+    {
+      "id": "later-Chopin_op10_no3_p21",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.8445945945945946,
+        "recall": 0.8389261744966443,
+        "f1": 0.8417508417508418,
+        "true_positives": 125,
+        "false_positives": 23,
+        "predicted": 148,
+        "reference": 149,
+        "seconds": 29.5,
+        "false_positives_per_minute": 46.779661016949156
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8445945945945946,
+        "recall": 0.8389261744966443,
+        "f1": 0.8417508417508418,
+        "true_positives": 125,
+        "false_positives": 23,
+        "predicted": 148,
+        "reference": 149,
+        "seconds": 29.5,
+        "false_positives_per_minute": 46.779661016949156
+      }
+    },
+    {
+      "id": "later-Chopin_op10_no3_p22",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.7951219512195122,
+        "recall": 0.7511520737327189,
+        "f1": 0.7725118483412322,
+        "true_positives": 163,
+        "false_positives": 42,
+        "predicted": 205,
+        "reference": 217,
+        "seconds": 29.5,
+        "false_positives_per_minute": 85.42372881355932
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7951219512195122,
+        "recall": 0.7511520737327189,
+        "f1": 0.7725118483412322,
+        "true_positives": 163,
+        "false_positives": 42,
+        "predicted": 205,
+        "reference": 217,
+        "seconds": 29.5,
+        "false_positives_per_minute": 85.42372881355932
+      }
+    },
+    {
+      "id": "later-Chopin_op38_p19",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "f1": 0.8333333333333334,
+        "true_positives": 150,
+        "false_positives": 30,
+        "predicted": 180,
+        "reference": 180,
+        "seconds": 29.5,
+        "false_positives_per_minute": 61.016949152542374
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "f1": 0.8333333333333334,
+        "true_positives": 150,
+        "false_positives": 30,
+        "predicted": 180,
+        "reference": 180,
+        "seconds": 29.5,
+        "false_positives_per_minute": 61.016949152542374
+      }
+    },
+    {
+      "id": "later-Chopin_op38_p20",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.7970297029702971,
+        "recall": 0.7892156862745098,
+        "f1": 0.7931034482758621,
+        "true_positives": 161,
+        "false_positives": 41,
+        "predicted": 202,
+        "reference": 204,
+        "seconds": 29.5,
+        "false_positives_per_minute": 83.38983050847457
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7970297029702971,
+        "recall": 0.7892156862745098,
+        "f1": 0.7931034482758621,
+        "true_positives": 161,
+        "false_positives": 41,
+        "predicted": 202,
+        "reference": 204,
+        "seconds": 29.5,
+        "false_positives_per_minute": 83.38983050847457
+      }
+    },
+    {
+      "id": "later-Chopin_op38_p21",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.8409090909090909,
+        "recall": 0.8222222222222222,
+        "f1": 0.8314606741573034,
+        "true_positives": 148,
+        "false_positives": 28,
+        "predicted": 176,
+        "reference": 180,
+        "seconds": 29.5,
+        "false_positives_per_minute": 56.94915254237288
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8409090909090909,
+        "recall": 0.8222222222222222,
+        "f1": 0.8314606741573034,
+        "true_positives": 148,
+        "false_positives": 28,
+        "predicted": 176,
+        "reference": 180,
+        "seconds": 29.5,
+        "false_positives_per_minute": 56.94915254237288
+      }
+    },
+    {
+      "id": "later-Chopin_op38_p22",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.7647058823529411,
+        "recall": 0.7262569832402235,
+        "f1": 0.7449856733524355,
+        "true_positives": 130,
+        "false_positives": 40,
+        "predicted": 170,
+        "reference": 179,
+        "seconds": 29.5,
+        "false_positives_per_minute": 81.35593220338983
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7647058823529411,
+        "recall": 0.7262569832402235,
+        "f1": 0.7449856733524355,
+        "true_positives": 130,
+        "false_positives": 40,
+        "predicted": 170,
+        "reference": 179,
+        "seconds": 29.5,
+        "false_positives_per_minute": 81.35593220338983
+      }
+    },
+    {
+      "id": "later-Mozart_K331_1st-mov_p19",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.8976377952755905,
+        "recall": 0.9344262295081968,
+        "f1": 0.9156626506024096,
+        "true_positives": 114,
+        "false_positives": 13,
+        "predicted": 127,
+        "reference": 122,
+        "seconds": 29.5,
+        "false_positives_per_minute": 26.440677966101696
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8976377952755905,
+        "recall": 0.9344262295081968,
+        "f1": 0.9156626506024096,
+        "true_positives": 114,
+        "false_positives": 13,
+        "predicted": 127,
+        "reference": 122,
+        "seconds": 29.5,
+        "false_positives_per_minute": 26.440677966101696
+      }
+    },
+    {
+      "id": "later-Mozart_K331_1st-mov_p20",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.9186991869918699,
+        "recall": 0.889763779527559,
+        "f1": 0.904,
+        "true_positives": 113,
+        "false_positives": 10,
+        "predicted": 123,
+        "reference": 127,
+        "seconds": 29.5,
+        "false_positives_per_minute": 20.338983050847457
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9186991869918699,
+        "recall": 0.889763779527559,
+        "f1": 0.904,
+        "true_positives": 113,
+        "false_positives": 10,
+        "predicted": 123,
+        "reference": 127,
+        "seconds": 29.5,
+        "false_positives_per_minute": 20.338983050847457
+      }
+    },
+    {
+      "id": "later-Mozart_K331_1st-mov_p21",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.8794326241134752,
+        "recall": 0.9465648854961832,
+        "f1": 0.9117647058823529,
+        "true_positives": 124,
+        "false_positives": 17,
+        "predicted": 141,
+        "reference": 131,
+        "seconds": 29.5,
+        "false_positives_per_minute": 34.57627118644068
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8794326241134752,
+        "recall": 0.9465648854961832,
+        "f1": 0.9117647058823529,
+        "true_positives": 124,
+        "false_positives": 17,
+        "predicted": 141,
+        "reference": 131,
+        "seconds": 29.5,
+        "false_positives_per_minute": 34.57627118644068
+      }
+    },
+    {
+      "id": "later-Mozart_K331_1st-mov_p22",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.8968253968253969,
+        "recall": 0.889763779527559,
+        "f1": 0.8932806324110671,
+        "true_positives": 113,
+        "false_positives": 13,
+        "predicted": 126,
+        "reference": 127,
+        "seconds": 29.5,
+        "false_positives_per_minute": 26.440677966101696
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8968253968253969,
+        "recall": 0.889763779527559,
+        "f1": 0.8932806324110671,
+        "true_positives": 113,
+        "false_positives": 13,
+        "predicted": 126,
+        "reference": 127,
+        "seconds": 29.5,
+        "false_positives_per_minute": 26.440677966101696
+      }
+    },
+    {
+      "id": "later-Schubert_D783_no15_p19",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.9259259259259259,
+        "recall": 0.8333333333333334,
+        "f1": 0.8771929824561403,
+        "true_positives": 75,
+        "false_positives": 6,
+        "predicted": 81,
+        "reference": 90,
+        "seconds": 10.51201814058957,
+        "false_positives_per_minute": 34.24651624315113
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9259259259259259,
+        "recall": 0.8333333333333334,
+        "f1": 0.8771929824561403,
+        "true_positives": 75,
+        "false_positives": 6,
+        "predicted": 81,
+        "reference": 90,
+        "seconds": 10.51201814058957,
+        "false_positives_per_minute": 34.24651624315113
+      }
+    },
+    {
+      "id": "later-Schubert_D783_no15_p20",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.863013698630137,
+        "recall": 0.863013698630137,
+        "f1": 0.863013698630137,
+        "true_positives": 126,
+        "false_positives": 20,
+        "predicted": 146,
+        "reference": 146,
+        "seconds": 22.108072562358277,
+        "false_positives_per_minute": 54.27881587665621
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.863013698630137,
+        "recall": 0.863013698630137,
+        "f1": 0.863013698630137,
+        "true_positives": 126,
+        "false_positives": 20,
+        "predicted": 146,
+        "reference": 146,
+        "seconds": 22.108072562358277,
+        "false_positives_per_minute": 54.27881587665621
+      }
+    },
+    {
+      "id": "later-Schubert_D783_no15_p21",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.9565217391304348,
+        "recall": 0.7586206896551724,
+        "f1": 0.8461538461538461,
+        "true_positives": 66,
+        "false_positives": 3,
+        "predicted": 69,
+        "reference": 87,
+        "seconds": 9.614920634920635,
+        "false_positives_per_minute": 18.720903357876317
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9565217391304348,
+        "recall": 0.7586206896551724,
+        "f1": 0.8461538461538461,
+        "true_positives": 66,
+        "false_positives": 3,
+        "predicted": 69,
+        "reference": 87,
+        "seconds": 9.614920634920635,
+        "false_positives_per_minute": 18.720903357876317
+      }
+    },
+    {
+      "id": "later-Schubert_D783_no15_p22",
+      "corpus": "later-vienna-piano",
+      "candidate": {
+        "precision": 0.9230769230769231,
+        "recall": 0.897196261682243,
+        "f1": 0.909952606635071,
+        "true_positives": 96,
+        "false_positives": 8,
+        "predicted": 104,
+        "reference": 107,
+        "seconds": 19.02766439909297,
+        "false_positives_per_minute": 25.226427686147392
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9230769230769231,
+        "recall": 0.897196261682243,
+        "f1": 0.909952606635071,
+        "true_positives": 96,
+        "false_positives": 8,
+        "predicted": 104,
+        "reference": 107,
+        "seconds": 19.02766439909297,
+        "false_positives_per_minute": 25.226427686147392
+      }
+    },
+    {
+      "id": "oxford-later-10",
+      "corpus": "oxford-later-piano",
+      "candidate": {
+        "precision": 0.9021739130434783,
+        "recall": 0.9021739130434783,
+        "f1": 0.9021739130434783,
+        "true_positives": 83,
+        "false_positives": 9,
+        "predicted": 92,
+        "reference": 92,
+        "seconds": 29.5,
+        "false_positives_per_minute": 18.305084745762713
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9021739130434783,
+        "recall": 0.9021739130434783,
+        "f1": 0.9021739130434783,
+        "true_positives": 83,
+        "false_positives": 9,
+        "predicted": 92,
+        "reference": 92,
+        "seconds": 29.5,
+        "false_positives_per_minute": 18.305084745762713
+      }
+    },
+    {
+      "id": "oxford-later-21",
+      "corpus": "oxford-later-piano",
+      "candidate": {
+        "precision": 0.7457627118644068,
+        "recall": 0.8,
+        "f1": 0.7719298245614035,
+        "true_positives": 44,
+        "false_positives": 15,
+        "predicted": 59,
+        "reference": 55,
+        "seconds": 29.5,
+        "false_positives_per_minute": 30.508474576271187
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7457627118644068,
+        "recall": 0.8,
+        "f1": 0.7719298245614035,
+        "true_positives": 44,
+        "false_positives": 15,
+        "predicted": 59,
+        "reference": 55,
+        "seconds": 29.5,
+        "false_positives_per_minute": 30.508474576271187
+      }
+    },
+    {
+      "id": "oxford-later-23",
+      "corpus": "oxford-later-piano",
+      "candidate": {
+        "precision": 0.9663865546218487,
+        "recall": 0.9583333333333334,
+        "f1": 0.9623430962343096,
+        "true_positives": 115,
+        "false_positives": 4,
+        "predicted": 119,
+        "reference": 120,
+        "seconds": 29.5,
+        "false_positives_per_minute": 8.135593220338983
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9663865546218487,
+        "recall": 0.9583333333333334,
+        "f1": 0.9623430962343096,
+        "true_positives": 115,
+        "false_positives": 4,
+        "predicted": 119,
+        "reference": 120,
+        "seconds": 29.5,
+        "false_positives_per_minute": 8.135593220338983
+      }
+    },
+    {
+      "id": "oxford-later-24",
+      "corpus": "oxford-later-piano",
+      "candidate": {
+        "precision": 0.9435483870967742,
+        "recall": 0.9435483870967742,
+        "f1": 0.9435483870967742,
+        "true_positives": 117,
+        "false_positives": 7,
+        "predicted": 124,
+        "reference": 124,
+        "seconds": 29.5,
+        "false_positives_per_minute": 14.23728813559322
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9435483870967742,
+        "recall": 0.9435483870967742,
+        "f1": 0.9435483870967742,
+        "true_positives": 117,
+        "false_positives": 7,
+        "predicted": 124,
+        "reference": 124,
+        "seconds": 29.5,
+        "false_positives_per_minute": 14.23728813559322
+      }
+    },
+    {
+      "id": "oxford-later-25",
+      "corpus": "oxford-later-piano",
+      "candidate": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "true_positives": 4,
+        "false_positives": 2,
+        "predicted": 6,
+        "reference": 4,
+        "seconds": 5.505351473922903,
+        "false_positives_per_minute": 21.796973466344845
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "true_positives": 4,
+        "false_positives": 2,
+        "predicted": 6,
+        "reference": 4,
+        "seconds": 5.505351473922903,
+        "false_positives_per_minute": 21.796973466344845
+      }
+    },
+    {
+      "id": "oxford-later-26",
+      "corpus": "oxford-later-piano",
+      "candidate": {
+        "precision": 0.7368421052631579,
+        "recall": 0.8235294117647058,
+        "f1": 0.7777777777777778,
+        "true_positives": 14,
+        "false_positives": 5,
+        "predicted": 19,
+        "reference": 17,
+        "seconds": 10.518684807256236,
+        "false_positives_per_minute": 28.520675873189703
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7368421052631579,
+        "recall": 0.8235294117647058,
+        "f1": 0.7777777777777778,
+        "true_positives": 14,
+        "false_positives": 5,
+        "predicted": 19,
+        "reference": 17,
+        "seconds": 10.518684807256236,
+        "false_positives_per_minute": 28.520675873189703
+      }
+    },
+    {
+      "id": "oxford-later-27",
+      "corpus": "oxford-later-piano",
+      "candidate": {
+        "precision": 0.8775510204081632,
+        "recall": 0.7962962962962963,
+        "f1": 0.8349514563106796,
+        "true_positives": 43,
+        "false_positives": 6,
+        "predicted": 49,
+        "reference": 54,
+        "seconds": 22.508027210884354,
+        "false_positives_per_minute": 15.994293796922035
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8775510204081632,
+        "recall": 0.7962962962962963,
+        "f1": 0.8349514563106796,
+        "true_positives": 43,
+        "false_positives": 6,
+        "predicted": 49,
+        "reference": 54,
+        "seconds": 22.508027210884354,
+        "false_positives_per_minute": 15.994293796922035
+      }
+    },
+    {
+      "id": "oxford-later-5",
+      "corpus": "oxford-later-piano",
+      "candidate": {
+        "precision": 0.8740157480314961,
+        "recall": 0.940677966101695,
+        "f1": 0.9061224489795918,
+        "true_positives": 111,
+        "false_positives": 16,
+        "predicted": 127,
+        "reference": 118,
+        "seconds": 29.5,
+        "false_positives_per_minute": 32.54237288135593
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8740157480314961,
+        "recall": 0.940677966101695,
+        "f1": 0.9061224489795918,
+        "true_positives": 111,
+        "false_positives": 16,
+        "predicted": 127,
+        "reference": 118,
+        "seconds": 29.5,
+        "false_positives_per_minute": 32.54237288135593
+      }
+    },
+    {
+      "id": "residual-tail-05_Funk2-108-Eb_comp",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.625,
+        "recall": 0.6730769230769231,
+        "f1": 0.6481481481481481,
+        "true_positives": 35,
+        "false_positives": 21,
+        "predicted": 56,
+        "reference": 52,
+        "seconds": 5.048390022675737,
+        "false_positives_per_minute": 249.58451988465373
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.625,
+        "recall": 0.6730769230769231,
+        "f1": 0.6481481481481481,
+        "true_positives": 35,
+        "false_positives": 21,
+        "predicted": 56,
+        "reference": 52,
+        "seconds": 5.048390022675737,
+        "false_positives_per_minute": 249.58451988465373
+      }
+    },
+    {
+      "id": "residual-tail-05_Funk2-108-Eb_solo",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.7142857142857143,
+        "recall": 0.8333333333333334,
+        "f1": 0.7692307692307693,
+        "true_positives": 5,
+        "false_positives": 2,
+        "predicted": 7,
+        "reference": 6,
+        "seconds": 5.048390022675737,
+        "false_positives_per_minute": 23.769954274728924
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.7142857142857143,
+        "recall": 0.8333333333333334,
+        "f1": 0.7692307692307693,
+        "true_positives": 5,
+        "false_positives": 2,
+        "predicted": 7,
+        "reference": 6,
+        "seconds": 5.048390022675737,
+        "false_positives_per_minute": 23.769954274728924
+      }
+    },
+    {
+      "id": "residual-tail-05_Funk3-98-A_comp",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.8064516129032258,
+        "recall": 0.9433962264150944,
+        "f1": 0.8695652173913043,
+        "true_positives": 50,
+        "false_positives": 12,
+        "predicted": 62,
+        "reference": 53,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 82.96079532836036
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8064516129032258,
+        "recall": 0.9433962264150944,
+        "f1": 0.8695652173913043,
+        "true_positives": 50,
+        "false_positives": 12,
+        "predicted": 62,
+        "reference": 53,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 82.96079532836036
+      }
+    },
+    {
+      "id": "residual-tail-05_Funk3-98-A_solo",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.95,
+        "recall": 1.0,
+        "f1": 0.9743589743589743,
+        "true_positives": 19,
+        "false_positives": 1,
+        "predicted": 20,
+        "reference": 19,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 6.913399610696697
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.95,
+        "recall": 1.0,
+        "f1": 0.9743589743589743,
+        "true_positives": 19,
+        "false_positives": 1,
+        "predicted": 20,
+        "reference": 19,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 6.913399610696697
+      }
+    },
+    {
+      "id": "residual-tail-05_Rock2-85-F_comp",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.8144329896907216,
+        "recall": 0.6929824561403509,
+        "f1": 0.7488151658767772,
+        "true_positives": 79,
+        "false_positives": 18,
+        "predicted": 97,
+        "reference": 114,
+        "seconds": 14.673197278911564,
+        "false_positives_per_minute": 73.6035902381129
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8144329896907216,
+        "recall": 0.6929824561403509,
+        "f1": 0.7488151658767772,
+        "true_positives": 79,
+        "false_positives": 18,
+        "predicted": 97,
+        "reference": 114,
+        "seconds": 14.673197278911564,
+        "false_positives_per_minute": 73.6035902381129
+      }
+    },
+    {
+      "id": "residual-tail-05_Rock2-85-F_solo",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.8541666666666666,
+        "recall": 0.9318181818181818,
+        "f1": 0.8913043478260869,
+        "true_positives": 41,
+        "false_positives": 7,
+        "predicted": 48,
+        "reference": 44,
+        "seconds": 14.673197278911564,
+        "false_positives_per_minute": 28.623618425932797
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8541666666666666,
+        "recall": 0.9318181818181818,
+        "f1": 0.8913043478260869,
+        "true_positives": 41,
+        "false_positives": 7,
+        "predicted": 48,
+        "reference": 44,
+        "seconds": 14.673197278911564,
+        "false_positives_per_minute": 28.623618425932797
+      }
+    },
+    {
+      "id": "residual-tail-05_SS1-68-E_comp",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.4878048780487805,
+        "recall": 1.0,
+        "f1": 0.6557377049180327,
+        "true_positives": 40,
+        "false_positives": 42,
+        "predicted": 82,
+        "reference": 40,
+        "seconds": 11.84639455782313,
+        "false_positives_per_minute": 212.72295023601427
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.4878048780487805,
+        "recall": 1.0,
+        "f1": 0.6557377049180327,
+        "true_positives": 40,
+        "false_positives": 42,
+        "predicted": 82,
+        "reference": 40,
+        "seconds": 11.84639455782313,
+        "false_positives_per_minute": 212.72295023601427
+      }
+    },
+    {
+      "id": "residual-tail-05_SS1-68-E_solo",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.8928571428571429,
+        "recall": 0.9259259259259259,
+        "f1": 0.9090909090909091,
+        "true_positives": 25,
+        "false_positives": 3,
+        "predicted": 28,
+        "reference": 27,
+        "seconds": 11.84639455782313,
+        "false_positives_per_minute": 15.194496445429591
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.8928571428571429,
+        "recall": 0.9259259259259259,
+        "f1": 0.9090909090909091,
+        "true_positives": 25,
+        "false_positives": 3,
+        "predicted": 28,
+        "reference": 27,
+        "seconds": 11.84639455782313,
+        "false_positives_per_minute": 15.194496445429591
+      }
+    },
+    {
+      "id": "residual-tail-05_SS2-107-Ab_comp",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.5714285714285714,
+        "recall": 0.8,
+        "f1": 0.6666666666666666,
+        "true_positives": 24,
+        "false_positives": 18,
+        "predicted": 42,
+        "reference": 30,
+        "seconds": 5.386394557823129,
+        "false_positives_per_minute": 200.50517807527154
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.5714285714285714,
+        "recall": 0.8,
+        "f1": 0.6666666666666666,
+        "true_positives": 24,
+        "false_positives": 18,
+        "predicted": 42,
+        "reference": 30,
+        "seconds": 5.386394557823129,
+        "false_positives_per_minute": 200.50517807527154
+      }
+    },
+    {
+      "id": "residual-tail-05_SS2-107-Ab_solo",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.9230769230769231,
+        "recall": 0.9230769230769231,
+        "f1": 0.9230769230769231,
+        "true_positives": 12,
+        "false_positives": 1,
+        "predicted": 13,
+        "reference": 13,
+        "seconds": 5.386394557823129,
+        "false_positives_per_minute": 11.139176559737308
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9230769230769231,
+        "recall": 0.9230769230769231,
+        "f1": 0.9230769230769231,
+        "true_positives": 12,
+        "false_positives": 1,
+        "predicted": 13,
+        "reference": 13,
+        "seconds": 5.386394557823129,
+        "false_positives_per_minute": 11.139176559737308
+      }
+    },
+    {
+      "id": "residual-tail-05_SS2-88-F_comp",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.3793103448275862,
+        "recall": 0.9322033898305084,
+        "f1": 0.5392156862745098,
+        "true_positives": 55,
+        "false_positives": 90,
+        "predicted": 145,
+        "reference": 59,
+        "seconds": 13.129206349206349,
+        "false_positives_per_minute": 411.296757501753
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.3793103448275862,
+        "recall": 0.9322033898305084,
+        "f1": 0.5392156862745098,
+        "true_positives": 55,
+        "false_positives": 90,
+        "predicted": 145,
+        "reference": 59,
+        "seconds": 13.129206349206349,
+        "false_positives_per_minute": 411.296757501753
+      }
+    },
+    {
+      "id": "residual-tail-05_SS2-88-F_solo",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.9393939393939394,
+        "recall": 1.0,
+        "f1": 0.96875,
+        "true_positives": 31,
+        "false_positives": 2,
+        "predicted": 33,
+        "reference": 31,
+        "seconds": 13.129206349206349,
+        "false_positives_per_minute": 9.1399279444834
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9393939393939394,
+        "recall": 1.0,
+        "f1": 0.96875,
+        "true_positives": 31,
+        "false_positives": 2,
+        "predicted": 33,
+        "reference": 31,
+        "seconds": 13.129206349206349,
+        "false_positives_per_minute": 9.1399279444834
+      }
+    },
+    {
+      "id": "residual-tail-05_SS3-84-Bb_comp",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.6055045871559633,
+        "recall": 0.9850746268656716,
+        "f1": 0.75,
+        "true_positives": 66,
+        "false_positives": 43,
+        "predicted": 109,
+        "reference": 67,
+        "seconds": 15.207596371882087,
+        "false_positives_per_minute": 169.65205657156062
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.6055045871559633,
+        "recall": 0.9850746268656716,
+        "f1": 0.75,
+        "true_positives": 66,
+        "false_positives": 43,
+        "predicted": 109,
+        "reference": 67,
+        "seconds": 15.207596371882087,
+        "false_positives_per_minute": 169.65205657156062
+      }
+    },
+    {
+      "id": "residual-tail-05_SS3-84-Bb_solo",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.95,
+        "recall": 0.9743589743589743,
+        "f1": 0.9620253164556962,
+        "true_positives": 38,
+        "false_positives": 2,
+        "predicted": 40,
+        "reference": 39,
+        "seconds": 15.207596371882087,
+        "false_positives_per_minute": 7.890793328909797
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.95,
+        "recall": 0.9743589743589743,
+        "f1": 0.9620253164556962,
+        "true_positives": 38,
+        "false_positives": 2,
+        "predicted": 40,
+        "reference": 39,
+        "seconds": 15.207596371882087,
+        "false_positives_per_minute": 7.890793328909797
+      }
+    },
+    {
+      "id": "residual-tail-05_SS3-98-C_comp",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.5138888888888888,
+        "recall": 0.9487179487179487,
+        "f1": 0.6666666666666666,
+        "true_positives": 37,
+        "false_positives": 35,
+        "predicted": 72,
+        "reference": 39,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 241.96898637438437
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.5138888888888888,
+        "recall": 0.9487179487179487,
+        "f1": 0.6666666666666666,
+        "true_positives": 37,
+        "false_positives": 35,
+        "predicted": 72,
+        "reference": 39,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 241.96898637438437
+      }
+    },
+    {
+      "id": "residual-tail-05_SS3-98-C_solo",
+      "corpus": "guitarset-later",
+      "candidate": {
+        "precision": 0.9130434782608695,
+        "recall": 0.9545454545454546,
+        "f1": 0.9333333333333333,
+        "true_positives": 21,
+        "false_positives": 2,
+        "predicted": 23,
+        "reference": 22,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 13.826799221393394
+      },
+      "matched_references_preserved": true,
+      "passes": true,
+      "held_references_preserved": true,
+      "deployed_v4": {
+        "precision": 0.9130434782608695,
+        "recall": 0.9545454545454546,
+        "f1": 0.9333333333333333,
+        "true_positives": 21,
+        "false_positives": 2,
+        "predicted": 23,
+        "reference": 22,
+        "seconds": 8.678798185941043,
+        "false_positives_per_minute": 13.826799221393394
+      }
+    }
+  ],
+  "checkpoint_sha256": "7b3343637fa0d19ba1cd468845fcc309f30ac55b7fddc00f68bbc607abc2555b",
+  "scope": "Consumed regression excerpts; not independent generalization evidence"
+}

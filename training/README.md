@@ -3,8 +3,13 @@
 Model development uses labeled corpus features and explicit regression gates.
 Do not retranscribe user uploads or regenerate sheet music to demonstrate a model
 update; the user can upload audio again when they want to hear the new result.
-The latest [residual false-note classifier](../docs/accompaniment-residual-v4.md)
+The [residual false-note classifier](../docs/accompaniment-residual-v4.md)
 was trained and checked entirely with licensed datasets and cached features.
+
+The latest [low-register specialist](../docs/left-hand-transcription.md) targets
+left-hand accompaniment and adds a per-recording onset-offset preservation gate.
+Its frozen candidate passed regression and runtime parity. It does not apply the
+accompaniment model to unvalidated bass-stem predictions.
 
 A subsequent [relationship-aware experiment](../docs/relational-verifier-experiment.md)
 added later labeled piano passages and explicit neighboring-note features. It

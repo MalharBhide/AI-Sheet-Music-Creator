@@ -6,10 +6,15 @@ The transcription design is informed by an [extensive review of Songscription, K
 
 Balanced full-song accompaniment now also uses a trained note verifier to reject unsupported candidate notes. See its [model card and measured limits](docs/accompaniment-verifier.md). Re-upload a recording to apply it to an older score.
 
-The latest [V4 residual classifier](docs/accompaniment-residual-v4.md) learns from
+The [V4 residual classifier](docs/accompaniment-residual-v4.md) learns from
 false notes that survive the existing filter. It removes a further 23 false notes
 on 126 regression excerpts while preserving all previously matched notes; the
 newly scored dataset sections were unchanged. This is a modest measured gain.
+
+The latest [low-register specialist](docs/left-hand-transcription.md) removes
+10 additional false accompaniment notes on 142 consumed regression excerpts,
+preserving matched attacks and holds. Full-song arrangements also give held bass
+keys priority over overlapping backing notes to prevent duplicate strikes.
 
 Balanced arrangements give the detected melody priority: backing stays below it
 and uses at most two simultaneous voices, alongside the separate bass. The

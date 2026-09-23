@@ -5,7 +5,7 @@ import pytest
 from music21 import chord, note, stream, tempo, tie
 
 from app.models import ScoreOptions
-from app.services.audio_analysis import preserve_melody_releases
+from app.services.audio_analysis import preserve_bass_releases, preserve_melody_releases
 from app.services.midi_to_score import midi_to_musicxml
 from app.services.playback import export_score_playback
 
@@ -98,6 +98,17 @@ def test_triplet_rhythm_survives_notation_and_browser_playback(tmp_path):
 def test_sparse_voices_preserve_sustain_releases_and_individual_velocities(tmp_path):
     notes = [(60, 0, 4, 70), (64, .5, 1, 50), (65, 1.5, 2, 100), (67, 2.5, 3, 80)]
     assert sorted(roundtrip_notes(tmp_path, notes)) == sorted(notes)
+
+
+def test_bass_ownership_preserves_holds_repeats_and_rests_in_score_playback(tmp_path):
+    bass, backing = pretty_midi.Instrument(0), pretty_midi.Instrument(0)
+    bass.notes = [pretty_midi.Note(68, 48, 0, 2), pretty_midi.Note(72, 48, 3, 4)]
+    backing.notes = [pretty_midi.Note(54, 48, .5, 1), pretty_midi.Note(54, 48, 1, 3),
+                     pretty_midi.Note(54, 48, 2.5, 3.5), pretty_midi.Note(54, 55, 0, 4)]
+    assert preserve_bass_releases({'bass': bass, 'other': backing}) == 3
+    events = [(n.pitch, n.start, n.end, n.velocity) for part in (bass, backing) for n in part.notes]
+    assert sorted(roundtrip_notes(tmp_path, events)) == sorted([
+        (48, 0, 2, 68), (48, 2.5, 3, 54), (48, 3, 4, 72), (55, 0, 4, 54)])
 
 
 def test_melody_priority_survives_notation_and_browser_playback_export(tmp_path):

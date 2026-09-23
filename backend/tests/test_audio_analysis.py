@@ -13,6 +13,7 @@ from app.services.audio_analysis import (
     estimate_grid_phase,
     estimate_key,
     estimate_tempo,
+    preserve_bass_releases,
     preserve_melody_releases,
     reduce_accompaniment,
     triplet_beats,
@@ -143,6 +144,30 @@ def test_accompaniment_reduction_limits_actual_sounding_polyphony():
     for at in np.arange(0, 4, .05):
         assert sum(item.start <= at < item.end for item in result) <= 3
     assert all(item.end == 4 for item in result)
+
+
+def test_bass_holds_do_not_gain_backing_reattacks_or_extended_releases():
+    bass = SimpleNamespace(notes=[n(48, 1, 3), n(48, 4, 5), n(43, 6, 8)])
+    before = [vars(item).copy() for item in bass.notes]
+    backing = SimpleNamespace(notes=[n(48, 0, 2), n(48, 1, 4), n(48, 2, 2.5),
+                                    n(48, 3, 3.5), n(48, 4, 4.5),
+                                    n(48, 5, 6), n(55, 0, 8), n(43, 7, 9)])
+    assert preserve_bass_releases({'bass': bass, 'other': backing}) == 5
+    assert [(item.pitch, item.start, item.end) for item in backing.notes] == [
+        (48, 0, 1), (48, 3, 3.5), (48, 5, 6), (55, 0, 8)]
+    assert [vars(item) for item in bass.notes] == before
+    assert preserve_bass_releases({'bass': bass, 'other': backing}) == 0
+
+
+def test_bass_priority_leaves_piano_melody_and_nonoverlapping_support_untouched():
+    bass = SimpleNamespace(notes=[n(48, 1, 2)])
+    backing = SimpleNamespace(notes=[n(48, 0, 1), n(48, 2, 3), n(49, 1, 2)])
+    melody = SimpleNamespace(notes=[n(72, 1, 3)])
+    before = [vars(item).copy() for item in backing.notes]
+    assert preserve_bass_releases({'bass': bass, 'other': backing, 'vocals': melody}) == 0
+    assert [vars(item) for item in backing.notes] == before
+    assert vars(melody.notes[0]) == vars(n(72, 1, 3))
+    assert preserve_bass_releases({'piano': backing}) == 0
 
 
 def test_accompaniment_keeps_complete_holds_instead_of_stealing_for_loud_fragments():

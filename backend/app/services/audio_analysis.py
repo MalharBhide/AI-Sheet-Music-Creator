@@ -354,15 +354,32 @@ def preserve_melody_releases(parts: dict) -> int:
     lead = parts.get('vocals')
     if lead is None or not lead.notes:
         return 0
+    return _prioritize_keys(lead.notes, [parts[role] for role in ('bass', 'other') if role in parts])
+
+
+def preserve_bass_releases(parts: dict) -> int:
+    """Give the bass line ownership of its keys in the full-song arrangement.
+
+    Independent separated sources can detect the same low key. Letting backing
+    attacks interrupt a bass hold creates extra piano strikes and extends its
+    release. As with melody ownership, preserve the bass attack/release, omit
+    competing backing attacks inside it, and retain backing notes in bass rests.
+    This is source reconciliation, not a claim that a bass prediction is correct.
+    """
+    bass, backing = parts.get('bass'), parts.get('other')
+    if bass is None or backing is None:
+        return 0
+    return _prioritize_keys([item for item in bass.notes if item.pitch < 60], [backing])
+
+
+def _prioritize_keys(primary: list, supporting: list) -> int:
+    """Resolve same-key collisions against a cleaned, monophonic priority line."""
     by_pitch = defaultdict(list)
-    for item in sorted(lead.notes, key=lambda item: item.start):
+    for item in sorted(primary, key=lambda item: item.start):
         by_pitch[item.pitch].append(item)
     starts = {pitch: [item.start for item in notes] for pitch, notes in by_pitch.items()}
     changed = 0
-    for role in ('bass', 'other'):
-        part = parts.get(role)
-        if part is None:
-            continue
+    for part in supporting:
         kept = []
         for item in part.notes:
             notes = by_pitch.get(item.pitch, [])

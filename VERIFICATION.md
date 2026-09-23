@@ -1,5 +1,31 @@
 # Verification
 
+## Low-register accompaniment and bass holds
+
+Trained a low-register specialist on 30,145 labeled events. On 142 consumed
+regression excerpts, false notes decreased from 3,308 to 3,298 while retaining
+all 12,879 matched attacks and all previously matched onset-offset references in
+every recording. Validation selected and froze the .05 threshold before
+regression. This is a small measured gain; piano regression counts were unchanged.
+
+Production-filter parity passed on 33,815 cached events across 265 clips. All
+retained note identities, pitch, timing, velocity and source assignments match
+the offline policy. The bass/accompaniment reconciliation separately prevents
+backing notes from re-striking a held bass key, without filling rests or changing
+the bass line. Melody and dedicated solo-piano inference are unchanged.
+
+**178 tests passed, six opt-in audio integration cases skipped.** The suite covers
+holds, genuine repeats, bass rests, distinct chord pitches, MusicXML/MIDI/playback,
+full-song routing, model integrity and correct-note preservation. No user uploads
+were transcribed or existing scores regenerated. See the
+[model and arrangement report](docs/left-hand-transcription.md).
+
+Lint and the production backend build passed. The final routing regression also
+passed after adding a duplicate bass-key fixture. Deployed with an idle queue;
+the running backend loaded V5 at threshold .05 with the expected SHA-256, the
+frontend-proxied health endpoint reported ready, and an in-memory bass-hold
+fixture passed. Deployment verification created no transcription jobs.
+
 ## Preserve clear triplet spacing
 
 Fixed a demonstrated rhythm-decoding error: equally spaced eighth triplets were

@@ -1,0 +1,22 @@
+{
+  "promoted": true,
+  "model": "Accompaniment note verifier v5 (low-register specialist)",
+  "checkpoint_sha256": "7b3343637fa0d19ba1cd468845fcc309f30ac55b7fddc00f68bbc607abc2555b",
+  "threshold": 0.05,
+  "validation_passes": true,
+  "regression_passes": true,
+  "regression_false_notes_removed": 10,
+  "regression_matched_notes_preserved": 12879,
+  "per_recording_onset_and_offset_preservation": true,
+  "runtime_parity_events": 33815,
+  "runtime_parity_recordings": 265,
+  "backend_tests_passed": 178,
+  "audio_integration_tests_skipped": 6,
+  "final_routing_checks_passed": 16,
+  "lint_passed": true,
+  "backend_build_passed": true,
+  "deployed_model_hash_verified": true,
+  "frontend_proxied_health_ready": true,
+  "user_uploads_processed": false,
+  "limitation": "Small improvement on consumed regression data, not independent generalization or bass-stem accuracy evidence"
+}

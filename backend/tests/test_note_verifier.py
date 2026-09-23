@@ -97,7 +97,7 @@ def test_context_correction_matches_runtime_without_changing_unshared_or_confide
 def test_residual_model_matches_evaluation_and_preserves_note_objects(monkeypatch, tmp_path):
     torch = pytest.importorskip('torch')
     verifier = service.AccompanimentVerifier()
-    assert verifier.name.endswith('v4')
+    assert 'v5' in verifier.name
     path = tmp_path / 'window.wav'
     sf.write(path, np.zeros(22050), 22050)
     notes = [SimpleNamespace(pitch=60 + i, start=i * .1, end=1. + i * .1, velocity=80)
@@ -136,6 +136,44 @@ def test_damaged_residual_model_fails_explicitly(monkeypatch, tmp_path):
     path.write_bytes(b'invalid model')
     monkeypatch.setattr(service, 'RESIDUAL_CHECKPOINT', path)
     with pytest.raises(PipelineError, match='residual note model is missing or damaged'):
+        service.AccompanimentVerifier()
+
+
+def test_low_register_specialist_preserves_protected_notes_and_all_attributes(monkeypatch, tmp_path):
+    torch = pytest.importorskip('torch')
+    verifier = service.AccompanimentVerifier()
+    path = tmp_path / 'window.wav'
+    sf.write(path, np.zeros(22050), 22050)
+    notes = [SimpleNamespace(pitch=p, start=i * .1, end=2. + i * .1, velocity=80)
+             for i, p in enumerate([48, 50, 52, 54, 55, 59, 60, 72])]
+    before = [vars(n).copy() for n in notes]
+    midi = SimpleNamespace(instruments=[SimpleNamespace(notes=notes[:4]), SimpleNamespace(notes=notes[4:])])
+    bounded = SimpleNamespace(instruments=[SimpleNamespace(notes=[n for i, n in enumerate(notes) if i != 2])])
+    monkeypatch.setattr(service, 'decode_candidates', lambda _: bounded)
+    x = np.arange(8 * 52, dtype=np.float32).reshape(8, 52) / 100
+    monkeypatch.setattr(service, 'note_features', lambda *args, **kwargs: x)
+    p = np.array([.2, .5001, .2, .05, .4, .5, .3, .2])
+    verifier.model = lambda _: torch.from_numpy(np.log(p / (1 - p)))
+    verifier.context_models = [SimpleNamespace(threshold=.01, probability=lambda x: np.ones(len(x)))] * 2
+    verifier.residual_model = SimpleNamespace(threshold=.0375, probability=lambda x: np.ones(len(x)))
+
+    def low_probability(features):
+        np.testing.assert_array_equal(features, x[[0, 4, 5]])
+        return np.array([.001, .05, .001])
+
+    verifier.left_hand_model = SimpleNamespace(threshold=.05, probability=low_probability)
+    assert verifier.filter(path, {}, midi) == 3
+    assert midi.instruments[0].notes == [notes[1], notes[2]]
+    assert midi.instruments[1].notes == [notes[4], notes[6], notes[7]]
+    assert [vars(n) for n in notes] == before
+
+
+def test_damaged_left_hand_model_fails_explicitly(monkeypatch, tmp_path):
+    pytest.importorskip('torch')
+    path = tmp_path / 'left-hand.npz'
+    path.write_bytes(b'invalid model')
+    monkeypatch.setattr(service, 'LEFT_HAND_CHECKPOINT', path)
+    with pytest.raises(PipelineError, match='left-hand note model is missing or damaged'):
         service.AccompanimentVerifier()
 
 

@@ -26,10 +26,12 @@ CONTEXT_CHECKPOINTS = (
 )
 RESIDUAL_CHECKPOINT = CHECKPOINT.parent / 'accompaniment-residual-v4.npz'
 RESIDUAL_SHA256 = 'ad958557c44312c8d082b9339801ae794a7673956f098106f7fb6381fa3cd24d'
+LEFT_HAND_CHECKPOINT = CHECKPOINT.parent / 'accompaniment-left-hand-v1.npz'
+LEFT_HAND_SHA256 = '7b3343637fa0d19ba1cd468845fcc309f30ac55b7fddc00f68bbc607abc2555b'
 
 
 class AccompanimentVerifier:
-    name = 'Accompaniment note verifier v4'
+    name = 'Accompaniment note verifier v5 (low-register specialist)'
 
     def __init__(self):
         import torch
@@ -71,6 +73,16 @@ class AccompanimentVerifier:
                 raise ValueError('Unexpected residual threshold')
         except (ValueError, KeyError, OSError) as exc:
             raise PipelineError('The residual note model is invalid. Rebuild the backend and retry.') from exc
+        if (not LEFT_HAND_CHECKPOINT.is_file()
+                or hashlib.sha256(LEFT_HAND_CHECKPOINT.read_bytes()).hexdigest() != LEFT_HAND_SHA256):
+            raise PipelineError('The left-hand note model is missing or damaged. Rebuild the backend and retry.')
+        try:
+            with np.load(LEFT_HAND_CHECKPOINT, allow_pickle=False) as arrays:
+                self.left_hand_model = ContextNoteModel(arrays)
+            if self.left_hand_model.threshold != .05:
+                raise ValueError('Unexpected left-hand threshold')
+        except (ValueError, KeyError, OSError) as exc:
+            raise PipelineError('The left-hand note model is invalid. Rebuild the backend and retry.') from exc
 
     def filter(self, path, acoustic, midi):
         """Keep original pitch, timing and velocity; reject unsupported events only."""
@@ -100,6 +112,14 @@ class AccompanimentVerifier:
         if np.any(eligible):
             residual[eligible] = self.residual_model.probability(x[eligible])
         keep = residual_keep(keep, probability, shared, residual, threshold=self.residual_model.threshold)
+        # This specialist was fitted only on low accompaniment candidates.
+        # Independent bass-stem and treble/melody inference remain unchanged.
+        low_shared = shared & np.asarray([36 <= n.pitch < 60 for n in notes])
+        eligible = keep & low_shared & (probability <= .5)
+        left_hand = np.ones(len(notes))
+        if np.any(eligible):
+            left_hand[eligible] = self.left_hand_model.probability(x[eligible])
+        keep = residual_keep(keep, probability, low_shared, left_hand, threshold=self.left_hand_model.threshold)
         index = 0
         for part in midi.instruments:
             size = len(part.notes)

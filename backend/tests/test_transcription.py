@@ -200,7 +200,7 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
         name = 'Test verifier'
 
         def filter(self, path, acoustic, output):
-            assert [n.pitch for n in output.instruments[0].notes] == [60, 64, 67, 71]
+            assert [n.pitch for n in output.instruments[0].notes] == [36, 60, 64, 67, 71]
             output.instruments[0].notes.pop()
             return 1
 
@@ -208,7 +208,7 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
     fake_inference.results.extend([
         [],  # Vocal decoding must still run when Basic Pitch emits no events.
         [(36, 0, 1), (48, 0, 1)],
-        [(35, 0, 1), (60, 0, 1), (64, 0, 1), (67, 0, 1), (71, 0, 1), (96, 0, 1)],
+        [(35, 0, 1), (36, .25, .75), (60, 0, 1), (64, 0, 1), (67, 0, 1), (71, 0, 1), (96, 0, 1)],
     ])
     report = transcribe(audio, output,
                         ScoreOptions(tempo_bpm=120, transcription_mode='full_mix'))
@@ -220,7 +220,9 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
     assert report['sources'] == ['vocals', 'bass', 'other']
     assert report['engine'].startswith('Demucs htdemucs')
     assert report['accompaniment_verification'] == {
-        'model': 'Test verifier', 'window_candidates': 4, 'window_rejections': 1}
+        'model': 'Test verifier', 'window_candidates': 5, 'window_rejections': 1}
+    assert report['support_notes_changed_for_bass'] == 1
+    assert [(n.pitch, n.start, n.end) for n in result.instruments[1].notes] == [(36, 0, 1)]
     assert fake_inference.calls[2][1]['minimum_frequency'] is None
     assert fake_inference.calls[2][1]['maximum_frequency'] is None
     assert 'arrangement' in report['warnings'][0]

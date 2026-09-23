@@ -12,6 +12,7 @@ from app.services.audio_analysis import (
     estimate_grid_phase,
     estimate_key,
     estimate_tempo,
+    preserve_bass_releases,
     preserve_melody_releases,
     reduce_accompaniment,
 )
@@ -271,8 +272,12 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
         midi.instruments.append(part)
     melody_shift = 0
     support_changes = 0
+    bass_support_changes = 0
     if mode == "full_mix":
         melody_shift = arrange_melody_register(parts)
+        # Reconcile duplicate low keys before choosing accompaniment voices,
+        # so a redundant bass detection cannot occupy a backing voice slot.
+        bass_support_changes = preserve_bass_releases(parts)
         parts['other'].notes = reduce_accompaniment(
             parts['other'].notes, detail=detail, melody=parts['vocals'].notes)
         support_changes = preserve_melody_releases(parts)
@@ -296,4 +301,5 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
             "timing_offset_seconds": timing_offset,
             "melody_octave_shift": melody_shift // 12, "notes_by_source": retained,
             "support_notes_changed_for_melody": support_changes,
+            "support_notes_changed_for_bass": bass_support_changes,
             "duration_seconds": duration, "sources": list(parts), "warnings": warnings}
