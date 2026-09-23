@@ -28,10 +28,12 @@ RESIDUAL_CHECKPOINT = CHECKPOINT.parent / 'accompaniment-residual-v4.npz'
 RESIDUAL_SHA256 = 'ad958557c44312c8d082b9339801ae794a7673956f098106f7fb6381fa3cd24d'
 LEFT_HAND_CHECKPOINT = CHECKPOINT.parent / 'accompaniment-left-hand-v1.npz'
 LEFT_HAND_SHA256 = '7b3343637fa0d19ba1cd468845fcc309f30ac55b7fddc00f68bbc607abc2555b'
+LEFT_REFINEMENT_CHECKPOINT = CHECKPOINT.parent / 'accompaniment-left-refinement-v3.npz'
+LEFT_REFINEMENT_SHA256 = '6b0f9bb5260f9645831dd409abd6fcb17cd8acbdd09e7a13df9c356cd76414e2'
 
 
 class AccompanimentVerifier:
-    name = 'Accompaniment note verifier v5 (low-register specialist)'
+    name = 'Accompaniment note verifier v6 (trained left-hand refinement)'
 
     def __init__(self):
         import torch
@@ -83,6 +85,16 @@ class AccompanimentVerifier:
                 raise ValueError('Unexpected left-hand threshold')
         except (ValueError, KeyError, OSError) as exc:
             raise PipelineError('The left-hand note model is invalid. Rebuild the backend and retry.') from exc
+        if (not LEFT_REFINEMENT_CHECKPOINT.is_file()
+                or hashlib.sha256(LEFT_REFINEMENT_CHECKPOINT.read_bytes()).hexdigest() != LEFT_REFINEMENT_SHA256):
+            raise PipelineError('The left-hand refinement model is missing or damaged. Rebuild the backend and retry.')
+        try:
+            with np.load(LEFT_REFINEMENT_CHECKPOINT, allow_pickle=False) as arrays:
+                self.left_refinement_model = ContextNoteModel(arrays)
+            if self.left_refinement_model.threshold != .0375:
+                raise ValueError('Unexpected left-hand refinement threshold')
+        except (ValueError, KeyError, OSError) as exc:
+            raise PipelineError('The left-hand refinement model is invalid. Rebuild the backend and retry.') from exc
 
     def filter(self, path, acoustic, midi):
         """Keep original pitch, timing and velocity; reject unsupported events only."""
@@ -120,6 +132,14 @@ class AccompanimentVerifier:
         if np.any(eligible):
             left_hand[eligible] = self.left_hand_model.probability(x[eligible])
         keep = residual_keep(keep, probability, low_shared, left_hand, threshold=self.left_hand_model.threshold)
+        # Learn only remaining low-register errors. Earlier rejections stay
+        # rejected; stronger, nonshared and treble candidates remain protected.
+        eligible = keep & low_shared & (probability <= .5)
+        refinement = np.ones(len(notes))
+        if np.any(eligible):
+            refinement[eligible] = self.left_refinement_model.probability(x[eligible])
+        keep = residual_keep(keep, probability, low_shared, refinement,
+                             threshold=self.left_refinement_model.threshold)
         index = 0
         for part in midi.instruments:
             size = len(part.notes)

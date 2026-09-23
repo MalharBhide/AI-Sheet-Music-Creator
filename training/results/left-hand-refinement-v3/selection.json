@@ -1,0 +1,20 @@
+{
+  "selected": true,
+  "policy": "refinement",
+  "checkpoint_sha256": "6b0f9bb5260f9645831dd409abd6fcb17cd8acbdd09e7a13df9c356cd76414e2",
+  "threshold": 0.0375,
+  "ceiling": 0.5,
+  "baseline_hashes": {
+    "accompaniment-verifier-v2.pt": "2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60",
+    "accompaniment-context-expanded.npz": "d06bbe84ee9ad251960969e0097b217e340d52562ecf178295d7c4ae57c6ee8d",
+    "accompaniment-context-original.npz": "381c150b19bdb223fc9e85f88b78dd69892b0de5c7591189967f30b59a26a8e7",
+    "accompaniment-residual-v4.npz": "ad958557c44312c8d082b9339801ae794a7673956f098106f7fb6381fa3cd24d",
+    "accompaniment-left-hand-v1.npz": "7b3343637fa0d19ba1cd468845fcc309f30ac55b7fddc00f68bbc607abc2555b"
+  },
+  "pitch_range": [
+    36,
+    60
+  ],
+  "test_not_evaluated": true,
+  "selection": "Best validation gain passing attack/hold/false-note gates at raw and half-margin threshold"
+}

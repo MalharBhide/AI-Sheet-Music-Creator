@@ -9,6 +9,7 @@ from app.services.accompaniment_verifier import CHECKPOINT as ACCOMPANIMENT_CHEC
 from app.services.accompaniment_verifier import (
     CONTEXT_CHECKPOINTS,
     LEFT_HAND_CHECKPOINT,
+    LEFT_REFINEMENT_CHECKPOINT,
     RESIDUAL_CHECKPOINT,
 )
 from app.services.vocal_melody import CHECKPOINT
@@ -24,6 +25,7 @@ def dependencies(settings: Settings) -> dict[str, bool]:
             'accompaniment_context_models': all(path.is_file() for path, _ in CONTEXT_CHECKPOINTS),
             'accompaniment_residual_model': RESIDUAL_CHECKPOINT.is_file(),
             'accompaniment_left_hand_model': LEFT_HAND_CHECKPOINT.is_file(),
+            'accompaniment_left_refinement_model': LEFT_REFINEMENT_CHECKPOINT.is_file(),
             'source_separation': importlib.util.find_spec('demucs') is not None,
             'music21': importlib.util.find_spec('music21') is not None,
             'musescore': settings.renderer() is not None}

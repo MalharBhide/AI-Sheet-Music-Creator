@@ -2,6 +2,7 @@
 
 import numpy as np
 import pytest
+import train_left_hand_expanded as expanded
 from prepare_left_hand_expansion import crop_labels, eligible_entries
 from train_left_hand_expanded import score
 
@@ -50,3 +51,32 @@ def test_aggregate_false_note_gain_cannot_hide_a_lost_correct_hold():
     assert result['false_notes_removed'] == 1
     assert not result['passes']
     assert not result['per_recording'][0]['held_references_preserved']
+
+
+def test_refinement_cannot_restore_previously_removed_false_notes():
+    item = fixture()
+    item['keep'] = item['baseline_keep'].copy()
+    result = score([item], [np.ones(3)], .05)
+    assert result['passes'] and result['false_notes_removed'] == 0
+
+
+def test_refinement_relabels_surviving_duplicate_after_baseline_filter(monkeypatch):
+    from contextlib import nullcontext
+    from types import SimpleNamespace
+
+    item = {'reference': np.array([[0., 2., 48.]]),
+            'events': np.array([[0., 2., 48., 80.], [0., 2., 48., 70.]]),
+            'x': np.zeros((2, 52)), 'keep': np.ones(2, dtype=bool),
+            'shared': np.ones(2, dtype=bool), 'p': np.full(2, .2),
+            'y': np.array([1., 0.]), 'mask': np.ones(2, dtype=bool)}
+    monkeypatch.setattr(expanded, 'hashes', dict)
+    monkeypatch.setattr(expanded, 'AccompanimentVerifier', lambda: None)
+    monkeypatch.setattr(expanded, 'prepare_v4', lambda *args: [item])
+    monkeypatch.setattr(expanded.np, 'load', lambda *args, **kwargs: nullcontext({}))
+    monkeypatch.setattr(expanded, 'ContextNoteModel', lambda _: SimpleNamespace(
+        threshold=.05, probability=lambda x: np.array([0., 1.])))
+    result = expanded.prepare(None, [], 'refinement')[0]
+    np.testing.assert_array_equal(result['keep'], [False, True])
+    np.testing.assert_array_equal(result['baseline_keep'], [False, True])
+    np.testing.assert_array_equal(result['y'], [0., 1.])
+    np.testing.assert_array_equal(result['mask'], [False, True])

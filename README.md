@@ -11,10 +11,15 @@ false notes that survive the existing filter. It removes a further 23 false note
 on 126 regression excerpts while preserving all previously matched notes; the
 newly scored dataset sections were unchanged. This is a modest measured gain.
 
-The latest [low-register specialist](docs/left-hand-transcription.md) removes
+The [low-register specialist](docs/left-hand-transcription.md) removes
 10 additional false accompaniment notes on 142 consumed regression excerpts,
 preserving matched attacks and holds. Full-song arrangements also give held bass
 keys priority over overlapping backing notes to prevent duplicate strikes.
+
+The latest [V6 left-hand refinement](docs/left-hand-refinement.md) was trained on
+the expanded dataset and preserves V5's existing rejections. It removes five
+additional false notes on 142 regression excerpts and one on 12 newly evaluated
+piano passages, with matched attacks and holds preserved. The gain is small.
 
 Balanced arrangements give the detected melody priority: backing stays below it
 and uses at most two simultaneous voices, alongside the separate bass. The

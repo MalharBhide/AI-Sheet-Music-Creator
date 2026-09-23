@@ -1,0 +1,26 @@
+Low-register residual classifier (accompaniment-left-refinement-v3.npz)
+
+Copyright 2026 Piano Scribe contributors.
+Newly trained model arrays: Creative Commons Attribution 4.0.
+https://creativecommons.org/licenses/by/4.0/
+
+Training data (CC BY 4.0):
+GuitarSet 1.1.0: Qingyang Xi, Rachel M. Bittner, Johan Pauwels, Xuzhou Ye,
+and Juan P. Bello. https://zenodo.org/records/3371780
+Vienna 4x22 Piano Corpus: Werner Goebl. https://doi.org/10.21939/4X22
+
+Additional training: original procedural piano phrases rendered with MuseScore
+General (MIT/PD/CC0 soundfont sources), and training-only GuitarSet performances
+mixed with procedural percussion and separated with Demucs. Soundfont credit:
+S. Christian Collins, Frank Wen, Michael Cowgill and other credited contributors.
+See training/results/accompaniment-verifier-v2/soundfont-copyright.txt.
+
+Evaluation only: Oxford MIDItest, A. Sophia Koepke, Olivia Wiles, Yael Moses,
+Andrew Zisserman, Sight to sound (ICASSP 2020), CC BY 4.0.
+https://www.robots.ox.ac.uk/~vgg/research/sighttosound/
+
+No source recordings, soundfont samples, Basic Pitch weights or Demucs weights
+are included in these arrays. Upstream models retain their original licenses.
+No user uploads or non-commercial-only datasets entered fitting.
+Includes additional seconds 30–60 of the same Vienna and GuitarSet training performers.
+Methods and limitations: docs/left-hand-refinement.md.

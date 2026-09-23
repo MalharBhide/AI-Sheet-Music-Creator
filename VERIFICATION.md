@@ -1,5 +1,31 @@
 # Verification
 
+## V6 left-hand correction — higher measured precision
+
+Trained a residual classifier on 32,067 labeled low-register events from 551
+training clips, freezing existing V5 rejections and re-matching labels after
+filtering. Validation (139 clips) selected .075 and froze the predeclared .0375
+half-margin before regression. No test results entered fitting/selection.
+
+- Regression: **3,298 → 3,293 false notes**, all **12,879 matched notes** retained
+  across 142 consumed excerpts; precision **79.613% → 79.638%**.
+- Previously unscored seconds 60–90 of 12 reserved piano recordings:
+  **301 → 300 false notes**, all **1,391 matched notes** retained; precision
+  **82.210% → 82.259%**. These share performers/pieces with prior test sections.
+- Every recording preserves both onset and onset-offset reference matches.
+  This is a small candidate-note improvement, not whole-song accuracy evidence.
+- **187 tests passed; six opt-in audio integration cases skipped.** New tests
+  cover retained-duplicate labels, unchanged previous rejections, protected
+  events, retained note attributes and damaged refinement weights. Lint passed.
+
+No user uploads were processed and no scores were regenerated. See the
+[model report](docs/left-hand-refinement.md) for provenance and limits.
+Production/offline parity passed on **36,833 events across 293 clips**, preserving
+retained note identity, attributes and source assignment. Backend build passed.
+Deployed with an idle queue. The running process loaded V6 at .0375 with the
+verified checkpoint hash, and frontend-proxied health reported ready. No upload
+or score regeneration was used for deployment verification.
+
 ## Expanded left-hand dataset training — candidates withheld
 
 Added 64 train and 16 validation GuitarSet tails, retaining performer partitions

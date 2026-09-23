@@ -1,7 +1,8 @@
-"""Fit a replacement low-register head on expanded licensed dataset passages.
+"""Fit a replacement or residual low-register head on licensed dataset passages.
 
 Compare with frozen website V5, including its existing left-hand head. Do not
-claim earlier improvements again, stack another model, or tune on regression.
+claim earlier improvements again or tune on regression. Refinement mode freezes
+the existing left-hand decisions and learns only remaining candidate errors.
 """
 
 import argparse
@@ -36,7 +37,9 @@ def hashes():
     return {**v4_hashes(), BASELINE_LEFT_HAND.name: digest}
 
 
-def prepare(directory, items):
+def prepare(directory, items, policy='replacement'):
+    if policy not in ('replacement', 'refinement'):
+        raise ValueError('Unknown low-register model policy')
     hashes()
     verifier = AccompanimentVerifier()
     with np.load(BASELINE_LEFT_HAND, allow_pickle=False) as saved:
@@ -45,6 +48,13 @@ def prepare(directory, items):
     for item in prepared:
         # Keep is the common V4 input to either old or replacement left-hand head.
         item['baseline_keep'] = residual_keep(item, baseline.probability(item['x']), baseline.threshold)
+        if policy == 'refinement':
+            item['keep'] = item['baseline_keep'].copy()
+            # Re-match after filtering: if a duplicate was removed, its surviving
+            # counterpart may now be the correct positive for this reference.
+            retained_y, retained_mask = targets(item['reference'], item['events'][item['keep']])
+            item['y'], item['mask'] = np.zeros(len(item['events'])), np.zeros(len(item['events']), dtype=bool)
+            item['y'][item['keep']], item['mask'][item['keep']] = retained_y, retained_mask
     return prepared
 
 
@@ -67,7 +77,7 @@ def score(items, probabilities, threshold):
                           for corpus in sorted({r['corpus'] for r in rows})}, 'per_recording': rows}
 
 
-def train(directory, output, extras, leaves=15):
+def train(directory, output, extras, leaves=15, policy='replacement'):
     output.mkdir(exist_ok=False)
     torch.set_num_threads(2)
     training, validation = load_data(directory, 'train'), load_data(directory, 'validation')
@@ -80,7 +90,7 @@ def train(directory, output, extras, leaves=15):
             item['y'], item['mask'] = targets(item['reference'], item['events'])
             (training if item['group'] == 'train' else validation).append(item)
     write(output / 'label-audit.json', audit(training, validation))
-    training, validation = [prepare(directory, items) for items in (training, validation)]
+    training, validation = [prepare(directory, items, policy) for items in (training, validation)]
     all_x, all_y, weights, counts = [], [], [], []
     for corpus in sorted({item['corpus'] for item in training}):
         records = [item for item in training if item['corpus'] == corpus]
@@ -108,7 +118,8 @@ def train(directory, output, extras, leaves=15):
         'pitch_range': [36, 60], 'pitch_upper_exclusive': True,
         'sklearn_version': sklearn.__version__, 'test_used_for_selection': False,
         'extra_manifest_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in extras},
-        'scope': 'Replacement for V5 left-hand head; 52 acoustic features; no bass-stem or user audio',
+        'policy': policy,
+        'scope': 'V5 low-register correction; 52 acoustic features; no bass-stem or user audio',
         'preservation': 'Every matched onset and onset-offset reference; no per-recording false-note increase'})
     model = HistGradientBoostingClassifier(**settings).fit(x, y, sample_weight=weight)
     probabilities = [model.predict_proba(item['x'])[:, 1] for item in validation]
@@ -126,6 +137,7 @@ def train(directory, output, extras, leaves=15):
     write(output / 'validation.json', result)
     write(output / 'search.json', search)
     selection = {'selected': best is not None,
+        'policy': policy,
         'checkpoint_sha256': hashlib.sha256((output / 'candidate.npz').read_bytes()).hexdigest(),
         'threshold': threshold, 'ceiling': .5, 'baseline_hashes': hashes(),
         'pitch_range': [36, 60], 'test_not_evaluated': True,
@@ -134,13 +146,20 @@ def train(directory, output, extras, leaves=15):
     print(json.dumps({**selection, 'validation_false_notes_removed': result['false_notes_removed']}, indent=2), flush=True)
 
 
-def test(directory, output):
-    destination = output / 'regression.json'
+def test(directory, output, fresh=None):
+    destination = output / ('fresh.json' if fresh else 'regression.json')
     if destination.exists():
         raise ValueError('Preserve consumed results; do not retune on regression')
     selection = json.loads((output / 'selection.json').read_text())
     if not selection['selected'] or selection['baseline_hashes'] != hashes():
         raise ValueError('Ineligible candidate or changed baseline')
+    run = json.loads((output / 'run.json').read_text())
+    if selection.get('policy', 'replacement') != run.get('policy', 'replacement'):
+        raise ValueError('Candidate policy changed after freeze')
+    if fresh:
+        regression = output / 'regression.json'
+        if not regression.exists() or not json.loads(regression.read_text())['passes']:
+            raise ValueError('Preserve fresh evaluation until regression passes')
     checkpoint = output / 'candidate.npz'
     if hashlib.sha256(checkpoint.read_bytes()).hexdigest() != selection['checkpoint_sha256']:
         raise ValueError('Candidate changed after freeze')
@@ -148,16 +167,22 @@ def test(directory, output):
         model = ContextNoteModel(saved)
     if model.threshold != selection['threshold'] or selection['ceiling'] != .5 or selection['pitch_range'] != [36, 60]:
         raise ValueError('Candidate policy changed after freeze')
-    items = load_data(directory, 'test')
-    for name in ('note-verifier-oxford', 'note-verifier-oxford-extended', 'note-verifier-stems-test',
-                 'later-vienna-context', 'oxford-later-context', 'residual-guitar-tails'):
-        base = directory.parent if name.startswith('note-verifier-') else directory
-        items.extend(cached_external(directory, directory.parent / name / 'manifest.json', base))
+    if fresh:
+        items = list(cached_external(directory, fresh, directory))
+        if not items or any(item.get('group') != 'test' for item in items):
+            raise ValueError('Fresh evaluation requires reserved test performers')
+    else:
+        items = load_data(directory, 'test')
+        for name in ('note-verifier-oxford', 'note-verifier-oxford-extended', 'note-verifier-stems-test',
+                     'later-vienna-context', 'oxford-later-context', 'residual-guitar-tails'):
+            base = directory.parent if name.startswith('note-verifier-') else directory
+            items.extend(cached_external(directory, directory.parent / name / 'manifest.json', base))
     torch.set_num_threads(2)
-    items = prepare(directory, items)
+    items = prepare(directory, items, selection.get('policy', 'replacement'))
     result = score(items, [model.probability(item['x']) for item in items], model.threshold)
     result.update(checkpoint_sha256=selection['checkpoint_sha256'],
-                  scope='Consumed regression excerpts; not independent generalization evidence')
+                  scope='Unscored later passages; same reserved test performers and compositions' if fresh
+                  else 'Consumed regression excerpts; not independent generalization evidence')
     write(destination, result)
     print(json.dumps({k: v for k, v in result.items() if k != 'per_recording'}, indent=2), flush=True)
 
@@ -167,11 +192,13 @@ if __name__ == '__main__':
     parser.add_argument('directory', type=Path)
     parser.add_argument('--run', default='left-hand-expanded-v2')
     parser.add_argument('--test', action='store_true')
+    parser.add_argument('--fresh', type=Path)
     parser.add_argument('--extra', type=Path, action='append', default=[])
     parser.add_argument('--leaves', type=int, choices=(15, 31), default=15)
+    parser.add_argument('--policy', choices=('replacement', 'refinement'), default='replacement')
     args = parser.parse_args()
     output = args.directory / args.run
-    if args.test:
-        test(args.directory, output)
+    if args.test or args.fresh:
+        test(args.directory, output, args.fresh)
     else:
-        train(args.directory, output, args.extra, args.leaves)
+        train(args.directory, output, args.extra, args.leaves, args.policy)

@@ -6,7 +6,7 @@ update; the user can upload audio again when they want to hear the new result.
 The [residual false-note classifier](../docs/accompaniment-residual-v4.md)
 was trained and checked entirely with licensed datasets and cached features.
 
-The latest [low-register specialist](../docs/left-hand-transcription.md) targets
+The [low-register specialist](../docs/left-hand-transcription.md) targets
 left-hand accompaniment and adds a per-recording onset-offset preservation gate.
 Its frozen candidate passed regression and runtime parity. It does not apply the
 accompaniment model to unvalidated bass-stem predictions.
@@ -14,7 +14,13 @@ accompaniment model to unvalidated bass-stem predictions.
 The [expanded left-hand dataset experiment](../docs/left-hand-expanded-training.md)
 adds 64 training and 16 validation passages. Two replacement heads were fitted
 on 32,122 labeled events, but neither passed the conservative release checks.
-They remain offline; the verified website V5 model is unchanged.
+They remained offline, with website V5 unchanged for that experiment.
+
+A subsequent [V6 residual correction](../docs/left-hand-refinement.md) freezes V5
+decisions and recomputes retained-event labels. It passed validation, regression
+and previously unused piano-passage checks, preserving matched attacks and holds
+while increasing measured precision. This trained correction is the current
+release; the rejected replacement heads above remain offline.
 
 A subsequent [relationship-aware experiment](../docs/relational-verifier-experiment.md)
 added later labeled piano passages and explicit neighboring-note features. It
