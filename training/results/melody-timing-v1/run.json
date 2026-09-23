@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "loss": "absolute_error",
+    "max_iter": 150,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 40,
+    "l2_regularization": 4.0,
+    "learning_rate": 0.05,
+    "early_stopping": false,
+    "random_state": 260924
+  },
+  "train_clips": 314,
+  "validation_clips": 56,
+  "max_shift_seconds": 0.08,
+  "scales": [
+    0.25,
+    0.5,
+    1.0
+  ],
+  "baseline_sha256": "60209b56b6618335f22d1e4e9fc4604d7a2e501df3242d4a18e3df01d81034f9",
+  "sklearn_version": "1.9.0",
+  "scope": "Cached licensed singing features; fixed pitch/counts",
+  "matching": "Training uses same-pitch one-to-one matches within 200 ms; gates use 50 ms onset and 20%/50 ms offset",
+  "weighting": "Equal weight per corpus and per recording before event weighting"
+}

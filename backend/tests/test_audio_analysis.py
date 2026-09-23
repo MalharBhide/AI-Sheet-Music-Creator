@@ -15,6 +15,7 @@ from app.services.audio_analysis import (
     estimate_tempo,
     preserve_melody_releases,
     reduce_accompaniment,
+    triplet_beats,
 )
 
 
@@ -61,6 +62,38 @@ def test_melody_selects_salient_line_and_releases_old_pitch():
     notes = cleaned([n(60, 0, 2), n(72, 0, 1, 50), n(62, 1, 3), n(74, 1, 3, 85)],
                     role='vocals')
     assert [(v.pitch, v.start, v.end) for v in notes] == [(60, 0, 1), (62, 1, 3)]
+
+
+def test_precise_rhythm_retains_equal_triplets_instead_of_short_long_spacing():
+    notes = [n(60 + i, i / 6, (i + 1) / 6) for i in range(6)]
+    result = cleaned(notes, role='vocals')
+    assert [item.start for item in result] == pytest.approx([i / 6 for i in range(6)])
+    assert [item.end for item in result] == pytest.approx([(i + 1) / 6 for i in range(6)])
+
+
+def test_triplet_evidence_requires_distinct_slots_and_does_not_rewrite_straight_beats():
+    assert triplet_beats([n(p, .165, .3) for p in range(60, 72)], 120) == set()
+    assert triplet_beats([n(60, 0, .1), n(62, 1 / 3, .5)], 120) == set()
+    notes = [n(60 + i, i / 8, (i + 1) / 8) for i in range(8)]
+    assert triplet_beats(notes, 120) == set()
+    result = cleaned(notes, role='vocals')
+    assert [item.start for item in result] == pytest.approx([item.start for item in notes])
+    jittered = [n(60, 0, .1), n(62, .14, .25), n(64, .36, .5)]
+    assert triplet_beats(jittered, 120) == set()
+
+
+def test_mixed_straight_and_triplet_beats_keep_rests_and_held_notes():
+    notes = [n(60, 0, .125), n(62, .25, .375),
+             n(64, .5, 2 / 3), n(65, 2 / 3, 5 / 6), n(67, 5 / 6, 2.)]
+    result = cleaned(notes, role='vocals')
+    assert [item.start for item in result] == pytest.approx([item.start for item in notes])
+    assert [item.end for item in result] == pytest.approx([item.end for item in notes])
+
+
+def test_simple_eighth_rhythm_remains_explicitly_coarse():
+    notes = [n(60 + i, i / 6, (i + 1) / 6) for i in range(3)]
+    result = clean_notes(notes, role='vocals', detail='balanced', tempo_bpm=120, grid='eighth')
+    assert all(item.start % .25 == 0 for item in result)
 
 
 def test_bass_does_not_keep_vocal_or_upper_harmonics():

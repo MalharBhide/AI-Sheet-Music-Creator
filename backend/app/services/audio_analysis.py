@@ -97,6 +97,36 @@ def estimate_tempo(audio_path: Path, requested: float | None) -> tuple[float, li
     return bpm, warnings
 
 
+def triplet_beats(notes: list, tempo_bpm: float) -> set[int]:
+    """Recognize complete eighth-triplet groups, not isolated off-grid attacks.
+
+    Require all three distinct triplet positions within a beat, each within
+    .06 quarter notes. Chord duplication cannot inflate support. This preserves
+    clear triplets while leaving swing, incomplete groups and rubato unresolved.
+    """
+    support, positions = defaultdict(set), defaultdict(set)
+    for item in notes:
+        if not math.isfinite(item.start) or item.start < 0:
+            continue
+        position = item.start * tempo_bpm / 60
+        tick = math.floor(position * 3 + .5)
+        owner = tick // 3 if abs(position - tick / 3) <= .06 else math.floor(position)
+        positions[owner].add(round(position, 6))
+        if abs(position - tick / 3) <= .06:
+            beat, slot = divmod(tick, 3)
+            support[beat].add(slot)
+    chosen = set()
+    for beat, slots in support.items():
+        if len(slots) != 3:
+            continue
+        times = np.asarray(sorted(positions[beat]))
+        triplet_error = np.mean((times - np.floor(times * 3 + .5) / 3) ** 2)
+        straight_error = np.mean((times - np.floor(times * 4 + .5) / 4) ** 2)
+        if triplet_error < .5 * straight_error:
+            chosen.add(beat)
+    return chosen
+
+
 def clean_notes(notes: list, *, role: str, detail: str, tempo_bpm: float,
                 grid: str) -> list:
     """Remove detection glitches and make a conservative, playable reduction.
@@ -107,7 +137,11 @@ def clean_notes(notes: list, *, role: str, detail: str, tempo_bpm: float,
     """
     import pretty_midi
 
-    step = 60 / tempo_bpm / (4 if grid == "sixteenth" else 2)
+    subdivisions = 4 if grid == 'sixteenth' else 2
+    # A twelfth-quarter lattice represents straight sixteenths and eighth-note
+    # triplets exactly. It does not make every note a tiny twelfth-quarter note.
+    lattice = 12 if grid == 'sixteenth' else 2
+    step = 60 / tempo_bpm / lattice
     # The supervised vocal decoder already rejects brief pitch glitches. A
     # second generic 90 ms filter deletes legitimate fast melody notes.
     minimum = 0.045 if role in ("piano", "vocals") or detail == "detailed" else 0.09
@@ -115,17 +149,30 @@ def clean_notes(notes: list, *, role: str, detail: str, tempo_bpm: float,
     ranges = {"piano": (21, 108), "melody": (45, 96), "vocals": (21, 108),
               "bass": (21, 60), "other": (36, 96)}
     low, high = ranges[role]
+    candidates = [item for item in notes
+                  if math.isfinite(item.start) and math.isfinite(item.end)
+                  and item.end - item.start >= minimum and low <= item.pitch <= high
+                  and item.velocity >= velocity_floor]
+    triplets = triplet_beats(candidates, tempo_bpm) if grid == 'sixteenth' else set()
+
+    def ticks(seconds):
+        position = max(0., seconds) * tempo_bpm / 60
+        # Give small early/late jitter near a beat boundary the same beat owner.
+        nearest_triplet = math.floor(position * 3 + .5)
+        beat = nearest_triplet // 3 if abs(position - nearest_triplet / 3) <= .06 else math.floor(position)
+        division = 3 if beat in triplets else subdivisions
+        return math.floor(position * division + .5) * (lattice // division)
+
     valid = []
-    for item in notes:
-        if (not math.isfinite(item.start) or not math.isfinite(item.end)
-                or item.end - item.start < minimum or not low <= item.pitch <= high
-                or item.velocity < velocity_floor):
-            continue
+    for item in candidates:
         # The chosen score grid also defines MIDI timing. Group near-simultaneous
         # attacks before choosing a melody, so a few ms of jitter cannot become
         # a dense run of unrelated tiny notes.
-        start = max(0, math.floor(item.start / step + 0.5)) * step
-        end = max(start + step, math.floor(item.end / step + 0.5) * step)
+        start_tick = ticks(item.start)
+        beat = start_tick // lattice
+        minimum_ticks = lattice // (3 if beat in triplets else subdivisions)
+        start = start_tick * step
+        end = max(start_tick + minimum_ticks, ticks(item.end)) * step
         valid.append(pretty_midi.Note(velocity=int(item.velocity), pitch=int(item.pitch),
                                      start=start, end=end))
     grouped = defaultdict(list)

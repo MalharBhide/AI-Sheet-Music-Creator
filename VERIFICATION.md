@@ -1,5 +1,29 @@
 # Verification
 
+## Preserve clear triplet spacing
+
+Fixed a demonstrated rhythm-decoding error: equally spaced eighth triplets were
+forced into alternating short/long sixteenths. Complete triplet support and a
+strict grid-fit comparison select the triplet grid; notation preserves the same
+timing through a shared subdivision lattice. Simple eighth-note mode is unchanged.
+
+**167 tests passed; six audio-transcription integration cases were deliberately
+skipped.** Tests cover straight-pattern preservation, triplets, mixed rhythms,
+rests, held notes, chord duplication, noisy attacks, symbolic MusicXML tuplets,
+MIDI/browser playback spacing, and timing-model preservation guards. Lint passed.
+No user audio or user-score regeneration was used.
+
+Backend and frontend production builds passed. Deployed both after confirming
+the queue was idle; the frontend-proxied health endpoint reports ready with all
+dependencies available. Six in-memory notes verified that the running backend
+preserves triplet spacing. This deployment check created no transcription jobs.
+
+Also trained two onset/release regressors on labeled singing data. Validation
+mean timing error improved, but every tested strength lost some previously
+correct boundary matches. The candidate was rejected before test evaluation.
+Melody and V4 filtering weights remain unchanged. See the
+[timing report](docs/rhythm-timing-update.md) for evidence and limitations.
+
 ## Relationship-aware model experiment — not released
 
 Added 56 licensed piano training passages and 15 validation passages, retaining

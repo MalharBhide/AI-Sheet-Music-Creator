@@ -71,6 +71,30 @@ def roundtrip_notes(tmp_path, notes):
     return playback
 
 
+def test_triplet_rhythm_survives_notation_and_browser_playback(tmp_path):
+    import xml.etree.ElementTree as ET
+
+    from app.services.audio_analysis import clean_notes
+
+    source = pretty_midi.PrettyMIDI(initial_tempo=120, resolution=480)
+    melody = pretty_midi.Instrument(0)
+    melody.notes = clean_notes([pretty_midi.Note(80, 60 + i, i / 6, (i + 1) / 6)
+                               for i in range(6)], role='vocals', detail='balanced',
+                              tempo_bpm=120, grid='sixteenth')
+    source.instruments.append(melody)
+    midi, xml = tmp_path / 'triplet.mid', tmp_path / 'triplet.musicxml'
+    source.write(str(midi))
+    midi_to_musicxml(midi, xml, ScoreOptions(tempo_bpm=120), 'Controlled rhythm fixture')
+    tree = ET.parse(xml)
+    assert tree.findall('.//time-modification')
+    playback = export_score_playback(xml, midi, tmp_path / 'playback.json', 120)
+    assert [n['pitch'] for n in playback['notes']] == list(range(60, 66))
+    assert [n['start'] for n in playback['notes']] == pytest.approx([i / 6 for i in range(6)], abs=1e-6)
+    assert [n['end'] for n in playback['notes']] == pytest.approx([(i + 1) / 6 for i in range(6)], abs=1e-6)
+    canonical = pretty_midi.PrettyMIDI(str(midi))
+    assert [n.start for p in canonical.instruments for n in p.notes] == pytest.approx([i / 6 for i in range(6)])
+
+
 def test_sparse_voices_preserve_sustain_releases_and_individual_velocities(tmp_path):
     notes = [(60, 0, 4, 70), (64, .5, 1, 50), (65, 1.5, 2, 100), (67, 2.5, 3, 80)]
     assert sorted(roundtrip_notes(tmp_path, notes)) == sorted(notes)

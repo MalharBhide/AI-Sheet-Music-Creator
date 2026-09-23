@@ -20,6 +20,9 @@ detected melody or harmony is correct.
 
 Full-song melody recognition now includes a locally trained neural decoder. See the [transcription framework](docs/transcription-framework.md), [training workflow](training/README.md), and [model card with held-out results](docs/melody-model-card.md).
 
+Precise rhythm now preserves clearly detected eighth-note triplets alongside
+straight sixteenths. See the [timing update and measured limits](docs/rhythm-timing-update.md).
+
 ## Quick start with Docker
 
 Install and open [Docker Desktop](https://www.docker.com/products/docker-desktop/), then run from this repository:

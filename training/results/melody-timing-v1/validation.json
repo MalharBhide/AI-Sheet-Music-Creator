@@ -1,0 +1,4490 @@
+[
+  {
+    "scale": 0.25,
+    "passes": false,
+    "failed_recordings": [
+      "vocadito-9",
+      "vocadito-30",
+      "vocadito-36",
+      "vocalset-m2_scales_f_slow_piano_i"
+    ],
+    "mean_absolute_onset_release_error_seconds": {
+      "vocadito": {
+        "before_error_sum": [
+          0.03176338094295299,
+          0.054440335399328826
+        ],
+        "after_error_sum": [
+          0.02871587997312745,
+          0.05268043682796531
+        ],
+        "timing_pairs": 298
+      },
+      "vocalset": {
+        "before_error_sum": [
+          0.06663126838235295,
+          0.18958532169117642
+        ],
+        "after_error_sum": [
+          0.05877159834717827,
+          0.18622187620089278
+        ],
+        "timing_pairs": 544
+      }
+    },
+    "per_recording": [
+      {
+        "id": "vocadito-7",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 36,
+            "after": 36,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 23,
+            "after": 23,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 41,
+        "before_error_sum": [
+          1.089433106999994,
+          2.275736959000003
+        ],
+        "after_error_sum": [
+          0.9436638424439665,
+          2.1920246775162946
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-9",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 39,
+            "after": 39,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 30,
+            "after": 30,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 43,
+        "before_error_sum": [
+          1.4484353740000047,
+          2.473582763
+        ],
+        "after_error_sum": [
+          1.3123419878833407,
+          2.3895425220909607
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocadito-13",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 37,
+            "after": 39,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 31,
+            "after": 33,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 45,
+        "before_error_sum": [
+          1.994308389000005,
+          3.2837414940000036
+        ],
+        "after_error_sum": [
+          1.8141705983522525,
+          3.197261113313875
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-16",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 38,
+            "after": 38,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 32,
+            "after": 33,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 40,
+        "before_error_sum": [
+          0.7959183679999928,
+          1.370657601999997
+        ],
+        "after_error_sum": [
+          0.6735387820065272,
+          1.3334346497436889
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-27",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 24,
+            "after": 25,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 20,
+            "after": 21,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 29,
+        "before_error_sum": [
+          0.7463945579999978,
+          1.0839909280000006
+        ],
+        "after_error_sum": [
+          0.6961102422460883,
+          1.0419786998199723
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-30",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 27,
+            "after": 27,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 23,
+            "after": 22,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 30,
+        "before_error_sum": [
+          0.966712013999996,
+          1.2608843530000002
+        ],
+        "after_error_sum": [
+          0.8294801333200256,
+          1.2903323119855903
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocadito-35",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 18,
+            "after": 19,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 16,
+            "after": 17,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 24,
+        "before_error_sum": [
+          1.1440816310000024,
+          1.3588435389999953
+        ],
+        "after_error_sum": [
+          1.076061133224384,
+          1.2916320728586572
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-36",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 39,
+            "after": 39,
+            "lost": 1
+          },
+          "onset_offset": {
+            "before": 31,
+            "after": 30,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 46,
+        "before_error_sum": [
+          1.2802040799999987,
+          3.1157823109999887
+        ],
+        "after_error_sum": [
+          1.211965512515397,
+          2.962564127404624
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-f2_arpeggios_f_slow_piano_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 5,
+        "before_error_sum": [
+          0.3941300000000001,
+          3.50392
+        ],
+        "after_error_sum": [
+          0.3129268179782898,
+          3.517408546093932
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_dona_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 18,
+            "after": 20,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 18,
+            "after": 20,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 23,
+        "before_error_sum": [
+          0.869379999999996,
+          0.7281699999999969
+        ],
+        "after_error_sum": [
+          0.7328870913850809,
+          0.6452018508211161
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_row_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 8,
+            "after": 9,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 6,
+            "after": 7,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          0.9329799999999946,
+          4.4011900000000015
+        ],
+        "after_error_sum": [
+          0.7926067450768565,
+          4.383263013129532
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_scales_c_fast_piano_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 8,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 6,
+            "after": 7,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 10,
+        "before_error_sum": [
+          0.41573000000000027,
+          0.4329200000000003
+        ],
+        "after_error_sum": [
+          0.3795873113080987,
+          0.39241848670753277
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_arpeggios_belt_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 7,
+        "before_error_sum": [
+          0.5859699999999999,
+          0.43069999999999964
+        ],
+        "after_error_sum": [
+          0.4729129629549892,
+          0.4072643546795691
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_scales_f_slow_forte_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 3,
+            "after": 4,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 13,
+        "before_error_sum": [
+          1.3131600000000025,
+          3.187669999999997
+        ],
+        "after_error_sum": [
+          1.240626635243651,
+          3.1613191191107752
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_long_trill_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 0,
+        "before_error_sum": [
+          0.0,
+          0.0
+        ],
+        "after_error_sum": [
+          0.0,
+          0.0
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_scales_breathy_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 9,
+            "after": 10,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 17,
+        "before_error_sum": [
+          1.0029999999999997,
+          0.8057799999999988
+        ],
+        "after_error_sum": [
+          0.8571379361825163,
+          0.7056302459036556
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_arpeggios_straight_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 2,
+            "after": 3,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 7,
+        "before_error_sum": [
+          0.47997999999999963,
+          0.32374999999999976
+        ],
+        "after_error_sum": [
+          0.3887420643140065,
+          0.27299182620688867
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_long_trillo_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.24438999999999966,
+          3.3888499999999997
+        ],
+        "after_error_sum": [
+          0.24031033590647244,
+          3.3779531360863992
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_long_straight_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.20538999999999952,
+          0.25863999999999887
+        ],
+        "after_error_sum": [
+          0.17700743457785428,
+          0.2520417918804805
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_scales_belt_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 2,
+            "after": 4,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 12,
+        "before_error_sum": [
+          0.9576500000000003,
+          1.0246
+        ],
+        "after_error_sum": [
+          0.8034333732936151,
+          0.9722328942601843
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_arpeggios_lip_trill_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 3,
+        "before_error_sum": [
+          0.28099000000000035,
+          2.2633600000000005
+        ],
+        "after_error_sum": [
+          0.2604623537701423,
+          2.257358182650279
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_dona_vibrato",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 16,
+            "after": 18,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 11,
+            "after": 12,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 22,
+        "before_error_sum": [
+          0.9368699999999968,
+          5.27262
+        ],
+        "after_error_sum": [
+          0.7299371140938896,
+          5.20262325743218
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_long_forte_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 3,
+        "before_error_sum": [
+          0.2232600000000005,
+          3.47121
+        ],
+        "after_error_sum": [
+          0.17573379620740776,
+          3.4591851632114667
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_scales_breathy_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 6,
+            "after": 7,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 4,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 13,
+        "before_error_sum": [
+          0.7256599999999991,
+          0.7675899999999993
+        ],
+        "after_error_sum": [
+          0.659080015350931,
+          0.7300243595474015
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_arpeggios_c_fast_forte_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 4,
+            "after": 4,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 4,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 6,
+        "before_error_sum": [
+          0.3058400000000002,
+          0.21469000000000027
+        ],
+        "after_error_sum": [
+          0.2610127523204422,
+          0.18672334237595123
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_long_straight_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.14829999999999952,
+          0.24621999999999966
+        ],
+        "after_error_sum": [
+          0.11756165955252115,
+          0.22924152295623124
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_arpeggios_belt_2_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 5,
+        "before_error_sum": [
+          0.37417999999999935,
+          2.1308900000000004
+        ],
+        "after_error_sum": [
+          0.3052887905005756,
+          2.1273677367163804
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_caro_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 11,
+            "after": 11,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 10,
+            "after": 10,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 24,
+        "before_error_sum": [
+          1.4760199999999997,
+          1.9669700000000039
+        ],
+        "after_error_sum": [
+          1.2638268240286814,
+          1.8520112200483334
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_row_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 5,
+            "after": 6,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 3,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 15,
+        "before_error_sum": [
+          1.0305800000000018,
+          2.854999999999997
+        ],
+        "after_error_sum": [
+          0.9511294653466373,
+          2.814513736404183
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_scales_c_slow_forte_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 10,
+            "after": 12,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 9,
+            "after": 10,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          0.9186399999999992,
+          2.314219999999999
+        ],
+        "after_error_sum": [
+          0.7811430404483403,
+          2.253374975167703
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_arpeggios_c_slow_piano_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 3,
+            "after": 5,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 2,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 7,
+        "before_error_sum": [
+          0.35911999999999905,
+          2.3234699999999986
+        ],
+        "after_error_sum": [
+          0.28108792376720493,
+          2.3084662514271166
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_row_vibrato",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 9,
+            "after": 10,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 5,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 18,
+        "before_error_sum": [
+          1.2110299999999998,
+          2.8384100000000014
+        ],
+        "after_error_sum": [
+          1.07441505807126,
+          2.7909963855373547
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_arpeggios_c_slow_piano_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 7,
+        "before_error_sum": [
+          0.5210899999999992,
+          0.3949250000000011
+        ],
+        "after_error_sum": [
+          0.45143235715857827,
+          0.3287850277396913
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_arpeggios_breathy_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 6,
+        "before_error_sum": [
+          0.7054450000000003,
+          1.3398250000000012
+        ],
+        "after_error_sum": [
+          0.6509142634981746,
+          1.2999853048825214
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_dona_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 4,
+            "after": 5,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 13,
+        "before_error_sum": [
+          1.2465200000000003,
+          3.389470000000003
+        ],
+        "after_error_sum": [
+          1.1070498152556176,
+          3.3981119002539724
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_c_fast_piano_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 13,
+            "after": 13,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          0.5588650000000002,
+          0.6883399999999996
+        ],
+        "after_error_sum": [
+          0.48545313781194466,
+          0.6149827203055743
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_belt_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 6,
+            "after": 7,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 3,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 12,
+        "before_error_sum": [
+          0.9444399999999994,
+          2.298869999999999
+        ],
+        "after_error_sum": [
+          0.90754695062946,
+          2.2893266261649337
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_c_slow_piano_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 9,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 7,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          0.8484750000000014,
+          0.7735600000000014
+        ],
+        "after_error_sum": [
+          0.7636222305111348,
+          0.6787770630097709
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_caro_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 6,
+            "after": 10,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 5,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 20,
+        "before_error_sum": [
+          1.447564999999999,
+          2.8933849999999945
+        ],
+        "after_error_sum": [
+          1.2430460676922148,
+          2.7911362304783864
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_dona_vibrato",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 2,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 14,
+        "before_error_sum": [
+          0.8062049999999967,
+          5.068255000000004
+        ],
+        "after_error_sum": [
+          0.677440506275218,
+          5.061885818632298
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_c_slow_forte_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 11,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 4,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 15,
+        "before_error_sum": [
+          0.8572299999999995,
+          1.421270000000001
+        ],
+        "after_error_sum": [
+          0.7263212014226551,
+          1.3440801876756825
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_arpeggios_straight_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 2,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 2,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 6,
+        "before_error_sum": [
+          0.39950499999999983,
+          0.3692549999999988
+        ],
+        "after_error_sum": [
+          0.3366226744043211,
+          0.3133198907355077
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_breathy_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 9,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 6,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 14,
+        "before_error_sum": [
+          0.888435000000001,
+          1.1794999999999989
+        ],
+        "after_error_sum": [
+          0.7875251338243654,
+          1.1192223471908047
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_row_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 7,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 5,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          1.0388250000000028,
+          3.6506199999999978
+        ],
+        "after_error_sum": [
+          0.9394493566113495,
+          3.598365978987268
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_arpeggios_lip_trill_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.05069999999999908,
+          1.322309999999999
+        ],
+        "after_error_sum": [
+          0.0418882857274161,
+          1.3231922510448806
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_scales_breathy_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 3,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 14,
+        "before_error_sum": [
+          1.404300000000001,
+          1.4025799999999997
+        ],
+        "after_error_sum": [
+          1.3106508676696702,
+          1.3360629542833873
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_row_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 4,
+            "after": 5,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 17,
+        "before_error_sum": [
+          1.5015800000000001,
+          5.930189999999998
+        ],
+        "after_error_sum": [
+          1.3585981895833648,
+          5.88803191711362
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_scales_f_fast_forte_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 8,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 5,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 11,
+        "before_error_sum": [
+          0.5268399999999995,
+          0.8025599999999997
+        ],
+        "after_error_sum": [
+          0.49767210341057755,
+          0.7370725664727309
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_scales_belt_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 8,
+            "after": 11,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 6,
+            "after": 7,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 14,
+        "before_error_sum": [
+          0.7158000000000005,
+          1.21826
+        ],
+        "after_error_sum": [
+          0.6448518982357634,
+          1.1717128117503282
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_scales_f_slow_piano_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 9,
+            "after": 10,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 8,
+            "after": 8,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 17,
+        "before_error_sum": [
+          1.1415999999999986,
+          0.8256399999999998
+        ],
+        "after_error_sum": [
+          0.9987209463043552,
+          0.7416256074716184
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-m2_arpeggios_straight_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 5,
+        "before_error_sum": [
+          0.5577800000000013,
+          0.3913000000000002
+        ],
+        "after_error_sum": [
+          0.5117032513870066,
+          0.37151711934945153
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_long_trill_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.24380999999999997,
+          4.836600000000001
+        ],
+        "after_error_sum": [
+          0.23130927856728373,
+          4.833072413840743
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_caro_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 13,
+            "after": 16,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 8,
+            "after": 10,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 29,
+        "before_error_sum": [
+          2.0775599999999965,
+          7.898150000000007
+        ],
+        "after_error_sum": [
+          1.8838043490194167,
+          7.88224612602702
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_long_trillo_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 1,
+        "before_error_sum": [
+          0.07746,
+          1.38794
+        ],
+        "after_error_sum": [
+          0.05746000000000001,
+          1.3901309559338735
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_caro_vibrato",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 8,
+            "after": 10,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 4,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 24,
+        "before_error_sum": [
+          2.090010000000005,
+          8.141449999999992
+        ],
+        "after_error_sum": [
+          1.9234087344301327,
+          8.154669150134835
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_arpeggios_c_fast_forte_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 4,
+            "after": 4,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 3,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 5,
+        "before_error_sum": [
+          0.20512000000000022,
+          0.35932000000000003
+        ],
+        "after_error_sum": [
+          0.1764003997554822,
+          0.33777628545212696
+        ],
+        "passes": true
+      }
+    ]
+  },
+  {
+    "scale": 0.5,
+    "passes": false,
+    "failed_recordings": [
+      "vocadito-9",
+      "vocadito-30",
+      "vocadito-36",
+      "vocalset-f6_dona_vibrato",
+      "vocalset-m2_scales_f_fast_forte_u",
+      "vocalset-m2_scales_f_slow_piano_i",
+      "vocalset-m2_caro_vibrato"
+    ],
+    "mean_absolute_onset_release_error_seconds": {
+      "vocadito": {
+        "before_error_sum": [
+          0.03176338094295299,
+          0.054440335399328826
+        ],
+        "after_error_sum": [
+          0.026139659866482905,
+          0.05156876931460411
+        ],
+        "timing_pairs": 298
+      },
+      "vocalset": {
+        "before_error_sum": [
+          0.06663126838235295,
+          0.18958532169117642
+        ],
+        "after_error_sum": [
+          0.051286954213676746,
+          0.18300844957831627
+        ],
+        "timing_pairs": 544
+      }
+    },
+    "per_recording": [
+      {
+        "id": "vocadito-7",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 36,
+            "after": 36,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 23,
+            "after": 24,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 41,
+        "before_error_sum": [
+          1.089433106999994,
+          2.275736959000003
+        ],
+        "after_error_sum": [
+          0.8173745169680134,
+          2.1261933227724956
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-9",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 39,
+            "after": 39,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 30,
+            "after": 31,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 43,
+        "before_error_sum": [
+          1.4484353740000047,
+          2.473582763
+        ],
+        "after_error_sum": [
+          1.1880940175911012,
+          2.3520694735982017
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocadito-13",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 37,
+            "after": 40,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 31,
+            "after": 34,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 45,
+        "before_error_sum": [
+          1.994308389000005,
+          3.2837414940000036
+        ],
+        "after_error_sum": [
+          1.6651256189478125,
+          3.1107807326277506
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-16",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 38,
+            "after": 39,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 32,
+            "after": 35,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 40,
+        "before_error_sum": [
+          0.7959183679999928,
+          1.370657601999997
+        ],
+        "after_error_sum": [
+          0.5638430927265954,
+          1.3299380528233733
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-27",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 24,
+            "after": 25,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 20,
+            "after": 21,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 29,
+        "before_error_sum": [
+          0.7463945579999978,
+          1.0839909280000006
+        ],
+        "after_error_sum": [
+          0.6458259264921766,
+          1.0030937746154989
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-30",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 27,
+            "after": 28,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 23,
+            "after": 23,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 30,
+        "before_error_sum": [
+          0.966712013999996,
+          1.2608843530000002
+        ],
+        "after_error_sum": [
+          0.720870474903846,
+          1.3549941499016849
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocadito-35",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 18,
+            "after": 19,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 16,
+            "after": 17,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 24,
+        "before_error_sum": [
+          1.1440816310000024,
+          1.3588435389999953
+        ],
+        "after_error_sum": [
+          1.0250755095515562,
+          1.2709670074180743
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-36",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 39,
+            "after": 40,
+            "lost": 1
+          },
+          "onset_offset": {
+            "before": 31,
+            "after": 33,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 46,
+        "before_error_sum": [
+          1.2802040799999987,
+          3.1157823109999887
+        ],
+        "after_error_sum": [
+          1.163409483030804,
+          2.819456741994944
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-f2_arpeggios_f_slow_piano_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 5,
+        "before_error_sum": [
+          0.3941300000000001,
+          3.50392
+        ],
+        "after_error_sum": [
+          0.250086380050484,
+          3.5308970921878613
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_dona_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 18,
+            "after": 20,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 18,
+            "after": 20,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 23,
+        "before_error_sum": [
+          0.869379999999996,
+          0.7281699999999969
+        ],
+        "after_error_sum": [
+          0.6034541827701729,
+          0.5732563767455344
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_row_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 8,
+            "after": 11,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 6,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          0.9329799999999946,
+          4.4011900000000015
+        ],
+        "after_error_sum": [
+          0.652233490153717,
+          4.366256299071447
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_scales_c_fast_piano_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 8,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 6,
+            "after": 7,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 10,
+        "before_error_sum": [
+          0.41573000000000027,
+          0.4329200000000003
+        ],
+        "after_error_sum": [
+          0.3604673136298365,
+          0.35191697341506445
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_arpeggios_belt_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 3,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 2,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 7,
+        "before_error_sum": [
+          0.5859699999999999,
+          0.43069999999999964
+        ],
+        "after_error_sum": [
+          0.3598559259099779,
+          0.3838287093591388
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_scales_f_slow_forte_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 3,
+            "after": 5,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 13,
+        "before_error_sum": [
+          1.3131600000000025,
+          3.187669999999997
+        ],
+        "after_error_sum": [
+          1.1680932704873037,
+          3.147293897909072
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_long_trill_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 0,
+        "before_error_sum": [
+          0.0,
+          0.0
+        ],
+        "after_error_sum": [
+          0.0,
+          0.0
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_scales_breathy_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 9,
+            "after": 12,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 9,
+            "after": 11,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 17,
+        "before_error_sum": [
+          1.0029999999999997,
+          0.8057799999999988
+        ],
+        "after_error_sum": [
+          0.7218682818511494,
+          0.603128082321198
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_arpeggios_straight_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 2,
+            "after": 6,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 7,
+        "before_error_sum": [
+          0.47997999999999963,
+          0.32374999999999976
+        ],
+        "after_error_sum": [
+          0.29750412862801356,
+          0.22223365241377557
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_long_trillo_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.24438999999999966,
+          3.3888499999999997
+        ],
+        "after_error_sum": [
+          0.23623067181294388,
+          3.36786333528113
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_long_straight_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.20538999999999952,
+          0.25863999999999887
+        ],
+        "after_error_sum": [
+          0.14862486915570827,
+          0.24544358376096476
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_scales_belt_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 2,
+            "after": 7,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 12,
+        "before_error_sum": [
+          0.9576500000000003,
+          1.0246
+        ],
+        "after_error_sum": [
+          0.6492167465872314,
+          0.9198657885203707
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_arpeggios_lip_trill_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 3,
+        "before_error_sum": [
+          0.28099000000000035,
+          2.2633600000000005
+        ],
+        "after_error_sum": [
+          0.23993470754028384,
+          2.251356365300558
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_dona_vibrato",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 16,
+            "after": 19,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 11,
+            "after": 12,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 22,
+        "before_error_sum": [
+          0.9368699999999968,
+          5.27262
+        ],
+        "after_error_sum": [
+          0.5394898657067806,
+          5.132626514864364
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-f6_long_forte_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 3,
+        "before_error_sum": [
+          0.2232600000000005,
+          3.47121
+        ],
+        "after_error_sum": [
+          0.12820759241481372,
+          3.4471603264229334
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_scales_breathy_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 6,
+            "after": 8,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 4,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 13,
+        "before_error_sum": [
+          0.7256599999999991,
+          0.7675899999999993
+        ],
+        "after_error_sum": [
+          0.5959742676054488,
+          0.6971642313776593
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_arpeggios_c_fast_forte_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 4,
+            "after": 5,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 4,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 6,
+        "before_error_sum": [
+          0.3058400000000002,
+          0.21469000000000027
+        ],
+        "after_error_sum": [
+          0.21618550464088426,
+          0.15875668475190258
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_long_straight_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.14829999999999952,
+          0.24621999999999966
+        ],
+        "after_error_sum": [
+          0.08682331910504362,
+          0.21226304591246326
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_arpeggios_belt_2_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 3,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 5,
+        "before_error_sum": [
+          0.37417999999999935,
+          2.1308900000000004
+        ],
+        "after_error_sum": [
+          0.23639758100115094,
+          2.1238454734327625
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_caro_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 11,
+            "after": 14,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 10,
+            "after": 12,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 24,
+        "before_error_sum": [
+          1.4760199999999997,
+          1.9669700000000039
+        ],
+        "after_error_sum": [
+          1.070747975294175,
+          1.7416924400966503
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_row_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 5,
+            "after": 7,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 3,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 15,
+        "before_error_sum": [
+          1.0305800000000018,
+          2.854999999999997
+        ],
+        "after_error_sum": [
+          0.8716789306932741,
+          2.7740274728083714
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_scales_c_slow_forte_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 10,
+            "after": 13,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 9,
+            "after": 11,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          0.9186399999999992,
+          2.314219999999999
+        ],
+        "after_error_sum": [
+          0.650025858656179,
+          2.1935275743942113
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_arpeggios_c_slow_piano_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 3,
+            "after": 6,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 7,
+        "before_error_sum": [
+          0.35911999999999905,
+          2.3234699999999986
+        ],
+        "after_error_sum": [
+          0.20305584753440975,
+          2.2934625028542337
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_row_vibrato",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 9,
+            "after": 10,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 5,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 18,
+        "before_error_sum": [
+          1.2110299999999998,
+          2.8384100000000014
+        ],
+        "after_error_sum": [
+          0.9498454015057503,
+          2.7435827710747067
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_arpeggios_c_slow_piano_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 3,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 7,
+        "before_error_sum": [
+          0.5210899999999992,
+          0.3949250000000011
+        ],
+        "after_error_sum": [
+          0.38177471431715687,
+          0.26264505547938155
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_arpeggios_breathy_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 6,
+        "before_error_sum": [
+          0.7054450000000003,
+          1.3398250000000012
+        ],
+        "after_error_sum": [
+          0.5963835269963483,
+          1.2601456097650392
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_dona_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 4,
+            "after": 5,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 13,
+        "before_error_sum": [
+          1.2465200000000003,
+          3.389470000000003
+        ],
+        "after_error_sum": [
+          0.9675796305112432,
+          3.4067538005079414
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_c_fast_piano_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 13,
+            "after": 13,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          0.5588650000000002,
+          0.6883399999999996
+        ],
+        "after_error_sum": [
+          0.4220420652791027,
+          0.5533213492160745
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_belt_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 6,
+            "after": 7,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 3,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 12,
+        "before_error_sum": [
+          0.9444399999999994,
+          2.298869999999999
+        ],
+        "after_error_sum": [
+          0.8772739012589248,
+          2.2994241784882887
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_c_slow_piano_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 11,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 7,
+            "after": 11,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          0.8484750000000014,
+          0.7735600000000014
+        ],
+        "after_error_sum": [
+          0.6787694610222674,
+          0.5848186958975925
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_caro_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 6,
+            "after": 13,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 5,
+            "after": 11,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 20,
+        "before_error_sum": [
+          1.447564999999999,
+          2.8933849999999945
+        ],
+        "after_error_sum": [
+          1.054037135384417,
+          2.688887460956775
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_dona_vibrato",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 9,
+            "after": 10,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 14,
+        "before_error_sum": [
+          0.8062049999999967,
+          5.068255000000004
+        ],
+        "after_error_sum": [
+          0.5637360125504305,
+          5.055516637264574
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_c_slow_forte_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 11,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 4,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 15,
+        "before_error_sum": [
+          0.8572299999999995,
+          1.421270000000001
+        ],
+        "after_error_sum": [
+          0.5979763818000197,
+          1.2754097133470657
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_arpeggios_straight_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 2,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 2,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 6,
+        "before_error_sum": [
+          0.39950499999999983,
+          0.3692549999999988
+        ],
+        "after_error_sum": [
+          0.2779607082488426,
+          0.25738478147101396
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_breathy_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 10,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 6,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 14,
+        "before_error_sum": [
+          0.888435000000001,
+          1.1794999999999989
+        ],
+        "after_error_sum": [
+          0.6924250369520021,
+          1.0589446943816103
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_row_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 8,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 5,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          1.0388250000000028,
+          3.6506199999999978
+        ],
+        "after_error_sum": [
+          0.8410737132226905,
+          3.546111957974539
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_arpeggios_lip_trill_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.05069999999999908,
+          1.322309999999999
+        ],
+        "after_error_sum": [
+          0.04065441035559747,
+          1.3240745020897622
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_scales_breathy_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 4,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 14,
+        "before_error_sum": [
+          1.404300000000001,
+          1.4025799999999997
+        ],
+        "after_error_sum": [
+          1.2240643824344466,
+          1.269545908566772
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_row_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 4,
+            "after": 7,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 17,
+        "before_error_sum": [
+          1.5015800000000001,
+          5.930189999999998
+        ],
+        "after_error_sum": [
+          1.2167917741279806,
+          5.845873834227245
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_scales_f_fast_forte_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 8,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 5,
+            "after": 7,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 11,
+        "before_error_sum": [
+          0.5268399999999995,
+          0.8025599999999997
+        ],
+        "after_error_sum": [
+          0.4685042068211568,
+          0.6715851329454614
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-m2_scales_belt_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 8,
+            "after": 12,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 6,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 14,
+        "before_error_sum": [
+          0.7158000000000005,
+          1.21826
+        ],
+        "after_error_sum": [
+          0.5739037964715283,
+          1.1310656235006555
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_scales_f_slow_piano_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 9,
+            "after": 12,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 8,
+            "after": 10,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 17,
+        "before_error_sum": [
+          1.1415999999999986,
+          0.8256399999999998
+        ],
+        "after_error_sum": [
+          0.860741892608717,
+          0.6595743387717766
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-m2_arpeggios_straight_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 5,
+        "before_error_sum": [
+          0.5577800000000013,
+          0.3913000000000002
+        ],
+        "after_error_sum": [
+          0.465626502774015,
+          0.3517342386989013
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_long_trill_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.24380999999999997,
+          4.836600000000001
+        ],
+        "after_error_sum": [
+          0.21880855713456743,
+          4.829544827681486
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_caro_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 13,
+            "after": 18,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 8,
+            "after": 11,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 29,
+        "before_error_sum": [
+          2.0775599999999965,
+          7.898150000000007
+        ],
+        "after_error_sum": [
+          1.6926930626465801,
+          7.8663422520540385
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_long_trillo_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 1,
+        "before_error_sum": [
+          0.07746,
+          1.38794
+        ],
+        "after_error_sum": [
+          0.03745999999999999,
+          1.392321911867747
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_caro_vibrato",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 8,
+            "after": 12,
+            "lost": 1
+          },
+          "onset_offset": {
+            "before": 4,
+            "after": 6,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 24,
+        "before_error_sum": [
+          2.090010000000005,
+          8.141449999999992
+        ],
+        "after_error_sum": [
+          1.757527468860261,
+          8.167888300269661
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-m2_arpeggios_c_fast_forte_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 4,
+            "after": 4,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 3,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 5,
+        "before_error_sum": [
+          0.20512000000000022,
+          0.35932000000000003
+        ],
+        "after_error_sum": [
+          0.15629263772712787,
+          0.31623257090425433
+        ],
+        "passes": true
+      }
+    ]
+  },
+  {
+    "scale": 1.0,
+    "passes": false,
+    "failed_recordings": [
+      "vocadito-9",
+      "vocadito-30",
+      "vocadito-35",
+      "vocadito-36",
+      "vocalset-f6_dona_vibrato",
+      "vocalset-f6_caro_straight",
+      "vocalset-f6_scales_c_slow_forte_a",
+      "vocalset-m9_caro_straight",
+      "vocalset-m2_scales_f_fast_forte_u",
+      "vocalset-m2_scales_f_slow_piano_i",
+      "vocalset-m2_caro_straight",
+      "vocalset-m2_caro_vibrato",
+      "vocalset-m2_arpeggios_c_fast_forte_i"
+    ],
+    "mean_absolute_onset_release_error_seconds": {
+      "vocadito": {
+        "before_error_sum": [
+          0.03176338094295299,
+          0.054440335399328826
+        ],
+        "after_error_sum": [
+          0.025137229324794688,
+          0.051970187910176484
+        ],
+        "timing_pairs": 298
+      },
+      "vocalset": {
+        "before_error_sum": [
+          0.06663126838235295,
+          0.18958532169117642
+        ],
+        "after_error_sum": [
+          0.040248220887108374,
+          0.1781940651273606
+        ],
+        "timing_pairs": 544
+      }
+    },
+    "per_recording": [
+      {
+        "id": "vocadito-7",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 36,
+            "after": 37,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 23,
+            "after": 29,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 41,
+        "before_error_sum": [
+          1.089433106999994,
+          2.275736959000003
+        ],
+        "after_error_sum": [
+          0.7470753333185208,
+          2.078002714055803
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-9",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 39,
+            "after": 39,
+            "lost": 2
+          },
+          "onset_offset": {
+            "before": 30,
+            "after": 29,
+            "lost": 4
+          }
+        },
+        "timing_pairs": 43,
+        "before_error_sum": [
+          1.4484353740000047,
+          2.473582763
+        ],
+        "after_error_sum": [
+          1.1512360764025376,
+          2.4129555606707465
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocadito-13",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 37,
+            "after": 41,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 31,
+            "after": 35,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 45,
+        "before_error_sum": [
+          1.994308389000005,
+          3.2837414940000036
+        ],
+        "after_error_sum": [
+          1.5683653856418323,
+          3.024024411476887
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-16",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 38,
+            "after": 40,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 32,
+            "after": 37,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 40,
+        "before_error_sum": [
+          0.7959183679999928,
+          1.370657601999997
+        ],
+        "after_error_sum": [
+          0.5027382011356009,
+          1.4198665179484542
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-27",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 24,
+            "after": 26,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 20,
+            "after": 21,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 29,
+        "before_error_sum": [
+          0.7463945579999978,
+          1.0839909280000006
+        ],
+        "after_error_sum": [
+          0.5995014111551022,
+          0.950201633351414
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocadito-30",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 27,
+            "after": 28,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 23,
+            "after": 21,
+            "lost": 2
+          }
+        },
+        "timing_pairs": 30,
+        "before_error_sum": [
+          0.966712013999996,
+          1.2608843530000002
+        ],
+        "after_error_sum": [
+          0.6491829020137931,
+          1.610306190528981
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocadito-35",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 18,
+            "after": 18,
+            "lost": 1
+          },
+          "onset_offset": {
+            "before": 16,
+            "after": 17,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 24,
+        "before_error_sum": [
+          1.1440816310000024,
+          1.3588435389999953
+        ],
+        "after_error_sum": [
+          1.033232121629135,
+          1.3172382679911991
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocadito-36",
+        "corpus": "vocadito",
+        "matches": {
+          "onset": {
+            "before": 39,
+            "after": 38,
+            "lost": 3
+          },
+          "onset_offset": {
+            "before": 31,
+            "after": 32,
+            "lost": 2
+          }
+        },
+        "timing_pairs": 46,
+        "before_error_sum": [
+          1.2802040799999987,
+          3.1157823109999887
+        ],
+        "after_error_sum": [
+          1.239562907492295,
+          2.674520701209108
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-f2_arpeggios_f_slow_piano_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 4,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 5,
+        "before_error_sum": [
+          0.3941300000000001,
+          3.50392
+        ],
+        "after_error_sum": [
+          0.14866276010096757,
+          3.5578741843757267
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_dona_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 18,
+            "after": 21,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 18,
+            "after": 21,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 23,
+        "before_error_sum": [
+          0.869379999999996,
+          0.7281699999999969
+        ],
+        "after_error_sum": [
+          0.4711184619462421,
+          0.4455433391926763
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_row_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 8,
+            "after": 12,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 6,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          0.9329799999999946,
+          4.4011900000000015
+        ],
+        "after_error_sum": [
+          0.4869642488092095,
+          4.332502598142894
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_scales_c_fast_piano_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 8,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 6,
+            "after": 7,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 10,
+        "before_error_sum": [
+          0.41573000000000027,
+          0.4329200000000003
+        ],
+        "after_error_sum": [
+          0.3507551091533812,
+          0.28124140819450527
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_arpeggios_belt_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 7,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 7,
+        "before_error_sum": [
+          0.5859699999999999,
+          0.43069999999999964
+        ],
+        "after_error_sum": [
+          0.15013272043581027,
+          0.35392545146698473
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_scales_f_slow_forte_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 3,
+            "after": 6,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 13,
+        "before_error_sum": [
+          1.3131600000000025,
+          3.187669999999997
+        ],
+        "after_error_sum": [
+          1.0288098939058703,
+          3.1467094054366305
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_long_trill_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 0,
+        "before_error_sum": [
+          0.0,
+          0.0
+        ],
+        "after_error_sum": [
+          0.0,
+          0.0
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_scales_breathy_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 9,
+            "after": 13,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 9,
+            "after": 13,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 17,
+        "before_error_sum": [
+          1.0029999999999997,
+          0.8057799999999988
+        ],
+        "after_error_sum": [
+          0.5091957145908639,
+          0.4140775452984051
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_arpeggios_straight_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 2,
+            "after": 6,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 7,
+        "before_error_sum": [
+          0.47997999999999963,
+          0.32374999999999976
+        ],
+        "after_error_sum": [
+          0.12145429426320387,
+          0.13638298194954168
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_long_trillo_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.24438999999999966,
+          3.3888499999999997
+        ],
+        "after_error_sum": [
+          0.22807134362588766,
+          3.36687667056226
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_long_straight_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.20538999999999952,
+          0.25863999999999887
+        ],
+        "after_error_sum": [
+          0.09318041156500478,
+          0.23224716752193064
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f2_scales_belt_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 2,
+            "after": 10,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 12,
+        "before_error_sum": [
+          0.9576500000000003,
+          1.0246
+        ],
+        "after_error_sum": [
+          0.34700443288422156,
+          0.8159730832753356
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_arpeggios_lip_trill_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 3,
+        "before_error_sum": [
+          0.28099000000000035,
+          2.2633600000000005
+        ],
+        "after_error_sum": [
+          0.1988794150805664,
+          2.2451931974335757
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_dona_vibrato",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 16,
+            "after": 21,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 11,
+            "after": 13,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 22,
+        "before_error_sum": [
+          0.9368699999999968,
+          5.27262
+        ],
+        "after_error_sum": [
+          0.35587738532312757,
+          5.0238314699790605
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-f6_long_forte_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 3,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 3,
+        "before_error_sum": [
+          0.2232600000000005,
+          3.47121
+        ],
+        "after_error_sum": [
+          0.0485359163740981,
+          3.423110652845867
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_scales_breathy_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 6,
+            "after": 9,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 4,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 13,
+        "before_error_sum": [
+          0.7256599999999991,
+          0.7675899999999993
+        ],
+        "after_error_sum": [
+          0.4884724647505665,
+          0.6591640053006002
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_arpeggios_c_fast_forte_o",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 4,
+            "after": 6,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 4,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 6,
+        "before_error_sum": [
+          0.3058400000000002,
+          0.21469000000000027
+        ],
+        "after_error_sum": [
+          0.12653100928176825,
+          0.12563665224834641
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_long_straight_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 2,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.14829999999999952,
+          0.24621999999999966
+        ],
+        "after_error_sum": [
+          0.06711102707387753,
+          0.17830609182492552
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_arpeggios_belt_2_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 4,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 5,
+        "before_error_sum": [
+          0.37417999999999935,
+          2.1308900000000004
+        ],
+        "after_error_sum": [
+          0.13310597732444768,
+          2.1157299332960893
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_caro_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 11,
+            "after": 19,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 10,
+            "after": 16,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 24,
+        "before_error_sum": [
+          1.4760199999999997,
+          1.9669700000000039
+        ],
+        "after_error_sum": [
+          0.8327081578206804,
+          1.5718319433935877
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-f6_row_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 5,
+            "after": 9,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 3,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 15,
+        "before_error_sum": [
+          1.0305800000000018,
+          2.854999999999997
+        ],
+        "after_error_sum": [
+          0.7585301766698723,
+          2.693054945616749
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_scales_c_slow_forte_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 10,
+            "after": 13,
+            "lost": 1
+          },
+          "onset_offset": {
+            "before": 9,
+            "after": 10,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          0.9186399999999992,
+          2.314219999999999
+        ],
+        "after_error_sum": [
+          0.43668664105545063,
+          2.124402071802697
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-f6_arpeggios_c_slow_piano_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 3,
+            "after": 7,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 7,
+        "before_error_sum": [
+          0.35911999999999905,
+          2.3234699999999986
+        ],
+        "after_error_sum": [
+          0.09321585766230178,
+          2.3126551464396385
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-f6_row_vibrato",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 9,
+            "after": 11,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 5,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 18,
+        "before_error_sum": [
+          1.2110299999999998,
+          2.8384100000000014
+        ],
+        "after_error_sum": [
+          0.7747862850062025,
+          2.6825071999228243
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_arpeggios_c_slow_piano_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 6,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 7,
+        "before_error_sum": [
+          0.5210899999999992,
+          0.3949250000000011
+        ],
+        "after_error_sum": [
+          0.2499756684316647,
+          0.14849679001048655
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_arpeggios_breathy_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 2,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 6,
+        "before_error_sum": [
+          0.7054450000000003,
+          1.3398250000000012
+        ],
+        "after_error_sum": [
+          0.48732205399269657,
+          1.1804662195300801
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_dona_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 4,
+            "after": 7,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 13,
+        "before_error_sum": [
+          1.2465200000000003,
+          3.389470000000003
+        ],
+        "after_error_sum": [
+          0.7603656647941597,
+          3.424037601015881
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_c_fast_piano_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 13,
+            "after": 13,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          0.5588650000000002,
+          0.6883399999999996
+        ],
+        "after_error_sum": [
+          0.4424645893330539,
+          0.517324693950461
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_belt_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 6,
+            "after": 7,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 3,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 12,
+        "before_error_sum": [
+          0.9444399999999994,
+          2.298869999999999
+        ],
+        "after_error_sum": [
+          0.8340371567228195,
+          2.328961157671145
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_c_slow_piano_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 12,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 7,
+            "after": 12,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          0.8484750000000014,
+          0.7735600000000014
+        ],
+        "after_error_sum": [
+          0.5334080293490202,
+          0.4118162113142796
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_caro_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 6,
+            "after": 16,
+            "lost": 1
+          },
+          "onset_offset": {
+            "before": 5,
+            "after": 15,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 20,
+        "before_error_sum": [
+          1.447564999999999,
+          2.8933849999999945
+        ],
+        "after_error_sum": [
+          0.7337282699304918,
+          2.58318556896514
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-m9_dona_vibrato",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 9,
+            "after": 11,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 14,
+        "before_error_sum": [
+          0.8062049999999967,
+          5.068255000000004
+        ],
+        "after_error_sum": [
+          0.42774616780292707,
+          5.034166173295512
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_c_slow_forte_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 13,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 4,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 15,
+        "before_error_sum": [
+          0.8572299999999995,
+          1.421270000000001
+        ],
+        "after_error_sum": [
+          0.4298669317776054,
+          1.1565163462499857
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_arpeggios_straight_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 2,
+            "after": 6,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 6,
+        "before_error_sum": [
+          0.39950499999999983,
+          0.3692549999999988
+        ],
+        "after_error_sum": [
+          0.18371641649768533,
+          0.14551456294202825
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_scales_breathy_a",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 10,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 6,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 14,
+        "before_error_sum": [
+          0.888435000000001,
+          1.1794999999999989
+        ],
+        "after_error_sum": [
+          0.5161012516850231,
+          0.9538697062769879
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m9_row_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 11,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 5,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 16,
+        "before_error_sum": [
+          1.0388250000000028,
+          3.6506199999999978
+        ],
+        "after_error_sum": [
+          0.6653084015675054,
+          3.470858730664204
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_arpeggios_lip_trill_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 2,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.05069999999999908,
+          1.322309999999999
+        ],
+        "after_error_sum": [
+          0.04186882071119591,
+          1.316649076024742
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_scales_breathy_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 6,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 6,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 14,
+        "before_error_sum": [
+          1.404300000000001,
+          1.4025799999999997
+        ],
+        "after_error_sum": [
+          1.0540687648688887,
+          1.1365118171335464
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_row_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 4,
+            "after": 9,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 2,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 17,
+        "before_error_sum": [
+          1.5015800000000001,
+          5.930189999999998
+        ],
+        "after_error_sum": [
+          0.9931391234520432,
+          5.763783373036656
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_scales_f_fast_forte_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 7,
+            "after": 8,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 5,
+            "after": 7,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 11,
+        "before_error_sum": [
+          0.5268399999999995,
+          0.8025599999999997
+        ],
+        "after_error_sum": [
+          0.49335681072279025,
+          0.6558633835653244
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-m2_scales_belt_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 8,
+            "after": 12,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 6,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 14,
+        "before_error_sum": [
+          0.7158000000000005,
+          1.21826
+        ],
+        "after_error_sum": [
+          0.4479198979029452,
+          1.0578731301198214
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_scales_f_slow_piano_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 9,
+            "after": 13,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 8,
+            "after": 11,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 17,
+        "before_error_sum": [
+          1.1415999999999986,
+          0.8256399999999998
+        ],
+        "after_error_sum": [
+          0.7259956282691324,
+          0.5066280674434599
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-m2_arpeggios_straight_u",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 5,
+        "before_error_sum": [
+          0.5577800000000013,
+          0.3913000000000002
+        ],
+        "after_error_sum": [
+          0.37396981526831957,
+          0.31216847739780196
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_long_trill_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 2,
+        "before_error_sum": [
+          0.24380999999999997,
+          4.836600000000001
+        ],
+        "after_error_sum": [
+          0.19380711426913494,
+          4.822489655362972
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_caro_straight",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 13,
+            "after": 20,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 8,
+            "after": 12,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 29,
+        "before_error_sum": [
+          2.0775599999999965,
+          7.898150000000007
+        ],
+        "after_error_sum": [
+          1.443356894108953,
+          7.85976136590602
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-m2_long_trillo_e",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 0,
+            "after": 1,
+            "lost": 0
+          },
+          "onset_offset": {
+            "before": 0,
+            "after": 0,
+            "lost": 0
+          }
+        },
+        "timing_pairs": 1,
+        "before_error_sum": [
+          0.07746,
+          1.38794
+        ],
+        "after_error_sum": [
+          0.0025400000000000145,
+          1.3967038237354943
+        ],
+        "passes": true
+      },
+      {
+        "id": "vocalset-m2_caro_vibrato",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 8,
+            "after": 12,
+            "lost": 2
+          },
+          "onset_offset": {
+            "before": 4,
+            "after": 7,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 24,
+        "before_error_sum": [
+          2.090010000000005,
+          8.141449999999992
+        ],
+        "after_error_sum": [
+          1.4652599872297016,
+          8.204796782380594
+        ],
+        "passes": false
+      },
+      {
+        "id": "vocalset-m2_arpeggios_c_fast_forte_i",
+        "corpus": "vocalset",
+        "matches": {
+          "onset": {
+            "before": 4,
+            "after": 4,
+            "lost": 1
+          },
+          "onset_offset": {
+            "before": 3,
+            "after": 2,
+            "lost": 1
+          }
+        },
+        "timing_pairs": 5,
+        "before_error_sum": [
+          0.20512000000000022,
+          0.35932000000000003
+        ],
+        "after_error_sum": [
+          0.14591899919557091,
+          0.31035156977068984
+        ],
+        "passes": false
+      }
+    ]
+  }
+]
