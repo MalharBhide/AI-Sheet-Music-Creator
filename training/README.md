@@ -11,6 +11,11 @@ left-hand accompaniment and adds a per-recording onset-offset preservation gate.
 Its frozen candidate passed regression and runtime parity. It does not apply the
 accompaniment model to unvalidated bass-stem predictions.
 
+The [expanded left-hand dataset experiment](../docs/left-hand-expanded-training.md)
+adds 64 training and 16 validation passages. Two replacement heads were fitted
+on 32,122 labeled events, but neither passed the conservative release checks.
+They remain offline; the verified website V5 model is unchanged.
+
 A subsequent [relationship-aware experiment](../docs/relational-verifier-experiment.md)
 added later labeled piano passages and explicit neighboring-note features. It
 failed the correct-note preservation gate and remains offline; do not deploy its

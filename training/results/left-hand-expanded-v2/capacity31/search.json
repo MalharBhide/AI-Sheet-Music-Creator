@@ -1,0 +1,2926 @@
+[
+  {
+    "raw": {
+      "threshold": 0.0,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.0,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.0001,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 5e-05,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.0003,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.00015,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.001,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.0005,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.003,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.0015,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.01,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.005,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.02,
+      "passes": false,
+      "false_notes_removed": -6,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_solo",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7351019600079193,
+            "recall": 0.7650149376738437,
+            "f1": 0.749760210005553,
+            "true_positives": 7426,
+            "false_positives": 2676,
+            "predicted": 10102,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.08110143140827
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.01,
+      "passes": false,
+      "false_notes_removed": -9,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7348837209302326,
+            "recall": 0.7650149376738437,
+            "f1": 0.749646678780537,
+            "true_positives": 7426,
+            "false_positives": 2679,
+            "predicted": 10105,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.18433136574842
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.03,
+      "passes": false,
+      "false_notes_removed": -2,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_solo",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.015,
+      "passes": false,
+      "false_notes_removed": -8,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_solo",
+        "04_Jazz2-187-F#_comp",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17",
+        "left-expansion-04_Rock2-85-F_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7349564528899446,
+            "recall": 0.7650149376738437,
+            "f1": 0.7496845187017314,
+            "true_positives": 7426,
+            "false_positives": 2678,
+            "predicted": 10104,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.14992138763503
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 17,
+      "failed_recordings": [
+        "vienna-Mozart_K331_1st-mov_p17"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7361951026073164,
+            "recall": 0.7650149376738437,
+            "f1": 0.7503283823380823,
+            "true_positives": 7426,
+            "false_positives": 2661,
+            "predicted": 10087,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.56495175970755
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.703206562266965,
+            "recall": 0.7361436377829821,
+            "f1": 0.7192982456140351,
+            "true_positives": 943,
+            "false_positives": 398,
+            "predicted": 1341,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 98.94161183314273
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7983453981385729,
+            "recall": 0.789769820971867,
+            "f1": 0.7940344561583955,
+            "true_positives": 3088,
+            "false_positives": 780,
+            "predicted": 3868,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.56306303608991
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.025,
+      "passes": false,
+      "false_notes_removed": -4,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_solo",
+        "04_SS2-107-Ab_comp",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp",
+        "relational-piano-training-Mozart_K331_1st-mov_p17"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7352475247524752,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498359165951431,
+            "true_positives": 7426,
+            "false_positives": 2674,
+            "predicted": 10100,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 92.01228147518151
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7011152416356877,
+            "recall": 0.7361436377829821,
+            "f1": 0.7182025894897182,
+            "true_positives": 943,
+            "false_positives": 402,
+            "predicted": 1345,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.93599989176728
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7975206611570248,
+            "recall": 0.789769820971867,
+            "f1": 0.7936263171421228,
+            "true_positives": 3088,
+            "false_positives": 784,
+            "predicted": 3872,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.94030951319806
+          }
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.075,
+      "passes": true,
+      "false_notes_removed": 34,
+      "failed_recordings": [],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7368525501091486,
+            "recall": 0.7650149376738437,
+            "f1": 0.7506696992671216,
+            "true_positives": 7426,
+            "false_positives": 2652,
+            "predicted": 10078,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.25526195668712
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8313659359190556,
+            "recall": 0.659384752563531,
+            "f1": 0.7354549975136748,
+            "true_positives": 1479,
+            "false_positives": 300,
+            "predicted": 1779,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.4353023078043
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7037313432835821,
+            "recall": 0.7361436377829821,
+            "f1": 0.7195726821823731,
+            "true_positives": 943,
+            "false_positives": 397,
+            "predicted": 1340,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 98.69301481848659
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.799585706887623,
+            "recall": 0.789769820971867,
+            "f1": 0.7946474523932063,
+            "true_positives": 3088,
+            "false_positives": 774,
+            "predicted": 3862,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 72.99719332042768
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.0375,
+      "passes": false,
+      "false_notes_removed": 0,
+      "failed_recordings": [
+        "04_BN1-129-Eb_comp",
+        "04_BN3-119-G_solo",
+        "vienna-Mozart_K331_1st-mov_p17",
+        "stem-04_BN1-129-Eb_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7353931471578531,
+            "recall": 0.7650149376738437,
+            "f1": 0.7499116384751325,
+            "true_positives": 7426,
+            "false_positives": 2672,
+            "predicted": 10098,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.94346151895475
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7977266856109533,
+            "recall": 0.789769820971867,
+            "f1": 0.7937283125562267,
+            "true_positives": 3088,
+            "false_positives": 783,
+            "predicted": 3871,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.84599789392102
+          }
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 54,
+      "failed_recordings": [
+        "04_Rock2-142-D_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7376316312338566,
+            "recall": 0.7649119192335428,
+            "f1": 0.7510241238051889,
+            "true_positives": 7425,
+            "false_positives": 2641,
+            "predicted": 10066,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 90.87675219743993
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8327702702702703,
+            "recall": 0.659384752563531,
+            "f1": 0.7360039810898233,
+            "true_positives": 1479,
+            "false_positives": 297,
+            "predicted": 1776,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 55.87094928472626
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7047832585949177,
+            "recall": 0.7361436377829821,
+            "f1": 0.7201221840397098,
+            "true_positives": 943,
+            "false_positives": 395,
+            "predicted": 1338,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 98.19582078917432
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.800414722654225,
+            "recall": 0.789769820971867,
+            "f1": 0.7950566426364573,
+            "true_positives": 3088,
+            "false_positives": 770,
+            "predicted": 3858,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 72.61994684331952
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 17,
+      "failed_recordings": [
+        "vienna-Mozart_K331_1st-mov_p17"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7361951026073164,
+            "recall": 0.7650149376738437,
+            "f1": 0.7503283823380823,
+            "true_positives": 7426,
+            "false_positives": 2661,
+            "predicted": 10087,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.56495175970755
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.703206562266965,
+            "recall": 0.7361436377829821,
+            "f1": 0.7192982456140351,
+            "true_positives": 943,
+            "false_positives": 398,
+            "predicted": 1341,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 98.94161183314273
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.7983453981385729,
+            "recall": 0.789769820971867,
+            "f1": 0.7940344561583955,
+            "true_positives": 3088,
+            "false_positives": 780,
+            "predicted": 3868,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.56306303608991
+          }
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.15,
+      "passes": false,
+      "false_notes_removed": 109,
+      "failed_recordings": [
+        "04_Funk1-114-Ab_comp",
+        "04_Rock2-142-D_comp",
+        "04_Rock3-148-C_comp",
+        "04_SS1-68-E_comp",
+        "vienna-Chopin_op10_no3_p16",
+        "stem-04_Funk1-114-Ab_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7397328548644339,
+            "recall": 0.7644998454723395,
+            "f1": 0.7519124575713055,
+            "true_positives": 7421,
+            "false_positives": 2611,
+            "predicted": 10032,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 89.8444528540385
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8346501128668171,
+            "recall": 0.659384752563531,
+            "f1": 0.7367372353673723,
+            "true_positives": 1479,
+            "false_positives": 293,
+            "predicted": 1772,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 55.11847858728887
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7061469265367316,
+            "recall": 0.7353629976580797,
+            "f1": 0.7204588910133843,
+            "true_positives": 942,
+            "false_positives": 392,
+            "predicted": 1334,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 97.45002974520591
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.8041156551185205,
+            "recall": 0.7895140664961637,
+            "f1": 0.7967479674796748,
+            "true_positives": 3087,
+            "false_positives": 752,
+            "predicted": 3839,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 70.92233769633283
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.075,
+      "passes": true,
+      "false_notes_removed": 34,
+      "failed_recordings": [],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7368525501091486,
+            "recall": 0.7650149376738437,
+            "f1": 0.7506696992671216,
+            "true_positives": 7426,
+            "false_positives": 2652,
+            "predicted": 10078,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.25526195668712
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8313659359190556,
+            "recall": 0.659384752563531,
+            "f1": 0.7354549975136748,
+            "true_positives": 1479,
+            "false_positives": 300,
+            "predicted": 1779,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.4353023078043
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7037313432835821,
+            "recall": 0.7361436377829821,
+            "f1": 0.7195726821823731,
+            "true_positives": 943,
+            "false_positives": 397,
+            "predicted": 1340,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 98.69301481848659
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.799585706887623,
+            "recall": 0.789769820971867,
+            "f1": 0.7946474523932063,
+            "true_positives": 3088,
+            "false_positives": 774,
+            "predicted": 3862,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 72.99719332042768
+          }
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 158,
+      "failed_recordings": [
+        "04_BN2-166-Ab_comp",
+        "04_Funk1-114-Ab_comp",
+        "04_Funk2-108-Eb_comp",
+        "04_Rock2-142-D_comp",
+        "04_Rock3-117-Bb_solo",
+        "04_Rock3-148-C_comp",
+        "04_SS1-68-E_comp",
+        "vienna-Chopin_op10_no3_p16",
+        "stem-04_Funk1-114-Ab_comp",
+        "stem-04_Rock1-130-A_comp",
+        "relational-piano-training-Chopin_op10_no3_p18",
+        "relational-piano-training-Chopin_op38_p15"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7417258274172582,
+            "recall": 0.7641907901514371,
+            "f1": 0.7527907448751776,
+            "true_positives": 7418,
+            "false_positives": 2583,
+            "predicted": 10001,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 88.88097346686381
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8360655737704918,
+            "recall": 0.659384752563531,
+            "f1": 0.7372881355932204,
+            "true_positives": 1479,
+            "false_positives": 290,
+            "predicted": 1769,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 54.55412556421083
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7085843373493976,
+            "recall": 0.7345823575331772,
+            "f1": 0.7213491759294749,
+            "true_positives": 941,
+            "false_positives": 387,
+            "predicted": 1328,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 96.20704467192522
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.8067468619246861,
+            "recall": 0.789002557544757,
+            "f1": 0.7977760537884665,
+            "true_positives": 3085,
+            "false_positives": 739,
+            "predicted": 3824,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 69.69628664573133
+          }
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 54,
+      "failed_recordings": [
+        "04_Rock2-142-D_comp"
+      ],
+      "aggregate": {
+        "guitarset": {
+          "deployed_v5": {
+            "precision": 0.7353203287454203,
+            "recall": 0.7650149376738437,
+            "f1": 0.7498737756235484,
+            "true_positives": 7426,
+            "false_positives": 2673,
+            "predicted": 10099,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 91.97787149706812
+          },
+          "candidate": {
+            "precision": 0.7376316312338566,
+            "recall": 0.7649119192335428,
+            "f1": 0.7510241238051889,
+            "true_positives": 7425,
+            "false_positives": 2641,
+            "predicted": 10066,
+            "reference": 9707,
+            "seconds": 1743.6802721088436,
+            "false_positives_per_minute": 90.87675219743993
+          }
+        },
+        "original-piano": {
+          "deployed_v5": {
+            "precision": 0.8308988764044943,
+            "recall": 0.659384752563531,
+            "f1": 0.7352721849366145,
+            "true_positives": 1479,
+            "false_positives": 301,
+            "predicted": 1780,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 56.623419982163654
+          },
+          "candidate": {
+            "precision": 0.8327702702702703,
+            "recall": 0.659384752563531,
+            "f1": 0.7360039810898233,
+            "true_positives": 1479,
+            "false_positives": 297,
+            "predicted": 1776,
+            "reference": 2243,
+            "seconds": 318.94929705215424,
+            "false_positives_per_minute": 55.87094928472626
+          }
+        },
+        "separated-guitar": {
+          "deployed_v5": {
+            "precision": 0.7016369047619048,
+            "recall": 0.7361436377829821,
+            "f1": 0.7184761904761905,
+            "true_positives": 943,
+            "false_positives": 401,
+            "predicted": 1344,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 99.68740287711114
+          },
+          "candidate": {
+            "precision": 0.7047832585949177,
+            "recall": 0.7361436377829821,
+            "f1": 0.7201221840397098,
+            "true_positives": 943,
+            "false_positives": 395,
+            "predicted": 1338,
+            "reference": 1281,
+            "seconds": 241.35446712018143,
+            "false_positives_per_minute": 98.19582078917432
+          }
+        },
+        "vienna-piano": {
+          "deployed_v5": {
+            "precision": 0.7979328165374677,
+            "recall": 0.789769820971867,
+            "f1": 0.7938303341902314,
+            "true_positives": 3088,
+            "false_positives": 782,
+            "predicted": 3870,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 73.75168627464399
+          },
+          "candidate": {
+            "precision": 0.800414722654225,
+            "recall": 0.789769820971867,
+            "f1": 0.7950566426364573,
+            "true_positives": 3088,
+            "false_positives": 770,
+            "predicted": 3858,
+            "reference": 3910,
+            "seconds": 636.188843537415,
+            "false_positives_per_minute": 72.61994684331952
+          }
+        }
+      }
+    }
+  }
+]

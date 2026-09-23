@@ -1,5 +1,20 @@
 # Verification
 
+## Expanded left-hand dataset training — candidates withheld
+
+Added 64 train and 16 validation GuitarSet tails, retaining performer partitions
+and annotation clocks. Fitted two replacement low-register heads on 32,122
+events from 551 training clips; selection used 139 validation clips. Neither
+passed every per-recording attack/hold/false-note gate at both its raw and
+half-margin threshold. No regression or fresh evaluation was consumed, and
+website V5 weights remain unchanged.
+
+**11 focused training tests passed**, covering dataset split isolation, clipped
+label clocks, preservation of holds, restored false-note regressions and the
+actual deployed baseline. Lint and diff checks passed. No user recordings or
+sheet-music generation were used. See the
+[training report](docs/left-hand-expanded-training.md) and archived results.
+
 ## Low-register accompaniment and bass holds
 
 Trained a low-register specialist on 30,145 labeled events. On 142 consumed
