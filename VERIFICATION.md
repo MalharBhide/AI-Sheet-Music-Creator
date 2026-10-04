@@ -556,3 +556,21 @@ The GitHub Actions native-pipeline job runs the same integration suite in the ba
   is not a note-accuracy claim. All experiments and withholding decision archived.
 - Backend/training suite: 329 passed, six opt-in native cases skipped; changed
   Python lint and diff checks pass. Website remains V9.
+
+
+## Bass decoder training and withholding — 2026-10-04
+
+- Prepared 56 training / 20 validation clips using the actual balanced bass
+  decoder and source-paired CC BY BabySlakh. Oracle bass and production Demucs
+  variants keep correct low piano/guitar notes as positive labels. All MP3 lags
+  zero; 5,209 key references and 5,319 separate pedal/crop supports.
+- Fitted four paired profiles on 3,361 eligible events. Validation selects 500
+  trees (.05/.3): 690 false detections removed, 505 matches retained. Later 600
+  trees have lower loss but smaller accuracy gain and are not selected.
+- Original eight-case stress exposes a substantial domain regression: 210→98
+  matches, no false-note reduction, seven cases fail. Winner is withheld; no
+  test-based threshold adjustment or runner-up selection. Reserved Slakh groups
+  remain uninferred, no portable assets exported, website V9 unchanged.
+- Complete suite: 339 passed, six opt-in cases skipped; added checkpoint, portable
+  and test/export guards pass focused checks. Changed Python lint and diff checks
+  pass. Health ready; only three existing completed jobs, no uploads processed.

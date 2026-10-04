@@ -1,0 +1,364 @@
+{
+  "settings": {
+    "max_iter": 600,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "l2_regularization": 4.0,
+    "learning_rate": 0.04,
+    "early_stopping": false,
+    "random_state": 261043
+  },
+  "guardian_settings": {
+    "max_iter": 600,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 20,
+    "l2_regularization": 4.0,
+    "learning_rate": 0.04,
+    "early_stopping": false,
+    "random_state": 261044
+  },
+  "positive_weight": 10.0,
+  "training_counts": [
+    {
+      "id": "slakh-bass-v1-Track00001-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 2,
+      "negative": 32
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 17,
+      "negative": 46
+    },
+    {
+      "id": "slakh-bass-v1-Track00003-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 47,
+      "negative": 54
+    },
+    {
+      "id": "slakh-bass-v1-Track00004-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 12,
+      "negative": 14
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 26,
+      "negative": 8
+    },
+    {
+      "id": "slakh-bass-v1-Track00008-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 20,
+      "negative": 3
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 20,
+      "negative": 13
+    },
+    {
+      "id": "slakh-bass-v1-Track00014-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 5,
+      "negative": 13
+    },
+    {
+      "id": "slakh-bass-v1-Track00017-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 18,
+      "negative": 2
+    },
+    {
+      "id": "slakh-bass-v1-Track00018-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 5,
+      "negative": 25
+    },
+    {
+      "id": "slakh-bass-v1-Track00019-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 25,
+      "negative": 12
+    },
+    {
+      "id": "slakh-bass-v1-Track00020-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 26,
+      "negative": 16
+    },
+    {
+      "id": "slakh-bass-v1-Track00001-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 23,
+      "negative": 34
+    },
+    {
+      "id": "slakh-bass-v1-Track00001-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 26,
+      "negative": 32
+    },
+    {
+      "id": "slakh-bass-v1-Track00001-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 29,
+      "negative": 34
+    },
+    {
+      "id": "slakh-bass-v1-Track00001-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 36,
+      "negative": 50
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 34,
+      "negative": 51
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 30,
+      "negative": 42
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 35,
+      "negative": 49
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 29,
+      "negative": 38
+    },
+    {
+      "id": "slakh-bass-v1-Track00003-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 56,
+      "negative": 71
+    },
+    {
+      "id": "slakh-bass-v1-Track00003-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 61,
+      "negative": 70
+    },
+    {
+      "id": "slakh-bass-v1-Track00003-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 56,
+      "negative": 77
+    },
+    {
+      "id": "slakh-bass-v1-Track00003-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 55,
+      "negative": 76
+    },
+    {
+      "id": "slakh-bass-v1-Track00004-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 9,
+      "negative": 14
+    },
+    {
+      "id": "slakh-bass-v1-Track00004-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 17,
+      "negative": 35
+    },
+    {
+      "id": "slakh-bass-v1-Track00004-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 23,
+      "negative": 31
+    },
+    {
+      "id": "slakh-bass-v1-Track00004-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 14,
+      "negative": 33
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 19,
+      "negative": 30
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 32,
+      "negative": 47
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 24,
+      "negative": 44
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 38,
+      "negative": 48
+    },
+    {
+      "id": "slakh-bass-v1-Track00008-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 14,
+      "negative": 18
+    },
+    {
+      "id": "slakh-bass-v1-Track00008-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 21,
+      "negative": 20
+    },
+    {
+      "id": "slakh-bass-v1-Track00008-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 21,
+      "negative": 21
+    },
+    {
+      "id": "slakh-bass-v1-Track00008-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 18,
+      "negative": 25
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 33,
+      "negative": 34
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 43,
+      "negative": 44
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 42,
+      "negative": 47
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 41,
+      "negative": 43
+    },
+    {
+      "id": "slakh-bass-v1-Track00014-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 13,
+      "negative": 12
+    },
+    {
+      "id": "slakh-bass-v1-Track00014-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 19,
+      "negative": 22
+    },
+    {
+      "id": "slakh-bass-v1-Track00014-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 32,
+      "negative": 36
+    },
+    {
+      "id": "slakh-bass-v1-Track00014-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 13,
+      "negative": 12
+    },
+    {
+      "id": "slakh-bass-v1-Track00018-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 0,
+      "negative": 28
+    },
+    {
+      "id": "slakh-bass-v1-Track00018-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 0,
+      "negative": 27
+    },
+    {
+      "id": "slakh-bass-v1-Track00018-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 0,
+      "negative": 19
+    },
+    {
+      "id": "slakh-bass-v1-Track00018-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 0,
+      "negative": 29
+    },
+    {
+      "id": "slakh-bass-v1-Track00019-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 5,
+      "negative": 36
+    },
+    {
+      "id": "slakh-bass-v1-Track00019-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 13,
+      "negative": 110
+    },
+    {
+      "id": "slakh-bass-v1-Track00019-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 14,
+      "negative": 106
+    },
+    {
+      "id": "slakh-bass-v1-Track00019-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 12,
+      "negative": 110
+    },
+    {
+      "id": "slakh-bass-v1-Track00020-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 21,
+      "negative": 26
+    },
+    {
+      "id": "slakh-bass-v1-Track00020-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 22,
+      "negative": 21
+    },
+    {
+      "id": "slakh-bass-v1-Track00020-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 23,
+      "negative": 23
+    },
+    {
+      "id": "slakh-bass-v1-Track00020-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 28,
+      "negative": 31
+    }
+  ],
+  "training_clips": 56,
+  "validation_clips": 20,
+  "training_events": 3361,
+  "plan_sha256": "27c4c48cf45bc4d777537cee91b5357183d2f82535d3d14bfe4ca532bef0f814",
+  "test_used_for_selection": false
+}

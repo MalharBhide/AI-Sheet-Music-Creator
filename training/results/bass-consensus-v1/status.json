@@ -1,0 +1,22 @@
+{
+  "promoted": false,
+  "deployed_model": "V9",
+  "reason": "Frozen validation winner loses 112 matched attacks on original stress; seven of eight cases fail. No runner-up or threshold retuning on tests. Reserved Slakh groups not consumed; no arrays exported or deployed.",
+  "held_regression": {
+    "passes": false,
+    "false_notes_removed": 0,
+    "matched_before": 210,
+    "matched_after": 98,
+    "failed_recordings": [
+      "bass-held-v1-repeated",
+      "bass-held-v1-triplet",
+      "bass-held-v1-octave",
+      "bass-held-v1-low",
+      "bass-held-v1-legato",
+      "bass-held-v1-sparse",
+      "bass-held-v1-syncopated"
+    ]
+  },
+  "no_reserved_slakh_inference": true,
+  "no_user_audio_or_scores": true
+}

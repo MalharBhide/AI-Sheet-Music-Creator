@@ -1,0 +1,215 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "bass-held-v1-held",
+        "group": "test",
+        "source_group": "bass-held-v1-held",
+        "corpus": "original-bass-stress",
+        "audio": "/training/bass-held-regression-v1/bass-held-v1-held/decoded.wav",
+        "evaluation_window": [
+          0.25,
+          29.75
+        ],
+        "candidate_decoder": "balanced-bass-candidates-v1"
+      },
+      "plan_sha256": "b7a25ec9648c16b60524edc22872fcc2f80c9997743460d255a211fcbbac62fe",
+      "audio_sha256": "bdeecd107004afac6763205d24107bde40e3bb1cb89a1609d8247c7e2c17ae4c",
+      "cache_sha256": "14809d5c4b04e16fdb447243bf438bf11f0fc69abe275507ed1d6d4e1a3d837c",
+      "codec_clock": {
+        "codec_lag_samples": 0,
+        "codec_lag_seconds": 0.0,
+        "input_frames": 661500,
+        "decoded_frames": 661500,
+        "anchor_sample": 110250
+      },
+      "bitrate_kbps": 48,
+      "note_reference_count": 3
+    },
+    {
+      "item": {
+        "id": "bass-held-v1-repeated",
+        "group": "test",
+        "source_group": "bass-held-v1-repeated",
+        "corpus": "original-bass-stress",
+        "audio": "/training/bass-held-regression-v1/bass-held-v1-repeated/decoded.wav",
+        "evaluation_window": [
+          0.25,
+          29.75
+        ],
+        "candidate_decoder": "balanced-bass-candidates-v1"
+      },
+      "plan_sha256": "b7a25ec9648c16b60524edc22872fcc2f80c9997743460d255a211fcbbac62fe",
+      "audio_sha256": "fdd3bd3dc4e7d8d9170550e331c19d279a86138579d1527158b827aac08a40c6",
+      "cache_sha256": "911b68c8f2e2f2ced1ab7864d10f7dfc993fa6069efdd265e328880db404de85",
+      "codec_clock": {
+        "codec_lag_samples": 0,
+        "codec_lag_seconds": 0.0,
+        "input_frames": 661500,
+        "decoded_frames": 661500,
+        "anchor_sample": 66150
+      },
+      "bitrate_kbps": 128,
+      "note_reference_count": 48
+    },
+    {
+      "item": {
+        "id": "bass-held-v1-triplet",
+        "group": "test",
+        "source_group": "bass-held-v1-triplet",
+        "corpus": "original-bass-stress",
+        "audio": "/training/bass-held-regression-v1/bass-held-v1-triplet/decoded.wav",
+        "evaluation_window": [
+          0.25,
+          29.75
+        ],
+        "candidate_decoder": "balanced-bass-candidates-v1"
+      },
+      "plan_sha256": "b7a25ec9648c16b60524edc22872fcc2f80c9997743460d255a211fcbbac62fe",
+      "audio_sha256": "9c61212e69d30f07bb6850ef2314be5b2316eb897877b072a3b259213ed391ec",
+      "cache_sha256": "e407c83d16d123a99121b3bc823bd334181763953142d02cae7bc94c5225e14f",
+      "codec_clock": {
+        "codec_lag_samples": 0,
+        "codec_lag_seconds": 0.0,
+        "input_frames": 661500,
+        "decoded_frames": 661500,
+        "anchor_sample": 66150
+      },
+      "bitrate_kbps": 192,
+      "note_reference_count": 66
+    },
+    {
+      "item": {
+        "id": "bass-held-v1-octave",
+        "group": "test",
+        "source_group": "bass-held-v1-octave",
+        "corpus": "original-bass-stress",
+        "audio": "/training/bass-held-regression-v1/bass-held-v1-octave/decoded.wav",
+        "evaluation_window": [
+          0.25,
+          29.75
+        ],
+        "candidate_decoder": "balanced-bass-candidates-v1"
+      },
+      "plan_sha256": "b7a25ec9648c16b60524edc22872fcc2f80c9997743460d255a211fcbbac62fe",
+      "audio_sha256": "91f007ba9023fde824dc29f7b65f2e287946cebd55b26853225586ce533ccc0e",
+      "cache_sha256": "0d2785e67868fd933606e14e657bfc2902118a0140a85a2aa7cca8a8b8cd9a60",
+      "codec_clock": {
+        "codec_lag_samples": 0,
+        "codec_lag_seconds": 0.0,
+        "input_frames": 661500,
+        "decoded_frames": 661500,
+        "anchor_sample": 132300
+      },
+      "bitrate_kbps": 48,
+      "note_reference_count": 20
+    },
+    {
+      "item": {
+        "id": "bass-held-v1-low",
+        "group": "test",
+        "source_group": "bass-held-v1-low",
+        "corpus": "original-bass-stress",
+        "audio": "/training/bass-held-regression-v1/bass-held-v1-low/decoded.wav",
+        "evaluation_window": [
+          0.25,
+          29.75
+        ],
+        "candidate_decoder": "balanced-bass-candidates-v1"
+      },
+      "plan_sha256": "b7a25ec9648c16b60524edc22872fcc2f80c9997743460d255a211fcbbac62fe",
+      "audio_sha256": "912bc32d2f4ffca9d0e5cef81a2a89a6494be36caa6cad419c9f52081228c87b",
+      "cache_sha256": "800d1ae3a7f9508ba2289b4a27baec99284a9271f0963d2ab83c43b2d1daa4d3",
+      "codec_clock": {
+        "codec_lag_samples": 0,
+        "codec_lag_seconds": 0.0,
+        "input_frames": 661500,
+        "decoded_frames": 661500,
+        "anchor_sample": 66150
+      },
+      "bitrate_kbps": 128,
+      "note_reference_count": 16
+    },
+    {
+      "item": {
+        "id": "bass-held-v1-legato",
+        "group": "test",
+        "source_group": "bass-held-v1-legato",
+        "corpus": "original-bass-stress",
+        "audio": "/training/bass-held-regression-v1/bass-held-v1-legato/decoded.wav",
+        "evaluation_window": [
+          0.25,
+          29.75
+        ],
+        "candidate_decoder": "balanced-bass-candidates-v1"
+      },
+      "plan_sha256": "b7a25ec9648c16b60524edc22872fcc2f80c9997743460d255a211fcbbac62fe",
+      "audio_sha256": "bf69912bdb875db0b4792d8e5881ef0c963199afbe523287a5985de6bd027c4f",
+      "cache_sha256": "d6081374a464299372b35b19b030c8b1271c1221eaaef741f7d2dffe3f5f5bc3",
+      "codec_clock": {
+        "codec_lag_samples": 0,
+        "codec_lag_seconds": 0.0,
+        "input_frames": 661500,
+        "decoded_frames": 661500,
+        "anchor_sample": 110250
+      },
+      "bitrate_kbps": 192,
+      "note_reference_count": 24
+    },
+    {
+      "item": {
+        "id": "bass-held-v1-sparse",
+        "group": "test",
+        "source_group": "bass-held-v1-sparse",
+        "corpus": "original-bass-stress",
+        "audio": "/training/bass-held-regression-v1/bass-held-v1-sparse/decoded.wav",
+        "evaluation_window": [
+          0.25,
+          29.75
+        ],
+        "candidate_decoder": "balanced-bass-candidates-v1"
+      },
+      "plan_sha256": "b7a25ec9648c16b60524edc22872fcc2f80c9997743460d255a211fcbbac62fe",
+      "audio_sha256": "0ac1009c1a70705fd4b12a2eaedbbef2ab0b32e7762c7ddd6a22a904bebf850b",
+      "cache_sha256": "6b686abd0bf0c5a43a215d8482e86d86c079359171baaa32a6fd46fea1b08c34",
+      "codec_clock": {
+        "codec_lag_samples": 0,
+        "codec_lag_seconds": 0.0,
+        "input_frames": 661500,
+        "decoded_frames": 661500,
+        "anchor_sample": 308700
+      },
+      "bitrate_kbps": 48,
+      "note_reference_count": 3
+    },
+    {
+      "item": {
+        "id": "bass-held-v1-syncopated",
+        "group": "test",
+        "source_group": "bass-held-v1-syncopated",
+        "corpus": "original-bass-stress",
+        "audio": "/training/bass-held-regression-v1/bass-held-v1-syncopated/decoded.wav",
+        "evaluation_window": [
+          0.25,
+          29.75
+        ],
+        "candidate_decoder": "balanced-bass-candidates-v1"
+      },
+      "plan_sha256": "b7a25ec9648c16b60524edc22872fcc2f80c9997743460d255a211fcbbac62fe",
+      "audio_sha256": "7b691cf80ab7a070829263628647a6822c405cd4a22f55ec13ad8520f794f5cb",
+      "cache_sha256": "f2e872011aad050965a217dc68ae216efcc83fbefe8dc136466c3891a390dfe5",
+      "codec_clock": {
+        "codec_lag_samples": 0,
+        "codec_lag_seconds": 0.0,
+        "input_frames": 661500,
+        "decoded_frames": 661500,
+        "anchor_sample": 132300
+      },
+      "bitrate_kbps": 128,
+      "note_reference_count": 32
+    }
+  ],
+  "plan_sha256": "b7a25ec9648c16b60524edc22872fcc2f80c9997743460d255a211fcbbac62fe",
+  "scope": "Consumed original bass regression; no longer fresh for future candidates.",
+  "no_user_audio_or_scores": true
+}

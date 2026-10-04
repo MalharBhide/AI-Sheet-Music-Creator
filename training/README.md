@@ -1,5 +1,11 @@
 # Supervised melody training
 
+The [bass training framework](../docs/bass-consensus-training.md) adds 56 training
+and 20 validation source-paired/MP3/Demucs clips. Four pairs completed fitting;
+the 500-tree validation winner fails original stress and is withheld. Its later
+600-tree stage removes fewer validation false notes and is not selected. Reserved
+Slakh groups remain unscored; no bass candidate is deployed.
+
 The [polyphonic training framework](../docs/polyphonic-training-framework.md)
 adds 64 licensed multi-instrument MP3 clips with MIDI pedal/crop pitch support.
 The four-profile batch completed and was withheld after no regression gain.

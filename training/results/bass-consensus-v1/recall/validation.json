@@ -1,0 +1,653 @@
+{
+  "threshold": 0.3,
+  "guardian_threshold": 0.2,
+  "passes": true,
+  "false_notes_removed": 611,
+  "failed_recordings": [],
+  "aggregate": {
+    "baseline_bass": {
+      "precision": 0.2785438499724214,
+      "recall": 0.30185295875672447,
+      "f1": 0.2897303499713138,
+      "true_positives": 505,
+      "false_positives": 1308,
+      "predicted": 1813,
+      "reference": 1673,
+      "seconds": 590.0,
+      "false_positives_per_minute": 133.01694915254237
+    },
+    "candidate": {
+      "precision": 0.42013311148086524,
+      "recall": 0.30185295875672447,
+      "f1": 0.35130434782608694,
+      "true_positives": 505,
+      "false_positives": 697,
+      "predicted": 1202,
+      "reference": 1673,
+      "seconds": 590.0,
+      "false_positives_per_minute": 70.88135593220339
+    }
+  },
+  "per_recording": [
+    {
+      "id": "slakh-bass-v1-Track00006-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.4642857142857143,
+        "recall": 0.8666666666666667,
+        "f1": 0.6046511627906976,
+        "true_positives": 13,
+        "false_positives": 15,
+        "predicted": 28,
+        "reference": 15,
+        "seconds": 29.5,
+        "false_positives_per_minute": 30.508474576271187
+      },
+      "candidate": {
+        "precision": 0.7222222222222222,
+        "recall": 0.8666666666666667,
+        "f1": 0.7878787878787878,
+        "true_positives": 13,
+        "false_positives": 5,
+        "predicted": 18,
+        "reference": 15,
+        "seconds": 29.5,
+        "false_positives_per_minute": 10.169491525423728
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00006-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.4520547945205479,
+        "recall": 0.825,
+        "f1": 0.584070796460177,
+        "true_positives": 33,
+        "false_positives": 40,
+        "predicted": 73,
+        "reference": 40,
+        "seconds": 29.5,
+        "false_positives_per_minute": 81.35593220338983
+      },
+      "candidate": {
+        "precision": 0.8048780487804879,
+        "recall": 0.825,
+        "f1": 0.8148148148148148,
+        "true_positives": 33,
+        "false_positives": 8,
+        "predicted": 41,
+        "reference": 40,
+        "seconds": 29.5,
+        "false_positives_per_minute": 16.271186440677965
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00006-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.4020618556701031,
+        "recall": 0.6964285714285714,
+        "f1": 0.5098039215686274,
+        "true_positives": 39,
+        "false_positives": 58,
+        "predicted": 97,
+        "reference": 56,
+        "seconds": 29.5,
+        "false_positives_per_minute": 117.96610169491525
+      },
+      "candidate": {
+        "precision": 0.6964285714285714,
+        "recall": 0.6964285714285714,
+        "f1": 0.6964285714285714,
+        "true_positives": 39,
+        "false_positives": 17,
+        "predicted": 56,
+        "reference": 56,
+        "seconds": 29.5,
+        "false_positives_per_minute": 34.57627118644068
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00006-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.47115384615384615,
+        "recall": 0.9245283018867925,
+        "f1": 0.6242038216560509,
+        "true_positives": 49,
+        "false_positives": 55,
+        "predicted": 104,
+        "reference": 53,
+        "seconds": 29.5,
+        "false_positives_per_minute": 111.86440677966101
+      },
+      "candidate": {
+        "precision": 0.8032786885245902,
+        "recall": 0.9245283018867925,
+        "f1": 0.8596491228070176,
+        "true_positives": 49,
+        "false_positives": 12,
+        "predicted": 61,
+        "reference": 53,
+        "seconds": 29.5,
+        "false_positives_per_minute": 24.406779661016948
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00006-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "baseline_bass": {
+        "precision": 0.25806451612903225,
+        "recall": 0.0963855421686747,
+        "f1": 0.14035087719298245,
+        "true_positives": 8,
+        "false_positives": 23,
+        "predicted": 31,
+        "reference": 83,
+        "seconds": 29.5,
+        "false_positives_per_minute": 46.779661016949156
+      },
+      "candidate": {
+        "precision": 0.2962962962962963,
+        "recall": 0.0963855421686747,
+        "f1": 0.14545454545454545,
+        "true_positives": 8,
+        "false_positives": 19,
+        "predicted": 27,
+        "reference": 83,
+        "seconds": 29.5,
+        "false_positives_per_minute": 38.644067796610166
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00011-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.25,
+        "recall": 0.33783783783783783,
+        "f1": 0.28735632183908044,
+        "true_positives": 25,
+        "false_positives": 75,
+        "predicted": 100,
+        "reference": 74,
+        "seconds": 29.5,
+        "false_positives_per_minute": 152.54237288135593
+      },
+      "candidate": {
+        "precision": 0.45454545454545453,
+        "recall": 0.33783783783783783,
+        "f1": 0.3875968992248062,
+        "true_positives": 25,
+        "false_positives": 30,
+        "predicted": 55,
+        "reference": 74,
+        "seconds": 29.5,
+        "false_positives_per_minute": 61.016949152542374
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00011-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.28688524590163933,
+        "recall": 0.47297297297297297,
+        "f1": 0.35714285714285715,
+        "true_positives": 35,
+        "false_positives": 87,
+        "predicted": 122,
+        "reference": 74,
+        "seconds": 29.5,
+        "false_positives_per_minute": 176.94915254237287
+      },
+      "candidate": {
+        "precision": 0.4794520547945205,
+        "recall": 0.47297297297297297,
+        "f1": 0.47619047619047616,
+        "true_positives": 35,
+        "false_positives": 38,
+        "predicted": 73,
+        "reference": 74,
+        "seconds": 29.5,
+        "false_positives_per_minute": 77.28813559322033
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00011-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.24545454545454545,
+        "recall": 0.36,
+        "f1": 0.2918918918918919,
+        "true_positives": 27,
+        "false_positives": 83,
+        "predicted": 110,
+        "reference": 75,
+        "seconds": 29.5,
+        "false_positives_per_minute": 168.8135593220339
+      },
+      "candidate": {
+        "precision": 0.40298507462686567,
+        "recall": 0.36,
+        "f1": 0.38028169014084506,
+        "true_positives": 27,
+        "false_positives": 40,
+        "predicted": 67,
+        "reference": 75,
+        "seconds": 29.5,
+        "false_positives_per_minute": 81.35593220338983
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00011-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.2545454545454545,
+        "recall": 0.3888888888888889,
+        "f1": 0.3076923076923077,
+        "true_positives": 28,
+        "false_positives": 82,
+        "predicted": 110,
+        "reference": 72,
+        "seconds": 29.5,
+        "false_positives_per_minute": 166.77966101694915
+      },
+      "candidate": {
+        "precision": 0.4307692307692308,
+        "recall": 0.3888888888888889,
+        "f1": 0.40875912408759124,
+        "true_positives": 28,
+        "false_positives": 37,
+        "predicted": 65,
+        "reference": 72,
+        "seconds": 29.5,
+        "false_positives_per_minute": 75.2542372881356
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00011-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "baseline_bass": {
+        "precision": 0.022727272727272728,
+        "recall": 0.009615384615384616,
+        "f1": 0.013513513513513514,
+        "true_positives": 2,
+        "false_positives": 86,
+        "predicted": 88,
+        "reference": 208,
+        "seconds": 29.5,
+        "false_positives_per_minute": 174.91525423728814
+      },
+      "candidate": {
+        "precision": 0.03508771929824561,
+        "recall": 0.009615384615384616,
+        "f1": 0.01509433962264151,
+        "true_positives": 2,
+        "false_positives": 55,
+        "predicted": 57,
+        "reference": 208,
+        "seconds": 29.5,
+        "false_positives_per_minute": 111.86440677966101
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00013-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "true_positives": 0,
+        "false_positives": 87,
+        "predicted": 87,
+        "reference": 79,
+        "seconds": 29.5,
+        "false_positives_per_minute": 176.94915254237287
+      },
+      "candidate": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "true_positives": 0,
+        "false_positives": 79,
+        "predicted": 79,
+        "reference": 79,
+        "seconds": 29.5,
+        "false_positives_per_minute": 160.67796610169492
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00013-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.029411764705882353,
+        "recall": 0.03125,
+        "f1": 0.030303030303030304,
+        "true_positives": 3,
+        "false_positives": 99,
+        "predicted": 102,
+        "reference": 96,
+        "seconds": 29.5,
+        "false_positives_per_minute": 201.35593220338984
+      },
+      "candidate": {
+        "precision": 0.03529411764705882,
+        "recall": 0.03125,
+        "f1": 0.03314917127071823,
+        "true_positives": 3,
+        "false_positives": 82,
+        "predicted": 85,
+        "reference": 96,
+        "seconds": 29.5,
+        "false_positives_per_minute": 166.77966101694915
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00013-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.028169014084507043,
+        "recall": 0.029850746268656716,
+        "f1": 0.028985507246376812,
+        "true_positives": 2,
+        "false_positives": 69,
+        "predicted": 71,
+        "reference": 67,
+        "seconds": 29.5,
+        "false_positives_per_minute": 140.33898305084745
+      },
+      "candidate": {
+        "precision": 0.03076923076923077,
+        "recall": 0.029850746268656716,
+        "f1": 0.030303030303030304,
+        "true_positives": 2,
+        "false_positives": 63,
+        "predicted": 65,
+        "reference": 67,
+        "seconds": 29.5,
+        "false_positives_per_minute": 128.135593220339
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00013-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.012987012987012988,
+        "recall": 0.014285714285714285,
+        "f1": 0.013605442176870748,
+        "true_positives": 1,
+        "false_positives": 76,
+        "predicted": 77,
+        "reference": 70,
+        "seconds": 29.5,
+        "false_positives_per_minute": 154.57627118644066
+      },
+      "candidate": {
+        "precision": 0.014285714285714285,
+        "recall": 0.014285714285714285,
+        "f1": 0.014285714285714285,
+        "true_positives": 1,
+        "false_positives": 69,
+        "predicted": 70,
+        "reference": 70,
+        "seconds": 29.5,
+        "false_positives_per_minute": 140.33898305084745
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00013-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "baseline_bass": {
+        "precision": 0.14084507042253522,
+        "recall": 0.03968253968253968,
+        "f1": 0.06191950464396285,
+        "true_positives": 10,
+        "false_positives": 61,
+        "predicted": 71,
+        "reference": 252,
+        "seconds": 29.5,
+        "false_positives_per_minute": 124.0677966101695
+      },
+      "candidate": {
+        "precision": 0.14705882352941177,
+        "recall": 0.03968253968253968,
+        "f1": 0.0625,
+        "true_positives": 10,
+        "false_positives": 58,
+        "predicted": 68,
+        "reference": 252,
+        "seconds": 29.5,
+        "false_positives_per_minute": 117.96610169491525
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00016-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.45454545454545453,
+        "recall": 0.78125,
+        "f1": 0.5747126436781609,
+        "true_positives": 25,
+        "false_positives": 30,
+        "predicted": 55,
+        "reference": 32,
+        "seconds": 29.5,
+        "false_positives_per_minute": 61.016949152542374
+      },
+      "candidate": {
+        "precision": 0.8333333333333334,
+        "recall": 0.78125,
+        "f1": 0.8064516129032258,
+        "true_positives": 25,
+        "false_positives": 5,
+        "predicted": 30,
+        "reference": 32,
+        "seconds": 29.5,
+        "false_positives_per_minute": 10.169491525423728
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00016-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.4247787610619469,
+        "recall": 0.7164179104477612,
+        "f1": 0.5333333333333333,
+        "true_positives": 48,
+        "false_positives": 65,
+        "predicted": 113,
+        "reference": 67,
+        "seconds": 29.5,
+        "false_positives_per_minute": 132.20338983050848
+      },
+      "candidate": {
+        "precision": 0.7619047619047619,
+        "recall": 0.7164179104477612,
+        "f1": 0.7384615384615385,
+        "true_positives": 48,
+        "false_positives": 15,
+        "predicted": 63,
+        "reference": 67,
+        "seconds": 29.5,
+        "false_positives_per_minute": 30.508474576271187
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00016-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.45664739884393063,
+        "recall": 0.8681318681318682,
+        "f1": 0.5984848484848485,
+        "true_positives": 79,
+        "false_positives": 94,
+        "predicted": 173,
+        "reference": 91,
+        "seconds": 29.5,
+        "false_positives_per_minute": 191.1864406779661
+      },
+      "candidate": {
+        "precision": 0.8229166666666666,
+        "recall": 0.8681318681318682,
+        "f1": 0.8449197860962567,
+        "true_positives": 79,
+        "false_positives": 17,
+        "predicted": 96,
+        "reference": 91,
+        "seconds": 29.5,
+        "false_positives_per_minute": 34.57627118644068
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00016-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "baseline_bass": {
+        "precision": 0.43283582089552236,
+        "recall": 0.7532467532467533,
+        "f1": 0.5497630331753555,
+        "true_positives": 58,
+        "false_positives": 76,
+        "predicted": 134,
+        "reference": 77,
+        "seconds": 29.5,
+        "false_positives_per_minute": 154.57627118644066
+      },
+      "candidate": {
+        "precision": 0.725,
+        "recall": 0.7532467532467533,
+        "f1": 0.7388535031847133,
+        "true_positives": 58,
+        "false_positives": 22,
+        "predicted": 80,
+        "reference": 77,
+        "seconds": 29.5,
+        "false_positives_per_minute": 44.74576271186441
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "slakh-bass-v1-Track00016-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "baseline_bass": {
+        "precision": 0.29850746268656714,
+        "recall": 0.21739130434782608,
+        "f1": 0.25157232704402516,
+        "true_positives": 20,
+        "false_positives": 47,
+        "predicted": 67,
+        "reference": 92,
+        "seconds": 29.5,
+        "false_positives_per_minute": 95.59322033898304
+      },
+      "candidate": {
+        "precision": 0.43478260869565216,
+        "recall": 0.21739130434782608,
+        "f1": 0.2898550724637681,
+        "true_positives": 20,
+        "false_positives": 26,
+        "predicted": 46,
+        "reference": 92,
+        "seconds": 29.5,
+        "false_positives_per_minute": 52.88135593220339
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    }
+  ]
+}

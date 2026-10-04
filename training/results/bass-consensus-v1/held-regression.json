@@ -1,0 +1,294 @@
+{
+  "threshold": 0.05,
+  "guardian_threshold": 0.3,
+  "passes": false,
+  "false_notes_removed": 0,
+  "failed_recordings": [
+    "bass-held-v1-repeated",
+    "bass-held-v1-triplet",
+    "bass-held-v1-octave",
+    "bass-held-v1-low",
+    "bass-held-v1-legato",
+    "bass-held-v1-sparse",
+    "bass-held-v1-syncopated"
+  ],
+  "aggregate": {
+    "baseline_bass": {
+      "precision": 0.9545454545454546,
+      "recall": 0.9905660377358491,
+      "f1": 0.9722222222222222,
+      "true_positives": 210,
+      "false_positives": 10,
+      "predicted": 220,
+      "reference": 212,
+      "seconds": 236.0,
+      "false_positives_per_minute": 2.542372881355932
+    },
+    "candidate": {
+      "precision": 0.9074074074074074,
+      "recall": 0.46226415094339623,
+      "f1": 0.6125,
+      "true_positives": 98,
+      "false_positives": 10,
+      "predicted": 108,
+      "reference": 212,
+      "seconds": 236.0,
+      "false_positives_per_minute": 2.542372881355932
+    }
+  },
+  "per_recording": [
+    {
+      "id": "bass-held-v1-held",
+      "corpus": "original-bass-stress",
+      "baseline_bass": {
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8,
+        "true_positives": 2,
+        "false_positives": 0,
+        "predicted": 2,
+        "reference": 3,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      },
+      "candidate": {
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8,
+        "true_positives": 2,
+        "false_positives": 0,
+        "predicted": 2,
+        "reference": 3,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "bass-held-v1-repeated",
+      "corpus": "original-bass-stress",
+      "baseline_bass": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": 48,
+        "false_positives": 0,
+        "predicted": 48,
+        "reference": 48,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      },
+      "candidate": {
+        "precision": 1.0,
+        "recall": 0.22916666666666666,
+        "f1": 0.3728813559322034,
+        "true_positives": 11,
+        "false_positives": 0,
+        "predicted": 11,
+        "reference": 48,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      },
+      "matched_references_preserved": false,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": false,
+      "lost_reference_pitch_seconds": 13.298106122448964,
+      "passes": false
+    },
+    {
+      "id": "bass-held-v1-triplet",
+      "corpus": "original-bass-stress",
+      "baseline_bass": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": 66,
+        "false_positives": 0,
+        "predicted": 66,
+        "reference": 66,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      },
+      "candidate": {
+        "precision": 1.0,
+        "recall": 0.7727272727272727,
+        "f1": 0.8717948717948718,
+        "true_positives": 51,
+        "false_positives": 0,
+        "predicted": 51,
+        "reference": 66,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      },
+      "matched_references_preserved": false,
+      "held_references_preserved": false,
+      "reference_pitch_coverage_preserved": false,
+      "lost_reference_pitch_seconds": 3.193472108843539,
+      "passes": false
+    },
+    {
+      "id": "bass-held-v1-octave",
+      "corpus": "original-bass-stress",
+      "baseline_bass": {
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091,
+        "true_positives": 20,
+        "false_positives": 4,
+        "predicted": 24,
+        "reference": 20,
+        "seconds": 29.5,
+        "false_positives_per_minute": 8.135593220338983
+      },
+      "candidate": {
+        "precision": 0.7142857142857143,
+        "recall": 0.5,
+        "f1": 0.5882352941176471,
+        "true_positives": 10,
+        "false_positives": 4,
+        "predicted": 14,
+        "reference": 20,
+        "seconds": 29.5,
+        "false_positives_per_minute": 8.135593220338983
+      },
+      "matched_references_preserved": false,
+      "held_references_preserved": false,
+      "reference_pitch_coverage_preserved": false,
+      "lost_reference_pitch_seconds": 17.866677097505672,
+      "passes": false
+    },
+    {
+      "id": "bass-held-v1-low",
+      "corpus": "original-bass-stress",
+      "baseline_bass": {
+        "precision": 0.7894736842105263,
+        "recall": 0.9375,
+        "f1": 0.8571428571428571,
+        "true_positives": 15,
+        "false_positives": 4,
+        "predicted": 19,
+        "reference": 16,
+        "seconds": 29.5,
+        "false_positives_per_minute": 8.135593220338983
+      },
+      "candidate": {
+        "precision": 0.5,
+        "recall": 0.25,
+        "f1": 0.3333333333333333,
+        "true_positives": 4,
+        "false_positives": 4,
+        "predicted": 8,
+        "reference": 16,
+        "seconds": 29.5,
+        "false_positives_per_minute": 8.135593220338983
+      },
+      "matched_references_preserved": false,
+      "held_references_preserved": false,
+      "reference_pitch_coverage_preserved": false,
+      "lost_reference_pitch_seconds": 10.057830839002271,
+      "passes": false
+    },
+    {
+      "id": "bass-held-v1-legato",
+      "corpus": "original-bass-stress",
+      "baseline_bass": {
+        "precision": 0.9230769230769231,
+        "recall": 1.0,
+        "f1": 0.96,
+        "true_positives": 24,
+        "false_positives": 2,
+        "predicted": 26,
+        "reference": 24,
+        "seconds": 29.5,
+        "false_positives_per_minute": 4.067796610169491
+      },
+      "candidate": {
+        "precision": 0.7777777777777778,
+        "recall": 0.2916666666666667,
+        "f1": 0.42424242424242425,
+        "true_positives": 7,
+        "false_positives": 2,
+        "predicted": 9,
+        "reference": 24,
+        "seconds": 29.5,
+        "false_positives_per_minute": 4.067796610169491
+      },
+      "matched_references_preserved": false,
+      "held_references_preserved": false,
+      "reference_pitch_coverage_preserved": false,
+      "lost_reference_pitch_seconds": 16.95405804988662,
+      "passes": false
+    },
+    {
+      "id": "bass-held-v1-sparse",
+      "corpus": "original-bass-stress",
+      "baseline_bass": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": 3,
+        "false_positives": 0,
+        "predicted": 3,
+        "reference": 3,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      },
+      "candidate": {
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8,
+        "true_positives": 2,
+        "false_positives": 0,
+        "predicted": 2,
+        "reference": 3,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      },
+      "matched_references_preserved": false,
+      "held_references_preserved": false,
+      "reference_pitch_coverage_preserved": false,
+      "lost_reference_pitch_seconds": 2.0,
+      "passes": false
+    },
+    {
+      "id": "bass-held-v1-syncopated",
+      "corpus": "original-bass-stress",
+      "baseline_bass": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": 32,
+        "false_positives": 0,
+        "predicted": 32,
+        "reference": 32,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      },
+      "candidate": {
+        "precision": 1.0,
+        "recall": 0.34375,
+        "f1": 0.5116279069767442,
+        "true_positives": 11,
+        "false_positives": 0,
+        "predicted": 11,
+        "reference": 32,
+        "seconds": 29.5,
+        "false_positives_per_minute": 0.0
+      },
+      "matched_references_preserved": false,
+      "held_references_preserved": false,
+      "reference_pitch_coverage_preserved": false,
+      "lost_reference_pitch_seconds": 8.331176870748287,
+      "passes": false
+    }
+  ],
+  "checkpoint_sha256": "d3bcfe1222429eaba2a570dcdbfdc0bdfef653ad7ab6e595e839c34c38101092",
+  "batch_selection_sha256": "f25b7cd2ac59d3aa34a81a68a42a46f86f7a82588408032aa7411db8f26fa0fd",
+  "test_manifest_sha256": "40ea140c65811bc38173d52c74baca8340949418403273540c3a0ceb221bc8b6",
+  "gate_sha256": "95b135b7f6fbea17e3cb32fec7990f0ff1ec754840ff4c1a3b7deff5b67cf167",
+  "scope": "Original held/repeated/simultaneous bass stress"
+}
