@@ -1,0 +1,133 @@
+{
+  "threshold": 0.005,
+  "passes": true,
+  "false_notes_removed": 0,
+  "failed_recordings": [],
+  "aggregate": {
+    "vienna-piano": {
+      "deployed_v7": {
+        "precision": 0.4152542372881356,
+        "recall": 0.7424242424242424,
+        "f1": 0.532608695652174,
+        "true_positives": 49,
+        "false_positives": 69,
+        "predicted": 118,
+        "reference": 66,
+        "seconds": 41.834104308390025,
+        "false_positives_per_minute": 98.96231958215259
+      },
+      "candidate": {
+        "precision": 0.4152542372881356,
+        "recall": 0.7424242424242424,
+        "f1": 0.532608695652174,
+        "true_positives": 49,
+        "false_positives": 69,
+        "predicted": 118,
+        "reference": 66,
+        "seconds": 41.834104308390025,
+        "false_positives_per_minute": 98.96231958215259
+      }
+    }
+  },
+  "per_recording": [
+    {
+      "id": "relational-piano-fresh-120-Chopin_op38_p19",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.46153846153846156,
+        "recall": 0.8181818181818182,
+        "f1": 0.5901639344262295,
+        "true_positives": 18,
+        "false_positives": 21,
+        "predicted": 39,
+        "reference": 22,
+        "seconds": 13.73845804988662,
+        "false_positives_per_minute": 91.71334915641413
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true,
+      "deployed_v7": {
+        "precision": 0.46153846153846156,
+        "recall": 0.8181818181818182,
+        "f1": 0.5901639344262295,
+        "true_positives": 18,
+        "false_positives": 21,
+        "predicted": 39,
+        "reference": 22,
+        "seconds": 13.73845804988662,
+        "false_positives_per_minute": 91.71334915641413
+      }
+    },
+    {
+      "id": "relational-piano-fresh-120-Chopin_op38_p21",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.3695652173913043,
+        "recall": 0.7727272727272727,
+        "f1": 0.5,
+        "true_positives": 17,
+        "false_positives": 29,
+        "predicted": 46,
+        "reference": 22,
+        "seconds": 15.247800453514738,
+        "false_positives_per_minute": 114.1148197279114
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true,
+      "deployed_v7": {
+        "precision": 0.3695652173913043,
+        "recall": 0.7727272727272727,
+        "f1": 0.5,
+        "true_positives": 17,
+        "false_positives": 29,
+        "predicted": 46,
+        "reference": 22,
+        "seconds": 15.247800453514738,
+        "false_positives_per_minute": 114.1148197279114
+      }
+    },
+    {
+      "id": "relational-piano-fresh-120-Chopin_op38_p22",
+      "corpus": "vienna-piano",
+      "candidate": {
+        "precision": 0.42424242424242425,
+        "recall": 0.6363636363636364,
+        "f1": 0.509090909090909,
+        "true_positives": 14,
+        "false_positives": 19,
+        "predicted": 33,
+        "reference": 22,
+        "seconds": 12.847845804988662,
+        "false_positives_per_minute": 88.73082828853316
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true,
+      "deployed_v7": {
+        "precision": 0.42424242424242425,
+        "recall": 0.6363636363636364,
+        "f1": 0.509090909090909,
+        "true_positives": 14,
+        "false_positives": 19,
+        "predicted": 33,
+        "reference": 22,
+        "seconds": 12.847845804988662,
+        "false_positives_per_minute": 88.73082828853316
+      }
+    }
+  ],
+  "checkpoint_sha256": "f0f1eecf75882058171116a0d7a9b3d00e11396b2d8f077e87a2657dea8a2ad9",
+  "batch_selection_sha256": "a1e418f369a14383337f02a660aba6672701a94c467a043156a0e4d082ab6539",
+  "selection_sha256": "c535bb33992cae49b29e926eae66f1598adea736dc9bbaec35906c3a57f97096",
+  "guardian_threshold": 0.05,
+  "policy": "v7-shared-interior-all-confidence-offline-v1",
+  "scope": "Later passages, same reserved performers/compositions"
+}

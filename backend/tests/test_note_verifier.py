@@ -97,7 +97,7 @@ def test_context_correction_matches_runtime_without_changing_unshared_or_confide
 def test_residual_model_matches_evaluation_and_preserves_note_objects(monkeypatch, tmp_path):
     torch = pytest.importorskip('torch')
     verifier = service.AccompanimentVerifier()
-    assert 'v7' in verifier.name
+    assert 'v8' in verifier.name
     path = tmp_path / 'window.wav'
     sf.write(path, np.zeros(22050), 22050)
     notes = [SimpleNamespace(pitch=60 + i, start=i * .1, end=1. + i * .1, velocity=80)
@@ -265,16 +265,23 @@ def test_consensus_preserves_protected_notes_edges_and_threshold_ties(monkeypatc
         setattr(verifier, name, SimpleNamespace(threshold=threshold, probability=lambda x: np.ones(len(x))))
 
     def relations(features):
+        if len(features) == 11:
+            return np.ones(11)
         assert features.shape == (5, 72)
         np.testing.assert_array_equal(features[:, :52], x[[0, 1, 2, 9, 10]])
         return np.array([0., 1., 0., .0375, 0.])
 
     def guardian(features):
+        if len(features) == 11:
+            return np.ones(11)
         np.testing.assert_array_equal(features, x[[0, 1, 2, 9, 10]])
         return np.array([0., 0., 1., 0., .3])
 
     verifier.left_relations_model = SimpleNamespace(threshold=.0375, probability=relations)
     verifier.left_guardian_model = SimpleNamespace(threshold=.3, probability=guardian)
+    # This test isolates the historical V7 stage.
+    verifier.broad_model = SimpleNamespace(threshold=.005, probability=lambda x: np.ones(len(x)))
+    verifier.broad_guardian_model = SimpleNamespace(threshold=.05, probability=lambda x: np.ones(len(x)))
     assert verifier.filter(path, {}, midi) == 2
     assert midi.instruments[0].notes == notes[1:5]
     assert midi.instruments[1].notes == [notes[i] for i in [5, 7, 8, 9, 10]]
@@ -299,3 +306,55 @@ def test_consensus_rejects_invalid_confidence_even_if_other_head_accepts():
             with pytest.raises(ValueError, match='confidence'):
                 consensus_keep(np.ones(1, dtype=bool), np.array([.2]), np.ones(1, dtype=bool),
                                context, guardian, threshold=.0375, guardian_threshold=.3)
+
+
+@pytest.mark.parametrize('name', ['BROAD_CHECKPOINT', 'BROAD_GUARDIAN_CHECKPOINT'])
+def test_damaged_pitch_preserving_model_fails_explicitly(monkeypatch, tmp_path, name):
+    pytest.importorskip('torch')
+    path = tmp_path / 'damaged.npz'
+    path.write_bytes(b'invalid model')
+    monkeypatch.setattr(service, name, path)
+    with pytest.raises(PipelineError, match='pitch-preserving model is missing or damaged'):
+        service.AccompanimentVerifier()
+
+
+def test_broad_consensus_preserves_head_vetoes_edges_unshared_notes_and_real_timing(monkeypatch, tmp_path):
+    torch = pytest.importorskip('torch')
+    verifier = service.AccompanimentVerifier()
+    path = tmp_path / 'window.wav'
+    sf.write(path, np.zeros(10 * 22050), 22050)
+    # High-confidence false treble/low notes, each veto, ties, unshared,
+    # register limits, window edges and a prior rejection.
+    pitches = [72, 48, 60, 64, 65, 67, 69, 35, 96, 70, 71, 73]
+    starts = [3., 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 4., 4.1, 2.5, 7.5, 4.2]
+    notes = [SimpleNamespace(pitch=p, start=s, end=s + .2, velocity=80)
+             for p, s in zip(pitches, starts, strict=True)]
+    attributes = [vars(note).copy() for note in notes]
+    midi = SimpleNamespace(instruments=[SimpleNamespace(notes=notes[:4]), SimpleNamespace(notes=notes[4:])])
+    bounded = SimpleNamespace(instruments=[SimpleNamespace(notes=[n for i, n in enumerate(notes) if i != 6])])
+    monkeypatch.setattr(service, 'decode_candidates', lambda _: bounded)
+    monkeypatch.setattr(service, 'note_features', lambda *a, **kw: np.zeros((12, 52), dtype=np.float32))
+    p = np.full(12, .9)
+    p[-1] = .05
+    verifier.model = lambda _: torch.from_numpy(np.log(p / (1 - p)))
+    verifier.context_models = [SimpleNamespace(threshold=.01, probability=lambda x: np.ones(len(x)))] * 2
+    for name, threshold in [('residual_model', .0375), ('left_hand_model', .05),
+                            ('left_refinement_model', .0375), ('left_relations_model', .0375),
+                            ('left_guardian_model', .3)]:
+        setattr(verifier, name, SimpleNamespace(threshold=threshold, probability=lambda x: np.ones(len(x))))
+
+    def relation(x):
+        assert x.shape == (6, 74)
+        np.testing.assert_array_equal(x[:, -2:], np.ones((6, 2)))
+        return np.array([0., 0., 1., 0., .005, 0.])
+
+    def guardian(x):
+        assert x.shape == (6, 54)
+        return np.array([0., 0., 0., 1., 0., .05])
+
+    verifier.broad_model = SimpleNamespace(threshold=.005, probability=relation)
+    verifier.broad_guardian_model = SimpleNamespace(threshold=.05, probability=guardian)
+    assert verifier.filter(path, {}, midi) == 3
+    assert midi.instruments[0].notes == notes[2:4]
+    assert midi.instruments[1].notes == notes[4:11]
+    assert [vars(note) for note in notes] == attributes

@@ -1,5 +1,10 @@
 # Supervised melody training
 
+The current website uses [pitch-preserving accompaniment V8](../docs/pitch-preserving-consensus-v8.md).
+The MP3 augmentation is complete, and the frozen release preserves attacks,
+offsets and annotated pitch coverage. Future experiments use
+`current_accompaniment_baseline.py`; V7 helpers reproduce historical studies.
+
 Model development uses labeled corpus features and explicit regression gates.
 Do not retranscribe user uploads or regenerate sheet music to demonstrate a model
 update; the user can upload audio again when they want to hear the new result.
@@ -27,7 +32,7 @@ failed the correct-note preservation gate and remains offline; do not deploy its
 checkpoints. Its bounded-feature and dataset preparation code support further
 model development without processing user uploads.
 
-The current [V7 consensus release](../docs/left-hand-consensus-v7.md) fits two
+The historical [V7 consensus release](../docs/left-hand-consensus-v7.md) fits two
 new left-hand classifiers on 25,680 eligible labeled events. Both must agree to
 remove a note. It passed attack/hold preservation gates with 19 fewer false notes
 on 162 evaluation passages and full cached production parity. These evaluations

@@ -1,0 +1,16 @@
+{
+  "eligible": true,
+  "decision": "Release after portable prediction and production filtering parity; no test retuning",
+  "checkpoint_sha256": "f0f1eecf75882058171116a0d7a9b3d00e11396b2d8f077e87a2657dea8a2ad9",
+  "validation_false_notes_removed": 3,
+  "regression_false_notes_removed": 1,
+  "fresh_false_notes_removed": 0,
+  "release_gates": [
+    "every matched attack",
+    "every matched onset-offset reference",
+    "reference pitch interval coverage",
+    "no per-recording false-positive increase",
+    "runtime parity"
+  ],
+  "limitations": "Very small candidate-note improvement; no guarantee of full-song or unseen-audio accuracy; no user uploads processed"
+}

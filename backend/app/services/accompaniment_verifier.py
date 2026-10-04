@@ -14,6 +14,13 @@ from app.services.candidate_relations import (
     relation_features,
     window_eligible,
 )
+from app.services.left_baseline_evidence import (
+    ACOUSTIC_EVIDENCE_NAMES,
+    EVIDENCE_VERSION,
+    RELATION_EVIDENCE_NAMES,
+    acoustic_evidence,
+    append_evidence,
+)
 from app.services.note_context_model import (
     ContextNoteModel,
     consensus_keep,
@@ -42,10 +49,14 @@ LEFT_RELATIONS_CHECKPOINT = CHECKPOINT.parent / 'left-relations-v7.npz'
 LEFT_RELATIONS_SHA256 = '50c4a615d36a835459ca9f1d40879013e987dc3424c0f9496cff64b67353a681'
 LEFT_GUARDIAN_CHECKPOINT = CHECKPOINT.parent / 'left-guardian-v7.npz'
 LEFT_GUARDIAN_SHA256 = '34d70e8e621f6809d7066cd5a80011299464280406f0a0ebafbf4ed0b76f0cda'
+BROAD_CHECKPOINT = CHECKPOINT.parent / 'accompaniment-broad-pitch-v1.npz'
+BROAD_SHA256 = '1faaa1e98e1af9e95e8684ce58e5731fe21f219f9434673e64d63b8101d4b5dd'
+BROAD_GUARDIAN_CHECKPOINT = CHECKPOINT.parent / 'accompaniment-broad-guardian-v1.npz'
+BROAD_GUARDIAN_SHA256 = 'fbe2f75edf6dec98df6a3568c2e1dc3b900d55284f78b7718df54345b9ed7395'
 
 
 class AccompanimentVerifier:
-    name = 'Accompaniment note verifier v7 (trained left-hand consensus)'
+    name = 'Accompaniment note verifier v8 (trained pitch-preserving consensus)'
 
     def __init__(self):
         import torch
@@ -124,6 +135,22 @@ class AccompanimentVerifier:
             except (ValueError, KeyError, OSError) as exc:
                 raise PipelineError('The left-hand consensus model is invalid. Rebuild the backend and retry.') from exc
 
+        for name, path, digest, threshold, names in (
+            ('broad_model', BROAD_CHECKPOINT, BROAD_SHA256, .005, RELATION_EVIDENCE_NAMES),
+            ('broad_guardian_model', BROAD_GUARDIAN_CHECKPOINT, BROAD_GUARDIAN_SHA256, .05,
+             ACOUSTIC_EVIDENCE_NAMES),
+        ):
+            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+                raise PipelineError('The pitch-preserving model is missing or damaged. Rebuild the backend and retry.')
+            try:
+                with np.load(path, allow_pickle=False) as arrays:
+                    model = ContextNoteModel(arrays, feature_names=names, feature_version=EVIDENCE_VERSION)
+                if model.threshold != threshold:
+                    raise ValueError('Unexpected pitch-preserving threshold')
+                setattr(self, name, model)
+            except (ValueError, KeyError, OSError) as exc:
+                raise PipelineError('The pitch-preserving model is invalid. Rebuild the backend and retry.') from exc
+
     def filter(self, path, acoustic, midi):
         """Keep original pitch, timing and velocity; reject unsupported events only."""
         import torch
@@ -179,6 +206,22 @@ class AccompanimentVerifier:
         keep = consensus_keep(keep, probability, low_shared, relations, guardian,
                               threshold=self.left_relations_model.threshold,
                               guardian_threshold=self.left_guardian_model.threshold)
+        # Preserve V7 rejections. This pair was validated on accompaniment
+        # across the piano register; both independent views must reject.
+        broad_shared = shared & np.asarray([36 <= n.pitch < 96 for n in notes])
+        broad_shared &= window_eligible(np.asarray(events), len(samples) / rate)
+        eligible = keep & broad_shared
+        if np.any(eligible):
+            features = relation_features(np.asarray(events), x, probability)
+            evidence = append_evidence(features, self.left_relations_model.probability(features),
+                                       self.left_guardian_model.probability(x))
+            relation = self.broad_model.probability(evidence[eligible])
+            guardian = self.broad_guardian_model.probability(acoustic_evidence(evidence[eligible]))
+            rejected = np.ones(len(notes))
+            rejected[eligible] = np.where((relation < self.broad_model.threshold)
+                                         & (guardian < self.broad_guardian_model.threshold), 0., 1.)
+            keep = residual_keep(keep, probability, broad_shared, rejected,
+                                 threshold=self.broad_model.threshold, ceiling=1.)
         index = 0
         for part in midi.instruments:
             size = len(part.notes)

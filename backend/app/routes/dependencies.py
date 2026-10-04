@@ -5,8 +5,9 @@ from uuid import UUID
 from fastapi import HTTPException, Request
 
 from app.config import Settings
-from app.services.accompaniment_verifier import CHECKPOINT as ACCOMPANIMENT_CHECKPOINT
 from app.services.accompaniment_verifier import (
+    BROAD_CHECKPOINT,
+    BROAD_GUARDIAN_CHECKPOINT,
     CONTEXT_CHECKPOINTS,
     LEFT_GUARDIAN_CHECKPOINT,
     LEFT_HAND_CHECKPOINT,
@@ -14,6 +15,7 @@ from app.services.accompaniment_verifier import (
     LEFT_RELATIONS_CHECKPOINT,
     RESIDUAL_CHECKPOINT,
 )
+from app.services.accompaniment_verifier import CHECKPOINT as ACCOMPANIMENT_CHECKPOINT
 from app.services.vocal_melody import CHECKPOINT
 
 
@@ -29,6 +31,7 @@ def dependencies(settings: Settings) -> dict[str, bool]:
             'accompaniment_left_hand_model': LEFT_HAND_CHECKPOINT.is_file(),
             'accompaniment_left_refinement_model': LEFT_REFINEMENT_CHECKPOINT.is_file(),
             'accompaniment_left_consensus_models': LEFT_RELATIONS_CHECKPOINT.is_file() and LEFT_GUARDIAN_CHECKPOINT.is_file(),
+            'accompaniment_pitch_preserving_models': BROAD_CHECKPOINT.is_file() and BROAD_GUARDIAN_CHECKPOINT.is_file(),
             'source_separation': importlib.util.find_spec('demucs') is not None,
             'music21': importlib.util.find_spec('music21') is not None,
             'musescore': settings.renderer() is not None}

@@ -1,0 +1,14 @@
+{
+  "passes": true,
+  "checkpoint_sha256": "f0f1eecf75882058171116a0d7a9b3d00e11396b2d8f077e87a2657dea8a2ad9",
+  "batch_selection_sha256": "a1e418f369a14383337f02a660aba6672701a94c467a043156a0e4d082ab6539",
+  "threshold": 0.005,
+  "guardian_threshold": 0.05,
+  "recordings": 168,
+  "candidate_events": 22371,
+  "sha256": {
+    "accompaniment-broad-pitch-v1.npz": "1faaa1e98e1af9e95e8684ce58e5731fe21f219f9434673e64d63b8101d4b5dd",
+    "accompaniment-broad-guardian-v1.npz": "fbe2f75edf6dec98df6a3568c2e1dc3b900d55284f78b7718df54345b9ed7395"
+  },
+  "scope": "Every validation prediction matches frozen sklearn at 1e-12; arrays only, no deployed pickle"
+}

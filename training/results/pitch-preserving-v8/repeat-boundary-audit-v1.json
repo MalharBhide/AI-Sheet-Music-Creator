@@ -1,0 +1,7490 @@
+{
+  "version": "repeat-boundary-supervision-v1",
+  "label_code_sha256": "6610b2ce99783e85b6b67167175cb92f22bc350d5bd929bfdb028e157d9936cd",
+  "baseline_hashes": {
+    "accompaniment-verifier-v2.pt": "2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60",
+    "accompaniment-context-expanded.npz": "d06bbe84ee9ad251960969e0097b217e340d52562ecf178295d7c4ae57c6ee8d",
+    "accompaniment-context-original.npz": "381c150b19bdb223fc9e85f88b78dd69892b0de5c7591189967f30b59a26a8e7",
+    "accompaniment-residual-v4.npz": "ad958557c44312c8d082b9339801ae794a7673956f098106f7fb6381fa3cd24d",
+    "accompaniment-left-hand-v1.npz": "7b3343637fa0d19ba1cd468845fcc309f30ac55b7fddc00f68bbc607abc2555b",
+    "accompaniment-left-refinement-v3.npz": "6b0f9bb5260f9645831dd409abd6fcb17cd8acbdd09e7a13df9c356cd76414e2",
+    "left-relations-v7.npz": "50c4a615d36a835459ca9f1d40879013e987dc3424c0f9496cff64b67353a681",
+    "left-guardian-v7.npz": "34d70e8e621f6809d7066cd5a80011299464280406f0a0ebafbf4ed0b76f0cda"
+  },
+  "extra_manifest_sha256": {
+    "/training/relational-piano-training/manifest.json": "9166eae6b3fbbd9a387d6cfb90f7e10bdf89d4fe189ee621a24d2267be49a34b",
+    "/training/left-hand-expanded-data/manifest.json": "d4c68a55171903ce5c97d01ae49741f05034aaacb52fa9d1e29381fb7e936128",
+    "/training/relational-piano-training-60/manifest.json": "b88d1f5dce693c22d4b34d222f16edda3fb9b2510c6ca26c1f4981c4bf7b8715",
+    "/training/relational-piano-training-90/manifest.json": "5b151504a63f325c407da5df8f0e33e1fc8389e53e004dd643d064c5cfeb3262",
+    "/training/robust-training-stems-v1/manifest.json": "7647ea1b53527a673648aef5b2f18a63056e12b17f42c74f506d7507e32cee65"
+  },
+  "items": [
+    {
+      "group": "train",
+      "id": "00_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 23,
+      "split_holds": 9,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "00_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 33,
+      "genuine_attacks": 14,
+      "split_holds": 16,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "00_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 22,
+      "genuine_attacks": 11,
+      "split_holds": 10,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "00_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "00_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 47,
+      "genuine_attacks": 38,
+      "split_holds": 4,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "00_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 7,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "00_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 28,
+      "genuine_attacks": 17,
+      "split_holds": 5,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "00_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 7,
+      "split_holds": 2,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "00_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 19,
+      "split_holds": 10,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "00_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 38,
+      "genuine_attacks": 11,
+      "split_holds": 25,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "00_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 32,
+      "genuine_attacks": 16,
+      "split_holds": 10,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "00_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 27,
+      "genuine_attacks": 16,
+      "split_holds": 6,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "00_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 54,
+      "genuine_attacks": 47,
+      "split_holds": 4,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "00_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 4,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "00_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 94,
+      "genuine_attacks": 86,
+      "split_holds": 5,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "00_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 8,
+      "split_holds": 5,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "00_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 97,
+      "genuine_attacks": 88,
+      "split_holds": 4,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "00_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 17,
+      "split_holds": 2,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "00_Funk2-119-G_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 137,
+      "genuine_attacks": 124,
+      "split_holds": 4,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "00_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 9,
+      "split_holds": 4,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "00_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 139,
+      "genuine_attacks": 126,
+      "split_holds": 4,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "00_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 13,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "00_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 105,
+      "genuine_attacks": 96,
+      "split_holds": 5,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "00_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 5,
+      "split_holds": 7,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "00_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 55,
+      "genuine_attacks": 49,
+      "split_holds": 4,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "00_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "00_Jazz1-200-B_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 23,
+      "genuine_attacks": 23,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "00_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 9,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "00_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 95,
+      "genuine_attacks": 74,
+      "split_holds": 9,
+      "ambiguous": 12
+    },
+    {
+      "group": "train",
+      "id": "00_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 13,
+      "split_holds": 3,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "00_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 38,
+      "genuine_attacks": 36,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "00_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 33,
+      "genuine_attacks": 23,
+      "split_holds": 7,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "00_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 72,
+      "genuine_attacks": 56,
+      "split_holds": 10,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "00_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 30,
+      "genuine_attacks": 5,
+      "split_holds": 23,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "00_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 63,
+      "genuine_attacks": 60,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "00_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 35,
+      "genuine_attacks": 15,
+      "split_holds": 20,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "00_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 135,
+      "genuine_attacks": 110,
+      "split_holds": 14,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "00_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 33,
+      "genuine_attacks": 24,
+      "split_holds": 3,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "00_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 260,
+      "genuine_attacks": 245,
+      "split_holds": 10,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "00_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 89,
+      "genuine_attacks": 73,
+      "split_holds": 7,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "00_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 187,
+      "genuine_attacks": 156,
+      "split_holds": 6,
+      "ambiguous": 25
+    },
+    {
+      "group": "train",
+      "id": "00_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 37,
+      "genuine_attacks": 33,
+      "split_holds": 2,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "00_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 242,
+      "genuine_attacks": 222,
+      "split_holds": 10,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "00_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 14,
+      "split_holds": 4,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "00_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 208,
+      "genuine_attacks": 186,
+      "split_holds": 6,
+      "ambiguous": 16
+    },
+    {
+      "group": "train",
+      "id": "00_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 30,
+      "genuine_attacks": 27,
+      "split_holds": 2,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "00_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 158,
+      "genuine_attacks": 145,
+      "split_holds": 2,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "00_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 61,
+      "genuine_attacks": 46,
+      "split_holds": 8,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "00_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 111,
+      "genuine_attacks": 46,
+      "split_holds": 29,
+      "ambiguous": 36
+    },
+    {
+      "group": "train",
+      "id": "00_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 11,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "00_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 73,
+      "genuine_attacks": 34,
+      "split_holds": 26,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "00_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 61,
+      "genuine_attacks": 48,
+      "split_holds": 8,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "00_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 84,
+      "genuine_attacks": 38,
+      "split_holds": 28,
+      "ambiguous": 18
+    },
+    {
+      "group": "train",
+      "id": "00_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 32,
+      "genuine_attacks": 25,
+      "split_holds": 3,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "00_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 66,
+      "genuine_attacks": 33,
+      "split_holds": 21,
+      "ambiguous": 12
+    },
+    {
+      "group": "train",
+      "id": "00_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 3,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "00_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 12,
+      "split_holds": 11,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "00_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 26,
+      "genuine_attacks": 22,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "00_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 122,
+      "genuine_attacks": 52,
+      "split_holds": 37,
+      "ambiguous": 33
+    },
+    {
+      "group": "train",
+      "id": "00_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 65,
+      "genuine_attacks": 36,
+      "split_holds": 24,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "01_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 51,
+      "genuine_attacks": 30,
+      "split_holds": 14,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "01_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 9,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "01_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 60,
+      "genuine_attacks": 35,
+      "split_holds": 15,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "01_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 11,
+      "split_holds": 3,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "01_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 67,
+      "genuine_attacks": 59,
+      "split_holds": 4,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "01_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 24,
+      "genuine_attacks": 17,
+      "split_holds": 6,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "01_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 61,
+      "genuine_attacks": 53,
+      "split_holds": 4,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "01_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 25,
+      "genuine_attacks": 18,
+      "split_holds": 5,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "01_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 64,
+      "genuine_attacks": 52,
+      "split_holds": 10,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "01_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 22,
+      "genuine_attacks": 20,
+      "split_holds": 2,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "01_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 64,
+      "genuine_attacks": 50,
+      "split_holds": 6,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "01_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 32,
+      "split_holds": 9,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "01_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 18,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "01_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 17,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "01_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 59,
+      "genuine_attacks": 54,
+      "split_holds": 3,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "01_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 29,
+      "genuine_attacks": 27,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "01_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 33,
+      "genuine_attacks": 29,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "01_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 55,
+      "genuine_attacks": 45,
+      "split_holds": 4,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "01_Funk2-119-G_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 17,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "01_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 27,
+      "genuine_attacks": 25,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "01_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 94,
+      "genuine_attacks": 92,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "01_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 41,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "01_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 49,
+      "genuine_attacks": 43,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "01_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 36,
+      "split_holds": 1,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "01_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 47,
+      "genuine_attacks": 28,
+      "split_holds": 14,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "01_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 10,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "01_Jazz1-200-B_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 4,
+      "split_holds": 2,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "01_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 10,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "01_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 44,
+      "genuine_attacks": 36,
+      "split_holds": 1,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "01_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 25,
+      "genuine_attacks": 17,
+      "split_holds": 6,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "01_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 7,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "01_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 24,
+      "genuine_attacks": 20,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "01_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 57,
+      "genuine_attacks": 33,
+      "split_holds": 14,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "01_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 30,
+      "split_holds": 9,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "01_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 16,
+      "split_holds": 4,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "01_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 24,
+      "genuine_attacks": 23,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "01_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 88,
+      "genuine_attacks": 78,
+      "split_holds": 2,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "01_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 12,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "01_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 155,
+      "genuine_attacks": 125,
+      "split_holds": 13,
+      "ambiguous": 17
+    },
+    {
+      "group": "train",
+      "id": "01_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 36,
+      "genuine_attacks": 32,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "01_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 97,
+      "genuine_attacks": 88,
+      "split_holds": 2,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "01_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 31,
+      "genuine_attacks": 31,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "01_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 73,
+      "genuine_attacks": 60,
+      "split_holds": 6,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "01_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 48,
+      "genuine_attacks": 42,
+      "split_holds": 4,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "01_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 94,
+      "genuine_attacks": 85,
+      "split_holds": 6,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "01_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 25,
+      "genuine_attacks": 21,
+      "split_holds": 3,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "01_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 52,
+      "genuine_attacks": 44,
+      "split_holds": 3,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "01_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 24,
+      "genuine_attacks": 19,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "01_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 111,
+      "genuine_attacks": 95,
+      "split_holds": 1,
+      "ambiguous": 15
+    },
+    {
+      "group": "train",
+      "id": "01_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 30,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "01_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 137,
+      "genuine_attacks": 58,
+      "split_holds": 34,
+      "ambiguous": 45
+    },
+    {
+      "group": "train",
+      "id": "01_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 11,
+      "split_holds": 3,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "01_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "01_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 58,
+      "genuine_attacks": 54,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "01_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 94,
+      "genuine_attacks": 78,
+      "split_holds": 10,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "01_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 26,
+      "split_holds": 6,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "01_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 185,
+      "genuine_attacks": 105,
+      "split_holds": 71,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "01_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 36,
+      "genuine_attacks": 33,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "01_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 316,
+      "genuine_attacks": 168,
+      "split_holds": 114,
+      "ambiguous": 34
+    },
+    {
+      "group": "train",
+      "id": "01_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 56,
+      "genuine_attacks": 42,
+      "split_holds": 4,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "02_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 71,
+      "genuine_attacks": 65,
+      "split_holds": 4,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "02_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 3,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "02_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 43,
+      "genuine_attacks": 37,
+      "split_holds": 2,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "02_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 4,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 105,
+      "genuine_attacks": 96,
+      "split_holds": 3,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "02_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 0,
+      "split_holds": 2,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "02_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 66,
+      "genuine_attacks": 59,
+      "split_holds": 3,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "02_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 7,
+      "split_holds": 2,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 109,
+      "genuine_attacks": 84,
+      "split_holds": 14,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "02_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 3,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 77,
+      "genuine_attacks": 58,
+      "split_holds": 10,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "02_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 2,
+      "split_holds": 2,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "02_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 65,
+      "genuine_attacks": 53,
+      "split_holds": 1,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "02_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 9,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 75,
+      "genuine_attacks": 60,
+      "split_holds": 0,
+      "ambiguous": 15
+    },
+    {
+      "group": "train",
+      "id": "02_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 7,
+      "split_holds": 5,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "02_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 84,
+      "genuine_attacks": 70,
+      "split_holds": 1,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "02_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 20,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 17,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "02_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 74,
+      "genuine_attacks": 59,
+      "split_holds": 0,
+      "ambiguous": 15
+    },
+    {
+      "group": "train",
+      "id": "02_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 13,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "02_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 23,
+      "genuine_attacks": 17,
+      "split_holds": 3,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "02_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 4,
+      "split_holds": 2,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "02_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 88,
+      "genuine_attacks": 50,
+      "split_holds": 18,
+      "ambiguous": 20
+    },
+    {
+      "group": "train",
+      "id": "02_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 48,
+      "genuine_attacks": 18,
+      "split_holds": 28,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "02_Jazz1-200-B_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 54,
+      "genuine_attacks": 39,
+      "split_holds": 0,
+      "ambiguous": 15
+    },
+    {
+      "group": "train",
+      "id": "02_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "02_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 105,
+      "genuine_attacks": 89,
+      "split_holds": 8,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "02_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 1,
+      "split_holds": 5,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 32,
+      "split_holds": 6,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "02_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 1,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "02_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 72,
+      "genuine_attacks": 69,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "02_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 132,
+      "genuine_attacks": 106,
+      "split_holds": 16,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "02_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 89,
+      "genuine_attacks": 61,
+      "split_holds": 6,
+      "ambiguous": 22
+    },
+    {
+      "group": "train",
+      "id": "02_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 10,
+      "split_holds": 2,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "02_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 52,
+      "genuine_attacks": 45,
+      "split_holds": 2,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "02_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 10,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 93,
+      "genuine_attacks": 62,
+      "split_holds": 3,
+      "ambiguous": 28
+    },
+    {
+      "group": "train",
+      "id": "02_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 8,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 76,
+      "genuine_attacks": 56,
+      "split_holds": 13,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "02_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 113,
+      "genuine_attacks": 99,
+      "split_holds": 9,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "02_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "02_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 122,
+      "genuine_attacks": 95,
+      "split_holds": 4,
+      "ambiguous": 23
+    },
+    {
+      "group": "train",
+      "id": "02_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 6,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "02_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 235,
+      "genuine_attacks": 117,
+      "split_holds": 41,
+      "ambiguous": 77
+    },
+    {
+      "group": "train",
+      "id": "02_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 13,
+      "split_holds": 3,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 110,
+      "genuine_attacks": 42,
+      "split_holds": 31,
+      "ambiguous": 37
+    },
+    {
+      "group": "train",
+      "id": "02_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 4,
+      "split_holds": 2,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "02_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 96,
+      "genuine_attacks": 81,
+      "split_holds": 7,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "02_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 16,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "02_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 67,
+      "genuine_attacks": 47,
+      "split_holds": 7,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "02_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 10,
+      "split_holds": 3,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 107,
+      "genuine_attacks": 97,
+      "split_holds": 3,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "02_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 14,
+      "split_holds": 5,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "02_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 117,
+      "genuine_attacks": 87,
+      "split_holds": 14,
+      "ambiguous": 16
+    },
+    {
+      "group": "train",
+      "id": "02_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 11,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "03_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 38,
+      "genuine_attacks": 20,
+      "split_holds": 11,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "03_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 2,
+      "split_holds": 2,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 31,
+      "genuine_attacks": 21,
+      "split_holds": 5,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "03_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 6,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 15,
+      "split_holds": 4,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 0,
+      "split_holds": 3,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 25,
+      "genuine_attacks": 19,
+      "split_holds": 2,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "03_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 31,
+      "genuine_attacks": 18,
+      "split_holds": 9,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "03_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 26,
+      "genuine_attacks": 16,
+      "split_holds": 5,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "03_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 6,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "03_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 35,
+      "genuine_attacks": 27,
+      "split_holds": 4,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "03_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 17,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 88,
+      "genuine_attacks": 75,
+      "split_holds": 3,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "03_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 11,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 65,
+      "genuine_attacks": 47,
+      "split_holds": 16,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "03_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_Funk2-119-G_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 50,
+      "genuine_attacks": 41,
+      "split_holds": 4,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "03_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 8,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 35,
+      "genuine_attacks": 29,
+      "split_holds": 3,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "03_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 8,
+      "split_holds": 2,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 95,
+      "genuine_attacks": 73,
+      "split_holds": 9,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "03_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 6,
+      "split_holds": 2,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 2,
+      "split_holds": 2,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_Jazz1-200-B_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 5,
+      "split_holds": 3,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "03_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 9,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 4,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 2,
+      "split_holds": 4,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "03_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 2,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 7,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "03_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 2,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "03_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 111,
+      "genuine_attacks": 73,
+      "split_holds": 7,
+      "ambiguous": 31
+    },
+    {
+      "group": "train",
+      "id": "03_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 93,
+      "genuine_attacks": 72,
+      "split_holds": 8,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "03_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 89,
+      "genuine_attacks": 73,
+      "split_holds": 7,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "03_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 62,
+      "genuine_attacks": 45,
+      "split_holds": 10,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "03_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 3,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 89,
+      "genuine_attacks": 65,
+      "split_holds": 17,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "03_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 25,
+      "genuine_attacks": 12,
+      "split_holds": 11,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "03_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 145,
+      "genuine_attacks": 101,
+      "split_holds": 37,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "03_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 10,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 235,
+      "genuine_attacks": 173,
+      "split_holds": 28,
+      "ambiguous": 34
+    },
+    {
+      "group": "train",
+      "id": "03_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 7,
+      "genuine_attacks": 5,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 68,
+      "genuine_attacks": 34,
+      "split_holds": 16,
+      "ambiguous": 18
+    },
+    {
+      "group": "train",
+      "id": "03_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 7,
+      "genuine_attacks": 3,
+      "split_holds": 3,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 111,
+      "genuine_attacks": 80,
+      "split_holds": 15,
+      "ambiguous": 16
+    },
+    {
+      "group": "train",
+      "id": "03_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "03_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 131,
+      "genuine_attacks": 91,
+      "split_holds": 32,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "03_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 2,
+      "split_holds": 2,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 99,
+      "genuine_attacks": 49,
+      "split_holds": 39,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "03_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 2,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "03_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 162,
+      "genuine_attacks": 115,
+      "split_holds": 29,
+      "ambiguous": 18
+    },
+    {
+      "group": "train",
+      "id": "03_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 3,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-00",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-01",
+      "corpus": "original-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-02",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "piano-03",
+      "corpus": "original-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "piano-04",
+      "corpus": "original-piano",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 2,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-05",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-06",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "piano-07",
+      "corpus": "original-piano",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 3,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "piano-08",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 0,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "piano-09",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "piano-10",
+      "corpus": "original-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "piano-11",
+      "corpus": "original-piano",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "piano-12",
+      "corpus": "original-piano",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-13",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-14",
+      "corpus": "original-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "piano-15",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 0,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "piano-16",
+      "corpus": "original-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-17",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "piano-18",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-19",
+      "corpus": "original-piano",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-20",
+      "corpus": "original-piano",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 0,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "piano-21",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-22",
+      "corpus": "original-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-23",
+      "corpus": "original-piano",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "piano-24",
+      "corpus": "original-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-25",
+      "corpus": "original-piano",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 4,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-26",
+      "corpus": "original-piano",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 1,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "piano-27",
+      "corpus": "original-piano",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-28",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "piano-29",
+      "corpus": "original-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-30",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "piano-31",
+      "corpus": "original-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 8,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 7,
+      "split_holds": 3,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 12,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 9,
+      "split_holds": 2,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 4,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p07",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 10,
+      "split_holds": 4,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 9,
+      "split_holds": 3,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 7,
+      "split_holds": 1,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 6,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 4,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 4,
+      "split_holds": 4,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 10,
+      "split_holds": 0,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op10_no3_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 31,
+      "genuine_attacks": 22,
+      "split_holds": 0,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 29,
+      "genuine_attacks": 22,
+      "split_holds": 2,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 31,
+      "genuine_attacks": 25,
+      "split_holds": 1,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 25,
+      "genuine_attacks": 21,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 10,
+      "split_holds": 1,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p07",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 31,
+      "genuine_attacks": 26,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 38,
+      "genuine_attacks": 30,
+      "split_holds": 1,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 23,
+      "genuine_attacks": 19,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 36,
+      "genuine_attacks": 29,
+      "split_holds": 1,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 13,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 38,
+      "genuine_attacks": 28,
+      "split_holds": 3,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 14,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "vienna-Chopin_op38_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 8,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 13,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 13,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 12,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 13,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p07",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 16,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 12,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 9,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 13,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 6,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 6,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 10,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "vienna-Mozart_K331_1st-mov_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 14,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 48,
+      "genuine_attacks": 37,
+      "split_holds": 0,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 48,
+      "genuine_attacks": 38,
+      "split_holds": 1,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 36,
+      "genuine_attacks": 31,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 47,
+      "genuine_attacks": 29,
+      "split_holds": 1,
+      "ambiguous": 17
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 35,
+      "genuine_attacks": 30,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 24,
+      "genuine_attacks": 18,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p07",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 29,
+      "split_holds": 1,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 46,
+      "genuine_attacks": 36,
+      "split_holds": 1,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 29,
+      "genuine_attacks": 25,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 37,
+      "genuine_attacks": 36,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 16,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 28,
+      "genuine_attacks": 22,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 37,
+      "genuine_attacks": 29,
+      "split_holds": 2,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "vienna-Schubert_D783_no15_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 15,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "context-piano-000",
+      "corpus": "original-piano",
+      "eligible_boundaries": 40,
+      "genuine_attacks": 33,
+      "split_holds": 0,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "context-piano-001",
+      "corpus": "original-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 3,
+      "split_holds": 1,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "context-piano-002",
+      "corpus": "original-piano",
+      "eligible_boundaries": 43,
+      "genuine_attacks": 33,
+      "split_holds": 0,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "context-piano-003",
+      "corpus": "original-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 11,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "context-piano-004",
+      "corpus": "original-piano",
+      "eligible_boundaries": 54,
+      "genuine_attacks": 45,
+      "split_holds": 1,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "context-piano-005",
+      "corpus": "original-piano",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "context-piano-006",
+      "corpus": "original-piano",
+      "eligible_boundaries": 44,
+      "genuine_attacks": 25,
+      "split_holds": 0,
+      "ambiguous": 19
+    },
+    {
+      "group": "train",
+      "id": "context-piano-007",
+      "corpus": "original-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 8,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "context-piano-008",
+      "corpus": "original-piano",
+      "eligible_boundaries": 47,
+      "genuine_attacks": 41,
+      "split_holds": 1,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "context-piano-009",
+      "corpus": "original-piano",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 7,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "context-piano-010",
+      "corpus": "original-piano",
+      "eligible_boundaries": 37,
+      "genuine_attacks": 30,
+      "split_holds": 0,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "context-piano-011",
+      "corpus": "original-piano",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 17,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "context-piano-012",
+      "corpus": "original-piano",
+      "eligible_boundaries": 51,
+      "genuine_attacks": 34,
+      "split_holds": 0,
+      "ambiguous": 17
+    },
+    {
+      "group": "train",
+      "id": "context-piano-013",
+      "corpus": "original-piano",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 10,
+      "split_holds": 3,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "context-piano-014",
+      "corpus": "original-piano",
+      "eligible_boundaries": 35,
+      "genuine_attacks": 24,
+      "split_holds": 2,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "context-piano-015",
+      "corpus": "original-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 12,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "context-piano-016",
+      "corpus": "original-piano",
+      "eligible_boundaries": 43,
+      "genuine_attacks": 26,
+      "split_holds": 3,
+      "ambiguous": 14
+    },
+    {
+      "group": "train",
+      "id": "context-piano-017",
+      "corpus": "original-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 12,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "context-piano-018",
+      "corpus": "original-piano",
+      "eligible_boundaries": 43,
+      "genuine_attacks": 36,
+      "split_holds": 0,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "context-piano-019",
+      "corpus": "original-piano",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 11,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "context-piano-020",
+      "corpus": "original-piano",
+      "eligible_boundaries": 35,
+      "genuine_attacks": 18,
+      "split_holds": 0,
+      "ambiguous": 17
+    },
+    {
+      "group": "train",
+      "id": "context-piano-021",
+      "corpus": "original-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 9,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "context-piano-022",
+      "corpus": "original-piano",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 35,
+      "split_holds": 0,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "context-piano-023",
+      "corpus": "original-piano",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "context-piano-024",
+      "corpus": "original-piano",
+      "eligible_boundaries": 45,
+      "genuine_attacks": 27,
+      "split_holds": 0,
+      "ambiguous": 18
+    },
+    {
+      "group": "train",
+      "id": "context-piano-025",
+      "corpus": "original-piano",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 6,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "context-piano-026",
+      "corpus": "original-piano",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 36,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "context-piano-027",
+      "corpus": "original-piano",
+      "eligible_boundaries": 7,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "context-piano-028",
+      "corpus": "original-piano",
+      "eligible_boundaries": 40,
+      "genuine_attacks": 31,
+      "split_holds": 0,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "context-piano-029",
+      "corpus": "original-piano",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 13,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "context-piano-030",
+      "corpus": "original-piano",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 28,
+      "split_holds": 0,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "context-piano-031",
+      "corpus": "original-piano",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 7,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "context-piano-032",
+      "corpus": "original-piano",
+      "eligible_boundaries": 48,
+      "genuine_attacks": 43,
+      "split_holds": 1,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "context-piano-033",
+      "corpus": "original-piano",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 13,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "context-piano-034",
+      "corpus": "original-piano",
+      "eligible_boundaries": 35,
+      "genuine_attacks": 25,
+      "split_holds": 0,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "context-piano-035",
+      "corpus": "original-piano",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "context-piano-036",
+      "corpus": "original-piano",
+      "eligible_boundaries": 40,
+      "genuine_attacks": 27,
+      "split_holds": 0,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "context-piano-037",
+      "corpus": "original-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 8,
+      "split_holds": 2,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "context-piano-038",
+      "corpus": "original-piano",
+      "eligible_boundaries": 46,
+      "genuine_attacks": 38,
+      "split_holds": 0,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "context-piano-039",
+      "corpus": "original-piano",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 7,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "context-piano-040",
+      "corpus": "original-piano",
+      "eligible_boundaries": 36,
+      "genuine_attacks": 28,
+      "split_holds": 1,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "context-piano-041",
+      "corpus": "original-piano",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "context-piano-042",
+      "corpus": "original-piano",
+      "eligible_boundaries": 44,
+      "genuine_attacks": 40,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "context-piano-043",
+      "corpus": "original-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 10,
+      "split_holds": 1,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "context-piano-044",
+      "corpus": "original-piano",
+      "eligible_boundaries": 50,
+      "genuine_attacks": 39,
+      "split_holds": 0,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "context-piano-045",
+      "corpus": "original-piano",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 8,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "context-piano-046",
+      "corpus": "original-piano",
+      "eligible_boundaries": 39,
+      "genuine_attacks": 33,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "context-piano-047",
+      "corpus": "original-piano",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "context-piano-048",
+      "corpus": "original-piano",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 28,
+      "split_holds": 0,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "context-piano-049",
+      "corpus": "original-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "context-piano-050",
+      "corpus": "original-piano",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 25,
+      "split_holds": 0,
+      "ambiguous": 16
+    },
+    {
+      "group": "train",
+      "id": "context-piano-051",
+      "corpus": "original-piano",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 13,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "context-piano-052",
+      "corpus": "original-piano",
+      "eligible_boundaries": 46,
+      "genuine_attacks": 40,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "context-piano-053",
+      "corpus": "original-piano",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 16,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "context-piano-054",
+      "corpus": "original-piano",
+      "eligible_boundaries": 40,
+      "genuine_attacks": 26,
+      "split_holds": 0,
+      "ambiguous": 14
+    },
+    {
+      "group": "train",
+      "id": "context-piano-055",
+      "corpus": "original-piano",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 10,
+      "split_holds": 2,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "context-piano-056",
+      "corpus": "original-piano",
+      "eligible_boundaries": 49,
+      "genuine_attacks": 47,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "context-piano-057",
+      "corpus": "original-piano",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 6,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "context-piano-058",
+      "corpus": "original-piano",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 32,
+      "split_holds": 2,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "context-piano-059",
+      "corpus": "original-piano",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 10,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "context-piano-060",
+      "corpus": "original-piano",
+      "eligible_boundaries": 47,
+      "genuine_attacks": 26,
+      "split_holds": 0,
+      "ambiguous": 21
+    },
+    {
+      "group": "train",
+      "id": "context-piano-061",
+      "corpus": "original-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 9,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "context-piano-062",
+      "corpus": "original-piano",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 30,
+      "split_holds": 0,
+      "ambiguous": 12
+    },
+    {
+      "group": "train",
+      "id": "context-piano-063",
+      "corpus": "original-piano",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 15,
+      "split_holds": 3,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "training-stem-00_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 37,
+      "genuine_attacks": 18,
+      "split_holds": 10,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "training-stem-00_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 27,
+      "genuine_attacks": 13,
+      "split_holds": 10,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "training-stem-00_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 53,
+      "genuine_attacks": 43,
+      "split_holds": 4,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "training-stem-00_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 3,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "training-stem-00_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 49,
+      "genuine_attacks": 40,
+      "split_holds": 4,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "training-stem-00_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "training-stem-00_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 126,
+      "genuine_attacks": 96,
+      "split_holds": 11,
+      "ambiguous": 19
+    },
+    {
+      "group": "train",
+      "id": "training-stem-00_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 32,
+      "genuine_attacks": 24,
+      "split_holds": 3,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "training-stem-00_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 104,
+      "genuine_attacks": 47,
+      "split_holds": 33,
+      "ambiguous": 24
+    },
+    {
+      "group": "train",
+      "id": "training-stem-00_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 11,
+      "split_holds": 3,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "training-stem-01_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 26,
+      "split_holds": 13,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "training-stem-01_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 8,
+      "split_holds": 5,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "training-stem-01_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 18,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "training-stem-01_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 22,
+      "genuine_attacks": 17,
+      "split_holds": 1,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "training-stem-01_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 24,
+      "split_holds": 11,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "training-stem-01_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 10,
+      "split_holds": 3,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "training-stem-01_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 91,
+      "genuine_attacks": 68,
+      "split_holds": 4,
+      "ambiguous": 19
+    },
+    {
+      "group": "train",
+      "id": "training-stem-01_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "training-stem-01_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 105,
+      "genuine_attacks": 95,
+      "split_holds": 1,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "training-stem-01_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 30,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "training-stem-02_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 61,
+      "genuine_attacks": 56,
+      "split_holds": 1,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "training-stem-02_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 3,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "training-stem-02_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 56,
+      "genuine_attacks": 45,
+      "split_holds": 0,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "training-stem-02_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 10,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "training-stem-02_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 64,
+      "genuine_attacks": 37,
+      "split_holds": 11,
+      "ambiguous": 16
+    },
+    {
+      "group": "train",
+      "id": "training-stem-02_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 17,
+      "split_holds": 23,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "training-stem-02_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 84,
+      "genuine_attacks": 50,
+      "split_holds": 7,
+      "ambiguous": 27
+    },
+    {
+      "group": "train",
+      "id": "training-stem-02_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 10,
+      "split_holds": 5,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "training-stem-02_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 219,
+      "genuine_attacks": 111,
+      "split_holds": 40,
+      "ambiguous": 68
+    },
+    {
+      "group": "train",
+      "id": "training-stem-02_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 13,
+      "split_holds": 5,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "training-stem-03_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 31,
+      "genuine_attacks": 18,
+      "split_holds": 9,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "training-stem-03_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 1,
+      "split_holds": 3,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "training-stem-03_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 30,
+      "genuine_attacks": 22,
+      "split_holds": 5,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "training-stem-03_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 16,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "training-stem-03_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 2,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "training-stem-03_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 0,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "training-stem-03_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 106,
+      "genuine_attacks": 69,
+      "split_holds": 7,
+      "ambiguous": 30
+    },
+    {
+      "group": "train",
+      "id": "training-stem-03_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 2,
+      "split_holds": 4,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "training-stem-03_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 213,
+      "genuine_attacks": 159,
+      "split_holds": 25,
+      "ambiguous": 29
+    },
+    {
+      "group": "train",
+      "id": "training-stem-03_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 5,
+      "split_holds": 4,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 27,
+      "genuine_attacks": 18,
+      "split_holds": 1,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 64,
+      "genuine_attacks": 39,
+      "split_holds": 3,
+      "ambiguous": 22
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 37,
+      "genuine_attacks": 23,
+      "split_holds": 3,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 39,
+      "genuine_attacks": 20,
+      "split_holds": 1,
+      "ambiguous": 18
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 50,
+      "genuine_attacks": 31,
+      "split_holds": 1,
+      "ambiguous": 18
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 31,
+      "genuine_attacks": 19,
+      "split_holds": 2,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p07",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 43,
+      "genuine_attacks": 29,
+      "split_holds": 1,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 61,
+      "genuine_attacks": 34,
+      "split_holds": 12,
+      "ambiguous": 15
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 60,
+      "genuine_attacks": 35,
+      "split_holds": 4,
+      "ambiguous": 21
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 25,
+      "split_holds": 4,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 33,
+      "genuine_attacks": 18,
+      "split_holds": 1,
+      "ambiguous": 14
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 47,
+      "genuine_attacks": 29,
+      "split_holds": 2,
+      "ambiguous": 16
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 56,
+      "genuine_attacks": 33,
+      "split_holds": 1,
+      "ambiguous": 22
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op10_no3_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 19,
+      "split_holds": 2,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 38,
+      "genuine_attacks": 26,
+      "split_holds": 3,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 49,
+      "genuine_attacks": 31,
+      "split_holds": 3,
+      "ambiguous": 15
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 37,
+      "genuine_attacks": 26,
+      "split_holds": 0,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 39,
+      "genuine_attacks": 31,
+      "split_holds": 1,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 43,
+      "genuine_attacks": 27,
+      "split_holds": 0,
+      "ambiguous": 16
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 29,
+      "genuine_attacks": 25,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p07",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 48,
+      "genuine_attacks": 33,
+      "split_holds": 4,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 44,
+      "genuine_attacks": 29,
+      "split_holds": 2,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 39,
+      "genuine_attacks": 18,
+      "split_holds": 3,
+      "ambiguous": 18
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 30,
+      "split_holds": 0,
+      "ambiguous": 12
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 29,
+      "genuine_attacks": 19,
+      "split_holds": 1,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 54,
+      "genuine_attacks": 36,
+      "split_holds": 1,
+      "ambiguous": 17
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 40,
+      "genuine_attacks": 25,
+      "split_holds": 1,
+      "ambiguous": 14
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Chopin_op38_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 32,
+      "genuine_attacks": 19,
+      "split_holds": 2,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 14,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 29,
+      "genuine_attacks": 20,
+      "split_holds": 1,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 27,
+      "genuine_attacks": 19,
+      "split_holds": 2,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 24,
+      "genuine_attacks": 18,
+      "split_holds": 1,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 17,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p07",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 25,
+      "genuine_attacks": 20,
+      "split_holds": 1,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 16,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 22,
+      "genuine_attacks": 18,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 14,
+      "split_holds": 1,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 26,
+      "genuine_attacks": 21,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 30,
+      "genuine_attacks": 21,
+      "split_holds": 2,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 22,
+      "genuine_attacks": 18,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 31,
+      "genuine_attacks": 23,
+      "split_holds": 0,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 30,
+      "genuine_attacks": 27,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 33,
+      "split_holds": 0,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 12,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 52,
+      "genuine_attacks": 41,
+      "split_holds": 1,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p07",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 13,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 15,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 43,
+      "genuine_attacks": 39,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 35,
+      "genuine_attacks": 33,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 50,
+      "genuine_attacks": 38,
+      "split_holds": 2,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 28,
+      "split_holds": 1,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 12,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-Schubert_D783_no15_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 18,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 33,
+      "genuine_attacks": 31,
+      "split_holds": 2,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 3,
+      "split_holds": 2,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 74,
+      "genuine_attacks": 71,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 24,
+      "genuine_attacks": 22,
+      "split_holds": 2,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 7,
+      "split_holds": 2,
+      "ambiguous": 12
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 9,
+      "split_holds": 4,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 0,
+      "split_holds": 3,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 14,
+      "split_holds": 3,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 9,
+      "split_holds": 3,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 3,
+      "split_holds": 9,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 28,
+      "genuine_attacks": 11,
+      "split_holds": 11,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-00_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 4,
+      "split_holds": 3,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 7,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 7,
+      "genuine_attacks": 6,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 23,
+      "genuine_attacks": 14,
+      "split_holds": 4,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 19,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 18,
+      "split_holds": 11,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 7,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 4,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 36,
+      "genuine_attacks": 20,
+      "split_holds": 3,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 13,
+      "split_holds": 3,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 96,
+      "genuine_attacks": 44,
+      "split_holds": 43,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 12,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 52,
+      "genuine_attacks": 34,
+      "split_holds": 8,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-01_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 7,
+      "genuine_attacks": 6,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 3,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 29,
+      "genuine_attacks": 23,
+      "split_holds": 4,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 12,
+      "split_holds": 12,
+      "ambiguous": 18
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 4,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 26,
+      "genuine_attacks": 20,
+      "split_holds": 1,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 40,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 3,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 6,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-02_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 22,
+      "genuine_attacks": 15,
+      "split_holds": 3,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 23,
+      "genuine_attacks": 18,
+      "split_holds": 3,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 9,
+      "split_holds": 4,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 1,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 33,
+      "genuine_attacks": 21,
+      "split_holds": 7,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 28,
+      "genuine_attacks": 11,
+      "split_holds": 14,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 23,
+      "genuine_attacks": 16,
+      "split_holds": 5,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "left-expansion-03_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 2,
+      "split_holds": 2,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 28,
+      "genuine_attacks": 15,
+      "split_holds": 5,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 9,
+      "split_holds": 3,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 28,
+      "genuine_attacks": 11,
+      "split_holds": 3,
+      "ambiguous": 14
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 32,
+      "genuine_attacks": 11,
+      "split_holds": 6,
+      "ambiguous": 15
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 2,
+      "split_holds": 2,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 52,
+      "genuine_attacks": 31,
+      "split_holds": 6,
+      "ambiguous": 15
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p07",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 22,
+      "genuine_attacks": 10,
+      "split_holds": 3,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 8,
+      "split_holds": 1,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 6,
+      "split_holds": 1,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 24,
+      "genuine_attacks": 11,
+      "split_holds": 4,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 33,
+      "genuine_attacks": 17,
+      "split_holds": 3,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 8,
+      "split_holds": 4,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 7,
+      "split_holds": 2,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 36,
+      "genuine_attacks": 17,
+      "split_holds": 6,
+      "ambiguous": 13
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 34,
+      "split_holds": 0,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 43,
+      "genuine_attacks": 30,
+      "split_holds": 1,
+      "ambiguous": 12
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 35,
+      "genuine_attacks": 24,
+      "split_holds": 2,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 40,
+      "genuine_attacks": 30,
+      "split_holds": 1,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 32,
+      "genuine_attacks": 22,
+      "split_holds": 1,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 35,
+      "genuine_attacks": 26,
+      "split_holds": 3,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p07",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 50,
+      "genuine_attacks": 37,
+      "split_holds": 3,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 45,
+      "genuine_attacks": 37,
+      "split_holds": 0,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 36,
+      "genuine_attacks": 10,
+      "split_holds": 0,
+      "ambiguous": 26
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 43,
+      "genuine_attacks": 37,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 30,
+      "genuine_attacks": 17,
+      "split_holds": 2,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 50,
+      "genuine_attacks": 39,
+      "split_holds": 1,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 25,
+      "split_holds": 2,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Chopin_op38_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 28,
+      "genuine_attacks": 18,
+      "split_holds": 1,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 12,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 23,
+      "genuine_attacks": 14,
+      "split_holds": 0,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 32,
+      "genuine_attacks": 23,
+      "split_holds": 1,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 16,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 23,
+      "genuine_attacks": 15,
+      "split_holds": 1,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 23,
+      "genuine_attacks": 16,
+      "split_holds": 0,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p07",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 26,
+      "genuine_attacks": 19,
+      "split_holds": 0,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 7,
+      "split_holds": 0,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 25,
+      "genuine_attacks": 20,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 3,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 22,
+      "genuine_attacks": 17,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 14,
+      "split_holds": 1,
+      "ambiguous": 19
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 18,
+      "split_holds": 2,
+      "ambiguous": 21
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 17,
+      "split_holds": 3,
+      "ambiguous": 14
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 36,
+      "genuine_attacks": 23,
+      "split_holds": 2,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 30,
+      "genuine_attacks": 9,
+      "split_holds": 7,
+      "ambiguous": 14
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 29,
+      "genuine_attacks": 16,
+      "split_holds": 2,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p07",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 26,
+      "genuine_attacks": 17,
+      "split_holds": 1,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 20,
+      "split_holds": 7,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 28,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 26
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 25,
+      "split_holds": 0,
+      "ambiguous": 16
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 11,
+      "split_holds": 2,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 37,
+      "genuine_attacks": 14,
+      "split_holds": 8,
+      "ambiguous": 15
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 11,
+      "split_holds": 5,
+      "ambiguous": 18
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Chopin_op38_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 37,
+      "genuine_attacks": 24,
+      "split_holds": 1,
+      "ambiguous": 12
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p01",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p02",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p03",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p04",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p05",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p06",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p08",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p09",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p10",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p11",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 14,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p12",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 23,
+      "genuine_attacks": 16,
+      "split_holds": 0,
+      "ambiguous": 7
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p13",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 10,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p14",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-00_BN1-147-Gb_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 26,
+      "genuine_attacks": 13,
+      "split_holds": 11,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-00_BN1-147-Gb_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 9,
+      "split_holds": 1,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-00_Funk1-97-C_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 84,
+      "genuine_attacks": 74,
+      "split_holds": 6,
+      "ambiguous": 4
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-00_Funk1-97-C_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 7,
+      "split_holds": 6,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-00_Jazz1-200-B_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 18,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-00_Jazz1-200-B_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 9,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-00_Rock1-90-C#_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 240,
+      "genuine_attacks": 221,
+      "split_holds": 11,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-00_Rock1-90-C#_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 92,
+      "genuine_attacks": 70,
+      "split_holds": 11,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-00_SS1-68-E_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 85,
+      "genuine_attacks": 33,
+      "split_holds": 34,
+      "ambiguous": 18
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-00_SS1-68-E_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 60,
+      "genuine_attacks": 46,
+      "split_holds": 4,
+      "ambiguous": 10
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-01_BN1-147-Gb_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 62,
+      "genuine_attacks": 33,
+      "split_holds": 20,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-01_BN1-147-Gb_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 9,
+      "split_holds": 2,
+      "ambiguous": 3
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-01_Funk1-97-C_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 51,
+      "genuine_attacks": 47,
+      "split_holds": 2,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-01_Funk1-97-C_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 35,
+      "genuine_attacks": 28,
+      "split_holds": 2,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-01_Jazz1-200-B_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 5,
+      "split_holds": 2,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-01_Jazz1-200-B_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 9,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-01_Rock1-90-C#_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 150,
+      "genuine_attacks": 113,
+      "split_holds": 16,
+      "ambiguous": 21
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-01_Rock1-90-C#_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 32,
+      "split_holds": 4,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-01_SS1-68-E_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 141,
+      "genuine_attacks": 58,
+      "split_holds": 37,
+      "ambiguous": 46
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-01_SS1-68-E_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 10,
+      "split_holds": 3,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-02_BN1-147-Gb_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 30,
+      "split_holds": 6,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-02_BN1-147-Gb_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 4,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-02_Funk1-97-C_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 60,
+      "genuine_attacks": 45,
+      "split_holds": 4,
+      "ambiguous": 11
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-02_Funk1-97-C_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 6,
+      "split_holds": 11,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-02_Jazz1-200-B_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 45,
+      "genuine_attacks": 36,
+      "split_holds": 1,
+      "ambiguous": 8
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-02_Jazz1-200-B_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-02_Rock1-90-C#_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 35,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-02_Rock1-90-C#_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 11,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-02_SS1-68-E_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 98,
+      "genuine_attacks": 31,
+      "split_holds": 25,
+      "ambiguous": 42
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-02_SS1-68-E_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 3,
+      "split_holds": 11,
+      "ambiguous": 6
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-03_BN1-147-Gb_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 27,
+      "genuine_attacks": 19,
+      "split_holds": 3,
+      "ambiguous": 5
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-03_BN1-147-Gb_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 6,
+      "split_holds": 2,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-03_Funk1-97-C_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 76,
+      "genuine_attacks": 64,
+      "split_holds": 3,
+      "ambiguous": 9
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-03_Funk1-97-C_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 11,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-03_Jazz1-200-B_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-03_Jazz1-200-B_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-03_Rock1-90-C#_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 84,
+      "genuine_attacks": 67,
+      "split_holds": 5,
+      "ambiguous": 12
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-03_Rock1-90-C#_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 2,
+      "split_holds": 4,
+      "ambiguous": 0
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-03_SS1-68-E_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 70,
+      "genuine_attacks": 31,
+      "split_holds": 23,
+      "ambiguous": 16
+    },
+    {
+      "group": "train",
+      "id": "robust-stem-v1-03_SS1-68-E_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 3,
+      "split_holds": 3,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "04_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 30,
+      "genuine_attacks": 22,
+      "split_holds": 4,
+      "ambiguous": 4
+    },
+    {
+      "group": "validation",
+      "id": "04_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 4,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "04_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 33,
+      "genuine_attacks": 27,
+      "split_holds": 1,
+      "ambiguous": 5
+    },
+    {
+      "group": "validation",
+      "id": "04_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 8,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "04_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 18,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "04_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 5,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "04_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 37,
+      "genuine_attacks": 30,
+      "split_holds": 2,
+      "ambiguous": 5
+    },
+    {
+      "group": "validation",
+      "id": "04_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 7,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "04_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 3,
+      "split_holds": 10,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "04_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 10,
+      "split_holds": 3,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "04_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 8,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "04_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 26,
+      "genuine_attacks": 24,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "04_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 7,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "04_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 8,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "04_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 13,
+      "split_holds": 4,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "04_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 57,
+      "genuine_attacks": 41,
+      "split_holds": 6,
+      "ambiguous": 10
+    },
+    {
+      "group": "validation",
+      "id": "04_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 24,
+      "genuine_attacks": 21,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "04_Funk2-119-G_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 86,
+      "genuine_attacks": 69,
+      "split_holds": 2,
+      "ambiguous": 15
+    },
+    {
+      "group": "validation",
+      "id": "04_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 17,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "04_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 51,
+      "genuine_attacks": 41,
+      "split_holds": 3,
+      "ambiguous": 7
+    },
+    {
+      "group": "validation",
+      "id": "04_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 11,
+      "split_holds": 2,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "04_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 53,
+      "genuine_attacks": 47,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "validation",
+      "id": "04_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 11,
+      "split_holds": 2,
+      "ambiguous": 4
+    },
+    {
+      "group": "validation",
+      "id": "04_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 8,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "04_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 1,
+      "split_holds": 2,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "04_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 5,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "04_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 8,
+      "split_holds": 3,
+      "ambiguous": 6
+    },
+    {
+      "group": "validation",
+      "id": "04_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 6,
+      "split_holds": 2,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "04_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 7,
+      "genuine_attacks": 7,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "04_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 3,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "04_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 33,
+      "genuine_attacks": 25,
+      "split_holds": 1,
+      "ambiguous": 7
+    },
+    {
+      "group": "validation",
+      "id": "04_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 6,
+      "split_holds": 3,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "04_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 11,
+      "split_holds": 3,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "04_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 12,
+      "split_holds": 2,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "04_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 81,
+      "genuine_attacks": 78,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "04_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 16,
+      "split_holds": 2,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "04_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 92,
+      "genuine_attacks": 77,
+      "split_holds": 4,
+      "ambiguous": 11
+    },
+    {
+      "group": "validation",
+      "id": "04_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 4,
+      "split_holds": 4,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "04_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 133,
+      "genuine_attacks": 121,
+      "split_holds": 4,
+      "ambiguous": 8
+    },
+    {
+      "group": "validation",
+      "id": "04_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 6,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "04_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 106,
+      "genuine_attacks": 31,
+      "split_holds": 61,
+      "ambiguous": 14
+    },
+    {
+      "group": "validation",
+      "id": "04_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 22,
+      "genuine_attacks": 14,
+      "split_holds": 5,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "04_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 140,
+      "genuine_attacks": 123,
+      "split_holds": 8,
+      "ambiguous": 9
+    },
+    {
+      "group": "validation",
+      "id": "04_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 8,
+      "split_holds": 2,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "04_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 72,
+      "genuine_attacks": 66,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "validation",
+      "id": "04_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 11,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "04_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 127,
+      "genuine_attacks": 55,
+      "split_holds": 40,
+      "ambiguous": 32
+    },
+    {
+      "group": "validation",
+      "id": "04_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "04_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 250,
+      "genuine_attacks": 192,
+      "split_holds": 19,
+      "ambiguous": 39
+    },
+    {
+      "group": "validation",
+      "id": "04_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 15,
+      "split_holds": 2,
+      "ambiguous": 4
+    },
+    {
+      "group": "validation",
+      "id": "04_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 128,
+      "genuine_attacks": 56,
+      "split_holds": 37,
+      "ambiguous": 35
+    },
+    {
+      "group": "validation",
+      "id": "04_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 4,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "04_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 171,
+      "genuine_attacks": 54,
+      "split_holds": 100,
+      "ambiguous": 17
+    },
+    {
+      "group": "validation",
+      "id": "04_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "04_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 191,
+      "genuine_attacks": 68,
+      "split_holds": 94,
+      "ambiguous": 29
+    },
+    {
+      "group": "validation",
+      "id": "04_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 13,
+      "split_holds": 3,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "04_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 118,
+      "genuine_attacks": 58,
+      "split_holds": 32,
+      "ambiguous": 28
+    },
+    {
+      "group": "validation",
+      "id": "04_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 7,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "piano-32",
+      "corpus": "original-piano",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "piano-33",
+      "corpus": "original-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "piano-34",
+      "corpus": "original-piano",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "piano-35",
+      "corpus": "original-piano",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "piano-36",
+      "corpus": "original-piano",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "piano-37",
+      "corpus": "original-piano",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 2,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "piano-38",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 0,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "piano-39",
+      "corpus": "original-piano",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 1,
+      "split_holds": 1,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Chopin_op10_no3_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 7,
+      "split_holds": 3,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Chopin_op10_no3_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 12,
+      "split_holds": 2,
+      "ambiguous": 4
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Chopin_op10_no3_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Chopin_op10_no3_p18",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Chopin_op38_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 13,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Chopin_op38_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 29,
+      "genuine_attacks": 26,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Chopin_op38_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 7,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Chopin_op38_p18",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 30,
+      "genuine_attacks": 23,
+      "split_holds": 4,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Mozart_K331_1st-mov_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 10,
+      "genuine_attacks": 7,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Mozart_K331_1st-mov_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Mozart_K331_1st-mov_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 6,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Mozart_K331_1st-mov_p18",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 17,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Schubert_D783_no15_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 9,
+      "split_holds": 0,
+      "ambiguous": 7
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Schubert_D783_no15_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 37,
+      "genuine_attacks": 31,
+      "split_holds": 1,
+      "ambiguous": 5
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Schubert_D783_no15_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 23,
+      "genuine_attacks": 21,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "vienna-Schubert_D783_no15_p18",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 38,
+      "genuine_attacks": 32,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "validation",
+      "id": "stem-04_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 32,
+      "genuine_attacks": 19,
+      "split_holds": 7,
+      "ambiguous": 6
+    },
+    {
+      "group": "validation",
+      "id": "stem-04_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 3,
+      "split_holds": 1,
+      "ambiguous": 4
+    },
+    {
+      "group": "validation",
+      "id": "stem-04_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 25,
+      "genuine_attacks": 23,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "stem-04_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 7,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "stem-04_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 7,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "stem-04_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 4,
+      "genuine_attacks": 1,
+      "split_holds": 3,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "stem-04_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 71,
+      "genuine_attacks": 64,
+      "split_holds": 1,
+      "ambiguous": 6
+    },
+    {
+      "group": "validation",
+      "id": "stem-04_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 15,
+      "split_holds": 2,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "stem-04_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 122,
+      "genuine_attacks": 50,
+      "split_holds": 34,
+      "ambiguous": 38
+    },
+    {
+      "group": "validation",
+      "id": "stem-04_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 8,
+      "genuine_attacks": 5,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-064",
+      "corpus": "original-piano",
+      "eligible_boundaries": 34,
+      "genuine_attacks": 20,
+      "split_holds": 2,
+      "ambiguous": 12
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-065",
+      "corpus": "original-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 8,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-066",
+      "corpus": "original-piano",
+      "eligible_boundaries": 44,
+      "genuine_attacks": 32,
+      "split_holds": 0,
+      "ambiguous": 12
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-067",
+      "corpus": "original-piano",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 4,
+      "split_holds": 1,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-068",
+      "corpus": "original-piano",
+      "eligible_boundaries": 46,
+      "genuine_attacks": 37,
+      "split_holds": 1,
+      "ambiguous": 8
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-069",
+      "corpus": "original-piano",
+      "eligible_boundaries": 7,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-070",
+      "corpus": "original-piano",
+      "eligible_boundaries": 44,
+      "genuine_attacks": 28,
+      "split_holds": 0,
+      "ambiguous": 16
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-071",
+      "corpus": "original-piano",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 7,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-072",
+      "corpus": "original-piano",
+      "eligible_boundaries": 40,
+      "genuine_attacks": 38,
+      "split_holds": 0,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-073",
+      "corpus": "original-piano",
+      "eligible_boundaries": 14,
+      "genuine_attacks": 11,
+      "split_holds": 1,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-074",
+      "corpus": "original-piano",
+      "eligible_boundaries": 39,
+      "genuine_attacks": 35,
+      "split_holds": 0,
+      "ambiguous": 4
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-075",
+      "corpus": "original-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-076",
+      "corpus": "original-piano",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 24,
+      "split_holds": 1,
+      "ambiguous": 16
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-077",
+      "corpus": "original-piano",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-078",
+      "corpus": "original-piano",
+      "eligible_boundaries": 31,
+      "genuine_attacks": 21,
+      "split_holds": 0,
+      "ambiguous": 10
+    },
+    {
+      "group": "validation",
+      "id": "context-piano-079",
+      "corpus": "original-piano",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 8,
+      "split_holds": 0,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Chopin_op10_no3_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 25,
+      "genuine_attacks": 13,
+      "split_holds": 2,
+      "ambiguous": 10
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Chopin_op10_no3_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 75,
+      "genuine_attacks": 44,
+      "split_holds": 11,
+      "ambiguous": 20
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Chopin_op10_no3_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 41,
+      "genuine_attacks": 24,
+      "split_holds": 2,
+      "ambiguous": 15
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Chopin_op10_no3_p18",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 58,
+      "genuine_attacks": 36,
+      "split_holds": 7,
+      "ambiguous": 15
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Chopin_op38_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 29,
+      "genuine_attacks": 14,
+      "split_holds": 2,
+      "ambiguous": 13
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Chopin_op38_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 40,
+      "genuine_attacks": 28,
+      "split_holds": 2,
+      "ambiguous": 10
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Chopin_op38_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 29,
+      "genuine_attacks": 17,
+      "split_holds": 1,
+      "ambiguous": 11
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Chopin_op38_p18",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 48,
+      "genuine_attacks": 33,
+      "split_holds": 3,
+      "ambiguous": 12
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 13,
+      "genuine_attacks": 9,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 24,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 9
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 21,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 6
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p18",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 32,
+      "genuine_attacks": 27,
+      "split_holds": 3,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Schubert_D783_no15_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 42,
+      "genuine_attacks": 33,
+      "split_holds": 1,
+      "ambiguous": 8
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Schubert_D783_no15_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 44,
+      "genuine_attacks": 37,
+      "split_holds": 1,
+      "ambiguous": 6
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-Schubert_D783_no15_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 1,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 6,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 39,
+      "genuine_attacks": 9,
+      "split_holds": 29,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 74,
+      "genuine_attacks": 56,
+      "split_holds": 11,
+      "ambiguous": 7
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 9,
+      "split_holds": 2,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 6,
+      "genuine_attacks": 2,
+      "split_holds": 4,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 62,
+      "genuine_attacks": 18,
+      "split_holds": 40,
+      "ambiguous": 4
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 1,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 123,
+      "genuine_attacks": 76,
+      "split_holds": 29,
+      "ambiguous": 18
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 2,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 10,
+      "split_holds": 4,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "left-expansion-04_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "eligible_boundaries": 0,
+      "genuine_attacks": 0,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 66,
+      "genuine_attacks": 29,
+      "split_holds": 12,
+      "ambiguous": 25
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 12,
+      "genuine_attacks": 6,
+      "split_holds": 2,
+      "ambiguous": 4
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 44,
+      "genuine_attacks": 21,
+      "split_holds": 8,
+      "ambiguous": 15
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-60-Chopin_op10_no3_p18",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 11,
+      "genuine_attacks": 8,
+      "split_holds": 2,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-60-Chopin_op38_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 29,
+      "genuine_attacks": 20,
+      "split_holds": 1,
+      "ambiguous": 8
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-60-Chopin_op38_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 50,
+      "genuine_attacks": 37,
+      "split_holds": 5,
+      "ambiguous": 8
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-60-Chopin_op38_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 32,
+      "genuine_attacks": 21,
+      "split_holds": 0,
+      "ambiguous": 11
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-60-Chopin_op38_p18",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 54,
+      "genuine_attacks": 44,
+      "split_holds": 4,
+      "ambiguous": 6
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 16,
+      "genuine_attacks": 12,
+      "split_holds": 1,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 23,
+      "genuine_attacks": 18,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 15,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p18",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 31,
+      "genuine_attacks": 21,
+      "split_holds": 2,
+      "ambiguous": 8
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-90-Chopin_op38_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 22,
+      "genuine_attacks": 11,
+      "split_holds": 0,
+      "ambiguous": 11
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-90-Chopin_op38_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 24,
+      "genuine_attacks": 11,
+      "split_holds": 3,
+      "ambiguous": 10
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-90-Chopin_op38_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 31,
+      "genuine_attacks": 23,
+      "split_holds": 0,
+      "ambiguous": 8
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-90-Chopin_op38_p18",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 26,
+      "genuine_attacks": 11,
+      "split_holds": 2,
+      "ambiguous": 13
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p15",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 22,
+      "genuine_attacks": 14,
+      "split_holds": 0,
+      "ambiguous": 8
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p16",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 3,
+      "genuine_attacks": 2,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p17",
+      "corpus": "vienna-piano",
+      "eligible_boundaries": 19,
+      "genuine_attacks": 14,
+      "split_holds": 0,
+      "ambiguous": 5
+    },
+    {
+      "group": "validation",
+      "id": "robust-stem-v1-04_BN1-147-Gb_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 32,
+      "genuine_attacks": 24,
+      "split_holds": 2,
+      "ambiguous": 6
+    },
+    {
+      "group": "validation",
+      "id": "robust-stem-v1-04_BN1-147-Gb_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 15,
+      "genuine_attacks": 8,
+      "split_holds": 6,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "robust-stem-v1-04_Funk1-97-C_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 9,
+      "genuine_attacks": 8,
+      "split_holds": 0,
+      "ambiguous": 1
+    },
+    {
+      "group": "validation",
+      "id": "robust-stem-v1-04_Funk1-97-C_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 17,
+      "genuine_attacks": 13,
+      "split_holds": 4,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "robust-stem-v1-04_Jazz2-110-Bb_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 20,
+      "genuine_attacks": 8,
+      "split_holds": 9,
+      "ambiguous": 3
+    },
+    {
+      "group": "validation",
+      "id": "robust-stem-v1-04_Jazz1-200-B_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 5,
+      "genuine_attacks": 5,
+      "split_holds": 0,
+      "ambiguous": 0
+    },
+    {
+      "group": "validation",
+      "id": "robust-stem-v1-04_Rock1-90-C#_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 78,
+      "genuine_attacks": 62,
+      "split_holds": 1,
+      "ambiguous": 15
+    },
+    {
+      "group": "validation",
+      "id": "robust-stem-v1-04_Rock1-90-C#_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 18,
+      "genuine_attacks": 5,
+      "split_holds": 11,
+      "ambiguous": 2
+    },
+    {
+      "group": "validation",
+      "id": "robust-stem-v1-04_SS1-68-E_comp",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 255,
+      "genuine_attacks": 192,
+      "split_holds": 22,
+      "ambiguous": 41
+    },
+    {
+      "group": "validation",
+      "id": "robust-stem-v1-04_SS1-68-E_solo",
+      "corpus": "separated-guitar",
+      "eligible_boundaries": 28,
+      "genuine_attacks": 14,
+      "split_holds": 8,
+      "ambiguous": 6
+    }
+  ],
+  "counts": {
+    "train": {
+      "eligible_boundaries": 23206,
+      "genuine_attacks": 16735,
+      "split_holds": 2557,
+      "ambiguous": 3914
+    },
+    "validation": {
+      "eligible_boundaries": 5389,
+      "genuine_attacks": 3599,
+      "split_holds": 811,
+      "ambiguous": 979
+    }
+  },
+  "scope": "Training/validation only; not a fitted model; no test or user audio; no score generation"
+}

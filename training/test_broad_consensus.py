@@ -28,6 +28,19 @@ def test_broader_confidence_policy_still_preserves_correct_holds_and_prior_rejec
     assert score([item], [reject_false], .1, ceiling=1.)['false_notes_removed'] == 0
 
 
+def test_coverage_gate_rejects_loss_of_a_continuation_even_when_attack_gate_passes():
+    item = fixture()
+    item['events'] = np.array([[0., 1., 48., 80.], [2., 4., 48., 80.]])
+    for field in ('keep', 'baseline_keep', 'shared'):
+        item[field] = np.ones(2, dtype=bool)
+    item['p'] = np.full(2, .2)
+    probability = [np.array([1., 0.])]
+    assert score([item], probability, .1, ceiling=1.)['passes']
+    guarded = score([item], probability, .1, ceiling=1., preserve_coverage=True)
+    assert not guarded['passes']
+    assert guarded['per_recording'][0]['lost_reference_pitch_seconds'] == 2
+
+
 def test_training_excludes_ambiguous_unshared_and_already_rejected_events():
     item = fixture()
     item['y'], item['mask'] = np.array([1., 0., 0.]), np.array([True, True, False])
@@ -106,6 +119,20 @@ def test_frozen_batch_rejects_changed_model_selection_and_training_plan(tmp_path
         training.load_winner(tmp_path)
 
 
+def test_frozen_batch_checks_covered_hold_supervision_code(tmp_path, monkeypatch):
+    winner, source = frozen_batch(tmp_path, monkeypatch)
+    plan_path = tmp_path / 'plan.json'
+    plan = json.loads(plan_path.read_text())
+    plan.update(label_policy=training.HOLD_LABELS, label_code_sha256='changed-code')
+    plan_path.write_text(json.dumps(plan))
+    winner['plan_sha256'] = training.digest(plan_path)
+    (source / 'selection.json').write_text(json.dumps(winner))
+    (tmp_path / 'batch-selection.json').write_text(json.dumps({
+        'selected': True, 'winner': winner, 'candidates': [winner], 'plan_sha256': winner['plan_sha256']}))
+    with pytest.raises(ValueError, match='Changed frozen held-repeat supervision'):
+        training.load_winner(tmp_path)
+
+
 def test_fresh_evaluation_requires_regression_gain_and_preserves_consumed_report(tmp_path, monkeypatch):
     monkeypatch.setattr(training, 'load_winner', lambda _: ({}, []))
     (tmp_path / 'regression.json').write_text(json.dumps({'passes': True, 'false_notes_removed': 0}))
@@ -113,4 +140,18 @@ def test_fresh_evaluation_requires_regression_gain_and_preserves_consumed_report
         training.test(tmp_path, tmp_path, tmp_path / 'fresh-manifest.json')
     (tmp_path / 'fresh.json').write_text('{}')
     with pytest.raises(ValueError, match='Preserve consumed'):
+        training.test(tmp_path, tmp_path, tmp_path / 'fresh-manifest.json')
+
+
+def test_failed_or_missing_coverage_blocks_fresh_test_labels(tmp_path, monkeypatch):
+    monkeypatch.setattr(training, 'load_winner', lambda _: ({'checkpoint_sha256': 'frozen'}, []))
+    (tmp_path / 'regression.json').write_text(json.dumps({'passes': True, 'false_notes_removed': 1}))
+    with pytest.raises(ValueError, match='until reference coverage passes'):
+        training.test(tmp_path, tmp_path, tmp_path / 'fresh-manifest.json')
+    (tmp_path / 'coverage-release-gate.json').write_text(json.dumps({'passes': False}))
+    with pytest.raises(ValueError, match='Failed or changed reference coverage'):
+        training.test(tmp_path, tmp_path, tmp_path / 'fresh-manifest.json')
+    (tmp_path / 'coverage-release-gate.json').write_text(json.dumps({
+        'passes': True, 'checkpoint_sha256': 'changed'}))
+    with pytest.raises(ValueError, match='Failed or changed reference coverage'):
         training.test(tmp_path, tmp_path, tmp_path / 'fresh-manifest.json')

@@ -26,6 +26,7 @@ from note_relations import (
     relation_features,
     window_eligible,
 )
+from pitch_interval_coverage import compare as coverage_compare
 from sklearn.ensemble import HistGradientBoostingClassifier
 from train_left_hand_verifier import held_matches
 from train_left_hand_verifier import prepare as prepare_v4
@@ -103,13 +104,13 @@ def prepare(directory, items, policy='refinement'):
     return prepared
 
 
-def score(items, probabilities, threshold, memo=None, *, ceiling=.5):
+def score(items, probabilities, threshold, memo=None, *, ceiling=.5, preserve_coverage=False):
     rows = []
     for item, probability in zip(items, probabilities, strict=True):
         before = item['events'][item['baseline_keep']]
         after_mask = bounded_keep(item['keep'], item['p'], item['shared'], probability,
                                   threshold=threshold, ceiling=ceiling)
-        cache_key = (id(item), after_mask.tobytes())
+        cache_key = (id(item), after_mask.tobytes(), preserve_coverage)
         if memo is not None and cache_key in memo:
             rows.append(memo[cache_key])
             continue
@@ -117,9 +118,13 @@ def score(items, probabilities, threshold, memo=None, *, ceiling=.5):
         old, new = [metrics(item['reference'], events, item['seconds']) for events in (before, after)]
         attacks = matched_references(item['reference'], before).issubset(matched_references(item['reference'], after))
         holds = held_matches(item['reference'], before).issubset(held_matches(item['reference'], after))
+        coverage = coverage_compare(item['reference'], before, after) if preserve_coverage else None
         rows.append({'id': item['id'], 'corpus': item['corpus'], 'deployed_v6': old, 'candidate': new,
                      'matched_references_preserved': attacks, 'held_references_preserved': holds,
-                     'passes': attacks and holds and new['false_positives'] <= old['false_positives']})
+                     'reference_pitch_coverage_preserved': coverage['passes'] if coverage else None,
+                     'lost_reference_pitch_seconds': coverage['lost_reference_seconds'] if coverage else None,
+                     'passes': attacks and holds and (coverage is None or coverage['passes'])
+                     and new['false_positives'] <= old['false_positives']})
         if memo is not None:
             memo[cache_key] = rows[-1]
     return {'threshold': threshold, 'passes': all(r['passes'] for r in rows),

@@ -1,0 +1,45 @@
+{
+  "manifest_sha256": "c358df63a469c3f5fb60c3d57e74413824620994bdbd52bfa0b5b86e6d423eae",
+  "items": [
+    {
+      "id": "relational-piano-fresh-120-Chopin_op38_p19",
+      "corpus": "vienna-piano",
+      "group": "test",
+      "audio": "/training/relational-piano-fresh-120/Chopin_op38_p19.wav",
+      "evaluation_window": [
+        0.25,
+        13.98845804988662
+      ],
+      "candidate_decoder": "bounded-accompaniment-v1",
+      "context_features": true,
+      "reference_notes": 22
+    },
+    {
+      "id": "relational-piano-fresh-120-Chopin_op38_p21",
+      "corpus": "vienna-piano",
+      "group": "test",
+      "audio": "/training/relational-piano-fresh-120/Chopin_op38_p21.wav",
+      "evaluation_window": [
+        0.25,
+        15.497800453514738
+      ],
+      "candidate_decoder": "bounded-accompaniment-v1",
+      "context_features": true,
+      "reference_notes": 22
+    },
+    {
+      "id": "relational-piano-fresh-120-Chopin_op38_p22",
+      "corpus": "vienna-piano",
+      "group": "test",
+      "audio": "/training/relational-piano-fresh-120/Chopin_op38_p22.wav",
+      "evaluation_window": [
+        0.25,
+        13.097845804988662
+      ],
+      "candidate_decoder": "bounded-accompaniment-v1",
+      "context_features": true,
+      "reference_notes": 22
+    }
+  ],
+  "scope": "Later previously unused sections, same reserved performers/compositions; not independent generalization"
+}

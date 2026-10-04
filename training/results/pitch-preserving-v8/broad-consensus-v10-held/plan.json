@@ -1,0 +1,87 @@
+{
+  "profiles": [
+    {
+      "name": "regularized",
+      "positive_weight": 10.0,
+      "max_iter": 500,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 80,
+      "l2_regularization": 8.0
+    },
+    {
+      "name": "capacity",
+      "positive_weight": 8.0,
+      "max_iter": 600,
+      "max_leaf_nodes": 63,
+      "min_samples_leaf": 40,
+      "l2_regularization": 4.0
+    },
+    {
+      "name": "recall",
+      "positive_weight": 16.0,
+      "max_iter": 450,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 60,
+      "l2_regularization": 8.0
+    },
+    {
+      "name": "shallow",
+      "positive_weight": 10.0,
+      "max_iter": 800,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 30,
+      "l2_regularization": 4.0
+    }
+  ],
+  "baseline_hashes": {
+    "accompaniment-verifier-v2.pt": "2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60",
+    "accompaniment-context-expanded.npz": "d06bbe84ee9ad251960969e0097b217e340d52562ecf178295d7c4ae57c6ee8d",
+    "accompaniment-context-original.npz": "381c150b19bdb223fc9e85f88b78dd69892b0de5c7591189967f30b59a26a8e7",
+    "accompaniment-residual-v4.npz": "ad958557c44312c8d082b9339801ae794a7673956f098106f7fb6381fa3cd24d",
+    "accompaniment-left-hand-v1.npz": "7b3343637fa0d19ba1cd468845fcc309f30ac55b7fddc00f68bbc607abc2555b",
+    "accompaniment-left-refinement-v3.npz": "6b0f9bb5260f9645831dd409abd6fcb17cd8acbdd09e7a13df9c356cd76414e2",
+    "left-relations-v7.npz": "50c4a615d36a835459ca9f1d40879013e987dc3424c0f9496cff64b67353a681",
+    "left-guardian-v7.npz": "34d70e8e621f6809d7066cd5a80011299464280406f0a0ebafbf4ed0b76f0cda"
+  },
+  "policy": "v7-shared-interior-all-confidence-offline-v1",
+  "label_policy": "represented-hold-repeats-v1",
+  "label_code_sha256": "01da1ec1ec51a14dc9aed3bca5be86120d3ac40f1aa368214636b5c22def3c43",
+  "ceiling": 1.0,
+  "pitch_range": [
+    36,
+    96
+  ],
+  "edge_seconds": 2.5,
+  "threshold_grid": [
+    0.0,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01,
+    0.02,
+    0.03,
+    0.05,
+    0.075,
+    0.1,
+    0.15,
+    0.2
+  ],
+  "guardian_threshold_grid": [
+    0.1,
+    0.2,
+    0.4,
+    0.6
+  ],
+  "selection_safety_factor": 0.5,
+  "sklearn_version": "1.9.0",
+  "extra_manifest_sha256": {
+    "/training/relational-piano-training/manifest.json": "9166eae6b3fbbd9a387d6cfb90f7e10bdf89d4fe189ee621a24d2267be49a34b",
+    "/training/left-hand-expanded-data/manifest.json": "d4c68a55171903ce5c97d01ae49741f05034aaacb52fa9d1e29381fb7e936128",
+    "/training/relational-piano-training-60/manifest.json": "b88d1f5dce693c22d4b34d222f16edda3fb9b2510c6ca26c1f4981c4bf7b8715",
+    "/training/relational-piano-training-90/manifest.json": "5b151504a63f325c407da5df8f0e33e1fc8389e53e004dd643d064c5cfeb3262"
+  },
+  "selection": "Validation-only maximum gated gain, fixed profile-order tie break; one regression winner",
+  "preservation": "Every matched attack and hold, no per-recording false-note increase",
+  "scope": "Existing licensed cached dataset events only; no user audio or scores; offline policy"
+}

@@ -15,6 +15,10 @@ import sklearn
 import torch
 from audit_verifier_labels import audit
 from cache_note_verifier import targets
+from pitch_support_targets import VERSION as PITCH_SUPPORT
+from pitch_support_targets import keep_targets
+from represented_hold_labels import VERSION as HOLD_LABELS
+from represented_hold_labels import clarify
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.metrics import log_loss
 from train_left_consensus_v8 import (
@@ -30,6 +34,8 @@ from train_note_verifier import load_data, write
 from train_residual_verifier import THRESHOLDS, cached_external
 
 POLICY = 'v7-shared-interior-all-confidence-offline-v1'
+LEGACY_LABELS = 'timing-ambiguous-v1'
+LABEL_POLICIES = (LEGACY_LABELS, HOLD_LABELS, PITCH_SUPPORT)
 PROFILES = (
     {'name': 'regularized', 'positive_weight': 10., 'max_iter': 500,
      'max_leaf_nodes': 31, 'min_samples_leaf': 80, 'l2_regularization': 8.},
@@ -102,7 +108,7 @@ def select(items, context, acoustic):
     for guardian in GUARDIAN_THRESHOLDS:
         for threshold in THRESHOLDS:
             raw, margin = [score(items, [np.where((c < at) & (a < g), 0., 1.)
-                           for c, a in zip(context, acoustic, strict=True)], at, memo, ceiling=1.)
+                           for c, a in zip(context, acoustic, strict=True)], at, memo, ceiling=1., preserve_coverage=True)
                            for at, g in ((threshold, guardian), (threshold * .5, guardian * .5))]
             search.append({'guardian_raw': guardian,
                            'raw': {k: v for k, v in raw.items() if k != 'per_recording'},
@@ -119,10 +125,17 @@ def choose(rows):
     return max(eligible, key=lambda row: row['validation_false_notes_removed']) if eligible else None
 
 
-def train(directory, output, extras):
+def train(directory, output, extras, label_policy=LEGACY_LABELS):
+    if label_policy not in LABEL_POLICIES:
+        raise ValueError('Unknown frozen label policy')
     output.mkdir(exist_ok=False)
     torch.set_num_threads(2)
     plan = {'profiles': list(PROFILES), 'baseline_hashes': hashes(), 'policy': POLICY,
+            'label_policy': label_policy,
+            'label_code_sha256': digest(Path(__file__).with_name(
+                'pitch_support_targets.py' if label_policy == PITCH_SUPPORT else 'represented_hold_labels.py')),
+            'coverage_code_sha256': digest(Path(__file__).with_name('pitch_interval_coverage.py')),
+            'preserve_reference_pitch_coverage': True,
             'ceiling': 1., 'pitch_range': [36, 96], 'edge_seconds': 2.5,
             'threshold_grid': THRESHOLDS, 'guardian_threshold_grid': GUARDIAN_THRESHOLDS,
             'selection_safety_factor': .5, 'sklearn_version': sklearn.__version__,
@@ -136,6 +149,25 @@ def train(directory, output, extras):
     print('Preparing pinned V7 training/validation evidence', flush=True)
     training, validation = [prepare(directory, items, baseline_evidence=True, full_register=True)
                             for items in (training, validation)]
+    if label_policy in (HOLD_LABELS, PITCH_SUPPORT):
+        rows = []
+        for group, items in [('train', training), ('validation', validation)]:
+            for item in items:
+                retained = item['keep']
+                labeling = keep_targets if label_policy == PITCH_SUPPORT else clarify
+                y, mask, clarified = labeling(item['reference'], item['events'][retained])
+                item['y'][retained], item['mask'][retained] = y, mask
+                rows.append({'group': group, 'id': item['id'],
+                             'additional_retained_supervision': int(clarified.sum()),
+                             'additional_eligible_supervision': int(np.sum(clarified & item['shared'][retained]))})
+        write(output / 'label-policy-audit.json', {'version': label_policy, 'items': rows,
+              'scope': 'Training/validation only; original annotations unchanged; no test labels'})
+        if not any(row['group'] == 'train' and row['additional_eligible_supervision'] for row in rows):
+            write(output / 'batch-selection.json', {'selected': False, 'winner': None, 'candidates': [],
+                  'plan_sha256': digest(output / 'plan.json'), 'test_used_for_selection': False,
+                  'reason': 'No additional eligible supervised training events; refuse redundant refitting'})
+            print('No newly supervised eligible events; no redundant models fitted', flush=True)
+            return
     write(output / 'coverage.json', {'validation_only': True, 'clips': len(validation), 'counts': coverage(validation)})
     vx, vy, vw, _ = matrix(validation, 1.)
     rows = []
@@ -165,7 +197,7 @@ def train(directory, output, extras):
         acoustic = [models[1].predict_proba(acoustic_view(item['x']))[:, 1] for item in validation]
         best, search = select(validation, context, acoustic)
         result, guardian = best if best else (score(validation, [np.ones(len(item['events']))
-                                                               for item in validation], 0., ceiling=1.), 0.)
+                                                               for item in validation], 0., ceiling=1., preserve_coverage=True), 0.)
         with (destination / 'candidate.pickle').open('wb') as stream:
             pickle.dump(models, stream)
         selection = {'name': profile['name'], 'selected': best is not None,
@@ -193,6 +225,7 @@ def load_winner(output):
             or batch['plan_sha256'] != digest(output / 'plan.json')
             or plan['policy'] != POLICY or plan['ceiling'] != 1.
             or plan['profiles'] != list(PROFILES) or plan['selection_safety_factor'] != .5
+            or plan.get('label_policy', LEGACY_LABELS) not in LABEL_POLICIES
             or plan['pitch_range'] != [36, 96] or plan['edge_seconds'] != 2.5
             or plan['threshold_grid'] != list(THRESHOLDS)
             or plan['guardian_threshold_grid'] != list(GUARDIAN_THRESHOLDS)
@@ -203,6 +236,14 @@ def load_winner(output):
             or winner['threshold'] not in {v * .5 for v in plan['threshold_grid'] if v > 0}
             or winner['guardian_threshold'] not in {v * .5 for v in plan['guardian_threshold_grid']}):
         raise ValueError('Ineligible or changed frozen batch selection')
+    if (plan.get('label_policy') in (HOLD_LABELS, PITCH_SUPPORT)
+            and plan['label_code_sha256'] != digest(Path(__file__).with_name(
+                'pitch_support_targets.py' if plan['label_policy'] == PITCH_SUPPORT else 'represented_hold_labels.py'))):
+        raise ValueError('Changed frozen held-repeat supervision')
+    if (plan.get('preserve_reference_pitch_coverage') is not None
+            and (plan['preserve_reference_pitch_coverage'] is not True
+            or plan['coverage_code_sha256'] != digest(Path(__file__).with_name('pitch_interval_coverage.py')))):
+        raise ValueError('Changed frozen reference coverage gate')
     source = output / winner['name']
     if json.loads((source / 'selection.json').read_text()) != winner:
         raise ValueError('Changed frozen candidate selection')
@@ -219,6 +260,25 @@ def load_winner(output):
     return winner, models
 
 
+def validation_items(directory, output):
+    plan = json.loads((output / 'plan.json').read_text())
+    items = load_data(directory, 'validation')
+    identities = {item['id'] for item in items}
+    for filename, expected in plan['extra_manifest_sha256'].items():
+        path = Path(filename)
+        if digest(path) != expected:
+            raise ValueError('Changed fitting/validation manifest')
+        for item in cached_external(directory, path, directory):
+            if item['group'] not in ('train', 'validation'):
+                raise ValueError('Test labels cannot enter validation')
+            if item['group'] == 'validation':
+                if item['id'] in identities:
+                    raise ValueError('Duplicate validation clips')
+                identities.add(item['id'])
+                items.append(item)
+    return items
+
+
 def test(directory, output, fresh=None):
     destination = output / ('fresh.json' if fresh else 'regression.json')
     if destination.exists():
@@ -228,6 +288,15 @@ def test(directory, output, fresh=None):
         prior = json.loads((output / 'regression.json').read_text())
         if not prior['passes'] or prior['false_notes_removed'] <= 0:
             raise ValueError('Fresh evaluation requires positive regression improvement')
+        coverage_path = output / 'coverage-release-gate.json'
+        if not coverage_path.exists():
+            raise ValueError('Preserve fresh evaluation until reference coverage passes')
+        coverage = json.loads(coverage_path.read_text())
+        if (not coverage['passes'] or coverage['checkpoint_sha256'] != winner['checkpoint_sha256']
+                or coverage['batch_selection_sha256'] != digest(output / 'batch-selection.json')
+                or coverage['gate_code_sha256'] != digest(Path(__file__).with_name('check_reference_coverage.py'))
+                or coverage['coverage_code_sha256'] != digest(Path(__file__).with_name('pitch_interval_coverage.py'))):
+            raise ValueError('Failed or changed reference coverage release evidence')
         items = list(cached_external(directory, fresh, directory))
         if not items or any(item['group'] != 'test' for item in items):
             raise ValueError('Fresh evaluation requires reserved test performers')
@@ -235,8 +304,10 @@ def test(directory, output, fresh=None):
         items = regression_items(directory)
     torch.set_num_threads(2)
     items = prepare(directory, items, baseline_evidence=True, full_register=True)
+    plan = json.loads((output / 'plan.json').read_text())
     result = score(items, [probabilities(models, item['x'], winner['threshold'], winner['guardian_threshold'])
-                           for item in items], winner['threshold'], ceiling=1.)
+                           for item in items], winner['threshold'], ceiling=1.,
+                   preserve_coverage=plan.get('preserve_reference_pitch_coverage', False))
     result.update(checkpoint_sha256=winner['checkpoint_sha256'],
                   batch_selection_sha256=digest(output / 'batch-selection.json'),
                   selection_sha256=digest(output / winner['name'] / 'selection.json'),
@@ -254,8 +325,9 @@ if __name__ == '__main__':
     parser.add_argument('--extra', type=Path, action='append', default=[])
     parser.add_argument('--test', action='store_true')
     parser.add_argument('--fresh', type=Path)
+    parser.add_argument('--label-policy', choices=LABEL_POLICIES, default=LEGACY_LABELS)
     args = parser.parse_args()
     if args.test or args.fresh:
         test(args.directory, args.directory / args.run, args.fresh)
     else:
-        train(args.directory, args.directory / args.run, args.extra)
+        train(args.directory, args.directory / args.run, args.extra, args.label_policy)

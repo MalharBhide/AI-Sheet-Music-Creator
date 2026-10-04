@@ -1,5 +1,20 @@
 # Verification
 
+## Pitch-preserving accompaniment V8 — 2026-10-04
+
+Released a small gated correction: three fewer unmatched validation detections,
+one fewer on consumed regression, no matched attack/offset or annotated pitch
+coverage loss per recording. All 14,993 regression matches retained. Three later
+reserved piano passages are unchanged. This is not whole-song accuracy evidence.
+Runtime parity passed on 333 clips / 42,446 events; portable export matches
+frozen predictions at 1e-12. An earlier attack-safe candidate was withheld for
+shortening holds, and coverage is now required during selection and release.
+
+**293 tests passed, six opt-in integration cases skipped; one additional current
+baseline test passed.** Backend build and idle queue deployment passed. Health
+is ready, and running weights match the tested hashes. No user audio, score
+regeneration or transcription job was used. See [the report](docs/pitch-preserving-consensus-v8.md).
+
 ## Broad confidence training — eight candidates withheld, 2026-10-04
 
 Fitted eight paired classifiers in two predeclared validation batches. The second
