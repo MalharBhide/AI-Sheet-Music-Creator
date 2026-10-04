@@ -33,6 +33,13 @@ remove a note. It passed attack/hold preservation gates with 19 fewer false note
 on 162 evaluation passages and full cached production parity. These evaluations
 are now consumed regression, including the eight later piano passages.
 
+The [expanded V8 experiments](../docs/accompaniment-v8-experiments.md) add 42
+training and 12 validation piano sections. Four paired candidates were fitted;
+none passed all improvement/preservation checks, so V7 remains deployed. A
+validation coverage audit found about 73% of unmatched notes outside the tested
+residual policy. The new confidence features and all rejection evidence remain
+available for further dataset/model work.
+
 This experiment trains a small temporal neural decoder on **real human-annotated
 singing**. The resulting checkpoint is used for the vocal melody of every
 Full song upload, independent of filename, file extension or song identity. Basic Pitch, pYIN and CQT supply frozen acoustic features; the new

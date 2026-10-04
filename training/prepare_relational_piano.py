@@ -1,7 +1,7 @@
 """Add later piano training/validation passages with frozen annotation clocks.
 
-Training/validation: seconds 30–60 of existing train/validation performers.
-New evaluation: seconds 60–90 of eligible test performers, only after freeze.
+Training/validation offsets preserve existing non-test performer groups.
+Reserved test offsets are prepared only after frozen regression gates pass.
 No user recordings, notation generation or new downloads are involved.
 """
 
@@ -17,12 +17,16 @@ import soundfile as sf
 from cache_note_verifier import cache_one
 
 
-def prepare(directory, fresh=False, test_offset=60):
-    if test_offset not in (60, 90) or (not fresh and test_offset != 60):
+def prepare(directory, fresh=False, test_offset=60, training_offset=30):
+    if training_offset not in (30, 60, 90) or (fresh and training_offset != 30):
+        raise ValueError('Training offsets cannot be applied to reserved test passages')
+    if test_offset not in (60, 90, 120) or (not fresh and test_offset != 60):
         raise ValueError('Only reserved test passages may use the later evaluation offset')
     name = 'relational-piano-fresh' if fresh else 'relational-piano-training'
     if fresh and test_offset != 60:
         name += f'-{test_offset}'
+    elif not fresh and training_offset != 30:
+        name += f'-{training_offset}'
     root = directory / name
     root.mkdir(exist_ok=False)
     clocks = json.loads((directory / 'note-verifier-v3-data/clock-audit.json').read_text())
@@ -36,7 +40,7 @@ def prepare(directory, fresh=False, test_offset=60):
         sources = list((directory / 'vienna/audio').rglob(identity + '.wav'))
         if len(sources) != 1:
             raise ValueError(f'Missing or ambiguous dataset source: {identity}')
-        offset = test_offset if fresh else 30
+        offset = test_offset if fresh else training_offset
         if sf.info(sources[0]).duration < offset + 5:
             continue
         samples, rate = librosa.load(sources[0], sr=22050, offset=offset, duration=30)
@@ -69,6 +73,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('directory', type=Path)
     parser.add_argument('--fresh', action='store_true')
-    parser.add_argument('--test-offset', type=int, choices=(60, 90), default=60)
+    parser.add_argument('--test-offset', type=int, choices=(60, 90, 120), default=60)
+    parser.add_argument('--training-offset', type=int, choices=(30, 60, 90), default=30)
     args = parser.parse_args()
-    prepare(args.directory, args.fresh, args.test_offset)
+    prepare(args.directory, args.fresh, args.test_offset, args.training_offset)

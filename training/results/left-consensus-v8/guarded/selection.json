@@ -1,0 +1,26 @@
+{
+  "selected": false,
+  "threshold": 0.0,
+  "guardian_threshold": 0.0,
+  "checkpoint_sha256": "2aef326209e2de092c292feb4159f33b3f105fb8963f631a26f070d1f372defb",
+  "baseline_hashes": {
+    "accompaniment-verifier-v2.pt": "2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60",
+    "accompaniment-context-expanded.npz": "d06bbe84ee9ad251960969e0097b217e340d52562ecf178295d7c4ae57c6ee8d",
+    "accompaniment-context-original.npz": "381c150b19bdb223fc9e85f88b78dd69892b0de5c7591189967f30b59a26a8e7",
+    "accompaniment-residual-v4.npz": "ad958557c44312c8d082b9339801ae794a7673956f098106f7fb6381fa3cd24d",
+    "accompaniment-left-hand-v1.npz": "7b3343637fa0d19ba1cd468845fcc309f30ac55b7fddc00f68bbc607abc2555b",
+    "accompaniment-left-refinement-v3.npz": "6b0f9bb5260f9645831dd409abd6fcb17cd8acbdd09e7a13df9c356cd76414e2",
+    "left-relations-v7.npz": "50c4a615d36a835459ca9f1d40879013e987dc3424c0f9496cff64b67353a681",
+    "left-guardian-v7.npz": "34d70e8e621f6809d7066cd5a80011299464280406f0a0ebafbf4ed0b76f0cda"
+  },
+  "policy": "v7-residual-consensus",
+  "feature_version": "note-relations-bounded-v2",
+  "edge_seconds": 2.5,
+  "ceiling": 0.5,
+  "pitch_range": [
+    36,
+    60
+  ],
+  "selection": "Validation-only joint grid; every recording passes at raw and half-margin thresholds",
+  "test_not_evaluated": true
+}

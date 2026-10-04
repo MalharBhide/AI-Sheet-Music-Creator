@@ -443,3 +443,25 @@ The GitHub Actions native-pipeline job runs the same integration suite in the ba
 - Empty queue checked read-only before deployment. Frontend health proxy reports
   ready; deployed verifier loads pinned V7 arrays at .0375/.3. No transcription
   jobs, user-upload processing or score regeneration used for verification.
+
+
+## Expanded accompaniment training experiments — 2026-10-04
+
+- Added 42 licensed piano training passages and 12 validation passages (7,360
+  reference notes), preserving performer splits and existing clock corrections.
+- Fitted four paired candidates on 593 training / 151 validation clips. Three
+  low-register candidates used 27,078 labeled events; the broader accompaniment
+  fit used 53,302. Added explicit frozen V7 confidence feature contracts.
+- No candidate promoted: guarded/broad fits had no eligible validation gain;
+  expanded-settings regression lost one matched note despite removing two false
+  notes; evidence-aware regression preserved notes but had no additional gain.
+  Frozen settings, searches, all outcomes and rejection decisions are archived.
+- Validation-only coverage audit: 1,234 unmatched notes eligible versus 3,276
+  protected by confidence/identity/window-edge policy. This is candidate-matching
+  evidence, not a claim that every unmatched note is audibly wrong.
+- Added export checks for exact selection/model/threshold agreement, individual
+  attack/hold preservation and positive regression gain. All V7 later passages
+  enter future consumed regression. No new test sections were prepared.
+- Complete backend/training suite: 245 passed, six opt-in audio cases skipped.
+  Backend/changed Python lint and diff checks pass. Website health remains ready
+  on V7; no user audio processing, score regeneration or rejected model deployment.
