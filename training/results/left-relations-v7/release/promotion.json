@@ -1,0 +1,18 @@
+{
+  "promoted": true,
+  "release": "V7 left-hand consensus",
+  "reason": "Validation, consumed regression and previously unscored piano passages pass per-recording attack/hold preservation and false-note nonincrease; validation and evaluation remove false notes. Portable export and full-context production parity pass.",
+  "tests": {
+    "passed": 235,
+    "skipped": 6,
+    "skipped_scope": "Opt-in audio integration; no user uploads processed"
+  },
+  "deployment": {
+    "frontend_health_ready": true,
+    "model": "Accompaniment note verifier v7 (trained left-hand consensus)",
+    "threshold": 0.0375,
+    "guardian_threshold": 0.3,
+    "queue_counts_before_deployment": []
+  },
+  "limitations": "Small candidate-note gain; fresh passages share existing test performers/compositions; independent bass stem and melody models outside scope; cannot guarantee whole-song accuracy."
+}

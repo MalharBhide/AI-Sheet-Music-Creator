@@ -422,3 +422,24 @@ The GitHub Actions native-pipeline job runs the same integration suite in the ba
   preview verified current-score re-selection, play/pause, and paused sheet seek.
 - Scope is these reproduced failures; this is not a claim that all functional
   errors are eliminated. Model experiments are separate from these UI fixes.
+
+
+## Trained left-hand consensus V7 — 2026-10-04
+
+- Fitted two heads on 551 licensed training clips / 25,680 eligible labeled events.
+  Separate validation-only thresholds require both models to reject a low note.
+  Preserves previous V6 rejections and incomplete window-edge neighborhoods.
+- Regression: 154 clips, matched notes 14,270 unchanged; false notes 3,593→3,575.
+  Eight previously unscored piano passages: matched notes 723 unchanged; false
+  notes 287→286. Every recording preserves matched onset and onset-offset sets.
+  Small gain; same reserved test performers/compositions, not new independent pieces.
+- Earlier single-head failure and all threshold searches/evaluations archived in
+  `training/results/left-relations-v7`; no test-based threshold retuning.
+- Safe array export matches sklearn within 1e-12 on 18,009 validation candidates.
+  Complete-neighbor production parity passes for 37,957 scored candidates / 301
+  clips; original retained attributes and source assignment preserved.
+- Backend/training suite: 235 passed, six opt-in integration cases skipped.
+  Backend and changed training Python lint pass. Production backend build passes.
+- Empty queue checked read-only before deployment. Frontend health proxy reports
+  ready; deployed verifier loads pinned V7 arrays at .0375/.3. No transcription
+  jobs, user-upload processing or score regeneration used for verification.

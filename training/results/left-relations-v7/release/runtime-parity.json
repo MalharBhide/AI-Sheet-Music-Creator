@@ -1,0 +1,13 @@
+{
+  "passes": true,
+  "recordings": 301,
+  "scored_candidate_events": 37957,
+  "total_scored_rejected": 2036,
+  "additional_rejected_vs_v6": 37,
+  "model_sha256": {
+    "relations": "50c4a615d36a835459ca9f1d40879013e987dc3424c0f9496cff64b67353a681",
+    "guardian": "34d70e8e621f6809d7066cd5a80011299464280406f0a0ebafbf4ed0b76f0cda"
+  },
+  "checks": "Runtime matches frozen sklearn decisions with complete original neighboring geometry and V2 confidence; retained identity, source part and attributes preserved",
+  "scope": "Scored targets from cached labeled datasets; outside-crop neighbors supply context only. No audio inference or score generation"
+}

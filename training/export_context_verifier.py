@@ -1,12 +1,11 @@
 """Export fitted sklearn trees as checked arrays, without executable pickle."""
 
 import numpy as np
-
 from app.services.note_context_model import ContextNoteModel
 from app.services.note_evidence import CONTEXT_NAMES, CONTEXT_VERSION, FEATURE_NAMES
 
 
-def export(model, threshold, path, validation):
+def export(model, threshold, path, validation, *, feature_names=FEATURE_NAMES + CONTEXT_NAMES, feature_version=CONTEXT_VERSION):
     nodes = [predictors[0].nodes for predictors in model._predictors]
     shape = (len(nodes), max(map(len, nodes)))
     saved = {key: np.full(shape, -1, dtype=np.int64) for key in ('left', 'right', 'feature')}
@@ -18,11 +17,11 @@ def export(model, threshold, path, validation):
         for key, source in [('left', 'left'), ('right', 'right'), ('feature', 'feature_idx'), ('split', 'num_threshold')]:
             saved[key][index, branch] = tree[source][branch]
         saved['value'][index, :len(tree)] = tree['value']
-    saved.update({'version': np.asarray('note-boosted-v1'), 'feature_version': np.asarray(CONTEXT_VERSION),
-                  'feature_names': np.asarray(FEATURE_NAMES + CONTEXT_NAMES),
+    saved.update({'version': np.asarray('note-boosted-v1'), 'feature_version': np.asarray(feature_version),
+                  'feature_names': np.asarray(feature_names),
                   'intercept': np.asarray(float(model._baseline_prediction[0, 0])),
                   'threshold': np.asarray(threshold)})
-    portable = ContextNoteModel(saved)
+    portable = ContextNoteModel(saved, feature_names=feature_names, feature_version=feature_version)
     for item in validation:
         np.testing.assert_allclose(portable.probability(item['x']), model.predict_proba(item['x'])[:, 1],
                                    rtol=1e-12, atol=1e-12)

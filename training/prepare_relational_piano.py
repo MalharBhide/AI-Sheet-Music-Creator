@@ -17,8 +17,12 @@ import soundfile as sf
 from cache_note_verifier import cache_one
 
 
-def prepare(directory, fresh=False):
+def prepare(directory, fresh=False, test_offset=60):
+    if test_offset not in (60, 90) or (not fresh and test_offset != 60):
+        raise ValueError('Only reserved test passages may use the later evaluation offset')
     name = 'relational-piano-fresh' if fresh else 'relational-piano-training'
+    if fresh and test_offset != 60:
+        name += f'-{test_offset}'
     root = directory / name
     root.mkdir(exist_ok=False)
     clocks = json.loads((directory / 'note-verifier-v3-data/clock-audit.json').read_text())
@@ -32,7 +36,7 @@ def prepare(directory, fresh=False):
         sources = list((directory / 'vienna/audio').rglob(identity + '.wav'))
         if len(sources) != 1:
             raise ValueError(f'Missing or ambiguous dataset source: {identity}')
-        offset = 60 if fresh else 30
+        offset = test_offset if fresh else 30
         if sf.info(sources[0]).duration < offset + 5:
             continue
         samples, rate = librosa.load(sources[0], sr=22050, offset=offset, duration=30)
@@ -65,5 +69,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('directory', type=Path)
     parser.add_argument('--fresh', action='store_true')
+    parser.add_argument('--test-offset', type=int, choices=(60, 90), default=60)
     args = parser.parse_args()
-    prepare(args.directory, args.fresh)
+    prepare(args.directory, args.fresh, args.test_offset)

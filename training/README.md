@@ -19,14 +19,19 @@ They remained offline, with website V5 unchanged for that experiment.
 A subsequent [V6 residual correction](../docs/left-hand-refinement.md) freezes V5
 decisions and recomputes retained-event labels. It passed validation, regression
 and previously unused piano-passage checks, preserving matched attacks and holds
-while increasing measured precision. This trained correction is the current
-release; the rejected replacement heads above remain offline.
+while increasing measured precision. The rejected replacement heads above remain offline.
 
 A subsequent [relationship-aware experiment](../docs/relational-verifier-experiment.md)
 added later labeled piano passages and explicit neighboring-note features. It
 failed the correct-note preservation gate and remains offline; do not deploy its
 checkpoints. Its bounded-feature and dataset preparation code support further
 model development without processing user uploads.
+
+The current [V7 consensus release](../docs/left-hand-consensus-v7.md) fits two
+new left-hand classifiers on 25,680 eligible labeled events. Both must agree to
+remove a note. It passed attack/hold preservation gates with 19 fewer false notes
+on 162 evaluation passages and full cached production parity. These evaluations
+are now consumed regression, including the eight later piano passages.
 
 This experiment trains a small temporal neural decoder on **real human-annotated
 singing**. The resulting checkpoint is used for the vocal melody of every

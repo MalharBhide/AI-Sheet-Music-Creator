@@ -8,8 +8,15 @@ import soundfile as sf
 
 from app.models import PipelineError
 from app.services.accompaniment_candidates import decode_candidates
+from app.services.candidate_relations import (
+    ALL_NAMES,
+    RELATION_VERSION,
+    relation_features,
+    window_eligible,
+)
 from app.services.note_context_model import (
     ContextNoteModel,
+    consensus_keep,
     correction_keep,
     residual_keep,
     shared_events,
@@ -31,9 +38,14 @@ LEFT_HAND_SHA256 = '7b3343637fa0d19ba1cd468845fcc309f30ac55b7fddc00f68bbc607abc2
 LEFT_REFINEMENT_CHECKPOINT = CHECKPOINT.parent / 'accompaniment-left-refinement-v3.npz'
 LEFT_REFINEMENT_SHA256 = '6b0f9bb5260f9645831dd409abd6fcb17cd8acbdd09e7a13df9c356cd76414e2'
 
+LEFT_RELATIONS_CHECKPOINT = CHECKPOINT.parent / 'left-relations-v7.npz'
+LEFT_RELATIONS_SHA256 = '50c4a615d36a835459ca9f1d40879013e987dc3424c0f9496cff64b67353a681'
+LEFT_GUARDIAN_CHECKPOINT = CHECKPOINT.parent / 'left-guardian-v7.npz'
+LEFT_GUARDIAN_SHA256 = '34d70e8e621f6809d7066cd5a80011299464280406f0a0ebafbf4ed0b76f0cda'
+
 
 class AccompanimentVerifier:
-    name = 'Accompaniment note verifier v6 (trained left-hand refinement)'
+    name = 'Accompaniment note verifier v7 (trained left-hand consensus)'
 
     def __init__(self):
         import torch
@@ -96,6 +108,22 @@ class AccompanimentVerifier:
         except (ValueError, KeyError, OSError) as exc:
             raise PipelineError('The left-hand refinement model is invalid. Rebuild the backend and retry.') from exc
 
+        for name, path, digest, threshold, contract in (
+            ('left_relations_model', LEFT_RELATIONS_CHECKPOINT, LEFT_RELATIONS_SHA256, .0375,
+             {'feature_names': ALL_NAMES, 'feature_version': RELATION_VERSION}),
+            ('left_guardian_model', LEFT_GUARDIAN_CHECKPOINT, LEFT_GUARDIAN_SHA256, .3, {}),
+        ):
+            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+                raise PipelineError('The left-hand consensus model is missing or damaged. Rebuild the backend and retry.')
+            try:
+                with np.load(path, allow_pickle=False) as arrays:
+                    model = ContextNoteModel(arrays, **contract)
+                if model.threshold != threshold:
+                    raise ValueError('Unexpected left-hand consensus threshold')
+                setattr(self, name, model)
+            except (ValueError, KeyError, OSError) as exc:
+                raise PipelineError('The left-hand consensus model is invalid. Rebuild the backend and retry.') from exc
+
     def filter(self, path, acoustic, midi):
         """Keep original pitch, timing and velocity; reject unsupported events only."""
         import torch
@@ -140,6 +168,17 @@ class AccompanimentVerifier:
             refinement[eligible] = self.left_refinement_model.probability(x[eligible])
         keep = residual_keep(keep, probability, low_shared, refinement,
                              threshold=self.left_refinement_model.threshold)
+        # Both separately fitted views must reject a surviving low note. Keep
+        # physical window edges unchanged because their neighboring context is incomplete.
+        eligible = keep & low_shared & (probability <= .5) & window_eligible(np.asarray(events), len(samples) / rate)
+        relations, guardian = np.ones(len(notes)), np.ones(len(notes))
+        if np.any(eligible):
+            features = relation_features(np.asarray(events), x, probability)
+            relations[eligible] = self.left_relations_model.probability(features[eligible])
+            guardian[eligible] = self.left_guardian_model.probability(x[eligible])
+        keep = consensus_keep(keep, probability, low_shared, relations, guardian,
+                              threshold=self.left_relations_model.threshold,
+                              guardian_threshold=self.left_guardian_model.threshold)
         index = 0
         for part in midi.instruments:
             size = len(part.notes)

@@ -97,7 +97,7 @@ def test_context_correction_matches_runtime_without_changing_unshared_or_confide
 def test_residual_model_matches_evaluation_and_preserves_note_objects(monkeypatch, tmp_path):
     torch = pytest.importorskip('torch')
     verifier = service.AccompanimentVerifier()
-    assert 'v6' in verifier.name
+    assert 'v7' in verifier.name
     path = tmp_path / 'window.wav'
     sf.write(path, np.zeros(22050), 22050)
     notes = [SimpleNamespace(pitch=60 + i, start=i * .1, end=1. + i * .1, velocity=80)
@@ -238,3 +238,64 @@ def test_rejects_unbounded_and_non_normalized_audio(tmp_path):
         sf.write(path, np.zeros(shape), rate)
         with pytest.raises(PipelineError, match='normalized window'):
             verifier.filter(path, {}, midi)
+
+
+def test_consensus_preserves_protected_notes_edges_and_threshold_ties(monkeypatch, tmp_path):
+    torch = pytest.importorskip('torch')
+    verifier = service.AccompanimentVerifier()
+    path = tmp_path / 'window.wav'
+    sf.write(path, np.zeros(10 * 22050), 22050)
+    # Agreement, each head's veto, strong, unshared, treble, prior rejection,
+    # exact physical edges and exact model threshold equalities.
+    pitches = [48, 50, 52, 54, 55, 72, 57, 48, 50, 52, 54]
+    starts = [3., 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 2.5, 7.5, 4., 4.1]
+    notes = [SimpleNamespace(pitch=p, start=s, end=s + 2., velocity=80)
+             for p, s in zip(pitches, starts, strict=True)]
+    before = [vars(n).copy() for n in notes]
+    midi = SimpleNamespace(instruments=[SimpleNamespace(notes=notes[:5]), SimpleNamespace(notes=notes[5:])])
+    bounded = SimpleNamespace(instruments=[SimpleNamespace(notes=[n for i, n in enumerate(notes) if i != 4])])
+    monkeypatch.setattr(service, 'decode_candidates', lambda _: bounded)
+    x = np.arange(11 * 52, dtype=np.float32).reshape(11, 52) / 100
+    monkeypatch.setattr(service, 'note_features', lambda *args, **kwargs: x)
+    p = np.full(11, .2)
+    p[3], p[6] = .8, .05
+    verifier.model = lambda _: torch.from_numpy(np.log(p / (1 - p)))
+    verifier.context_models = [SimpleNamespace(threshold=.01, probability=lambda x: np.ones(len(x)))] * 2
+    for name, threshold in [('residual_model', .0375), ('left_hand_model', .05), ('left_refinement_model', .0375)]:
+        setattr(verifier, name, SimpleNamespace(threshold=threshold, probability=lambda x: np.ones(len(x))))
+
+    def relations(features):
+        assert features.shape == (5, 72)
+        np.testing.assert_array_equal(features[:, :52], x[[0, 1, 2, 9, 10]])
+        return np.array([0., 1., 0., .0375, 0.])
+
+    def guardian(features):
+        np.testing.assert_array_equal(features, x[[0, 1, 2, 9, 10]])
+        return np.array([0., 0., 1., 0., .3])
+
+    verifier.left_relations_model = SimpleNamespace(threshold=.0375, probability=relations)
+    verifier.left_guardian_model = SimpleNamespace(threshold=.3, probability=guardian)
+    assert verifier.filter(path, {}, midi) == 2
+    assert midi.instruments[0].notes == notes[1:5]
+    assert midi.instruments[1].notes == [notes[i] for i in [5, 7, 8, 9, 10]]
+    assert [vars(n) for n in notes] == before
+
+
+@pytest.mark.parametrize('name', ['LEFT_RELATIONS_CHECKPOINT', 'LEFT_GUARDIAN_CHECKPOINT'])
+def test_damaged_consensus_model_fails_explicitly(monkeypatch, tmp_path, name):
+    pytest.importorskip('torch')
+    path = tmp_path / 'damaged.npz'
+    path.write_bytes(b'invalid model')
+    monkeypatch.setattr(service, name, path)
+    with pytest.raises(PipelineError, match='consensus model is missing or damaged'):
+        service.AccompanimentVerifier()
+
+
+def test_consensus_rejects_invalid_confidence_even_if_other_head_accepts():
+    from app.services.note_context_model import consensus_keep
+
+    for invalid in (np.array([np.nan]), np.array([-1.]), np.array([[.1]]), np.array([1.01])):
+        for context, guardian in ((invalid, np.ones(1)), (np.ones(1), invalid)):
+            with pytest.raises(ValueError, match='confidence'):
+                consensus_keep(np.ones(1, dtype=bool), np.array([.2]), np.ones(1, dtype=bool),
+                               context, guardian, threshold=.0375, guardian_threshold=.3)

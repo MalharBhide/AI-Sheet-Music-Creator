@@ -16,10 +16,15 @@ The [low-register specialist](docs/left-hand-transcription.md) removes
 preserving matched attacks and holds. Full-song arrangements also give held bass
 keys priority over overlapping backing notes to prevent duplicate strikes.
 
-The latest [V6 left-hand refinement](docs/left-hand-refinement.md) was trained on
+The [V6 left-hand refinement](docs/left-hand-refinement.md) was trained on
 the expanded dataset and preserves V5's existing rejections. It removes five
 additional false notes on 142 regression excerpts and one on 12 newly evaluated
 piano passages, with matched attacks and holds preserved. The gain is small.
+
+The latest [V7 left-hand consensus](docs/left-hand-consensus-v7.md) uses two
+trained models that must agree before rejecting a surviving low note. It removes
+18 more false notes across 154 regression excerpts and one on eight new piano
+passages, preserving matched attacks and holds. This is a small measured gain.
 
 Balanced arrangements give the detected melody priority: backing stays below it
 and uses at most two simultaneous voices, alongside the separate bass. The

@@ -37,12 +37,26 @@ def residual_keep(keep, previous, shared, probability, *, threshold, ceiling=.5)
     return keep & ~(shared & (previous <= ceiling) & (probability < threshold))
 
 
+def consensus_keep(keep, previous, shared, context, guardian, *, threshold, guardian_threshold):
+    """Reject only when both views agree, preserving exact threshold equality."""
+    context, guardian = np.asarray(context), np.asarray(guardian)
+    if (context.shape != np.asarray(keep).shape or not np.isfinite(context).all()
+            or np.any((context < 0) | (context > 1))):
+        raise ValueError('Invalid consensus note confidence')
+    if (guardian.shape != np.asarray(keep).shape or not np.isfinite(guardian).all()
+            or np.any((guardian < 0) | (guardian > 1)) or not 0 < guardian_threshold <= 1):
+        raise ValueError('Invalid guardian note confidence')
+    combined = np.maximum(context, np.where(guardian < guardian_threshold, 0., 1.))
+    return residual_keep(keep, previous, shared, combined, threshold=threshold)
+
+
 class ContextNoteModel:
-    def __init__(self, saved):
+    def __init__(self, saved, *, feature_names=FEATURE_NAMES + CONTEXT_NAMES, feature_version=CONTEXT_VERSION):
         if (str(saved['version']) != 'note-boosted-v1'
-                or str(saved['feature_version']) != CONTEXT_VERSION
-                or list(saved['feature_names']) != list(FEATURE_NAMES + CONTEXT_NAMES)):
+                or str(saved['feature_version']) != feature_version
+                or list(saved['feature_names']) != list(feature_names)):
             raise ValueError('Incompatible accompaniment context features')
+        self.feature_count = len(feature_names)
         self.threshold = float(saved['threshold'])
         self.intercept = float(saved['intercept'])
         self.left, self.right, self.feature = (np.asarray(saved[k]) for k in ('left', 'right', 'feature'))
@@ -59,12 +73,12 @@ class ContextNoteModel:
         if (np.any((self.left[branch] <= parent[branch]) | (self.left[branch] >= shape[1]))
                 or np.any((self.right[branch] <= parent[branch]) | (self.right[branch] >= shape[1]))
                 or np.any(self.right[~branch] != -1)
-                or np.any((self.feature[branch] < 0) | (self.feature[branch] >= len(FEATURE_NAMES + CONTEXT_NAMES)))):
+                or np.any((self.feature[branch] < 0) | (self.feature[branch] >= self.feature_count))):
             raise ValueError('Invalid accompaniment context tree topology')
 
     def probability(self, x):
         x = np.asarray(x, dtype=np.float32)
-        if x.ndim != 2 or x.shape[1] != len(FEATURE_NAMES + CONTEXT_NAMES) or not np.isfinite(x).all():
+        if x.ndim != 2 or x.shape[1] != self.feature_count or not np.isfinite(x).all():
             raise ValueError('Invalid accompaniment context input')
         logits = np.full(len(x), self.intercept, dtype=np.float64)
         for left, right, feature, split, value in zip(
