@@ -1,5 +1,10 @@
 # Supervised melody training
 
+The [polyphonic training framework](../docs/polyphonic-training-framework.md)
+adds 64 licensed multi-instrument MP3 clips with MIDI pedal/crop pitch support.
+The four-profile batch completed and was withheld after no regression gain.
+Reserved source groups stay untouched; V9 remains deployed.
+
 The current website uses [learned repeat-attack V9](../docs/repeat-boundary-model-v9.md),
 following the [pitch-preserving V8 release](../docs/pitch-preserving-consensus-v8.md).
 The MP3 augmentation is complete. Both releases preserve matched attacks and
@@ -288,3 +293,9 @@ python training/verifier_release_gate.py .training/note-verifier-v3-data/note-ve
 ```
 
 Run with `PYTHONPATH=backend:training` and the transcription dependencies plus `mir_eval` and `scikit-learn`. The corrected candidate decoder lives in a shared helper but is used only by these offline experiments, not the deployed V2 path. Both trained candidates and their consensus were rejected. Do not copy their checkpoints into the app. The stricter gate checks individual recordings and compares precision/recall/F1 against the current release, not just the original detector. All evaluation recordings have been consumed; new future accuracy claims need additional independent recordings.
+
+The complete-V9 polyphonic batch fitted eight heads on 708 clips / 75,279 eligible
+events. The sole validation winner preserved regression attacks, holds and pitch
+coverage but removed zero additional false notes in 175 clips, so it is withheld.
+See `results/polyphonic-consensus-v10` and `docs/polyphonic-training-framework.md`.
+Reserved Slakh groups were not consumed. V9 remains the website model.

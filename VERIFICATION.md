@@ -539,3 +539,20 @@ The GitHub Actions native-pipeline job runs the same integration suite in the ba
 - Complete backend/training suite: 245 passed, six opt-in audio cases skipped.
   Backend/changed Python lint and diff checks pass. Website health remains ready
   on V7; no user audio processing, score regeneration or rejected model deployment.
+
+
+## Polyphonic supervision and complete-V9 experiments — 2026-10-04
+
+- Verified official CC BY 4.0 BabySlakh v2 archive and per-source audio/MIDI clocks.
+  Prepared 48 training / 16 validation clips with 22,893 key-release annotations
+  and 23,532 pedal/crop-aware pitch-support intervals; all MP3 lags zero. Four
+  test source groups remain unscored. No user uploads or jobs processed.
+- Fitted four paired profiles on 708 training / 184 validation clips, with 75,279
+  eligible supervised events. Complete-V9 evaluation re-runs frozen boundary
+  merging after each proposed filter and preserves every matched attack, offset
+  and supplied pitch interval per recording.
+- Sole eligible validation winner removes one false note but zero in 175-clip
+  frozen regression, so no candidate is promoted. Validation loss improvement
+  is not a note-accuracy claim. All experiments and withholding decision archived.
+- Backend/training suite: 329 passed, six opt-in native cases skipped; changed
+  Python lint and diff checks pass. Website remains V9.
