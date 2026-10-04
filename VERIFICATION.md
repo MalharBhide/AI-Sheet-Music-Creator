@@ -1,5 +1,23 @@
 # Verification
 
+## Broad confidence training — eight candidates withheld, 2026-10-04
+
+Fitted eight paired classifiers in two predeclared validation batches. The second
+adds 27 train / 7 validation labeled piano passages, for 620/158 clips and 55,405
+events. The broader confidence policy is offline only; website V7 is unchanged.
+Each batch froze one validation winner before regression. Both preserved all
+14,993 matched detections and onset-offset reference sets across 162 consumed
+regression recordings, but neither removed additional false notes. Both are
+withheld. No fresh reserved evaluation or user upload was consumed.
+
+**263 backend/training tests passed; six opt-in audio cases skipped.** Three
+additional preparation tests passed, including performer isolation, MP3 clock
+drift rejection and completed-evidence preservation. Changed-code lint and diff
+checks passed. A resumable 40-train/10-validation MP3/percussion separation
+augmentation is preparing licensed corpus features, without score generation.
+See the [training report](docs/broad-consensus-training.md) and
+[frozen results](training/results/broad-consensus-v9).
+
 ## Melody clarity and repeated-note rhythm — 2026-10-04
 
 Balanced backing now omits sustained runs of exact octave copies of the lead.

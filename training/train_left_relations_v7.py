@@ -15,6 +15,7 @@ from app.services.accompaniment_verifier import (
     AccompanimentVerifier,
 )
 from app.services.note_context_model import ContextNoteModel
+from app.services.note_context_model import residual_keep as bounded_keep
 from audit_verifier_labels import audit
 from cache_note_verifier import targets
 from evaluate_context_correction import matched_references
@@ -102,11 +103,12 @@ def prepare(directory, items, policy='refinement'):
     return prepared
 
 
-def score(items, probabilities, threshold, memo=None):
+def score(items, probabilities, threshold, memo=None, *, ceiling=.5):
     rows = []
     for item, probability in zip(items, probabilities, strict=True):
         before = item['events'][item['baseline_keep']]
-        after_mask = residual_keep(item, probability, threshold)
+        after_mask = bounded_keep(item['keep'], item['p'], item['shared'], probability,
+                                  threshold=threshold, ceiling=ceiling)
         cache_key = (id(item), after_mask.tobytes())
         if memo is not None and cache_key in memo:
             rows.append(memo[cache_key])

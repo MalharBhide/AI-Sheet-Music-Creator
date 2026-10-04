@@ -40,6 +40,14 @@ validation coverage audit found about 73% of unmatched notes outside the tested
 residual policy. The new confidence features and all rejection evidence remain
 available for further dataset/model work.
 
+The [broad confidence batches](../docs/broad-consensus-training.md) trained eight
+paired candidates on up to 55,405 events, including 34 additional piano passages.
+Both validation-selected winners preserved regression attacks and holds but
+removed no additional false notes, so V7 remains deployed. MP3/percussion and
+source-separation augmentation is being prepared from fixed training/validation
+performers. New candidates stay offline until they improve the frozen baseline
+without losing previously correct notes in any evaluated recording.
+
 This experiment trains a small temporal neural decoder on **real human-annotated
 singing**. The resulting checkpoint is used for the vocal melody of every
 Full song upload, independent of filename, file extension or song identity. Basic Pitch, pYIN and CQT supply frozen acoustic features; the new

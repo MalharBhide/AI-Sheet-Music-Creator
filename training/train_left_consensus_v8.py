@@ -82,8 +82,8 @@ def prepare(directory, items, baseline_evidence=False, full_register=False):
     return prepared
 
 
-def score(items, probabilities, threshold, memo=None):
-    result = score_v6(items, probabilities, threshold, memo)
+def score(items, probabilities, threshold, memo=None, *, ceiling=.5):
+    result = score_v6(items, probabilities, threshold, memo, ceiling=ceiling)
     # Copy cached rows instead of mutating the V6 helper's memoized objects.
     result['per_recording'] = [{**{k: v for k, v in row.items() if k != 'deployed_v6'},
                                'deployed_v7': row['deployed_v6']} for row in result['per_recording']]
