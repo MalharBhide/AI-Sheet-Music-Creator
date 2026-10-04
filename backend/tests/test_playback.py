@@ -210,3 +210,25 @@ def test_canonical_midi_preserves_score_meter_and_key(tmp_path, signature, tonal
     assert written_meter.time == 0
     assert canonical.key_signature_changes[0].key_number == key_number
     assert canonical.key_signature_changes[0].time == 0
+
+
+def test_shifted_repeated_triplets_keep_all_attacks_through_notation_and_playback(tmp_path):
+    from app.services.audio_analysis import clean_notes, estimate_grid_phase
+
+    raw = [pretty_midi.Note(90, 64, .06 + i / 6, .06 + (i + 1) / 6) for i in range(18)]
+    offset = estimate_grid_phase(raw, tempo_bpm=120, grid='sixteenth')
+    for item in raw:
+        item.start = max(0., item.start - offset)
+        item.end -= offset
+    part = pretty_midi.Instrument(0)
+    part.notes = clean_notes(raw, role='vocals', detail='balanced', tempo_bpm=120, grid='sixteenth')
+    source = pretty_midi.PrettyMIDI(initial_tempo=120, resolution=480)
+    source.instruments.append(part)
+    midi, xml = tmp_path / 'repeats.mid', tmp_path / 'repeats.musicxml'
+    source.write(str(midi))
+    midi_to_musicxml(midi, xml, ScoreOptions(tempo_bpm=120), 'Original repeated-note fixture')
+    playback = export_score_playback(xml, midi, tmp_path / 'playback.json', 120)
+    assert len(playback['notes']) == 18
+    assert [n['pitch'] for n in playback['notes']] == [64] * 18
+    assert [n['start'] for n in playback['notes']] == pytest.approx([i / 6 for i in range(18)], abs=1e-6)
+    assert [n['end'] for n in playback['notes']] == pytest.approx([(i + 1) / 6 for i in range(18)], abs=1e-6)

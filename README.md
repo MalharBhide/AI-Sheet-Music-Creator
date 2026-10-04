@@ -38,6 +38,13 @@ Full-song melody recognition now includes a locally trained neural decoder. See 
 Precise rhythm now preserves clearly detected eighth-note triplets alongside
 straight sixteenths. See the [timing update and measured limits](docs/rhythm-timing-update.md).
 
+The latest [melody and repeated-note update](docs/melody-repeat-update.md)
+omits complete octave copies of the lead in balanced backing, aligns rhythm to
+the detected lead, and refines small automatic-tempo errors from long regular
+repeated-note runs. Shifted triplets retain equal spacing through notation and
+playback. These are decoding and arrangement changes; V7 model weights remain
+unchanged, and intentional octave doublings can also be omitted in balanced mode.
+
 ## Quick start with Docker
 
 Install and open [Docker Desktop](https://www.docker.com/products/docker-desktop/), then run from this repository:

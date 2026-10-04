@@ -224,26 +224,127 @@ def clean_notes(notes: list, *, role: str, detail: str, tempo_bpm: float,
 
 
 def estimate_grid_phase(notes: list, *, tempo_bpm: float, grid: str) -> float:
-    """Find a shared sub-grid onset offset, without claiming to find a downbeat.
+    """Estimate a common phase without giving chord duplicates extra votes.
 
-    Notes close to a quantizer boundary otherwise alternate between neighbouring
-    slots as detection jitter changes sign. Correct only a strong common phase;
-    rubato and irregular rhythms are left alone. Work is bounded to 2048 notes.
+    Clear shifted triplet runs can support a ternary phase when the straight
+    lattice is incoherent. Irregular or insufficient evidence stays unchanged.
     """
     if len(notes) < 8:
         return 0.0
-    indices = np.linspace(0, len(notes) - 1, min(len(notes), 2048), dtype=int)
-    selected = [notes[index] for index in indices
-                if math.isfinite(notes[index].start) and notes[index].velocity >= 24]
-    if len({round(item.start, 3) for item in selected}) < 8:
+    samples = np.linspace(0, len(notes) - 1, min(len(notes), 8192), dtype=int)
+    finite = [notes[index] for index in samples
+              if math.isfinite(notes[index].start) and notes[index].velocity >= 24]
+    # The strongest attack represents each onset, rather than every chord tone.
+    onsets = {}
+    for item in finite:
+        key = round(item.start, 3)
+        if key not in onsets or item.velocity > onsets[key].velocity:
+            onsets[key] = item
+    unique = sorted(onsets.values(), key=lambda item: item.start)
+    if len(unique) < 8:
         return 0.0
-    step = 60 / tempo_bpm / (4 if grid == "sixteenth" else 2)
-    phases = np.asarray([item.start % step for item in selected]) * (2 * np.pi / step)
+    indices = np.linspace(0, len(unique) - 1, min(len(unique), 2048), dtype=int)
+    selected = [unique[index] for index in indices]
     weights = np.asarray([item.velocity for item in selected], dtype=float)
-    resultant = np.average(np.exp(1j * phases), weights=weights)
-    if abs(resultant) < 0.6:
+
+    def phase(division):
+        step = 60 / tempo_bpm / division
+        angles = np.asarray([item.start % step for item in selected]) * (2 * np.pi / step)
+        resultant = np.average(np.exp(1j * angles), weights=weights)
+        return float(abs(resultant)), float(np.angle(resultant) * step / (2 * np.pi))
+
+    strength, offset = phase(4 if grid == 'sixteenth' else 2)
+    if strength >= .6:
+        return offset
+    if grid != 'sixteenth':
         return 0.0
-    return float(np.angle(resultant) * step / (2 * np.pi))
+    strength, offset = phase(3)
+    if strength < .8:
+        return 0.0
+    from types import SimpleNamespace
+
+    shifted = [SimpleNamespace(start=max(0., item.start - offset)) for item in selected]
+    recognized = triplet_beats(shifted, tempo_bpm)
+    coverage = sum(math.floor(item.start * tempo_bpm / 60 + 1e-6) in recognized for item in shifted)
+    return offset if len(recognized) >= 2 and coverage >= .75 * len(shifted) else 0.0
+
+
+def refine_repeat_tempo(notes: list, tempo_bpm: float) -> float:
+    """Refine a near-correct automatic tempo from long regular repeated-key runs.
+
+    This never chooses a beat level: each proposal must stay within 2% of the
+    acoustic estimate. Require at least 12 intervals spanning six seconds, with
+    low jitter and little drift; short, swung or expressive runs are left alone.
+    """
+    proposals = []
+    fractions = np.array([.25, 1 / 3, .5, 2 / 3, .75, 1., 1.5, 2.])
+    # Three bounded note windows retain local spacing on long recordings;
+    # sampling isolated notes throughout a whole song invents large intervals.
+    width = 2048
+    final = max(0, len(notes) - width)
+    for first in sorted({0, final // 2, final}):
+        by_pitch = defaultdict(list)
+        for item in notes[first:first + width]:
+            if math.isfinite(item.start) and item.velocity >= 24:
+                by_pitch[item.pitch].append(item.start)
+        for starts in by_pitch.values():
+            times = np.asarray(sorted(set(round(at, 6) for at in starts)))
+            if len(times) < 13:
+                continue
+            intervals = np.diff(times)
+            median = float(np.median(intervals))
+            if median <= 0 or np.any(np.abs(intervals - median) > .06 * median):
+                continue
+            if times[-1] - times[0] < 6:
+                continue
+            # Fit the whole run, not one noisy interval. Reject gradually
+            # changing tempo even when individual intervals are close.
+            positions = np.arange(len(times))
+            slope, intercept = np.polyfit(positions, times, 1)
+            if np.max(np.abs(times - (intercept + positions * slope))) > .08 * median:
+                continue
+            slot = fractions[np.argmin(np.abs(fractions - slope * tempo_bpm / 60))]
+            proposed = 60 * slot / slope
+            if 30 <= proposed <= 240 and abs(proposed / tempo_bpm - 1) <= .02:
+                proposals.append(float(proposed))
+    if not proposals:
+        return tempo_bpm
+    center = float(np.median(proposals))
+    if any(abs(value / center - 1) > .005 for value in proposals):
+        return tempo_bpm
+    return round(center, 3)
+
+
+def remove_melody_octave_doublings(notes: list, melody: list) -> list:
+    """Omit a copied octave line from balanced backing, preserving the lead.
+
+    Require four consecutive exact attack/release matches, three distinct lead
+    pitches and at least a second of music. Isolated octave chord tones, sustained
+    support and repeated single-pitch accompaniment do not establish a copied line.
+    This simplifies an arrangement; it does not classify original notes as false.
+    """
+    lead = sorted(melody, key=lambda item: item.start)
+    lookup = defaultdict(list)
+    for item in notes:
+        lookup[(round(item.start, 6), item.pitch)].append(item)
+    removed = set()
+    for shift in (12, 24):
+        matches = {}
+        for index, item in enumerate(lead):
+            candidates = lookup.get((round(item.start, 6), item.pitch - shift), [])
+            copies = [n for n in candidates if abs(n.end - item.end) <= 1e-6]
+            if copies:
+                matches[index] = copies
+        run = []
+        for index in [*sorted(matches), None]:
+            if run and (index is None or index != run[-1] + 1):
+                if (len(run) >= 4 and len({lead[i].pitch for i in run}) >= 3
+                        and lead[run[-1]].end - lead[run[0]].start >= 1.):
+                    removed.update(id(n) for i in run for n in matches[i])
+                run = []
+            if index is not None:
+                run.append(index)
+    return [item for item in notes if id(item) not in removed]
 
 
 def reduce_accompaniment(notes: list, *, detail: str, melody: list | None = None) -> list:
@@ -258,7 +359,8 @@ def reduce_accompaniment(notes: list, *, detail: str, melody: list | None = None
     import pretty_midi
 
     limit = 5 if detail == 'detailed' else 2 if melody else 3
-    candidates = sorted(notes, key=lambda n: (n.end, n.start, n.pitch))
+    backing = remove_melody_octave_doublings(notes, melody) if detail == 'balanced' and melody else notes
+    candidates = sorted(backing, key=lambda n: (n.end, n.start, n.pitch))
     if detail == 'balanced' and melody:
         # clean_notes has already made this line monophonic, so endpoints are
         # sorted too. Consider the entire overlap, not just the support attack.

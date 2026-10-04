@@ -1,5 +1,31 @@
 # Verification
 
+## Melody clarity and repeated-note rhythm — 2026-10-04
+
+Balanced backing now omits sustained runs of exact octave copies of the lead.
+Timing uses sufficient lead evidence instead of dense backing; chord duplicates
+cannot add phase votes. Strong shifted triplet runs preserve equal spacing, and
+long regular repeats can refine automatic tempo within 2% of its estimate.
+Manual tempo overrides, repeated single-pitch backing, distinct holds, isolated
+chord tones and detailed-mode octave copies are preserved by regression checks.
+
+**256 tests passed, six opt-in audio integration cases skipped.** The suite
+includes real MIDI/MusicXML/browser playback export for repeated triplets.
+The original symbolic benchmark against `b9ee29e` preserved all attacks while
+eliminating the demonstrated spacing error at 80/120/160 BPM. It also removed
+six octave copies while preserving the lead and held support. This does not
+measure real-audio accuracy; intentional octave doublings can also be omitted.
+V7 recognition weights remain unchanged. No user uploads were processed or
+existing scores regenerated. See the [report](docs/melody-repeat-update.md) and
+[archived fixture comparison](docs/melody-repeat-benchmark.json).
+
+Backend production build passed. Deployed after confirming zero active jobs.
+The frontend-proxied health endpoint reports ready; deployed analysis and
+transcription source hashes match the tested files. The running backend loads
+V7, recognizes the original shifted-triplet fixture, and refines the original
+regular-repeat fixture from 121.2 to 120 BPM. These deployment checks created
+no transcription jobs.
+
 ## V6 left-hand correction — higher measured precision
 
 Trained a residual classifier on 32,067 labeled low-register events from 551

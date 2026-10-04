@@ -1,4 +1,5 @@
 import sys
+from pathlib import Path
 from types import ModuleType, SimpleNamespace
 
 import numpy as np
@@ -299,3 +300,56 @@ def test_detailed_accompaniment_keeps_its_validated_detector_path(tmp_path, fake
     parameters = fake_inference.calls[0][1]
     assert parameters['minimum_frequency'] is not None
     assert parameters['melodia_trick'] is True
+
+
+@pytest.mark.parametrize('manual', [False, True])
+def test_repeated_note_tempo_reaches_written_midi_and_honors_manual_override(
+        tmp_path, fake_inference, monkeypatch, manual):
+    from app.services import piano_transcription
+
+    audio, output = tmp_path / 'fixture.wav', tmp_path / 'out.mid'
+    sf.write(audio, np.full(25 * 22050, .01, dtype='float32'), 22050)
+    fake_inference.results.append([(64, .06 + .5 * i, .4 + .5 * i) for i in range(48)])
+    monkeypatch.setattr(piano_transcription, 'estimate_tempo', lambda *_: (121.2, []))
+    options = ScoreOptions(transcription_mode='melody', tempo_bpm=121.2 if manual else None)
+    report = transcribe(audio, output, options)
+    result = fake_inference.pretty_midi.PrettyMIDI(str(output))
+    assert len(result.instruments[0].notes) == 48
+    assert report['tempo_bpm'] == pytest.approx(121.2 if manual else 120)
+    assert result.get_tempo_changes()[1][0] == pytest.approx(report['tempo_bpm'], abs=.001)
+    if not manual:
+        assert np.diff([n.start for n in result.instruments[0].notes]) == pytest.approx(np.full(47, .5), abs=.001)
+    else:
+        assert report['tempo_refinement_bpm'] == 0
+
+
+def test_full_mix_rhythm_uses_lead_phase_instead_of_denser_backing(tmp_path, monkeypatch):
+    import pretty_midi
+
+    from app.services import piano_transcription, source_separation
+
+    audio, output = tmp_path / 'fixture.wav', tmp_path / 'out.mid'
+    sf.write(audio, np.full(8 * 22050, .01, dtype='float32'), 22050)
+    class Separator:
+        def separate(self, path, directory):
+            return {role: Path(str(path) + '-' + role) for role in ('vocals', 'other')}
+    class Engine:
+        name = 'Fixture'
+        def __init__(self, detail):
+            pass
+        def predict(self, path, role, bpm):
+            part = pretty_midi.Instrument(0)
+            if role == 'vocals':
+                part.notes = [pretty_midi.Note(90, 72 + i % 3, .06 + .5 * i, .4 + .5 * i) for i in range(12)]
+            else:
+                part.notes = [pretty_midi.Note(85, p, .5 * i, .35 + .5 * i)
+                              for i in range(12) for p in (48, 52, 55)]
+            result = pretty_midi.PrettyMIDI()
+            result.instruments.append(part)
+            return result
+    monkeypatch.setattr(source_separation, 'StemSeparator', Separator)
+    monkeypatch.setattr(piano_transcription, '_GeneralEngine', Engine)
+    report = transcribe(audio, output, ScoreOptions(transcription_mode='full_mix', tempo_bpm=120))
+    result = pretty_midi.PrettyMIDI(str(output))
+    assert report['timing_offset_seconds'] == pytest.approx(.06)
+    assert [n.start for n in result.instruments[0].notes] == pytest.approx([.5 * i for i in range(12)], abs=.001)

@@ -1,0 +1,115 @@
+{
+  "baseline_revision": "b9ee29e",
+  "baseline_source_sha256": "0b039db01c8a235b624d48ce4c6495f09f11c47849f10185de47b7f1ee5e3007",
+  "passes": true,
+  "timing": [
+    {
+      "fixture": "shifted repeated triplets",
+      "reference_tempo": 80.0,
+      "reference_interval": 0.25,
+      "baseline": {
+        "notes": 48,
+        "tempo": 80.0,
+        "mean_spacing_error_ms": 83.77659574468085,
+        "maximum_spacing_error_ms": 125.0
+      },
+      "updated": {
+        "notes": 48,
+        "tempo": 80.0,
+        "mean_spacing_error_ms": 0.0,
+        "maximum_spacing_error_ms": 0.0
+      }
+    },
+    {
+      "fixture": "small tempo error on repeated quarters",
+      "reference_tempo": 80.0,
+      "reference_interval": 0.75,
+      "baseline": {
+        "notes": 48,
+        "tempo": 80.8,
+        "mean_spacing_error_ms": 14.693490625658347,
+        "maximum_spacing_error_ms": 178.21782178218015
+      },
+      "updated": {
+        "notes": 48,
+        "tempo": 80.0,
+        "mean_spacing_error_ms": 0.0,
+        "maximum_spacing_error_ms": 0.0
+      }
+    },
+    {
+      "fixture": "shifted repeated triplets",
+      "reference_tempo": 120.0,
+      "reference_interval": 0.16666666666666666,
+      "baseline": {
+        "notes": 48,
+        "tempo": 120.0,
+        "mean_spacing_error_ms": 55.85106382978722,
+        "maximum_spacing_error_ms": 83.33333333333334
+      },
+      "updated": {
+        "notes": 48,
+        "tempo": 120.0,
+        "mean_spacing_error_ms": 2.627921521054227e-13,
+        "maximum_spacing_error_ms": 5.828670879282072e-13
+      }
+    },
+    {
+      "fixture": "small tempo error on repeated quarters",
+      "reference_tempo": 120.0,
+      "reference_interval": 0.5,
+      "baseline": {
+        "notes": 48,
+        "tempo": 121.2,
+        "mean_spacing_error_ms": 9.795660417105536,
+        "maximum_spacing_error_ms": 118.81188118811892
+      },
+      "updated": {
+        "notes": 48,
+        "tempo": 120.0,
+        "mean_spacing_error_ms": 0.0,
+        "maximum_spacing_error_ms": 0.0
+      }
+    },
+    {
+      "fixture": "shifted repeated triplets",
+      "reference_tempo": 160.0,
+      "reference_interval": 0.125,
+      "baseline": {
+        "notes": 48,
+        "tempo": 160.0,
+        "mean_spacing_error_ms": 41.888297872340424,
+        "maximum_spacing_error_ms": 62.5
+      },
+      "updated": {
+        "notes": 48,
+        "tempo": 160.0,
+        "mean_spacing_error_ms": 0.0,
+        "maximum_spacing_error_ms": 0.0
+      }
+    },
+    {
+      "fixture": "small tempo error on repeated quarters",
+      "reference_tempo": 160.0,
+      "reference_interval": 0.375,
+      "baseline": {
+        "notes": 48,
+        "tempo": 161.6,
+        "mean_spacing_error_ms": 7.346745312829131,
+        "maximum_spacing_error_ms": 89.10891089108918
+      },
+      "updated": {
+        "notes": 48,
+        "tempo": 160.0,
+        "mean_spacing_error_ms": 0.0,
+        "maximum_spacing_error_ms": 0.0
+      }
+    }
+  ],
+  "backing_notes_in_octave_copy_fixture": {
+    "baseline": 7,
+    "updated": 1
+  },
+  "lead_notes": 6,
+  "scope": "Original symbolic detections, not audio-model accuracy. No user audio or score generation."
+}

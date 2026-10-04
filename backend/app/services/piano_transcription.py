@@ -15,6 +15,7 @@ from app.services.audio_analysis import (
     preserve_bass_releases,
     preserve_melody_releases,
     reduce_accompaniment,
+    refine_repeat_tempo,
 )
 
 CHUNK_SECONDS = 30
@@ -219,9 +220,6 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
             separator = StemSeparator()
             roles = ["vocals", "bass", "other"]
             warnings.append("Full-song mode makes a piano arrangement from separated vocals, bass and accompaniment. It cannot recover an exact original piano score; review overlapping instruments and missing notes.")
-    midi = pretty_midi.PrettyMIDI(initial_tempo=bpm, resolution=480)
-    numerator, denominator = map(int, options.time_signature.split("/"))
-    midi.time_signature_changes.append(pretty_midi.TimeSignature(numerator, denominator, 0))
     parts = {role: pretty_midi.Instrument(program=0, name=role.title()) for role in roles}
     boundaries = {role: {} for role in roles}
     duration = sf.info(str(audio_path)).duration
@@ -248,8 +246,18 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
                 progress_callback(min(1.0, core_end / duration))
 
     raw_count = sum(len(part.notes) for part in parts.values())
-    timing_offset = estimate_grid_phase([item for part in parts.values() for item in part.notes],
-                                        tempo_bpm=bpm, grid=options.grid)
+    # The lead supplies the rhythm when it has sufficient evidence. Dense
+    # backing chords otherwise outvote it and can distort repeated-note spacing.
+    timing_notes = [item for part in parts.values() for item in part.notes]
+    if mode == 'full_mix' and len({round(n.start, 3) for n in parts['vocals'].notes[:64]}) >= 8:
+        timing_notes = parts['vocals'].notes
+    original_bpm = bpm
+    if options.tempo_bpm is None:
+        bpm = refine_repeat_tempo(timing_notes, bpm)
+    midi = pretty_midi.PrettyMIDI(initial_tempo=bpm, resolution=480)
+    numerator, denominator = map(int, options.time_signature.split("/"))
+    midi.time_signature_changes.append(pretty_midi.TimeSignature(numerator, denominator, 0))
+    timing_offset = estimate_grid_phase(timing_notes, tempo_bpm=bpm, grid=options.grid)
     retained = {}
     for role, part in parts.items():
         for item in part.notes:
@@ -299,6 +307,7 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
             "tempo_bpm": bpm, "note_count": len(notes), "raw_note_count": raw_count,
             "key_signature": key_signature, "transcription_mode": mode,
             "timing_offset_seconds": timing_offset,
+            "tempo_refinement_bpm": bpm - original_bpm,
             "melody_octave_shift": melody_shift // 12, "notes_by_source": retained,
             "support_notes_changed_for_melody": support_changes,
             "support_notes_changed_for_bass": bass_support_changes,

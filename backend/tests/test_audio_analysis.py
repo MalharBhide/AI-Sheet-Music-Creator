@@ -296,3 +296,80 @@ def test_competing_syncopated_pulse_does_not_force_the_120_bpm_prior():
                                    hop_length=256, trim=False)
     assert float(np.asarray(old).reshape(-1)[0]) == pytest.approx(129, abs=2)
     assert _tempo_from_onsets(envelope, rate) == pytest.approx(96, abs=.2)
+
+
+def test_dense_chord_duplicates_cannot_change_the_common_onset_phase():
+    regular = [n(72, .06 + .5 * i, .4 + .5 * i) for i in range(20)]
+    crowded = regular + [n(p, .06 + .5 * i, .4 + .5 * i)
+                         for i in range(20) for p in range(36, 70)]
+    assert estimate_grid_phase(crowded, tempo_bpm=120, grid='sixteenth') == pytest.approx(
+        estimate_grid_phase(regular, tempo_bpm=120, grid='sixteenth'))
+
+
+def test_shifted_repeated_triplets_keep_equal_spacing_after_phase_alignment():
+    notes = [n(64, .06 + i / 6, .06 + (i + 1) / 6) for i in range(18)]
+    offset = estimate_grid_phase(notes, tempo_bpm=120, grid='sixteenth')
+    assert offset == pytest.approx(.06)
+    corrected = [n(item.pitch, max(0., item.start - offset), item.end - offset) for item in notes]
+    result = cleaned(corrected, role='vocals')
+    assert len(result) == 18
+    assert np.diff([item.start for item in result]) == pytest.approx(np.full(17, 1 / 6))
+
+
+def test_triplet_phase_does_not_infer_ternary_rhythm_from_missing_slots():
+    notes = [n(64, .06 + i * .5, .2 + i * .5) for i in range(10)]
+    # A regular quarter line fits the existing straight grid, preserving its phase.
+    assert estimate_grid_phase(notes, tempo_bpm=120, grid='sixteenth') == pytest.approx(.06)
+    incomplete = [n(64, .06 + beat * .5 + slot / 6, .16 + beat * .5 + slot / 6)
+                  for beat in range(8) for slot in (0, 1)]
+    assert estimate_grid_phase(incomplete, tempo_bpm=120, grid='sixteenth') == 0
+
+
+def test_repeated_key_evidence_refines_small_tempo_error_without_guessing_beat_level():
+    from app.services.audio_analysis import refine_repeat_tempo
+
+    notes = [n(64, .04 + i * .5, .4 + i * .5) for i in range(48)]
+    assert refine_repeat_tempo(notes, 121.2) == pytest.approx(120)
+    assert refine_repeat_tempo(notes, 96) == 96
+    assert refine_repeat_tempo(notes[:12], 121.2) == 121.2
+    assert refine_repeat_tempo([], 121.2) == 121.2
+    # Distinct beat interpretations stay near their acoustic estimate.
+    assert refine_repeat_tempo(notes, 60.6) == pytest.approx(60)
+
+
+def test_repeated_key_tempo_does_not_flatten_swing_or_changing_tempo():
+    from app.services.audio_analysis import refine_repeat_tempo
+
+    swing = np.cumsum([.33, .17] * 24)
+    varying = np.cumsum(np.linspace(.49, .51, 48))
+    assert refine_repeat_tempo([n(64, at, at + .1) for at in swing], 121.2) == 121.2
+    assert refine_repeat_tempo([n(64, at, at + .1) for at in varying], 121.2) == 121.2
+    contradictory = [n(64, i * .5, i * .5 + .1) for i in range(48)]
+    contradictory += [n(67, i * .495, i * .495 + .1) for i in range(48)]
+    assert refine_repeat_tempo(contradictory, 121.2) == 121.2
+
+
+def test_balanced_backing_omits_a_complete_octave_copy_of_the_melody():
+    melody = [n(p, i * .5, i * .5 + .5) for i, p in enumerate([72, 74, 76, 74, 72, 79])]
+    echo = [n(item.pitch - 12, item.start, item.end, 75) for item in melody]
+    support = [n(48, 0, 3, 70)]
+    before = [vars(item).copy() for item in melody + echo + support]
+    result = reduce_accompaniment(echo + support, detail='balanced', melody=melody)
+    assert [(item.pitch, item.start, item.end) for item in result] == [(48, 0, 3)]
+    assert [vars(item) for item in melody + echo + support] == before
+
+
+def test_octave_copy_rule_preserves_isolated_chords_holds_and_repeated_single_pitch():
+    from app.services.audio_analysis import remove_melody_octave_doublings
+
+    melody = [n(p, i * .5, i * .5 + .5) for i, p in enumerate([72, 74, 76, 74, 72, 79])]
+    isolated = [n(item.pitch - 12, item.start, item.end) for item in melody[:3]]
+    held = [n(60, 0, 4), n(62, .5, 4), n(64, 1, 4), n(62, 1.5, 4)]
+    assert remove_melody_octave_doublings(isolated, melody) == isolated
+    assert remove_melody_octave_doublings(held, melody) == held
+    repeated = [n(72, i * .5, i * .5 + .5) for i in range(10)]
+    repeated_bass = [n(60, item.start, item.end) for item in repeated]
+    assert remove_melody_octave_doublings(repeated_bass, repeated) == repeated_bass
+    complete_copy = [n(item.pitch - 12, item.start, item.end) for item in melody]
+    detailed = reduce_accompaniment(complete_copy, detail='detailed', melody=melody)
+    assert len(detailed) == len(complete_copy)
