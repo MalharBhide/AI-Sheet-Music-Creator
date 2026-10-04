@@ -1,0 +1,114 @@
+{
+  "threshold": 0.05,
+  "guardian_threshold": 0.025,
+  "passes": true,
+  "false_notes_removed": 0,
+  "merged_boundaries": 0,
+  "failed_recordings": [],
+  "per_recording": [
+    {
+      "id": "relational-piano-fresh-120-Chopin_op38_p19",
+      "corpus": "vienna-piano",
+      "deployed_v8": {
+        "precision": 0.46153846153846156,
+        "recall": 0.8181818181818182,
+        "f1": 0.5901639344262295,
+        "true_positives": 18,
+        "false_positives": 21,
+        "predicted": 39,
+        "reference": 22,
+        "seconds": 13.73845804988662,
+        "false_positives_per_minute": 91.71334915641413
+      },
+      "candidate": {
+        "precision": 0.46153846153846156,
+        "recall": 0.8181818181818182,
+        "f1": 0.5901639344262295,
+        "true_positives": 18,
+        "false_positives": 21,
+        "predicted": 39,
+        "reference": 22,
+        "seconds": 13.73845804988662,
+        "false_positives_per_minute": 91.71334915641413
+      },
+      "merged_boundaries": 0,
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "pitch_time_union_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "relational-piano-fresh-120-Chopin_op38_p21",
+      "corpus": "vienna-piano",
+      "deployed_v8": {
+        "precision": 0.3695652173913043,
+        "recall": 0.7727272727272727,
+        "f1": 0.5,
+        "true_positives": 17,
+        "false_positives": 29,
+        "predicted": 46,
+        "reference": 22,
+        "seconds": 15.247800453514738,
+        "false_positives_per_minute": 114.1148197279114
+      },
+      "candidate": {
+        "precision": 0.3695652173913043,
+        "recall": 0.7727272727272727,
+        "f1": 0.5,
+        "true_positives": 17,
+        "false_positives": 29,
+        "predicted": 46,
+        "reference": 22,
+        "seconds": 15.247800453514738,
+        "false_positives_per_minute": 114.1148197279114
+      },
+      "merged_boundaries": 0,
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "pitch_time_union_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "relational-piano-fresh-120-Chopin_op38_p22",
+      "corpus": "vienna-piano",
+      "deployed_v8": {
+        "precision": 0.42424242424242425,
+        "recall": 0.6363636363636364,
+        "f1": 0.509090909090909,
+        "true_positives": 14,
+        "false_positives": 19,
+        "predicted": 33,
+        "reference": 22,
+        "seconds": 12.847845804988662,
+        "false_positives_per_minute": 88.73082828853316
+      },
+      "candidate": {
+        "precision": 0.42424242424242425,
+        "recall": 0.6363636363636364,
+        "f1": 0.509090909090909,
+        "true_positives": 14,
+        "false_positives": 19,
+        "predicted": 33,
+        "reference": 22,
+        "seconds": 12.847845804988662,
+        "false_positives_per_minute": 88.73082828853316
+      },
+      "merged_boundaries": 0,
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "pitch_time_union_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    }
+  ],
+  "checkpoint_sha256": "6e0c16ebd1d136e09d2c69617c9732ed50522a48ebfc4a888924d1de13628369",
+  "batch_selection_sha256": "024e63239893a2f474b8718ee8e60394122ab2cec6140718af1fc6fcd3fe2e34",
+  "manifest_sha256": "c358df63a469c3f5fb60c3d57e74413824620994bdbd52bfa0b5b86e6d423eae",
+  "gate_code_sha256": "ba41b3e21a138ee6e77668081bcb562223f5a870ae4070fcbdab464e8884e16d",
+  "scope": "Latest consumed V8 piano passages; not fresh evaluation"
+}

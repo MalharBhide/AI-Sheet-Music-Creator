@@ -1,9 +1,11 @@
 # Supervised melody training
 
-The current website uses [pitch-preserving accompaniment V8](../docs/pitch-preserving-consensus-v8.md).
-The MP3 augmentation is complete, and the frozen release preserves attacks,
-offsets and annotated pitch coverage. Future experiments use
-`current_accompaniment_baseline.py`; V7 helpers reproduce historical studies.
+The current website uses [learned repeat-attack V9](../docs/repeat-boundary-model-v9.md),
+following the [pitch-preserving V8 release](../docs/pitch-preserving-consensus-v8.md).
+The MP3 augmentation is complete. Both releases preserve matched attacks and
+offsets; V9 also preserves the exact detected pitch-time union when joining holds.
+Future experiments must include V9 decisions. `current_accompaniment_baseline.py`
+pins historical V8; older V7 helpers reproduce their historical studies.
 
 Model development uses labeled corpus features and explicit regression gates.
 Do not retranscribe user uploads or regenerate sheet music to demonstrate a model

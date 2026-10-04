@@ -29,6 +29,24 @@ from app.services.note_context_model import (
     shared_events,
 )
 from app.services.note_evidence import FEATURE_NAMES, FEATURE_VERSION, note_features
+from app.services.repeat_boundary import (
+    ACOUSTIC_NAMES as BOUNDARY_ACOUSTIC_NAMES,
+)
+from app.services.repeat_boundary import (
+    RELATION_NAMES as BOUNDARY_RELATION_NAMES,
+)
+from app.services.repeat_boundary import (
+    VERSION as BOUNDARY_VERSION,
+)
+from app.services.repeat_boundary import (
+    boundaries,
+)
+from app.services.repeat_boundary import (
+    features as boundary_features,
+)
+from app.services.repeat_boundary import (
+    merge as merge_boundaries,
+)
 
 CHECKPOINT = Path(__file__).resolve().parents[1] / 'assets' / 'accompaniment-verifier-v2.pt'
 CHECKPOINT_SHA256 = '2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60'
@@ -53,10 +71,14 @@ BROAD_CHECKPOINT = CHECKPOINT.parent / 'accompaniment-broad-pitch-v1.npz'
 BROAD_SHA256 = '1faaa1e98e1af9e95e8684ce58e5731fe21f219f9434673e64d63b8101d4b5dd'
 BROAD_GUARDIAN_CHECKPOINT = CHECKPOINT.parent / 'accompaniment-broad-guardian-v1.npz'
 BROAD_GUARDIAN_SHA256 = 'fbe2f75edf6dec98df6a3568c2e1dc3b900d55284f78b7718df54345b9ed7395'
+BOUNDARY_CHECKPOINT = CHECKPOINT.parent / 'repeat-boundary-v1.npz'
+BOUNDARY_SHA256 = 'eb1b395024aecea5c715786efaf2ece2d4e901d723042fb12a1c4d476cacb80a'
+BOUNDARY_GUARDIAN_CHECKPOINT = CHECKPOINT.parent / 'repeat-boundary-guardian-v1.npz'
+BOUNDARY_GUARDIAN_SHA256 = '16bd14e045450195d704f5dcdff3edff0382237b99e5760c7ffec65c59f41b40'
 
 
 class AccompanimentVerifier:
-    name = 'Accompaniment note verifier v8 (trained pitch-preserving consensus)'
+    name = 'Accompaniment note verifier v9 (trained note and repeat-attack consensus)'
 
     def __init__(self):
         import torch
@@ -151,8 +173,24 @@ class AccompanimentVerifier:
             except (ValueError, KeyError, OSError) as exc:
                 raise PipelineError('The pitch-preserving model is invalid. Rebuild the backend and retry.') from exc
 
+        for name, path, digest, threshold, names in (
+            ('boundary_model', BOUNDARY_CHECKPOINT, BOUNDARY_SHA256, .05, BOUNDARY_RELATION_NAMES),
+            ('boundary_guardian_model', BOUNDARY_GUARDIAN_CHECKPOINT, BOUNDARY_GUARDIAN_SHA256, .025,
+             BOUNDARY_ACOUSTIC_NAMES),
+        ):
+            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+                raise PipelineError('The repeat-attack model is missing or damaged. Rebuild the backend and retry.')
+            try:
+                with np.load(path, allow_pickle=False) as arrays:
+                    model = ContextNoteModel(arrays, feature_names=names, feature_version=BOUNDARY_VERSION)
+                if model.threshold != threshold:
+                    raise ValueError('Unexpected repeat-attack threshold')
+                setattr(self, name, model)
+            except (ValueError, KeyError, OSError) as exc:
+                raise PipelineError('The repeat-attack model is invalid. Rebuild the backend and retry.') from exc
+
     def filter(self, path, acoustic, midi):
-        """Keep original pitch, timing and velocity; reject unsupported events only."""
+        """Reject unsupported notes and join model-verified touching hold fragments."""
         import torch
 
         notes = [n for part in midi.instruments for n in part.notes]
@@ -222,6 +260,20 @@ class AccompanimentVerifier:
                                          & (guardian < self.broad_guardian_model.threshold), 0., 1.)
             keep = residual_keep(keep, probability, broad_shared, rejected,
                                  threshold=self.broad_model.threshold, ceiling=1.)
+        if np.count_nonzero(keep & broad_shared) > 1:
+            item = {'events': np.asarray(events), 'x': evidence, 'keep': keep, 'shared': broad_shared}
+            pairs = boundaries(item)
+            if len(pairs):
+                repeat = self.boundary_model.probability(boundary_features(item, pairs))
+                guardian = self.boundary_guardian_model.probability(boundary_features(item, pairs, acoustic=True))
+                _, merged = merge_boundaries(item, pairs, repeat, guardian, self.boundary_model.threshold,
+                                            self.boundary_guardian_model.threshold)
+                owners = np.arange(len(notes))
+                for before, after in merged:
+                    first, second = owners[before], owners[after]
+                    notes[first].end = max(notes[first].end, notes[second].end)
+                    keep[second] = False
+                    owners[owners == second] = first
         index = 0
         for part in midi.instruments:
             size = len(part.notes)

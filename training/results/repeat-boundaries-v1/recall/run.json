@@ -1,0 +1,3850 @@
+{
+  "settings": {
+    "max_iter": 500,
+    "min_samples_leaf": 40,
+    "max_leaf_nodes": 15,
+    "l2_regularization": 8.0,
+    "learning_rate": 0.04,
+    "early_stopping": false,
+    "random_state": 261032
+  },
+  "guardian_settings": {
+    "max_iter": 500,
+    "min_samples_leaf": 40,
+    "max_leaf_nodes": 15,
+    "l2_regularization": 8.0,
+    "learning_rate": 0.04,
+    "early_stopping": false,
+    "random_state": 261033
+  },
+  "positive_weight": 50.0,
+  "training_counts": [
+    {
+      "id": "00_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 23,
+      "split_holds": 9
+    },
+    {
+      "id": "00_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 14,
+      "split_holds": 16
+    },
+    {
+      "id": "00_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 11,
+      "split_holds": 10
+    },
+    {
+      "id": "00_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 11,
+      "split_holds": 0
+    },
+    {
+      "id": "00_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 38,
+      "split_holds": 4
+    },
+    {
+      "id": "00_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 7,
+      "split_holds": 0
+    },
+    {
+      "id": "00_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 17,
+      "split_holds": 5
+    },
+    {
+      "id": "00_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 7,
+      "split_holds": 2
+    },
+    {
+      "id": "00_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 19,
+      "split_holds": 10
+    },
+    {
+      "id": "00_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 11,
+      "split_holds": 25
+    },
+    {
+      "id": "00_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 16,
+      "split_holds": 10
+    },
+    {
+      "id": "00_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 16,
+      "split_holds": 6
+    },
+    {
+      "id": "00_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 47,
+      "split_holds": 4
+    },
+    {
+      "id": "00_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 4,
+      "split_holds": 0
+    },
+    {
+      "id": "00_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 86,
+      "split_holds": 5
+    },
+    {
+      "id": "00_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 8,
+      "split_holds": 5
+    },
+    {
+      "id": "00_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 88,
+      "split_holds": 4
+    },
+    {
+      "id": "00_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 17,
+      "split_holds": 2
+    },
+    {
+      "id": "00_Funk2-119-G_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 124,
+      "split_holds": 4
+    },
+    {
+      "id": "00_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 9,
+      "split_holds": 4
+    },
+    {
+      "id": "00_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 126,
+      "split_holds": 4
+    },
+    {
+      "id": "00_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 13,
+      "split_holds": 1
+    },
+    {
+      "id": "00_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 96,
+      "split_holds": 5
+    },
+    {
+      "id": "00_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 5,
+      "split_holds": 7
+    },
+    {
+      "id": "00_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 49,
+      "split_holds": 4
+    },
+    {
+      "id": "00_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 5,
+      "split_holds": 0
+    },
+    {
+      "id": "00_Jazz1-200-B_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 23,
+      "split_holds": 0
+    },
+    {
+      "id": "00_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 9,
+      "split_holds": 0
+    },
+    {
+      "id": "00_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 74,
+      "split_holds": 9
+    },
+    {
+      "id": "00_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 13,
+      "split_holds": 3
+    },
+    {
+      "id": "00_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 36,
+      "split_holds": 0
+    },
+    {
+      "id": "00_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 23,
+      "split_holds": 7
+    },
+    {
+      "id": "00_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 56,
+      "split_holds": 10
+    },
+    {
+      "id": "00_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 5,
+      "split_holds": 23
+    },
+    {
+      "id": "00_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 60,
+      "split_holds": 1
+    },
+    {
+      "id": "00_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 15,
+      "split_holds": 20
+    },
+    {
+      "id": "00_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 110,
+      "split_holds": 14
+    },
+    {
+      "id": "00_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 24,
+      "split_holds": 3
+    },
+    {
+      "id": "00_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 245,
+      "split_holds": 10
+    },
+    {
+      "id": "00_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 73,
+      "split_holds": 7
+    },
+    {
+      "id": "00_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 156,
+      "split_holds": 6
+    },
+    {
+      "id": "00_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 33,
+      "split_holds": 2
+    },
+    {
+      "id": "00_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 222,
+      "split_holds": 10
+    },
+    {
+      "id": "00_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 14,
+      "split_holds": 4
+    },
+    {
+      "id": "00_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 186,
+      "split_holds": 6
+    },
+    {
+      "id": "00_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 27,
+      "split_holds": 2
+    },
+    {
+      "id": "00_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 145,
+      "split_holds": 2
+    },
+    {
+      "id": "00_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 46,
+      "split_holds": 8
+    },
+    {
+      "id": "00_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 46,
+      "split_holds": 29
+    },
+    {
+      "id": "00_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 11,
+      "split_holds": 1
+    },
+    {
+      "id": "00_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 34,
+      "split_holds": 26
+    },
+    {
+      "id": "00_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 48,
+      "split_holds": 8
+    },
+    {
+      "id": "00_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 38,
+      "split_holds": 28
+    },
+    {
+      "id": "00_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 25,
+      "split_holds": 3
+    },
+    {
+      "id": "00_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 33,
+      "split_holds": 21
+    },
+    {
+      "id": "00_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 3,
+      "split_holds": 0
+    },
+    {
+      "id": "00_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 12,
+      "split_holds": 11
+    },
+    {
+      "id": "00_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 22,
+      "split_holds": 0
+    },
+    {
+      "id": "00_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 52,
+      "split_holds": 37
+    },
+    {
+      "id": "00_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 36,
+      "split_holds": 24
+    },
+    {
+      "id": "01_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 30,
+      "split_holds": 14
+    },
+    {
+      "id": "01_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 9,
+      "split_holds": 1
+    },
+    {
+      "id": "01_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 35,
+      "split_holds": 15
+    },
+    {
+      "id": "01_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 11,
+      "split_holds": 3
+    },
+    {
+      "id": "01_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 59,
+      "split_holds": 4
+    },
+    {
+      "id": "01_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 17,
+      "split_holds": 6
+    },
+    {
+      "id": "01_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 53,
+      "split_holds": 4
+    },
+    {
+      "id": "01_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 18,
+      "split_holds": 5
+    },
+    {
+      "id": "01_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 52,
+      "split_holds": 10
+    },
+    {
+      "id": "01_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 20,
+      "split_holds": 2
+    },
+    {
+      "id": "01_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 50,
+      "split_holds": 6
+    },
+    {
+      "id": "01_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 32,
+      "split_holds": 9
+    },
+    {
+      "id": "01_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 18,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 17,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 54,
+      "split_holds": 3
+    },
+    {
+      "id": "01_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 27,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 29,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 45,
+      "split_holds": 4
+    },
+    {
+      "id": "01_Funk2-119-G_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 17,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 25,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 92,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 41,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 43,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 36,
+      "split_holds": 1
+    },
+    {
+      "id": "01_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 28,
+      "split_holds": 14
+    },
+    {
+      "id": "01_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 10,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Jazz1-200-B_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 4,
+      "split_holds": 2
+    },
+    {
+      "id": "01_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 10,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 36,
+      "split_holds": 1
+    },
+    {
+      "id": "01_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 17,
+      "split_holds": 6
+    },
+    {
+      "id": "01_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 7,
+      "split_holds": 1
+    },
+    {
+      "id": "01_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 20,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 33,
+      "split_holds": 14
+    },
+    {
+      "id": "01_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 30,
+      "split_holds": 9
+    },
+    {
+      "id": "01_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 16,
+      "split_holds": 4
+    },
+    {
+      "id": "01_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 23,
+      "split_holds": 1
+    },
+    {
+      "id": "01_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 78,
+      "split_holds": 2
+    },
+    {
+      "id": "01_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 12,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 125,
+      "split_holds": 13
+    },
+    {
+      "id": "01_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 32,
+      "split_holds": 1
+    },
+    {
+      "id": "01_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 88,
+      "split_holds": 2
+    },
+    {
+      "id": "01_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 31,
+      "split_holds": 0
+    },
+    {
+      "id": "01_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 60,
+      "split_holds": 6
+    },
+    {
+      "id": "01_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 42,
+      "split_holds": 4
+    },
+    {
+      "id": "01_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 85,
+      "split_holds": 6
+    },
+    {
+      "id": "01_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 21,
+      "split_holds": 3
+    },
+    {
+      "id": "01_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 44,
+      "split_holds": 3
+    },
+    {
+      "id": "01_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 19,
+      "split_holds": 0
+    },
+    {
+      "id": "01_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 95,
+      "split_holds": 1
+    },
+    {
+      "id": "01_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 30,
+      "split_holds": 0
+    },
+    {
+      "id": "01_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 58,
+      "split_holds": 34
+    },
+    {
+      "id": "01_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 11,
+      "split_holds": 3
+    },
+    {
+      "id": "01_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 11,
+      "split_holds": 0
+    },
+    {
+      "id": "01_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 54,
+      "split_holds": 0
+    },
+    {
+      "id": "01_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 78,
+      "split_holds": 10
+    },
+    {
+      "id": "01_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 26,
+      "split_holds": 6
+    },
+    {
+      "id": "01_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 105,
+      "split_holds": 71
+    },
+    {
+      "id": "01_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 33,
+      "split_holds": 0
+    },
+    {
+      "id": "01_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 168,
+      "split_holds": 114
+    },
+    {
+      "id": "01_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 42,
+      "split_holds": 4
+    },
+    {
+      "id": "02_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 65,
+      "split_holds": 4
+    },
+    {
+      "id": "02_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 3,
+      "split_holds": 0
+    },
+    {
+      "id": "02_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 37,
+      "split_holds": 2
+    },
+    {
+      "id": "02_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 4,
+      "split_holds": 1
+    },
+    {
+      "id": "02_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 96,
+      "split_holds": 3
+    },
+    {
+      "id": "02_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 0,
+      "split_holds": 2
+    },
+    {
+      "id": "02_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 59,
+      "split_holds": 3
+    },
+    {
+      "id": "02_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 7,
+      "split_holds": 2
+    },
+    {
+      "id": "02_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 84,
+      "split_holds": 14
+    },
+    {
+      "id": "02_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 3,
+      "split_holds": 1
+    },
+    {
+      "id": "02_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 58,
+      "split_holds": 10
+    },
+    {
+      "id": "02_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 2
+    },
+    {
+      "id": "02_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 53,
+      "split_holds": 1
+    },
+    {
+      "id": "02_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 9,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 60,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 7,
+      "split_holds": 5
+    },
+    {
+      "id": "02_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 70,
+      "split_holds": 1
+    },
+    {
+      "id": "02_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 20,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 17,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 59,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 13,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 17,
+      "split_holds": 3
+    },
+    {
+      "id": "02_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 4,
+      "split_holds": 2
+    },
+    {
+      "id": "02_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 50,
+      "split_holds": 18
+    },
+    {
+      "id": "02_Jazz1-130-D_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 18,
+      "split_holds": 28
+    },
+    {
+      "id": "02_Jazz1-200-B_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 39,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 89,
+      "split_holds": 8
+    },
+    {
+      "id": "02_Jazz2-110-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 5
+    },
+    {
+      "id": "02_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 32,
+      "split_holds": 6
+    },
+    {
+      "id": "02_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 1
+    },
+    {
+      "id": "02_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 69,
+      "split_holds": 1
+    },
+    {
+      "id": "02_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 5,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 106,
+      "split_holds": 16
+    },
+    {
+      "id": "02_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 61,
+      "split_holds": 6
+    },
+    {
+      "id": "02_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 10,
+      "split_holds": 2
+    },
+    {
+      "id": "02_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 45,
+      "split_holds": 2
+    },
+    {
+      "id": "02_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 10,
+      "split_holds": 1
+    },
+    {
+      "id": "02_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 62,
+      "split_holds": 3
+    },
+    {
+      "id": "02_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 8,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 56,
+      "split_holds": 13
+    },
+    {
+      "id": "02_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 11,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 99,
+      "split_holds": 9
+    },
+    {
+      "id": "02_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 15,
+      "split_holds": 0
+    },
+    {
+      "id": "02_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 95,
+      "split_holds": 4
+    },
+    {
+      "id": "02_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 6,
+      "split_holds": 1
+    },
+    {
+      "id": "02_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 117,
+      "split_holds": 41
+    },
+    {
+      "id": "02_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 13,
+      "split_holds": 3
+    },
+    {
+      "id": "02_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 42,
+      "split_holds": 31
+    },
+    {
+      "id": "02_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 4,
+      "split_holds": 2
+    },
+    {
+      "id": "02_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 81,
+      "split_holds": 7
+    },
+    {
+      "id": "02_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 16,
+      "split_holds": 1
+    },
+    {
+      "id": "02_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 47,
+      "split_holds": 7
+    },
+    {
+      "id": "02_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 10,
+      "split_holds": 3
+    },
+    {
+      "id": "02_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 97,
+      "split_holds": 3
+    },
+    {
+      "id": "02_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 14,
+      "split_holds": 5
+    },
+    {
+      "id": "02_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 87,
+      "split_holds": 14
+    },
+    {
+      "id": "02_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 11,
+      "split_holds": 1
+    },
+    {
+      "id": "03_BN1-129-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 20,
+      "split_holds": 11
+    },
+    {
+      "id": "03_BN1-129-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 2
+    },
+    {
+      "id": "03_BN1-147-Gb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 21,
+      "split_holds": 5
+    },
+    {
+      "id": "03_BN1-147-Gb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 6,
+      "split_holds": 1
+    },
+    {
+      "id": "03_BN2-131-B_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 15,
+      "split_holds": 4
+    },
+    {
+      "id": "03_BN2-131-B_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 0,
+      "split_holds": 3
+    },
+    {
+      "id": "03_BN2-166-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 19,
+      "split_holds": 2
+    },
+    {
+      "id": "03_BN2-166-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "03_BN3-119-G_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 18,
+      "split_holds": 9
+    },
+    {
+      "id": "03_BN3-119-G_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "03_BN3-154-E_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 16,
+      "split_holds": 5
+    },
+    {
+      "id": "03_BN3-154-E_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 6,
+      "split_holds": 0
+    },
+    {
+      "id": "03_Funk1-114-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 27,
+      "split_holds": 4
+    },
+    {
+      "id": "03_Funk1-114-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 17,
+      "split_holds": 0
+    },
+    {
+      "id": "03_Funk1-97-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 75,
+      "split_holds": 3
+    },
+    {
+      "id": "03_Funk1-97-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 11,
+      "split_holds": 1
+    },
+    {
+      "id": "03_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 47,
+      "split_holds": 16
+    },
+    {
+      "id": "03_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "03_Funk2-119-G_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 41,
+      "split_holds": 4
+    },
+    {
+      "id": "03_Funk2-119-G_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 8,
+      "split_holds": 0
+    },
+    {
+      "id": "03_Funk3-112-C#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 29,
+      "split_holds": 3
+    },
+    {
+      "id": "03_Funk3-112-C#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 8,
+      "split_holds": 2
+    },
+    {
+      "id": "03_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 73,
+      "split_holds": 9
+    },
+    {
+      "id": "03_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 6,
+      "split_holds": 2
+    },
+    {
+      "id": "03_Jazz1-130-D_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 2
+    },
+    {
+      "id": "03_Jazz1-200-B_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "03_Jazz2-110-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 5,
+      "split_holds": 3
+    },
+    {
+      "id": "03_Jazz2-187-F#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 9,
+      "split_holds": 1
+    },
+    {
+      "id": "03_Jazz2-187-F#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 4,
+      "split_holds": 1
+    },
+    {
+      "id": "03_Jazz3-137-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 4
+    },
+    {
+      "id": "03_Jazz3-137-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 1
+    },
+    {
+      "id": "03_Jazz3-150-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 7,
+      "split_holds": 1
+    },
+    {
+      "id": "03_Jazz3-150-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 1
+    },
+    {
+      "id": "03_Rock1-130-A_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 73,
+      "split_holds": 7
+    },
+    {
+      "id": "03_Rock1-130-A_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "03_Rock1-90-C#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 72,
+      "split_holds": 8
+    },
+    {
+      "id": "03_Rock1-90-C#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "03_Rock2-142-D_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 73,
+      "split_holds": 7
+    },
+    {
+      "id": "03_Rock2-142-D_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "03_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 45,
+      "split_holds": 10
+    },
+    {
+      "id": "03_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 3,
+      "split_holds": 1
+    },
+    {
+      "id": "03_Rock3-117-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 65,
+      "split_holds": 17
+    },
+    {
+      "id": "03_Rock3-117-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 12,
+      "split_holds": 11
+    },
+    {
+      "id": "03_Rock3-148-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 101,
+      "split_holds": 37
+    },
+    {
+      "id": "03_Rock3-148-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 10,
+      "split_holds": 1
+    },
+    {
+      "id": "03_SS1-100-C#_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 173,
+      "split_holds": 28
+    },
+    {
+      "id": "03_SS1-100-C#_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 5,
+      "split_holds": 1
+    },
+    {
+      "id": "03_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 34,
+      "split_holds": 16
+    },
+    {
+      "id": "03_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 3,
+      "split_holds": 3
+    },
+    {
+      "id": "03_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 80,
+      "split_holds": 15
+    },
+    {
+      "id": "03_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 1
+    },
+    {
+      "id": "03_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 91,
+      "split_holds": 32
+    },
+    {
+      "id": "03_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 2
+    },
+    {
+      "id": "03_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 49,
+      "split_holds": 39
+    },
+    {
+      "id": "03_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 1
+    },
+    {
+      "id": "03_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 115,
+      "split_holds": 29
+    },
+    {
+      "id": "03_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 3,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-00_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 31,
+      "split_holds": 2
+    },
+    {
+      "id": "left-expansion-00_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 3,
+      "split_holds": 2
+    },
+    {
+      "id": "left-expansion-00_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 71,
+      "split_holds": 1
+    },
+    {
+      "id": "left-expansion-00_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 22,
+      "split_holds": 2
+    },
+    {
+      "id": "left-expansion-00_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 7,
+      "split_holds": 2
+    },
+    {
+      "id": "left-expansion-00_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 9,
+      "split_holds": 4
+    },
+    {
+      "id": "left-expansion-00_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 0,
+      "split_holds": 3
+    },
+    {
+      "id": "left-expansion-00_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 0,
+      "split_holds": 1
+    },
+    {
+      "id": "left-expansion-00_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 14,
+      "split_holds": 3
+    },
+    {
+      "id": "left-expansion-00_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 9,
+      "split_holds": 3
+    },
+    {
+      "id": "left-expansion-00_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 3,
+      "split_holds": 9
+    },
+    {
+      "id": "left-expansion-00_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-00_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 11,
+      "split_holds": 11
+    },
+    {
+      "id": "left-expansion-00_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 4,
+      "split_holds": 3
+    },
+    {
+      "id": "left-expansion-01_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-01_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 7,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-01_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 6,
+      "split_holds": 1
+    },
+    {
+      "id": "left-expansion-01_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 14,
+      "split_holds": 4
+    },
+    {
+      "id": "left-expansion-01_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 19,
+      "split_holds": 1
+    },
+    {
+      "id": "left-expansion-01_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 18,
+      "split_holds": 11
+    },
+    {
+      "id": "left-expansion-01_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 5,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-01_SS2-107-Ab_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 4,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-01_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 20,
+      "split_holds": 3
+    },
+    {
+      "id": "left-expansion-01_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 13,
+      "split_holds": 3
+    },
+    {
+      "id": "left-expansion-01_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 44,
+      "split_holds": 43
+    },
+    {
+      "id": "left-expansion-01_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 12,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-01_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 34,
+      "split_holds": 8
+    },
+    {
+      "id": "left-expansion-01_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 6,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-02_Funk2-108-Eb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-02_Funk2-108-Eb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 0,
+      "split_holds": 1
+    },
+    {
+      "id": "left-expansion-02_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 3,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-02_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 23,
+      "split_holds": 4
+    },
+    {
+      "id": "left-expansion-02_Rock2-85-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-02_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 12,
+      "split_holds": 12
+    },
+    {
+      "id": "left-expansion-02_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 4,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-02_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 20,
+      "split_holds": 1
+    },
+    {
+      "id": "left-expansion-02_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 5,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-02_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 40,
+      "split_holds": 1
+    },
+    {
+      "id": "left-expansion-02_SS3-84-Bb_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 3,
+      "split_holds": 1
+    },
+    {
+      "id": "left-expansion-02_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 6,
+      "split_holds": 1
+    },
+    {
+      "id": "left-expansion-02_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-03_Funk3-98-A_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 15,
+      "split_holds": 3
+    },
+    {
+      "id": "left-expansion-03_Funk3-98-A_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 1
+    },
+    {
+      "id": "left-expansion-03_Rock2-85-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 18,
+      "split_holds": 3
+    },
+    {
+      "id": "left-expansion-03_SS1-68-E_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 9,
+      "split_holds": 4
+    },
+    {
+      "id": "left-expansion-03_SS1-68-E_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 1
+    },
+    {
+      "id": "left-expansion-03_SS2-107-Ab_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 1,
+      "split_holds": 1
+    },
+    {
+      "id": "left-expansion-03_SS2-88-F_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 21,
+      "split_holds": 7
+    },
+    {
+      "id": "left-expansion-03_SS2-88-F_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "left-expansion-03_SS3-84-Bb_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 11,
+      "split_holds": 14
+    },
+    {
+      "id": "left-expansion-03_SS3-98-C_comp",
+      "corpus": "guitarset",
+      "genuine_repeats": 16,
+      "split_holds": 5
+    },
+    {
+      "id": "left-expansion-03_SS3-98-C_solo",
+      "corpus": "guitarset",
+      "genuine_repeats": 2,
+      "split_holds": 2
+    },
+    {
+      "id": "piano-00",
+      "corpus": "original-piano",
+      "genuine_repeats": 1,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-01",
+      "corpus": "original-piano",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "piano-04",
+      "corpus": "original-piano",
+      "genuine_repeats": 2,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-05",
+      "corpus": "original-piano",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "piano-06",
+      "corpus": "original-piano",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "piano-07",
+      "corpus": "original-piano",
+      "genuine_repeats": 3,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-08",
+      "corpus": "original-piano",
+      "genuine_repeats": 0,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-09",
+      "corpus": "original-piano",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "piano-11",
+      "corpus": "original-piano",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "piano-13",
+      "corpus": "original-piano",
+      "genuine_repeats": 1,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-15",
+      "corpus": "original-piano",
+      "genuine_repeats": 0,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-16",
+      "corpus": "original-piano",
+      "genuine_repeats": 0,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-17",
+      "corpus": "original-piano",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "piano-18",
+      "corpus": "original-piano",
+      "genuine_repeats": 1,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-20",
+      "corpus": "original-piano",
+      "genuine_repeats": 0,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-21",
+      "corpus": "original-piano",
+      "genuine_repeats": 1,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-22",
+      "corpus": "original-piano",
+      "genuine_repeats": 0,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-23",
+      "corpus": "original-piano",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "piano-24",
+      "corpus": "original-piano",
+      "genuine_repeats": 0,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-25",
+      "corpus": "original-piano",
+      "genuine_repeats": 4,
+      "split_holds": 0
+    },
+    {
+      "id": "piano-26",
+      "corpus": "original-piano",
+      "genuine_repeats": 1,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-28",
+      "corpus": "original-piano",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "piano-29",
+      "corpus": "original-piano",
+      "genuine_repeats": 0,
+      "split_holds": 1
+    },
+    {
+      "id": "piano-30",
+      "corpus": "original-piano",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "piano-31",
+      "corpus": "original-piano",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-000",
+      "corpus": "original-piano",
+      "genuine_repeats": 33,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-001",
+      "corpus": "original-piano",
+      "genuine_repeats": 3,
+      "split_holds": 1
+    },
+    {
+      "id": "context-piano-002",
+      "corpus": "original-piano",
+      "genuine_repeats": 33,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-003",
+      "corpus": "original-piano",
+      "genuine_repeats": 11,
+      "split_holds": 1
+    },
+    {
+      "id": "context-piano-004",
+      "corpus": "original-piano",
+      "genuine_repeats": 45,
+      "split_holds": 1
+    },
+    {
+      "id": "context-piano-005",
+      "corpus": "original-piano",
+      "genuine_repeats": 11,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-006",
+      "corpus": "original-piano",
+      "genuine_repeats": 25,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-007",
+      "corpus": "original-piano",
+      "genuine_repeats": 8,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-008",
+      "corpus": "original-piano",
+      "genuine_repeats": 41,
+      "split_holds": 1
+    },
+    {
+      "id": "context-piano-009",
+      "corpus": "original-piano",
+      "genuine_repeats": 7,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-010",
+      "corpus": "original-piano",
+      "genuine_repeats": 30,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-011",
+      "corpus": "original-piano",
+      "genuine_repeats": 17,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-012",
+      "corpus": "original-piano",
+      "genuine_repeats": 34,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-013",
+      "corpus": "original-piano",
+      "genuine_repeats": 10,
+      "split_holds": 3
+    },
+    {
+      "id": "context-piano-014",
+      "corpus": "original-piano",
+      "genuine_repeats": 24,
+      "split_holds": 2
+    },
+    {
+      "id": "context-piano-015",
+      "corpus": "original-piano",
+      "genuine_repeats": 12,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-016",
+      "corpus": "original-piano",
+      "genuine_repeats": 26,
+      "split_holds": 3
+    },
+    {
+      "id": "context-piano-017",
+      "corpus": "original-piano",
+      "genuine_repeats": 12,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-018",
+      "corpus": "original-piano",
+      "genuine_repeats": 36,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-019",
+      "corpus": "original-piano",
+      "genuine_repeats": 11,
+      "split_holds": 1
+    },
+    {
+      "id": "context-piano-020",
+      "corpus": "original-piano",
+      "genuine_repeats": 18,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-021",
+      "corpus": "original-piano",
+      "genuine_repeats": 9,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-022",
+      "corpus": "original-piano",
+      "genuine_repeats": 35,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-023",
+      "corpus": "original-piano",
+      "genuine_repeats": 11,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-024",
+      "corpus": "original-piano",
+      "genuine_repeats": 27,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-025",
+      "corpus": "original-piano",
+      "genuine_repeats": 6,
+      "split_holds": 1
+    },
+    {
+      "id": "context-piano-026",
+      "corpus": "original-piano",
+      "genuine_repeats": 36,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-027",
+      "corpus": "original-piano",
+      "genuine_repeats": 5,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-028",
+      "corpus": "original-piano",
+      "genuine_repeats": 31,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-029",
+      "corpus": "original-piano",
+      "genuine_repeats": 13,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-030",
+      "corpus": "original-piano",
+      "genuine_repeats": 28,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-031",
+      "corpus": "original-piano",
+      "genuine_repeats": 7,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-032",
+      "corpus": "original-piano",
+      "genuine_repeats": 43,
+      "split_holds": 1
+    },
+    {
+      "id": "context-piano-033",
+      "corpus": "original-piano",
+      "genuine_repeats": 13,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-034",
+      "corpus": "original-piano",
+      "genuine_repeats": 25,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-035",
+      "corpus": "original-piano",
+      "genuine_repeats": 5,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-036",
+      "corpus": "original-piano",
+      "genuine_repeats": 27,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-037",
+      "corpus": "original-piano",
+      "genuine_repeats": 8,
+      "split_holds": 2
+    },
+    {
+      "id": "context-piano-038",
+      "corpus": "original-piano",
+      "genuine_repeats": 38,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-039",
+      "corpus": "original-piano",
+      "genuine_repeats": 7,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-040",
+      "corpus": "original-piano",
+      "genuine_repeats": 28,
+      "split_holds": 1
+    },
+    {
+      "id": "context-piano-041",
+      "corpus": "original-piano",
+      "genuine_repeats": 15,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-042",
+      "corpus": "original-piano",
+      "genuine_repeats": 40,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-043",
+      "corpus": "original-piano",
+      "genuine_repeats": 10,
+      "split_holds": 1
+    },
+    {
+      "id": "context-piano-044",
+      "corpus": "original-piano",
+      "genuine_repeats": 39,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-045",
+      "corpus": "original-piano",
+      "genuine_repeats": 8,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-046",
+      "corpus": "original-piano",
+      "genuine_repeats": 33,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-047",
+      "corpus": "original-piano",
+      "genuine_repeats": 15,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-048",
+      "corpus": "original-piano",
+      "genuine_repeats": 28,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-049",
+      "corpus": "original-piano",
+      "genuine_repeats": 11,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-050",
+      "corpus": "original-piano",
+      "genuine_repeats": 25,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-051",
+      "corpus": "original-piano",
+      "genuine_repeats": 13,
+      "split_holds": 1
+    },
+    {
+      "id": "context-piano-052",
+      "corpus": "original-piano",
+      "genuine_repeats": 40,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-053",
+      "corpus": "original-piano",
+      "genuine_repeats": 16,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-054",
+      "corpus": "original-piano",
+      "genuine_repeats": 26,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-055",
+      "corpus": "original-piano",
+      "genuine_repeats": 10,
+      "split_holds": 2
+    },
+    {
+      "id": "context-piano-056",
+      "corpus": "original-piano",
+      "genuine_repeats": 47,
+      "split_holds": 1
+    },
+    {
+      "id": "context-piano-057",
+      "corpus": "original-piano",
+      "genuine_repeats": 6,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-058",
+      "corpus": "original-piano",
+      "genuine_repeats": 32,
+      "split_holds": 2
+    },
+    {
+      "id": "context-piano-059",
+      "corpus": "original-piano",
+      "genuine_repeats": 10,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-060",
+      "corpus": "original-piano",
+      "genuine_repeats": 26,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-061",
+      "corpus": "original-piano",
+      "genuine_repeats": 9,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-062",
+      "corpus": "original-piano",
+      "genuine_repeats": 30,
+      "split_holds": 0
+    },
+    {
+      "id": "context-piano-063",
+      "corpus": "original-piano",
+      "genuine_repeats": 15,
+      "split_holds": 3
+    },
+    {
+      "id": "training-stem-00_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 18,
+      "split_holds": 10
+    },
+    {
+      "id": "training-stem-00_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 13,
+      "split_holds": 10
+    },
+    {
+      "id": "training-stem-00_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 43,
+      "split_holds": 4
+    },
+    {
+      "id": "training-stem-00_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 3,
+      "split_holds": 0
+    },
+    {
+      "id": "training-stem-00_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 40,
+      "split_holds": 4
+    },
+    {
+      "id": "training-stem-00_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 5,
+      "split_holds": 0
+    },
+    {
+      "id": "training-stem-00_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 96,
+      "split_holds": 11
+    },
+    {
+      "id": "training-stem-00_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 24,
+      "split_holds": 3
+    },
+    {
+      "id": "training-stem-00_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 47,
+      "split_holds": 33
+    },
+    {
+      "id": "training-stem-00_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 11,
+      "split_holds": 3
+    },
+    {
+      "id": "training-stem-01_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 26,
+      "split_holds": 13
+    },
+    {
+      "id": "training-stem-01_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 8,
+      "split_holds": 5
+    },
+    {
+      "id": "training-stem-01_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 18,
+      "split_holds": 0
+    },
+    {
+      "id": "training-stem-01_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 17,
+      "split_holds": 1
+    },
+    {
+      "id": "training-stem-01_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 24,
+      "split_holds": 11
+    },
+    {
+      "id": "training-stem-01_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 10,
+      "split_holds": 3
+    },
+    {
+      "id": "training-stem-01_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 68,
+      "split_holds": 4
+    },
+    {
+      "id": "training-stem-01_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 11,
+      "split_holds": 0
+    },
+    {
+      "id": "training-stem-01_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 95,
+      "split_holds": 1
+    },
+    {
+      "id": "training-stem-01_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 30,
+      "split_holds": 0
+    },
+    {
+      "id": "training-stem-02_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 56,
+      "split_holds": 1
+    },
+    {
+      "id": "training-stem-02_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 3,
+      "split_holds": 0
+    },
+    {
+      "id": "training-stem-02_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 45,
+      "split_holds": 0
+    },
+    {
+      "id": "training-stem-02_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 10,
+      "split_holds": 0
+    },
+    {
+      "id": "training-stem-02_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 37,
+      "split_holds": 11
+    },
+    {
+      "id": "training-stem-02_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 17,
+      "split_holds": 23
+    },
+    {
+      "id": "training-stem-02_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 50,
+      "split_holds": 7
+    },
+    {
+      "id": "training-stem-02_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 10,
+      "split_holds": 5
+    },
+    {
+      "id": "training-stem-02_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 111,
+      "split_holds": 40
+    },
+    {
+      "id": "training-stem-02_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 13,
+      "split_holds": 5
+    },
+    {
+      "id": "training-stem-03_BN1-129-Eb_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 18,
+      "split_holds": 9
+    },
+    {
+      "id": "training-stem-03_BN1-129-Eb_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 1,
+      "split_holds": 3
+    },
+    {
+      "id": "training-stem-03_Funk1-114-Ab_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 22,
+      "split_holds": 5
+    },
+    {
+      "id": "training-stem-03_Funk1-114-Ab_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 16,
+      "split_holds": 0
+    },
+    {
+      "id": "training-stem-03_Jazz1-130-D_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 2,
+      "split_holds": 1
+    },
+    {
+      "id": "training-stem-03_Jazz1-130-D_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 0,
+      "split_holds": 1
+    },
+    {
+      "id": "training-stem-03_Rock1-130-A_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 69,
+      "split_holds": 7
+    },
+    {
+      "id": "training-stem-03_Rock1-130-A_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 2,
+      "split_holds": 4
+    },
+    {
+      "id": "training-stem-03_SS1-100-C#_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 159,
+      "split_holds": 25
+    },
+    {
+      "id": "training-stem-03_SS1-100-C#_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 5,
+      "split_holds": 4
+    },
+    {
+      "id": "robust-stem-v1-00_BN1-147-Gb_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 13,
+      "split_holds": 11
+    },
+    {
+      "id": "robust-stem-v1-00_BN1-147-Gb_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 9,
+      "split_holds": 1
+    },
+    {
+      "id": "robust-stem-v1-00_Funk1-97-C_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 74,
+      "split_holds": 6
+    },
+    {
+      "id": "robust-stem-v1-00_Funk1-97-C_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 7,
+      "split_holds": 6
+    },
+    {
+      "id": "robust-stem-v1-00_Jazz1-200-B_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 18,
+      "split_holds": 0
+    },
+    {
+      "id": "robust-stem-v1-00_Jazz1-200-B_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 9,
+      "split_holds": 0
+    },
+    {
+      "id": "robust-stem-v1-00_Rock1-90-C#_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 221,
+      "split_holds": 11
+    },
+    {
+      "id": "robust-stem-v1-00_Rock1-90-C#_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 70,
+      "split_holds": 11
+    },
+    {
+      "id": "robust-stem-v1-00_SS1-68-E_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 33,
+      "split_holds": 34
+    },
+    {
+      "id": "robust-stem-v1-00_SS1-68-E_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 46,
+      "split_holds": 4
+    },
+    {
+      "id": "robust-stem-v1-01_BN1-147-Gb_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 33,
+      "split_holds": 20
+    },
+    {
+      "id": "robust-stem-v1-01_BN1-147-Gb_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 9,
+      "split_holds": 2
+    },
+    {
+      "id": "robust-stem-v1-01_Funk1-97-C_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 47,
+      "split_holds": 2
+    },
+    {
+      "id": "robust-stem-v1-01_Funk1-97-C_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 28,
+      "split_holds": 2
+    },
+    {
+      "id": "robust-stem-v1-01_Jazz1-200-B_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 5,
+      "split_holds": 2
+    },
+    {
+      "id": "robust-stem-v1-01_Jazz1-200-B_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 9,
+      "split_holds": 0
+    },
+    {
+      "id": "robust-stem-v1-01_Rock1-90-C#_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 113,
+      "split_holds": 16
+    },
+    {
+      "id": "robust-stem-v1-01_Rock1-90-C#_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 32,
+      "split_holds": 4
+    },
+    {
+      "id": "robust-stem-v1-01_SS1-68-E_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 58,
+      "split_holds": 37
+    },
+    {
+      "id": "robust-stem-v1-01_SS1-68-E_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 10,
+      "split_holds": 3
+    },
+    {
+      "id": "robust-stem-v1-02_BN1-147-Gb_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 30,
+      "split_holds": 6
+    },
+    {
+      "id": "robust-stem-v1-02_BN1-147-Gb_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 4,
+      "split_holds": 1
+    },
+    {
+      "id": "robust-stem-v1-02_Funk1-97-C_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 45,
+      "split_holds": 4
+    },
+    {
+      "id": "robust-stem-v1-02_Funk1-97-C_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 6,
+      "split_holds": 11
+    },
+    {
+      "id": "robust-stem-v1-02_Jazz1-200-B_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 36,
+      "split_holds": 1
+    },
+    {
+      "id": "robust-stem-v1-02_Jazz1-200-B_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "robust-stem-v1-02_Rock1-90-C#_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 35,
+      "split_holds": 0
+    },
+    {
+      "id": "robust-stem-v1-02_Rock1-90-C#_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 11,
+      "split_holds": 1
+    },
+    {
+      "id": "robust-stem-v1-02_SS1-68-E_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 31,
+      "split_holds": 25
+    },
+    {
+      "id": "robust-stem-v1-02_SS1-68-E_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 3,
+      "split_holds": 11
+    },
+    {
+      "id": "robust-stem-v1-03_BN1-147-Gb_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 19,
+      "split_holds": 3
+    },
+    {
+      "id": "robust-stem-v1-03_BN1-147-Gb_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 6,
+      "split_holds": 2
+    },
+    {
+      "id": "robust-stem-v1-03_Funk1-97-C_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 64,
+      "split_holds": 3
+    },
+    {
+      "id": "robust-stem-v1-03_Funk1-97-C_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 11,
+      "split_holds": 1
+    },
+    {
+      "id": "robust-stem-v1-03_Jazz1-200-B_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "robust-stem-v1-03_Rock1-90-C#_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 67,
+      "split_holds": 5
+    },
+    {
+      "id": "robust-stem-v1-03_Rock1-90-C#_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 2,
+      "split_holds": 4
+    },
+    {
+      "id": "robust-stem-v1-03_SS1-68-E_comp",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 31,
+      "split_holds": 23
+    },
+    {
+      "id": "robust-stem-v1-03_SS1-68-E_solo",
+      "corpus": "separated-guitar",
+      "genuine_repeats": 3,
+      "split_holds": 3
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 5,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 8,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 7,
+      "split_holds": 3
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 12,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 9,
+      "split_holds": 2
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 4,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p07",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 10,
+      "split_holds": 4
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 9,
+      "split_holds": 3
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 7,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 6,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 4,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 4,
+      "split_holds": 4
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 10,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Chopin_op10_no3_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 5,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Chopin_op38_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 22,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Chopin_op38_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 22,
+      "split_holds": 2
+    },
+    {
+      "id": "vienna-Chopin_op38_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 11,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Chopin_op38_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 25,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Chopin_op38_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 21,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Chopin_op38_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 10,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Chopin_op38_p07",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 26,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Chopin_op38_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 30,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Chopin_op38_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 19,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Chopin_op38_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 29,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Chopin_op38_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 13,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Chopin_op38_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 28,
+      "split_holds": 3
+    },
+    {
+      "id": "vienna-Chopin_op38_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 14,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Chopin_op38_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 8,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 11,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 11,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 13,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 13,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 12,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 13,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p07",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 16,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 12,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 9,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 13,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 6,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 6,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 10,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Mozart_K331_1st-mov_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 14,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 37,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 38,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 31,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 29,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 30,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 18,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p07",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 29,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 36,
+      "split_holds": 1
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 25,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 36,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 16,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 22,
+      "split_holds": 0
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 29,
+      "split_holds": 2
+    },
+    {
+      "id": "vienna-Schubert_D783_no15_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 15,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 18,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 39,
+      "split_holds": 3
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 23,
+      "split_holds": 3
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 20,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 31,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 19,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p07",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 29,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 34,
+      "split_holds": 12
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 35,
+      "split_holds": 4
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 25,
+      "split_holds": 4
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 18,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 29,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 33,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Chopin_op10_no3_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 19,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 26,
+      "split_holds": 3
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 31,
+      "split_holds": 3
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 26,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 31,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 27,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 25,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p07",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 33,
+      "split_holds": 4
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 29,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 18,
+      "split_holds": 3
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 30,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 19,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 36,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 25,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Chopin_op38_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 19,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 14,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 15,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 20,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 19,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 18,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 17,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p07",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 20,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 16,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 18,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 15,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 15,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 14,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 21,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Mozart_K331_1st-mov_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 21,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 18,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 23,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 27,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 33,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 12,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 41,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p07",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 13,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 15,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 39,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 33,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 38,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 28,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 12,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-Schubert_D783_no15_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 18,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 15,
+      "split_holds": 5
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 9,
+      "split_holds": 3
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 11,
+      "split_holds": 3
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 11,
+      "split_holds": 6
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 2,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 31,
+      "split_holds": 6
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p07",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 10,
+      "split_holds": 3
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 8,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 6,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 11,
+      "split_holds": 4
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 17,
+      "split_holds": 3
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 8,
+      "split_holds": 4
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 7,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op10_no3_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 17,
+      "split_holds": 6
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 34,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 30,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 24,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 30,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 22,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 26,
+      "split_holds": 3
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p07",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 37,
+      "split_holds": 3
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 37,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 10,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 37,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 17,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 39,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 25,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-60-Chopin_op38_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 18,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 12,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 14,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 23,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 16,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 15,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 16,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p07",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 15,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 19,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 15,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 7,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 11,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 20,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 3,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-60-Mozart_K331_1st-mov_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 17,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 14,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 18,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 17,
+      "split_holds": 3
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 23,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 9,
+      "split_holds": 7
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 16,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p07",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 17,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 20,
+      "split_holds": 7
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 25,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 11,
+      "split_holds": 2
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 14,
+      "split_holds": 8
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 11,
+      "split_holds": 5
+    },
+    {
+      "id": "relational-piano-training-90-Chopin_op38_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 24,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p01",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 5,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p02",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 5,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p03",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 0,
+      "split_holds": 1
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p04",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p05",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 2,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p06",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 5,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p08",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 11,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p09",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p10",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p11",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 14,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p12",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 16,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p13",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 10,
+      "split_holds": 0
+    },
+    {
+      "id": "relational-piano-training-90-Mozart_K331_1st-mov_p14",
+      "corpus": "vienna-piano",
+      "genuine_repeats": 1,
+      "split_holds": 0
+    }
+  ],
+  "training_clips": 660,
+  "validation_clips": 168,
+  "training_events": 19292,
+  "plan_sha256": "253c8374d11e3349c1858bb26d8a94111ba335c61e350fa0193be8cba7e5d44c",
+  "test_used_for_selection": false
+}

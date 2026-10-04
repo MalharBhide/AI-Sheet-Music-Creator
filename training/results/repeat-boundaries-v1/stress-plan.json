@@ -1,0 +1,75 @@
+{
+  "seed": 261031,
+  "manifest_sha256": "18028a01444d70c7825605c69af3b41174d478e7ef051bbe5f3bdb0aa1982dc1",
+  "frozen_candidate_sha256": "6e0c16ebd1d136e09d2c69617c9732ed50522a48ebfc4a888924d1de13628369",
+  "batch_selection_sha256": "024e63239893a2f474b8718ee8e60394122ab2cec6140718af1fc6fcd3fe2e34",
+  "preparation_sha256": "f212eff6ecde4bfa1ef4f98a82b096146d2ea83bd55ac51e1af88c9f6d02a673",
+  "codec_code_sha256": "d73804e6556ab2d8c27bb5dce649b172e02f0997ea0737e59b8792c1a906ec87",
+  "cache_code_sha256": "d21d658a3eb1478e743a26727e9a27ad1f1819e6d151554fa1de65ffc69e9d48",
+  "separator_code_sha256": "9f13a175c85c77960200775628e3b47b27413bc77a8aa63f3b8adbc4638a88c5",
+  "sources": [
+    {
+      "id": "05_BN1-147-Gb_comp",
+      "group": "test",
+      "audio_sha256": "1aa76dccb9c3a6f05410349c90ddff1a32223ff8337dc77bed13a4ee8220f7a6"
+    },
+    {
+      "id": "05_BN1-147-Gb_solo",
+      "group": "test",
+      "audio_sha256": "9ef036a812e17dd4966a29ab08b928ffc88f6d76900def3902f1fcdac576de66"
+    },
+    {
+      "id": "05_Funk1-97-C_comp",
+      "group": "test",
+      "audio_sha256": "ccdfe2d39d72c08b7213455631abb7d4783de9eca386b6ad230d0152b02c0660"
+    },
+    {
+      "id": "05_Funk1-97-C_solo",
+      "group": "test",
+      "audio_sha256": "8bb79cdf439a8d9188fe5607e41c0924bc2e0431c74f1ec8e3159796fad27df6"
+    },
+    {
+      "id": "05_Jazz1-200-B_comp",
+      "group": "test",
+      "audio_sha256": "00cdf3460ef31be49312fb7f3c520045a85b83b6b1b70b9efd9a986431490281"
+    },
+    {
+      "id": "05_Jazz1-200-B_solo",
+      "group": "test",
+      "audio_sha256": "ba093583329bf60c8fc1ffb79c2be919b8a58f4ac8831b7bfe3e276c2d62ae67"
+    },
+    {
+      "id": "05_Rock1-90-C#_comp",
+      "group": "test",
+      "audio_sha256": "f8410ac3049cc8564487b1a83f921a068ad3dd919efc6fb34f8869151ac03046"
+    },
+    {
+      "id": "05_Rock1-90-C#_solo",
+      "group": "test",
+      "audio_sha256": "2e969753898c731a7e4e46935ff5f315d31acdaddf0a4ab9afa855a96307a9d8"
+    },
+    {
+      "id": "05_SS1-68-E_comp",
+      "group": "test",
+      "audio_sha256": "665b982fb9221b5c91b0ed0c3d2c271f3fab569e8a1f397f0e5f46fde8a298d5"
+    },
+    {
+      "id": "05_SS1-68-E_solo",
+      "group": "test",
+      "audio_sha256": "d677c4074249807a49910f252d9d80c3bf31dbc5790a56ce188bd313d3ec0575"
+    }
+  ],
+  "backing_db_cycle": [
+    -6,
+    0,
+    3
+  ],
+  "mp3_bitrate_kbps_cycle": [
+    48,
+    128,
+    192
+  ],
+  "selection": "Second sorted comp/solo in each genre, reserved performer 05 only",
+  "scope": "Unscored codec/separation conditions on previously seen test sources; no training or selection",
+  "no_user_audio_or_scores": true
+}

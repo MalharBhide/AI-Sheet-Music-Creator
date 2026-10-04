@@ -1,0 +1,14 @@
+{
+  "passes": true,
+  "checkpoint_sha256": "6e0c16ebd1d136e09d2c69617c9732ed50522a48ebfc4a888924d1de13628369",
+  "batch_selection_sha256": "024e63239893a2f474b8718ee8e60394122ab2cec6140718af1fc6fcd3fe2e34",
+  "threshold": 0.05,
+  "guardian_threshold": 0.025,
+  "recordings": 168,
+  "boundaries": 5388,
+  "sha256": {
+    "repeat-boundary-v1.npz": "eb1b395024aecea5c715786efaf2ece2d4e901d723042fb12a1c4d476cacb80a",
+    "repeat-boundary-guardian-v1.npz": "16bd14e045450195d704f5dcdff3edff0382237b99e5760c7ffec65c59f41b40"
+  },
+  "scope": "Every validation boundary prediction agrees with frozen sklearn at 1e-12; arrays only"
+}

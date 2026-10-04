@@ -1,5 +1,20 @@
 # Verification
 
+## Learned repeat attacks V9 — 2026-10-04
+
+Trained two paired boundary profiles on 19,292 labeled genuine-repeat/split-hold
+examples. The frozen validation winner removes seven extra attacks on validation
+and two on consumed regression, retaining all 14,993 matches. Latest piano and
+ten new MP3/separation stress clips are unchanged. Every recording preserves
+attacks, offsets, annotated coverage and the exact detected pitch-time union.
+Production parity passed on 343 clips / 43,607 scored events, including hold
+extensions and source identity. This is a small accompaniment improvement, not
+whole-song accuracy evidence.
+
+**318 tests passed, six opt-in integration cases skipped.** Build, idle queue
+deployment, loaded weight hashes and proxied health checks passed. No user upload
+or score regeneration was used. See [the report](docs/repeat-boundary-model-v9.md).
+
 ## Pitch-preserving accompaniment V8 — 2026-10-04
 
 Released a small gated correction: three fewer unmatched validation detections,

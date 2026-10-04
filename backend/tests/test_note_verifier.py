@@ -97,7 +97,7 @@ def test_context_correction_matches_runtime_without_changing_unshared_or_confide
 def test_residual_model_matches_evaluation_and_preserves_note_objects(monkeypatch, tmp_path):
     torch = pytest.importorskip('torch')
     verifier = service.AccompanimentVerifier()
-    assert 'v8' in verifier.name
+    assert 'v9' in verifier.name
     path = tmp_path / 'window.wav'
     sf.write(path, np.zeros(22050), 22050)
     notes = [SimpleNamespace(pitch=60 + i, start=i * .1, end=1. + i * .1, velocity=80)
@@ -358,3 +358,42 @@ def test_broad_consensus_preserves_head_vetoes_edges_unshared_notes_and_real_tim
     assert midi.instruments[0].notes == notes[2:4]
     assert midi.instruments[1].notes == notes[4:11]
     assert [vars(note) for note in notes] == attributes
+
+
+@pytest.mark.parametrize('name', ['BOUNDARY_CHECKPOINT', 'BOUNDARY_GUARDIAN_CHECKPOINT'])
+def test_damaged_repeat_attack_model_fails_explicitly(monkeypatch, tmp_path, name):
+    pytest.importorskip('torch')
+    path = tmp_path / 'damaged.npz'
+    path.write_bytes(b'invalid model')
+    monkeypatch.setattr(service, name, path)
+    with pytest.raises(PipelineError, match='repeat-attack model is missing or damaged'):
+        service.AccompanimentVerifier()
+
+
+@pytest.mark.parametrize('genuine_repeat', [False, True])
+def test_repeat_attack_runtime_extends_only_verified_holds_and_preserves_source_owner(
+        monkeypatch, tmp_path, genuine_repeat):
+    torch = pytest.importorskip('torch')
+    verifier = service.AccompanimentVerifier()
+    path = tmp_path / 'window.wav'
+    sf.write(path, np.zeros(10 * 22050), 22050)
+    notes = [SimpleNamespace(pitch=72, start=3. + i, end=4. + i, velocity=80 - i)
+             for i in range(3)]
+    attributes = [vars(n).copy() for n in notes]
+    midi = SimpleNamespace(instruments=[SimpleNamespace(notes=notes[:1]), SimpleNamespace(notes=notes[1:])])
+    monkeypatch.setattr(service, 'decode_candidates', lambda _: midi)
+    monkeypatch.setattr(service, 'note_features', lambda *a, **kw: np.zeros((3, 52), dtype=np.float32))
+    verifier.model = lambda _: torch.full((3,), 2.)
+    verifier.context_models = [SimpleNamespace(threshold=.01, probability=lambda x: np.ones(len(x)))] * 2
+    for name, threshold in [('residual_model', .0375), ('left_hand_model', .05),
+                            ('left_refinement_model', .0375), ('left_relations_model', .0375),
+                            ('left_guardian_model', .3), ('broad_model', .005), ('broad_guardian_model', .05)]:
+        setattr(verifier, name, SimpleNamespace(threshold=threshold, probability=lambda x: np.ones(len(x))))
+    verifier.boundary_model = SimpleNamespace(threshold=.05, probability=lambda x: np.zeros(len(x)))
+    verifier.boundary_guardian_model = SimpleNamespace(threshold=.025,
+        probability=lambda x: np.full(len(x), float(genuine_repeat)))
+    assert verifier.filter(path, {}, midi) == (0 if genuine_repeat else 2)
+    assert midi.instruments[0].notes == [notes[0]]
+    assert midi.instruments[1].notes == (notes[1:] if genuine_repeat else [])
+    assert vars(notes[0]) == {**attributes[0], 'end': 4. if genuine_repeat else 6.}
+    assert [vars(n) for n in notes[1:]] == attributes[1:]

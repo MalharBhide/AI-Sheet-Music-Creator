@@ -6,6 +6,8 @@ from fastapi import HTTPException, Request
 
 from app.config import Settings
 from app.services.accompaniment_verifier import (
+    BOUNDARY_CHECKPOINT,
+    BOUNDARY_GUARDIAN_CHECKPOINT,
     BROAD_CHECKPOINT,
     BROAD_GUARDIAN_CHECKPOINT,
     CONTEXT_CHECKPOINTS,
@@ -32,6 +34,7 @@ def dependencies(settings: Settings) -> dict[str, bool]:
             'accompaniment_left_refinement_model': LEFT_REFINEMENT_CHECKPOINT.is_file(),
             'accompaniment_left_consensus_models': LEFT_RELATIONS_CHECKPOINT.is_file() and LEFT_GUARDIAN_CHECKPOINT.is_file(),
             'accompaniment_pitch_preserving_models': BROAD_CHECKPOINT.is_file() and BROAD_GUARDIAN_CHECKPOINT.is_file(),
+            'accompaniment_repeat_attack_models': BOUNDARY_CHECKPOINT.is_file() and BOUNDARY_GUARDIAN_CHECKPOINT.is_file(),
             'source_separation': importlib.util.find_spec('demucs') is not None,
             'music21': importlib.util.find_spec('music21') is not None,
             'musescore': settings.renderer() is not None}

@@ -1,0 +1,17 @@
+{
+  "passes": true,
+  "recordings": 343,
+  "scored_candidate_events": 43607,
+  "total_scored_rejected": 2395,
+  "additional_merged_vs_v8": 9,
+  "model_sha256": {
+    "relations": "eb1b395024aecea5c715786efaf2ece2d4e901d723042fb12a1c4d476cacb80a",
+    "guardian": "16bd14e045450195d704f5dcdff3edff0382237b99e5760c7ffec65c59f41b40"
+  },
+  "checkpoint_sha256": "6e0c16ebd1d136e09d2c69617c9732ed50522a48ebfc4a888924d1de13628369",
+  "batch_selection_sha256": "024e63239893a2f474b8718ee8e60394122ab2cec6140718af1fc6fcd3fe2e34",
+  "fresh_manifest_sha256": "d54783e0b925b624e3dc23f891455bfd8873cb7f326fce48b9d6e246fd6c5847",
+  "current_piano_manifest_sha256": "c358df63a469c3f5fb60c3d57e74413824620994bdbd52bfa0b5b86e6d423eae",
+  "checks": "Runtime matches frozen sklearn decisions with complete original neighboring geometry and V2 confidence; retained identity, source part, pitch, onset and velocity preserved; only selected touching holds extended",
+  "scope": "Scored targets from cached labeled datasets; outside-crop neighbors supply context only. No audio inference or score generation"
+}
