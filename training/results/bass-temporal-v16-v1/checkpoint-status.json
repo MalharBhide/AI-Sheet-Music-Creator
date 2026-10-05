@@ -1,0 +1,25 @@
+{
+  "status": "frozen_candidate_pending_release_gates",
+  "deployed_model": "V15; unchanged",
+  "original_note_size_mm": 7,
+  "backend_training_suite": {
+    "passed": 543,
+    "skipped_opt_in": 6,
+    "log_sha256": "dae8fc1d08d4ed3be0a7f0985dbe63ee79b47511b1256953021e87a358224dd1"
+  },
+  "additional_regression_guard_tests": {
+    "passed": 6,
+    "log_sha256": "0c24737544cd8c0fd3a53624c6b128e4aec69d70b6a8458c9fffb25f28149c9d"
+  },
+  "validation_false_notes_removed": 5,
+  "consumed_false_notes_removed": 18,
+  "consumed_matched_attacks_preserved": 4712,
+  "candidate_checkpoint_sha256": "993095e4ecaae7d9f9cda01042860442f81aaddc9b5c9be94ffae9b5307c302e",
+  "outstanding_gates": [
+    "reserved real-piano regression",
+    "single predeclared first-pass fixtures with positive gain",
+    "portable export/runtime parity",
+    "native routing/application checks and verified deployment"
+  ],
+  "no_user_transcriptions_or_score_regeneration": true
+}

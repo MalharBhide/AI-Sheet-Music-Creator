@@ -1,0 +1,859 @@
+{
+  "baseline_hashes": {
+    "version": "shipped-bass-v15-baseline-v1",
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51",
+      "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb",
+      "bass-texture-v1.npz": "f1e829c7d4328afc38268cc8dbe8afb526c6860efafd3d272170cf3aca768d3e",
+      "bass-texture-guardian-v1.npz": "82f4ed13e9cf5a7a832a8a066f23ff9f7642aa187da664779a900d55b807e994",
+      "bass-harmonic-v1.npz": "8184a7c4009d2e26bc1d2f264ec58d8503182cda79667b9c3af7a8bb856ce66c",
+      "bass-harmonic-guardian-v1.npz": "bcab8b156e54db37c3c19dd74e553106499722503abb043ba7fb491d3418f76e",
+      "bass-temporal-v1.npz": "0edc221998bbaacb052fbffe43f6efcce6e759290d0cdb9a7314028521e162c4"
+    },
+    "thresholds": [
+      [
+        0.1,
+        0.1
+      ],
+      [
+        0.05,
+        0.05
+      ],
+      [
+        0.05,
+        0.1
+      ],
+      [
+        0.025,
+        0.3
+      ],
+      [
+        0.025,
+        0.3
+      ],
+      [
+        0.005,
+        0.3
+      ]
+    ],
+    "sources": {
+      "backend/app/services/piano_transcription.py": "04f782935d4e8a4c51d9ba920418c14dc5dbd94fdce50345e6f43b56037c6295",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "backend/app/services/bass_texture.py": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c",
+      "backend/app/services/bass_harmonic.py": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7",
+      "backend/app/services/bass_temporal.py": "3cf000fb9d6174e64d4197d1b03c126f27239b541b4a032f75d73510dfffb68a",
+      "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/candidate_relations.py": "3a1b6caf5eaebf444f3cdcddb7abc8835c86f665721ab476e03c1c1dbc58d029",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "training/current_bass_v15_baseline.py": "a4445669badce91e14b352cbc44f2b847c75c544218ff5a026247627d299c006"
+    }
+  },
+  "sources": [
+    {
+      "id": "Chopin_op10_no3_p01",
+      "group": "train",
+      "player": 1,
+      "source_group": "vienna-performance-Chopin_op10_no3_p01",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p01.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p01.mid",
+      "audio_sha256": "660d8ebd492206340e5efb436722fc8cd721488b4d61ad608af063c0f759d029",
+      "midi_sha256": "80dcfd48414a859e325b0fef197a57808a1758dd366469b7ab9174522027ba72",
+      "shift_seconds": -4.9825,
+      "variants": [
+        "piano-mp3",
+        "demucs-bass"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p02",
+      "group": "train",
+      "player": 2,
+      "source_group": "vienna-performance-Chopin_op10_no3_p02",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p02.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p02.mid",
+      "audio_sha256": "4171005671699df29f58a2a29ea9685b56956e20b270d91a4e22f9aa28eedcba",
+      "midi_sha256": "cb10989cb0fd534ba9cbee5473e321e9b68d3e6464356625c080e67fb3391d47",
+      "shift_seconds": -2.63375,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p03",
+      "group": "train",
+      "player": 3,
+      "source_group": "vienna-performance-Chopin_op10_no3_p03",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p03.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p03.mid",
+      "audio_sha256": "1edfc6b493b600d4220fe8e933be9a0ca95baeb26bd2d86f8c39f862101a7f0c",
+      "midi_sha256": "651fa113c5019769a56f8d9bf0cd6a69e8304ea48623755899657e1001748082",
+      "shift_seconds": -4.0287500000000005,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p04",
+      "group": "train",
+      "player": 4,
+      "source_group": "vienna-performance-Chopin_op10_no3_p04",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p04.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p04.mid",
+      "audio_sha256": "7cd38b05cf7c55cc6ea42ec1e662544fee1ac035c879bdbe9e2eefef33eccf7c",
+      "midi_sha256": "6abf6b1f99331895b6d548d9a9853c934aadbf548dc8c8a4711b73f52791241a",
+      "shift_seconds": -2.4425,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p05",
+      "group": "train",
+      "player": 5,
+      "source_group": "vienna-performance-Chopin_op10_no3_p05",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p05.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p05.mid",
+      "audio_sha256": "8fc04bc52cc3d4ae5bb4d03eb188cf0df9a01579884bbaa14bcc0138c5d3bab4",
+      "midi_sha256": "281e7ca61c1049a9e04073a0c0c75d89da090021a2c54be89030ede43141449c",
+      "shift_seconds": -2.1937499999999996,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p06",
+      "group": "train",
+      "player": 6,
+      "source_group": "vienna-performance-Chopin_op10_no3_p06",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p06.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p06.mid",
+      "audio_sha256": "54214ebc6b93a17a7f4ea0d829219a73a691ba68c6bd24eaf317300242c3b363",
+      "midi_sha256": "5617d0cee3ea9de971dc3e0735a386ffd62cb3fd3793e7d4705c631436c2b9ee",
+      "shift_seconds": -5.438750000000001,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p07",
+      "group": "train",
+      "player": 7,
+      "source_group": "vienna-performance-Chopin_op10_no3_p07",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p07.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p07.mid",
+      "audio_sha256": "e06948bb239ef97f687b3e5273e8877b65e29a87c927096b09df4604805db625",
+      "midi_sha256": "0ce67ea22d330cfa4e6af1e5613d32d3930929e6f9228e7d584f4fede8071792",
+      "shift_seconds": -5.82875,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p08",
+      "group": "train",
+      "player": 8,
+      "source_group": "vienna-performance-Chopin_op10_no3_p08",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p08.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p08.mid",
+      "audio_sha256": "dfa9cee234dda3f91b2dd592ac66957bc8ac5f203a00bd47f84facf3e7e72c90",
+      "midi_sha256": "7b03c519bf0ae5225024c1fc8c6227d1b31ef5f041333fbd8fb4eba8987bad46",
+      "shift_seconds": -1.63875,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p09",
+      "group": "train",
+      "player": 9,
+      "source_group": "vienna-performance-Chopin_op10_no3_p09",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p09.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p09.mid",
+      "audio_sha256": "9c3f49ff216ad49c119dead8803c23a0224850202df77b86f91ba437ffdcb7ee",
+      "midi_sha256": "9a47c2761e77ebeb0a6270c785cf56c99417f8aa8d5e3f1dce4328e38ada842e",
+      "shift_seconds": -1.81125,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p10",
+      "group": "train",
+      "player": 10,
+      "source_group": "vienna-performance-Chopin_op10_no3_p10",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p10.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p10.mid",
+      "audio_sha256": "c1e2bfad146b2372e92fac1557d74bc8026f33a8cd4c19e879201ba312b6f559",
+      "midi_sha256": "0cfe707c18f474cd54de557b22fc83bc1c0f7e6b6b4d8d1df53379a2a405430b",
+      "shift_seconds": -3.0,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p11",
+      "group": "train",
+      "player": 11,
+      "source_group": "vienna-performance-Chopin_op10_no3_p11",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p11.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p11.mid",
+      "audio_sha256": "ad366e0c0c0557d79cb3f2f17f6f6e951537f1745d6c81c5588a711b940bbf48",
+      "midi_sha256": "7da4359e420507bff7d6c14ff9bd8b60f34a38dceb95f6e75a1e5a7990470fa3",
+      "shift_seconds": -2.4899999999999998,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p12",
+      "group": "train",
+      "player": 12,
+      "source_group": "vienna-performance-Chopin_op10_no3_p12",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p12.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p12.mid",
+      "audio_sha256": "a3b63b2b354646ea92fdf6a6608aa0227a250c7f0b5aa03150d290e1a163a106",
+      "midi_sha256": "7f9d0c59a3bef6fb652a521a749a443da813f375801bcfb2e1dff0634a71d133",
+      "shift_seconds": -3.1762499999999996,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p13",
+      "group": "train",
+      "player": 13,
+      "source_group": "vienna-performance-Chopin_op10_no3_p13",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p13.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p13.mid",
+      "audio_sha256": "eba4cbda2b846357a37c3b3dd838b8566456324b263da068beda576d62ba1199",
+      "midi_sha256": "60cd741e425ec11a096fad212d1e2d095b0b6db78298f6bc7d005be69f639140",
+      "shift_seconds": -2.22875,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p14",
+      "group": "train",
+      "player": 14,
+      "source_group": "vienna-performance-Chopin_op10_no3_p14",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p14.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p14.mid",
+      "audio_sha256": "07e295186ca3bacfe2f8893d2958b51af1def83eaa9b26bf9f09d0a02170e1cf",
+      "midi_sha256": "a0fb545008a278e2a5bdeda381363864615146e8f59507f705c2febada1ad55f",
+      "shift_seconds": -4.005,
+      "variants": [
+        "piano-mp3",
+        "demucs-bass"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p01",
+      "group": "train",
+      "player": 1,
+      "source_group": "vienna-performance-Chopin_op38_p01",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p01.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p01.mid",
+      "audio_sha256": "808a6a3e66a468e89f010a6d6e43c86b50ac6b73fad7307c3e0ffa7da9816ff5",
+      "midi_sha256": "6d146b9d1865aa84ce9f605e3fca9c7bb7bf64850055b9b8202365a8ea334f08",
+      "shift_seconds": -5.6075,
+      "variants": [
+        "piano-mp3",
+        "demucs-bass"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p02",
+      "group": "train",
+      "player": 2,
+      "source_group": "vienna-performance-Chopin_op38_p02",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p02.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p02.mid",
+      "audio_sha256": "933bb9c6b6da4d3cc5afc0cc5d91b5d1f8d88908043f4f1a0e03177acf397913",
+      "midi_sha256": "5b41be062342a6a532057bdea67f4a38e355f30f1730eab1ae5498b743d21e83",
+      "shift_seconds": -3.18375,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p03",
+      "group": "train",
+      "player": 3,
+      "source_group": "vienna-performance-Chopin_op38_p03",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p03.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p03.mid",
+      "audio_sha256": "41a85db1314ae23dcdc463458aa71c5e09d64f7716b81646011d10ae6427056a",
+      "midi_sha256": "7ca862a5c3b369633944412fb89e10920473e0e4c4e0fd97e40e81f529b186e8",
+      "shift_seconds": -2.8524999999999996,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p04",
+      "group": "train",
+      "player": 4,
+      "source_group": "vienna-performance-Chopin_op38_p04",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p04.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p04.mid",
+      "audio_sha256": "04e011384afda4ce5c8825bdf3d24b4a65c84006ddb90c0beb27772c71d68057",
+      "midi_sha256": "5d11f35bada8eb6455f7b17cdfc8c3537d746687a0735ea9b0ab577c320a0989",
+      "shift_seconds": -1.6749999999999998,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p05",
+      "group": "train",
+      "player": 5,
+      "source_group": "vienna-performance-Chopin_op38_p05",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p05.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p05.mid",
+      "audio_sha256": "2dde88c31a68d91b3e3d2413a5925c733ff15e3ad94964e87403435a52609024",
+      "midi_sha256": "9fb6379ed6d073c3d7d505b20b43e06d1fbb6b343a2148da0e09dd5d4d4c81b4",
+      "shift_seconds": -2.915,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p06",
+      "group": "train",
+      "player": 6,
+      "source_group": "vienna-performance-Chopin_op38_p06",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p06.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p06.mid",
+      "audio_sha256": "a3faa44fa08146bbcc6e1fca0b3a6d2411b4734e0e795213476d4fe4a408e22d",
+      "midi_sha256": "7e681b28db7e9089821c79f778bac0aabf3c09816756de66253d35c559d5acfd",
+      "shift_seconds": -4.8775,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p07",
+      "group": "train",
+      "player": 7,
+      "source_group": "vienna-performance-Chopin_op38_p07",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p07.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p07.mid",
+      "audio_sha256": "2b7d5699ddb325d122ec55eb5f1567d5bda9ab05c3d51531169a7ec2bbc75caa",
+      "midi_sha256": "b320f2a5dc4c933765cea113a839af60049ba2ad37145f3e9b6321c1291cb409",
+      "shift_seconds": -2.7112499999999997,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p08",
+      "group": "train",
+      "player": 8,
+      "source_group": "vienna-performance-Chopin_op38_p08",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p08.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p08.mid",
+      "audio_sha256": "2c8262f06f1aa3efe54f83365ca71c1510306669a76768c859e28a8b224100e0",
+      "midi_sha256": "0fef01d74483059ff0fff7b64c112e30f1a6d1a73da9a26b8dff9e39ad62ccb2",
+      "shift_seconds": -4.195,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p09",
+      "group": "train",
+      "player": 9,
+      "source_group": "vienna-performance-Chopin_op38_p09",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p09.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p09.mid",
+      "audio_sha256": "55a93fe2fef6f44ea149e896cb4dfcff8bd5e38849bf665fb099305e324afee3",
+      "midi_sha256": "d5cb5a9903fd058007b7873620ab9dc38733b28904c61aef543b378ce3d4a56b",
+      "shift_seconds": -3.1024999999999996,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p10",
+      "group": "train",
+      "player": 10,
+      "source_group": "vienna-performance-Chopin_op38_p10",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p10.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p10.mid",
+      "audio_sha256": "a2da17a9b4d1a7d94f477f933bf0f01bace2e2314a0049f4fbf0511240b304e0",
+      "midi_sha256": "f2697e878d833c06afce0211bc0649898420211a2c6c4196346c531d92e8674d",
+      "shift_seconds": -4.365,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p11",
+      "group": "train",
+      "player": 11,
+      "source_group": "vienna-performance-Chopin_op38_p11",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p11.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p11.mid",
+      "audio_sha256": "7e89ccbfe784a33e3729b8c48352d30fc2ac8848aeee05d5c834555b0d1fe0a2",
+      "midi_sha256": "81f772b7777b6327d566e568543ad8d244d7157748ff513a220899f3df8c4d4e",
+      "shift_seconds": -4.24875,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p12",
+      "group": "train",
+      "player": 12,
+      "source_group": "vienna-performance-Chopin_op38_p12",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p12.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p12.mid",
+      "audio_sha256": "ca7e48ddb5c8cba2032d98f561df45f534f00c3e961c99a0a5483a2f096f083b",
+      "midi_sha256": "cb434be8e86835ad75ba8f5386ec68c9b6cec5f353c5e636c4612a74dbe1b144",
+      "shift_seconds": -2.93,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p13",
+      "group": "train",
+      "player": 13,
+      "source_group": "vienna-performance-Chopin_op38_p13",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p13.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p13.mid",
+      "audio_sha256": "3c43894e69b28e1de20a238c5d47c2bd143f19f2c8a4371a7f9296dce3973658",
+      "midi_sha256": "8e56a93dd4f2b5faa7d603b1251ae39cdf1d765cef031e2d469adfd45e2a19f5",
+      "shift_seconds": -3.3787499999999997,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p14",
+      "group": "train",
+      "player": 14,
+      "source_group": "vienna-performance-Chopin_op38_p14",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p14.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p14.mid",
+      "audio_sha256": "e152cd9b073679cf4a73f07285572e1e4c5e10ad4f74d58648eebb1a0b20f671",
+      "midi_sha256": "97307e79d443b774c14b59c3e9a6fd6adafbac80a94147b53431e328bbd0814d",
+      "shift_seconds": -2.90375,
+      "variants": [
+        "piano-mp3",
+        "demucs-bass"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p01",
+      "group": "train",
+      "player": 1,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p01",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p01.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p01.mid",
+      "audio_sha256": "b51cc4950ffbcf7348c4e606d2d6f38adba40bcc7aebc07896708fd6b165ca89",
+      "midi_sha256": "186a16865316d3f9b74c81ef322ec9b11440ab372ec62a1b6eba5eb7666f4f77",
+      "shift_seconds": -0.6197499999999998,
+      "variants": [
+        "piano-mp3",
+        "demucs-bass"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p02",
+      "group": "train",
+      "player": 2,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p02",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p02.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p02.mid",
+      "audio_sha256": "b8b70f85d09ee64eff904382ba51f02ac99bac0325dd60ea8b64f63af8fb9517",
+      "midi_sha256": "69c6e06fdca9536a8bbb4a298527c896097e03d1d5caeb04c6e2b1ea2cb8b73e",
+      "shift_seconds": -3.5157499999999993,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p03",
+      "group": "train",
+      "player": 3,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p03",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p03.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p03.mid",
+      "audio_sha256": "c806c4a950731b18e502007ac3010f13582faee26cb03ee91f0665456d9f25ea",
+      "midi_sha256": "dca8867bcdcdddf91a8aaa43040b669387c051b6dd4d6b5c1116dcf184144ead",
+      "shift_seconds": -2.71475,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p04",
+      "group": "train",
+      "player": 4,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p04",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p04.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p04.mid",
+      "audio_sha256": "6836e30ffdbb88207eb5099372a419e2f8323a90a2dc11907a3c279ec01fc256",
+      "midi_sha256": "d61866d943e566814071aaf5a534e2ef476ffb4b19464087f894da06c8613c9f",
+      "shift_seconds": -0.6224999999999998,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p05",
+      "group": "train",
+      "player": 5,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p05",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p05.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p05.mid",
+      "audio_sha256": "ef108052d0ea67c647cc6bef37f43f9f1bfb4fad02051462ca4aa6d3a2f0bdbb",
+      "midi_sha256": "bfb8882f101cc5a7d6aa4f23f02a621ae5afd1d6d44699d4f899a3f14e5a40ff",
+      "shift_seconds": -2.0677499999999998,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p06",
+      "group": "train",
+      "player": 6,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p06",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p06.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p06.mid",
+      "audio_sha256": "db90574d02176e41b43f8f2a1f5b6ac459d5eecf465e0a150bb4a0bf587b5070",
+      "midi_sha256": "9a9535b3b0bbf4b4055e476b71fedbfb8617d97c202ae1039510ff34d5ed6a19",
+      "shift_seconds": 0.5727500000000003,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p07",
+      "group": "train",
+      "player": 7,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p07",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p07.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p07.mid",
+      "audio_sha256": "d3833b7a8341e9913dec579493228f6e914cd445c702a95774050d1c20768cd6",
+      "midi_sha256": "5e77c23c1ec7381f9317ede93981977d79c3ff410727aed569dcffa4229217b0",
+      "shift_seconds": -5.81425,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p08",
+      "group": "train",
+      "player": 8,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p08",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p08.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p08.mid",
+      "audio_sha256": "6373e02c403625653649245533091ee6df8d52de05043ebe6fbfc27a2d924c32",
+      "midi_sha256": "7b0a48432f443a56738562aff812d3e5be219b21340507445aafc7c03a8f86d3",
+      "shift_seconds": -3.1872499999999997,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p09",
+      "group": "train",
+      "player": 9,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p09",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p09.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p09.mid",
+      "audio_sha256": "f352db7cbe5c9d3fe3da41a4b37a89b7cef19081025117de0b174258f4744f36",
+      "midi_sha256": "59ddc2fd6c0133c9340af68026fe89e699f556bc9a7c01529572932e7c55d068",
+      "shift_seconds": -4.7175,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p10",
+      "group": "train",
+      "player": 10,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p10",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p10.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p10.mid",
+      "audio_sha256": "56a3d42afe8dd55d5af5fe88d25a368305b453e678097a1c37bb335aeafd7ae3",
+      "midi_sha256": "a9a3107de03661f6ae15599d2c8e87ddc723c18b91c49159e8a09fb57d6da852",
+      "shift_seconds": -1.6389999999999998,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p11",
+      "group": "train",
+      "player": 11,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p11",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p11.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p11.mid",
+      "audio_sha256": "c988c43cd217b4ded98f4674ef597b64815d8e661c4325ef66313d77df241046",
+      "midi_sha256": "b3c19329839e4637d921916937ac8e38a39b5729c24309021b1c317e34561809",
+      "shift_seconds": -3.13825,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p12",
+      "group": "train",
+      "player": 12,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p12",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p12.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p12.mid",
+      "audio_sha256": "2e39a473c69c45e500b0a67443f4b2c1eaa3e4ef61316e08faa26dd5ef228afb",
+      "midi_sha256": "af275ea1d17b68f5db8e72384fb9489dde7be7041ebd30a387e8966d4772ce76",
+      "shift_seconds": -1.1937499999999999,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p13",
+      "group": "train",
+      "player": 13,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p13",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p13.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p13.mid",
+      "audio_sha256": "59c5838de50d528a364550a44b43cca15e9e2439ab73104e86c50ce1b19cb8f9",
+      "midi_sha256": "8e79c26734356c48f8ea461f26cc62f966d816fac756c85543dbe0ea09567184",
+      "shift_seconds": -2.70225,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p14",
+      "group": "train",
+      "player": 14,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p14",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p14.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p14.mid",
+      "audio_sha256": "ce5c6e225e5ed298e1d09289f374dac743c26acf27eb8ff236a3c6f051b49cb5",
+      "midi_sha256": "1730f2065e8f53ddfc848a8cb6d271ebfdaea5d11c5ccb442939b0f47017cb1e",
+      "shift_seconds": -2.5185,
+      "variants": [
+        "piano-mp3",
+        "demucs-bass"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p15",
+      "group": "validation",
+      "player": 15,
+      "source_group": "vienna-performance-Chopin_op10_no3_p15",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p15.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p15.mid",
+      "audio_sha256": "e236aa34d94b969e6617c9d4a9f587247f03331ea760c3ba7e3036a490f5b6da",
+      "midi_sha256": "dc08774868a3755929b6666921a5e205b5da0db622d96f6a26c889b3541ceddc",
+      "shift_seconds": -3.6799999999999997,
+      "variants": [
+        "piano-mp3",
+        "demucs-bass"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p16",
+      "group": "validation",
+      "player": 16,
+      "source_group": "vienna-performance-Chopin_op10_no3_p16",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p16.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p16.mid",
+      "audio_sha256": "437f3487726f287640d7391c98d27a7c4b14fe741439e892cd897ab3d5d5ee8a",
+      "midi_sha256": "0aeeb25da704b1e699aab333184a97ec293c14fc9e3cd7da2f7b15584f224454",
+      "shift_seconds": -2.8962499999999998,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p17",
+      "group": "validation",
+      "player": 17,
+      "source_group": "vienna-performance-Chopin_op10_no3_p17",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p17.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p17.mid",
+      "audio_sha256": "206d2d836f57250df337f71e63f5683f2f53d56b67ec9679bc57dc908abe4e16",
+      "midi_sha256": "2147e9d598a37489bc41884f746894e84da036d13e77023283767e1db73ebe11",
+      "shift_seconds": -2.54125,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op10_no3_p18",
+      "group": "validation",
+      "player": 18,
+      "source_group": "vienna-performance-Chopin_op10_no3_p18",
+      "audio": "/training/vienna/audio/Chopin_Etude/Chopin_op10_no3_p18.wav",
+      "midi": "/training/vienna/midi/Chopin_op10_no3_p18.mid",
+      "audio_sha256": "ef332e36156c6eb150c280fedac2679fde348f9656c0129dc9d61f0c1faeeb6f",
+      "midi_sha256": "1fe88d27a229803be3243b37d7443249fa2f0e3a26f488f82ef5ff352ef90b44",
+      "shift_seconds": -2.5199999999999996,
+      "variants": [
+        "piano-mp3",
+        "demucs-bass"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p15",
+      "group": "validation",
+      "player": 15,
+      "source_group": "vienna-performance-Chopin_op38_p15",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p15.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p15.mid",
+      "audio_sha256": "8a7efd42d065089a69cd56bfd9993e26b95b98f55d570c7be17444a4e7deb4d9",
+      "midi_sha256": "9459c2134eac9866ac7be73ee681c869247dea387b371883829b6a4f5d190d22",
+      "shift_seconds": -3.92375,
+      "variants": [
+        "piano-mp3",
+        "demucs-bass"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p16",
+      "group": "validation",
+      "player": 16,
+      "source_group": "vienna-performance-Chopin_op38_p16",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p16.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p16.mid",
+      "audio_sha256": "23b29589e7a6673592b851de5b57bf7108a3ffc56781a0ad5242a98625d95783",
+      "midi_sha256": "448dc9c6f0b1a2c2c08945b8b69f03a74f7c40f12ec093d9fdba68bb08c5de73",
+      "shift_seconds": -3.2062500000000003,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p17",
+      "group": "validation",
+      "player": 17,
+      "source_group": "vienna-performance-Chopin_op38_p17",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p17.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p17.mid",
+      "audio_sha256": "804ddabbc84c5806c62d27cc1732e568dabbc988bd81bc973417cbabe75865f1",
+      "midi_sha256": "2ea370d935e763e932caee462bc8f168713044e74c186c54b174ad54486a46a6",
+      "shift_seconds": -6.245,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Chopin_op38_p18",
+      "group": "validation",
+      "player": 18,
+      "source_group": "vienna-performance-Chopin_op38_p18",
+      "audio": "/training/vienna/audio/Chopin_Ballade/Chopin_op38_p18.wav",
+      "midi": "/training/vienna/midi/Chopin_op38_p18.mid",
+      "audio_sha256": "f43cba0e00ac971a627039641ca59e8513cdc765d527228bba53ce27fc61b995",
+      "midi_sha256": "c33593b1bce461c911e96f41d7378d7e68d5300a55c0a043f9c46a51cc3e82f4",
+      "shift_seconds": -2.45875,
+      "variants": [
+        "piano-mp3",
+        "demucs-bass"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p15",
+      "group": "validation",
+      "player": 15,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p15",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p15.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p15.mid",
+      "audio_sha256": "b8fc502e407535296e75757a46931ef7a449e9684f606b567ef362d0f334f7aa",
+      "midi_sha256": "233ebc8ae9283ae4507570700f5be0695e1564af1bba23cf00e9d56484aee34e",
+      "shift_seconds": -4.49925,
+      "variants": [
+        "piano-mp3",
+        "demucs-bass"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p16",
+      "group": "validation",
+      "player": 16,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p16",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p16.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p16.mid",
+      "audio_sha256": "0d1c85184a5a20a93a4db983411ecf87e900da6e501214ad3c7652ac85bfae9c",
+      "midi_sha256": "f72d6cb3b2739b3c00109feadfcb97b3c1595d84bed47cdfbab9c35e80f702aa",
+      "shift_seconds": -5.4445,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p17",
+      "group": "validation",
+      "player": 17,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p17",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p17.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p17.mid",
+      "audio_sha256": "9722b62b50dd2e59d6c9d0631354d10c9eafdeace1d166a393674c0c1392c93f",
+      "midi_sha256": "0abcc27de4a7e753dbac922f226e269c321901333f3da084f789bc9ddfbab578",
+      "shift_seconds": -7.419499999999999,
+      "variants": [
+        "piano-mp3"
+      ]
+    },
+    {
+      "id": "Mozart_K331_1st-mov_p18",
+      "group": "validation",
+      "player": 18,
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p18",
+      "audio": "/training/vienna/audio/Mozart/Mozart_K331_1st-mov_p18.wav",
+      "midi": "/training/vienna/midi/Mozart_K331_1st-mov_p18.mid",
+      "audio_sha256": "5f887755364f4e1b1e0df794b4e9ed1ee8eefe8c784ee95ba28ba45e6d6c55ba",
+      "midi_sha256": "f5edfb4fb65d79e945e7e4bca5e8e54001c533aa249a7f9268d69124f1d5729e",
+      "shift_seconds": -1.93775,
+      "variants": [
+        "piano-mp3",
+        "demucs-bass"
+      ]
+    }
+  ],
+  "offset": 30,
+  "duration": 30.0,
+  "corrected_clock_audit_sha256": "74fd77106ddfa34586df28b5b4b4e9af1ba01170ecdf8efca6d90f1dc9127015",
+  "source_provenance_sha256": "d349762441608c00040b1cfde56c9978b816b2d87c3b673624fb176a5d0d3c64",
+  "license": "CC-BY-4.0",
+  "author": "Werner Goebl",
+  "doi": "10.21939/4X22",
+  "demucs_players": [
+    1,
+    14,
+    15,
+    18
+  ],
+  "mp3_bitrate_kbps_cycle": [
+    48,
+    128,
+    192
+  ],
+  "code_sha256": {
+    "training/prepare_vienna_bass_v15.py": "9fa048a7817eabac855b41fd7b259a670e94ec385636e8f729b3288ef327aa86",
+    "training/prepare_slakh_bass.py": "7f2f8be64fce97e9ade2348c2a7eb39ac9966191753da8ebe7810d2f24dcc0be",
+    "training/slakh_references.py": "ff2d1169ac894450bb6824ad72e641e204dceff28fd24b16e3515ce390b7ea24",
+    "backend/app/services/source_separation.py": "9f13a175c85c77960200775628e3b47b27413bc77a8aa63f3b8adbc4638a88c5",
+    "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+    "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2"
+  },
+  "no_test_audio_or_metrics": true,
+  "no_user_audio_or_scores": true,
+  "labels": "Instrument key releases plus CC64 sustained pitch support; overlapping pre-crop holds protected. Corrected 0\u201315s clock calibration excluded from the 30\u201360s crops.",
+  "scope": "All eligible existing train/validation performers; original piano-register MP3 counterexamples plus predeclared Demucs bass variants matching Full-song input. Shared compositions/instrument and reused development performers; not independent test accuracy.",
+  "silent_demucs_policy": "If production separation emits no bass, audit exclusion; never fit a silent fallback as musical negatives."
+}

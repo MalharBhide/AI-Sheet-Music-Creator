@@ -1,0 +1,79 @@
+{
+  "excluded": [
+    {
+      "id": "vienna-bass-v15-Chopin_op10_no3_p01-demucs-bass",
+      "group": "train",
+      "excluded_no_bass": true,
+      "plan_sha256": "6ff91e94152c3733ab035bff7525255c96fb34e1e0bc560f400a26ad05dee46d"
+    },
+    {
+      "id": "vienna-bass-v15-Chopin_op10_no3_p14-demucs-bass",
+      "group": "train",
+      "excluded_no_bass": true,
+      "plan_sha256": "6ff91e94152c3733ab035bff7525255c96fb34e1e0bc560f400a26ad05dee46d"
+    },
+    {
+      "id": "vienna-bass-v15-Chopin_op38_p01-demucs-bass",
+      "group": "train",
+      "excluded_no_bass": true,
+      "plan_sha256": "6ff91e94152c3733ab035bff7525255c96fb34e1e0bc560f400a26ad05dee46d"
+    },
+    {
+      "id": "vienna-bass-v15-Chopin_op38_p14-demucs-bass",
+      "group": "train",
+      "excluded_no_bass": true,
+      "plan_sha256": "6ff91e94152c3733ab035bff7525255c96fb34e1e0bc560f400a26ad05dee46d"
+    },
+    {
+      "id": "vienna-bass-v15-Mozart_K331_1st-mov_p01-demucs-bass",
+      "group": "train",
+      "excluded_no_bass": true,
+      "plan_sha256": "6ff91e94152c3733ab035bff7525255c96fb34e1e0bc560f400a26ad05dee46d"
+    },
+    {
+      "id": "vienna-bass-v15-Mozart_K331_1st-mov_p14-demucs-bass",
+      "group": "train",
+      "excluded_no_bass": true,
+      "plan_sha256": "6ff91e94152c3733ab035bff7525255c96fb34e1e0bc560f400a26ad05dee46d"
+    },
+    {
+      "id": "vienna-bass-v15-Chopin_op10_no3_p18-demucs-bass",
+      "group": "validation",
+      "excluded_no_bass": true,
+      "plan_sha256": "6ff91e94152c3733ab035bff7525255c96fb34e1e0bc560f400a26ad05dee46d"
+    },
+    {
+      "id": "vienna-bass-v15-Chopin_op38_p18-demucs-bass",
+      "group": "validation",
+      "excluded_no_bass": true,
+      "plan_sha256": "6ff91e94152c3733ab035bff7525255c96fb34e1e0bc560f400a26ad05dee46d"
+    },
+    {
+      "id": "vienna-bass-v15-Mozart_K331_1st-mov_p15-demucs-bass",
+      "group": "validation",
+      "excluded_no_bass": true,
+      "plan_sha256": "6ff91e94152c3733ab035bff7525255c96fb34e1e0bc560f400a26ad05dee46d"
+    },
+    {
+      "id": "vienna-bass-v15-Mozart_K331_1st-mov_p18-demucs-bass",
+      "group": "validation",
+      "excluded_no_bass": true,
+      "plan_sha256": "6ff91e94152c3733ab035bff7525255c96fb34e1e0bc560f400a26ad05dee46d"
+    }
+  ],
+  "baseline_metadata": {
+    "model": "Bass note verifier v1 (trained conservative consensus)",
+    "articulation_model": "Bass articulation v1 (trained key-release protection)",
+    "residual_model": "Bass residual v1 (trained unsupported-pitch rejection)",
+    "texture_model": "Bass texture verifier v1 (trained acoustic rejection)",
+    "harmonic_model": "Bass harmonic verifier v1 (trained attack/release rejection)",
+    "temporal_model": "Bass temporal CNN v1 (trained spectral note evidence)",
+    "window_candidates": 4294,
+    "window_rejections": 0,
+    "window_merged_boundaries": 0,
+    "window_residual_rejections": 1,
+    "window_texture_rejections": 0,
+    "window_harmonic_rejections": 0,
+    "window_temporal_rejections": 0
+  }
+}
