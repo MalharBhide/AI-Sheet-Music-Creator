@@ -1,0 +1,63 @@
+{
+  "passes": true,
+  "cases": [
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-held",
+      "duration": 30.0,
+      "baseline_candidates": 2,
+      "removed": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-repeated",
+      "duration": 30.0,
+      "baseline_candidates": 48,
+      "removed": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-octave",
+      "duration": 30.0,
+      "baseline_candidates": 24,
+      "removed": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "slakh-bass-v1-Track00006-oracle-000",
+      "duration": 30.0,
+      "baseline_candidates": 28,
+      "removed": 3,
+      "passes": true
+    },
+    {
+      "case": "window-32.wav",
+      "directory": "bass-native-release-v1",
+      "duration": 32.0,
+      "baseline_candidates": 7,
+      "removed": 0,
+      "passes": true
+    },
+    {
+      "case": "short.wav",
+      "directory": "bass-native-release-v1",
+      "duration": 0.049977324263038546,
+      "baseline_candidates": 0,
+      "removed": 0,
+      "passes": true
+    }
+  ],
+  "checkpoint_sha256": "b7472b3842fd58985cf12ea7f2ebcabdc4aab34dda382baeb62f444862e2a766",
+  "portable_runtime_report_sha256": "33fe505bce9f3e2b28b136d7bb5f37b655ef948357d12c8bfc8e4ca6cb9a404e",
+  "routing_source_sha256": "4ec45a82f37ea976b3218e8615d9221bc63390c409fbfb6e3ddffa40b400fc80",
+  "script_sha256": "698da9150f49cdfad2357a8b070a149a2c315d749f8d7e6b6b797feded500e56",
+  "bass_metadata": {
+    "model": "Bass note verifier v1 (trained conservative consensus)",
+    "window_candidates": 109,
+    "window_rejections": 3
+  },
+  "checks": "Actual Basic Pitch bass bounds, sample/audio features, portable filtering, production routing, unchanged retained event tuples; 32-second context and subframe audio. No scores or user uploads."
+}

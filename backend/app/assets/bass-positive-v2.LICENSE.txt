@@ -1,0 +1,25 @@
+Bass consensus classifiers (bass-positive-consensus-v2.npz, bass-positive-guardian-v2.npz)
+
+Copyright 2026 Piano Scribe contributors.
+Newly trained model arrays: Creative Commons Attribution 4.0.
+https://creativecommons.org/licenses/by/4.0/
+
+Training data (CC BY 4.0):
+GuitarSet 1.1.0: Qingyang Xi, Rachel M. Bittner, Johan Pauwels, Xuzhou Ye,
+and Juan P. Bello. https://zenodo.org/records/3371780
+BabySlakh v2: Ethan Manilow, Gordon Wichern, Prem Seetharaman, Jonathan Le Roux.
+Cutting Music Source Separation Some Slakh, WASPAA 2019.
+https://zenodo.org/records/4603870
+
+Additional data: original project-authored bass signals and note sequences.
+Fixed original MP3 variants and full-mixture Demucs bass augmentations retain
+their source-group training/validation partition. No user audio or scores used.
+
+Scope: balanced Full-song bass only, frequency-bounded Basic Pitch candidates
+21–59 MIDI pitches. Separate 52/26-feature KEEP consensus with thresholds .1/.1.
+Actual key-release references remain separate from pedal/crop pitch support.
+Context-window edges and other pitch registers are protected. Retained note
+identity, pitch, onset, end, velocity and source part remain unchanged.
+
+Frozen experimental provenance: training/results/bass-positive-consensus-v2b.
+Parent neural detector and separator are not retrained by this release.

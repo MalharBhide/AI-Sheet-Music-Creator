@@ -1,6 +1,14 @@
 {
-  "promoted": false,
-  "deployed_model": "V9",
-  "reason": "Frozen validation winner removes 142 false notes, retains 4150 matched attacks and passes every per-recording hold/coverage gate. Consumed original stress retains all210 matches; no extra-note gain there. Reserved Slakh preparation underway; test evaluation, portable export and production parity pending.",
-  "no_user_audio_or_scores": true
+  "promoted": true,
+  "reason": "Every frozen release, portable/runtime and native gate passes. Backend built and deployed locally after idle queue; exact tested hashes loaded, health ready. Existing scores unchanged.",
+  "validation_false_notes_removed": 142,
+  "reserved_false_notes_removed": 41,
+  "reserved_matches_retained": 357,
+  "consumed_stress_matches_retained": 210,
+  "runtime_parity_recordings": 481,
+  "runtime_parity_candidates": 36989,
+  "backend_training_tests_passed": 355,
+  "isolated_native_pipeline_tests_passed": 6,
+  "no_user_audio_or_scores": true,
+  "deployed_model": "V10 (V9 accompaniment plus bass consensus)"
 }

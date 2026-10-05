@@ -1,5 +1,10 @@
 # Supervised melody training
 
+The current website is [V10 with trained bass consensus](../docs/bass-verifier-v10.md),
+retaining V9 accompaniment processing. It removes 41 false bass detections on
+20 reserved-source clips with all 357 matched notes and measured holds retained.
+All release gates and native checks pass. Earlier failed bass weights are withheld.
+
 The [bass training framework](../docs/bass-consensus-training.md) adds 56 training
 and 20 validation source-paired/MP3/Demucs clips. Four pairs completed fitting;
 the 500-tree validation winner fails original stress and is withheld. Its later
@@ -11,7 +16,7 @@ adds 64 licensed multi-instrument MP3 clips with MIDI pedal/crop pitch support.
 The four-profile batch completed and was withheld after no regression gain.
 Reserved source groups stay untouched; V9 remains deployed.
 
-The current website uses [learned repeat-attack V9](../docs/repeat-boundary-model-v9.md),
+V10 retains [learned repeat-attack V9](../docs/repeat-boundary-model-v9.md),
 following the [pitch-preserving V8 release](../docs/pitch-preserving-consensus-v8.md).
 The MP3 augmentation is complete. Both releases preserve matched attacks and
 offsets; V9 also preserves the exact detected pitch-time union when joining holds.

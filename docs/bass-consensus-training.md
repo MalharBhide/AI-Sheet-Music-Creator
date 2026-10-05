@@ -2,8 +2,8 @@
 
 The website's independent bass stem uses a frequency-bounded Basic Pitch decoder.
 V9's accompaniment verifier does not cover it. This experiment trains separate
-KEEP classifiers with that exact decoder. **V9 remains deployed; these bass
-weights are offline until all release gates and production parity pass.**
+KEEP classifiers with that exact decoder. **The broader second batch is now [released as V10](bass-verifier-v10.md),
+with V9 accompaniment retained. The first failed batch remains withheld.**
 No user upload was processed, job created or saved score regenerated.
 
 ## Licensed, source-disjoint preparation
@@ -154,3 +154,19 @@ pass. No user uploads or existing scores are processed.
 
 GuitarSet attribution: Qingyang Xi, Rachel M. Bittner, Johan Pauwels, Xuzhou Ye
 and Juan P. Bello, [GuitarSet 1.1.0](https://zenodo.org/records/3371780), CC BY 4.0.
+
+## Release completed
+
+The expanded winner passes all 20 reserved clips: all 357 matches and every
+attack/offset/pitch interval retained, false detections 1,091→1,050. Portable and
+runtime parity cover all 481 clips / 36,989 candidates with exact probabilities
+and unchanged retained attributes. Native routing and all six pipeline checks
+pass; 355 backend/training tests pass. Built and deployed locally after an idle
+queue check; exact tested hashes loaded and health ready. The V10 model card
+above describes the current release; earlier preparation status is historical.
+
+Future model work must compare the deployed V10 bass mask, preserving its
+rejections and all remaining matched notes/holds, rather than raw Basic Pitch.
+The four formerly reserved Slakh groups are now consumed regression and cannot
+be presented as fresh evidence in later runs. The goal continues; no user audio
+is included in further training or testing.

@@ -5,7 +5,6 @@ from types import ModuleType, SimpleNamespace
 import numpy as np
 import pytest
 import soundfile as sf
-
 from app.models import PipelineError, ScoreOptions
 from app.services.piano_transcription import _append_chunk_notes, _audio_chunks, transcribe
 
@@ -178,7 +177,7 @@ def test_missing_piano_model_does_not_silently_use_basic_pitch(tmp_path, fake_in
 
 def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
         tmp_path, fake_inference, monkeypatch):
-    from app.services import accompaniment_verifier, source_separation, vocal_melody
+    from app.services import accompaniment_verifier, bass_verifier, source_separation, vocal_melody
 
     audio, output = tmp_path / 'input.wav', tmp_path / 'out.mid'
     sf.write(str(audio), np.full(22050 * 2, .01), 22050)
@@ -206,6 +205,14 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
             return 1
 
     monkeypatch.setattr(accompaniment_verifier, 'AccompanimentVerifier', NoteVerifier)
+    class BassVerifier:
+        name = 'Test bass verifier'
+
+        def filter(self, path, acoustic, output):
+            assert [n.pitch for n in output.instruments[0].notes] == [36, 48]
+            return 0
+
+    monkeypatch.setattr(bass_verifier, 'BassVerifier', BassVerifier)
     fake_inference.results.extend([
         [],  # Vocal decoding must still run when Basic Pitch emits no events.
         [(36, 0, 1), (48, 0, 1)],
@@ -222,6 +229,8 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
     assert report['engine'].startswith('Demucs htdemucs')
     assert report['accompaniment_verification'] == {
         'model': 'Test verifier', 'window_candidates': 5, 'window_rejections': 1}
+    assert report['bass_verification'] == {
+        'model': 'Test bass verifier', 'window_candidates': 2, 'window_rejections': 0}
     assert report['support_notes_changed_for_bass'] == 1
     assert [(n.pitch, n.start, n.end) for n in result.instruments[1].notes] == [(36, 0, 1)]
     assert fake_inference.calls[2][1]['minimum_frequency'] is None
@@ -302,6 +311,52 @@ def test_detailed_accompaniment_keeps_its_validated_detector_path(tmp_path, fake
     assert parameters['melodia_trick'] is True
 
 
+def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp_path, fake_inference, monkeypatch):
+    from app.services import bass_verifier
+    from app.services.piano_transcription import _GeneralEngine
+
+    path = tmp_path / 'bass.wav'
+    sf.write(path, np.full(30 * 22050, .01, dtype='float32'), 22050)
+    constructions = []
+
+    class BassVerifier:
+        name = 'Test bass consensus'
+
+        def __init__(self):
+            constructions.append(self)
+
+        def filter(self, path, acoustic, output):
+            output.instruments[0].notes.pop()
+            return 1
+
+    monkeypatch.setattr(bass_verifier, 'BassVerifier', BassVerifier)
+    fake_inference.results.extend([[(40, 3., 4.), (52, 3., 4.)]] * 2)
+    engine = _GeneralEngine('balanced')
+    for _ in range(2):
+        output = engine.predict(path, 'bass', 90)
+        assert [(n.pitch, n.start, n.end) for n in output.instruments[0].notes] == [(40, 3., 4.)]
+    assert len(constructions) == 1 and engine.note_verifier is None and engine.verification is None
+    assert engine.bass_verification['window_candidates'] == 4
+    assert engine.bass_verification['window_rejections'] == 2
+    parameters = fake_inference.calls[0][1]
+    assert parameters['minimum_frequency'] == pytest.approx(27.5)
+    assert parameters['maximum_frequency'] == pytest.approx(261.6255653)
+    assert parameters['onset_threshold'] == .5 and parameters['frame_threshold'] == .3
+    assert parameters['minimum_note_length'] == 90 and not parameters['melodia_trick']
+
+
+def test_detailed_bass_keeps_original_decoder_without_consensus(tmp_path, fake_inference):
+    from app.services.piano_transcription import _GeneralEngine
+
+    path = tmp_path / 'bass.wav'
+    sf.write(path, np.full(22050, .01), 22050)
+    fake_inference.results.append([(40, .1, .5)])
+    engine = _GeneralEngine('detailed')
+    assert engine.predict(path, 'bass', 120).instruments[0].notes[0].pitch == 40
+    assert engine.bass_verifier is None and engine.bass_verification is None
+    assert fake_inference.calls[0][1]['melodia_trick'] is True
+
+
 @pytest.mark.parametrize('manual', [False, True])
 def test_repeated_note_tempo_reaches_written_midi_and_honors_manual_override(
         tmp_path, fake_inference, monkeypatch, manual):
@@ -325,7 +380,6 @@ def test_repeated_note_tempo_reaches_written_midi_and_honors_manual_override(
 
 def test_full_mix_rhythm_uses_lead_phase_instead_of_denser_backing(tmp_path, monkeypatch):
     import pretty_midi
-
     from app.services import piano_transcription, source_separation
 
     audio, output = tmp_path / 'fixture.wav', tmp_path / 'out.mid'

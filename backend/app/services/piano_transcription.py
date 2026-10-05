@@ -152,6 +152,8 @@ class _GeneralEngine:
         self.vocal_model = None
         self.note_verifier = None
         self.verification = None
+        self.bass_verifier = None
+        self.bass_verification = None
 
     def predict(self, path: Path, role: str, bpm: float):
         import pretty_midi
@@ -180,6 +182,17 @@ class _GeneralEngine:
             # Decode continuous evidence, including frames for which Basic
             # Pitch's generic event thresholds emitted no note at all.
             return self.vocal_model.predict(path, arrays, bpm)
+        if role == 'bass' and self.detail == 'balanced':
+            from app.services.bass_verifier import BassVerifier
+
+            if self.bass_verifier is None:
+                self.bass_verifier = BassVerifier()
+                self.bass_verification = {'model': self.bass_verifier.name,
+                                          'window_candidates': 0, 'window_rejections': 0}
+            # Bass training uses these same frequency-bounded Basic Pitch
+            # arrays and events. It does not use the accompaniment decoder.
+            self.bass_verification['window_candidates'] += sum(len(p.notes) for p in midi.instruments)
+            self.bass_verification['window_rejections'] += self.bass_verifier.filter(path, arrays, midi)
         if verify:
             from app.services.accompaniment_verifier import AccompanimentVerifier
 
@@ -302,8 +315,12 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
     verification = getattr(engine, 'verification', None)
     if verification:
         engine_name += f" + {verification['model']}"
+    bass_verification = getattr(engine, 'bass_verification', None)
+    if bass_verification:
+        engine_name += f" + {bass_verification['model']}"
     return {"engine": engine_name,
             "accompaniment_verification": verification,
+            "bass_verification": bass_verification,
             "tempo_bpm": bpm, "note_count": len(notes), "raw_note_count": raw_count,
             "key_signature": key_signature, "transcription_mode": mode,
             "timing_offset_seconds": timing_offset,

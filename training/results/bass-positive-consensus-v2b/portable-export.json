@@ -1,0 +1,25 @@
+{
+  "checkpoint_sha256": "b7472b3842fd58985cf12ea7f2ebcabdc4aab34dda382baeb62f444862e2a766",
+  "batch_selection_sha256": "e405c529e576a41349d1fb4011509001479905d579c5ac5875c7646b575142fc",
+  "held_report_sha256": "90c2af6f7f628489de3e8a9d78a21483caf9fa6f0ea348a353ee149254ce45df",
+  "reserved_report_sha256": "f4f45471a391a5afd85f17d0db74a83934bd4727438d7c4154a9c2ad32c4b048",
+  "export_code_sha256": "3cf6f534b722ee958f39010e97ce7bbde018756532525eafa51e0b6e3a1aa7c8",
+  "arrays": [
+    {
+      "filename": "bass-positive-consensus-v2.npz",
+      "sha256": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "threshold": 0.1,
+      "feature_count": 52
+    },
+    {
+      "filename": "bass-positive-guardian-v2.npz",
+      "sha256": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "threshold": 0.1,
+      "feature_count": 26
+    }
+  ],
+  "parity_tolerance": 1e-12,
+  "candidate_events": 1813,
+  "deployed": false,
+  "scope": "Portable verification only; production integration/parity still required."
+}

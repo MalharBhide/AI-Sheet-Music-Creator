@@ -613,3 +613,20 @@ The GitHub Actions native-pipeline job runs the same integration suite in the ba
   pitch-coverage gates, and unchanged ten false detections. No test-based retuning.
 - Four reserved Slakh groups now qualify for one-shot preparation. No portable
   assets exported or production model/routing changed at this checkpoint.
+
+
+## V10 trained bass release — 2026-10-04
+
+- Reserved 20-clip check passes every attack/offset/pitch interval gate, retains
+  all 357 matches, reduces false notes 1,091→1,050; bass F1 .2846→.2893, recall
+  .3365 unchanged. Small synthesized-source improvement, not universal accuracy.
+- Safe export and full 481-clip / 36,989-event parity have exact sklearn/portable
+  probabilities and runtime keep masks; all retained attributes/parts preserved.
+- Added balanced bass-only routing and model health checks. Six native DSP cases
+  (including 32 seconds/subframe) preserve expected tuples; 355 backend/training
+  tests and all six native pipeline integrations pass. Every output/download and
+  playback position is validated; no user audio or saved scores processed.
+- Backend build and idle-queue deployment succeed. Frontend health ready with
+  bass models, live heads .1/.1 and 52/26 features, exact tested service/routing
+  hashes. Three existing completed jobs unchanged. All prior failed models kept
+  offline; continued training must compare the deployed V10 baseline.
