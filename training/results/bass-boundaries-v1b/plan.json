@@ -1,0 +1,91 @@
+{
+  "version": "bass-touching-boundary-v1",
+  "baseline_hashes": {
+    "version": "shipped-bass-v10-baseline-v1",
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd"
+    },
+    "thresholds": [
+      0.1,
+      0.1
+    ],
+    "sources": {
+      "training/current_bass_baseline.py": "52c5ff81f84237e2f06bf0993c64c21a2b85c9f0761b20c7fa28bf0bc978ad81",
+      "training/bass_training_data.py": "89933478f12e60df3ffa770d9e484f8465c0f54157bec469b141e584666b5d6d",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/piano_transcription.py": "4ec45a82f37ea976b3218e8615d9221bc63390c409fbfb6e3ddffa40b400fc80"
+    }
+  },
+  "code_sha256": {
+    "training/train_bass_boundaries.py": "f808796d577e8008e760295d800ab215c2a49ea7a9aec95749494fbece40882b",
+    "training/bass_boundary_evidence.py": "5f2e043afdedc1113e23b68eb1e018e02f54958eabfe0c70b840fcf9d6c0689c",
+    "training/bass_boundary_release.py": "a5c2ff5fd830363f7743bee45102a7a658401af2aa329f0cbd9316cc62536769",
+    "training/current_bass_baseline.py": "52c5ff81f84237e2f06bf0993c64c21a2b85c9f0761b20c7fa28bf0bc978ad81",
+    "training/repeat_boundary_features.py": "2dc36abe11abe256ae32a32983a7149cf21869120f061ebba3d023dcef3e0b0d",
+    "training/bass_predictions.py": "41e90e5b146ba09d4ec53431d0a1ce8e5575bec68a10d32fe345120b39b70632",
+    "training/bass_training_data.py": "89933478f12e60df3ffa770d9e484f8465c0f54157bec469b141e584666b5d6d",
+    "training/train_bass_consensus.py": "24eaab3d2d56435270917345ded06d3320ed70ac7f8bf7b09e0e39a8bad72430",
+    "training/pitch_interval_coverage.py": "87408dad16d6bdbfae854cca7327f44eb9b4ddd6f972e930f5b7d01629f666ee",
+    "training/evaluate_context_correction.py": "5ca153171ef1767f89547c59b9705cef366788c151b704173c4f21af475afd32",
+    "training/train_left_hand_verifier.py": "14d5378004e18203bad454f93386b04227f3bfe17a8b520a5517340fc2ca5aea",
+    "training/train_note_verifier.py": "5380ef2010909c42cb161a3108c27c619ab687915d5c28fc46291718a49cf117"
+  },
+  "manifests": {
+    "/training/slakh-bass-v1": "9469b634adf201dd43a7638f9efe3a68a095d5ef907d157081a6e14e3316e2f8",
+    "/training/bass-positive-data-v1": "d9b63fb0f1668f94c4f20c6384166a78169277c35f8d76410c0b0fb5fa060582"
+  },
+  "consumed_regression_manifests": {
+    "/training/bass-held-regression-v1": "40ea140c65811bc38173d52c74baca8340949418403273540c3a0ceb221bc8b6",
+    "/training/slakh-bass-positive-reserved-v2": "f22f2eabbb274852247cecdaebc1c7ed1a669899c3fd245f0aee1b1f54c94b6f"
+  },
+  "profiles": [
+    {
+      "name": "guarded",
+      "max_iter": 350,
+      "positive_weight": 30.0,
+      "min_samples_leaf": 40,
+      "max_leaf_nodes": 15,
+      "l2_regularization": 8.0
+    },
+    {
+      "name": "recall",
+      "max_iter": 500,
+      "positive_weight": 60.0,
+      "min_samples_leaf": 20,
+      "max_leaf_nodes": 15,
+      "l2_regularization": 8.0
+    }
+  ],
+  "stages": [
+    100,
+    200,
+    350,
+    500
+  ],
+  "threshold_grid": [
+    0.001,
+    0.002,
+    0.005,
+    0.01,
+    0.025,
+    0.05,
+    0.1
+  ],
+  "guardian_grid": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "safety_factor": 0.5,
+  "feature_counts": [
+    112,
+    60
+  ],
+  "sklearn_version": "1.9.0",
+  "selection": "Validation only: maximum safe false attack reduction, then lower log loss, fewer trees and fixed profile order.",
+  "gates": "Every matched attack and offset, each reference pitch span, entire detected pitch-time union, per-recording false-note nonincrease.",
+  "scope": "Offline balanced bass only; no user audio, transcription jobs or score generation. No release without independent gates."
+}

@@ -1,5 +1,22 @@
 # Verification
 
+## Bass hold/repeat training — candidate withheld, 2026-10-04
+
+Trained two paired profiles on 7,042 labeled bass boundaries against the pinned
+V10 website baseline. The frozen validation winner removed ten false attacks
+with all 4,150 matches retained. All 28 consumed regression clips were unchanged.
+A first-pass check of 32 new original MP3 note/timbre seeds reduced six false
+attacks, but lost a previously correct key offset in one recording despite
+unchanged aggregate recall and exact pitch-time coverage. The per-recording gate
+rejected it. No runner-up, retuning, export or deployment occurred; V10 stays live.
+The new corpus is now consumed regression. No user audio or scores were processed.
+
+**376 backend/training tests passed, six opt-in integration tests skipped** for
+this offline framework change. The six native integration cases already passed
+for the unchanged V10 release. Ruff and diff checks pass. Frozen checkpoint,
+manifests, validation and rejection evidence are archived. See
+[the experiment](docs/bass-repeat-training.md).
+
 ## Learned repeat attacks V9 — 2026-10-04
 
 Trained two paired boundary profiles on 19,292 labeled genuine-repeat/split-hold

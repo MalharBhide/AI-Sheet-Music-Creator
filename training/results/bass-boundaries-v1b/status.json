@@ -1,0 +1,30 @@
+{
+  "state": "withheld",
+  "website_model": "V10 remains deployed",
+  "validation": {
+    "true_positives": 4150,
+    "false_positives_before": 2888,
+    "false_positives_after": 2878,
+    "passes": true
+  },
+  "consumed_regression": {
+    "recordings": 28,
+    "true_positives": 567,
+    "false_positives": 1060,
+    "false_notes_removed": 0,
+    "passes": true
+  },
+  "original_first_pass": {
+    "recordings": 32,
+    "true_positives": 615,
+    "false_positives_before": 199,
+    "false_positives_after": 193,
+    "passes": false,
+    "failed_recording": "bass-boundary-stress-v1-261203",
+    "reason": "A previously matched key offset was lost despite unchanged aggregate attack recall and exact pitch-time union."
+  },
+  "candidate_checkpoint_sha256": "fd5871dbb72bc61174d76c633e9523ab983ea82642564736b68bcd9114a41740",
+  "no_runner_up_retuning_export_or_deployment": true,
+  "no_user_audio_or_scores": true,
+  "next_training_hypothesis": "Train key-release-preserving boundary supervision from fitting annotations, independent of pitch-support continuation. Do not fit the failed first-pass examples; they are now consumed regression."
+}

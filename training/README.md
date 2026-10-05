@@ -5,22 +5,37 @@ retaining V9 accompaniment processing. It removes 41 false bass detections on
 20 reserved-source clips with all 357 matched notes and measured holds retained.
 All release gates and native checks pass. Earlier failed bass weights are withheld.
 
+The [new bass repeat/hold experiment](../docs/bass-repeat-training.md) learns to
+join false repeated attacks without losing pitch spans. `current_bass_baseline.py`
+pins the published V10 decisions; all future bass candidates must compare against
+those decisions. The original stress and reserved-source Slakh clips are now
+consumed regression, never fresh evidence or fitting data.
+The boundary batch completed and its winner is withheld: it removed false attacks
+but lost a correct key offset in first-pass original stress. That corpus is now
+also consumed regression. V10 remains deployed while release-aware labels are
+developed for the next batch.
+
+The [original MusicNet assessment](../docs/musicnet-training-assessment.md)
+verifies publisher license and metadata only. Its audio/labels have not been
+fitted; mixed MusicNetEM variants are not substitutes for the original release.
+
 The [bass training framework](../docs/bass-consensus-training.md) adds 56 training
-and 20 validation source-paired/MP3/Demucs clips. Four pairs completed fitting;
-the 500-tree validation winner fails original stress and is withheld. Its later
-600-tree stage removes fewer validation false notes and is not selected. Reserved
-Slakh groups remain unscored; no bass candidate is deployed.
+and 20 validation source-paired/MP3/Demucs clips. The initial four-pair batch's
+500-tree validation winner failed original stress and remains withheld. The later
+expanded-positive batch passed all release gates and supplies V10 above. Its
+reserved Slakh evaluation is complete and those groups are now consumed.
 
 The [polyphonic training framework](../docs/polyphonic-training-framework.md)
 adds 64 licensed multi-instrument MP3 clips with MIDI pedal/crop pitch support.
 The four-profile batch completed and was withheld after no regression gain.
-Reserved source groups stay untouched; V9 remains deployed.
+That historical experiment kept its reserved groups untouched and retained V9.
+The current V10 release above retains V9 accompaniment and adds bass verification.
 
 V10 retains [learned repeat-attack V9](../docs/repeat-boundary-model-v9.md),
 following the [pitch-preserving V8 release](../docs/pitch-preserving-consensus-v8.md).
 The MP3 augmentation is complete. Both releases preserve matched attacks and
 offsets; V9 also preserves the exact detected pitch-time union when joining holds.
-Future experiments must include V9 decisions. `current_accompaniment_baseline.py`
+Future accompaniment experiments must include V9 decisions. `current_accompaniment_baseline.py`
 pins historical V8; older V7 helpers reproduce their historical studies.
 
 Model development uses labeled corpus features and explicit regression gates.
