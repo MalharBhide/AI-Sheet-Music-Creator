@@ -1,0 +1,33 @@
+Bass harmonic verifier v1 (website V14)
+
+Copyright 2026 Piano Scribe contributors.
+Newly trained portable model arrays: Creative Commons Attribution 4.0.
+https://creativecommons.org/licenses/by/4.0/
+
+Training recipe and limitations: docs/bass-harmonic-v14.md.
+Two 600-tree classifiers on actual post-V13 bass intervals, with fixed
+84/52-feature context/guardian heads and strict .025/.3 rejection thresholds.
+This release retains V10 verification, V11 key-release protection, V12
+unsupported-pitch rejection and V13 acoustic texture rejection.
+The underlying Basic Pitch, Demucs, vocal and solo-piano networks are unchanged.
+
+Training data (CC BY 4.0):
+GuitarSet 1.1.0: Qingyang Xi, Rachel M. Bittner, Johan Pauwels, Xuzhou Ye,
+and Juan P. Bello. https://zenodo.org/records/3371780
+BabySlakh v2: Ethan Manilow, Gordon Wichern, Prem Seetharaman, Jonathan Le Roux.
+Cutting Music Source Separation Some Slakh, WASPAA 2019.
+https://zenodo.org/records/4603870
+
+Additional data: original project-authored bass signals and note sequences.
+Original MP3 variants and separated full-mixture Demucs bass crops keep their
+source-group training/validation partition. No user recordings or scores used.
+Frozen provenance: training/results/bass-harmonic-v13-v1.
+
+Scope: balanced Full-song bass, frequency-bounded Basic Pitch pitches 21–59.
+Both heads must independently reject a note. Context edges, other registers,
+threshold equality and either-head veto are protected. Retained objects keep
+pitch, attack, end, velocity and source part. Candidate evidence is recomputed
+after hold repair, V12 and V13 deletion. Learner inputs contain acoustic evidence
+and harmonic attack/release candidate relations, with no fitted-model
+probabilities. This is a limited-corpus improvement, not an assurance of
+correct transcription for arbitrary commercial songs.

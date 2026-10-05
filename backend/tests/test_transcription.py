@@ -180,6 +180,7 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
     from app.services import (
         accompaniment_verifier,
         bass_articulation,
+        bass_harmonic,
         bass_residual,
         bass_texture,
         bass_verifier,
@@ -250,6 +251,15 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
 
     monkeypatch.setattr(bass_texture, 'BassTexture', BassTexture)
 
+    class BassHarmonic:
+        name = 'Test bass harmonic'
+
+        def filter(self, path, acoustic, output):
+            assert [n.pitch for n in output.instruments[0].notes] == [36, 48]
+            return 0
+
+    monkeypatch.setattr(bass_harmonic, 'BassHarmonic', BassHarmonic)
+
     fake_inference.results.extend([
         [],  # Vocal decoding must still run when Basic Pitch emits no events.
         [(36, 0, 1), (48, 0, 1)],
@@ -268,9 +278,10 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
         'model': 'Test verifier', 'window_candidates': 5, 'window_rejections': 1}
     assert report['bass_verification'] == {
         'model': 'Test bass verifier', 'articulation_model': 'Test bass articulation',
-        'residual_model': 'Test bass residual', 'texture_model': 'Test bass texture', 'window_candidates': 2,
+        'residual_model': 'Test bass residual', 'texture_model': 'Test bass texture',
+        'harmonic_model': 'Test bass harmonic', 'window_candidates': 2,
         'window_rejections': 0, 'window_merged_boundaries': 0, 'window_residual_rejections': 0,
-        'window_texture_rejections': 0}
+        'window_texture_rejections': 0, 'window_harmonic_rejections': 0}
     assert report['support_notes_changed_for_bass'] == 1
     assert [(n.pitch, n.start, n.end) for n in result.instruments[1].notes] == [(36, 0, 1)]
     assert fake_inference.calls[2][1]['minimum_frequency'] is None
@@ -352,7 +363,13 @@ def test_detailed_accompaniment_keeps_its_validated_detector_path(tmp_path, fake
 
 
 def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp_path, fake_inference, monkeypatch):
-    from app.services import bass_articulation, bass_residual, bass_texture, bass_verifier
+    from app.services import (
+        bass_articulation,
+        bass_harmonic,
+        bass_residual,
+        bass_texture,
+        bass_verifier,
+    )
     from app.services.piano_transcription import _GeneralEngine
 
     path = tmp_path / 'bass.wav'
@@ -416,6 +433,21 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
 
     monkeypatch.setattr(bass_texture, 'BassTexture', BassTexture)
 
+    harmonics = []
+
+    class BassHarmonic:
+        name = 'Test bass harmonic'
+
+        def __init__(self):
+            harmonics.append(self)
+
+        def filter(self, path, acoustic, output):
+            assert [n.pitch for n in output.instruments[0].notes] == [40]
+            assert len(textures) == 1
+            return 0
+
+    monkeypatch.setattr(bass_harmonic, 'BassHarmonic', BassHarmonic)
+
     fake_inference.results.extend([[(40, 3., 4.), (52, 3., 4.)]] * 2)
     engine = _GeneralEngine('balanced')
     for _ in range(2):
@@ -425,11 +457,13 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
     assert len(articulations) == 1 and engine.bass_articulation is articulations[0]
     assert len(residuals) == 1 and engine.bass_residual is residuals[0]
     assert len(textures) == 1 and engine.bass_texture is textures[0]
+    assert len(harmonics) == 1 and engine.bass_harmonic is harmonics[0]
     assert engine.bass_verification['window_candidates'] == 4
     assert engine.bass_verification['window_rejections'] == 2
     assert engine.bass_verification['window_merged_boundaries'] == 0
     assert engine.bass_verification['window_residual_rejections'] == 0
     assert engine.bass_verification['window_texture_rejections'] == 0
+    assert engine.bass_verification['window_harmonic_rejections'] == 0
     parameters = fake_inference.calls[0][1]
     assert parameters['minimum_frequency'] == pytest.approx(27.5)
     assert parameters['maximum_frequency'] == pytest.approx(261.6255653)

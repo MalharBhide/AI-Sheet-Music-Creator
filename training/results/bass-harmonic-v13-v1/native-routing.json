@@ -1,0 +1,121 @@
+{
+  "passes": true,
+  "cases": [
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-held",
+      "duration": 30.0,
+      "raw_candidates": 2,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "v13_rejected": 0,
+      "harmonic_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-repeated",
+      "duration": 30.0,
+      "raw_candidates": 48,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "v13_rejected": 0,
+      "harmonic_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-octave",
+      "duration": 30.0,
+      "raw_candidates": 24,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "v13_rejected": 0,
+      "harmonic_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "slakh-bass-v1-Track00006-oracle-000",
+      "duration": 30.0,
+      "raw_candidates": 28,
+      "v10_rejected": 3,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "v13_rejected": 0,
+      "harmonic_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-harmonic-fresh-v1-262818",
+      "duration": 30.0,
+      "raw_candidates": 15,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "v13_rejected": 1,
+      "harmonic_rejected": 1,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-harmonic-fresh-v1-262819",
+      "duration": 30.0,
+      "raw_candidates": 61,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "v13_rejected": 9,
+      "harmonic_rejected": 1,
+      "passes": true
+    },
+    {
+      "case": "window-32.wav",
+      "directory": "bass-harmonic-native-v1",
+      "duration": 32.0,
+      "raw_candidates": 7,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "v13_rejected": 0,
+      "harmonic_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "short.wav",
+      "directory": "bass-harmonic-native-v1",
+      "duration": 0.049977324263038546,
+      "raw_candidates": 0,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "v13_rejected": 0,
+      "harmonic_rejected": 0,
+      "passes": true
+    }
+  ],
+  "checkpoint_sha256": "f0ee96e6efd5112b9f7e89f6b9ddf9fb28f10fb4f67ea388044c52c3ad867a57",
+  "portable_runtime_report_sha256": "e2cce7e0207522794fecde85a4d3cbb6fb6b1b4860b0c3bf5aacfcf59093db7b",
+  "routing_source_sha256": "fd583fc64f0bdb4a882a0d0bac708cda713dcb3bbf43f1ea20c628bf3f020b73",
+  "runtime_source_sha256": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7",
+  "script_sha256": "3c608ce0d4ebadda00acb48cd4bac9a34e0ad91c53b965e3764a76010ea3c118",
+  "bass_metadata": {
+    "model": "Bass note verifier v1 (trained conservative consensus)",
+    "articulation_model": "Bass articulation v1 (trained key-release protection)",
+    "residual_model": "Bass residual v1 (trained unsupported-pitch rejection)",
+    "texture_model": "Bass texture verifier v1 (trained acoustic rejection)",
+    "harmonic_model": "Bass harmonic verifier v1 (trained attack/release rejection)",
+    "window_candidates": 185,
+    "window_rejections": 3,
+    "window_merged_boundaries": 0,
+    "window_residual_rejections": 0,
+    "window_texture_rejections": 10,
+    "window_harmonic_rejections": 2
+  },
+  "release_seal_sha256": "c753da1175def7692aeeae9458f59d207180bf777bb14569567082a73bfa705a",
+  "checks": "Native bounded Basic Pitch and actual post-hold audio/features; frozen sklearn harmonic decisions match the complete V10 + V11 + V12 + V13 + harmonic route. Exact retained pitches/attacks/ends/velocities. Original/licensed fixtures only; no user uploads or scores."
+}

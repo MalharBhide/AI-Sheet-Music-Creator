@@ -6,7 +6,15 @@ The transcription design is informed by an [extensive review of Songscription, K
 
 Balanced full-song accompaniment now also uses a trained note verifier to reject unsupported candidate notes. See its [model card and measured limits](docs/accompaniment-verifier.md). Re-upload a recording to apply it to an older score.
 
-The latest [V13 bass texture verifier](docs/bass-texture-v13.md) learns to reject
+The latest [V14 harmonic bass verifier](docs/bass-harmonic-v14.md) uses learned
+harmonic attack/release evidence to remove additional unsupported low notes.
+On 32 new original MP3 fixtures it removes 13 false notes, preserving all 544
+previously matched notes and holds. Validation and consumed regressions also
+retain every matched attack/hold and supplied pitch interval. These limited
+checks do not establish accuracy on arbitrary songs. The original note size
+stays unchanged.
+
+The [V13 bass texture verifier](docs/bass-texture-v13.md) learns to reject
 unsupported bass pitches after the previous bass stages. On 32 new original MP3
 fixtures it removes 36 false notes while preserving all 604 previously matched
 notes and holds. This is controlled evidence, not a commercial-song accuracy

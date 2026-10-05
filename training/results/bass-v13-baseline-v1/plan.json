@@ -1,0 +1,63 @@
+{
+  "version": "shipped-bass-v13-baseline-v1",
+  "baseline_hashes": {
+    "version": "shipped-bass-v13-baseline-v1",
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51",
+      "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb",
+      "bass-texture-v1.npz": "f1e829c7d4328afc38268cc8dbe8afb526c6860efafd3d272170cf3aca768d3e",
+      "bass-texture-guardian-v1.npz": "82f4ed13e9cf5a7a832a8a066f23ff9f7642aa187da664779a900d55b807e994"
+    },
+    "thresholds": [
+      [
+        0.1,
+        0.1
+      ],
+      [
+        0.05,
+        0.05
+      ],
+      [
+        0.05,
+        0.1
+      ],
+      [
+        0.025,
+        0.3
+      ]
+    ],
+    "sources": {
+      "backend/app/services/piano_transcription.py": "f9f0037c50c11f022dd75749d8d1c86732c9ced4bcea9f9553701c208980b5f0",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "backend/app/services/bass_texture.py": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/candidate_relations.py": "3a1b6caf5eaebf444f3cdcddb7abc8835c86f665721ab476e03c1c1dbc58d029",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "training/current_bass_v13_baseline.py": "d9b9006bd60c6c2e771b4373140158adf40165ac7e2e9f05f5d0a255fb2bc7db"
+    }
+  },
+  "release_root": "/training/bass-texture-learner-v3",
+  "witness_sha256": {
+    "plan.json": "6b5a2524f3adf4dae2a7aeacccc5490e8e046e8490297b4523273c0354908b22",
+    "runtime-parity.json": "305fad1bd4a2f46d7a3583e9da53e935a8d49d7df1977735960fa4625dda5d68",
+    "native-routing.json": "2620a5186d7bbbbcfce1310db061a6fadee378137f701a99626a252544b27603",
+    "original-first-pass.json": "b0462acff307659e2b312af4c24885452b53e6d74317ca1b265b7273e1d7a395",
+    "release-seal.json": "77825687a2b9a1aa5fb2ce72e2807cc79e2ef8ac0fb39063a082a0bde8231cbb"
+  },
+  "consumed_first_pass_root": "/training/bass-texture-fresh-v1",
+  "code_sha256": "db7e4e59250e43b0a581fb928faeea1617d2710c1afdf60ce0d0da0bd27d15ef",
+  "expected_counts": {
+    "train": 531,
+    "validation": 146,
+    "test": 188
+  },
+  "no_audio_inference": true,
+  "no_user_audio_or_scores": true,
+  "scope": "All 865 sealed V12 recordings, apply released V13 deletion only; recompute neighbors. 188 consumed tests never fit/select."
+}
