@@ -1,0 +1,812 @@
+{
+  "validation_only": true,
+  "recordings": 160,
+  "test_audio_or_metrics_used": false,
+  "new_winner_selected": false,
+  "deployed": false,
+  "plan_sha256": "79c5ff6f38efacfb960f4493c0370cf237477b0122fe0b20f52f297717c0fb82",
+  "producer_sha256": "e2e444c2b86387ec53e777252b525e2f7f6cb91c7d95456f98d9b1d61d34440f",
+  "scope": "Explain rejected final-stage validation. Aggregate gains do not waive any per-recording gate.",
+  "profiles": [
+    {
+      "profile": "protected",
+      "checkpoint_sha256": "9681705449a4828dfb0cb85dea6cabdf7034e02179026192247aa053db45dc71",
+      "timing_threshold": 0.95,
+      "remove_threshold": 0.99,
+      "passes": false,
+      "onset_error_reduction_seconds": 0.6971819360827474,
+      "retimed_notes": 39,
+      "false_notes_removed": 9,
+      "failures": [
+        {
+          "id": "slakh-bass-v1-Track00011-oracle-000",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.0,
+            "repeated_spacing_error_increase_seconds": 0.05934784580499297,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "slakh-bass-v1-Track00011-oracle-030",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.0,
+            "repeated_spacing_error_increase_seconds": 0.0077157505668843385,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "slakh-bass-v1-Track00011-oracle-060",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.0,
+            "repeated_spacing_error_increase_seconds": 0.081648038548785,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "slakh-bass-v1-Track00011-oracle-090",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.0,
+            "repeated_spacing_error_increase_seconds": 0.012592507936506792,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "bass-positive-v1-04_Rock1-130-A_comp",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.019999999999999574,
+            "repeated_spacing_error_increase_seconds": 0.0,
+            "extra_false_positives": 0
+          }
+        }
+      ],
+      "aggregate": {
+        "guitarset-bass-register": {
+          "baseline": {
+            "precision": 0.6759334415584416,
+            "recall": 0.7532790592492085,
+            "f1": 0.7125133689839572,
+            "true_positives": 3331,
+            "false_positives": 1597,
+            "predicted": 4928,
+            "reference": 4422,
+            "seconds": 1578.3827210884353,
+            "false_positives_per_minute": 60.70770968268303
+          },
+          "candidate": {
+            "precision": 0.6761363636363636,
+            "recall": 0.7535052012663953,
+            "f1": 0.7127272727272728,
+            "true_positives": 3332,
+            "false_positives": 1596,
+            "predicted": 4928,
+            "reference": 4422,
+            "seconds": 1578.3827210884353,
+            "false_positives_per_minute": 60.66969608864253
+          },
+          "timing": {
+            "pairs": 3469,
+            "repeated_spacing_pairs": 0,
+            "before_onset_release_mae_seconds": [
+              0.023805639323091585,
+              0.12864713925543475
+            ],
+            "before_repeated_spacing_mae_seconds": 0.0,
+            "after_onset_release_mae_seconds": [
+              0.02379987397284656,
+              0.1286529046056798
+            ],
+            "after_repeated_spacing_mae_seconds": 0.0
+          }
+        },
+        "original-bass-texture": {
+          "baseline": {
+            "precision": 0.6,
+            "recall": 0.8768267223382046,
+            "f1": 0.712468193384224,
+            "true_positives": 420,
+            "false_positives": 280,
+            "predicted": 700,
+            "reference": 479,
+            "seconds": 720.0,
+            "false_positives_per_minute": 23.333333333333332
+          },
+          "candidate": {
+            "precision": 0.6071428571428571,
+            "recall": 0.8872651356993737,
+            "f1": 0.720949957591179,
+            "true_positives": 425,
+            "false_positives": 275,
+            "predicted": 700,
+            "reference": 479,
+            "seconds": 720.0,
+            "false_positives_per_minute": 22.916666666666668
+          },
+          "timing": {
+            "pairs": 445,
+            "repeated_spacing_pairs": 299,
+            "before_onset_release_mae_seconds": [
+              0.014810392111901006,
+              0.15908315693817124
+            ],
+            "before_repeated_spacing_mae_seconds": 0.019182012604372665,
+            "after_onset_release_mae_seconds": [
+              0.014405897729878539,
+              0.15908315693817124
+            ],
+            "after_repeated_spacing_mae_seconds": 0.018914454075944578
+          }
+        },
+        "original-bass-timbres": {
+          "baseline": {
+            "precision": 0.78125,
+            "recall": 0.8695652173913043,
+            "f1": 0.823045267489712,
+            "true_positives": 600,
+            "false_positives": 168,
+            "predicted": 768,
+            "reference": 690,
+            "seconds": 960.0,
+            "false_positives_per_minute": 10.5
+          },
+          "candidate": {
+            "precision": 0.7825520833333334,
+            "recall": 0.8710144927536232,
+            "f1": 0.8244170096021948,
+            "true_positives": 601,
+            "false_positives": 167,
+            "predicted": 768,
+            "reference": 690,
+            "seconds": 960.0,
+            "false_positives_per_minute": 10.4375
+          },
+          "timing": {
+            "pairs": 628,
+            "repeated_spacing_pairs": 426,
+            "before_onset_release_mae_seconds": [
+              0.016817271112266826,
+              0.13400857294121238
+            ],
+            "before_repeated_spacing_mae_seconds": 0.021115703746287223,
+            "after_onset_release_mae_seconds": [
+              0.01672172971099294,
+              0.13400857294121238
+            ],
+            "after_repeated_spacing_mae_seconds": 0.020937810992941744
+          }
+        },
+        "slakh-demucs-bass": {
+          "baseline": {
+            "precision": 0.19310344827586207,
+            "recall": 0.08665749656121045,
+            "f1": 0.11962971754094469,
+            "true_positives": 252,
+            "false_positives": 1053,
+            "predicted": 1305,
+            "reference": 2908,
+            "seconds": 480.0,
+            "false_positives_per_minute": 131.625
+          },
+          "candidate": {
+            "precision": 0.19310344827586207,
+            "recall": 0.08665749656121045,
+            "f1": 0.11962971754094469,
+            "true_positives": 252,
+            "false_positives": 1053,
+            "predicted": 1305,
+            "reference": 2908,
+            "seconds": 480.0,
+            "false_positives_per_minute": 131.625
+          },
+          "timing": {
+            "pairs": 263,
+            "repeated_spacing_pairs": 187,
+            "before_onset_release_mae_seconds": [
+              0.026436839057500668,
+              0.25895100002101734
+            ],
+            "before_repeated_spacing_mae_seconds": 0.02387307032661561,
+            "after_onset_release_mae_seconds": [
+              0.02628474780274782,
+              0.25895100002101734
+            ],
+            "after_repeated_spacing_mae_seconds": 0.02385460123443328
+          }
+        },
+        "slakh-oracle-bass": {
+          "baseline": {
+            "precision": 0.3309608540925267,
+            "recall": 0.4479768786127168,
+            "f1": 0.38067949242734345,
+            "true_positives": 465,
+            "false_positives": 940,
+            "predicted": 1405,
+            "reference": 1038,
+            "seconds": 480.0,
+            "false_positives_per_minute": 117.5
+          },
+          "candidate": {
+            "precision": 0.3323843416370107,
+            "recall": 0.44990366088631983,
+            "f1": 0.3823168235775686,
+            "true_positives": 467,
+            "false_positives": 938,
+            "predicted": 1405,
+            "reference": 1038,
+            "seconds": 480.0,
+            "false_positives_per_minute": 117.25
+          },
+          "timing": {
+            "pairs": 470,
+            "repeated_spacing_pairs": 387,
+            "before_onset_release_mae_seconds": [
+              0.023439016853468185,
+              0.1731050603613356
+            ],
+            "before_repeated_spacing_mae_seconds": 0.010366219190734027,
+            "after_onset_release_mae_seconds": [
+              0.022593948904355947,
+              0.1731050603613356
+            ],
+            "after_repeated_spacing_mae_seconds": 0.010783025761424385
+          }
+        },
+        "vienna-demucs-bass-bass": {
+          "baseline": {
+            "precision": 0.5555555555555556,
+            "recall": 0.09615384615384616,
+            "f1": 0.16393442622950818,
+            "true_positives": 15,
+            "false_positives": 12,
+            "predicted": 27,
+            "reference": 156,
+            "seconds": 60.0,
+            "false_positives_per_minute": 12.0
+          },
+          "candidate": {
+            "precision": 0.5555555555555556,
+            "recall": 0.09615384615384616,
+            "f1": 0.16393442622950818,
+            "true_positives": 15,
+            "false_positives": 12,
+            "predicted": 27,
+            "reference": 156,
+            "seconds": 60.0,
+            "false_positives_per_minute": 12.0
+          },
+          "timing": {
+            "pairs": 17,
+            "repeated_spacing_pairs": 11,
+            "before_onset_release_mae_seconds": [
+              0.0291760304121643,
+              0.3616632653061216
+            ],
+            "before_repeated_spacing_mae_seconds": 0.04136147186147272,
+            "after_onset_release_mae_seconds": [
+              0.0291760304121643,
+              0.3616632653061216
+            ],
+            "after_repeated_spacing_mae_seconds": 0.04136147186147272
+          }
+        },
+        "vienna-piano-mp3-bass": {
+          "baseline": {
+            "precision": 0.7049891540130152,
+            "recall": 0.7888349514563107,
+            "f1": 0.7445589919816724,
+            "true_positives": 650,
+            "false_positives": 272,
+            "predicted": 922,
+            "reference": 824,
+            "seconds": 360.0,
+            "false_positives_per_minute": 45.333333333333336
+          },
+          "candidate": {
+            "precision": 0.7049891540130152,
+            "recall": 0.7888349514563107,
+            "f1": 0.7445589919816724,
+            "true_positives": 650,
+            "false_positives": 272,
+            "predicted": 922,
+            "reference": 824,
+            "seconds": 360.0,
+            "false_positives_per_minute": 45.333333333333336
+          },
+          "timing": {
+            "pairs": 716,
+            "repeated_spacing_pairs": 585,
+            "before_onset_release_mae_seconds": [
+              0.018268510020395323,
+              0.32666560350397084
+            ],
+            "before_repeated_spacing_mae_seconds": 0.022959233094947556,
+            "after_onset_release_mae_seconds": [
+              0.018268510020395323,
+              0.32666560350397084
+            ],
+            "after_repeated_spacing_mae_seconds": 0.022959233094947556
+          }
+        }
+      }
+    },
+    {
+      "profile": "attacks",
+      "checkpoint_sha256": "49c8360908e4759d84f6b3ed3b87fdb727371ee070eb815710903c0a99a67c41",
+      "timing_threshold": 0.95,
+      "remove_threshold": 0.99,
+      "passes": false,
+      "onset_error_reduction_seconds": 3.1246165179987613,
+      "retimed_notes": 187,
+      "false_notes_removed": 22,
+      "failures": [
+        {
+          "id": "slakh-bass-v1-Track00011-oracle-000",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.0,
+            "repeated_spacing_error_increase_seconds": 0.057464086167797745,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "slakh-bass-v1-Track00011-oracle-030",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.0,
+            "repeated_spacing_error_increase_seconds": 0.04522407256237182,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "slakh-bass-v1-Track00011-oracle-090",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.0,
+            "repeated_spacing_error_increase_seconds": 0.061692274376426326,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "slakh-bass-v1-Track00013-oracle-030",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.0,
+            "repeated_spacing_error_increase_seconds": 0.019999999999999574,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "bass-positive-v1-original-261118",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.0,
+            "repeated_spacing_error_increase_seconds": 0.01066394557823358,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "bass-positive-v1-04_BN2-131-B_comp",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.018259410430828016,
+            "release_error_increase_seconds": 0.0,
+            "repeated_spacing_error_increase_seconds": 0.0,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "bass-positive-v1-04_Funk1-114-Ab_solo",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0006077097504437745,
+            "release_error_increase_seconds": 0.0,
+            "repeated_spacing_error_increase_seconds": 0.0,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "bass-positive-v1-04_Rock1-130-A_comp",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.019999999999999574,
+            "repeated_spacing_error_increase_seconds": 0.0,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "bass-original-expanded-v1-261877",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.0,
+            "repeated_spacing_error_increase_seconds": 0.020000000000000018,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "bass-original-expanded-v1-261880",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.020000000000000018,
+            "repeated_spacing_error_increase_seconds": 0.0,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "bass-texture-v1-262476",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.019999999999999574,
+            "repeated_spacing_error_increase_seconds": 0.0,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "bass-texture-v1-262477",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.019999999999999574,
+            "repeated_spacing_error_increase_seconds": 0.01242630385487331,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "bass-texture-v1-262481",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.019999999999999574,
+            "repeated_spacing_error_increase_seconds": 0.0,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "bass-texture-v1-262483",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.019999999999999574,
+            "repeated_spacing_error_increase_seconds": 0.0,
+            "extra_false_positives": 0
+          }
+        },
+        {
+          "id": "bass-texture-v1-262487",
+          "reasons": {
+            "lost_attacks": 0,
+            "lost_holds": 0,
+            "lost_pitch_seconds": 0.0,
+            "onset_error_increase_seconds": 0.0,
+            "release_error_increase_seconds": 0.05999999999999872,
+            "repeated_spacing_error_increase_seconds": 0.0,
+            "extra_false_positives": 0
+          }
+        }
+      ],
+      "aggregate": {
+        "guitarset-bass-register": {
+          "baseline": {
+            "precision": 0.6759334415584416,
+            "recall": 0.7532790592492085,
+            "f1": 0.7125133689839572,
+            "true_positives": 3331,
+            "false_positives": 1597,
+            "predicted": 4928,
+            "reference": 4422,
+            "seconds": 1578.3827210884353,
+            "false_positives_per_minute": 60.70770968268303
+          },
+          "candidate": {
+            "precision": 0.676948051948052,
+            "recall": 0.7544097693351425,
+            "f1": 0.7135828877005348,
+            "true_positives": 3336,
+            "false_positives": 1592,
+            "predicted": 4928,
+            "reference": 4422,
+            "seconds": 1578.3827210884353,
+            "false_positives_per_minute": 60.51764171248052
+          },
+          "timing": {
+            "pairs": 3469,
+            "repeated_spacing_pairs": 0,
+            "before_onset_release_mae_seconds": [
+              0.023805639323091585,
+              0.12864713925543475
+            ],
+            "before_repeated_spacing_mae_seconds": 0.0,
+            "after_onset_release_mae_seconds": [
+              0.023725786999727348,
+              0.1286529046056798
+            ],
+            "after_repeated_spacing_mae_seconds": 0.0
+          }
+        },
+        "original-bass-texture": {
+          "baseline": {
+            "precision": 0.6,
+            "recall": 0.8768267223382046,
+            "f1": 0.712468193384224,
+            "true_positives": 420,
+            "false_positives": 280,
+            "predicted": 700,
+            "reference": 479,
+            "seconds": 720.0,
+            "false_positives_per_minute": 23.333333333333332
+          },
+          "candidate": {
+            "precision": 0.6142857142857143,
+            "recall": 0.8977035490605428,
+            "f1": 0.729431721798134,
+            "true_positives": 430,
+            "false_positives": 270,
+            "predicted": 700,
+            "reference": 479,
+            "seconds": 720.0,
+            "false_positives_per_minute": 22.5
+          },
+          "timing": {
+            "pairs": 445,
+            "repeated_spacing_pairs": 299,
+            "before_onset_release_mae_seconds": [
+              0.014810392111901006,
+              0.15908315693817124
+            ],
+            "before_repeated_spacing_mae_seconds": 0.019182012604372665,
+            "after_onset_release_mae_seconds": [
+              0.013911515707406636,
+              0.1593977636797443
+            ],
+            "after_repeated_spacing_mae_seconds": 0.01839681629619501
+          }
+        },
+        "original-bass-timbres": {
+          "baseline": {
+            "precision": 0.78125,
+            "recall": 0.8695652173913043,
+            "f1": 0.823045267489712,
+            "true_positives": 600,
+            "false_positives": 168,
+            "predicted": 768,
+            "reference": 690,
+            "seconds": 960.0,
+            "false_positives_per_minute": 10.5
+          },
+          "candidate": {
+            "precision": 0.7877604166666666,
+            "recall": 0.8768115942028986,
+            "f1": 0.8299039780521262,
+            "true_positives": 605,
+            "false_positives": 163,
+            "predicted": 768,
+            "reference": 690,
+            "seconds": 960.0,
+            "false_positives_per_minute": 10.1875
+          },
+          "timing": {
+            "pairs": 628,
+            "repeated_spacing_pairs": 426,
+            "before_onset_release_mae_seconds": [
+              0.016817271112266826,
+              0.13400857294121238
+            ],
+            "before_repeated_spacing_mae_seconds": 0.021115703746287223,
+            "after_onset_release_mae_seconds": [
+              0.016307716972139442,
+              0.13404042007497033
+            ],
+            "after_repeated_spacing_mae_seconds": 0.020594298063513324
+          }
+        },
+        "slakh-demucs-bass": {
+          "baseline": {
+            "precision": 0.19310344827586207,
+            "recall": 0.08665749656121045,
+            "f1": 0.11962971754094469,
+            "true_positives": 252,
+            "false_positives": 1053,
+            "predicted": 1305,
+            "reference": 2908,
+            "seconds": 480.0,
+            "false_positives_per_minute": 131.625
+          },
+          "candidate": {
+            "precision": 0.19310344827586207,
+            "recall": 0.08665749656121045,
+            "f1": 0.11962971754094469,
+            "true_positives": 252,
+            "false_positives": 1053,
+            "predicted": 1305,
+            "reference": 2908,
+            "seconds": 480.0,
+            "false_positives_per_minute": 131.625
+          },
+          "timing": {
+            "pairs": 263,
+            "repeated_spacing_pairs": 187,
+            "before_onset_release_mae_seconds": [
+              0.026436839057500668,
+              0.25895100002101734
+            ],
+            "before_repeated_spacing_mae_seconds": 0.02387307032661561,
+            "after_onset_release_mae_seconds": [
+              0.025600337156360002,
+              0.25895100002101734
+            ],
+            "after_repeated_spacing_mae_seconds": 0.02345730389125347
+          }
+        },
+        "slakh-oracle-bass": {
+          "baseline": {
+            "precision": 0.3309608540925267,
+            "recall": 0.4479768786127168,
+            "f1": 0.38067949242734345,
+            "true_positives": 465,
+            "false_positives": 940,
+            "predicted": 1405,
+            "reference": 1038,
+            "seconds": 480.0,
+            "false_positives_per_minute": 117.5
+          },
+          "candidate": {
+            "precision": 0.3323843416370107,
+            "recall": 0.44990366088631983,
+            "f1": 0.3823168235775686,
+            "true_positives": 467,
+            "false_positives": 938,
+            "predicted": 1405,
+            "reference": 1038,
+            "seconds": 480.0,
+            "false_positives_per_minute": 117.25
+          },
+          "timing": {
+            "pairs": 470,
+            "repeated_spacing_pairs": 387,
+            "before_onset_release_mae_seconds": [
+              0.023439016853468185,
+              0.1731050603613356
+            ],
+            "before_repeated_spacing_mae_seconds": 0.010366219190734027,
+            "after_onset_release_mae_seconds": [
+              0.01942282789974852,
+              0.1731050603613356
+            ],
+            "after_repeated_spacing_mae_seconds": 0.010832122265142134
+          }
+        },
+        "vienna-demucs-bass-bass": {
+          "baseline": {
+            "precision": 0.5555555555555556,
+            "recall": 0.09615384615384616,
+            "f1": 0.16393442622950818,
+            "true_positives": 15,
+            "false_positives": 12,
+            "predicted": 27,
+            "reference": 156,
+            "seconds": 60.0,
+            "false_positives_per_minute": 12.0
+          },
+          "candidate": {
+            "precision": 0.5555555555555556,
+            "recall": 0.09615384615384616,
+            "f1": 0.16393442622950818,
+            "true_positives": 15,
+            "false_positives": 12,
+            "predicted": 27,
+            "reference": 156,
+            "seconds": 60.0,
+            "false_positives_per_minute": 12.0
+          },
+          "timing": {
+            "pairs": 17,
+            "repeated_spacing_pairs": 11,
+            "before_onset_release_mae_seconds": [
+              0.0291760304121643,
+              0.3616632653061216
+            ],
+            "before_repeated_spacing_mae_seconds": 0.04136147186147272,
+            "after_onset_release_mae_seconds": [
+              0.0291760304121643,
+              0.3616632653061216
+            ],
+            "after_repeated_spacing_mae_seconds": 0.04136147186147272
+          }
+        },
+        "vienna-piano-mp3-bass": {
+          "baseline": {
+            "precision": 0.7049891540130152,
+            "recall": 0.7888349514563107,
+            "f1": 0.7445589919816724,
+            "true_positives": 650,
+            "false_positives": 272,
+            "predicted": 922,
+            "reference": 824,
+            "seconds": 360.0,
+            "false_positives_per_minute": 45.333333333333336
+          },
+          "candidate": {
+            "precision": 0.7049891540130152,
+            "recall": 0.7888349514563107,
+            "f1": 0.7445589919816724,
+            "true_positives": 650,
+            "false_positives": 272,
+            "predicted": 922,
+            "reference": 824,
+            "seconds": 360.0,
+            "false_positives_per_minute": 45.333333333333336
+          },
+          "timing": {
+            "pairs": 716,
+            "repeated_spacing_pairs": 585,
+            "before_onset_release_mae_seconds": [
+              0.018268510020395323,
+              0.32666560350397084
+            ],
+            "before_repeated_spacing_mae_seconds": 0.022959233094947556,
+            "after_onset_release_mae_seconds": [
+              0.018240577059501467,
+              0.32666560350397084
+            ],
+            "after_repeated_spacing_mae_seconds": 0.02292504506075952
+          }
+        }
+      }
+    }
+  ]
+}

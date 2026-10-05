@@ -1,0 +1,187 @@
+{
+  "version": "bass-v16-joint-attack-correction-v2",
+  "baseline_hashes": {
+    "version": "shipped-bass-v16-baseline-v1",
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51",
+      "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb",
+      "bass-texture-v1.npz": "f1e829c7d4328afc38268cc8dbe8afb526c6860efafd3d272170cf3aca768d3e",
+      "bass-texture-guardian-v1.npz": "82f4ed13e9cf5a7a832a8a066f23ff9f7642aa187da664779a900d55b807e994",
+      "bass-harmonic-v1.npz": "8184a7c4009d2e26bc1d2f264ec58d8503182cda79667b9c3af7a8bb856ce66c",
+      "bass-harmonic-guardian-v1.npz": "bcab8b156e54db37c3c19dd74e553106499722503abb043ba7fb491d3418f76e",
+      "bass-temporal-v1.npz": "0edc221998bbaacb052fbffe43f6efcce6e759290d0cdb9a7314028521e162c4",
+      "bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775"
+    },
+    "thresholds": [
+      [
+        0.1,
+        0.1
+      ],
+      [
+        0.05,
+        0.05
+      ],
+      [
+        0.05,
+        0.1
+      ],
+      [
+        0.025,
+        0.3
+      ],
+      [
+        0.025,
+        0.3
+      ],
+      [
+        0.005,
+        0.3
+      ],
+      [
+        0.2,
+        0.3
+      ]
+    ],
+    "sources": {
+      "backend/app/services/piano_transcription.py": "d46c98ae93a62abc6b3ca8bcf6a71ba5416d304ddbc63f5b9443ba9f5d835182",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "backend/app/services/bass_texture.py": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c",
+      "backend/app/services/bass_harmonic.py": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7",
+      "backend/app/services/bass_temporal.py": "3cf000fb9d6174e64d4197d1b03c126f27239b541b4a032f75d73510dfffb68a",
+      "backend/app/services/bass_temporal_refinement.py": "e712f3f5e0937918ec013ccc3c863afc5a18349ebcf46c047764b1e37b39a18c",
+      "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/candidate_relations.py": "3a1b6caf5eaebf444f3cdcddb7abc8835c86f665721ab476e03c1c1dbc58d029",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "training/current_bass_v16_baseline.py": "7c7d4c928a2a40c8d7df2816dee596232ded3a9cdc7abb9a9003a7d6e4f9b511"
+    }
+  },
+  "code_sha256": {
+    "training/train_bass_joint_timing_v18.py": "d7dac8a72ad578c39473dbb78eb5289987fb701c323b7df36f08f9baded53171",
+    "training/evaluate_bass_joint_timing_v18.py": "65a37a5e52c6b8ba073164585044911c4b7e0a78876d684b6e11e95192e3f339",
+    "training/prepare_bass_positive_data.py": "929b1cded6f0dcf071dfdc3f8e0ea09c00d5401f05aa9325773d325acc188d65",
+    "training/prepare_bass_texture_v12.py": "628c26e278e329646dd806bf920d21409c5a91a5e3938c6074be547afde36d7e",
+    "training/prepare_slakh_bass.py": "7f2f8be64fce97e9ade2348c2a7eb39ac9966191753da8ebe7810d2f24dcc0be",
+    "training/bass_joint_timing_v18.py": "0e0e167be40d1fa333b1e500c2acff830ab95cbb9d9bf1245fa54371ed8c5cbf",
+    "training/bass_joint_timing.py": "11638d8f327d7f35f5cdc892cec3c6a089b62de34e398ac5b988634033a20790",
+    "training/score_bass_joint_timing.py": "552534528cac11b950fd868a18c3866450329090b151a3b92201c1f8d93dd57d",
+    "training/bass_v16_data.py": "fb8851d9dae5cb8efb243b3188898942dcd8c225aa94226a5b06430560520434",
+    "training/current_bass_v16_baseline.py": "7c7d4c928a2a40c8d7df2816dee596232ded3a9cdc7abb9a9003a7d6e4f9b511",
+    "training/prepare_bass_v16_baseline.py": "5192101f93be136b8024c768ed08f52e7dd8597f15167557f2dba8f17a406f9e",
+    "training/bass_temporal_data.py": "d87d78ce69f0ae590f6b1d566ab298d9433ce15e14b566f8f8e0b9853059f344",
+    "training/bass_residual_coverage_data.py": "893eb4b3d887797202fd55e65e251222d3ae76245b2a5231b2739dc02d98489a",
+    "training/pitch_support_targets.py": "cae7c61505710491fad6c140695f813792912eb4c48f7f64c13177c8b70bfabf",
+    "training/pitch_interval_coverage.py": "87408dad16d6bdbfae854cca7327f44eb9b4ddd6f972e930f5b7d01629f666ee",
+    "training/train_melody_timing.py": "040ac9e2f881c3b0d6adec84086acf55ce82356899b3ffe8aa002ddc1743fd25",
+    "training/train_note_verifier.py": "5380ef2010909c42cb161a3108c27c619ab687915d5c28fc46291718a49cf117",
+    "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2",
+    "backend/app/services/bass_harmonic.py": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7"
+  },
+  "baseline_root": "/training/bass-v16-baseline-v1",
+  "baseline_plan_sha256": "63218dbc9ba584f7629080647be29d20b19f6ee06c6d270201991dc0dcc596fc",
+  "baseline_manifest_sha256": "72e8de4841f9b401bd07fdd9949cbf3f9c3c31ab2af90ef18665376a0ba9be82",
+  "warm_start": "/training/bass-temporal-v16-v1/conservative/epoch-060.pt",
+  "warm_start_sha256": "993095e4ecaae7d9f9cda01042860442f81aaddc9b5c9be94ffae9b5307c302e",
+  "profiles": [
+    {
+      "name": "protected",
+      "class_weights": [
+        12.0,
+        12.0,
+        12.0,
+        1.0
+      ],
+      "seed": 263701
+    },
+    {
+      "name": "attacks",
+      "class_weights": [
+        24.0,
+        6.0,
+        24.0,
+        1.0
+      ],
+      "seed": 263702
+    }
+  ],
+  "width": 48,
+  "stages": [
+    10,
+    20,
+    40
+  ],
+  "updates_per_epoch": 40,
+  "batch_size": 256,
+  "learning_rate": 0.0008,
+  "minimum_learning_rate": 8e-05,
+  "weight_decay": 0.002,
+  "thresholds": [
+    0.8,
+    0.9,
+    0.95,
+    0.99,
+    1.01
+  ],
+  "margin_confidence": "t+(1-t)/2; disabled 1.01 remains disabled",
+  "guardian_threshold": 0.3,
+  "shifts_seconds": [
+    -0.02,
+    0.0,
+    0.02,
+    0.0
+  ],
+  "normalizer": "Mean/std of supervised eligible training context only; std floor .01.",
+  "sampling": "Equal corpus and recording loss before class weights; uniform training event batches.",
+  "selection": "160 validation recordings only: positive raw and half-strength margin onset error reduction, then false-note reduction, then lower class log loss, earlier epoch, fixed profile order.",
+  "gates": "Per recording: no lost matched attacks/holds or reference pitch coverage; no extra false positives; onset MAE, release MAE and repeated-key interval MAE must not increase. Fixed 200ms baseline same-pitch pairs; deletion earns no timing credit.",
+  "test_used_for_selection": false,
+  "required_consumed_regressions": 296,
+  "fresh_seeds": [
+    263501,
+    263502,
+    263503,
+    263504,
+    263505,
+    263506,
+    263507,
+    263508,
+    263509,
+    263510,
+    263511,
+    263512,
+    263513,
+    263514,
+    263515,
+    263516,
+    263517,
+    263518,
+    263519,
+    263520,
+    263521,
+    263522,
+    263523,
+    263524,
+    263525,
+    263526,
+    263527,
+    263528,
+    263529,
+    263530,
+    263531,
+    263532
+  ],
+  "fresh_families": {
+    "original": 16,
+    "texture": 16
+  },
+  "first_pass_policy": "One validation-selected frozen winner only; no test-driven tuning or replacement seeds; first pass must improve timing and preserve quality.",
+  "torch_version": "2.5.1",
+  "no_user_audio_or_scores": true,
+  "scope": "Four-action temporal CNN on actual V16 survivors: early, unchanged, late, remove. All older rejections remain. No website routing."
+}
