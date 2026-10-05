@@ -13,7 +13,8 @@ consumed regression, never fresh evidence or fitting data.
 The boundary batch completed and its winner is withheld: it removed false attacks
 but lost a correct key offset in first-pass original stress. That corpus is now
 also consumed regression. V10 remains deployed while release-aware labels are
-developed for the next batch.
+prepared for the next batch. The release-aware framework is saved and untrained;
+further training is paused at the user's request so they can test V10 first.
 
 The [original MusicNet assessment](../docs/musicnet-training-assessment.md)
 verifies publisher license and metadata only. Its audio/labels have not been

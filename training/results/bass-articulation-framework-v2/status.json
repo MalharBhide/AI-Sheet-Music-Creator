@@ -1,0 +1,19 @@
+{
+  "state": "framework_ready_untrained",
+  "training_started": false,
+  "deployment": "V10 remains deployed; failed bass boundary v1b weights withheld",
+  "reason": "User requested wrap-up and a pause to test the released model before asking for more training.",
+  "code_sha256": {
+    "training/train_bass_articulation.py": "aed302d4eed62c0a74f71054f813bc6efb2085875d7f3ac39926e1107a5b8e75",
+    "training/bass_articulation_labels.py": "c79a93f9cc40894beebbea4c44db392c9f4d665fee867f0f4f9f6a376ba2804e",
+    "training/bass_articulation_release.py": "a7452ab9d8f7e38b9ea05db9299e333697563c4460efbcc5da15c0cf0a946362"
+  },
+  "tests": {
+    "backend_training_passed": 381,
+    "opt_in_native_skipped": 6,
+    "unchanged_v10_native_previously_passed": 6,
+    "ruff": "passed"
+  },
+  "next_batch_policy": "Protect matched key attacks and offsets in fitting annotations; unchanged label-free features, profiles, seeds, thresholds and per-recording gates. Eight original stress, 20 prior Slakh clips and 32 first-pass originals are consumed regression only, never fitting or selection.",
+  "no_user_uploads_jobs_or_scores": true
+}

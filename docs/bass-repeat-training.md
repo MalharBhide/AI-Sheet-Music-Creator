@@ -89,6 +89,31 @@ continuity alone is insufficient to label a boundary safe to remove. Any next
 candidate must learn this from fitting annotations, without fitting the failed
 test fixture, and preserve the failed case in consumed regression.
 
+The next framework is now saved in `bass_articulation_labels.py`,
+`train_bass_articulation.py` and `bass_articulation_release.py`. It labels a
+boundary protected whenever joining the observed pair would lose a matched key
+attack or offset from fitting annotations. Inference features, model profiles,
+seeds, thresholds and validation gates stay the same. It keeps the historical
+experiment code intact, binds its own label policy and code, and includes the
+32 newly consumed original fixtures only in regression. This new framework is
+**not trained or deployed**: the user requested a pause to test the released V10
+model first. Do not call its unfitted code a new model release.
+
+On a later authorized training run, use a new output directory:
+
+```bash
+python training/train_bass_articulation.py .training/bass-articulation-v2 \
+  .training/slakh-bass-v1 .training/bass-positive-data-v1 \
+  --regression .training/bass-held-regression-v1 \
+  --regression .training/slakh-bass-positive-reserved-v2 \
+  --regression .training/bass-boundary-stress-v1
+python training/bass_articulation_release.py .training/bass-articulation-v2
+```
+
+Passing consumed regression is not sufficient for release; a next winner still
+needs independently planned first-pass evidence, portable export/parity and
+native production checks. No fitting started before the pause.
+
 ```bash
 python training/train_bass_boundaries.py .training/bass-boundaries-v1b \
   .training/slakh-bass-v1 .training/bass-positive-data-v1 \

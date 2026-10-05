@@ -1,5 +1,19 @@
 # Verification
 
+## Training wrap-up for user testing — 2026-10-04
+
+The released V10 bass weights remain live and the localhost frontend proxy is
+healthy/ready. Further training is paused for user testing. The next release-aware
+boundary framework is saved, tested and **untrained**; failed historical weights
+remain withheld. It additionally protects matched key releases in fitting labels,
+while its inference features remain label-free. Historical experiment code stays
+frozen, and all newly tested original fixtures are consumed regression only.
+
+**381 backend/training tests passed, six opt-in integration cases skipped**;
+native integration already passed for the unchanged V10 production code. Ruff and
+diff checks pass. No user uploads, score regeneration or transcription jobs were
+used. Fresh uploads in Balanced mode will use V10; existing scores are unchanged.
+
 ## Bass hold/repeat training — candidate withheld, 2026-10-04
 
 Trained two paired profiles on 7,042 labeled bass boundaries against the pinned
