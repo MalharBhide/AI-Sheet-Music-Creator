@@ -574,3 +574,17 @@ The GitHub Actions native-pipeline job runs the same integration suite in the ba
 - Complete suite: 339 passed, six opt-in cases skipped; added checkpoint, portable
   and test/export guards pass focused checks. Changed Python lint and diff checks
   pass. Health ready; only three existing completed jobs, no uploads processed.
+
+
+## Expanded bass training preparation — 2026-10-04
+
+- Added deterministic, sample-aligned original bass timbres and a preparation
+  pipeline for the established licensed GuitarSet train/validation performers.
+  Original seeds differ from consumed bass stress; reserved performers and Slakh
+  groups excluded. Actual waveform duration clips references for short sources.
+- Expanded fitting and release helpers freeze extra manifest hashes, prevent
+  cross-partition source overlap and exclude consumed regression clips. Tested
+  staged-checkpoint and per-recording hold/pitch gates remain shared.
+- Full backend/training suite: 346 passed, six opt-in cases skipped. Python lint
+  and diff checks pass. Data preparation remains in progress; no expanded model
+  fitted/deployed or user upload processed at this checkpoint.

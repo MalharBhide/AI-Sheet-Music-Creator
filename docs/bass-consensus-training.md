@@ -91,3 +91,42 @@ was not changed. Future experiments must label these original stress cases as
 consumed regression. Broader source/timbre-positive training is required before
 a bass classifier can qualify. This is evidence that release gates are needed,
 not an accuracy improvement claim for the website.
+
+## Expanded supervision in preparation
+
+The next isolated experiment adds 80 original source/timbre seeds (64 training,
+16 validation) and 297 licensed GuitarSet recordings (239 training performers
+00–03, 58 validation performer 04). Performer 05 is excluded, including from
+feature preparation. The three publisher-documented annotation errors remain
+excluded. This data uses the same actual bass decoder and low-pitch labels;
+it does not infer another user's bass part or create a score.
+
+Original phrases vary pitch, true octave layers, repeats, gaps, note spacing,
+harmonic brightness, attack rise, amplitude and decay, with exact sample clocks.
+Their seeds and note sequences differ from the eight consumed stress cases.
+Guitar audio retains its real annotations and physical crop duration. This broadens
+clear low-note KEEP supervision without tuning on the old stress labels.
+
+Preparation is still running; no expanded candidate has fitted yet. The expanded
+trainer freezes every extra manifest, rejects source overlap and any consumed
+stress example, and reuses the tested checkpoint/coverage selectors. Target
+cohort: 359 training and 94 validation clips including the 76 Slakh clips.
+Validation alone still selects a single winner; the existing stress becomes
+consumed regression and reserved Slakh groups remain untouched until that winner
+passes. **346 backend/training tests passed, six opt-in cases skipped.**
+
+Commands in the training container (not the website):
+
+```bash
+python /src/training/prepare_bass_positive_data.py /training
+python /src/training/train_bass_positive_consensus.py /training/slakh-bass-v1 --extra /training/bass-positive-data-v1
+python /src/training/bass_positive_release.py /training/slakh-bass-v1 /training/slakh-bass-v1/bass-positive-consensus-v2 /training/bass-held-regression-v1 --stage held-regression
+# Only after every consumed stress gate passes:
+python /src/training/prepare_slakh_bass_positive_test.py /training/slakh-bass-v1 /training/slakh-bass-v1/bass-positive-consensus-v2
+python /src/training/bass_positive_release.py /training/slakh-bass-v1 /training/slakh-bass-v1/bass-positive-consensus-v2 /training/slakh-bass-positive-reserved-v2 --stage reserved-slakh
+# Only after positive reserved improvement and all preservation gates:
+python /src/training/export_bass_positive_consensus.py /training/slakh-bass-v1 /training/slakh-bass-v1/bass-positive-consensus-v2
+```
+
+Portable export alone does not authorize deployment; full production event parity
+and integration checks are still required.

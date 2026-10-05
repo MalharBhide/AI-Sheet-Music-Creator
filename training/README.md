@@ -305,3 +305,10 @@ events. The sole validation winner preserved regression attacks, holds and pitch
 coverage but removed zero additional false notes in 175 clips, so it is withheld.
 See `results/polyphonic-consensus-v10` and `docs/polyphonic-training-framework.md`.
 Reserved Slakh groups were not consumed. V9 remains the website model.
+
+Expanded bass KEEP data preparation adds original source/timbre seeds and licensed
+GuitarSet training/validation performers. `prepare_bass_positive_data.py` and
+`train_bass_positive_consensus.py` keep consumed stress separate, freeze extra
+manifests, and select the best gated checkpoint before release evaluation.
+Preparation is running; website V9 remains unchanged. Full suite: 346 passed,
+six opt-in cases skipped. See the bass framework for the guarded release chain.
