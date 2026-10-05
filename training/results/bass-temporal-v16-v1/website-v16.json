@@ -1,0 +1,56 @@
+{
+  "passes": true,
+  "phase": "after",
+  "health": {
+    "status": "ok",
+    "ready": true,
+    "dependencies": {
+      "ffmpeg": true,
+      "basic_pitch": true,
+      "piano_transcription": true,
+      "piano_model": true,
+      "vocal_model": true,
+      "accompaniment_model": true,
+      "accompaniment_context_models": true,
+      "accompaniment_residual_model": true,
+      "accompaniment_left_hand_model": true,
+      "accompaniment_left_refinement_model": true,
+      "accompaniment_left_consensus_models": true,
+      "accompaniment_pitch_preserving_models": true,
+      "accompaniment_repeat_attack_models": true,
+      "bass_consensus_models": true,
+      "bass_articulation_models": true,
+      "bass_residual_models": true,
+      "bass_texture_models": true,
+      "bass_harmonic_models": true,
+      "bass_temporal_model": true,
+      "bass_refinement_model": true,
+      "source_separation": true,
+      "music21": true,
+      "musescore": true
+    },
+    "limits": {
+      "max_upload_mb": 0,
+      "max_audio_seconds": 0,
+      "retention_hours": 24
+    }
+  },
+  "source_sha256": {
+    "route": "d46c98ae93a62abc6b3ca8bcf6a71ba5416d304ddbc63f5b9443ba9f5d835182",
+    "notation": "3ee3b924a722cb61d4a50e06cad29ed87fdf479f12cf27724d328611e506606c",
+    "refinement_runtime": "e712f3f5e0937918ec013ccc3c863afc5a18349ebcf46c047764b1e37b39a18c"
+  },
+  "arrays": {
+    "bass-temporal-v1.npz": "0edc221998bbaacb052fbffe43f6efcce6e759290d0cdb9a7314028521e162c4",
+    "bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775"
+  },
+  "queue": [
+    [
+      "completed",
+      5
+    ]
+  ],
+  "original_notation_preserved": true,
+  "read_only": true,
+  "scope": "Actual backend via frontend proxy. Queue has no queued/processing/running jobs. Original 7 mm notation; no user transcription submitted or regenerated."
+}

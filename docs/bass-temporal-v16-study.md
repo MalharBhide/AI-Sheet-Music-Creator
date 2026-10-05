@@ -1,9 +1,9 @@
-# V16 study: expanded real-piano training, release pending
+# V16 bass temporal refinement: expanded real-piano training
 
 This study trains a new temporal bass KEEP classifier on actual V15 survivors
-and additional real acoustic-piano examples. It is **not deployed**. The website
-continues using the verified V15 model and original 7 mm notation, spacing and
-pagination. No user recordings or saved scores are used or regenerated.
+and additional real acoustic-piano examples. It follows all six existing bass
+stages, including V15, and cannot restore their rejected notes. Original 7 mm
+notation, spacing and automatic pagination remain unchanged. No user recordings or saved scores are used or regenerated.
 
 ## Sealed baseline and added data
 
@@ -68,24 +68,61 @@ These are modest improvements on limited development data. They do not prove
 that arbitrary songs transcribe accurately, and a KEEP filter does not recover
 missed pitches or repair detected rhythms.
 
-## Outstanding release gates
+## Reserved piano regression
 
-Reserved real-piano regression is acquired only after the frozen candidate
-passes the earlier consumed set. Its rule includes all eligible reserved
-performers with complete 30–60-second crops, both original MP3 and actual
-production Demucs bass variants; absent bass sources are audited. These
-performers remain consumed development regressions, never a fresh-human claim.
-No failed result may be replaced or tuned around.
+After freezing the candidate, the complete reserved-performer check evaluated
+12 original MP3 crops. All 12 declared Demucs variants emitted no bass and are
+audited exclusions. The candidate preserves all 645 matched attacks, holds and
+pitch coverage, with unchanged F1 .76649 and recall .79531. It removes zero false
+notes on this set. Thus all 264 consumed regression recordings pass preservation,
+but this piano set adds no evidence of clutter reduction.
 
-Further required checks are the one predeclared first-pass fixture set (seeds
-263301–263332, unchanged original/texture generators), positive preserved
-first-pass gain, portable export and full runtime parity, native complete-route
-checks and application tests, followed by verified idle-queue deployment.
-No portable weights or website routing are changed while those gates remain
-unproven. Only this single frozen winner may proceed.
+## First-pass fixtures and runtime verification
 
-Frozen plans, manifests, learning curves and current evidence are under
-`training/results/bass-temporal-v16-v1`, `bass-v15-baseline-v1` and
-`vienna-bass-v15-v1`. Audio and checkpoints remain local. The new framework
-passes the existing backend/training suite and additional source/pedal/identity
-tests. See the checkpoint status report for exact test counts and pending work.
+The single frozen winner passed the 32 predeclared first-pass MP3 fixtures
+(seeds 263301–263332, unchanged original/texture generators). False notes fell
+183 → 181, with all 675 matched notes, offset-aware holds and supplied pitch
+coverage preserved per recording. F1 rose .85606 → .85714; recall remained
+.93880. These unseen procedural seeds provide a small positive result within
+two existing generator distributions, not independent human-song accuracy.
+All 32 are now consumed regressions; future experiments must preserve all 296
+consumed recordings rather than reuse this set for a new first-pass claim.
+
+Portable weights match the frozen checkpoint exactly across all 1,029 fitting,
+validation and regression recordings (55,163 V15 survivor events). Runtime
+probabilities also match with two versus four CPU threads, with identical
+rejection decisions and no change to global thread settings. Single-part and
+multiple-part checks preserve retained note objects, pitch, start, end, velocity
+and staff assignment. The total 71 runtime rejections includes training
+recordings and must not be presented as held-out accuracy.
+
+A source/weight/evidence seal was created while the old V15 route guards still
+passed. The new route adds one V16 filter after V15; all original assets and
+frozen source contracts remain unchanged except the explicitly permitted
+routing source. Eight complete native cases, including held notes, repeated
+notes, a licensed bass recording, actual learned rejections, a 32-second window
+and a short clip, match the frozen decisions. The backend/training suite passes
+591 tests, and all six opt-in native pipeline/renderer checks also pass.
+Readiness now includes the V16 model asset.
+
+The guarded original route will intentionally reject new fitting against a
+changed website. Future training must declare a new baseline of actual V16
+survivors and retain the full consumed regression history. Never change the
+frozen V16 checkpoint or threshold from these test outcomes.
+
+Frozen plans, manifests, curves and release evidence are under
+`training/results/bass-temporal-v16-v1`, `bass-temporal-v16-fresh-v1`,
+`v16-piano-regression-v1`, `bass-v15-baseline-v1` and `vienna-bass-v15-v1`.
+Audio and fitting checkpoints remain local. Only the verified portable weights
+are included with the backend. The first-pass and consumed results are modest;
+this KEEP filter does not recover missed pitches or repair rhythms.
+
+## Website release
+
+The backend was rebuilt and deployed after all gates passed and an immediate
+read-only queue check confirmed no queued or processing jobs. The running
+website is healthy through the frontend proxy. Its V16 weight checksum, runtime
+and routing source match the verified release; the V15 array and original
+notation source remain unchanged. No user job was submitted or regenerated.
+See `release-status.json`, `website-before-v16.json` and `website-v16.json` for
+the frozen evidence and live checks.

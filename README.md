@@ -6,7 +6,16 @@ The transcription design is informed by an [extensive review of Songscription, K
 
 Balanced full-song accompaniment now also uses a trained note verifier to reject unsupported candidate notes. See its [model card and measured limits](docs/accompaniment-verifier.md). Re-upload a recording to apply it to an older score.
 
-The latest [V15 temporal bass CNN](docs/bass-temporal-v15.md) learns from spectral
+The latest [V16 bass refinement](docs/bass-temporal-v16-study.md) adds real
+acoustic-piano training to a classifier of actual V15 survivors. Its frozen
+candidate removes two extra false notes on 32 new procedural MP3 fixtures,
+preserving all 675 matched notes and holds. It removes 18 false notes across
+252 existing regressions and preserves all notes in 12 reserved piano excerpts,
+where it makes no further deletions. Portable/runtime and native-route checks
+protect retained pitches, timing and part identity. This is a modest measured
+gain; original note size and pagination remain unchanged.
+
+The previous [V15 temporal bass CNN](docs/bass-temporal-v15.md) learns from spectral
 evidence before, during and after surviving bass notes. On 32 new original MP3
 fixtures it removes 9 additional false notes, preserving all 573 previously
 matched notes and holds. Validation and all 220 consumed regressions preserve

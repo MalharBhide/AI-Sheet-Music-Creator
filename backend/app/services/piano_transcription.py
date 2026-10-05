@@ -158,6 +158,7 @@ class _GeneralEngine:
         self.bass_texture = None
         self.bass_harmonic = None
         self.bass_temporal = None
+        self.bass_temporal_refinement = None
         self.bass_verification = None
 
     def predict(self, path: Path, role: str, bpm: float):
@@ -192,6 +193,7 @@ class _GeneralEngine:
             from app.services.bass_harmonic import BassHarmonic
             from app.services.bass_residual import BassResidual
             from app.services.bass_temporal import BassTemporal
+            from app.services.bass_temporal_refinement import BassTemporalRefinement
             from app.services.bass_texture import BassTexture
             from app.services.bass_verifier import BassVerifier
 
@@ -202,16 +204,18 @@ class _GeneralEngine:
                 self.bass_texture = BassTexture()
                 self.bass_harmonic = BassHarmonic()
                 self.bass_temporal = BassTemporal()
+                self.bass_temporal_refinement = BassTemporalRefinement()
                 self.bass_verification = {'model': self.bass_verifier.name,
                                           'articulation_model': self.bass_articulation.name,
                                           'residual_model': self.bass_residual.name,
                                           'texture_model': self.bass_texture.name,
                                           'harmonic_model': self.bass_harmonic.name,
                                           'temporal_model': self.bass_temporal.name,
+                                          'refinement_model': self.bass_temporal_refinement.name,
                                           'window_candidates': 0, 'window_rejections': 0,
                                           'window_merged_boundaries': 0, 'window_residual_rejections': 0,
                                           'window_texture_rejections': 0, 'window_harmonic_rejections': 0,
-                                          'window_temporal_rejections': 0}
+                                          'window_temporal_rejections': 0, 'window_refinement_rejections': 0}
             # Bass training uses these same frequency-bounded Basic Pitch
             # arrays and events. It does not use the accompaniment decoder.
             self.bass_verification['window_candidates'] += sum(len(p.notes) for p in midi.instruments)
@@ -225,6 +229,8 @@ class _GeneralEngine:
             self.bass_verification['window_texture_rejections'] += self.bass_texture.filter(path, arrays, midi)
             self.bass_verification['window_harmonic_rejections'] += self.bass_harmonic.filter(path, arrays, midi)
             self.bass_verification['window_temporal_rejections'] += self.bass_temporal.filter(path, arrays, midi)
+            # The new CNN judges actual V15 survivors; previous deletions cannot return.
+            self.bass_verification['window_refinement_rejections'] += self.bass_temporal_refinement.filter(path, arrays, midi)
         if verify:
             from app.services.accompaniment_verifier import AccompanimentVerifier
 
@@ -360,6 +366,8 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
             engine_name += f" + {bass_verification['harmonic_model']}"
         if bass_verification.get('temporal_model'):
             engine_name += f" + {bass_verification['temporal_model']}"
+        if bass_verification.get('refinement_model'):
+            engine_name += f" + {bass_verification['refinement_model']}"
     return {"engine": engine_name,
             "accompaniment_verification": verification,
             "bass_verification": bass_verification,

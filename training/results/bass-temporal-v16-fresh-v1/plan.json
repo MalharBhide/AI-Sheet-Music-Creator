@@ -1,0 +1,155 @@
+{
+  "seeds": [
+    263301,
+    263302,
+    263303,
+    263304,
+    263305,
+    263306,
+    263307,
+    263308,
+    263309,
+    263310,
+    263311,
+    263312,
+    263313,
+    263314,
+    263315,
+    263316,
+    263317,
+    263318,
+    263319,
+    263320,
+    263321,
+    263322,
+    263323,
+    263324,
+    263325,
+    263326,
+    263327,
+    263328,
+    263329,
+    263330,
+    263331,
+    263332
+  ],
+  "checkpoint_sha256": "993095e4ecaae7d9f9cda01042860442f81aaddc9b5c9be94ffae9b5307c302e",
+  "batch_selection_sha256": "1aeb9a31f5725c27d7689622396147cffffe13c60f505b7944c22be679dbf3b2",
+  "consumed_regression_sha256": "2955ac828766e315208a37b6d32a71bc490f8f74d2f12d18ffd0d671c03dd217",
+  "piano_regression_sha256": "203689c9e5c7b876347ed4d81fa6cef81dc4fc4f792f1aeea117daee81603cb0",
+  "baseline_hashes": {
+    "version": "shipped-bass-v15-baseline-v1",
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51",
+      "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb",
+      "bass-texture-v1.npz": "f1e829c7d4328afc38268cc8dbe8afb526c6860efafd3d272170cf3aca768d3e",
+      "bass-texture-guardian-v1.npz": "82f4ed13e9cf5a7a832a8a066f23ff9f7642aa187da664779a900d55b807e994",
+      "bass-harmonic-v1.npz": "8184a7c4009d2e26bc1d2f264ec58d8503182cda79667b9c3af7a8bb856ce66c",
+      "bass-harmonic-guardian-v1.npz": "bcab8b156e54db37c3c19dd74e553106499722503abb043ba7fb491d3418f76e",
+      "bass-temporal-v1.npz": "0edc221998bbaacb052fbffe43f6efcce6e759290d0cdb9a7314028521e162c4"
+    },
+    "thresholds": [
+      [
+        0.1,
+        0.1
+      ],
+      [
+        0.05,
+        0.05
+      ],
+      [
+        0.05,
+        0.1
+      ],
+      [
+        0.025,
+        0.3
+      ],
+      [
+        0.025,
+        0.3
+      ],
+      [
+        0.005,
+        0.3
+      ]
+    ],
+    "sources": {
+      "backend/app/services/piano_transcription.py": "04f782935d4e8a4c51d9ba920418c14dc5dbd94fdce50345e6f43b56037c6295",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "backend/app/services/bass_texture.py": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c",
+      "backend/app/services/bass_harmonic.py": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7",
+      "backend/app/services/bass_temporal.py": "3cf000fb9d6174e64d4197d1b03c126f27239b541b4a032f75d73510dfffb68a",
+      "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/candidate_relations.py": "3a1b6caf5eaebf444f3cdcddb7abc8835c86f665721ab476e03c1c1dbc58d029",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "training/current_bass_v15_baseline.py": "a4445669badce91e14b352cbc44f2b847c75c544218ff5a026247627d299c006"
+    }
+  },
+  "code_sha256": {
+    "training/fresh_bass_temporal_v16.py": "d23a848eb60428aeb700884389443831b3467d88acbe7a85179c2da5995b4179",
+    "training/prepare_bass_positive_data.py": "929b1cded6f0dcf071dfdc3f8e0ea09c00d5401f05aa9325773d325acc188d65",
+    "training/prepare_slakh_bass.py": "7f2f8be64fce97e9ade2348c2a7eb39ac9966191753da8ebe7810d2f24dcc0be",
+    "training/bass_temporal_v15_data.py": "bd64e7e83e7c6c6ba361e197a9a1ae7825b225140227afcb82ef28346b04c08a",
+    "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2",
+    "training/prepare_bass_texture_v12.py": "628c26e278e329646dd806bf920d21409c5a91a5e3938c6074be547afde36d7e",
+    "training/harmonic_candidate_features.py": "e34e0d146b9f4ce73ee9546350cfb28ad148c6a9c3ccc6def2a60af5bbd2d869",
+    "backend/app/services/piano_transcription.py": "04f782935d4e8a4c51d9ba920418c14dc5dbd94fdce50345e6f43b56037c6295",
+    "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad"
+  },
+  "rights": "Project-authored procedural signals and note sequences",
+  "generator_partitions": {
+    "original": [
+      263301,
+      263302,
+      263303,
+      263304,
+      263305,
+      263306,
+      263307,
+      263308,
+      263309,
+      263310,
+      263311,
+      263312,
+      263313,
+      263314,
+      263315,
+      263316
+    ],
+    "texture": [
+      263317,
+      263318,
+      263319,
+      263320,
+      263321,
+      263322,
+      263323,
+      263324,
+      263325,
+      263326,
+      263327,
+      263328,
+      263329,
+      263330,
+      263331,
+      263332
+    ]
+  },
+  "positive_first_pass_gain_required": true,
+  "mp3_bitrate_kbps_cycle": [
+    48,
+    128,
+    192
+  ],
+  "rate": 22050,
+  "no_fitting_selection_user_audio_or_scores": true,
+  "scope": "Unseen seeds of the two existing generator distributions, not independent human-song evidence. Native V15 baseline; one frozen candidate check. All sources become consumed after this first pass."
+}

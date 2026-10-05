@@ -1,0 +1,23 @@
+{
+  "passes": true,
+  "recordings": 1029,
+  "v15_retained_events": 55163,
+  "rejected_events": 71,
+  "maximum_probability_error": 0.0,
+  "tolerance": 1e-06,
+  "thread_counts": [
+    2,
+    4
+  ],
+  "same_decisions": true,
+  "global_threads_unchanged_by_filter": true,
+  "checkpoint_sha256": "993095e4ecaae7d9f9cda01042860442f81aaddc9b5c9be94ffae9b5307c302e",
+  "batch_selection_sha256": "1aeb9a31f5725c27d7689622396147cffffe13c60f505b7944c22be679dbf3b2",
+  "arrays": {
+    "bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775"
+  },
+  "runtime_source_sha256": "e712f3f5e0937918ec013ccc3c863afc5a18349ebcf46c047764b1e37b39a18c",
+  "inherited_filter_sha256": "3cf000fb9d6174e64d4197d1b03c126f27239b541b4a032f75d73510dfffb68a",
+  "script_sha256": "0f5b239195ebaac6fbb1846cac1467b9eb0cc02c48fc5ff9b53c49ea43d11317",
+  "scope": "Every fitting/validation/consumed/fresh input. Frozen Torch/NPZ probabilities, exact retained pitch/start/end/velocity/object/part identity, and no process-global thread mutation. No user audio or scores."
+}

@@ -1,0 +1,412 @@
+{
+  "threshold": 0.2,
+  "guardian_threshold": 0.3,
+  "passes": true,
+  "false_notes_removed": 0,
+  "failed_recordings": [],
+  "aggregate": {
+    "baseline_bass": {
+      "precision": 0.7396788990825688,
+      "recall": 0.7953144266337855,
+      "f1": 0.7664884135472371,
+      "true_positives": 645,
+      "false_positives": 227,
+      "predicted": 872,
+      "reference": 811,
+      "seconds": 354.0,
+      "false_positives_per_minute": 38.47457627118644
+    },
+    "candidate": {
+      "precision": 0.7396788990825688,
+      "recall": 0.7953144266337855,
+      "f1": 0.7664884135472371,
+      "true_positives": 645,
+      "false_positives": 227,
+      "predicted": 872,
+      "reference": 811,
+      "seconds": 354.0,
+      "false_positives_per_minute": 38.47457627118644
+    }
+  },
+  "per_recording": [
+    {
+      "id": "v16-piano-regression-Chopin_op10_no3_p19-piano-mp3",
+      "corpus": "reserved-vienna-piano-mp3-bass",
+      "baseline_bass": {
+        "precision": 0.7049180327868853,
+        "recall": 0.819047619047619,
+        "f1": 0.7577092511013216,
+        "true_positives": 86,
+        "false_positives": 36,
+        "predicted": 122,
+        "reference": 105,
+        "seconds": 29.5,
+        "false_positives_per_minute": 73.22033898305085
+      },
+      "candidate": {
+        "precision": 0.7049180327868853,
+        "recall": 0.819047619047619,
+        "f1": 0.7577092511013216,
+        "true_positives": 86,
+        "false_positives": 36,
+        "predicted": 122,
+        "reference": 105,
+        "seconds": 29.5,
+        "false_positives_per_minute": 73.22033898305085
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op10_no3_p20-piano-mp3",
+      "corpus": "reserved-vienna-piano-mp3-bass",
+      "baseline_bass": {
+        "precision": 0.6966292134831461,
+        "recall": 0.7848101265822784,
+        "f1": 0.7380952380952381,
+        "true_positives": 62,
+        "false_positives": 27,
+        "predicted": 89,
+        "reference": 79,
+        "seconds": 29.5,
+        "false_positives_per_minute": 54.91525423728814
+      },
+      "candidate": {
+        "precision": 0.6966292134831461,
+        "recall": 0.7848101265822784,
+        "f1": 0.7380952380952381,
+        "true_positives": 62,
+        "false_positives": 27,
+        "predicted": 89,
+        "reference": 79,
+        "seconds": 29.5,
+        "false_positives_per_minute": 54.91525423728814
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op10_no3_p21-piano-mp3",
+      "corpus": "reserved-vienna-piano-mp3-bass",
+      "baseline_bass": {
+        "precision": 0.7469879518072289,
+        "recall": 0.7848101265822784,
+        "f1": 0.7654320987654321,
+        "true_positives": 62,
+        "false_positives": 21,
+        "predicted": 83,
+        "reference": 79,
+        "seconds": 29.5,
+        "false_positives_per_minute": 42.71186440677966
+      },
+      "candidate": {
+        "precision": 0.7469879518072289,
+        "recall": 0.7848101265822784,
+        "f1": 0.7654320987654321,
+        "true_positives": 62,
+        "false_positives": 21,
+        "predicted": 83,
+        "reference": 79,
+        "seconds": 29.5,
+        "false_positives_per_minute": 42.71186440677966
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op10_no3_p22-piano-mp3",
+      "corpus": "reserved-vienna-piano-mp3-bass",
+      "baseline_bass": {
+        "precision": 0.7478260869565218,
+        "recall": 0.7962962962962963,
+        "f1": 0.7713004484304933,
+        "true_positives": 86,
+        "false_positives": 29,
+        "predicted": 115,
+        "reference": 108,
+        "seconds": 29.5,
+        "false_positives_per_minute": 58.983050847457626
+      },
+      "candidate": {
+        "precision": 0.7478260869565218,
+        "recall": 0.7962962962962963,
+        "f1": 0.7713004484304933,
+        "true_positives": 86,
+        "false_positives": 29,
+        "predicted": 115,
+        "reference": 108,
+        "seconds": 29.5,
+        "false_positives_per_minute": 58.983050847457626
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op38_p19-piano-mp3",
+      "corpus": "reserved-vienna-piano-mp3-bass",
+      "baseline_bass": {
+        "precision": 0.7263157894736842,
+        "recall": 0.8734177215189873,
+        "f1": 0.7931034482758621,
+        "true_positives": 69,
+        "false_positives": 26,
+        "predicted": 95,
+        "reference": 79,
+        "seconds": 29.5,
+        "false_positives_per_minute": 52.88135593220339
+      },
+      "candidate": {
+        "precision": 0.7263157894736842,
+        "recall": 0.8734177215189873,
+        "f1": 0.7931034482758621,
+        "true_positives": 69,
+        "false_positives": 26,
+        "predicted": 95,
+        "reference": 79,
+        "seconds": 29.5,
+        "false_positives_per_minute": 52.88135593220339
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op38_p20-piano-mp3",
+      "corpus": "reserved-vienna-piano-mp3-bass",
+      "baseline_bass": {
+        "precision": 0.7162162162162162,
+        "recall": 0.6794871794871795,
+        "f1": 0.6973684210526315,
+        "true_positives": 53,
+        "false_positives": 21,
+        "predicted": 74,
+        "reference": 78,
+        "seconds": 29.5,
+        "false_positives_per_minute": 42.71186440677966
+      },
+      "candidate": {
+        "precision": 0.7162162162162162,
+        "recall": 0.6794871794871795,
+        "f1": 0.6973684210526315,
+        "true_positives": 53,
+        "false_positives": 21,
+        "predicted": 74,
+        "reference": 78,
+        "seconds": 29.5,
+        "false_positives_per_minute": 42.71186440677966
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op38_p21-piano-mp3",
+      "corpus": "reserved-vienna-piano-mp3-bass",
+      "baseline_bass": {
+        "precision": 0.8441558441558441,
+        "recall": 0.8227848101265823,
+        "f1": 0.8333333333333334,
+        "true_positives": 65,
+        "false_positives": 12,
+        "predicted": 77,
+        "reference": 79,
+        "seconds": 29.5,
+        "false_positives_per_minute": 24.406779661016948
+      },
+      "candidate": {
+        "precision": 0.8441558441558441,
+        "recall": 0.8227848101265823,
+        "f1": 0.8333333333333334,
+        "true_positives": 65,
+        "false_positives": 12,
+        "predicted": 77,
+        "reference": 79,
+        "seconds": 29.5,
+        "false_positives_per_minute": 24.406779661016948
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op38_p22-piano-mp3",
+      "corpus": "reserved-vienna-piano-mp3-bass",
+      "baseline_bass": {
+        "precision": 0.6962025316455697,
+        "recall": 0.7051282051282052,
+        "f1": 0.7006369426751592,
+        "true_positives": 55,
+        "false_positives": 24,
+        "predicted": 79,
+        "reference": 78,
+        "seconds": 29.5,
+        "false_positives_per_minute": 48.813559322033896
+      },
+      "candidate": {
+        "precision": 0.6962025316455697,
+        "recall": 0.7051282051282052,
+        "f1": 0.7006369426751592,
+        "true_positives": 55,
+        "false_positives": 24,
+        "predicted": 79,
+        "reference": 78,
+        "seconds": 29.5,
+        "false_positives_per_minute": 48.813559322033896
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "v16-piano-regression-Mozart_K331_1st-mov_p19-piano-mp3",
+      "corpus": "reserved-vienna-piano-mp3-bass",
+      "baseline_bass": {
+        "precision": 0.75,
+        "recall": 0.8709677419354839,
+        "f1": 0.8059701492537313,
+        "true_positives": 27,
+        "false_positives": 9,
+        "predicted": 36,
+        "reference": 31,
+        "seconds": 29.5,
+        "false_positives_per_minute": 18.305084745762713
+      },
+      "candidate": {
+        "precision": 0.75,
+        "recall": 0.8709677419354839,
+        "f1": 0.8059701492537313,
+        "true_positives": 27,
+        "false_positives": 9,
+        "predicted": 36,
+        "reference": 31,
+        "seconds": 29.5,
+        "false_positives_per_minute": 18.305084745762713
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "v16-piano-regression-Mozart_K331_1st-mov_p20-piano-mp3",
+      "corpus": "reserved-vienna-piano-mp3-bass",
+      "baseline_bass": {
+        "precision": 0.8181818181818182,
+        "recall": 0.8709677419354839,
+        "f1": 0.84375,
+        "true_positives": 27,
+        "false_positives": 6,
+        "predicted": 33,
+        "reference": 31,
+        "seconds": 29.5,
+        "false_positives_per_minute": 12.203389830508474
+      },
+      "candidate": {
+        "precision": 0.8181818181818182,
+        "recall": 0.8709677419354839,
+        "f1": 0.84375,
+        "true_positives": 27,
+        "false_positives": 6,
+        "predicted": 33,
+        "reference": 31,
+        "seconds": 29.5,
+        "false_positives_per_minute": 12.203389830508474
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "v16-piano-regression-Mozart_K331_1st-mov_p21-piano-mp3",
+      "corpus": "reserved-vienna-piano-mp3-bass",
+      "baseline_bass": {
+        "precision": 0.8,
+        "recall": 0.8484848484848485,
+        "f1": 0.8235294117647058,
+        "true_positives": 28,
+        "false_positives": 7,
+        "predicted": 35,
+        "reference": 33,
+        "seconds": 29.5,
+        "false_positives_per_minute": 14.23728813559322
+      },
+      "candidate": {
+        "precision": 0.8,
+        "recall": 0.8484848484848485,
+        "f1": 0.8235294117647058,
+        "true_positives": 28,
+        "false_positives": 7,
+        "predicted": 35,
+        "reference": 33,
+        "seconds": 29.5,
+        "false_positives_per_minute": 14.23728813559322
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    },
+    {
+      "id": "v16-piano-regression-Mozart_K331_1st-mov_p22-piano-mp3",
+      "corpus": "reserved-vienna-piano-mp3-bass",
+      "baseline_bass": {
+        "precision": 0.7352941176470589,
+        "recall": 0.8064516129032258,
+        "f1": 0.7692307692307693,
+        "true_positives": 25,
+        "false_positives": 9,
+        "predicted": 34,
+        "reference": 31,
+        "seconds": 29.5,
+        "false_positives_per_minute": 18.305084745762713
+      },
+      "candidate": {
+        "precision": 0.7352941176470589,
+        "recall": 0.8064516129032258,
+        "f1": 0.7692307692307693,
+        "true_positives": 25,
+        "false_positives": 9,
+        "predicted": 34,
+        "reference": 31,
+        "seconds": 29.5,
+        "false_positives_per_minute": 18.305084745762713
+      },
+      "matched_references_preserved": true,
+      "held_references_preserved": true,
+      "reference_pitch_coverage_preserved": true,
+      "lost_reference_pitch_seconds": 0.0,
+      "passes": true
+    }
+  ],
+  "checkpoint_sha256": "993095e4ecaae7d9f9cda01042860442f81aaddc9b5c9be94ffae9b5307c302e",
+  "batch_selection_sha256": "1aeb9a31f5725c27d7689622396147cffffe13c60f505b7944c22be679dbf3b2",
+  "manifest_sha256": "3f66a758a16387b4c84794bc2892c30f6ee57d032ecc566c01099a1d6a3af142",
+  "all_declared_sources_checked": true,
+  "no_retuning_or_replacement": true,
+  "now_consumed_regression": true,
+  "scope": "All eligible existing reserved performers, original MP3 and production Demucs bass. These performers are consumed development regressions, not independent human-song accuracy."
+}

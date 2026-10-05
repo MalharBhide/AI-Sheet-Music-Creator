@@ -1,0 +1,34 @@
+{
+  "status": "released",
+  "website_model": "V16 bass temporal refinement after unchanged V15",
+  "passes": true,
+  "checkpoint_sha256": "993095e4ecaae7d9f9cda01042860442f81aaddc9b5c9be94ffae9b5307c302e",
+  "portable_sha256": {
+    "bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775"
+  },
+  "witnesses": {
+    "consumed-regression.json": "2955ac828766e315208a37b6d32a71bc490f8f74d2f12d18ffd0d671c03dd217",
+    "piano-regression.json": "203689c9e5c7b876347ed4d81fa6cef81dc4fc4f792f1aeea117daee81603cb0",
+    "original-first-pass.json": "dc24943f1dffee07c40f688656af42a49a7930b43f6209685eef9f1c950d2bcd",
+    "runtime-parity.json": "b866113afa733bcd78b687ec6a98c8df73a7809abb0d86af74e772c4ec42bc63",
+    "release-seal.json": "94ba1512fd7b429af7dc711edea46716aaba5e05a81fa3e910c9f95ded7ac644",
+    "native-routing.json": "0824cb10d4ed14d1b5524dbdfd936798b7488ac1a77113640371ac19504f6d05",
+    "application-checks.json": "6b6007ba1b7d310dd7bd1423539b29154b2c9e3e876f84e38e6b2d7fd56e86da",
+    "website-v16.json": "e6b8ef43377841c7bc988832d500ffe5c9e5ff72278f88ac5b9fb2ba79e1d62e",
+    "portable/export.json": "ceaca45905a9d02549a0c055b9d07eea96e0a24e59d0748a17a46202d764541c"
+  },
+  "consumed_regressions": 296,
+  "validation_false_notes_removed": 5,
+  "prior_regression_false_notes_removed": 18,
+  "reserved_piano_false_notes_removed": 0,
+  "fresh_fixture_false_notes_removed": 2,
+  "every_recording_attack_hold_pitch_preservation": true,
+  "runtime_recordings": 1029,
+  "runtime_events": 55163,
+  "maximum_probability_error": 0,
+  "tests_passed": 597,
+  "native_route_cases": 8,
+  "original_7mm_notation_unchanged": true,
+  "no_user_upload_processing_or_score_regeneration": true,
+  "limitations": "Small KEEP-filter improvement. Real piano regressions unchanged. First-pass procedural fixtures are now consumed. This does not recover missing melody notes or fix rhythms, nor establish arbitrary-song accuracy."
+}
