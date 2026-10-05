@@ -1,0 +1,131 @@
+{
+  "seeds": [
+    262601,
+    262602,
+    262603,
+    262604,
+    262605,
+    262606,
+    262607,
+    262608,
+    262609,
+    262610,
+    262611,
+    262612,
+    262613,
+    262614,
+    262615,
+    262616,
+    262617,
+    262618,
+    262619,
+    262620,
+    262621,
+    262622,
+    262623,
+    262624,
+    262625,
+    262626,
+    262627,
+    262628,
+    262629,
+    262630,
+    262631,
+    262632
+  ],
+  "checkpoint_sha256": "98221090db5040c5528f1f6d2c56138e6b8feefc24a73a9ccc2abef7e9c509e5",
+  "batch_selection_sha256": "3bc6a8aa5f6ac7a948dd08de132c6e3b83b0fc0cef8587c510bac7ec621749ae",
+  "consumed_regression_sha256": "bba4a57d32a7d5452101871692149e5a09b7066d45141d68707ab5b2036e5f49",
+  "baseline_hashes": {
+    "version": "shipped-bass-v12-baseline-v1",
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51",
+      "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb"
+    },
+    "thresholds": [
+      [
+        0.1,
+        0.1
+      ],
+      [
+        0.05,
+        0.05
+      ],
+      [
+        0.05,
+        0.1
+      ]
+    ],
+    "sources": {
+      "backend/app/services/piano_transcription.py": "741b5befe2b5f5ded1ae62ebb2811b37f2587b0e62c32a5a9fc160d1b3aa4a8a",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/candidate_relations.py": "3a1b6caf5eaebf444f3cdcddb7abc8835c86f665721ab476e03c1c1dbc58d029",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "training/current_bass_v12_baseline.py": "7644a9ff1175b78c94d3f23c8a79267dbd390e5403b074ff140e59bf534519e4"
+    }
+  },
+  "code_sha256": {
+    "training/fresh_bass_texture_v12.py": "8c3d20509f06bdb3d272afe660be71f9f5e285fa2f9c4946065771321dc79b1a",
+    "training/prepare_bass_positive_data.py": "929b1cded6f0dcf071dfdc3f8e0ea09c00d5401f05aa9325773d325acc188d65",
+    "training/prepare_slakh_bass.py": "7f2f8be64fce97e9ade2348c2a7eb39ac9966191753da8ebe7810d2f24dcc0be",
+    "training/bass_texture_v12_data.py": "8fe95190b2240efbed6b6c94ff4fc42b9b061bf8001fc99e6af349d6e15331c8",
+    "training/prepare_bass_texture_v12.py": "628c26e278e329646dd806bf920d21409c5a91a5e3938c6074be547afde36d7e",
+    "backend/app/services/piano_transcription.py": "741b5befe2b5f5ded1ae62ebb2811b37f2587b0e62c32a5a9fc160d1b3aa4a8a",
+    "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad"
+  },
+  "rights": "Project-authored procedural signals and note sequences",
+  "generator_partitions": {
+    "original": [
+      262601,
+      262602,
+      262603,
+      262604,
+      262605,
+      262606,
+      262607,
+      262608,
+      262609,
+      262610,
+      262611,
+      262612,
+      262613,
+      262614,
+      262615,
+      262616
+    ],
+    "texture": [
+      262617,
+      262618,
+      262619,
+      262620,
+      262621,
+      262622,
+      262623,
+      262624,
+      262625,
+      262626,
+      262627,
+      262628,
+      262629,
+      262630,
+      262631,
+      262632
+    ]
+  },
+  "positive_first_pass_gain_required": true,
+  "mp3_bitrate_kbps_cycle": [
+    48,
+    128,
+    192
+  ],
+  "rate": 22050,
+  "no_fitting_selection_user_audio_or_scores": true,
+  "scope": "Unseen seeds of the two existing generator distributions, not independent human-song evidence. Native V12 baseline; one frozen candidate check. All sources become consumed after this first pass."
+}

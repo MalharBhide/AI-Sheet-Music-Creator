@@ -1,0 +1,49 @@
+{
+  "version": "shipped-bass-v12-baseline-v1",
+  "baseline_hashes": {
+    "version": "shipped-bass-v12-baseline-v1",
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51",
+      "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb"
+    },
+    "thresholds": [
+      [
+        0.1,
+        0.1
+      ],
+      [
+        0.05,
+        0.05
+      ],
+      [
+        0.05,
+        0.1
+      ]
+    ],
+    "sources": {
+      "backend/app/services/piano_transcription.py": "741b5befe2b5f5ded1ae62ebb2811b37f2587b0e62c32a5a9fc160d1b3aa4a8a",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/candidate_relations.py": "3a1b6caf5eaebf444f3cdcddb7abc8835c86f665721ab476e03c1c1dbc58d029",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "training/current_bass_v12_baseline.py": "7644a9ff1175b78c94d3f23c8a79267dbd390e5403b074ff140e59bf534519e4"
+    }
+  },
+  "parent_plan_sha256": "ed0e201bf56876a7030eb8b123eb4414521bc0cab2f76530876848308fe0c015",
+  "parent_run": "/training/bass-residual-expanded-v3",
+  "parent_cache": "/training/bass-v11-expanded-baseline-v2",
+  "consumed_original_root": "/training/bass-residual-fresh-v1",
+  "parent_cache_manifest_sha256": "cbe0dbb491bc0c7503390f20bfd7ef9b8f55cd91b01da1ce1674cc0320961aa5",
+  "parent_cache_plan_sha256": "068b2c80d128ba9caf9ff0f921cafd2761b8983c30c132ca086501f8c55a39af",
+  "consumed_original_manifest_sha256": "c2e068b1124576c9a4adc9b09aa7543e5997d52ccc5fd9f98a92adc39952ad80",
+  "code_sha256": "e863f6bce7a434a7a32fbcd0463b230d3df82d5c90f216000e176a64bb91bdb8",
+  "no_user_audio_or_scores": true,
+  "no_audio_inference": true,
+  "scope": "All 705 sealed recordings, actual V12 retained intervals. Reuse independent base acoustic evidence only because no interval changes; recompute candidate relationships after deletion. 124 consumed regressions never fit/select."
+}

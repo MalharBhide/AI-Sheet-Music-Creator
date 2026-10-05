@@ -1,0 +1,13 @@
+{
+  "recordings": 705,
+  "train": 459,
+  "validation": 122,
+  "consumed_regression": 124,
+  "v12_rejections": 642,
+  "no_audio_inference": true,
+  "no_user_audio_or_scores": true,
+  "incomplete_initial_preparation": {
+    "path": ".training/bass-v12-baseline-v1",
+    "failure": "A cached seconds scalar was an ndarray and could not serialize into the identity JSON. The incomplete cache never entered fitting; v2 serializes the scalar explicitly."
+  }
+}

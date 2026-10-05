@@ -6,6 +6,13 @@ The transcription design is informed by an [extensive review of Songscription, K
 
 Balanced full-song accompaniment now also uses a trained note verifier to reject unsupported candidate notes. See its [model card and measured limits](docs/accompaniment-verifier.md). Re-upload a recording to apply it to an older score.
 
+The latest [V13 bass texture verifier](docs/bass-texture-v13.md) learns to reject
+unsupported bass pitches after the previous bass stages. On 32 new original MP3
+fixtures it removes 36 false notes while preserving all 604 previously matched
+notes and holds. This is controlled evidence, not a commercial-song accuracy
+claim. The original note size and automatic pagination have been restored;
+stored scores remain unchanged until you upload again.
+
 The [V4 residual classifier](docs/accompaniment-residual-v4.md) learns from
 false notes that survive the existing filter. It removes a further 23 false notes
 on 126 regression excerpts while preserving all previously matched notes; the
@@ -21,7 +28,7 @@ the expanded dataset and preserves V5's existing rejections. It removes five
 additional false notes on 142 regression excerpts and one on 12 newly evaluated
 piano passages, with matched attacks and holds preserved. The gain is small.
 
-The latest [V7 left-hand consensus](docs/left-hand-consensus-v7.md) uses two
+The [V7 left-hand consensus](docs/left-hand-consensus-v7.md) uses two
 trained models that must agree before rejecting a surviving low note. It removes
 18 more false notes across 154 regression excerpts and one on eight new piano
 passages, preserving matched attacks and holds. This is a small measured gain.
@@ -38,7 +45,7 @@ Full-song melody recognition now includes a locally trained neural decoder. See 
 Precise rhythm now preserves clearly detected eighth-note triplets alongside
 straight sixteenths. See the [timing update and measured limits](docs/rhythm-timing-update.md).
 
-The latest [melody and repeated-note update](docs/melody-repeat-update.md)
+The [melody and repeated-note update](docs/melody-repeat-update.md)
 omits complete octave copies of the lead in balanced backing, aligns rhythm to
 the detected lead, and refines small automatic-tempo errors from long regular
 repeated-note runs. Shifted triplets retain equal spacing through notation and

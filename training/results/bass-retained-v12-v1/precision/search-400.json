@@ -1,0 +1,3209 @@
+[
+  {
+    "raw": {
+      "threshold": 0.01,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 649,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5983490261834129,
+          "recall": 0.5121439611393244,
+          "f1": 0.551900541312236,
+          "true_positives": 4639,
+          "false_positives": 3114,
+          "predicted": 7753,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 54.35530901279383
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.005,
+      "guardian_threshold": 0.025,
+      "passes": false,
+      "false_notes_removed": 482,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5858369098712446,
+          "recall": 0.5123647604327666,
+          "f1": 0.546643109540636,
+          "true_positives": 4641,
+          "false_positives": 3281,
+          "predicted": 7922,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 57.27031755651142
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.02,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 709,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6028608582574773,
+          "recall": 0.5118127621991609,
+          "f1": 0.5536183424886554,
+          "true_positives": 4636,
+          "false_positives": 3054,
+          "predicted": 7690,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 53.30800055397314
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.01,
+      "guardian_threshold": 0.025,
+      "passes": false,
+      "false_notes_removed": 568,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5921623691600715,
+          "recall": 0.5121439611393244,
+          "f1": 0.5492540847738574,
+          "true_positives": 4639,
+          "false_positives": 3195,
+          "predicted": 7834,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 55.76917543220176
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.05,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 733,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6046966731898239,
+          "recall": 0.5117023625524398,
+          "f1": 0.5543263768462596,
+          "true_positives": 4635,
+          "false_positives": 3030,
+          "predicted": 7665,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.889077170444864
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.025,
+      "guardian_threshold": 0.025,
+      "passes": false,
+      "false_notes_removed": 606,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5949448293559149,
+          "recall": 0.511923161845882,
+          "f1": 0.5503204367434132,
+          "true_positives": 4637,
+          "false_positives": 3157,
+          "predicted": 7794,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 55.10588007494866
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.1,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 750,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6059892768405911,
+          "recall": 0.5115919629057187,
+          "f1": 0.5548039509129004,
+          "true_positives": 4634,
+          "false_positives": 3013,
+          "predicted": 7647,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.592339773779
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.05,
+      "guardian_threshold": 0.025,
+      "passes": false,
+      "false_notes_removed": 612,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5953512264029793,
+          "recall": 0.5118127621991609,
+          "f1": 0.550430394775898,
+          "true_positives": 4636,
+          "false_positives": 3151,
+          "predicted": 7787,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 55.00114922906659
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.2,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 767,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6073394495412844,
+          "recall": 0.5115919629057187,
+          "f1": 0.5553691275167785,
+          "true_positives": 4634,
+          "false_positives": 2996,
+          "predicted": 7630,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.29560237711314
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.1,
+      "guardian_threshold": 0.025,
+      "passes": false,
+      "false_notes_removed": 626,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5964235173034864,
+          "recall": 0.5118127621991609,
+          "f1": 0.5508882419345256,
+          "true_positives": 4636,
+          "false_positives": 3137,
+          "predicted": 7773,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 54.75677725534176
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.4,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 773,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6078174186778594,
+          "recall": 0.5115919629057187,
+          "f1": 0.5555688766334972,
+          "true_positives": 4634,
+          "false_positives": 2990,
+          "predicted": 7624,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.19087153123107
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.2,
+      "guardian_threshold": 0.025,
+      "passes": false,
+      "false_notes_removed": 638,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5973457028733411,
+          "recall": 0.5118127621991609,
+          "f1": 0.551281289018372,
+          "true_positives": 4636,
+          "false_positives": 3125,
+          "predicted": 7761,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 54.54731556357763
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.6,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 774,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6078971533516988,
+          "recall": 0.5115919629057187,
+          "f1": 0.5556021821233739,
+          "true_positives": 4634,
+          "false_positives": 2989,
+          "predicted": 7623,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.17341639025073
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.3,
+      "guardian_threshold": 0.025,
+      "passes": false,
+      "false_notes_removed": 640,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5974996777935301,
+          "recall": 0.5118127621991609,
+          "f1": 0.5513468514003687,
+          "true_positives": 4636,
+          "false_positives": 3123,
+          "predicted": 7759,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 54.512405281616935
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.01,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 670,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5999223903764067,
+          "recall": 0.5120335614926033,
+          "f1": 0.5525046161176961,
+          "true_positives": 4638,
+          "false_positives": 3093,
+          "predicted": 7731,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 53.98875105220659
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.005,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 531,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5894830433125873,
+          "recall": 0.5123647604327666,
+          "f1": 0.5482251491347233,
+          "true_positives": 4641,
+          "false_positives": 3232,
+          "predicted": 7873,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 56.41501564847452
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.02,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 742,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6053559764859568,
+          "recall": 0.5115919629057187,
+          "f1": 0.5545383832944415,
+          "true_positives": 4634,
+          "false_positives": 3021,
+          "predicted": 7655,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.73198090162176
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.01,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 649,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5983490261834129,
+          "recall": 0.5121439611393244,
+          "f1": 0.551900541312236,
+          "true_positives": 4639,
+          "false_positives": 3114,
+          "predicted": 7753,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 54.35530901279383
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.05,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 783,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6084614373932467,
+          "recall": 0.5112607639655553,
+          "f1": 0.5556422100905873,
+          "true_positives": 4631,
+          "false_positives": 2980,
+          "predicted": 7611,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.016320121427626
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.025,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 714,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6032530904359141,
+          "recall": 0.5118127621991609,
+          "f1": 0.5537836707877919,
+          "true_positives": 4636,
+          "false_positives": 3049,
+          "predicted": 7685,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 53.220724849071416
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.1,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 811,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6106054610209735,
+          "recall": 0.5110399646721131,
+          "f1": 0.5564036300258429,
+          "true_positives": 4629,
+          "false_positives": 2952,
+          "predicted": 7581,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 51.52757617397797
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.05,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 733,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6046966731898239,
+          "recall": 0.5117023625524398,
+          "f1": 0.5543263768462596,
+          "true_positives": 4635,
+          "false_positives": 3030,
+          "predicted": 7665,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.889077170444864
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.2,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 831,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6121693121693121,
+          "recall": 0.5109295650253919,
+          "f1": 0.5569864002888434,
+          "true_positives": 4628,
+          "false_positives": 2932,
+          "predicted": 7560,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 51.17847335437107
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.1,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 750,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6059892768405911,
+          "recall": 0.5115919629057187,
+          "f1": 0.5548039509129004,
+          "true_positives": 4634,
+          "false_positives": 3013,
+          "predicted": 7647,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.592339773779
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.4,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 841,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "slakh-bass-v1-Track00013-demucs-000",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6128775834658188,
+          "recall": 0.5107087657319497,
+          "f1": 0.5571480187883897,
+          "true_positives": 4626,
+          "false_positives": 2922,
+          "predicted": 7548,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 51.00392194456762
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.2,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 767,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6073394495412844,
+          "recall": 0.5115919629057187,
+          "f1": 0.5553691275167785,
+          "true_positives": 4634,
+          "false_positives": 2996,
+          "predicted": 7630,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.29560237711314
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.6,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 846,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "slakh-bass-v1-Track00013-demucs-000",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.613283839321225,
+          "recall": 0.5107087657319497,
+          "f1": 0.5573158243479308,
+          "true_positives": 4626,
+          "false_positives": 2917,
+          "predicted": 7543,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 50.916646239665894
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.3,
+      "guardian_threshold": 0.05,
+      "passes": false,
+      "false_notes_removed": 771,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6076580120639916,
+          "recall": 0.5115919629057187,
+          "f1": 0.5555022776312635,
+          "true_positives": 4634,
+          "false_positives": 2992,
+          "predicted": 7626,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.22578181319176
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.01,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 672,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6000258799171843,
+          "recall": 0.511923161845882,
+          "f1": 0.5524842130346718,
+          "true_positives": 4637,
+          "false_positives": 3091,
+          "predicted": 7728,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 53.9538407702459
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.005,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 539,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5900826446280992,
+          "recall": 0.5123647604327666,
+          "f1": 0.5484843112923241,
+          "true_positives": 4641,
+          "false_positives": 3224,
+          "predicted": 7865,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 56.275374520631765
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.02,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 754,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6062033765213978,
+          "recall": 0.5113711636122764,
+          "f1": 0.5547637583088808,
+          "true_positives": 4632,
+          "false_positives": 3009,
+          "predicted": 7641,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.52251920985762
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.01,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 670,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5999223903764067,
+          "recall": 0.5120335614926033,
+          "f1": 0.5525046161176961,
+          "true_positives": 4638,
+          "false_positives": 3093,
+          "predicted": 7731,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 53.98875105220659
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.05,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 813,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6106638511284149,
+          "recall": 0.5108191653786708,
+          "f1": 0.5562969642320409,
+          "true_positives": 4627,
+          "false_positives": 2950,
+          "predicted": 7577,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 51.49266589201728
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.025,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 754,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6062549070923842,
+          "recall": 0.5114815632589975,
+          "f1": 0.5548502994011976,
+          "true_positives": 4633,
+          "false_positives": 3009,
+          "predicted": 7642,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.52251920985762
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.1,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 846,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.613129973474801,
+          "recall": 0.5103775667917863,
+          "f1": 0.5570550668755272,
+          "true_positives": 4623,
+          "false_positives": 2917,
+          "predicted": 7540,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 50.916646239665894
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.05,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 783,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6084614373932467,
+          "recall": 0.5112607639655553,
+          "f1": 0.5556422100905873,
+          "true_positives": 4631,
+          "false_positives": 2980,
+          "predicted": 7611,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.016320121427626
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.2,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 881,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6159381663113006,
+          "recall": 0.5102671671450651,
+          "f1": 0.5581451515517449,
+          "true_positives": 4622,
+          "false_positives": 2882,
+          "predicted": 7504,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 50.305716305353826
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.1,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 811,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6106054610209735,
+          "recall": 0.5110399646721131,
+          "f1": 0.5564036300258429,
+          "true_positives": 4629,
+          "false_positives": 2952,
+          "predicted": 7581,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 51.52757617397797
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.4,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 906,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "slakh-bass-v1-Track00013-demucs-000",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-137-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6177926421404683,
+          "recall": 0.5098255685581806,
+          "f1": 0.5586402951672412,
+          "true_positives": 4618,
+          "false_positives": 2857,
+          "predicted": 7475,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 49.86933778084521
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.2,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 831,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6121693121693121,
+          "recall": 0.5109295650253919,
+          "f1": 0.5569864002888434,
+          "true_positives": 4628,
+          "false_positives": 2932,
+          "predicted": 7560,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 51.17847335437107
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.6,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 913,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "slakh-bass-v1-Track00013-demucs-000",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-137-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6183717193358329,
+          "recall": 0.5098255685581806,
+          "f1": 0.5588769212150551,
+          "true_positives": 4618,
+          "false_positives": 2850,
+          "predicted": 7468,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 49.747151793982795
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.3,
+      "guardian_threshold": 0.1,
+      "passes": false,
+      "false_notes_removed": 837,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6126555467302092,
+          "recall": 0.5109295650253919,
+          "f1": 0.5571875752468095,
+          "true_positives": 4628,
+          "false_positives": 2926,
+          "predicted": 7554,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 51.073742508489
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.01,
+      "guardian_threshold": 0.4,
+      "passes": false,
+      "false_notes_removed": 674,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6001812063163344,
+          "recall": 0.511923161845882,
+          "f1": 0.5525500476644424,
+          "true_positives": 4637,
+          "false_positives": 3089,
+          "predicted": 7726,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 53.91893048828521
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.005,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 539,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5900826446280992,
+          "recall": 0.5123647604327666,
+          "f1": 0.5484843112923241,
+          "true_positives": 4641,
+          "false_positives": 3224,
+          "predicted": 7865,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 56.275374520631765
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.02,
+      "guardian_threshold": 0.4,
+      "passes": false,
+      "false_notes_removed": 770,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6074239244491081,
+          "recall": 0.5112607639655553,
+          "f1": 0.5552092075290732,
+          "true_positives": 4631,
+          "false_positives": 2993,
+          "predicted": 7624,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.243236954172104
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.01,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 672,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6000258799171843,
+          "recall": 0.511923161845882,
+          "f1": 0.5524842130346718,
+          "true_positives": 4637,
+          "false_positives": 3091,
+          "predicted": 7728,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 53.9538407702459
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.05,
+      "guardian_threshold": 0.4,
+      "passes": false,
+      "false_notes_removed": 843,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6130400212032865,
+          "recall": 0.5107087657319497,
+          "f1": 0.5572151288846061,
+          "true_positives": 4626,
+          "false_positives": 2920,
+          "predicted": 7546,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 50.96901166260693
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.025,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 770,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6073209131461559,
+          "recall": 0.5110399646721131,
+          "f1": 0.5550359712230216,
+          "true_positives": 4629,
+          "false_positives": 2993,
+          "predicted": 7622,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.243236954172104
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.1,
+      "guardian_threshold": 0.4,
+      "passes": false,
+      "false_notes_removed": 884,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-137-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6161333333333333,
+          "recall": 0.510156767498344,
+          "f1": 0.5581591979707694,
+          "true_positives": 4621,
+          "false_positives": 2879,
+          "predicted": 7500,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 50.253350882412796
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.05,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 813,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6106638511284149,
+          "recall": 0.5108191653786708,
+          "f1": 0.5562969642320409,
+          "true_positives": 4627,
+          "false_positives": 2950,
+          "predicted": 7577,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 51.49266589201728
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.2,
+      "guardian_threshold": 0.4,
+      "passes": false,
+      "false_notes_removed": 927,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_BN3-119-G_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-137-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6195841716968478,
+          "recall": 0.5099359682049017,
+          "f1": 0.5594380185308545,
+          "true_positives": 4619,
+          "false_positives": 2836,
+          "predicted": 7455,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 49.50277982025796
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.1,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 846,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.613129973474801,
+          "recall": 0.5103775667917863,
+          "f1": 0.5570550668755272,
+          "true_positives": 4623,
+          "false_positives": 2917,
+          "predicted": 7540,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 50.916646239665894
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.4,
+      "guardian_threshold": 0.4,
+      "passes": false,
+      "false_notes_removed": 973,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "slakh-bass-v1-Track00011-demucs-000",
+        "slakh-bass-v1-Track00013-demucs-000",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_BN3-119-G_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-137-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6231766612641815,
+          "recall": 0.5093839699712961,
+          "f1": 0.5605637225124529,
+          "true_positives": 4614,
+          "false_positives": 2790,
+          "predicted": 7404,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 48.6998433351621
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.2,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 881,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6159381663113006,
+          "recall": 0.5102671671450651,
+          "f1": 0.5581451515517449,
+          "true_positives": 4622,
+          "false_positives": 2882,
+          "predicted": 7504,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 50.305716305353826
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.6,
+      "guardian_threshold": 0.4,
+      "passes": false,
+      "false_notes_removed": 993,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "slakh-bass-v1-Track00011-demucs-000",
+        "slakh-bass-v1-Track00013-demucs-000",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_BN3-119-G_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz2-187-F#_comp",
+        "bass-positive-v1-04_Jazz3-137-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "bass-positive-v1-04_SS3-98-C_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6247629368734761,
+          "recall": 0.5091631706778539,
+          "f1": 0.5610705596107056,
+          "true_positives": 4612,
+          "false_positives": 2770,
+          "predicted": 7382,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 48.35074051555521
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.3,
+      "guardian_threshold": 0.2,
+      "passes": false,
+      "false_notes_removed": 894,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-137-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6169047936974229,
+          "recall": 0.5100463678516228,
+          "f1": 0.5584093793436877,
+          "true_positives": 4620,
+          "false_positives": 2869,
+          "predicted": 7489,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 50.07879947260935
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.01,
+      "guardian_threshold": 0.6,
+      "passes": false,
+      "false_notes_removed": 674,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6001812063163344,
+          "recall": 0.511923161845882,
+          "f1": 0.5525500476644424,
+          "true_positives": 4637,
+          "false_positives": 3089,
+          "predicted": 7726,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 53.91893048828521
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.005,
+      "guardian_threshold": 0.3,
+      "passes": false,
+      "false_notes_removed": 539,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.5900826446280992,
+          "recall": 0.5123647604327666,
+          "f1": 0.5484843112923241,
+          "true_positives": 4641,
+          "false_positives": 3224,
+          "predicted": 7865,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 56.275374520631765
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.02,
+      "guardian_threshold": 0.6,
+      "passes": false,
+      "false_notes_removed": 773,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6076630363469361,
+          "recall": 0.5112607639655553,
+          "f1": 0.5553090712872475,
+          "true_positives": 4631,
+          "false_positives": 2990,
+          "predicted": 7621,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 52.19087153123107
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.01,
+      "guardian_threshold": 0.3,
+      "passes": false,
+      "false_notes_removed": 674,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6001812063163344,
+          "recall": 0.511923161845882,
+          "f1": 0.5525500476644424,
+          "true_positives": 4637,
+          "false_positives": 3089,
+          "predicted": 7726,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 53.91893048828521
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.05,
+      "guardian_threshold": 0.6,
+      "passes": false,
+      "false_notes_removed": 861,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6145058448459086,
+          "recall": 0.5107087657319497,
+          "f1": 0.5578198480646328,
+          "true_positives": 4626,
+          "false_positives": 2902,
+          "predicted": 7528,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 50.654819124960724
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.025,
+      "guardian_threshold": 0.3,
+      "passes": false,
+      "false_notes_removed": 786,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6085470085470085,
+          "recall": 0.5109295650253919,
+          "f1": 0.5554822060853388,
+          "true_positives": 4628,
+          "false_positives": 2977,
+          "predicted": 7605,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 51.96395469848659
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.1,
+      "guardian_threshold": 0.6,
+      "passes": false,
+      "false_notes_removed": 919,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "slakh-bass-v1-Track00016-demucs-000",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-137-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6190221031480241,
+          "recall": 0.510156767498344,
+          "f1": 0.5593415239363312,
+          "true_positives": 4621,
+          "false_positives": 2844,
+          "predicted": 7465,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 49.64242094810072
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.05,
+      "guardian_threshold": 0.3,
+      "passes": false,
+      "false_notes_removed": 833,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6122286924298571,
+          "recall": 0.5107087657319497,
+          "f1": 0.5568797399783315,
+          "true_positives": 4626,
+          "false_positives": 2930,
+          "predicted": 7556,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 51.14356307241038
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.2,
+      "guardian_threshold": 0.6,
+      "passes": false,
+      "false_notes_removed": 974,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "slakh-bass-v1-Track00016-demucs-000",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_BN3-119-G_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-137-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6235151187904968,
+          "recall": 0.5099359682049017,
+          "f1": 0.5610348597109195,
+          "true_positives": 4619,
+          "false_positives": 2789,
+          "predicted": 7408,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 48.682388194181755
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.1,
+      "guardian_threshold": 0.3,
+      "passes": false,
+      "false_notes_removed": 871,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6150672168241714,
+          "recall": 0.510156767498344,
+          "f1": 0.5577213203789754,
+          "true_positives": 4621,
+          "false_positives": 2892,
+          "predicted": 7513,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 50.480267715157275
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.4,
+      "guardian_threshold": 0.6,
+      "passes": false,
+      "false_notes_removed": 1036,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "slakh-bass-v1-Track00011-demucs-000",
+        "slakh-bass-v1-Track00013-demucs-000",
+        "slakh-bass-v1-Track00016-demucs-000",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_BN3-119-G_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-137-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090",
+        "bass-original-expanded-v1-261870"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6283728536385936,
+          "recall": 0.5090527710311327,
+          "f1": 0.5624542571358868,
+          "true_positives": 4611,
+          "false_positives": 2727,
+          "predicted": 7338,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 47.600169453400376
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.2,
+      "guardian_threshold": 0.3,
+      "passes": false,
+      "false_notes_removed": 910,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_BN3-119-G_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6181745182012848,
+          "recall": 0.5099359682049017,
+          "f1": 0.5588626739261948,
+          "true_positives": 4619,
+          "false_positives": 2853,
+          "predicted": 7472,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 49.799517216923824
+        }
+      }
+    }
+  },
+  {
+    "raw": {
+      "threshold": 0.6,
+      "guardian_threshold": 0.6,
+      "passes": false,
+      "false_notes_removed": 1071,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "slakh-bass-v1-Track00011-demucs-000",
+        "slakh-bass-v1-Track00013-demucs-000",
+        "slakh-bass-v1-Track00016-demucs-000",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_BN3-119-G_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz2-187-F#_comp",
+        "bass-positive-v1-04_Jazz3-137-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "bass-positive-v1-04_SS3-98-C_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090",
+        "bass-original-expanded-v1-261870",
+        "bass-original-expanded-v1-261874"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6310812662738111,
+          "recall": 0.5083903731508059,
+          "f1": 0.5631305411189239,
+          "true_positives": 4605,
+          "false_positives": 2692,
+          "predicted": 7297,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 46.98923951908831
+        }
+      }
+    },
+    "margin": {
+      "threshold": 0.3,
+      "guardian_threshold": 0.3,
+      "passes": false,
+      "false_notes_removed": 935,
+      "failed_recordings": [
+        "slakh-bass-v1-Track00011-oracle-030",
+        "slakh-bass-v1-Track00013-demucs-000",
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-positive-v1-04_BN2-131-B_comp",
+        "bass-positive-v1-04_BN2-166-Ab_comp",
+        "bass-positive-v1-04_BN3-119-G_comp",
+        "bass-positive-v1-04_Funk1-114-Ab_comp",
+        "bass-positive-v1-04_Funk1-97-C_comp",
+        "bass-positive-v1-04_Funk2-108-Eb_comp",
+        "bass-positive-v1-04_Funk2-119-G_comp",
+        "bass-positive-v1-04_Funk3-112-C#_comp",
+        "bass-positive-v1-04_Jazz1-130-D_comp",
+        "bass-positive-v1-04_Jazz3-137-Eb_comp",
+        "bass-positive-v1-04_Jazz3-150-C_comp",
+        "bass-positive-v1-04_SS2-107-Ab_comp",
+        "bass-positive-v1-04_SS2-88-F_comp",
+        "slakh-bass-demucs-expanded-v1-Track00006-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00013-demucs-030",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-060",
+        "slakh-bass-demucs-expanded-v1-Track00016-demucs-090"
+      ],
+      "aggregate": {
+        "baseline_bass": {
+          "precision": 0.5526096778028772,
+          "recall": 0.5131375579598145,
+          "f1": 0.5321426526990669,
+          "true_positives": 4648,
+          "false_positives": 3763,
+          "predicted": 8411,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 65.68369550903763
+        },
+        "candidate": {
+          "precision": 0.6200967221923697,
+          "recall": 0.5096047692647383,
+          "f1": 0.559447339716398,
+          "true_positives": 4616,
+          "false_positives": 2828,
+          "predicted": 7444,
+          "reference": 9058,
+          "seconds": 3437.382721088435,
+          "false_positives_per_minute": 49.363138692415205
+        }
+      }
+    }
+  }
+]

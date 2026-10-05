@@ -1,0 +1,73 @@
+{
+  "backend_training": {
+    "passed": 466,
+    "skipped_native_integration": 6,
+    "log_sha256": "3c2aac806afe7f50a5a1d98c6fcd21d64216fd6f9a60c7ef4fdfd8737373aa3d"
+  },
+  "native_pipeline": {
+    "passed": 6,
+    "log_sha256": "235b7716e940f42e84ff0c7b7d88123b642658101b65c030f3e8ac1895d62942"
+  },
+  "native_bass_routing": {
+    "passed": 8,
+    "report_sha256": "2620a5186d7bbbbcfce1310db061a6fadee378137f701a99626a252544b27603"
+  },
+  "changed_python_lint": "passed",
+  "repository_lint": "46 pre-existing import-order findings; frozen historical sources deliberately unchanged",
+  "backend_build": "passed",
+  "live": {
+    "passes": true,
+    "health": {
+      "status": "ok",
+      "ready": true,
+      "dependencies": {
+        "ffmpeg": true,
+        "basic_pitch": true,
+        "piano_transcription": true,
+        "piano_model": true,
+        "vocal_model": true,
+        "accompaniment_model": true,
+        "accompaniment_context_models": true,
+        "accompaniment_residual_model": true,
+        "accompaniment_left_hand_model": true,
+        "accompaniment_left_refinement_model": true,
+        "accompaniment_left_consensus_models": true,
+        "accompaniment_pitch_preserving_models": true,
+        "accompaniment_repeat_attack_models": true,
+        "bass_consensus_models": true,
+        "bass_articulation_models": true,
+        "bass_residual_models": true,
+        "bass_texture_models": true,
+        "source_separation": true,
+        "music21": true,
+        "musescore": true
+      },
+      "limits": {
+        "max_upload_mb": 0,
+        "max_audio_seconds": 0,
+        "retention_hours": 24
+      }
+    },
+    "source_sha256": {
+      "route": "f9f0037c50c11f022dd75749d8d1c86732c9ced4bcea9f9553701c208980b5f0",
+      "notation": "3ee3b924a722cb61d4a50e06cad29ed87fdf479f12cf27724d328611e506606c",
+      "texture_runtime": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c"
+    },
+    "arrays": {
+      "bass-texture-v1.npz": "f1e829c7d4328afc38268cc8dbe8afb526c6860efafd3d272170cf3aca768d3e",
+      "bass-texture-guardian-v1.npz": "82f4ed13e9cf5a7a832a8a066f23ff9f7642aa187da664779a900d55b807e994"
+    },
+    "queue": [
+      [
+        "completed",
+        8
+      ]
+    ],
+    "model": "Bass texture verifier v1 (trained acoustic rejection)",
+    "scope": "Actual running backend through frontend proxy; original 7 mm notation and released arrays. Read only; no user job submitted or regenerated."
+  },
+  "note_size": "Original 7 mm staff scaling/default spacing/automatic pagination from abb46fe unchanged",
+  "layout_regression": "96 original bars: 6 to 4 pages; all 960 audible notes and 672 seek positions preserved (training/results/original-note-size-v1)",
+  "no_user_transcription_or_regeneration": true,
+  "scope": "Local website deployment ready; measured model gains are limited to sealed validation, consumed and original synthetic first-pass data."
+}

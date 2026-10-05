@@ -1,0 +1,51 @@
+{
+  "passes": true,
+  "health": {
+    "status": "ok",
+    "ready": true,
+    "dependencies": {
+      "ffmpeg": true,
+      "basic_pitch": true,
+      "piano_transcription": true,
+      "piano_model": true,
+      "vocal_model": true,
+      "accompaniment_model": true,
+      "accompaniment_context_models": true,
+      "accompaniment_residual_model": true,
+      "accompaniment_left_hand_model": true,
+      "accompaniment_left_refinement_model": true,
+      "accompaniment_left_consensus_models": true,
+      "accompaniment_pitch_preserving_models": true,
+      "accompaniment_repeat_attack_models": true,
+      "bass_consensus_models": true,
+      "bass_articulation_models": true,
+      "bass_residual_models": true,
+      "bass_texture_models": true,
+      "source_separation": true,
+      "music21": true,
+      "musescore": true
+    },
+    "limits": {
+      "max_upload_mb": 0,
+      "max_audio_seconds": 0,
+      "retention_hours": 24
+    }
+  },
+  "source_sha256": {
+    "route": "f9f0037c50c11f022dd75749d8d1c86732c9ced4bcea9f9553701c208980b5f0",
+    "notation": "3ee3b924a722cb61d4a50e06cad29ed87fdf479f12cf27724d328611e506606c",
+    "texture_runtime": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c"
+  },
+  "arrays": {
+    "bass-texture-v1.npz": "f1e829c7d4328afc38268cc8dbe8afb526c6860efafd3d272170cf3aca768d3e",
+    "bass-texture-guardian-v1.npz": "82f4ed13e9cf5a7a832a8a066f23ff9f7642aa187da664779a900d55b807e994"
+  },
+  "queue": [
+    [
+      "completed",
+      8
+    ]
+  ],
+  "model": "Bass texture verifier v1 (trained acoustic rejection)",
+  "scope": "Actual running backend through frontend proxy; original 7 mm notation and released arrays. Read only; no user job submitted or regenerated."
+}

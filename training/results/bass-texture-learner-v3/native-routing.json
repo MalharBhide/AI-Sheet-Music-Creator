@@ -1,0 +1,111 @@
+{
+  "passes": true,
+  "cases": [
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-held",
+      "duration": 30.0,
+      "raw_candidates": 2,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "texture_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-repeated",
+      "duration": 30.0,
+      "raw_candidates": 48,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "texture_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-octave",
+      "duration": 30.0,
+      "raw_candidates": 24,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "texture_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "slakh-bass-v1-Track00006-oracle-000",
+      "duration": 30.0,
+      "raw_candidates": 28,
+      "v10_rejected": 3,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "texture_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-texture-fresh-v1-262617",
+      "duration": 30.0,
+      "raw_candidates": 38,
+      "v10_rejected": 0,
+      "merged_boundaries": 1,
+      "v12_rejected": 0,
+      "texture_rejected": 3,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-texture-fresh-v1-262618",
+      "duration": 30.0,
+      "raw_candidates": 40,
+      "v10_rejected": 1,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "texture_rejected": 1,
+      "passes": true
+    },
+    {
+      "case": "window-32.wav",
+      "directory": "bass-texture-native-v1",
+      "duration": 32.0,
+      "raw_candidates": 7,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "texture_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "short.wav",
+      "directory": "bass-texture-native-v1",
+      "duration": 0.049977324263038546,
+      "raw_candidates": 0,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "v12_rejected": 0,
+      "texture_rejected": 0,
+      "passes": true
+    }
+  ],
+  "checkpoint_sha256": "98221090db5040c5528f1f6d2c56138e6b8feefc24a73a9ccc2abef7e9c509e5",
+  "portable_runtime_report_sha256": "305fad1bd4a2f46d7a3583e9da53e935a8d49d7df1977735960fa4625dda5d68",
+  "routing_source_sha256": "f9f0037c50c11f022dd75749d8d1c86732c9ced4bcea9f9553701c208980b5f0",
+  "runtime_source_sha256": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c",
+  "script_sha256": "2905a73a6f643380002519bd5a6e159ed3413f20782b4b3e287d81114f417610",
+  "bass_metadata": {
+    "model": "Bass note verifier v1 (trained conservative consensus)",
+    "articulation_model": "Bass articulation v1 (trained key-release protection)",
+    "residual_model": "Bass residual v1 (trained unsupported-pitch rejection)",
+    "texture_model": "Bass texture verifier v1 (trained acoustic rejection)",
+    "window_candidates": 187,
+    "window_rejections": 4,
+    "window_merged_boundaries": 1,
+    "window_residual_rejections": 0,
+    "window_texture_rejections": 4
+  },
+  "release_seal_sha256": "77825687a2b9a1aa5fb2ce72e2807cc79e2ef8ac0fb39063a082a0bde8231cbb",
+  "checks": "Native bounded Basic Pitch and actual post-hold audio/features; frozen sklearn texture decisions match the complete V10 + V11 + V12 + texture route. Exact retained pitches/attacks/ends/velocities. Original/licensed fixtures only; no user uploads or scores."
+}
