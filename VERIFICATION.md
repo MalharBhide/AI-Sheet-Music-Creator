@@ -1,5 +1,20 @@
 # Verification
 
+## V11 wrong-pitch residual studies — 2026-10-05
+
+New baseline evidence includes V11 merges and duration-dependent acoustic
+features, with native equality checked on all 40 changed recordings. The four-head
+residual batch had no safe positive validation winner. A separate four-head
+pitch-coverage label batch removed 267 false validation detections, but its frozen
+winner lost seven matched attacks/holds across four of 92 consumed regressions.
+Both batches are withheld. No fresh test, export or production routing followed.
+
+**415 tests passed, six opt-in integrations skipped; three additional continuation
+safeguard tests passed.** Native integration already passed for unchanged live
+V11. Ruff and diff checks pass. A bounded local runner is preparing additional
+licensed separated bass and original timbres; it cannot export/deploy weights.
+No user uploads or scores were processed. See [the study](docs/bass-residual-v11-training.md).
+
 ## Bass articulation V11 — 2026-10-04
 
 The trained key-release-aware pair passed all frozen per-recording preservation

@@ -1,5 +1,13 @@
 # Supervised melody training
 
+The [V11 wrong-pitch training study](../docs/bass-residual-v11-training.md)
+uses exact merged durations and native recomputed evidence. Two completed pairs
+had no safe validation gain; a separate pitch-coverage-label winner improved
+validation but lost seven correct regression attacks, so it is withheld. The
+next bounded dataset batch is running with 100 additional training and 28
+validation clips. Its runner cannot export or deploy weights; current website
+V11 remains verified. Snapshot archives distinguish pending work from results.
+
 The live [V11 bass articulation release](../docs/bass-articulation-v11.md) has
 passed frozen validation, consumed regression, first-pass original stress,
 portable parity, native routing, all six native pipeline cases and deployment.

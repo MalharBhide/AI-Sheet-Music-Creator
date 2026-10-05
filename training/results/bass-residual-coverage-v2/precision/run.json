@@ -1,0 +1,2183 @@
+{
+  "settings": {
+    "max_iter": 600,
+    "min_samples_leaf": 30,
+    "max_leaf_nodes": 15,
+    "l2_regularization": 8.0,
+    "learning_rate": 0.04,
+    "early_stopping": false,
+    "random_state": 261401
+  },
+  "guardian_settings": {
+    "max_iter": 600,
+    "min_samples_leaf": 30,
+    "max_leaf_nodes": 7,
+    "l2_regularization": 8.0,
+    "learning_rate": 0.04,
+    "early_stopping": false,
+    "random_state": 261402
+  },
+  "training_counts": [
+    {
+      "id": "bass-positive-v1-00_BN1-129-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 59,
+      "negative": 18
+    },
+    {
+      "id": "bass-positive-v1-00_BN1-129-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 33,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-00_BN1-147-Gb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 61,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-00_BN1-147-Gb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 65,
+      "negative": 36
+    },
+    {
+      "id": "bass-positive-v1-00_BN2-131-B_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 78,
+      "negative": 14
+    },
+    {
+      "id": "bass-positive-v1-00_BN2-131-B_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 5,
+      "negative": 15
+    },
+    {
+      "id": "bass-positive-v1-00_BN2-166-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 80,
+      "negative": 10
+    },
+    {
+      "id": "bass-positive-v1-00_BN2-166-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 16,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-00_BN3-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 83,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-00_BN3-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 52,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-00_BN3-154-E_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 69,
+      "negative": 12
+    },
+    {
+      "id": "bass-positive-v1-00_BN3-154-E_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 63,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-00_Funk1-114-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 91,
+      "negative": 16
+    },
+    {
+      "id": "bass-positive-v1-00_Funk1-114-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 42,
+      "negative": 8
+    },
+    {
+      "id": "bass-positive-v1-00_Funk1-97-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 82,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-00_Funk1-97-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 41,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-00_Funk2-108-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 132,
+      "negative": 17
+    },
+    {
+      "id": "bass-positive-v1-00_Funk2-108-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 77,
+      "negative": 19
+    },
+    {
+      "id": "bass-positive-v1-00_Funk2-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 125,
+      "negative": 20
+    },
+    {
+      "id": "bass-positive-v1-00_Funk2-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 33,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-00_Funk3-112-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 116,
+      "negative": 6
+    },
+    {
+      "id": "bass-positive-v1-00_Funk3-112-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 55,
+      "negative": 7
+    },
+    {
+      "id": "bass-positive-v1-00_Funk3-98-A_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 99,
+      "negative": 16
+    },
+    {
+      "id": "bass-positive-v1-00_Funk3-98-A_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 28,
+      "negative": 9
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz1-130-D_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 69,
+      "negative": 12
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz1-130-D_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 16,
+      "negative": 16
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz1-200-B_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 31,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz1-200-B_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 22,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz2-110-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 79,
+      "negative": 33
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz2-110-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 26,
+      "negative": 10
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz2-187-F#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 76,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz2-187-F#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 24,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz3-137-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 47,
+      "negative": 37
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz3-137-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 38,
+      "negative": 12
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz3-150-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 44,
+      "negative": 16
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz3-150-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 41,
+      "negative": 12
+    },
+    {
+      "id": "bass-positive-v1-00_Rock1-130-A_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 156,
+      "negative": 15
+    },
+    {
+      "id": "bass-positive-v1-00_Rock1-130-A_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 49,
+      "negative": 15
+    },
+    {
+      "id": "bass-positive-v1-00_Rock1-90-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 230,
+      "negative": 6
+    },
+    {
+      "id": "bass-positive-v1-00_Rock1-90-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 103,
+      "negative": 7
+    },
+    {
+      "id": "bass-positive-v1-00_Rock2-142-D_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 171,
+      "negative": 29
+    },
+    {
+      "id": "bass-positive-v1-00_Rock2-142-D_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 46,
+      "negative": 8
+    },
+    {
+      "id": "bass-positive-v1-00_Rock2-85-F_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 161,
+      "negative": 22
+    },
+    {
+      "id": "bass-positive-v1-00_Rock2-85-F_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 45,
+      "negative": 7
+    },
+    {
+      "id": "bass-positive-v1-00_Rock3-117-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 178,
+      "negative": 15
+    },
+    {
+      "id": "bass-positive-v1-00_Rock3-117-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 0,
+      "negative": 22
+    },
+    {
+      "id": "bass-positive-v1-00_Rock3-148-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 220,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-00_Rock3-148-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 14,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-00_SS1-100-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 165,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-00_SS1-100-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 45,
+      "negative": 9
+    },
+    {
+      "id": "bass-positive-v1-00_SS1-68-E_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 125,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-00_SS1-68-E_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 55,
+      "negative": 10
+    },
+    {
+      "id": "bass-positive-v1-00_SS2-107-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 160,
+      "negative": 13
+    },
+    {
+      "id": "bass-positive-v1-00_SS2-107-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 47,
+      "negative": 30
+    },
+    {
+      "id": "bass-positive-v1-00_SS2-88-F_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 80,
+      "negative": 17
+    },
+    {
+      "id": "bass-positive-v1-00_SS2-88-F_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 45,
+      "negative": 8
+    },
+    {
+      "id": "bass-positive-v1-00_SS3-84-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 39,
+      "negative": 10
+    },
+    {
+      "id": "bass-positive-v1-00_SS3-84-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 13,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-00_SS3-98-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 177,
+      "negative": 15
+    },
+    {
+      "id": "bass-positive-v1-00_SS3-98-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 46,
+      "negative": 21
+    },
+    {
+      "id": "bass-positive-v1-01_BN1-129-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 67,
+      "negative": 13
+    },
+    {
+      "id": "bass-positive-v1-01_BN1-129-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 2,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-01_BN1-147-Gb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 83,
+      "negative": 9
+    },
+    {
+      "id": "bass-positive-v1-01_BN1-147-Gb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 0,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-01_BN2-131-B_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 94,
+      "negative": 22
+    },
+    {
+      "id": "bass-positive-v1-01_BN2-131-B_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 14,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-01_BN2-166-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 99,
+      "negative": 32
+    },
+    {
+      "id": "bass-positive-v1-01_BN2-166-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 24,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-01_BN3-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 40,
+      "negative": 20
+    },
+    {
+      "id": "bass-positive-v1-01_BN3-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 13,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-01_BN3-154-E_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 105,
+      "negative": 21
+    },
+    {
+      "id": "bass-positive-v1-01_BN3-154-E_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 12,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-01_Funk1-114-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 37,
+      "negative": 22
+    },
+    {
+      "id": "bass-positive-v1-01_Funk1-114-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 39,
+      "negative": 10
+    },
+    {
+      "id": "bass-positive-v1-01_Funk1-97-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 0,
+      "negative": 17
+    },
+    {
+      "id": "bass-positive-v1-01_Funk1-97-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 3,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-01_Funk2-108-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 85,
+      "negative": 28
+    },
+    {
+      "id": "bass-positive-v1-01_Funk2-108-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 0,
+      "negative": 14
+    },
+    {
+      "id": "bass-positive-v1-01_Funk2-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 73,
+      "negative": 36
+    },
+    {
+      "id": "bass-positive-v1-01_Funk2-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 1,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-01_Funk3-112-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 39,
+      "negative": 26
+    },
+    {
+      "id": "bass-positive-v1-01_Funk3-112-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 19,
+      "negative": 7
+    },
+    {
+      "id": "bass-positive-v1-01_Funk3-98-A_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 30,
+      "negative": 22
+    },
+    {
+      "id": "bass-positive-v1-01_Funk3-98-A_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 72,
+      "negative": 9
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz1-130-D_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 44,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz1-130-D_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 5,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz1-200-B_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 42,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz1-200-B_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 2,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz2-110-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 84,
+      "negative": 18
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz2-110-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 11,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz2-187-F#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 55,
+      "negative": 9
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz2-187-F#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 30,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz3-137-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 104,
+      "negative": 24
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz3-137-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 4,
+      "negative": 7
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz3-150-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 24,
+      "negative": 14
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz3-150-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 16,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-01_Rock1-130-A_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 121,
+      "negative": 15
+    },
+    {
+      "id": "bass-positive-v1-01_Rock1-130-A_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 21,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-01_Rock1-90-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 144,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-01_Rock1-90-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 20,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-01_Rock2-142-D_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 153,
+      "negative": 15
+    },
+    {
+      "id": "bass-positive-v1-01_Rock2-142-D_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 28,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-01_Rock2-85-F_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 107,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-01_Rock2-85-F_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 23,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-01_Rock3-117-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 171,
+      "negative": 15
+    },
+    {
+      "id": "bass-positive-v1-01_Rock3-117-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 3,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-01_Rock3-148-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 103,
+      "negative": 26
+    },
+    {
+      "id": "bass-positive-v1-01_Rock3-148-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 7,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-01_SS1-100-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 171,
+      "negative": 9
+    },
+    {
+      "id": "bass-positive-v1-01_SS1-100-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 5,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-01_SS1-68-E_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 116,
+      "negative": 54
+    },
+    {
+      "id": "bass-positive-v1-01_SS1-68-E_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 26,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-01_SS2-107-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 92,
+      "negative": 18
+    },
+    {
+      "id": "bass-positive-v1-01_SS2-107-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 38,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-01_SS2-88-F_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 155,
+      "negative": 10
+    },
+    {
+      "id": "bass-positive-v1-01_SS2-88-F_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 12,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-01_SS3-84-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 159,
+      "negative": 14
+    },
+    {
+      "id": "bass-positive-v1-01_SS3-84-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 11,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-01_SS3-98-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 339,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-01_SS3-98-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 8,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-02_BN1-129-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 96,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-02_BN1-129-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 37,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-02_BN1-147-Gb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 87,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-02_BN1-147-Gb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 23,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-02_BN2-131-B_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 145,
+      "negative": 21
+    },
+    {
+      "id": "bass-positive-v1-02_BN2-131-B_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 29,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-02_BN2-166-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 97,
+      "negative": 10
+    },
+    {
+      "id": "bass-positive-v1-02_BN2-166-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 27,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-02_BN3-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 169,
+      "negative": 14
+    },
+    {
+      "id": "bass-positive-v1-02_BN3-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 32,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-02_BN3-154-E_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 133,
+      "negative": 13
+    },
+    {
+      "id": "bass-positive-v1-02_BN3-154-E_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 12,
+      "negative": 13
+    },
+    {
+      "id": "bass-positive-v1-02_Funk1-114-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 134,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-02_Funk1-114-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 57,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-02_Funk1-97-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 144,
+      "negative": 24
+    },
+    {
+      "id": "bass-positive-v1-02_Funk1-97-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 22,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-02_Funk2-108-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 131,
+      "negative": 24
+    },
+    {
+      "id": "bass-positive-v1-02_Funk2-108-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 23,
+      "negative": 6
+    },
+    {
+      "id": "bass-positive-v1-02_Funk2-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 54,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-02_Funk3-112-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 113,
+      "negative": 41
+    },
+    {
+      "id": "bass-positive-v1-02_Funk3-112-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 54,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-02_Funk3-98-A_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 58,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-02_Funk3-98-A_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 20,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz1-130-D_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 107,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz1-130-D_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 32,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz1-200-B_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 81,
+      "negative": 9
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz1-200-B_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 14,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz2-110-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 123,
+      "negative": 10
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz2-110-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 11,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz2-187-F#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 70,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz2-187-F#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 30,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz3-137-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 118,
+      "negative": 6
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz3-137-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 47,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz3-150-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 193,
+      "negative": 25
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz3-150-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 4,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-02_Rock1-130-A_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 113,
+      "negative": 17
+    },
+    {
+      "id": "bass-positive-v1-02_Rock1-130-A_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 32,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-02_Rock1-90-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 103,
+      "negative": 8
+    },
+    {
+      "id": "bass-positive-v1-02_Rock1-90-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 42,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-02_Rock2-142-D_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 126,
+      "negative": 53
+    },
+    {
+      "id": "bass-positive-v1-02_Rock2-142-D_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 42,
+      "negative": 6
+    },
+    {
+      "id": "bass-positive-v1-02_Rock2-85-F_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 116,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-02_Rock2-85-F_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 49,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-02_Rock3-117-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 134,
+      "negative": 18
+    },
+    {
+      "id": "bass-positive-v1-02_Rock3-117-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 67,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-02_Rock3-148-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 224,
+      "negative": 17
+    },
+    {
+      "id": "bass-positive-v1-02_Rock3-148-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 31,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-02_SS1-100-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 284,
+      "negative": 17
+    },
+    {
+      "id": "bass-positive-v1-02_SS1-100-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 23,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-02_SS1-68-E_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 126,
+      "negative": 28
+    },
+    {
+      "id": "bass-positive-v1-02_SS1-68-E_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 32,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-02_SS2-107-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 135,
+      "negative": 24
+    },
+    {
+      "id": "bass-positive-v1-02_SS2-107-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 74,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-02_SS2-88-F_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 98,
+      "negative": 13
+    },
+    {
+      "id": "bass-positive-v1-02_SS2-88-F_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 39,
+      "negative": 7
+    },
+    {
+      "id": "bass-positive-v1-02_SS3-84-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 106,
+      "negative": 7
+    },
+    {
+      "id": "bass-positive-v1-02_SS3-84-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 42,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-02_SS3-98-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 192,
+      "negative": 26
+    },
+    {
+      "id": "bass-positive-v1-02_SS3-98-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 68,
+      "negative": 15
+    },
+    {
+      "id": "bass-positive-v1-03_BN1-129-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 69,
+      "negative": 17
+    },
+    {
+      "id": "bass-positive-v1-03_BN1-129-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 11,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-03_BN1-147-Gb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 83,
+      "negative": 17
+    },
+    {
+      "id": "bass-positive-v1-03_BN1-147-Gb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 17,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-03_BN2-131-B_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 115,
+      "negative": 16
+    },
+    {
+      "id": "bass-positive-v1-03_BN2-131-B_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 13,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-03_BN2-166-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 84,
+      "negative": 7
+    },
+    {
+      "id": "bass-positive-v1-03_BN2-166-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 14,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-03_BN3-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 98,
+      "negative": 28
+    },
+    {
+      "id": "bass-positive-v1-03_BN3-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 4,
+      "negative": 12
+    },
+    {
+      "id": "bass-positive-v1-03_BN3-154-E_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 80,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-03_BN3-154-E_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 18,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-03_Funk1-114-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 40,
+      "negative": 23
+    },
+    {
+      "id": "bass-positive-v1-03_Funk1-114-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 13,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-03_Funk1-97-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 70,
+      "negative": 39
+    },
+    {
+      "id": "bass-positive-v1-03_Funk1-97-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 3,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-03_Funk2-108-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 80,
+      "negative": 28
+    },
+    {
+      "id": "bass-positive-v1-03_Funk2-108-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 22,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-03_Funk2-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 38,
+      "negative": 36
+    },
+    {
+      "id": "bass-positive-v1-03_Funk2-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 16,
+      "negative": 6
+    },
+    {
+      "id": "bass-positive-v1-03_Funk3-112-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 55,
+      "negative": 15
+    },
+    {
+      "id": "bass-positive-v1-03_Funk3-112-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 27,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-03_Funk3-98-A_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 47,
+      "negative": 29
+    },
+    {
+      "id": "bass-positive-v1-03_Funk3-98-A_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 8,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz1-130-D_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 22,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz1-130-D_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 11,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz1-200-B_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 9,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz1-200-B_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 2,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz2-110-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 40,
+      "negative": 14
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz2-110-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 13,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz2-187-F#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 53,
+      "negative": 7
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz2-187-F#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 13,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz3-137-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 38,
+      "negative": 11
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz3-137-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 24,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz3-150-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 39,
+      "negative": 8
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz3-150-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 3,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-03_Rock1-130-A_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 115,
+      "negative": 29
+    },
+    {
+      "id": "bass-positive-v1-03_Rock1-130-A_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 2,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-03_Rock1-90-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 124,
+      "negative": 21
+    },
+    {
+      "id": "bass-positive-v1-03_Rock1-90-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 5,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-03_Rock2-142-D_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 126,
+      "negative": 7
+    },
+    {
+      "id": "bass-positive-v1-03_Rock2-142-D_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 12,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-03_Rock2-85-F_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 79,
+      "negative": 24
+    },
+    {
+      "id": "bass-positive-v1-03_Rock2-85-F_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 26,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-03_Rock3-117-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 124,
+      "negative": 6
+    },
+    {
+      "id": "bass-positive-v1-03_Rock3-117-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 0,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-03_Rock3-148-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 176,
+      "negative": 9
+    },
+    {
+      "id": "bass-positive-v1-03_Rock3-148-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 0,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-03_SS1-100-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 230,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-03_SS1-100-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 8,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-03_SS1-68-E_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 138,
+      "negative": 42
+    },
+    {
+      "id": "bass-positive-v1-03_SS1-68-E_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 4,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-03_SS2-107-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 177,
+      "negative": 24
+    },
+    {
+      "id": "bass-positive-v1-03_SS2-107-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 12,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-03_SS2-88-F_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 130,
+      "negative": 12
+    },
+    {
+      "id": "bass-positive-v1-03_SS2-88-F_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 9,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-03_SS3-84-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 96,
+      "negative": 7
+    },
+    {
+      "id": "bass-positive-v1-03_SS3-84-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 7,
+      "negative": 2
+    },
+    {
+      "id": "bass-positive-v1-03_SS3-98-C_comp",
+      "corpus": "guitarset-bass-register",
+      "positive": 193,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-03_SS3-98-C_solo",
+      "corpus": "guitarset-bass-register",
+      "positive": 5,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-original-261051",
+      "corpus": "original-bass-timbres",
+      "positive": 17,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261052",
+      "corpus": "original-bass-timbres",
+      "positive": 18,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261053",
+      "corpus": "original-bass-timbres",
+      "positive": 32,
+      "negative": 10
+    },
+    {
+      "id": "bass-positive-v1-original-261054",
+      "corpus": "original-bass-timbres",
+      "positive": 8,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261055",
+      "corpus": "original-bass-timbres",
+      "positive": 18,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261056",
+      "corpus": "original-bass-timbres",
+      "positive": 17,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261057",
+      "corpus": "original-bass-timbres",
+      "positive": 19,
+      "negative": 10
+    },
+    {
+      "id": "bass-positive-v1-original-261058",
+      "corpus": "original-bass-timbres",
+      "positive": 12,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261059",
+      "corpus": "original-bass-timbres",
+      "positive": 34,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261060",
+      "corpus": "original-bass-timbres",
+      "positive": 15,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261061",
+      "corpus": "original-bass-timbres",
+      "positive": 5,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261062",
+      "corpus": "original-bass-timbres",
+      "positive": 34,
+      "negative": 12
+    },
+    {
+      "id": "bass-positive-v1-original-261063",
+      "corpus": "original-bass-timbres",
+      "positive": 21,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261064",
+      "corpus": "original-bass-timbres",
+      "positive": 13,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-original-261065",
+      "corpus": "original-bass-timbres",
+      "positive": 29,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261066",
+      "corpus": "original-bass-timbres",
+      "positive": 11,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-original-261067",
+      "corpus": "original-bass-timbres",
+      "positive": 35,
+      "negative": 14
+    },
+    {
+      "id": "bass-positive-v1-original-261068",
+      "corpus": "original-bass-timbres",
+      "positive": 28,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261069",
+      "corpus": "original-bass-timbres",
+      "positive": 21,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261070",
+      "corpus": "original-bass-timbres",
+      "positive": 17,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261071",
+      "corpus": "original-bass-timbres",
+      "positive": 15,
+      "negative": 6
+    },
+    {
+      "id": "bass-positive-v1-original-261072",
+      "corpus": "original-bass-timbres",
+      "positive": 15,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261073",
+      "corpus": "original-bass-timbres",
+      "positive": 22,
+      "negative": 3
+    },
+    {
+      "id": "bass-positive-v1-original-261074",
+      "corpus": "original-bass-timbres",
+      "positive": 28,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261075",
+      "corpus": "original-bass-timbres",
+      "positive": 9,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261076",
+      "corpus": "original-bass-timbres",
+      "positive": 15,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261077",
+      "corpus": "original-bass-timbres",
+      "positive": 13,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261078",
+      "corpus": "original-bass-timbres",
+      "positive": 12,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261079",
+      "corpus": "original-bass-timbres",
+      "positive": 17,
+      "negative": 7
+    },
+    {
+      "id": "bass-positive-v1-original-261080",
+      "corpus": "original-bass-timbres",
+      "positive": 22,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261081",
+      "corpus": "original-bass-timbres",
+      "positive": 14,
+      "negative": 13
+    },
+    {
+      "id": "bass-positive-v1-original-261082",
+      "corpus": "original-bass-timbres",
+      "positive": 18,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261083",
+      "corpus": "original-bass-timbres",
+      "positive": 33,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261084",
+      "corpus": "original-bass-timbres",
+      "positive": 34,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261085",
+      "corpus": "original-bass-timbres",
+      "positive": 20,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261086",
+      "corpus": "original-bass-timbres",
+      "positive": 20,
+      "negative": 13
+    },
+    {
+      "id": "bass-positive-v1-original-261087",
+      "corpus": "original-bass-timbres",
+      "positive": 25,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261088",
+      "corpus": "original-bass-timbres",
+      "positive": 11,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261089",
+      "corpus": "original-bass-timbres",
+      "positive": 12,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261090",
+      "corpus": "original-bass-timbres",
+      "positive": 19,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-original-261091",
+      "corpus": "original-bass-timbres",
+      "positive": 32,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-original-261092",
+      "corpus": "original-bass-timbres",
+      "positive": 30,
+      "negative": 5
+    },
+    {
+      "id": "bass-positive-v1-original-261093",
+      "corpus": "original-bass-timbres",
+      "positive": 19,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261094",
+      "corpus": "original-bass-timbres",
+      "positive": 28,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261095",
+      "corpus": "original-bass-timbres",
+      "positive": 18,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-original-261096",
+      "corpus": "original-bass-timbres",
+      "positive": 25,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261097",
+      "corpus": "original-bass-timbres",
+      "positive": 21,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261098",
+      "corpus": "original-bass-timbres",
+      "positive": 21,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261099",
+      "corpus": "original-bass-timbres",
+      "positive": 30,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-original-261100",
+      "corpus": "original-bass-timbres",
+      "positive": 31,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261101",
+      "corpus": "original-bass-timbres",
+      "positive": 26,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261102",
+      "corpus": "original-bass-timbres",
+      "positive": 22,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261103",
+      "corpus": "original-bass-timbres",
+      "positive": 18,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261104",
+      "corpus": "original-bass-timbres",
+      "positive": 25,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261105",
+      "corpus": "original-bass-timbres",
+      "positive": 17,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261106",
+      "corpus": "original-bass-timbres",
+      "positive": 11,
+      "negative": 1
+    },
+    {
+      "id": "bass-positive-v1-original-261107",
+      "corpus": "original-bass-timbres",
+      "positive": 14,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261108",
+      "corpus": "original-bass-timbres",
+      "positive": 34,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261109",
+      "corpus": "original-bass-timbres",
+      "positive": 13,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261110",
+      "corpus": "original-bass-timbres",
+      "positive": 18,
+      "negative": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261111",
+      "corpus": "original-bass-timbres",
+      "positive": 38,
+      "negative": 13
+    },
+    {
+      "id": "bass-positive-v1-original-261112",
+      "corpus": "original-bass-timbres",
+      "positive": 33,
+      "negative": 12
+    },
+    {
+      "id": "bass-positive-v1-original-261113",
+      "corpus": "original-bass-timbres",
+      "positive": 14,
+      "negative": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261114",
+      "corpus": "original-bass-timbres",
+      "positive": 38,
+      "negative": 0
+    },
+    {
+      "id": "slakh-bass-v1-Track00001-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 2,
+      "negative": 31
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 17,
+      "negative": 44
+    },
+    {
+      "id": "slakh-bass-v1-Track00003-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 53,
+      "negative": 38
+    },
+    {
+      "id": "slakh-bass-v1-Track00004-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 13,
+      "negative": 14
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 33,
+      "negative": 5
+    },
+    {
+      "id": "slakh-bass-v1-Track00008-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 20,
+      "negative": 3
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 20,
+      "negative": 11
+    },
+    {
+      "id": "slakh-bass-v1-Track00014-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 5,
+      "negative": 12
+    },
+    {
+      "id": "slakh-bass-v1-Track00017-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 18,
+      "negative": 2
+    },
+    {
+      "id": "slakh-bass-v1-Track00018-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 5,
+      "negative": 25
+    },
+    {
+      "id": "slakh-bass-v1-Track00019-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 26,
+      "negative": 8
+    },
+    {
+      "id": "slakh-bass-v1-Track00020-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "positive": 25,
+      "negative": 13
+    },
+    {
+      "id": "slakh-bass-v1-Track00001-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 23,
+      "negative": 33
+    },
+    {
+      "id": "slakh-bass-v1-Track00001-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 26,
+      "negative": 31
+    },
+    {
+      "id": "slakh-bass-v1-Track00001-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 29,
+      "negative": 30
+    },
+    {
+      "id": "slakh-bass-v1-Track00001-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 36,
+      "negative": 47
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 35,
+      "negative": 47
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 31,
+      "negative": 39
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 36,
+      "negative": 46
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 29,
+      "negative": 36
+    },
+    {
+      "id": "slakh-bass-v1-Track00003-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 56,
+      "negative": 65
+    },
+    {
+      "id": "slakh-bass-v1-Track00003-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 61,
+      "negative": 65
+    },
+    {
+      "id": "slakh-bass-v1-Track00003-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 56,
+      "negative": 73
+    },
+    {
+      "id": "slakh-bass-v1-Track00003-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 55,
+      "negative": 71
+    },
+    {
+      "id": "slakh-bass-v1-Track00004-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 9,
+      "negative": 13
+    },
+    {
+      "id": "slakh-bass-v1-Track00004-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 17,
+      "negative": 35
+    },
+    {
+      "id": "slakh-bass-v1-Track00004-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 23,
+      "negative": 31
+    },
+    {
+      "id": "slakh-bass-v1-Track00004-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 14,
+      "negative": 33
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 19,
+      "negative": 22
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 32,
+      "negative": 42
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 24,
+      "negative": 41
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 38,
+      "negative": 31
+    },
+    {
+      "id": "slakh-bass-v1-Track00008-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 14,
+      "negative": 16
+    },
+    {
+      "id": "slakh-bass-v1-Track00008-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 21,
+      "negative": 16
+    },
+    {
+      "id": "slakh-bass-v1-Track00008-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 21,
+      "negative": 15
+    },
+    {
+      "id": "slakh-bass-v1-Track00008-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 18,
+      "negative": 18
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 33,
+      "negative": 29
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 43,
+      "negative": 30
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 42,
+      "negative": 42
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 41,
+      "negative": 23
+    },
+    {
+      "id": "slakh-bass-v1-Track00014-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 13,
+      "negative": 10
+    },
+    {
+      "id": "slakh-bass-v1-Track00014-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 19,
+      "negative": 20
+    },
+    {
+      "id": "slakh-bass-v1-Track00014-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 32,
+      "negative": 34
+    },
+    {
+      "id": "slakh-bass-v1-Track00014-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 14,
+      "negative": 9
+    },
+    {
+      "id": "slakh-bass-v1-Track00018-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 0,
+      "negative": 27
+    },
+    {
+      "id": "slakh-bass-v1-Track00018-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 0,
+      "negative": 27
+    },
+    {
+      "id": "slakh-bass-v1-Track00018-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 0,
+      "negative": 19
+    },
+    {
+      "id": "slakh-bass-v1-Track00018-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 0,
+      "negative": 28
+    },
+    {
+      "id": "slakh-bass-v1-Track00019-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 5,
+      "negative": 23
+    },
+    {
+      "id": "slakh-bass-v1-Track00019-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 13,
+      "negative": 89
+    },
+    {
+      "id": "slakh-bass-v1-Track00019-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 14,
+      "negative": 84
+    },
+    {
+      "id": "slakh-bass-v1-Track00019-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 12,
+      "negative": 83
+    },
+    {
+      "id": "slakh-bass-v1-Track00020-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "positive": 21,
+      "negative": 24
+    },
+    {
+      "id": "slakh-bass-v1-Track00020-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "positive": 22,
+      "negative": 20
+    },
+    {
+      "id": "slakh-bass-v1-Track00020-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "positive": 23,
+      "negative": 21
+    },
+    {
+      "id": "slakh-bass-v1-Track00020-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "positive": 28,
+      "negative": 27
+    }
+  ],
+  "training_clips": 359,
+  "validation_clips": 94,
+  "training_events": 22987,
+  "positive_weight": 6.0,
+  "guardian_positive_weight": 20.0,
+  "plan_sha256": "4542930e4d4084dd85fe3a8ffdbe0df3ddbd73c62cddad6f91bc15fb77f25d31",
+  "test_used_for_selection": false
+}
