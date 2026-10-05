@@ -1,5 +1,24 @@
 # Verification
 
+## Bass articulation V11 — 2026-10-04
+
+The trained key-release-aware pair passed all frozen per-recording preservation
+gates. False attacks fell by nine on validation, four on consumed regression and
+14 on 32 first-pass original MP3 fixtures. Every previously matched attack and
+key offset, supplied pitch interval and exact detected pitch-time union remain.
+These limited/original fixtures do not establish commercial-song accuracy.
+
+**397 backend/training tests passed; all six opt-in native pipeline cases passed
+separately.** Portable probability parity is exact across 545 recordings;
+eight native bass-routing cases passed. Ruff, diff checks, backend build and
+idle-queue deployment pass. Proxied health is ready; running source/array hashes
+match the witnesses. All six existing user jobs remain completed and untouched.
+
+The separate eight-head wrong-pitch residual batch produced no safe positive
+validation winner, so those weights were withheld without test evaluation or
+production routing. Future training must use V11 decisions and recompute evidence
+for merged durations. See [the release card](docs/bass-articulation-v11.md).
+
 ## Training wrap-up for user testing — 2026-10-04
 
 The released V10 bass weights remain live and the localhost frontend proxy is

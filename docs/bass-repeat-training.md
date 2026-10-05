@@ -1,7 +1,8 @@
 # Bass hold and repeat training against V10
 
-The website currently uses the [released V10 bass verifier](bass-verifier-v10.md).
-This new offline experiment addresses a different error: the detector can split
+This historical experiment used the [V10 bass verifier](bass-verifier-v10.md).
+The website now includes the subsequently trained [V11 articulation release](bass-articulation-v11.md).
+This earlier offline experiment addressed a different error: the detector can split
 one held bass note into multiple audible attacks. Deleting those fragments would
 shorten the hold, so the experiment learns when touching fragments can be joined.
 It does not change tempo, quantization, the melody detector or user scores.

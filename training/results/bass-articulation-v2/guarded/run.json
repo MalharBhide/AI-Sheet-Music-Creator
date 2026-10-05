@@ -1,0 +1,1713 @@
+{
+  "settings": {
+    "max_iter": 350,
+    "min_samples_leaf": 40,
+    "max_leaf_nodes": 15,
+    "l2_regularization": 8.0,
+    "learning_rate": 0.04,
+    "early_stopping": false,
+    "random_state": 261141
+  },
+  "guardian_settings": {
+    "max_iter": 350,
+    "min_samples_leaf": 40,
+    "max_leaf_nodes": 7,
+    "l2_regularization": 8.0,
+    "learning_rate": 0.04,
+    "early_stopping": false,
+    "random_state": 261142
+  },
+  "training_counts": [
+    {
+      "id": "bass-positive-v1-00_BN1-129-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 10,
+      "protected_boundaries": 17
+    },
+    {
+      "id": "bass-positive-v1-00_BN1-129-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 14,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-00_BN1-147-Gb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 9,
+      "protected_boundaries": 10
+    },
+    {
+      "id": "bass-positive-v1-00_BN1-147-Gb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 10
+    },
+    {
+      "id": "bass-positive-v1-00_BN2-131-B_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 20
+    },
+    {
+      "id": "bass-positive-v1-00_BN2-166-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 5,
+      "protected_boundaries": 12
+    },
+    {
+      "id": "bass-positive-v1-00_BN2-166-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-00_BN3-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 8,
+      "protected_boundaries": 18
+    },
+    {
+      "id": "bass-positive-v1-00_BN3-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 15,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-00_BN3-154-E_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 9,
+      "protected_boundaries": 12
+    },
+    {
+      "id": "bass-positive-v1-00_BN3-154-E_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 4,
+      "protected_boundaries": 14
+    },
+    {
+      "id": "bass-positive-v1-00_Funk1-114-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 4,
+      "protected_boundaries": 16
+    },
+    {
+      "id": "bass-positive-v1-00_Funk1-114-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-00_Funk1-97-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 4,
+      "protected_boundaries": 24
+    },
+    {
+      "id": "bass-positive-v1-00_Funk1-97-C_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 5,
+      "protected_boundaries": 7
+    },
+    {
+      "id": "bass-positive-v1-00_Funk2-108-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 51
+    },
+    {
+      "id": "bass-positive-v1-00_Funk2-108-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 17
+    },
+    {
+      "id": "bass-positive-v1-00_Funk2-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 4,
+      "protected_boundaries": 59
+    },
+    {
+      "id": "bass-positive-v1-00_Funk2-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-00_Funk3-112-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 58
+    },
+    {
+      "id": "bass-positive-v1-00_Funk3-112-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 11
+    },
+    {
+      "id": "bass-positive-v1-00_Funk3-98-A_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 50
+    },
+    {
+      "id": "bass-positive-v1-00_Funk3-98-A_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 4,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz1-130-D_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 4,
+      "protected_boundaries": 31
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz1-130-D_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz1-200-B_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 8
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz1-200-B_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz2-110-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 4,
+      "protected_boundaries": 39
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz2-110-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz2-187-F#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 24
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz2-187-F#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 7
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz3-137-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 6,
+      "protected_boundaries": 10
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz3-137-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 13,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz3-150-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 13
+    },
+    {
+      "id": "bass-positive-v1-00_Jazz3-150-C_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 17,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-00_Rock1-130-A_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 15,
+      "protected_boundaries": 69
+    },
+    {
+      "id": "bass-positive-v1-00_Rock1-130-A_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 21
+    },
+    {
+      "id": "bass-positive-v1-00_Rock1-90-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 10,
+      "protected_boundaries": 157
+    },
+    {
+      "id": "bass-positive-v1-00_Rock1-90-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 5,
+      "protected_boundaries": 62
+    },
+    {
+      "id": "bass-positive-v1-00_Rock2-142-D_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 6,
+      "protected_boundaries": 83
+    },
+    {
+      "id": "bass-positive-v1-00_Rock2-142-D_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 11
+    },
+    {
+      "id": "bass-positive-v1-00_Rock2-85-F_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 9,
+      "protected_boundaries": 117
+    },
+    {
+      "id": "bass-positive-v1-00_Rock2-85-F_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 10
+    },
+    {
+      "id": "bass-positive-v1-00_Rock3-117-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 4,
+      "protected_boundaries": 99
+    },
+    {
+      "id": "bass-positive-v1-00_Rock3-148-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 116
+    },
+    {
+      "id": "bass-positive-v1-00_Rock3-148-C_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-00_SS1-100-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 26,
+      "protected_boundaries": 42
+    },
+    {
+      "id": "bass-positive-v1-00_SS1-100-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-00_SS1-68-E_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 27,
+      "protected_boundaries": 36
+    },
+    {
+      "id": "bass-positive-v1-00_SS1-68-E_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 34
+    },
+    {
+      "id": "bass-positive-v1-00_SS2-107-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 30,
+      "protected_boundaries": 34
+    },
+    {
+      "id": "bass-positive-v1-00_SS2-107-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 10
+    },
+    {
+      "id": "bass-positive-v1-00_SS2-88-F_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 19,
+      "protected_boundaries": 14
+    },
+    {
+      "id": "bass-positive-v1-00_SS2-88-F_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-00_SS3-84-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 7,
+      "protected_boundaries": 9
+    },
+    {
+      "id": "bass-positive-v1-00_SS3-84-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-00_SS3-98-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 34,
+      "protected_boundaries": 53
+    },
+    {
+      "id": "bass-positive-v1-00_SS3-98-C_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 6,
+      "protected_boundaries": 17
+    },
+    {
+      "id": "bass-positive-v1-01_BN1-129-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 12,
+      "protected_boundaries": 25
+    },
+    {
+      "id": "bass-positive-v1-01_BN1-147-Gb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 15,
+      "protected_boundaries": 27
+    },
+    {
+      "id": "bass-positive-v1-01_BN2-131-B_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 42
+    },
+    {
+      "id": "bass-positive-v1-01_BN2-131-B_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-01_BN2-166-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 35
+    },
+    {
+      "id": "bass-positive-v1-01_BN2-166-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-01_BN3-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 6,
+      "protected_boundaries": 15
+    },
+    {
+      "id": "bass-positive-v1-01_BN3-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 8
+    },
+    {
+      "id": "bass-positive-v1-01_BN3-154-E_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 4,
+      "protected_boundaries": 38
+    },
+    {
+      "id": "bass-positive-v1-01_BN3-154-E_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 8
+    },
+    {
+      "id": "bass-positive-v1-01_Funk1-114-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-01_Funk1-114-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 7
+    },
+    {
+      "id": "bass-positive-v1-01_Funk2-108-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 16
+    },
+    {
+      "id": "bass-positive-v1-01_Funk2-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 7
+    },
+    {
+      "id": "bass-positive-v1-01_Funk3-112-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 9
+    },
+    {
+      "id": "bass-positive-v1-01_Funk3-112-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-01_Funk3-98-A_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-01_Funk3-98-A_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 25
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz1-130-D_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 12,
+      "protected_boundaries": 12
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz1-130-D_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz1-200-B_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz2-110-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 24
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz2-110-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz2-187-F#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz2-187-F#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 7
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz3-137-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 11,
+      "protected_boundaries": 23
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz3-137-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz3-150-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 8
+    },
+    {
+      "id": "bass-positive-v1-01_Jazz3-150-C_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-01_Rock1-130-A_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 76
+    },
+    {
+      "id": "bass-positive-v1-01_Rock1-130-A_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-01_Rock1-90-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 12,
+      "protected_boundaries": 94
+    },
+    {
+      "id": "bass-positive-v1-01_Rock1-90-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-01_Rock2-142-D_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 87
+    },
+    {
+      "id": "bass-positive-v1-01_Rock2-142-D_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-01_Rock2-85-F_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 5,
+      "protected_boundaries": 55
+    },
+    {
+      "id": "bass-positive-v1-01_Rock2-85-F_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-01_Rock3-117-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 6,
+      "protected_boundaries": 64
+    },
+    {
+      "id": "bass-positive-v1-01_Rock3-148-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 37
+    },
+    {
+      "id": "bass-positive-v1-01_SS1-100-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 46
+    },
+    {
+      "id": "bass-positive-v1-01_SS1-68-E_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 25,
+      "protected_boundaries": 57
+    },
+    {
+      "id": "bass-positive-v1-01_SS1-68-E_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-01_SS2-107-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 8
+    },
+    {
+      "id": "bass-positive-v1-01_SS2-107-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 16
+    },
+    {
+      "id": "bass-positive-v1-01_SS2-88-F_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 9,
+      "protected_boundaries": 75
+    },
+    {
+      "id": "bass-positive-v1-01_SS2-88-F_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-01_SS3-84-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 49,
+      "protected_boundaries": 68
+    },
+    {
+      "id": "bass-positive-v1-01_SS3-84-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-01_SS3-98-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 83,
+      "protected_boundaries": 126
+    },
+    {
+      "id": "bass-positive-v1-01_SS3-98-C_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-02_BN1-129-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 5,
+      "protected_boundaries": 64
+    },
+    {
+      "id": "bass-positive-v1-02_BN1-129-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-02_BN1-147-Gb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 34
+    },
+    {
+      "id": "bass-positive-v1-02_BN1-147-Gb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-02_BN2-131-B_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 91
+    },
+    {
+      "id": "bass-positive-v1-02_BN2-131-B_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-02_BN2-166-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 57
+    },
+    {
+      "id": "bass-positive-v1-02_BN2-166-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-02_BN3-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 14,
+      "protected_boundaries": 75
+    },
+    {
+      "id": "bass-positive-v1-02_BN3-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-02_BN3-154-E_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 10,
+      "protected_boundaries": 53
+    },
+    {
+      "id": "bass-positive-v1-02_BN3-154-E_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-02_Funk1-114-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 49
+    },
+    {
+      "id": "bass-positive-v1-02_Funk1-114-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 8
+    },
+    {
+      "id": "bass-positive-v1-02_Funk1-97-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 63
+    },
+    {
+      "id": "bass-positive-v1-02_Funk1-97-C_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-02_Funk2-108-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 68
+    },
+    {
+      "id": "bass-positive-v1-02_Funk2-108-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 8
+    },
+    {
+      "id": "bass-positive-v1-02_Funk2-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 13
+    },
+    {
+      "id": "bass-positive-v1-02_Funk3-112-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 62
+    },
+    {
+      "id": "bass-positive-v1-02_Funk3-112-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 10
+    },
+    {
+      "id": "bass-positive-v1-02_Funk3-98-A_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 17
+    },
+    {
+      "id": "bass-positive-v1-02_Funk3-98-A_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz1-130-D_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 17,
+      "protected_boundaries": 38
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz1-130-D_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 15,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz1-200-B_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 40
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz1-200-B_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz2-110-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 8,
+      "protected_boundaries": 70
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz2-110-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz2-187-F#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 4,
+      "protected_boundaries": 30
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz2-187-F#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz3-137-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 65
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz3-137-Eb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-02_Jazz3-150-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 15,
+      "protected_boundaries": 97
+    },
+    {
+      "id": "bass-positive-v1-02_Rock1-130-A_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 6,
+      "protected_boundaries": 56
+    },
+    {
+      "id": "bass-positive-v1-02_Rock1-130-A_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 8
+    },
+    {
+      "id": "bass-positive-v1-02_Rock1-90-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 38
+    },
+    {
+      "id": "bass-positive-v1-02_Rock1-90-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 7
+    },
+    {
+      "id": "bass-positive-v1-02_Rock2-142-D_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 57
+    },
+    {
+      "id": "bass-positive-v1-02_Rock2-142-D_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-02_Rock2-85-F_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 13,
+      "protected_boundaries": 54
+    },
+    {
+      "id": "bass-positive-v1-02_Rock2-85-F_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 7
+    },
+    {
+      "id": "bass-positive-v1-02_Rock3-117-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 7,
+      "protected_boundaries": 84
+    },
+    {
+      "id": "bass-positive-v1-02_Rock3-117-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 14
+    },
+    {
+      "id": "bass-positive-v1-02_Rock3-148-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 94
+    },
+    {
+      "id": "bass-positive-v1-02_Rock3-148-C_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-02_SS1-100-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 24,
+      "protected_boundaries": 96
+    },
+    {
+      "id": "bass-positive-v1-02_SS1-100-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-02_SS1-68-E_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 33,
+      "protected_boundaries": 42
+    },
+    {
+      "id": "bass-positive-v1-02_SS1-68-E_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-02_SS2-107-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 7,
+      "protected_boundaries": 81
+    },
+    {
+      "id": "bass-positive-v1-02_SS2-107-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 14
+    },
+    {
+      "id": "bass-positive-v1-02_SS2-88-F_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 7,
+      "protected_boundaries": 48
+    },
+    {
+      "id": "bass-positive-v1-02_SS2-88-F_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 10
+    },
+    {
+      "id": "bass-positive-v1-02_SS3-84-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 78
+    },
+    {
+      "id": "bass-positive-v1-02_SS3-84-Bb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 8
+    },
+    {
+      "id": "bass-positive-v1-02_SS3-98-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 15,
+      "protected_boundaries": 92
+    },
+    {
+      "id": "bass-positive-v1-02_SS3-98-C_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 12
+    },
+    {
+      "id": "bass-positive-v1-03_BN1-129-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 10,
+      "protected_boundaries": 17
+    },
+    {
+      "id": "bass-positive-v1-03_BN1-147-Gb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 5,
+      "protected_boundaries": 18
+    },
+    {
+      "id": "bass-positive-v1-03_BN1-147-Gb_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-03_BN2-131-B_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 4,
+      "protected_boundaries": 14
+    },
+    {
+      "id": "bass-positive-v1-03_BN2-166-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 16
+    },
+    {
+      "id": "bass-positive-v1-03_BN2-166-Ab_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-03_BN3-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 9,
+      "protected_boundaries": 16
+    },
+    {
+      "id": "bass-positive-v1-03_BN3-154-E_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 5,
+      "protected_boundaries": 13
+    },
+    {
+      "id": "bass-positive-v1-03_BN3-154-E_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-03_Funk1-114-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 7
+    },
+    {
+      "id": "bass-positive-v1-03_Funk1-97-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 25
+    },
+    {
+      "id": "bass-positive-v1-03_Funk2-108-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 14,
+      "protected_boundaries": 14
+    },
+    {
+      "id": "bass-positive-v1-03_Funk2-119-G_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 11
+    },
+    {
+      "id": "bass-positive-v1-03_Funk2-119-G_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-03_Funk3-112-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 12
+    },
+    {
+      "id": "bass-positive-v1-03_Funk3-112-C#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-03_Funk3-98-A_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 5,
+      "protected_boundaries": 8
+    },
+    {
+      "id": "bass-positive-v1-03_Funk3-98-A_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz1-130-D_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz2-110-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 3,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz2-187-F#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 1,
+      "protected_boundaries": 9
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz2-187-F#_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz3-137-Eb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 2,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-03_Jazz3-150-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-03_Rock1-130-A_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 6,
+      "protected_boundaries": 58
+    },
+    {
+      "id": "bass-positive-v1-03_Rock1-90-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 4,
+      "protected_boundaries": 69
+    },
+    {
+      "id": "bass-positive-v1-03_Rock2-142-D_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 7,
+      "protected_boundaries": 61
+    },
+    {
+      "id": "bass-positive-v1-03_Rock2-85-F_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 6,
+      "protected_boundaries": 36
+    },
+    {
+      "id": "bass-positive-v1-03_Rock2-85-F_solo",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 0,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-03_Rock3-117-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 17,
+      "protected_boundaries": 50
+    },
+    {
+      "id": "bass-positive-v1-03_Rock3-148-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 34,
+      "protected_boundaries": 68
+    },
+    {
+      "id": "bass-positive-v1-03_SS1-100-C#_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 22,
+      "protected_boundaries": 145
+    },
+    {
+      "id": "bass-positive-v1-03_SS1-68-E_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 10,
+      "protected_boundaries": 35
+    },
+    {
+      "id": "bass-positive-v1-03_SS2-107-Ab_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 15,
+      "protected_boundaries": 50
+    },
+    {
+      "id": "bass-positive-v1-03_SS2-88-F_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 28,
+      "protected_boundaries": 59
+    },
+    {
+      "id": "bass-positive-v1-03_SS3-84-Bb_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 30,
+      "protected_boundaries": 30
+    },
+    {
+      "id": "bass-positive-v1-03_SS3-98-C_comp",
+      "corpus": "guitarset-bass-register",
+      "split_holds": 29,
+      "protected_boundaries": 80
+    },
+    {
+      "id": "bass-positive-v1-original-261051",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-original-261052",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261053",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-original-261055",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-original-261056",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-original-261057",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261059",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 8
+    },
+    {
+      "id": "bass-positive-v1-original-261060",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-original-261062",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 9
+    },
+    {
+      "id": "bass-positive-v1-original-261063",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-original-261064",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-original-261065",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-original-261066",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-original-261067",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 10
+    },
+    {
+      "id": "bass-positive-v1-original-261068",
+      "corpus": "original-bass-timbres",
+      "split_holds": 2,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-original-261069",
+      "corpus": "original-bass-timbres",
+      "split_holds": 2,
+      "protected_boundaries": 7
+    },
+    {
+      "id": "bass-positive-v1-original-261072",
+      "corpus": "original-bass-timbres",
+      "split_holds": 2,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261073",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261074",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-original-261076",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261077",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-original-261078",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261079",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261080",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261081",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-original-261083",
+      "corpus": "original-bass-timbres",
+      "split_holds": 2,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-original-261084",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 8
+    },
+    {
+      "id": "bass-positive-v1-original-261085",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261086",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-original-261087",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-original-261088",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261089",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-original-261090",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-original-261091",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-original-261092",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-original-261093",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261094",
+      "corpus": "original-bass-timbres",
+      "split_holds": 3,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261095",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 7
+    },
+    {
+      "id": "bass-positive-v1-original-261096",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261097",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "bass-positive-v1-original-261098",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-original-261099",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 10
+    },
+    {
+      "id": "bass-positive-v1-original-261100",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 9
+    },
+    {
+      "id": "bass-positive-v1-original-261101",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-original-261102",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-original-261103",
+      "corpus": "original-bass-timbres",
+      "split_holds": 2,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "bass-positive-v1-original-261104",
+      "corpus": "original-bass-timbres",
+      "split_holds": 2,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261105",
+      "corpus": "original-bass-timbres",
+      "split_holds": 2,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-original-261106",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "bass-positive-v1-original-261107",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-original-261108",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261109",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "bass-positive-v1-original-261110",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 2
+    },
+    {
+      "id": "bass-positive-v1-original-261111",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "bass-positive-v1-original-261112",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 7
+    },
+    {
+      "id": "bass-positive-v1-original-261113",
+      "corpus": "original-bass-timbres",
+      "split_holds": 0,
+      "protected_boundaries": 4
+    },
+    {
+      "id": "bass-positive-v1-original-261114",
+      "corpus": "original-bass-timbres",
+      "split_holds": 1,
+      "protected_boundaries": 6
+    },
+    {
+      "id": "slakh-bass-v1-Track00001-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "split_holds": 1,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "slakh-bass-v1-Track00003-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "split_holds": 0,
+      "protected_boundaries": 11
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "split_holds": 5,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "slakh-bass-v1-Track00008-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "split_holds": 2,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "split_holds": 1,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "slakh-bass-v1-Track00017-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "split_holds": 11,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "slakh-bass-v1-Track00019-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "split_holds": 10,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "slakh-bass-v1-Track00020-demucs-000",
+      "corpus": "slakh-demucs-bass",
+      "split_holds": 5,
+      "protected_boundaries": 0
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "split_holds": 0,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "split_holds": 0,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "split_holds": 0,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "slakh-bass-v1-Track00002-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "slakh-bass-v1-Track00003-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "split_holds": 0,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "slakh-bass-v1-Track00007-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "split_holds": 0,
+      "protected_boundaries": 3
+    },
+    {
+      "id": "slakh-bass-v1-Track00008-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "split_holds": 0,
+      "protected_boundaries": 1
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-oracle-000",
+      "corpus": "slakh-oracle-bass",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-oracle-030",
+      "corpus": "slakh-oracle-bass",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-oracle-060",
+      "corpus": "slakh-oracle-bass",
+      "split_holds": 0,
+      "protected_boundaries": 9
+    },
+    {
+      "id": "slakh-bass-v1-Track00010-oracle-090",
+      "corpus": "slakh-oracle-bass",
+      "split_holds": 0,
+      "protected_boundaries": 5
+    }
+  ],
+  "training_events": 7220,
+  "training_clips": 359,
+  "validation_clips": 94,
+  "plan_sha256": "26b3229974ba27997a5d5e7fcd1917fdf1cfc1d3d2c8baddd5c1e821d5e1aa4f",
+  "test_used_for_selection": false
+}

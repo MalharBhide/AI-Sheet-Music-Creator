@@ -1,0 +1,90 @@
+{
+  "passes": true,
+  "cases": [
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-held",
+      "duration": 30.0,
+      "raw_candidates": 2,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-repeated",
+      "duration": 30.0,
+      "raw_candidates": 48,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-octave",
+      "duration": 30.0,
+      "raw_candidates": 24,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "slakh-bass-v1-Track00006-oracle-000",
+      "duration": 30.0,
+      "raw_candidates": 28,
+      "v10_rejected": 3,
+      "merged_boundaries": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-articulation-stress-v2-261302",
+      "duration": 30.0,
+      "raw_candidates": 42,
+      "v10_rejected": 1,
+      "merged_boundaries": 1,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-articulation-stress-v2-261303",
+      "duration": 30.0,
+      "raw_candidates": 40,
+      "v10_rejected": 0,
+      "merged_boundaries": 3,
+      "passes": true
+    },
+    {
+      "case": "window-32.wav",
+      "directory": "bass-articulation-native-v1",
+      "duration": 32.0,
+      "raw_candidates": 7,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "passes": true
+    },
+    {
+      "case": "short.wav",
+      "directory": "bass-articulation-native-v1",
+      "duration": 0.049977324263038546,
+      "raw_candidates": 0,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "passes": true
+    }
+  ],
+  "checkpoint_sha256": "6a8fbfb8e700d621d6b028c67ac777e3e1f648817674ed1b4d819f84797f5f24",
+  "portable_runtime_report_sha256": "dcc158072d5250dd4596f38b07aac6c93aa0c33fa8482f85b5f970094288ae7e",
+  "routing_source_sha256": "0b9a6b1a442c98bfe58a2110d912ad84b042f14f391195c048c5766a733f2e23",
+  "runtime_source_sha256": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+  "script_sha256": "c2ca1ccb4704c0e310fb1e16b7800c164d90115141690a1208876f64fb2d28c2",
+  "bass_metadata": {
+    "model": "Bass note verifier v1 (trained conservative consensus)",
+    "articulation_model": "Bass articulation v1 (trained key-release protection)",
+    "window_candidates": 191,
+    "window_rejections": 4,
+    "window_merged_boundaries": 4
+  },
+  "checks": "Native bounded Basic Pitch, actual audio/features, frozen sklearn pair decisions versus complete production V10 filter + articulation routing; exact retained pitches, attacks, velocities and hold extensions. Original/licensed fixtures only; no user uploads or scores."
+}

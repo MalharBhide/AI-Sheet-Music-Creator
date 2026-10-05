@@ -1,20 +1,30 @@
 # Supervised melody training
 
-The current website is [V10 with trained bass consensus](../docs/bass-verifier-v10.md),
+The live [V11 bass articulation release](../docs/bass-articulation-v11.md) has
+passed frozen validation, consumed regression, first-pass original stress,
+portable parity, native routing, all six native pipeline cases and deployment.
+The running weight hashes match its release witnesses. It removes false repeated attacks while preserving
+each checked key attack, release and exact pitch span. Future training must
+compare against V11's merged durations; the historical V10 helper alone is not
+the current website baseline.
+
+The preceding website release is [V10 with trained bass consensus](../docs/bass-verifier-v10.md),
 retaining V9 accompaniment processing. It removes 41 false bass detections on
 20 reserved-source clips with all 357 matched notes and measured holds retained.
 All release gates and native checks pass. Earlier failed bass weights are withheld.
 
 The [new bass repeat/hold experiment](../docs/bass-repeat-training.md) learns to
 join false repeated attacks without losing pitch spans. `current_bass_baseline.py`
-pins the published V10 decisions; all future bass candidates must compare against
-those decisions. The original stress and reserved-source Slakh clips are now
+pins the historical V10 decisions; future candidates must include V11 mergers
+and recomputed duration-dependent evidence. The original stress and reserved-source Slakh clips are now
 consumed regression, never fresh evidence or fitting data.
 The boundary batch completed and its winner is withheld: it removed false attacks
 but lost a correct key offset in first-pass original stress. That corpus is now
-also consumed regression. V10 remains deployed while release-aware labels are
-prepared for the next batch. The release-aware framework is saved and untrained;
-further training is paused at the user's request so they can test V10 first.
+also consumed regression. The release-aware framework was initially saved
+untrained and paused for user testing. Training resumed and that batch passed
+all frozen accuracy/runtime gates, supplying the deployed V11 above.
+The separate eight-head wrong-pitch residual batch is withheld after no safe
+positive validation winner; no test or deployment followed for those weights.
 
 The [original MusicNet assessment](../docs/musicnet-training-assessment.md)
 verifies publisher license and metadata only. Its audio/labels have not been

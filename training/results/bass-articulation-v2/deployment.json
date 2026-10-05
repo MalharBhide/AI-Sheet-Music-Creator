@@ -1,0 +1,28 @@
+{
+  "state": "released_local_website",
+  "backend_image": "sha256:7fbfc42e7212c0ff92fcce0cf975bdf3540ad4cf5579520e93178ce60b8f34cb",
+  "ready": true,
+  "bass_articulation_models": true,
+  "arrays": {
+    "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+    "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51"
+  },
+  "service_sha256": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+  "routing_sha256": "0b9a6b1a442c98bfe58a2110d912ad84b042f14f391195c048c5766a733f2e23",
+  "queue_before_restart": [
+    [
+      "completed",
+      6
+    ]
+  ],
+  "queue_after_restart": [
+    [
+      "completed",
+      6
+    ]
+  ],
+  "user_uploads_processed": 0,
+  "saved_scores_regenerated": 0,
+  "backend_training_tests_passed": 397,
+  "native_pipeline_cases_passed": 6
+}

@@ -1,0 +1,19 @@
+{
+  "passes": true,
+  "recordings": 545,
+  "v10_retained_events": 38090,
+  "boundaries": 11584,
+  "merged_boundaries": 55,
+  "maximum_probability_error": 0.0,
+  "tolerance": 1e-12,
+  "checkpoint_sha256": "6a8fbfb8e700d621d6b028c67ac777e3e1f648817674ed1b4d819f84797f5f24",
+  "batch_selection_sha256": "86871bfcd8fb6b00acaa257991d78dfcc9df54b9adca725f9c17389e1e933caf",
+  "arrays": {
+    "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+    "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51"
+  },
+  "runtime_source_sha256": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+  "script_sha256": "924d1b97e620d9b456716ba764fe3b4e23a12b5f3098597f9af75bd4be9437c6",
+  "checks": "Every train/validation/consumed/first-pass cached cohort: exact pair/feature equality, sklearn probabilities, notes/identity/source part and end extensions. All actual bounded Basic Pitch candidates have one source instrument; cross-part merging is separately forbidden by unit test.",
+  "scope": "No audio inference, user uploads or scores; merged total includes training and is not independent accuracy."
+}
