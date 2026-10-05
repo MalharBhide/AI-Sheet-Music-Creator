@@ -193,7 +193,7 @@ def test_polyphonic_rests_are_hidden_without_changing_notes_or_holds(tmp_path):
                             + [(72, 1., 5.), (76, 2., 1.), (77, 3., 1.), (48, 0., 6.)])
 
 
-def test_readable_page_scaling_and_phrase_breaks_are_written_to_musicxml(tmp_path):
+def test_original_note_size_and_default_page_spacing_are_preserved(tmp_path):
     midi, xml = tmp_path / 'phrase.mid', tmp_path / 'phrase.musicxml'
     score = stream.Stream()
     for beat in range(24):
@@ -201,7 +201,8 @@ def test_readable_page_scaling_and_phrase_breaks_are_written_to_musicxml(tmp_pat
     score.write('midi', fp=str(midi))
     midi_to_musicxml(midi, xml, ScoreOptions(), 'Six bars')
     tree = ET.parse(xml)
-    assert tree.findtext('.//scaling/millimeters') == '8'
-    assert tree.findtext('.//page-width') == '1050'
-    assert tree.findtext('.//staff-layout/staff-distance') == '75'
-    assert tree.find(".//measure[@number='5']/print[@new-system='yes']") is not None
+    assert tree.findtext('.//scaling/millimeters') == '7'
+    assert tree.find('.//defaults/page-layout') is None
+    assert tree.find('.//defaults/system-layout') is None
+    assert tree.find('.//defaults/staff-layout') is None
+    assert tree.find(".//measure/print[@new-system='yes']") is None

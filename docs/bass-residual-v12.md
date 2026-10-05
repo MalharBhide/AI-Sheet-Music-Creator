@@ -75,7 +75,7 @@ matched frozen sklearn through the entire production bass route, using real
 Basic Pitch/audio features, holds, repetitions, octave notes, licensed Slakh,
 two observed residual deletions, 32-second context and subframe audio.
 
-The notation update hides secondary-voice rests while retaining their MusicXML
+The initial V12 notation update hides secondary-voice rests while retaining their MusicXML
 rhythmic positions, assigns consistent stem directions, increases staff size
 and separation, and breaks systems before measures become crowded. It does not
 remove pitched score events or change quantization, note duration, attacks,
@@ -109,3 +109,18 @@ Portable arrays:
 cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb.
 Witnesses: training/results/bass-residual-expanded-v3; first-pass acquisition:
 training/results/bass-residual-fresh-v1.
+
+
+## Original-size correction
+
+At the user's request, the enlarged 8 mm staff and custom page/staff spacing
+were reverted to the original music21/MuseScore defaults (7 mm scaling).
+Explicit four-bar/density line breaks were also removed so MuseScore paginates
+automatically. Secondary-rest suppression and consistent stem directions stay.
+The image above documents the initial enlarged release, not this correction.
+The original-size 96-bar overlap fixture uses four pages instead of six, with
+all 960 playback notes and 672 seek positions preserved. The 44 focused layout,
+playback, seek and native pagination tests passed, the backend image built and
+live source/health verification passed. Existing saved scores are unchanged;
+new uploads receive the original size. Evidence is in
+training/results/original-note-size-v1.

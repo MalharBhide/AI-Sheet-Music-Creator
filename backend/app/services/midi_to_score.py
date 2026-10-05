@@ -133,22 +133,6 @@ def _engrave_voices(measure: stream.Measure) -> None:
                 item.stemDirection = 'up' if index % 2 == 0 else 'down'
 
 
-def _system_starts(staves: list[stream.PartStaff]) -> set[int]:
-    """Keep phrase-sized rows, shortening dense rows before notes crowd together."""
-    measures = [list(staff.getElementsByClass(stream.Measure)) for staff in staves]
-    starts, bars, columns = {0}, 0, 0
-    for index in range(len(measures[0])):
-        # Chord pitches share a column; count rhythmic positions, not chord size.
-        density = max(len({float(n.getOffsetInHierarchy(m[index]))
-                           for n in m[index].recurse().notes}) for m in measures)
-        if bars and (bars >= 4 or columns + density > 32):
-            starts.add(index)
-            bars, columns = 0, 0
-        bars += 1
-        columns += density
-    return starts
-
-
 def _add_span(voices: list[stream.Voice], span: _Span, bar_ticks: int, grid: int,
               tonal_key: key.Key | None = None) -> None:
     """Split a sounding event at barlines and attach ties to individual chord notes."""
@@ -207,15 +191,8 @@ def midi_to_musicxml(midi_path: Path, xml_path: Path, options: ScoreOptions, tit
 
     score = stream.Score(id="piano-score")
     score.metadata = metadata.Metadata(title=title[:120], composer="")
-    # A4, 10 mm margins and an 8 mm staff: larger than music21's default.
-    # Explicit layout is shared by PDF, SVG and the engraver's playback positions.
-    score.insert(0, layout.ScoreLayout(
-        scalingMillimeters=8, scalingTenths=40,
-        pageLayout=layout.PageLayout(pageWidth=1050, pageHeight=1485,
-                                     leftMargin=50, rightMargin=50, topMargin=50, bottomMargin=50),
-        systemLayout=layout.SystemLayout(distance=120),
-        staffLayoutList=[layout.StaffLayout(staffNumber=2, distance=75)],
-    ))
+    # Keep music21/MuseScore's original staff size and page spacing.
+    # Readability comes from voice engraving, not enlarged note symbols.
     signature = meter.TimeSignature(options.time_signature)
     bar_ticks = int(signature.barDuration.quarterLength * grid)
     measure_count = max(1, math.ceil(last_tick / bar_ticks))
@@ -251,9 +228,6 @@ def midi_to_musicxml(midi_path: Path, xml_path: Path, options: ScoreOptions, tit
         measures[-1].rightBarline = bar.Barline("final")
         staves.append(staff)
         score.insert(0, staff)
-    for measure_index in _system_starts(staves):
-        staves[0].getElementsByClass(stream.Measure)[measure_index].insert(
-            0, layout.SystemLayout(isNew=True))
     score.insert(0, layout.StaffGroup(staves, name="Piano", symbol="brace", barTogether=True))
     # music21's MusicXML exporter reads a chord's shared volume for every pitch,
     # ignoring individual note volumes. Preserve those values by note identity
