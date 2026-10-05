@@ -1,0 +1,70 @@
+{
+  "version": "shipped-bass-v14-baseline-v1",
+  "baseline_hashes": {
+    "version": "shipped-bass-v14-baseline-v1",
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51",
+      "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb",
+      "bass-texture-v1.npz": "f1e829c7d4328afc38268cc8dbe8afb526c6860efafd3d272170cf3aca768d3e",
+      "bass-texture-guardian-v1.npz": "82f4ed13e9cf5a7a832a8a066f23ff9f7642aa187da664779a900d55b807e994",
+      "bass-harmonic-v1.npz": "8184a7c4009d2e26bc1d2f264ec58d8503182cda79667b9c3af7a8bb856ce66c",
+      "bass-harmonic-guardian-v1.npz": "bcab8b156e54db37c3c19dd74e553106499722503abb043ba7fb491d3418f76e"
+    },
+    "thresholds": [
+      [
+        0.1,
+        0.1
+      ],
+      [
+        0.05,
+        0.05
+      ],
+      [
+        0.05,
+        0.1
+      ],
+      [
+        0.025,
+        0.3
+      ],
+      [
+        0.025,
+        0.3
+      ]
+    ],
+    "sources": {
+      "backend/app/services/piano_transcription.py": "fd583fc64f0bdb4a882a0d0bac708cda713dcb3bbf43f1ea20c628bf3f020b73",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "backend/app/services/bass_texture.py": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c",
+      "backend/app/services/bass_harmonic.py": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/candidate_relations.py": "3a1b6caf5eaebf444f3cdcddb7abc8835c86f665721ab476e03c1c1dbc58d029",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "training/current_bass_v14_baseline.py": "22dd1e7148d576b15a35ee33613238f53e8237b84d88946fe7d7cfba1bd6cb9f"
+    }
+  },
+  "release_root": "/training/bass-harmonic-v13-v1",
+  "witness_sha256": {
+    "plan.json": "55b492a158f37ed430bad4df01ec765e810942b46544148fc49c9cf280ab5f9a",
+    "runtime-parity.json": "e2cce7e0207522794fecde85a4d3cbb6fb6b1b4860b0c3bf5aacfcf59093db7b",
+    "native-routing.json": "e8ebd474eb035aefd05aa46fab5a61b33c9bdca98816a2cf49d4b00c4e523fa9",
+    "original-first-pass.json": "6162212f6881ba3cb841e6816629aa25ab2f7ffadf3dc517a070eb4ae4687635",
+    "release-seal.json": "c753da1175def7692aeeae9458f59d207180bf777bb14569567082a73bfa705a"
+  },
+  "consumed_first_pass_root": "/training/bass-harmonic-fresh-v1",
+  "code_sha256": "ba1b8f9f8f4fe4d99be48eaac22525bfd7387e02f40bdfc287ed5de500729aa4",
+  "expected_counts": {
+    "train": 531,
+    "validation": 146,
+    "test": 220
+  },
+  "no_audio_inference": true,
+  "no_user_audio_or_scores": true,
+  "scope": "All 897 sealed V13 recordings, apply released V14 deletion only; recompute neighbors. 220 consumed tests never fit/select."
+}

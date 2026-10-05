@@ -1,0 +1,56 @@
+{
+  "passes": true,
+  "health": {
+    "status": "ok",
+    "ready": true,
+    "dependencies": {
+      "ffmpeg": true,
+      "basic_pitch": true,
+      "piano_transcription": true,
+      "piano_model": true,
+      "vocal_model": true,
+      "accompaniment_model": true,
+      "accompaniment_context_models": true,
+      "accompaniment_residual_model": true,
+      "accompaniment_left_hand_model": true,
+      "accompaniment_left_refinement_model": true,
+      "accompaniment_left_consensus_models": true,
+      "accompaniment_pitch_preserving_models": true,
+      "accompaniment_repeat_attack_models": true,
+      "bass_consensus_models": true,
+      "bass_articulation_models": true,
+      "bass_residual_models": true,
+      "bass_texture_models": true,
+      "bass_harmonic_models": true,
+      "bass_temporal_model": true,
+      "source_separation": true,
+      "music21": true,
+      "musescore": true
+    },
+    "limits": {
+      "max_upload_mb": 0,
+      "max_audio_seconds": 0,
+      "retention_hours": 24
+    }
+  },
+  "source_sha256": {
+    "route": "04f782935d4e8a4c51d9ba920418c14dc5dbd94fdce50345e6f43b56037c6295",
+    "notation": "3ee3b924a722cb61d4a50e06cad29ed87fdf479f12cf27724d328611e506606c",
+    "harmonic_runtime": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7",
+    "temporal_runtime": "3cf000fb9d6174e64d4197d1b03c126f27239b541b4a032f75d73510dfffb68a"
+  },
+  "arrays": {
+    "bass-harmonic-v1.npz": "8184a7c4009d2e26bc1d2f264ec58d8503182cda79667b9c3af7a8bb856ce66c",
+    "bass-harmonic-guardian-v1.npz": "bcab8b156e54db37c3c19dd74e553106499722503abb043ba7fb491d3418f76e",
+    "bass-temporal-v1.npz": "0edc221998bbaacb052fbffe43f6efcce6e759290d0cdb9a7314028521e162c4"
+  },
+  "queue": [
+    [
+      "completed",
+      8
+    ]
+  ],
+  "model": "Bass temporal CNN v1 (trained spectral note evidence)",
+  "completed_job_count_unchanged": true,
+  "scope": "Actual running backend through frontend proxy; original 7 mm notation and released arrays. Read only; no user job submitted or regenerated."
+}

@@ -1,0 +1,22 @@
+{
+  "passes": true,
+  "recordings": 929,
+  "v14_retained_events": 49214,
+  "rejected_events": 74,
+  "maximum_probability_error": 0.0,
+  "tolerance": 1e-06,
+  "thread_counts": [
+    2,
+    4
+  ],
+  "same_decisions": true,
+  "global_threads_unchanged_by_filter": true,
+  "checkpoint_sha256": "caafae5df0226023ba9d1113a105569d421271f00a8313d8124f2dc1d59b8f37",
+  "batch_selection_sha256": "8e0c3c652f4a194b6dca4cac9f1562a0e8ed671aa9d874f61f7237bf6af424dd",
+  "arrays": {
+    "bass-temporal-v1.npz": "0edc221998bbaacb052fbffe43f6efcce6e759290d0cdb9a7314028521e162c4"
+  },
+  "runtime_source_sha256": "3cf000fb9d6174e64d4197d1b03c126f27239b541b4a032f75d73510dfffb68a",
+  "script_sha256": "21daac7d5a881fd19a5e076e199d5a38ff8be45a8730e64ce60df2f7b2dd46bd",
+  "scope": "Cached acoustic/CQT runtime parity across all fitting/validation/consumed/fresh records. Exact retained pitch/start/end/velocity/object/part identity. Rejected total includes fitting, not independent accuracy. No user audio or scores."
+}

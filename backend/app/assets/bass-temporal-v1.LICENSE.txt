@@ -1,0 +1,32 @@
+Bass temporal CNN v1 (website V15)
+
+Copyright 2026 Piano Scribe contributors.
+Newly trained portable model arrays: Creative Commons Attribution 4.0.
+https://creativecommons.org/licenses/by/4.0/
+
+Training recipe and limitations: docs/bass-temporal-v15.md.
+Width-48 temporal convolutional KEEP classifier on actual post-V14 bass
+intervals; strict .005 rejection threshold with frozen V14 acoustic guardian
+at .3. This release retains all five earlier bass stages. The underlying
+Basic Pitch, Demucs, vocal and solo-piano networks are unchanged.
+
+Training data (CC BY 4.0):
+GuitarSet 1.1.0: Qingyang Xi, Rachel M. Bittner, Johan Pauwels, Xuzhou Ye,
+and Juan P. Bello. https://zenodo.org/records/3371780
+BabySlakh v2: Ethan Manilow, Gordon Wichern, Prem Seetharaman, Jonathan Le Roux.
+Cutting Music Source Separation Some Slakh, WASPAA 2019.
+https://zenodo.org/records/4603870
+
+Additional data: original project-authored bass signals and note sequences.
+Original MP3 and separated full-mixture Demucs variants retain their existing
+source-group training/validation partition. No user recordings or scores used.
+Frozen provenance: training/results/bass-temporal-cnn-v1 and associated
+bass-v14-baseline-v1 / bass-temporal-sequences-v1 reports.
+
+Scope: balanced Full-song bass, pitches 21–59. Both CNN and acoustic guardian
+must reject independently. Threshold equality, context edges and other
+registers are protected. Retained objects preserve pitch, attack, endpoint,
+velocity and source part. Inputs are pitch-relative spectral and acoustic
+evidence, with no reference labels or fitted-model probabilities. This is a
+limited-corpus improvement, not an assurance of correct transcription for
+arbitrary commercial songs.

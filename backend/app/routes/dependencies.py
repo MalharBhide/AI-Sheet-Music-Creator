@@ -21,6 +21,7 @@ from app.services.accompaniment_verifier import CHECKPOINT as ACCOMPANIMENT_CHEC
 from app.services.bass_articulation import CHECKPOINTS as BASS_ARTICULATION_CHECKPOINTS
 from app.services.bass_harmonic import CHECKPOINTS as BASS_HARMONIC_CHECKPOINTS
 from app.services.bass_residual import CHECKPOINTS as BASS_RESIDUAL_CHECKPOINTS
+from app.services.bass_temporal import ASSET as BASS_TEMPORAL_CHECKPOINT
 from app.services.bass_texture import CHECKPOINTS as BASS_TEXTURE_CHECKPOINTS
 from app.services.bass_verifier import CHECKPOINTS as BASS_CHECKPOINTS
 from app.services.vocal_melody import CHECKPOINT
@@ -45,6 +46,7 @@ def dependencies(settings: Settings) -> dict[str, bool]:
             'bass_residual_models': all(path.is_file() for path, _, _, _ in BASS_RESIDUAL_CHECKPOINTS),
             'bass_texture_models': all(path.is_file() for path, _, _, _ in BASS_TEXTURE_CHECKPOINTS),
             'bass_harmonic_models': all(path.is_file() for path, _, _, _ in BASS_HARMONIC_CHECKPOINTS),
+            'bass_temporal_model': BASS_TEMPORAL_CHECKPOINT.is_file(),
             'source_separation': importlib.util.find_spec('demucs') is not None,
             'music21': importlib.util.find_spec('music21') is not None,
             'musescore': settings.renderer() is not None}

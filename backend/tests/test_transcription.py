@@ -182,6 +182,7 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
         bass_articulation,
         bass_harmonic,
         bass_residual,
+        bass_temporal,
         bass_texture,
         bass_verifier,
         source_separation,
@@ -260,6 +261,16 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
 
     monkeypatch.setattr(bass_harmonic, 'BassHarmonic', BassHarmonic)
 
+    class BassTemporal:
+        name = 'Test bass temporal'
+
+        def filter(self, path, acoustic, output):
+            assert [n.pitch for n in output.instruments[0].notes] == [36, 48]
+            return 0
+
+    monkeypatch.setattr(bass_temporal, 'BassTemporal', BassTemporal)
+
+
     fake_inference.results.extend([
         [],  # Vocal decoding must still run when Basic Pitch emits no events.
         [(36, 0, 1), (48, 0, 1)],
@@ -279,9 +290,9 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
     assert report['bass_verification'] == {
         'model': 'Test bass verifier', 'articulation_model': 'Test bass articulation',
         'residual_model': 'Test bass residual', 'texture_model': 'Test bass texture',
-        'harmonic_model': 'Test bass harmonic', 'window_candidates': 2,
+        'harmonic_model': 'Test bass harmonic', 'temporal_model': 'Test bass temporal', 'window_candidates': 2,
         'window_rejections': 0, 'window_merged_boundaries': 0, 'window_residual_rejections': 0,
-        'window_texture_rejections': 0, 'window_harmonic_rejections': 0}
+        'window_texture_rejections': 0, 'window_harmonic_rejections': 0, 'window_temporal_rejections': 0}
     assert report['support_notes_changed_for_bass'] == 1
     assert [(n.pitch, n.start, n.end) for n in result.instruments[1].notes] == [(36, 0, 1)]
     assert fake_inference.calls[2][1]['minimum_frequency'] is None
@@ -367,6 +378,7 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
         bass_articulation,
         bass_harmonic,
         bass_residual,
+        bass_temporal,
         bass_texture,
         bass_verifier,
     )
@@ -447,6 +459,21 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
             return 0
 
     monkeypatch.setattr(bass_harmonic, 'BassHarmonic', BassHarmonic)
+    temporals = []
+
+    class BassTemporal:
+        name = 'Test bass temporal'
+
+        def __init__(self):
+            temporals.append(self)
+
+        def filter(self, path, acoustic, output):
+            assert [n.pitch for n in output.instruments[0].notes] == [40]
+            assert len(harmonics) == 1
+            return 0
+
+    monkeypatch.setattr(bass_temporal, 'BassTemporal', BassTemporal)
+
 
     fake_inference.results.extend([[(40, 3., 4.), (52, 3., 4.)]] * 2)
     engine = _GeneralEngine('balanced')
@@ -458,12 +485,14 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
     assert len(residuals) == 1 and engine.bass_residual is residuals[0]
     assert len(textures) == 1 and engine.bass_texture is textures[0]
     assert len(harmonics) == 1 and engine.bass_harmonic is harmonics[0]
+    assert len(temporals) == 1 and engine.bass_temporal is temporals[0]
     assert engine.bass_verification['window_candidates'] == 4
     assert engine.bass_verification['window_rejections'] == 2
     assert engine.bass_verification['window_merged_boundaries'] == 0
     assert engine.bass_verification['window_residual_rejections'] == 0
     assert engine.bass_verification['window_texture_rejections'] == 0
     assert engine.bass_verification['window_harmonic_rejections'] == 0
+    assert engine.bass_verification['window_temporal_rejections'] == 0
     parameters = fake_inference.calls[0][1]
     assert parameters['minimum_frequency'] == pytest.approx(27.5)
     assert parameters['maximum_frequency'] == pytest.approx(261.6255653)
