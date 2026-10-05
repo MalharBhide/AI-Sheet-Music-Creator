@@ -1,0 +1,2267 @@
+{
+  "settings": {
+    "max_iter": 200,
+    "max_leaf_nodes": 7,
+    "min_samples_leaf": 40,
+    "l2_regularization": 8.0,
+    "learning_rate": 0.04,
+    "early_stopping": false,
+    "random_state": 261005
+  },
+  "shifts_seconds": [
+    -0.02,
+    0.0,
+    0.02
+  ],
+  "thresholds": [
+    0.8,
+    0.9,
+    0.95,
+    0.975,
+    0.99
+  ],
+  "scales": [
+    0.5,
+    1.0
+  ],
+  "baseline_sha256": "60209b56b6618335f22d1e4e9fc4604d7a2e501df3242d4a18e3df01d81034f9",
+  "source_sha256": {
+    "training/train_attack_timing_v2.py": "14a843d2eb5a4d93432bb2871801558e66521801a8c6da67edca1ab457696e22",
+    "training/train_melody_timing.py": "040ac9e2f881c3b0d6adec84086acf55ce82356899b3ffe8aa002ddc1743fd25",
+    "training/pitch_interval_coverage.py": "87408dad16d6bdbfae854cca7327f44eb9b4ddd6f972e930f5b7d01629f666ee",
+    "backend/app/services/melody_decoder.py": "fcc22608ab635f0569b9af3e76ab23fbe37b125e148618e65a065c6e354d4387"
+  },
+  "split_sha256": {
+    "melody-v1/split.json": "64c605285481ebfae5ad61a60fa8c0834dcec900fb3cea386b950f84d486f630",
+    "vocalset-split.json": "ccc3d7305988d2e061a5ffb3564ec19b78f7ce84ebc9a54c3845d445eb3abf9f"
+  },
+  "inputs": [
+    {
+      "id": "vocadito-1",
+      "corpus": "vocadito",
+      "cache_sha256": "65438658e5f2e400a1a968d6881270c6481251595a7185e824b2e1eef753b5c8",
+      "source_feature_sha256": "37a699af48df1c3e76c12171f269ff1dd62819c1bd79d13e753f444a62d92fc1"
+    },
+    {
+      "id": "vocadito-3",
+      "corpus": "vocadito",
+      "cache_sha256": "07c0c7780c2ab0464a64cbb891af2e66f768eff01f4f8cf1708f925521b2c9cd",
+      "source_feature_sha256": "157e0916071a6ed9fd084bdad12142ab8793496a7e8504e59d1c4533753a8bcb"
+    },
+    {
+      "id": "vocadito-4",
+      "corpus": "vocadito",
+      "cache_sha256": "55bed85fa4a58cb7d04a27f2dd1cc38474c211933c4daa7ee6ae8ebda46320e7",
+      "source_feature_sha256": "8236dd0111c47f8b8a0f6511959d617822de0163d61246f422deb353efc5ecfc"
+    },
+    {
+      "id": "vocadito-5",
+      "corpus": "vocadito",
+      "cache_sha256": "03c48425a34185484f750a307f7ffcc17ddc63a4227ace34a9ce2ab3b21784a6",
+      "source_feature_sha256": "7b5394b9264e3519b82338d87c255de6cdf08a4a69d1844c63f6933c5238f933"
+    },
+    {
+      "id": "vocadito-6",
+      "corpus": "vocadito",
+      "cache_sha256": "399ee63db42b56c637ff2221702230958bec2f0106334a2f142ccf62d5acb7d6",
+      "source_feature_sha256": "31bbfbada2bc62d5ff31f01a5b91363e2489e9c956a43af429d87240fab10da8"
+    },
+    {
+      "id": "vocadito-8",
+      "corpus": "vocadito",
+      "cache_sha256": "fe3ced9c106eb943d0c412deb2e37b031c022f868786ac33bb4a98318adae5ec",
+      "source_feature_sha256": "d9c5ec7947c67152c53f52104eb59dae045a27bace36dd53e4a5e3f786f0f96d"
+    },
+    {
+      "id": "vocadito-10",
+      "corpus": "vocadito",
+      "cache_sha256": "3ff6050c6202b6df58d5cb8bbc1d923ee236945a73e40f3aa838fda806a6030d",
+      "source_feature_sha256": "42b441c13a90d3cac2ce102c7e761b4f9d63a078a38d94a26b25bf9d6baea871"
+    },
+    {
+      "id": "vocadito-11",
+      "corpus": "vocadito",
+      "cache_sha256": "9d5def91e04f3cc8f1093bdecb32d81373aff2a33855537e351160a8c65806cb",
+      "source_feature_sha256": "f4e75c5f5ea7018025f2f5a3ca1330026765bb64bcfaa964c6ec367ebfbc1d20"
+    },
+    {
+      "id": "vocadito-12",
+      "corpus": "vocadito",
+      "cache_sha256": "a540d4214f46730680711dac433ed88926c94516f6e99682345783559d18f6a0",
+      "source_feature_sha256": "21721ea5ee8932e837f286dc57a8b0dfcbc985be1fc1e4bf59acc39fdf53f7f5"
+    },
+    {
+      "id": "vocadito-14",
+      "corpus": "vocadito",
+      "cache_sha256": "8447aeb32e32c2f1b421067369a39ed282f5ed7cc59906f7d82a4a95ea36ca34",
+      "source_feature_sha256": "1178a9b09ca91ddefb13fb0e619137182ec2999811de88fce3bb6205d9d21311"
+    },
+    {
+      "id": "vocadito-15",
+      "corpus": "vocadito",
+      "cache_sha256": "d9bd70d65a1a40bee318265cd128f702475b8cb503bbfc452e64187fdf64621d",
+      "source_feature_sha256": "293e61a149bf7969064b26d407e6a8993d7ad0fc6a85052e702ba5c0270f18e7"
+    },
+    {
+      "id": "vocadito-17",
+      "corpus": "vocadito",
+      "cache_sha256": "ed4c18a8ff45f1d23c4c9ca40aa37df5e8e12577258361c32643fde37155625a",
+      "source_feature_sha256": "7b88bb8891295a47e89467562814e7f5c41cd691e84df6243e55eed632bcbdfa"
+    },
+    {
+      "id": "vocadito-18",
+      "corpus": "vocadito",
+      "cache_sha256": "d770a0ba2e6a135b3a82de00406bad3ec2a21742cd828ae5070e5c5be3b751c7",
+      "source_feature_sha256": "dc1406bd58d25a99cf3a776ca706285af3fabf11239ddc41582c7caa92cfbc0b"
+    },
+    {
+      "id": "vocadito-21",
+      "corpus": "vocadito",
+      "cache_sha256": "74782bf3585478a64a659ca7af13266a4d11d574ed1f86380036051ebba98fd6",
+      "source_feature_sha256": "e9630c28cd1a8eed532e7c49c47bc5e424628fe56bf598e93cdb9ba76644b30b"
+    },
+    {
+      "id": "vocadito-23",
+      "corpus": "vocadito",
+      "cache_sha256": "7ec5c347b508a7a3dd475786d8f39b7854caafacf29023bec476583e0cf21268",
+      "source_feature_sha256": "67202685192f7d243633491bc3d63935c78e1718507b6daf8e0a29edceec59ef"
+    },
+    {
+      "id": "vocadito-24",
+      "corpus": "vocadito",
+      "cache_sha256": "3a3cba3d3ae48333ad87eed886acb6cb5f07052f3a74a1be1c48744179209bde",
+      "source_feature_sha256": "0c2bc62c537af724a64c38abdd2d2c15e63332c51b8d340376acf77ccd741d3e"
+    },
+    {
+      "id": "vocadito-25",
+      "corpus": "vocadito",
+      "cache_sha256": "64e2b27d254396942327b30838dfab4e006785fad98bc078688292a04647e4b7",
+      "source_feature_sha256": "0d6f8d3a1226d6d4123c57568e9bdaac250b341278bdd913587be11b9c178fb8"
+    },
+    {
+      "id": "vocadito-29",
+      "corpus": "vocadito",
+      "cache_sha256": "76bd6877e3eff072cf4bdc25d335f74824d354923532587937e5eb4f46e7a3d2",
+      "source_feature_sha256": "e289d5456c3f7d4bbc4011b825bce252d06fae4567776bbe2c2b3fbb1c126e17"
+    },
+    {
+      "id": "vocadito-31",
+      "corpus": "vocadito",
+      "cache_sha256": "a7e6813af61824d10b9efd2dd03ff07cbbe7e0ebc889c471ceebf49c0157a3f7",
+      "source_feature_sha256": "44b420df3c93c3bf8d7f9b428962aaf57ddbcfd647457a2fca2985820a21a117"
+    },
+    {
+      "id": "vocadito-32",
+      "corpus": "vocadito",
+      "cache_sha256": "5af6dbc3f2601e066baf50f1168be4b068971fb5211bd6962a57cc1cf35c34a4",
+      "source_feature_sha256": "595f950d98e02001a59eabb54829c98ff9d54ebfb9dcff698823f6941f8b36ec"
+    },
+    {
+      "id": "vocadito-33",
+      "corpus": "vocadito",
+      "cache_sha256": "f79ff0d7832880c7ce3bc0284facd7fce4c162fb0ca37845cd39cd5c111190d1",
+      "source_feature_sha256": "d2989b20519dbb1d8470822d7d264239424458d11459487c2163db5e27178f0d"
+    },
+    {
+      "id": "vocadito-34",
+      "corpus": "vocadito",
+      "cache_sha256": "7a6f6340b942c63fdde3205de3f7697ad841bd50782bb843ad8a9737fcbce937",
+      "source_feature_sha256": "ca127e214ca95a38a9b6a43a5b3afc4b2074afa4d81d78da8d176d715c5fe295"
+    },
+    {
+      "id": "vocadito-37",
+      "corpus": "vocadito",
+      "cache_sha256": "f622b64637a00c255bb876a6ab76596a69b3aa67580c8e49d4266b4642c5cce7",
+      "source_feature_sha256": "5770b4c7fcee391472d7cebc1a44d897c67134f7840c982a76efc2ca349309f6"
+    },
+    {
+      "id": "vocadito-38",
+      "corpus": "vocadito",
+      "cache_sha256": "10135be518604fd82dfd5b0b7636c7ba47af5214a56103d285a5b617878a6835",
+      "source_feature_sha256": "1b42ef3d2f23baa010ed515f6ef1397f9fc67ddf698a311a6b3d685471cab454"
+    },
+    {
+      "id": "vocadito-39",
+      "corpus": "vocadito",
+      "cache_sha256": "31f2941a85b38f298359775e6b8540a7191799f1e4840c116362932b9908f963",
+      "source_feature_sha256": "6251fabaf729370ab1f7ab871598f99b847edb660dbb19e1d963b5585671032f"
+    },
+    {
+      "id": "vocadito-40",
+      "corpus": "vocadito",
+      "cache_sha256": "95756a0470ac22dd3d5ade79f4f0f2b3ec7db9c512a58a3e63d2145091109460",
+      "source_feature_sha256": "b0c95e885edcb36c4f22edf8aff58732615ac4285e033abf2569ecd1b7edcdec"
+    },
+    {
+      "id": "vocalset-f7_scales_lip_trill_o",
+      "corpus": "vocalset",
+      "cache_sha256": "d716691386837072c1a73a486748e4250623f4a5a2c696946658a83b93ce5c5c",
+      "source_feature_sha256": "ccfbee64620b543997630d27cb2e1c96ea2d717977cb534ad6468a5e42779f8d"
+    },
+    {
+      "id": "vocalset-f7_arpeggios_breathy_i",
+      "corpus": "vocalset",
+      "cache_sha256": "8b392bca3bbd4c023a248a8c0a4002a10426f0b5f52b482c3371e5ef7477b2da",
+      "source_feature_sha256": "573129e932db957466d938793a349953bebbfe014d4f98a8c4820ea830447d0d"
+    },
+    {
+      "id": "vocalset-f7_scales_f_fast_piano_i",
+      "corpus": "vocalset",
+      "cache_sha256": "c372fc5c648b6d944de3693c3f8314167ec03537a5925bc5159559d081bd25d9",
+      "source_feature_sha256": "741127617b784bf7b06edecddf6d2a60363f41a63b893a39e4bacc64ab6320a0"
+    },
+    {
+      "id": "vocalset-f7_arpeggios_c_slow_piano_i",
+      "corpus": "vocalset",
+      "cache_sha256": "920b53abc4fcf931dc68f19356cf498030309d9c47ffeb44d1425c6b8427c3b0",
+      "source_feature_sha256": "11071539089db2a6461115f1bba3e64e1b376b7c67e1713881d0e8ee63751b46"
+    },
+    {
+      "id": "vocalset-f7_long_trill_o",
+      "corpus": "vocalset",
+      "cache_sha256": "cd41b637c0b4c47abb9cf43e4e2744c086d83bbc5414aaca383e08ad36e81839",
+      "source_feature_sha256": "6f01d7cdc6e7eeb9a7c7976533ab7957fddf20fac8a3ff160080bad65fd3201c"
+    },
+    {
+      "id": "vocalset-f7_row_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "38e9a7363b6dd19c584b2ce3678d05ff78f34d5fcf7ae5172b26abeb2cc6fa87",
+      "source_feature_sha256": "f123c5de6de984988068fef396c2dd89d28399750ac3cd30dbe7077a15b3e0b8"
+    },
+    {
+      "id": "vocalset-f7_long_straight_e",
+      "corpus": "vocalset",
+      "cache_sha256": "f66f6a760bb62e3c9dc36e1329867ec8a8345e80525eaa72df05b16a5f481342",
+      "source_feature_sha256": "f864956fbcfe84224853b88cb633c99c761bdd1c72ec23c00984cfd257c0426c"
+    },
+    {
+      "id": "vocalset-f7_ long_trillo_u",
+      "corpus": "vocalset",
+      "cache_sha256": "b2bef85eea9a71c0b73fc8af9a0747b91da912913f11fd460f3a1dd1854e2344",
+      "source_feature_sha256": "408bd81e877e7188c14293a988587cb6064885fdc5a2e9cbbe2f6a7431e41792"
+    },
+    {
+      "id": "vocalset-f7_dona_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "52ac83f6803c7700578b3bae02ab76cd2f13c900ffa4dcb26e8955e61bbb146c",
+      "source_feature_sha256": "bb915a86bccb30958b3dba9ca2ecf88a1037dbd7384d2bdc42f157d1bb0f0665"
+    },
+    {
+      "id": "vocalset-f7_arpeggios_c_slow_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "c5dfd7efaa11d2d445233b95429441767475613ce32aa59865005ecd283e0491",
+      "source_feature_sha256": "98ec94efbd5537054609d7da18e5a0f20718a1e5f44c8effd1f0d8fe9c28d73e"
+    },
+    {
+      "id": "vocalset-f7_arpeggios_vibrato_a",
+      "corpus": "vocalset",
+      "cache_sha256": "5a8f4961735c02d523fb429d6213adfee784140e5aa192f6702eb2572c30fbc8",
+      "source_feature_sha256": "19c67087b7d49175990ab34c4f61c6dfae233fbe7b3baf7be8ee9bfbf4f9f86a"
+    },
+    {
+      "id": "vocalset-f7_scales_c_slow_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "ba84b4e8589954c558422c849150d1edddcf642a310e713652fb0bb28b8145ab",
+      "source_feature_sha256": "4503b73b758952ca89f15f279fcd868d7f83808b32903b17b73bb3142828ae72"
+    },
+    {
+      "id": "vocalset-f7_scales_belt_u",
+      "corpus": "vocalset",
+      "cache_sha256": "4377d3e014e23eff088529d596342041c0c68df839d42839316ff36c2d39ce6b",
+      "source_feature_sha256": "5de26fac80ca5c694dd1da5024d8c35d65fb9426ca73a4d39b4889b31fbc537a"
+    },
+    {
+      "id": "vocalset-f7_caro_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "5e5a489c2096df1bcad72f08d89670823333c6961092eed8b76384cfe1deb7b7",
+      "source_feature_sha256": "53d3cc20ff9ef3bf5529cc34f3c4a3a34757b0c270b755e446b35ac1a9986d06"
+    },
+    {
+      "id": "vocalset-f7_scales_vibrato_i",
+      "corpus": "vocalset",
+      "cache_sha256": "58fa86c980f2f88eb004a886f191977c0a273f870a6a9a968227aeae5bddf45f",
+      "source_feature_sha256": "7cd674570b8dee970033f9a3ba07923599ab80e9c226adf5f10d228d8505354d"
+    },
+    {
+      "id": "vocalset-f7_long_forte_e",
+      "corpus": "vocalset",
+      "cache_sha256": "932eb79e31b1da9775137c7fa5636e08e25012922f29f9b0873b419ef32943d0",
+      "source_feature_sha256": "704cfe82fdd2d445bbc5d9506ba658448e0da26a97019c9cb9701dbf18789294"
+    },
+    {
+      "id": "vocalset-f7_scales_straight_i",
+      "corpus": "vocalset",
+      "cache_sha256": "3e46bf6b9efc09f8ea1fa179f22bcee9c4211b7e28b09fbcc6bf7b6a0a5184a6",
+      "source_feature_sha256": "9beaf1ec56d337c2df69fe4a6b1346a23087fb93e0403b51c7a99b70f41e49a4"
+    },
+    {
+      "id": "vocalset-f7_long_messa_a",
+      "corpus": "vocalset",
+      "cache_sha256": "59b9cb9be04bb49261b78cce79f5f1d19f9a57eb44e448a573e1b7428326511b",
+      "source_feature_sha256": "7c29d5f87934f1f29446d0f3300f91fb92934dd0cfc30a2dc53aee2018417361"
+    },
+    {
+      "id": "vocalset-f7_arpeggios_belt_i",
+      "corpus": "vocalset",
+      "cache_sha256": "a8c81d7475ee1c806436eda5401ee08747045491605ad96b0e2992b1732f3c3a",
+      "source_feature_sha256": "86d2909ee8178f6cf546a2752a9f257d294a3c74c7a7e148f5e0234f45260928"
+    },
+    {
+      "id": "vocalset-f7_caro_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "684f2fd0d00a814255b5d37398081b8438a9bef8fa7f21283993db32c1842103",
+      "source_feature_sha256": "73b64aa6cfe9e098e6a2cd2ca77d7c8387413b42e0463248874fb518375c847e"
+    },
+    {
+      "id": "vocalset-f7_scales_f_slow_piano_u",
+      "corpus": "vocalset",
+      "cache_sha256": "1aa18cce7fe98a3d82b7738f432b790e3612292be81bdfc0b56834dab80dd1a3",
+      "source_feature_sha256": "8be9cacc0ce31c275529bfb3ed1f471197e63f044ffafdf1ceb3d22a38c0d5dc"
+    },
+    {
+      "id": "vocalset-f7_arpeggios_straight_o",
+      "corpus": "vocalset",
+      "cache_sha256": "892f2559f16d7a39b4c8f2e6e4d102fa97f2dbdb1c6bd82490dedf1c2a94fea0",
+      "source_feature_sha256": "56da6cc04e9207233ea65381f7bf1a5cb5e41d758e5f622d2150f10c54e6910b"
+    },
+    {
+      "id": "vocalset-f7_scales_f_fast_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "7e411224200cf4ede6e673eccd3428c3128a3cac67d3b309fded3475538ae573",
+      "source_feature_sha256": "0f402ff78f6e538cf58be5f28fb8acfd707d1b7ceb0edc89ab9da5d435c5c686"
+    },
+    {
+      "id": "vocalset-f7_arpeggios_f_fast_forte_i",
+      "corpus": "vocalset",
+      "cache_sha256": "e049add779cbdb031b036435882dc305602d0d01a5b93ad23a2b83a266ec6d1d",
+      "source_feature_sha256": "f0fd6c304d40c343ce2e38aca04cb7c4501021c90e8ab3a515b1ad0dca30f31a"
+    },
+    {
+      "id": "vocalset-f1_scales_c_slow_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "78d7a188e6411b4f1b873344506a1ce6e71b12c99a186e48d1cd57bd3c753c45",
+      "source_feature_sha256": "3a805c903b35a70557d6abc83c4fdf93e549addec9f996ff341068615c3dc102"
+    },
+    {
+      "id": "vocalset-f1_row_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "c3410edec6354be2a4f776247c5b5b624fcdbb658576ed363e8a47e20757135c",
+      "source_feature_sha256": "efd033e3cf26619292b873f8747754d5ffb53af433a03ac030e57c0f1deb9d9c"
+    },
+    {
+      "id": "vocalset-f1_arpeggios_lip_trill_a",
+      "corpus": "vocalset",
+      "cache_sha256": "f49d33998c1560fafaf8a28c2634dc19dd792c36fa3cdbf13c51a12ebcfbd5e1",
+      "source_feature_sha256": "3d813e95179200b27e8cd7d0a0307959f484a673031de10cbd1040a7e3b57028"
+    },
+    {
+      "id": "vocalset-f1_long_trill_i",
+      "corpus": "vocalset",
+      "cache_sha256": "65df93d815faf6da6efb7d50136abbf4ebbf2c6a8ad90b97a9df4aef7dc980a5",
+      "source_feature_sha256": "f652b80a3d5cf4634bba3676954487784d4fcb5af906c2811d5aa2f88c6196d1"
+    },
+    {
+      "id": "vocalset-f1_scales_c_fast_forte_e",
+      "corpus": "vocalset",
+      "cache_sha256": "fd533e1c782de1a581957da51fb192268b172c6ef15dc32b7e83ad700c7d5ca4",
+      "source_feature_sha256": "66f63b5f32691d80f67d1121a4fc0fdccfaae24dcd1e96ba44215d0f1ba39fd4"
+    },
+    {
+      "id": "vocalset-f1_scales_vibrato_o",
+      "corpus": "vocalset",
+      "cache_sha256": "9d23fb48240ae3841c6da264afd196c7cf2f5711e03a1fcee997860a9a63d1fe",
+      "source_feature_sha256": "161ec2589edec85203718afaadd90c018fdd89c473391bbd66b86a7b1f9d4388"
+    },
+    {
+      "id": "vocalset-f1_caro_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "2614984b5916aeaab95bb681e89fbb2c8b0173111c2131f790db0f2f07fa5938",
+      "source_feature_sha256": "2cf6aeebbda27362d5ecdf556854645fc4e09720ccb413e5ba3462c3344137eb"
+    },
+    {
+      "id": "vocalset-f1_caro_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "9da69702ad3329fe2f8bd7f188aa4c318002dafab6409672613bac0295c19c4d",
+      "source_feature_sha256": "78c74eceaf613483d60e6c1784ad013d7d8818e98eb9ce03ac2fffdf935232b1"
+    },
+    {
+      "id": "vocalset-f1_scales_c_fast_piano_u",
+      "corpus": "vocalset",
+      "cache_sha256": "66efc2546c4c4cd15b74c4dd91034f6e5fa5b723d387e992620ecf97dd351787",
+      "source_feature_sha256": "06566bf0ecc79606b18ed2da397d668a42db7042ecf966261ea86bf9a19b48bb"
+    },
+    {
+      "id": "vocalset-f1_long_straight_u",
+      "corpus": "vocalset",
+      "cache_sha256": "330315ab43a3e39c68c9e2e6cea097b46d8d30eb508cf3f64a440cf88f30fa87",
+      "source_feature_sha256": "29e3669a39dc69a5da8ccb96e026fb994cf3ab23b8d903c6809150a8294a0b4d"
+    },
+    {
+      "id": "vocalset-f1_arpeggios_vibrato_a",
+      "corpus": "vocalset",
+      "cache_sha256": "2ce08824003f6dd26f7f81b3a4424ac47fab18032f9253e6402833d0fc90c85b",
+      "source_feature_sha256": "e46fcf5dce65240015b4a80077c139fb51fee7d36dab5fcdc1a238cb6c298b96"
+    },
+    {
+      "id": "vocalset-f1_long_forte_e",
+      "corpus": "vocalset",
+      "cache_sha256": "6f3835cb7395520a07e6e76ff075fac5e60d85f06a50139d4b6c2ce4b00a721d",
+      "source_feature_sha256": "5934ff3726bd537dea498b33ee052c1697140a49862ed2658aa10bca5e313d9c"
+    },
+    {
+      "id": "vocalset-f1_arpeggios_f_slow_piano_i",
+      "corpus": "vocalset",
+      "cache_sha256": "3a1ac0ffc0c23a8577dbadd8f5756e86eaaa4b24f141f8dc43c2ca8e31a23210",
+      "source_feature_sha256": "9fd044bab6a102cdd7fd14d085ae77c086f119d20c8ba4ec37f016a774c2a80b"
+    },
+    {
+      "id": "vocalset-f1_dona_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "935df78ddfb71528c6238f3e0804a3ec97bedc6642921263d921fb43cd7b80a1",
+      "source_feature_sha256": "a17f48123071327b49c0d4e22040e27dbcc5fd2b01aff0e32750764509ea8503"
+    },
+    {
+      "id": "vocalset-f1_arpeggios_breathy_i",
+      "corpus": "vocalset",
+      "cache_sha256": "4acab5e58de318a7b74e0547aad362483ede440ef8dfbf06faeca092973bf4e0",
+      "source_feature_sha256": "5a21e80694fa4d65809dc2fd2fbfbe8f5679c7ac7ee54a4fc6887e57158d4770"
+    },
+    {
+      "id": "vocalset-f1_scales_belt_o",
+      "corpus": "vocalset",
+      "cache_sha256": "f28d3ef42abdc0cd8d0b949a1d4cd52f928f2328b4397c4a53d927e91a335da0",
+      "source_feature_sha256": "9a1737d7bdcaf0c6c2914a4a1c431746876077ea82a752b43267fe9353ce20d0"
+    },
+    {
+      "id": "vocalset-f1_scales_breathy_i",
+      "corpus": "vocalset",
+      "cache_sha256": "f17bb558efb337509ea7fdf5b9b9ef94d77555ab0dab0c7c98ec9e4fe2bcb006",
+      "source_feature_sha256": "4d244b805bc31c33d2f31368a6d27db53559ed43b5fb402eb7de7108147578ff"
+    },
+    {
+      "id": "vocalset-f1_scales_f_slow_piano_i",
+      "corpus": "vocalset",
+      "cache_sha256": "b7481b30efa7218898cd2363a29595b0cee0a629a76d47f086ba4a35e6864112",
+      "source_feature_sha256": "ec83ed673f022a75d2aba6e18d1487fe7c2a31b13b589d49ffb312e6dcdd74e6"
+    },
+    {
+      "id": "vocalset-f1_row_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "ac9d6870a1f4e1879ecf2ee2750185ea0363864b0d49e6959c695aa43de0d4e4",
+      "source_feature_sha256": "201611759302aa60596562376b6c022c1780f46bb310bba772475741c2635ba7"
+    },
+    {
+      "id": "vocalset-f1_arpeggios_belt_c_i",
+      "corpus": "vocalset",
+      "cache_sha256": "06582a01e8974e4f9007a81565f21fa49e8424bcce967230edc591ed0205ac1d",
+      "source_feature_sha256": "d472ac6a1bf87f1624876db70871c0f002bb583f54bdaabb369c2837ae184050"
+    },
+    {
+      "id": "vocalset-f1_arpeggios_f_slow_forte_a",
+      "corpus": "vocalset",
+      "cache_sha256": "58493da2ec10a477f7cb2c68094931bad9f0b4ea09850c26da190060875bed12",
+      "source_feature_sha256": "4aae17a3c614b84d4232b8de9480ace3483003cb5c629f4c89a4091317bec237"
+    },
+    {
+      "id": "vocalset-f1_long_messa_u",
+      "corpus": "vocalset",
+      "cache_sha256": "1eb6fcb55ed8f6656b1531000ae5542b7bfa0c73bdcb7f06eb3fd97941d2ef97",
+      "source_feature_sha256": "57a34b04f4f86a56841d53d7423032433e9a3048468d9f3e0069121464995472"
+    },
+    {
+      "id": "vocalset-f1_arpeggios_straight_u",
+      "corpus": "vocalset",
+      "cache_sha256": "b48a588e7e4734c56161dcdb754074d012a3f6d0241290d854b6c6eb792615f1",
+      "source_feature_sha256": "acd4f9131aad8e120b676c2d8d999bb7dbe44f2b8c9fc682bf3bcec0be6f454a"
+    },
+    {
+      "id": "vocalset-f1_long_trillo_o",
+      "corpus": "vocalset",
+      "cache_sha256": "9375459eef85806b7145fcdaee5797e3d0437de42fa8a4dceb6432c7ed7bbab2",
+      "source_feature_sha256": "b62f84bf5cdb26cf3548f822244d06363cb43cb9dd85f0cae7efaa30c0222745"
+    },
+    {
+      "id": "vocalset-f3_long_straight_u",
+      "corpus": "vocalset",
+      "cache_sha256": "0a9ff8a4a65bab1e4f10a440a496979a8746baddafb4f72ba9dd6c634afa8dd7",
+      "source_feature_sha256": "6ec3e27f95f92f294f5cac1594f7e561ec97ce00b7f4bd130327f9ad5c3876ed"
+    },
+    {
+      "id": "vocalset-f3_scales_belt_a",
+      "corpus": "vocalset",
+      "cache_sha256": "0d8e38000913b79bab5079175116b2a110c773d062f2d9fc82aba99aade1d20a",
+      "source_feature_sha256": "076dd7ff4c548548d8fb222b02e6fc8a2f8c381acb30987e7a02626df02a0434"
+    },
+    {
+      "id": "vocalset-f3_scales_f_slow_piano_o",
+      "corpus": "vocalset",
+      "cache_sha256": "ae17885b0e22f6908d32234f5bad28f010167bb412511a745ed332d7222a1218",
+      "source_feature_sha256": "02dfc67eb1d4937a2e1584df93c6a7a9cc9fe7952ea953baa76663fae84b79d4"
+    },
+    {
+      "id": "vocalset-f3_row_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "28c9356098d08b3a4fc5e5e3c87063a718783c69272a634f426b207d2c0a3e0c",
+      "source_feature_sha256": "caeef65d1af647407ec096272c8714482be6dfc85418301404c604784737dbc9"
+    },
+    {
+      "id": "vocalset-f3_caro_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "c18c3defeb66b133e1fa74418010b0e12a68c6cc5de8f4e3a404ecdf799239c2",
+      "source_feature_sha256": "80d2774eaf93423fc14201211e00faafe528a65ed7d41b9fb37b6b1f35080895"
+    },
+    {
+      "id": "vocalset-f3_scales_f_slow_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "45aac5dc5f91df11567b8429dd1595d6bcf29877333a513501feaa9f85185607",
+      "source_feature_sha256": "5ea17d2016d87088063709fbdd6e1a98613b0b5ae91d0a3d43d051b630cebf6d"
+    },
+    {
+      "id": "vocalset-f3_long_trillo_o",
+      "corpus": "vocalset",
+      "cache_sha256": "1a2d51376b0e3cca6cb538872f65464139fb00d354fd7697cdbfe012f0904b32",
+      "source_feature_sha256": "ccfab42c3789c6757432228e97ed87fb9ed2a3be608f1c3c4e2904118a393725"
+    },
+    {
+      "id": "vocalset-f3_arpeggios_lip_trill_u",
+      "corpus": "vocalset",
+      "cache_sha256": "62a4622f08b7a95002ef8c978643b91d5517727109409d5d2ba2b807906c99c0",
+      "source_feature_sha256": "b07a0dfe9f86dd0f8465dec65aeae766662549d24a53c78bfb820d606c6e06e3"
+    },
+    {
+      "id": "vocalset-f3_scales_vibrato_u",
+      "corpus": "vocalset",
+      "cache_sha256": "1f7313344932a586a9aa0a72a5daf87a1cace23c1513ca386b6491203420212f",
+      "source_feature_sha256": "42da58633a67aa4879289644b5c93279db1c8411697d5e5eab2c0ca371449cf1"
+    },
+    {
+      "id": "vocalset-f3_arpeggios_c_slow_forte_i",
+      "corpus": "vocalset",
+      "cache_sha256": "fd9aeb6a91842a901e73be2077307ae63389bf7de2881e850d56d6c2893a13f3",
+      "source_feature_sha256": "ab9ecc61de92380e8244bc7562978038c4e76ae44009e17a93a0a7042885cbd0"
+    },
+    {
+      "id": "vocalset-f3_scales_f_fast_piano_e",
+      "corpus": "vocalset",
+      "cache_sha256": "070c039880c6e99628c915ab4fee0ad151cc1fb86b7f3fe370ccd4c232a0877f",
+      "source_feature_sha256": "c21374c0a1ffac27b960b8c4a9d8f97feac324d36a2bef009af6b697c809878c"
+    },
+    {
+      "id": "vocalset-f3_scales_breathy_e",
+      "corpus": "vocalset",
+      "cache_sha256": "5a9c5497526dcefe4032ada9553a4c1e98b27af220b72ecb066de7676203b0fe",
+      "source_feature_sha256": "7f60e5228d81a575e217041d61e20b62a7db2670fdcdd8203597d731e3e9ece9"
+    },
+    {
+      "id": "vocalset-f3_long_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "09818039410796b61dda168142d86b461cd4292a114aaa89d6997eb50e9a20e0",
+      "source_feature_sha256": "451a57f714a3e1e5b807dbc5cf254f5d65d18c4da43898666ad4c05b170eaa29"
+    },
+    {
+      "id": "vocalset-f3_arpeggios_vibrato_a",
+      "corpus": "vocalset",
+      "cache_sha256": "4efe0fc544e653acc1d267da30e2f654f7ecf99c6f1dd02cd1a135b0e71cf5f3",
+      "source_feature_sha256": "d94080c05294f43dfafae2fb96e6f497d32f947ec00cc9b3c19a677388d2b638"
+    },
+    {
+      "id": "vocalset-f3_arpeggios_belt_o",
+      "corpus": "vocalset",
+      "cache_sha256": "f950cb474c50af787b18f8d03ceac7b5d84c1a7b75c3378d2fe6563490fb275a",
+      "source_feature_sha256": "aeee41c2a90aecbe05a94b6a9abe94e3ade3f90bfe741b9b389364d750ff857e"
+    },
+    {
+      "id": "vocalset-f3_arpeggios_c_fast_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "a93c81141ef5b9991faf5f75583ee1329daa5e43e5a5098afca99769cf0dcb5e",
+      "source_feature_sha256": "bc5c9594a48d58951bec63545bdca2a2896fe62c13dcf97c99859418c84d1448"
+    },
+    {
+      "id": "vocalset-f3_arpeggios_breathy_u",
+      "corpus": "vocalset",
+      "cache_sha256": "94cc089a6ecadde29aa511b8e9f8f1c36a902fcf9f72f13b911c0cfb23066d28",
+      "source_feature_sha256": "a1eb1f03f2b53024fd4db3ec80f30a0f26592451a89f5bdfc05f070fff8400a8"
+    },
+    {
+      "id": "vocalset-f3_dona_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "4faccb4ba17b444ed7d529aeb062fb7af09114629888b780794f29d7a618c8fa",
+      "source_feature_sha256": "6902b89a3bda5e7f963d06b0ae8be017b02953957c0c846b5ee650d17fd4fc6d"
+    },
+    {
+      "id": "vocalset-f3_scales_c_fast_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "354bfb95406b06a5253c3a6a11e0d0bb60eb78ff691d28a5c807292eeee2e8f6",
+      "source_feature_sha256": "315866556873d09ecaf640b559ab9048ffda8ca086048e6715ad81fa96e371ad"
+    },
+    {
+      "id": "vocalset-f3_arpeggios_c_slow_piano_u",
+      "corpus": "vocalset",
+      "cache_sha256": "422c2115f6bea80a55899a49c9b62674335016a25f853be727bb9c89c18ba7de",
+      "source_feature_sha256": "2a144b0c6bda2edf50f80636b424c643b35c53c9184aabdcb1058f11ab51fcde"
+    },
+    {
+      "id": "vocalset-f3_arpeggios_c_fast_piano_u",
+      "corpus": "vocalset",
+      "cache_sha256": "db73eb52db690e8c0ec29c555ed479d3f900cd49d1d8fbe49492317cdb48c6b7",
+      "source_feature_sha256": "f50fb25171083f22ef37e4629ff6349b574bf772c414bbbf98b620058dbe9848"
+    },
+    {
+      "id": "vocalset-f3_scales_straight_a",
+      "corpus": "vocalset",
+      "cache_sha256": "6b94f5493e76784a91b75e162946a581fc64ab41e4ec76213d985781eb59f960",
+      "source_feature_sha256": "d469285084038582d84356890cc10e4841f407d1a3970b0ecca3b3fb4575e69a"
+    },
+    {
+      "id": "vocalset-f3_long_trill_i",
+      "corpus": "vocalset",
+      "cache_sha256": "ecb20b210d5f7c79cedbe2dfec518ae3583f5fe227bcf590f2e3afdf0329979f",
+      "source_feature_sha256": "274aa3605a5a18bad381899e68c1373a6a346ad8addaba25f762abd4701e4f85"
+    },
+    {
+      "id": "vocalset-f3_row_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "26339d7949063d3b26d9edad85f8141ba923e5fe3b39c2d1a812398310426275",
+      "source_feature_sha256": "c95603a7a07f5603b206e6a719d13050f30da41be7bc83ce23e4d3ab78b02b9d"
+    },
+    {
+      "id": "vocalset-f4_scales_breathy_u",
+      "corpus": "vocalset",
+      "cache_sha256": "fb31a84bf48a86c08506f60dd0fff56e7a744352747d0825f00f2028f2fd4cb3",
+      "source_feature_sha256": "a1b329e9b17b63f4b93a30d276517a193d3a8393a8497042561756f98db355ff"
+    },
+    {
+      "id": "vocalset-f4_scales_vibrato_i",
+      "corpus": "vocalset",
+      "cache_sha256": "4e059fade6051c5867e1bda4a4db922785459dfdd19f477cee236996ee332471",
+      "source_feature_sha256": "254f7062a1ed724c346f7b8b936169a0b4dbe331ba6eda44c620612d4ce9e512"
+    },
+    {
+      "id": "vocalset-f4_arpeggios_f_slow_forte_a",
+      "corpus": "vocalset",
+      "cache_sha256": "da0e8a21202cf907a291dbf84289681c5af11c8a5e7d5e8a561e7c4fa13ff140",
+      "source_feature_sha256": "2268f1a897ca4eba6983fb7c70e79c985c33e7dbca5c493943c31041c9969551"
+    },
+    {
+      "id": "vocalset-f4_arpeggios_vibrato_e",
+      "corpus": "vocalset",
+      "cache_sha256": "9cf2b577c7763e13fcf5ddff947be295bc6aeec1d0557bb33e1e0a8d65bd1401",
+      "source_feature_sha256": "32b483456694b25beb0d3a9afb6df29a91d9179e78d30beef1870d3fa620b781"
+    },
+    {
+      "id": "vocalset-f4_arpeggios_breathy_o",
+      "corpus": "vocalset",
+      "cache_sha256": "bf2d22a386a0ee7d739b8e052401376300d23cd2dbb7b2b91dea708eb4f96b31",
+      "source_feature_sha256": "e89b3970e39b04b53e96a353dad43ddcaf2082068af4ad4e97a3dc7a7da7c029"
+    },
+    {
+      "id": "vocalset-f4_long_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "b7519cbbce72843bb531a57b7654d57524e4d39ec14bb4717c17f777c49c85e8",
+      "source_feature_sha256": "66e568aabc35a8aac25f3dcb07850dab1688d4ad5111c8d73217ef387d2bd6ec"
+    },
+    {
+      "id": "vocalset-f4_scales_lip_trill_e",
+      "corpus": "vocalset",
+      "cache_sha256": "1409e4eefbee5614bd0251b8f43d6dd3efdf5ebedf6f081e79bbf9954d5bd66c",
+      "source_feature_sha256": "9a67fad0f6b1219b2f3394f9fc6fc50babbc9d8a22511eca9a63d9a35d5c86b6"
+    },
+    {
+      "id": "vocalset-f4_arpeggios_lip_trill_e",
+      "corpus": "vocalset",
+      "cache_sha256": "442bd0aa38dc621549b76ecb2a71b53d65208f67a625fa8c6e59d6d0be56cb8a",
+      "source_feature_sha256": "362517829edb0fe59f657326a533ee042e7fcc7e922500eff666c94d0605a151"
+    },
+    {
+      "id": "vocalset-f4_scales_c_slow_piano_a",
+      "corpus": "vocalset",
+      "cache_sha256": "6e1494f2eb33b3d4b7faa1312e936947a26b23e6d5efd73ac9a3a27e3280e88e",
+      "source_feature_sha256": "18c9cb60bd83fcbe22ab8d3f22bbdc1bba6dc8898df9c7c82a075a9f91c156c9"
+    },
+    {
+      "id": "vocalset-f4_row_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "bd9065ea79ba18725051fef72faaf2680dfcd84675f01b4bba6133311ac346cc",
+      "source_feature_sha256": "5c0e7135a469cef5ab4440c4105435c76a4265843ec226f3c69368a7e6c0b95e"
+    },
+    {
+      "id": "vocalset-f4_long_trillo_u",
+      "corpus": "vocalset",
+      "cache_sha256": "059f4cc3e08af1f1f925fc7416fcd15a3868b4c9a97ee482fb99f7f11f2b69f5",
+      "source_feature_sha256": "2156a59de5f65db5a9aa4eba17b83fe1aa70bd7d0a49fc064c593dfabfdda630"
+    },
+    {
+      "id": "vocalset-f4_dona_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "d9448ba1c261e75e420257436bcfcc7a7f36ba17887d1247b60466c40e49c0bd",
+      "source_feature_sha256": "8c52e5c64b3a45824a929d156f01a6d3dbd765559aad0857c6ef1159ab816038"
+    },
+    {
+      "id": "vocalset-f4_long_straight_u",
+      "corpus": "vocalset",
+      "cache_sha256": "0c2bdf1690d0b8c4976459c1fc7686905fbcf5b529be00f889e41e2ad26f9769",
+      "source_feature_sha256": "e336550383aa70262897806c87f95655d5d138eb51366a435953f55b685e42f8"
+    },
+    {
+      "id": "vocalset-f4_scales_c_slow_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "2fab8fcafa36e241c73517d6447f29d41ada1eb9a66de9a3c119aadb757a551e",
+      "source_feature_sha256": "1348d1f9de44ee78a244137709940647b5dbd2ae5253e98de1fdb6cecc5f7016"
+    },
+    {
+      "id": "vocalset-f4_caro_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "e37de1f20ed1b56eb581bbc775da6d655e8afc0d667f9dc5aefd9a3cf06f061c",
+      "source_feature_sha256": "273cd5b84b60773b0ed71f1f1d44ce47ff3742faf0f42a1fb6e5b1f492f54a67"
+    },
+    {
+      "id": "vocalset-f4_scales_belt_a",
+      "corpus": "vocalset",
+      "cache_sha256": "8b91e47f4f75e57f7b4e5363d3fb4e4de3009797799ed523932fdf75422ec9a0",
+      "source_feature_sha256": "0290b80fa48b2106d4e154b4509226d119d73ac95e559cba725099ca8b961c67"
+    },
+    {
+      "id": "vocalset-f4_arpeggios_c_slow_piano_a",
+      "corpus": "vocalset",
+      "cache_sha256": "d700383c17205748da8370b69f18c3643ff0f016f49424bc126e792d1d4248c6",
+      "source_feature_sha256": "9e466fa43fef327fca2d1dd837621180c5c274e437f91810c1de41bc4130b951"
+    },
+    {
+      "id": "vocalset-f4_dona_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "2ddaed47611a5a297ccfcd7ddf8e757249d3a60a0ae7edcf80b7a660a698dc04",
+      "source_feature_sha256": "f84ba07b19490025903f5b38046f7b1dc7fbff8d5f11f48f54bde712f87bcf0f"
+    },
+    {
+      "id": "vocalset-f4_long_messa_u",
+      "corpus": "vocalset",
+      "cache_sha256": "da872f5e3d82d592ff78e2e42c236b36694af0dd2c80be21dfec68fb26394c68",
+      "source_feature_sha256": "a531cb3a802405a3e9decd8a47c4e538dbe42262cb3f63ef142f4b4bd5f399b7"
+    },
+    {
+      "id": "vocalset-f4_caro_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "6f96611af1c0e197b93a9bb708b365d5e160de22a04920c63aeafb79cdcfdf18",
+      "source_feature_sha256": "ba54f12268930f8f0aa4b78859cd2a4338030ba7b73e6ed42b16984020c32b9d"
+    },
+    {
+      "id": "vocalset-f4_scales_c_fast_piano_e",
+      "corpus": "vocalset",
+      "cache_sha256": "ee9e8b37f4b38553e628e1b78d7d2fd8b0bd4afa7649389707f72ac099889e34",
+      "source_feature_sha256": "56216efbbd2faa8c8b5aa16081a4d12fb36c4a50d639b37b83d896475cd5d9c6"
+    },
+    {
+      "id": "vocalset-f4_scales_breathy_i",
+      "corpus": "vocalset",
+      "cache_sha256": "cbe1ce3d4b055b7f652b54740b76843e826370d29c2c50b57b394256b070d180",
+      "source_feature_sha256": "3d3bd341ba0cd94cd7d01ad29e469a08c72c632ea200ee4bc5db96ac6e95bdc2"
+    },
+    {
+      "id": "vocalset-f4_scales_vibrato_o",
+      "corpus": "vocalset",
+      "cache_sha256": "f290313e6cab3f69a804791710c398472274009b98ab034725230affec22b40f",
+      "source_feature_sha256": "382b4d632ea2f717982eeab5c6f9fadfe3daceda1cd12c5aef0d44893e1b954a"
+    },
+    {
+      "id": "vocalset-f4_arpeggios_f_slow_forte_e",
+      "corpus": "vocalset",
+      "cache_sha256": "02e032e98bdbfcbc5065e57cc0fb8801e4583c24fa6245f41a8b90489ff3c614",
+      "source_feature_sha256": "f05e80eff22aab8969a6fbd6256ebf7ed7e4dd772927538e0576dabc23d98730"
+    },
+    {
+      "id": "vocalset-f8_arpeggios_c_slow_piano_u",
+      "corpus": "vocalset",
+      "cache_sha256": "3e8832f26a54669b89520a34b810234f78c39cafc42f215a5f5e7e03265a2d27",
+      "source_feature_sha256": "4918fc874205d598422987f69cef7e97075a4704bd2e519b72b98429824bd577"
+    },
+    {
+      "id": "vocalset-f8_scales_f_slow_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "38cc9a0db240ec081a1ed36d7a6caf229bdcaf42e7a97519f0a51a4e718edd2a",
+      "source_feature_sha256": "1c293f573db9910a3369969950c4d7a5525b8c675ebdbdcb4473f2746853fe2c"
+    },
+    {
+      "id": "vocalset-f8_long_messa_a",
+      "corpus": "vocalset",
+      "cache_sha256": "e80b9bce9ddfa71fe2ab9b139b145bf1a12071f056aa4bd508d319c8a3981687",
+      "source_feature_sha256": "db732249bf7bd711a8990edf868571e4289fc6974e879db421acf92cca005984"
+    },
+    {
+      "id": "vocalset-f8_arpeggios_breathy_o",
+      "corpus": "vocalset",
+      "cache_sha256": "7a19f958756b931baace825c6b4e0d36c923ebc7d277b0b7f8a0121e73544b7a",
+      "source_feature_sha256": "036bae3d7e3f8b291543e556f3c6ce9ff76087fd73f88f8596064bf8193d1610"
+    },
+    {
+      "id": "vocalset-f8_long_straight_i",
+      "corpus": "vocalset",
+      "cache_sha256": "726866de09a19a8e488737bbbfd0116af21e7f0569e21824e1a2c7a7d4f0176b",
+      "source_feature_sha256": "9ad1afebef10ace2b05572f933fa42d7c71bd19af0282427d18b45a063af54e0"
+    },
+    {
+      "id": "vocalset-f8_caro_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "2b9bb84219ffe2cc6db69f1db10f4c732e9c3309a5f8e47b243380be87a2ed60",
+      "source_feature_sha256": "6729beeb585433db73bf4cf557726dfc1dd504d17e6069544ad304cdfecbedc5"
+    },
+    {
+      "id": "vocalset-f8_long_trillo_u",
+      "corpus": "vocalset",
+      "cache_sha256": "5bfa3ff34c869308bf8603b13766d59f3ce31c79c3715c209d7d55996765ef3f",
+      "source_feature_sha256": "62efd86d42a122cc2fe2a06661b374f887c526b60858a7f52c3018b548aea044"
+    },
+    {
+      "id": "vocalset-f8_scales_straight_o",
+      "corpus": "vocalset",
+      "cache_sha256": "213b5cb66da4462aca589f2e70cd0eb4ebb6e3ff60f1d5667d2d55c033cece23",
+      "source_feature_sha256": "929f0a9010c0c42630625aea622c85b396dcafdd50c22eed0b55d7be7a238f30"
+    },
+    {
+      "id": "vocalset-f8_long_trill_u",
+      "corpus": "vocalset",
+      "cache_sha256": "3d04e6c45529b8a30359c9cb32cd3d855b7ace5ea01881a21ee3841c44aad79a",
+      "source_feature_sha256": "5253f2b80ca7bc259e7e24429511f15e68ecaeb584bef9422d6394e15b39d381"
+    },
+    {
+      "id": "vocalset-f8_caro_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "ec654189fddf4e7008576527f54b9c53eda80789a207dab4dbe697627cb4f109",
+      "source_feature_sha256": "c03ad4153e508f46110d658c5c10c6296d4930942064340893bd150d01e0662f"
+    },
+    {
+      "id": "vocalset-f8_scales_c_fast_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "40962fb73281f73bd64c3763cef38e91d8920c7856247f6cf9ce2f88f6b42fd6",
+      "source_feature_sha256": "49a992a39d05d8bbb4d2e0003b912d397268d711699d2bb10e712d40564aedd1"
+    },
+    {
+      "id": "vocalset-f8_long_forte_a",
+      "corpus": "vocalset",
+      "cache_sha256": "1f1c25d81cc8693711a18a314aec8fb40b5ea299c7fe197a8def72d2995b63b4",
+      "source_feature_sha256": "389c9f0cdabfb6d7f467b4d1fcadc1dbc0fd22e2fc33068dd4f50abbe5267a81"
+    },
+    {
+      "id": "vocalset-f8_arpeggios_vibrato_i",
+      "corpus": "vocalset",
+      "cache_sha256": "af69dd0c646155e6d09bdfef0b781c12cfa78e4b224846ba8ae6a1e37b6079fd",
+      "source_feature_sha256": "555170f51d73fd4a3f3dc593f3fcbb4c6446d917f4d1b588f5d5e7c0d85a0460"
+    },
+    {
+      "id": "vocalset-f8_arpeggios_f_slow_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "e01a05e4764a7c634c83b0b8cddd88834f8d07b9d9e4cba0be37f535792e1ba0",
+      "source_feature_sha256": "d368c91fedad1c81bae65ba61155b621a45e8425c29bf56de3dfd8547c721b21"
+    },
+    {
+      "id": "vocalset-f8_arpeggios_straight_e",
+      "corpus": "vocalset",
+      "cache_sha256": "9c1bcb4bd0aa44c10df8cd05efb9381a8ed35fc93fae5f6e01a6b74946435b9d",
+      "source_feature_sha256": "45c0d596246b09fd34e284c71aecca418f201e1c0aeb9abd5ddc3374bf721a3a"
+    },
+    {
+      "id": "vocalset-f8_scales_lip_trill_e",
+      "corpus": "vocalset",
+      "cache_sha256": "c23f471046ef982e9127458a692298e651bc8ef1877c2d0d2f613eb3c5c2b4fb",
+      "source_feature_sha256": "ce616e576a95491903dc82e6f7edc3e16035854c7c94ef5e534340855fb2bf84"
+    },
+    {
+      "id": "vocalset-f8_scales_vibrato_o",
+      "corpus": "vocalset",
+      "cache_sha256": "8a69bc751ad424f47f2aa08ea282b0a6c4aeccfa476049da56ec2851111388b1",
+      "source_feature_sha256": "35f919b95fd2d8c3721994facdcb0a8da29edd6f6212884930d25793ac8a7710"
+    },
+    {
+      "id": "vocalset-f8_row_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "838f9fe2bce31a23abde6540c5f4b3f2624d6cd8f9150674a7075024a29371bf",
+      "source_feature_sha256": "353b99732d0cc5c094ea48e09a14e776c17b55a4d54173fe4dac122dedf7b704"
+    },
+    {
+      "id": "vocalset-f8_arpeggios_belt_i",
+      "corpus": "vocalset",
+      "cache_sha256": "84aecc4c8ed19b400eb88a2da31155f1517dfb31162e7cd63481de9580740455",
+      "source_feature_sha256": "af1f5004ac493501a229503d810966258beed93cbbc1924670a9f2a6b4f2dce8"
+    },
+    {
+      "id": "vocalset-f8_dona_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "b1ac1f176d0630b45de874fefd799c2f88e2127c1f2d19074684a3d7e4369ac8",
+      "source_feature_sha256": "a65b89dd4c22b2c5c93b7603648ecb695fe6628b6e2052cba0a0f8afd622c93c"
+    },
+    {
+      "id": "vocalset-f8_scales_breathy_i",
+      "corpus": "vocalset",
+      "cache_sha256": "a3757060c8fc697271f5252a441e193ad2cfa3358f87b545eb3c345ca261689b",
+      "source_feature_sha256": "7cc111c8ae0765b7f386ae8fb18ff7b04f7ba13e57c7d9a07da3c17dbf500470"
+    },
+    {
+      "id": "vocalset-f8_scales_belt_e",
+      "corpus": "vocalset",
+      "cache_sha256": "5b25feae003782917e843bd6b8dbf21c8158fa758873116fb7431f9c676af993",
+      "source_feature_sha256": "eb3336a8e37817824401a9e89a52c49115c7f820424a3602e7886cc69d5a1f2a"
+    },
+    {
+      "id": "vocalset-f8_dona_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "5373c8ae0763ddda0eaa31fcd2addbadb8117cd094b1fa7d6717d2fcd0350c31",
+      "source_feature_sha256": "c759ad94c19b2f5b7f154d583a816cb908e586c7cc350572001068ad9ba6179f"
+    },
+    {
+      "id": "vocalset-f8_scales_c_fast_piano_o",
+      "corpus": "vocalset",
+      "cache_sha256": "59fceb2258d648412f4afe9eccd72a90bb989a5f11fa1109f8b6334370a5cea5",
+      "source_feature_sha256": "4d3dfc09c82ff13facdc145ba1c21c9d2a9ec88693b65903a1d6f50a5a4212cc"
+    },
+    {
+      "id": "vocalset-m8_arpeggios_belt_u",
+      "corpus": "vocalset",
+      "cache_sha256": "7a2059a055373258ef64aca403a4939fd674f88bb88552e551c9255ddd82bd28",
+      "source_feature_sha256": "50ed875986222b08ec8885ee59d68edc726ceae6591166eb62ee1d1ece26bc8d"
+    },
+    {
+      "id": "vocalset-m8_arpeggios_lip_trill_o",
+      "corpus": "vocalset",
+      "cache_sha256": "8f1ba4098d5751cbd8fe9bd75aecd1aa15cb27656143a9ec4594aa72727481eb",
+      "source_feature_sha256": "cbf101bbe52b34f38217abd1ebd4c5605b2a03661e3002473284a9cf797b5e61"
+    },
+    {
+      "id": "vocalset-m8_long_trillo_a",
+      "corpus": "vocalset",
+      "cache_sha256": "8de54c5121c7e0518a4f7cf98569dc67796f03814ba8a2bce8e601b1ab3082f7",
+      "source_feature_sha256": "6203861a16ecf1aa30d2f77b5cd9ab430cbcf5114d0e174156fbb22bd624f5ee"
+    },
+    {
+      "id": "vocalset-m8_long_messa_a",
+      "corpus": "vocalset",
+      "cache_sha256": "be89eeff6a4d0fe39a3b4694939d26095ac7887e753ae9a12770a73bc9353165",
+      "source_feature_sha256": "7ac19afc9abebd4da086fb2b8f511a5300cb2fd97e0a71b8bae454365333b6a9"
+    },
+    {
+      "id": "vocalset-m8_row_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "bbc5404fa380e00ba8cbb34974e9fbe38c64c0a10e04569f636261df27e6d0ea",
+      "source_feature_sha256": "07500fb2add95e58fb9dea55690a1c033f1c05d24803ae826edc1bfae029e8f2"
+    },
+    {
+      "id": "vocalset-m8_scales_f_slow_forte_i",
+      "corpus": "vocalset",
+      "cache_sha256": "964c01c1aa30ca378bf7df4db2cd96087f825687e10d5c6e64e2f91a9d8d70d2",
+      "source_feature_sha256": "314e62f666bc40681e96c11dd4492d5cf1bdbef3160becf9147c15721ca329e3"
+    },
+    {
+      "id": "vocalset-m8_long_forte_i",
+      "corpus": "vocalset",
+      "cache_sha256": "6490db1f40c71ac2e80deda639b4c0c2087c79cc3c101f690e74f278a44e1895",
+      "source_feature_sha256": "5cf1ce0dce05de7c2c780393184562199fb774f2536fd2283116f796a9443747"
+    },
+    {
+      "id": "vocalset-m8_arpeggios_straight_e",
+      "corpus": "vocalset",
+      "cache_sha256": "7922d34cce3bb11988d83745b461af80a7cd54056ff4d9cbd1b589de66695f37",
+      "source_feature_sha256": "832836a2d8479c548fe3401a10556b1e7c951193317001393498bce74bb7d3f0"
+    },
+    {
+      "id": "vocalset-m8_arpeggios_vibrato_o",
+      "corpus": "vocalset",
+      "cache_sha256": "67c893b86e5670268e747986dd856efdb815eccc51c110e1dedf9745500c3ff1",
+      "source_feature_sha256": "38122245e2ed98c54d545f7a57756e9af70e792d29f92af664a6d36f41f7486a"
+    },
+    {
+      "id": "vocalset-m8_scales_f_fast_piano_e",
+      "corpus": "vocalset",
+      "cache_sha256": "21c6ff4ea47421b3c2bdfc5c671de6e0863a82c1bea4d0465053a3a45cce7823",
+      "source_feature_sha256": "74993231e82534410b6e27e6ab7f40bc4a1790335afa3d4b11c2c9e639ae4a52"
+    },
+    {
+      "id": "vocalset-m8_scales_lip_trill_e",
+      "corpus": "vocalset",
+      "cache_sha256": "0dd7a28efe50964ad1c694208c1cc27a35dc77cac064a59ef6d806988dc00544",
+      "source_feature_sha256": "ae5a6bca2322385b3b4292c35a7597642c0a0be46dfff4651f01fbcb05509e16"
+    },
+    {
+      "id": "vocalset-m8_arpeggios_f_fast_forte_e",
+      "corpus": "vocalset",
+      "cache_sha256": "19ee19b0686a0f4d5d4b37f859833855b6d9a96f9a42b0f1d4dd33543e322405",
+      "source_feature_sha256": "b053ddbcf584b3585398599e36e3b86e6c3c439f852df237df65e87fdefcce8d"
+    },
+    {
+      "id": "vocalset-m8_arpeggios_f_slow_piano_o",
+      "corpus": "vocalset",
+      "cache_sha256": "29a14c4a152c14fcaf364ab41546df6b65b15fa8b7e2e49937ecdef302b55ab2",
+      "source_feature_sha256": "cb681e25b6b6e0adb598956d3634bf620998e6e04210459ce22f9579ccd4fd63"
+    },
+    {
+      "id": "vocalset-m8_arpeggios_breathy_e",
+      "corpus": "vocalset",
+      "cache_sha256": "86120c8ec7baee7a6dd2d72cafeab94aed7ea877e4e775b54f682e274eee3e18",
+      "source_feature_sha256": "ea31a6b8256b246d77b6e496e9164ebd9015dd5f2d9b11d89bd7ea6e6ef81bc3"
+    },
+    {
+      "id": "vocalset-m8_scales_c_fast_forte_e",
+      "corpus": "vocalset",
+      "cache_sha256": "caf12a256b851cea58b51a4712eebe91242114ae2d8598b6d82a6419e43705df",
+      "source_feature_sha256": "780efd96982e683e6f41595339657cf833c720d2ead081b74cb75b5cc6838293"
+    },
+    {
+      "id": "vocalset-m8_dona_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "1757e5ca9f127551887cc6e7ffb8c101799f44641f48b020f38f43602a14e7da",
+      "source_feature_sha256": "1636085aed3c9a0013fc4ab81d7784ef93647da8f40535328d650bbaad065dca"
+    },
+    {
+      "id": "vocalset-m8_scales_belt_a",
+      "corpus": "vocalset",
+      "cache_sha256": "161131e323324ebf620ae172c57b7db6e680b86464c2b81ac91cdf59eaa5d060",
+      "source_feature_sha256": "063c1a9066547a81b6e4f5cf7a5020c44a9831f70032df5ec0a93f5607226136"
+    },
+    {
+      "id": "vocalset-m8_caro_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "dee0efffbbc07202e3f43f8a153dbdf3481b334b1f7b73f62c38f8cbc1aeb917",
+      "source_feature_sha256": "01d62f8b59d443a70ee2eb6ebde69b188b9c085354b1814015c8a9d11cea2677"
+    },
+    {
+      "id": "vocalset-m8_scales_f_slow_piano_a",
+      "corpus": "vocalset",
+      "cache_sha256": "c882307d3951697ed66dd472a5c4aee8ff3f2a0bd63175dbd7138bc711cf00f1",
+      "source_feature_sha256": "c1da1a321e3ba3cb30fe34f4d0ad431fbf46d7134be743ef5ef20faa1af26d6e"
+    },
+    {
+      "id": "vocalset-m8_scales_straight_o",
+      "corpus": "vocalset",
+      "cache_sha256": "7b74071cbee516604daef5b3f6961490eed99d0f62df108f20352b906b5df985",
+      "source_feature_sha256": "1f5c6f0c2cb87a3384338f7d3ce5b3c26094e15988513fd48bc8c4e0268f5805"
+    },
+    {
+      "id": "vocalset-m8_dona_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "2f68fd5d728c40783a91682399a693d2ff6d668781ca2aecdfef46e7508e2f39",
+      "source_feature_sha256": "2b8de7b6260f5ec2f82f2f4bb26221928d83b20d99ca1e8f1e071c8cb24b9fc1"
+    },
+    {
+      "id": "vocalset-m8_long_trill_i",
+      "corpus": "vocalset",
+      "cache_sha256": "e9229bd03dd582bed28a9ef1692206c8f59925b565d3095418e17bcbba4f7f55",
+      "source_feature_sha256": "bd1e12623dfb7fb8718c70ec36d495f9b6ce008b7b079c84bccdc8f646cda768"
+    },
+    {
+      "id": "vocalset-m8_scales_vibrato_e",
+      "corpus": "vocalset",
+      "cache_sha256": "74e674e79aedffa26d00f521f4007e158a165aa4109f27a3512f10c05d88f54d",
+      "source_feature_sha256": "720c54499a6bae580ff0868292dedd50a8638c0733a31d58564955a957fae03e"
+    },
+    {
+      "id": "vocalset-m8_long_straight_a",
+      "corpus": "vocalset",
+      "cache_sha256": "00caeb71066c2efe140aea6b911dd6c3fb83b96efdff40de0628b00016ed2b6a",
+      "source_feature_sha256": "670a9daf60540ec443009aef4c4c0b5ad8a41bda8c3ff8930c9714b0275897c5"
+    },
+    {
+      "id": "vocalset-m10_arpeggios_lip_trill_o",
+      "corpus": "vocalset",
+      "cache_sha256": "767c9e1e0c13b37a82d1e9b89084ab542084b7010a0bf087378ddc2fcb7cfb5f",
+      "source_feature_sha256": "e35075f59843ec43ef661eaf5731d78ae6f8c55c6e1bc86bb3596d1cefd7b0a4"
+    },
+    {
+      "id": "vocalset-m10_arpeggios_f_slow_piano_i",
+      "corpus": "vocalset",
+      "cache_sha256": "7cf9a853634702b7ccddfd75d04464360ad3a3e246ced65ac8c2264a0169284d",
+      "source_feature_sha256": "68a506e8cab8a6f23fad63cc70c2cc5ac63abf364c179eaecf89591d298e399a"
+    },
+    {
+      "id": "vocalset-m10_dona_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "0bf7516efd6e8c5638a1a5044eeaf46cc0f8dde9cf18ee2f9a2692d89cba2971",
+      "source_feature_sha256": "cf9b469ad15a1f44635d8d6a4e32af29ce9efbae411c99b8d995bf62cda7aa06"
+    },
+    {
+      "id": "vocalset-m10_caro_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "178c9dd802c0ea23d895d75242e654470e698f4b89c1d9478852dc84a0b4aace",
+      "source_feature_sha256": "b5c5652b357faba9c533c49938f2975f80cf8ca7969e70dbefad3557225b3e9c"
+    },
+    {
+      "id": "vocalset-m10_arpeggios_breathy_o",
+      "corpus": "vocalset",
+      "cache_sha256": "234453f4f97f89d930092129fd13432add3623aa118c9f5507d0d40d2926bf49",
+      "source_feature_sha256": "40dba206cb9b6648ad092f4bdc7dc5d3f120caa9a6cc74d06555aae0c0539c12"
+    },
+    {
+      "id": "vocalset-m10_long_messa_i",
+      "corpus": "vocalset",
+      "cache_sha256": "5bb9f5fcb2ec0e4571c62a30d0d05056ecfa93e255d6289c360794c7e81c72e8",
+      "source_feature_sha256": "6610f421eb3a2a51612647b8486ab63174ecf68de8efab13618eb9c6f75e75d3"
+    },
+    {
+      "id": "vocalset-m10_arpeggios_straight_o",
+      "corpus": "vocalset",
+      "cache_sha256": "7c698767a948ef1b0dc3c51ec18fd321a35c0ca8853788986f3cf44b0c5b51df",
+      "source_feature_sha256": "2e7c0dde5c70d4764d87a2c3fd47fa260a67d66087eec16029263ee6a0e37136"
+    },
+    {
+      "id": "vocalset-m10_long_straight_o",
+      "corpus": "vocalset",
+      "cache_sha256": "2aae8fcb005d3cf32da08e8674cd2212e75ed93fcd745c3b71cea8e83bf501bb",
+      "source_feature_sha256": "9a5da86b15130d73869d6a76b09e952f63e3a1dc11cd5eef6c9cc00e24815201"
+    },
+    {
+      "id": "vocalset-m10_scales_straight_u",
+      "corpus": "vocalset",
+      "cache_sha256": "5a4eeb81dbf81d75a7d8861f1e18794240144f907e0e129133145f2238a32147",
+      "source_feature_sha256": "4ee480fce4fe15ed9413a42586f002db40f97e9c1f9f4b85ecb1d758e31a316c"
+    },
+    {
+      "id": "vocalset-m10_scales_breathy_e",
+      "corpus": "vocalset",
+      "cache_sha256": "95e26fc3551daa080ebb12e21c8190f205605cb0e0c229d58ff1d8431bada738",
+      "source_feature_sha256": "187654ecb83e37db384412f119ead59ae75388aeaf6660ffe5b1cae2376e0694"
+    },
+    {
+      "id": "vocalset-m10_scales_c_slow_piano_e",
+      "corpus": "vocalset",
+      "cache_sha256": "c39391bae35b312d727336b488bab43b6cf23f61e924654005f76d195784ac5b",
+      "source_feature_sha256": "70e0003bc2fbddb393cbbb242f4ad74e9f44ced8c4c7ed2ef1a27a03aa200058"
+    },
+    {
+      "id": "vocalset-m10_row_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "f04589d1f3f6c82f97ea61d7708a0b5976e7dcb2035225ba4cde28ff644d68ff",
+      "source_feature_sha256": "4c13c4f8a2d43459fc51e46a64849ebc63b44e703c9877a4ede4c512c80f5501"
+    },
+    {
+      "id": "vocalset-m10_arpeggios_c_slow_piano_u",
+      "corpus": "vocalset",
+      "cache_sha256": "e276f99a102e4f3a7baf78ac2018a495a9900772a783b41847cdf44f063d1ff8",
+      "source_feature_sha256": "c27c293fba69d7313893a8b6837dccaa4b2af1f42ff8d9036d498996edb091b6"
+    },
+    {
+      "id": "vocalset-m10_arpeggios_breathy_a",
+      "corpus": "vocalset",
+      "cache_sha256": "21220fd3f91f491dfc3edfec2536cb13441b6ef4ced22ab6cf9b836dd0d190be",
+      "source_feature_sha256": "b424445f3fad85e2743421f157dd10e61464e8bbf2c5c6f650b890125018e8d5"
+    },
+    {
+      "id": "vocalset-m10_long_messa_e",
+      "corpus": "vocalset",
+      "cache_sha256": "ff7548eecd5238681acdbad113bc5d0e6187542e848ea9e79e4c2ce03c9b7625",
+      "source_feature_sha256": "fccdb2007ad6069d64cd279b030efb2f20951c55350e4ecd80204d64a556e256"
+    },
+    {
+      "id": "vocalset-m10_arpeggios_straight_e",
+      "corpus": "vocalset",
+      "cache_sha256": "c1f690cd358d884a409e71853e1a80a4f8427ebd7703f4ae6b5708b68b2e49fc",
+      "source_feature_sha256": "93cb7a15400822bb2e198db6534263e847eeb2bb209efd5b2066aa89dbe34eed"
+    },
+    {
+      "id": "vocalset-m10_long_straight_e",
+      "corpus": "vocalset",
+      "cache_sha256": "cff7d32b553960ad64d7dae917cee1732b8dc6ad9a9e109a4b4f1ffd9e99cc02",
+      "source_feature_sha256": "ac3eb4b362bc7f7af8d3f05090a9e500b53e617d143236408cf088a55d5fc708"
+    },
+    {
+      "id": "vocalset-m10_scales_straight_i",
+      "corpus": "vocalset",
+      "cache_sha256": "2cf871218c201be90ee891dfff43ba8a4a78f65b27c8cfe4f850d7294e09319e",
+      "source_feature_sha256": "28acc84621f1887a917c1a21a0d31f806c511cdc4c95a9b033a54b708a638463"
+    },
+    {
+      "id": "vocalset-m10_scales_breathy_i",
+      "corpus": "vocalset",
+      "cache_sha256": "9aa94aec0110721162c11e893bdb4aea52b15d237f338a668ef54951b7b4e1b7",
+      "source_feature_sha256": "d90ca5695df43b8a5e13e1de13ea64b3fe7909c7eef1b6ddf1fd854da7ca4d3f"
+    },
+    {
+      "id": "vocalset-m10_scales_c_slow_piano_a",
+      "corpus": "vocalset",
+      "cache_sha256": "854166c57f8c324465c8853bfc57978486ac3bda369b67401f8f5fede5e98d55",
+      "source_feature_sha256": "d91829283159cddbe71faa3135d7fa48de1f51b86157eaf1c26e949ba529062b"
+    },
+    {
+      "id": "vocalset-m10_arpeggios_f_slow_piano_a",
+      "corpus": "vocalset",
+      "cache_sha256": "c6fa07d2409ec731065559b6286b5e1ebe2896239c5e5c0fa7980ba8f4a18ede",
+      "source_feature_sha256": "8546ead309c2debd0cabbd108454dc46ae22fc448d5aea5636d983f3f3e794d4"
+    },
+    {
+      "id": "vocalset-m10_arpeggios_breathy_e",
+      "corpus": "vocalset",
+      "cache_sha256": "c57f36a268764c0ee958d2df6b218dda531b192e243916c4f7b2b24ca983c457",
+      "source_feature_sha256": "2d70b6190b31f61863a01f0d04963d91b0cc5b08fa5f41c328578527c78517dc"
+    },
+    {
+      "id": "vocalset-m10_long_messa_u",
+      "corpus": "vocalset",
+      "cache_sha256": "79f23ec1c741529da41a8081dae75245d8d1b04f4555e294967997219d27db8c",
+      "source_feature_sha256": "e7b21f7f051526479e861e1b569c0d9c7052f1cfb966a14c6acb6d14eadf45b5"
+    },
+    {
+      "id": "vocalset-m10_arpeggios_straight_i",
+      "corpus": "vocalset",
+      "cache_sha256": "2691128e842df636ba768155c71b8f33cbd423ead9b07aa830dce969727f8b93",
+      "source_feature_sha256": "2b9faade12a48dd4b8480b1e091ad0c3bf1974ed7c8435487af7babe47cfa0b1"
+    },
+    {
+      "id": "vocalset-m3_row_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "1319272661140b0f800c50ce28df8b0d80dd6b8dba618dc4a155abb95723754f",
+      "source_feature_sha256": "ced0dfb97af746ee39c24d165eb2ff40d61bc7cda17b22e16e056bf4bd95db29"
+    },
+    {
+      "id": "vocalset-m3_scales_f_fast_piano_u",
+      "corpus": "vocalset",
+      "cache_sha256": "6d9492ecb1643b1652f83d189bef2c407e8fbdfa7113cfe54ec033657846e8e3",
+      "source_feature_sha256": "83f94ffb308d770caf1ecc73baa9b77515240fb47a0766801d08960c01fde035"
+    },
+    {
+      "id": "vocalset-m3_scales_vibrato_i",
+      "corpus": "vocalset",
+      "cache_sha256": "242e9b892f243948f78b7a46790a89ed9f4c2dbb55eea4c0c1676f850c84d7ab",
+      "source_feature_sha256": "fea404ccac5abe7eef90a1348daf1aee67a1336b1a146d31252b98f81a55c112"
+    },
+    {
+      "id": "vocalset-m3_caro_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "b6ca6e8ff8ad7d82d6e8b6b7163aec807ab0b8954fded3c3f20ea125eeeebbe0",
+      "source_feature_sha256": "f724d8c37ba0ed27e4d532dca0ecf8c3505d21af799546dc5d10c21560aaa5a1"
+    },
+    {
+      "id": "vocalset-m3_scales_straight_o",
+      "corpus": "vocalset",
+      "cache_sha256": "fd3e4999be9c6f4e574c8dc0b54cfbef63d8747b0d82b8eed6b44888cccbfe7c",
+      "source_feature_sha256": "87c773305eb5d944615b8a2af1dd4424a764cb9dd6958d23880225d3c48995bc"
+    },
+    {
+      "id": "vocalset-m3_arpeggios_vibrato_u",
+      "corpus": "vocalset",
+      "cache_sha256": "3c71fd5081217de8345e01ae33462e2e8539770def4bfb6f6dbb39b2c9869142",
+      "source_feature_sha256": "3d55b281d56cb50055a99ceb5a3492ed9e89c406136d5050457b3476def79618"
+    },
+    {
+      "id": "vocalset-m3_long_messa_a",
+      "corpus": "vocalset",
+      "cache_sha256": "da9144f791f277f16e7043e3f33f1e0403cff7ff67b53106a4257eeb1eedbf8c",
+      "source_feature_sha256": "08bd3192a8afedc132e21cfdc1f45950c14e9f92fc17ea892c951de41b554eea"
+    },
+    {
+      "id": "vocalset-m3_arpeggios_c_fast_forte_i",
+      "corpus": "vocalset",
+      "cache_sha256": "7146b1885bdce5fe0b9935b98e0d44a449eac37d6656ff9a1b41f33aaf814eb9",
+      "source_feature_sha256": "a3a0a08a0c377f2a95fcc94deabd3c3241ac1fdb1a5b44701e78d414635a6cc8"
+    },
+    {
+      "id": "vocalset-m3_scales_c_slow_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "9099cf68a7a99e8e59296179fd0662d750d167b4d543cadfffb7ab8b18dbaebe",
+      "source_feature_sha256": "2fff6b378c180df2544b6480d99b851a86b50d4db2b93af289094c26cd48a60f"
+    },
+    {
+      "id": "vocalset-m3_arpeggios_c_slow_piano_o",
+      "corpus": "vocalset",
+      "cache_sha256": "0e711676abac30455ebed250f4375ec5c88896e1b93a572bc7f619f3b595bc34",
+      "source_feature_sha256": "963f86b573e68ef37e5d91f5acfc57baea0ce6d87cf178b9be50e1ea4d086f0a"
+    },
+    {
+      "id": "vocalset-m3_long_trillo_i",
+      "corpus": "vocalset",
+      "cache_sha256": "3f6f61671747002fe594dfe72fba772bc5ebdfe8e8c22f27f42b9e81d2a53244",
+      "source_feature_sha256": "f0de3841681cdb1d1d4633391fd77cf19202b4d01acb7cf22abfc2c663d85c47"
+    },
+    {
+      "id": "vocalset-m3_long_trill_i",
+      "corpus": "vocalset",
+      "cache_sha256": "858c11baa62474f0c3b4cff5cf745074e8f2a846ef8fb28b2a2f7679998bf9f6",
+      "source_feature_sha256": "c96cd4734fca693dcfcca4c55906fe5df7f3133f64155734e533f605a38c0573"
+    },
+    {
+      "id": "vocalset-m3_arpeggios_belt_e",
+      "corpus": "vocalset",
+      "cache_sha256": "e7e38ab50e88d7123e129fe04e0a3af4024fe0be7085312f5fb2ffc7cac3f56f",
+      "source_feature_sha256": "19da6ecb1b33143b13c076c587166ee474135027e8687156200d3245b8aca78f"
+    },
+    {
+      "id": "vocalset-m3_scales_belt_u",
+      "corpus": "vocalset",
+      "cache_sha256": "6ea61ff37c99b854ad1d635ff22cafcc7821e6c7227047441cc3d6b8cb88e511",
+      "source_feature_sha256": "da098e48edf851a7ddf3b15f2b6c6eb9ec8ef58e596ad96e7bf8b9837a5acbed"
+    },
+    {
+      "id": "vocalset-m3_long_straight_u",
+      "corpus": "vocalset",
+      "cache_sha256": "d23430d50c3da54cd6ba085c59902cf86cf19a477a614051c961a688d612a634",
+      "source_feature_sha256": "a6d363b1a4e4e0e38dbe224c3328f640943dafbcdee5173790d3c432fe173612"
+    },
+    {
+      "id": "vocalset-m3_scales_f_slow_piano_a",
+      "corpus": "vocalset",
+      "cache_sha256": "259f81ca1526e2d7735499520d90642aa26a9c8fd19f2563490f81a8ac73a6bb",
+      "source_feature_sha256": "b50a1446fb7e2c6217b6786d887c727d5148c02f843520a4ce3a2f047f647af7"
+    },
+    {
+      "id": "vocalset-m3_long_forte_a",
+      "corpus": "vocalset",
+      "cache_sha256": "50cfdb207e5ad9d6cbe9c27448dd8f51b8587e212143eb134ef0ecec6c6b1a8c",
+      "source_feature_sha256": "88672dd89a26505c28b72afece59414c657ee9ed58e6582dc9469be8c0fe24da"
+    },
+    {
+      "id": "vocalset-m3_arpeggios_c_slow_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "9c584a7a193c8f50b71513deefb53b9350f08f336f502693faf82a29e50d12be",
+      "source_feature_sha256": "1a5d2eff5059664bed8af1dbba3092dfcd41c05bb270ff9fa1c08488e35b6ecd"
+    },
+    {
+      "id": "vocalset-m3_scales_f_fast_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "ca34f270c2d787064760183918c6e51c0605f530b38936cecfb33eec5177c748",
+      "source_feature_sha256": "695dc6fb3c461065893d29593c56697f8cfd85d3c82c743be2eefeaac94a749a"
+    },
+    {
+      "id": "vocalset-m3_row_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "9e3ab4388c6ac3b1059a038f132d020206074b7a8868528ad4affc1a53264f82",
+      "source_feature_sha256": "f3eeba3678a4ce374971569feb89f5d252f899e0909008299067799f600a5797"
+    },
+    {
+      "id": "vocalset-m3_arpeggios_lip_trill_e",
+      "corpus": "vocalset",
+      "cache_sha256": "374989ba62d843cdde00ebf38e4f93649ff01947abf1f310f8012c740e357f88",
+      "source_feature_sha256": "a0f8aca7288fa203f391cfc4b6719d104c9355e62185479bf721de7c0497bc08"
+    },
+    {
+      "id": "vocalset-m3_arpeggios_breathy_o",
+      "corpus": "vocalset",
+      "cache_sha256": "de3df2f1e7bd7263b029bdfb2ca7eeaca0f443646e259e00c14336540cd0ecbf",
+      "source_feature_sha256": "692bea80d57241d2ee3a41536d67724d63f46b96fd5b23793f2c7a03b6488b25"
+    },
+    {
+      "id": "vocalset-m3_scales_breathy_a",
+      "corpus": "vocalset",
+      "cache_sha256": "660578f4663582f1a4a3fd731783660313d54c4fba7a4fde99e0b3b032f9e611",
+      "source_feature_sha256": "1fffaa15879aa1db13d30eaf4d80a2212ee189a54ada1b013e6cbf8e38727805"
+    },
+    {
+      "id": "vocalset-m3_scales_f_fast_piano_i",
+      "corpus": "vocalset",
+      "cache_sha256": "bcd7ccaef25e1f2440b80a0852188a71211334d43f07e09f6aeb7022c9de6061",
+      "source_feature_sha256": "6f0c8f414acf59aceba7319dbf948168c8957e350608469400fa94242a003f85"
+    },
+    {
+      "id": "vocalset-m7_long_trill_e",
+      "corpus": "vocalset",
+      "cache_sha256": "5d06ef5a6ef3db67beba3e59ded2be55d08be0cafac60b198f0eaef5ddcb3401",
+      "source_feature_sha256": "ffb173054917475af17a94e8d93d1d8f2cc576b460cd7edf02cb27e0d733ed8f"
+    },
+    {
+      "id": "vocalset-m7_scales_belt_i",
+      "corpus": "vocalset",
+      "cache_sha256": "8a3201fd57650234c1925824bb2d9406d616ed706dca799653562fec8a51250b",
+      "source_feature_sha256": "5d539b87127a6e6f3a11dd28ecf56cc5c13f855c5391e853f51c88adbb0d7797"
+    },
+    {
+      "id": "vocalset-m7_row_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "ff3bd5f6b85a91fd7ab0f028d06a4efa868f1a97f74b56d927360a2dd4a849d6",
+      "source_feature_sha256": "79220bdddb906bd29f86bfa975b02075c3a064203861952789d990f322cbe4c4"
+    },
+    {
+      "id": "vocalset-m7_arpeggios_vibrato_u",
+      "corpus": "vocalset",
+      "cache_sha256": "f88ebde31553534c744c8937f772e0758daa09d8219c0034b22db165b0ed8180",
+      "source_feature_sha256": "e670c2ebc3aa28528fc83291ab6376a478813f01c2273ed0d8b77a6f880cdc66"
+    },
+    {
+      "id": "vocalset-m7_arpeggios_c_fast_piano_o",
+      "corpus": "vocalset",
+      "cache_sha256": "462ea0f7d939435338dc8bfb915522d30afeb392897e0d6823d435fa3eb1061f",
+      "source_feature_sha256": "a07bd1a4b15ab242643c2f4f2fcd057c07a510f10327aa6ffb65e3659703e87c"
+    },
+    {
+      "id": "vocalset-m7_arpeggios_lip_trill_o",
+      "corpus": "vocalset",
+      "cache_sha256": "3e73a9ea24f3ad8036c60e89a6e38cc1e813e698018347238600b4165f527593",
+      "source_feature_sha256": "5c7f2c366251dc1acd69e21e76bbf19e6b976298f76646999dce40f8837aa469"
+    },
+    {
+      "id": "vocalset-m7_arpeggios_f_slow_forte_i",
+      "corpus": "vocalset",
+      "cache_sha256": "32371c29f51d73e60ce87861834cec784548996bfa1393a45ad7eb37afa431cd",
+      "source_feature_sha256": "4bc88a433b98baafd35886e8cf9ab3bc1542df0caad6f7e15fb7ff39e26bdf15"
+    },
+    {
+      "id": "vocalset-m7_scales_f_slow_piano_e",
+      "corpus": "vocalset",
+      "cache_sha256": "df537129b6715267ac8fb6037a01bf911c7f47bfc02db9da2a60f86bc878ccb6",
+      "source_feature_sha256": "19bec8ec31e25845526e07c973105280bbcfd0470be45df575ad7aab1c6ffd82"
+    },
+    {
+      "id": "vocalset-m7_caro_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "d18e3a9b3f6b88068d72921a775058afa9cc9ebf15148efcd531c1148b08add7",
+      "source_feature_sha256": "40273d336b25ba6befc994c6f5724be2d9d29f415c154964afff82d46c890bcf"
+    },
+    {
+      "id": "vocalset-m7_long_forte_e",
+      "corpus": "vocalset",
+      "cache_sha256": "389cc0a983d1e7ad6af34a914155a7782ae7659e8b640eb98d1b2120e2ba8c29",
+      "source_feature_sha256": "d26cbec542f9c87fb0ecf668bd72e9394e96274e75e3c9a6c8148a0531d624d3"
+    },
+    {
+      "id": "vocalset-m7_scales_c_slow_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "37d8cdbb3524f22cfce1c63a12a0a482f80280a58035ee9f63cb080795a5b037",
+      "source_feature_sha256": "a029fedd0929451e100b79e023082673d295a56f4277a32ff814dc6bffcd0dbd"
+    },
+    {
+      "id": "vocalset-m7_long_messa_i",
+      "corpus": "vocalset",
+      "cache_sha256": "45f8cff1352482613b48ec9345d6febc260eaa020149c2523848a45e8e366135",
+      "source_feature_sha256": "7db519e2e2302c05b2bf059f2f5b2614a4edfd3f058366b7c572efd21ebd806d"
+    },
+    {
+      "id": "vocalset-m7_arpeggios_c_fast_forte_e",
+      "corpus": "vocalset",
+      "cache_sha256": "a4e74616129a87f92a3594bbafeb6964fcc48b1f0dd4f966df4e64e3cd940fbb",
+      "source_feature_sha256": "43f2c1f4a348013587a006c93636c1101b65a444259a0476b9b60ac833e1a537"
+    },
+    {
+      "id": "vocalset-m7_caro_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "486a0a56b7d21bc5ea4a04f7116f6bd7a12e8208ba0ada6801aff7f1fb99cea3",
+      "source_feature_sha256": "ff59f3ae1cd82c8a9768285293bb920e0430ba19441bcc342e9ddb2d94db2137"
+    },
+    {
+      "id": "vocalset-m7_scales_vibrato_e",
+      "corpus": "vocalset",
+      "cache_sha256": "6709eb2fae4b08adeedba28065d7d447ef2e63b235be6a976498101728e36659",
+      "source_feature_sha256": "4bc35d29f13414a11e4ed3803e3b98169fcbff50309f8bac29baca836d4f48ca"
+    },
+    {
+      "id": "vocalset-m7_long_straight_u",
+      "corpus": "vocalset",
+      "cache_sha256": "56c10b190fb507061e0432f7693ba66d9f87221cee96fe869b2f76d0c4c1d0e6",
+      "source_feature_sha256": "712feaabe95ea63e963a5c192cfbb16d9ae159b57631811fdc5dffcc6332d837"
+    },
+    {
+      "id": "vocalset-m7_scales_c_fast_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "6b662694da8d7187f76db11b80bba2bda9cc4c8139265f20815090911805bc3a",
+      "source_feature_sha256": "26e697865a07fa3dfb0dc2b2d201c5705675e6056d21fe8e85fb8305812be2fc"
+    },
+    {
+      "id": "vocalset-m7_scales_straight_i",
+      "corpus": "vocalset",
+      "cache_sha256": "7b9046389e404bdcba317fe58487fc95b08ae0f76bb5aa0ac14c19028c58de1e",
+      "source_feature_sha256": "1a737c313221367cd931c3a26c8bab65b2e32614e951e67fbf7d521650c8360e"
+    },
+    {
+      "id": "vocalset-m7_arpeggios_straight_i",
+      "corpus": "vocalset",
+      "cache_sha256": "ac7d7e99d6cec342061200df30c910bd1711b04f1d69d601559b6ba45e53ff83",
+      "source_feature_sha256": "57f085f15806098899fd58bc9708b11a1ed8fd7a9bc6cfbfc8494649e824786f"
+    },
+    {
+      "id": "vocalset-m7_long_trillo_i",
+      "corpus": "vocalset",
+      "cache_sha256": "c1cb201acbeb759c3445521946936e17a0127bb4ed64da2e95381ab8bc686241",
+      "source_feature_sha256": "5ff446b34b69517e385ad5253a4f2c3d12e6e749989826365d8cd0d05a501163"
+    },
+    {
+      "id": "vocalset-m7_arpeggios_f_slow_piano_u",
+      "corpus": "vocalset",
+      "cache_sha256": "aa72716612d1f77760e8b7216847e204977796feac2522845884116425cb29fa",
+      "source_feature_sha256": "6dac3f22d6e09ec0836b0e359cac987b88461c165304a0114b69b4ec989ea5f6"
+    },
+    {
+      "id": "vocalset-m7_dona_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "27946896a076923c35a458f6396802ff0fa222be6b9ae8c6da27749a6797851c",
+      "source_feature_sha256": "eb160c5cb86108071f4e0a9042890d31faf964d59db62c603db372fffde3e5d7"
+    },
+    {
+      "id": "vocalset-m7_row_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "813f726945eb5ecb61a6009dec7b49b6afc5bd8c3f195bf4996be6bd0bee6052",
+      "source_feature_sha256": "35e4e60bd76f1a5482fd15638ddf207c8a0e96c1dd5f563c3371949aee8760a2"
+    },
+    {
+      "id": "vocalset-m7_dona_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "a125487c107bb4bca22266abf01ab67f7baa5e9485cd48c73ff5c41f08b73eb1",
+      "source_feature_sha256": "9b846b3d585b084979acadc181bbe1508530b70029005dbd594fe304275a8e8f"
+    },
+    {
+      "id": "vocalset-m6_arpeggios_f_slow_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "943fb1cbb13fbf859ea0ce62e7839d7e6e19998a21fc09243b251f0e182fa5e5",
+      "source_feature_sha256": "bc4b7cf645afa9e8c432fdd3893fac63723484dc54c09486d3e322b9005d8886"
+    },
+    {
+      "id": "vocalset-m6_long_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "6cab346480fd519bf6d74ed7f311a9b1f0f04f03ac8e247f590c413652fb1fad",
+      "source_feature_sha256": "142e29c11c209f0f55f121f35c286bfa689c3b5c6e937442805c39a3ec8186c2"
+    },
+    {
+      "id": "vocalset-m6_dona_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "7fa3776902c92ffb7f0f86450038ea7adc26357f3801e04090a25980b9d82663",
+      "source_feature_sha256": "6f29e7eb40faeddd6576d721abac20f1a34f67ff6b09bc525a890597a05fb44a"
+    },
+    {
+      "id": "vocalset-m6_scales_breathy_i",
+      "corpus": "vocalset",
+      "cache_sha256": "9ee73c532c1949bffab81c89c3b612cce89cec523e914785be44d1ae123ef43c",
+      "source_feature_sha256": "87d3658222ac84736800eb573c6c638cfb4b54c5f25a0243da63b34db7a5c937"
+    },
+    {
+      "id": "vocalset-m6_arpeggios_breathy_a",
+      "corpus": "vocalset",
+      "cache_sha256": "a2343391ac52d86e043d68f137b90611d1c1b04563512c86cc24c3268489ce83",
+      "source_feature_sha256": "04b45926e4ded39c452bd8a4036ac32892d9b9bcc672cf3839e267e34826eebe"
+    },
+    {
+      "id": "vocalset-m6_arpeggios_straight_a",
+      "corpus": "vocalset",
+      "cache_sha256": "8989cca5130b25a3113f45a4f81aa10033ff7408de8c072ff73e2f56b3dac398",
+      "source_feature_sha256": "048007c19beae8f73f14efa2b8e17c0968ec28c146884ddd236322856565956a"
+    },
+    {
+      "id": "vocalset-m6_row_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "4976330a5cfab722d5fc7d164341e7c08c9bb0896bc426fad489be2f5a3d4279",
+      "source_feature_sha256": "9d9efa795c23a1dcde1d6efc1a775e497b163d24ae7985eb0d1c0d0ae600ead8"
+    },
+    {
+      "id": "vocalset-m6_scales_f_fast_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "dd7bf1217451cbad526343cbc05183b1c80951b386fccf2d1f0bf5bd2a6ec99a",
+      "source_feature_sha256": "3be909706fb6ba02b2ac76403fcfc15f240c233bf2120a1eac8f6fca2e1aaccd"
+    },
+    {
+      "id": "vocalset-m6_long_trill_i",
+      "corpus": "vocalset",
+      "cache_sha256": "c612e315662331d0f86d7e9e9d40bf1622a79df2bef1b98499868d4a935fb67a",
+      "source_feature_sha256": "5b9aa31b1bbcdc66cca9a70924b95f3742851a52b6a220e65702b367e6bd3e68"
+    },
+    {
+      "id": "vocalset-m6_caro_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "a75dc7eea4afda2e96d9bf65fc81b6d2959751a14db2098e8895e4b0b53bf879",
+      "source_feature_sha256": "0add55ea78a973f28332bc6d955775e7c5b01fca089d7dac594d31a62db82c7b"
+    },
+    {
+      "id": "vocalset-m6_arpeggios_belt_i",
+      "corpus": "vocalset",
+      "cache_sha256": "370a457592139c9be1152d03c0ee8bf5d04e01aabf14efbb3a395329ed9bf4ab",
+      "source_feature_sha256": "44dc2508fe3c3dd275293997abb57dbfa1550a1ec412a82ef38fe71c2e13aed6"
+    },
+    {
+      "id": "vocalset-m6_dona_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "5769e3aff6f0afd6ab8b3223a380e677376649b4c921e24620c0de460c503f89",
+      "source_feature_sha256": "c72604ab93c74beb93e7bd9a4f29fd7813ad0c7a43dee253ea6f2464d69d018d"
+    },
+    {
+      "id": "vocalset-m6_scales_belt_e",
+      "corpus": "vocalset",
+      "cache_sha256": "66b476cc1327856d7f2185cae398eb16b9953f65df93afa1917744c4793a1393",
+      "source_feature_sha256": "e2268c39f7ce032888fba20b2d9060330d1646fbaf68eaa069cb8ab5f9ce22b0"
+    },
+    {
+      "id": "vocalset-m6_scales_vibrato_a",
+      "corpus": "vocalset",
+      "cache_sha256": "3bd7b2b80ecb696f5a4bd636def6b085c96ff4ff507d20a42c6c19668da68c29",
+      "source_feature_sha256": "2c62e67082f1d1e59338a99adc3f07cb19693018dba857b8571be3f87eeb94a0"
+    },
+    {
+      "id": "vocalset-m6_scales_c_slow_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "9292ea2e5d74af071108b6dde357a06438c0af61f23db212af08827b239af3fb",
+      "source_feature_sha256": "9b814bdd89a8cc2578d6edace29f261d407937556c975dce2a0a9d23ba7d039f"
+    },
+    {
+      "id": "vocalset-m6_long_straight_a",
+      "corpus": "vocalset",
+      "cache_sha256": "fdeb9900070018393f58f8a3e569171acc5b494cf1b24ee1b803b77753f8449c",
+      "source_feature_sha256": "aa6220f4311ce1db4cd17a631ec87ebfc684cbd2f44151bc3b3da4f6e140b4bd"
+    },
+    {
+      "id": "vocalset-m6_scales_straight_e",
+      "corpus": "vocalset",
+      "cache_sha256": "6830d4a776b2f6587ac2ef2c54f5dedb962aeaca1e9a9ff82f46cb3d9989e393",
+      "source_feature_sha256": "cfa832ac68601f24acd6063393c597edf3424fba425d78b1191946a31ff0aecd"
+    },
+    {
+      "id": "vocalset-m6_arpeggios_f_slow_piano_i",
+      "corpus": "vocalset",
+      "cache_sha256": "9e0fe559e1810587fa5b9663e0cd9e82c03920c95290389ab61ac344453937b2",
+      "source_feature_sha256": "60201e7f28f824d598607ddcbd5b93747a8e23817a8ac03cc6850a69db0f0714"
+    },
+    {
+      "id": "vocalset-m6_arpeggios_vibrato_e",
+      "corpus": "vocalset",
+      "cache_sha256": "cea76c1e4d43267cce41104f8b31fed1cf65971289f5dfd6f367f6d118ba2d45",
+      "source_feature_sha256": "1f0284d80950b7ab754a000604b5d24849d8440a040673a0e73cb4350bf64f89"
+    },
+    {
+      "id": "vocalset-m6_scales_f_fast_piano_o",
+      "corpus": "vocalset",
+      "cache_sha256": "a85cd30247f2a0a47ab674992379e8730595d421791acc93ce1745c8fb1617a4",
+      "source_feature_sha256": "8aea40d5b84a80f33fe07bfd1caebedd98549f171605f8fc7a39cc44554195c3"
+    },
+    {
+      "id": "vocalset-m6_long_trillo_e",
+      "corpus": "vocalset",
+      "cache_sha256": "30ec0306bcd08014f2190b33b5adf6996b5b3dfdb37de0a8b566e00a5e5f8e1d",
+      "source_feature_sha256": "f3862d64523dfaf5224994d9ba2a0ac96a34a5f6b91d3e5be700d207d9fc16ca"
+    },
+    {
+      "id": "vocalset-m6_scales_lip_trill_o",
+      "corpus": "vocalset",
+      "cache_sha256": "af1b86e0580b1c406e32068a676ce2a5d63b698d2b1ee9e64d43fee032552b47",
+      "source_feature_sha256": "41cb6afc0fa3b3528a7db4e17d11c1c7d0f90b64474ffb58306ea2497d41ab55"
+    },
+    {
+      "id": "vocalset-m6_scales_f_slow_piano_a",
+      "corpus": "vocalset",
+      "cache_sha256": "5f29aa8bbc69ba40ed79bb96282b3806a80ad37158917d116e6b1d2e4aff19c3",
+      "source_feature_sha256": "7313b1dbc50cbe9e383a077ebd4600fe8e6e64b76073eae57ee1c9ce0f3e0d6b"
+    },
+    {
+      "id": "vocalset-m6_long_messa_e",
+      "corpus": "vocalset",
+      "cache_sha256": "29acb418467f389e0963bf50fdc70ce02da2c9a4540b06375e961024d982a3d0",
+      "source_feature_sha256": "4f9feea50b5e1d4f1dc693ba44b2bac1ec7817f30ae5b1bcbf7242859b62a9f1"
+    },
+    {
+      "id": "vocalset-m1_long_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "87d75e238d1bf8c1177f622b5ca0174fbcdeb246708f6d120a455dcfb63acacb",
+      "source_feature_sha256": "5fb4da2345acbc42d8247fbcd8e3407c452db0fc9ce34eddb2ece3632e085820"
+    },
+    {
+      "id": "vocalset-m1_caro_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "0b283cf6298e7ccd2d642501defb34af788e5c25c8f65e822eeb400f1e66f9e2",
+      "source_feature_sha256": "a5c878b59966555e99dd191cc5390f4252c984872d9dbce0fe8c0c4f508ca4ef"
+    },
+    {
+      "id": "vocalset-m1_arpeggios_straight_a",
+      "corpus": "vocalset",
+      "cache_sha256": "fe953b69b711bab3268c389eaeaea968fc6daa624a641d04ff87a810b5f88cb4",
+      "source_feature_sha256": "aecb026fc5a7ca33a1f853973a03173ab07d6928f85da2bfb70fba026eec66d1"
+    },
+    {
+      "id": "vocalset-m1_arpeggios_c_fast_forte_a",
+      "corpus": "vocalset",
+      "cache_sha256": "1bca7cbe8c0ab9fb70d870e0cf40d54fa7782eb692aa991e3ddd9ad2a57d0578",
+      "source_feature_sha256": "9af08034fa12d904bc10ead87d4575c663f998e5ac7557a1a3bcf1ef93f740c0"
+    },
+    {
+      "id": "vocalset-m1_row_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "a2e2ca4ee05bc53371cea595d91927d288d78e4f54b3ba28358f53adae4495ba",
+      "source_feature_sha256": "6d6b71a2b5a88e29e0e4b75a84750156e6a615910b29b345a28aeefb7c936120"
+    },
+    {
+      "id": "vocalset-m1_scales_belt_o",
+      "corpus": "vocalset",
+      "cache_sha256": "f6c6045e35e4a38ea27992f76ea0df875505a98a97f38fefeafcbcc80441a010",
+      "source_feature_sha256": "0d209a3623a3f009020a034ed365c40c45aa8685318433ad60dd118c1416ec32"
+    },
+    {
+      "id": "vocalset-m1_scales_f_fast_piano_a",
+      "corpus": "vocalset",
+      "cache_sha256": "59159eba880a1fefe21938fe157cd3e17197c634d942303e283c8ac2f2fcea7c",
+      "source_feature_sha256": "bc2aa6c66d1f2d9d5401ac74101910b855415256493596733c831d6e3868b6af"
+    },
+    {
+      "id": "vocalset-m1_scales_f_slow_piano_i",
+      "corpus": "vocalset",
+      "cache_sha256": "141e933900759d2bd9beba92d691232705e520ec94ffc2045797cecb74a00818",
+      "source_feature_sha256": "793fce641ecb462d83578d9102e04daccf256fc34ce9e19d645e909393ae93ae"
+    },
+    {
+      "id": "vocalset-m1_long_messa_a",
+      "corpus": "vocalset",
+      "cache_sha256": "2e187fa107a110fe20c4835c3ac956e7febeb2c37de48c778ea226d76e81e54b",
+      "source_feature_sha256": "1707c04b78a51b1ebdaeec5f8c4455df50a5d1adf8b18f87f3918f24bdaf0418"
+    },
+    {
+      "id": "vocalset-m1_long_straight_e",
+      "corpus": "vocalset",
+      "cache_sha256": "808a0cc6e3c4839e50944151ae6cc88d472ffb9ca0d453185fbd993236e7931c",
+      "source_feature_sha256": "77822d94f9b7766a71a23eeacae1de1bc8664c06eba6e5a0bcf62ce18742896b"
+    },
+    {
+      "id": "vocalset-m1_arpeggios_f_slow_piano_o",
+      "corpus": "vocalset",
+      "cache_sha256": "05a588ac79f5c5f1ff2e0f1b3d55e8ccfeeb5277352faddf83ae415865d5315c",
+      "source_feature_sha256": "e73683201a782e3da9cd9082372879d9ec1c727520e41188abb16572cf15682f"
+    },
+    {
+      "id": "vocalset-m1_long_trillo_e",
+      "corpus": "vocalset",
+      "cache_sha256": "09fa99f4cdc2c01f3437a0cb542a415af5aabfd29d6702ad65593d51bf69ef44",
+      "source_feature_sha256": "e34389418de6e8bd253b821f6bac80f45c33d4bc73a929c39917bb8a0425b5a5"
+    },
+    {
+      "id": "vocalset-m1_long_trill_o",
+      "corpus": "vocalset",
+      "cache_sha256": "b6eca57753bc573ff011b6d642d377afd79c86060de328f0c526d6dff6ce51c9",
+      "source_feature_sha256": "6def1bcbeb4b9b265a52669bc2580c97b6ee603d84b3158323d73a4133f4ba9d"
+    },
+    {
+      "id": "vocalset-m1_scales_straight_i",
+      "corpus": "vocalset",
+      "cache_sha256": "d2a300df79abb23dc1ec88d4dc57b067866eb084596b8492255b8e63a95ba1bc",
+      "source_feature_sha256": "9ef897d1ca2d44098e034f5f0b2e380e81b0edd79383267864c03f8797f88a1e"
+    },
+    {
+      "id": "vocalset-m1_arpeggios_belt_o",
+      "corpus": "vocalset",
+      "cache_sha256": "0656239848b428515d1743a57475448a62a53a7212619011a88fea541d41beee",
+      "source_feature_sha256": "0e758dda60eba5b847440329fc9a9f9508a5d013c2ab04ba5989a061fdc96969"
+    },
+    {
+      "id": "vocalset-m1_scales_lip_trill_u",
+      "corpus": "vocalset",
+      "cache_sha256": "cff66d85a03371d6d8446d426c0e98167fee27be1355a1764196e145c93e6d4e",
+      "source_feature_sha256": "322755e1f637c269edecfab233494e35249be4b616d7b982bfb7843ddae720da"
+    },
+    {
+      "id": "vocalset-m1_arpeggios_lip_trill_i",
+      "corpus": "vocalset",
+      "cache_sha256": "63aa22cbf0e4a8a619f59e78924640a011d2d52f44439d6d8e0017e2ece46b57",
+      "source_feature_sha256": "6f287a7e4450761aff0d7f6c3920b14a63a3994f8667bf1a4ef60e605b26cbfa"
+    },
+    {
+      "id": "vocalset-m1_dona_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "8e3f650fa97425eee84d10141a93c7efa2c1e6417e8873eea3eeba7d3dca9a1d",
+      "source_feature_sha256": "a8c5a92debecebb41724b07fa2f9d1cd0719c911961c82983634653ef162a547"
+    },
+    {
+      "id": "vocalset-m1_arpeggios_c_fast_piano_a",
+      "corpus": "vocalset",
+      "cache_sha256": "ffa3e68de9c1ecde172fe713f4c5340d2c7acc287aa076e53fd2f13c0e3a8399",
+      "source_feature_sha256": "4f0e42d663c1c8ea33e164323d17ed53bdb7ae3de05f11b6157309d2bafebe31"
+    },
+    {
+      "id": "vocalset-m1_long_forte_e",
+      "corpus": "vocalset",
+      "cache_sha256": "cc2ca39286d225e184dbc4ead8c48cd373439bba099add4aa136474f7e8e1a4c",
+      "source_feature_sha256": "0319ec957453e36830043277ccaf30a95d3c70992c97a75bf2036ea758ea5f17"
+    },
+    {
+      "id": "vocalset-m1_arpeggios_straight_i",
+      "corpus": "vocalset",
+      "cache_sha256": "5fd1ca58382038b276e00892773f9abbcf443fb73d2d3d597661613d8ab929c9",
+      "source_feature_sha256": "05cff060f8f5573dc5e987b83d4bb40ee807cd1b2b90bec1a8ee085610b7d1f0"
+    },
+    {
+      "id": "vocalset-m1_scales_belt_u",
+      "corpus": "vocalset",
+      "cache_sha256": "30e19831d2e322239db1e2962d3e548d244d1919dc1449ea0ff2dd3a6058556e",
+      "source_feature_sha256": "24f42ed602f70e6b2f9976eb23145ee3547fc52011963e63a25c28df6be593e7"
+    },
+    {
+      "id": "vocalset-m1_scales_f_fast_piano_o",
+      "corpus": "vocalset",
+      "cache_sha256": "cc8ae3439648c19b5dc097dd99c0f38742d05a391a27ba933f6ca41280b0cb71",
+      "source_feature_sha256": "6c6dee1d4a3a17ce5b058713c4ecd66ca0f8fea17eff6a5433b08ccedc792863"
+    },
+    {
+      "id": "vocalset-m1_scales_f_slow_piano_u",
+      "corpus": "vocalset",
+      "cache_sha256": "00bcd1ae35097b46f0fa6a8068a41d67ca72688231011857141ab2e1c8b3c82f",
+      "source_feature_sha256": "d953d11e3d146c5c2ca8b9159f41f08c6c73ed5809f18ace64abff9703732bb1"
+    },
+    {
+      "id": "vocalset-m4_arpeggios_lip_trill_i",
+      "corpus": "vocalset",
+      "cache_sha256": "12ec1a9835435bd1efe4004ca5944cefdfd40da91bed1de80c45f9093d250055",
+      "source_feature_sha256": "b3cd82a651ce0dea2ec000c00931076a26198a87dcc57d36e9c2b485378ceaa6"
+    },
+    {
+      "id": "vocalset-m4_long_straight_o",
+      "corpus": "vocalset",
+      "cache_sha256": "170a709a450dd3810f9fbf2c72ffdd9307e2a3290923f2c47b2aa3c813931eca",
+      "source_feature_sha256": "a98f0f3db1923624869f4f141fe1053ed2de3e98fec1c4cac12fc0936335da0b"
+    },
+    {
+      "id": "vocalset-m4_long_messa_e",
+      "corpus": "vocalset",
+      "cache_sha256": "f7385c936cf3235c5656271497fd02803690c5f15710a0b6e40047e69b862093",
+      "source_feature_sha256": "c0789cca3e72abaea066af99a2cfb41a949eff3593b1fd0bd8ca9d7318ba6678"
+    },
+    {
+      "id": "vocalset-m4_scales_belt_o",
+      "corpus": "vocalset",
+      "cache_sha256": "42b91c720516465df6741d00a7d78aeae29ae56b453eace633304662e189fe31",
+      "source_feature_sha256": "114c4f0f48704f3a117d659a727dd770c3585199a998ed00f342d599b12b2dc0"
+    },
+    {
+      "id": "vocalset-m4_scales_vibrato_u",
+      "corpus": "vocalset",
+      "cache_sha256": "599ffc373979db08ce31031bb1369c63a02b038184582f011addefb135f39f7d",
+      "source_feature_sha256": "b45638940588b6673686aa30572bcaa89652f4bf55bf4798e3773d6eaa807502"
+    },
+    {
+      "id": "vocalset-m4_row_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "f57e5369e56c40efae4934e3148252930d3dffd569f9cfe49b0747cca395dd0c",
+      "source_feature_sha256": "c9bd2c20f1a7ee362727d4bea52959cf529ec7a4c2344ac4939dc4469154f2b0"
+    },
+    {
+      "id": "vocalset-m4_long_trill_i",
+      "corpus": "vocalset",
+      "cache_sha256": "8bf60d0083ae18216306db25ef69a8c41f40daa321a3686510caaa1f6d8209a4",
+      "source_feature_sha256": "a1917be3fa380e193f618be1b39091690c6de9f9c99d84a9c779e4b007949f51"
+    },
+    {
+      "id": "vocalset-m4_scales_breathy_e",
+      "corpus": "vocalset",
+      "cache_sha256": "08603356edb2e0777ec20724552e87d4e5188e7f443a485b8ca5007a03b7590b",
+      "source_feature_sha256": "2c733096d888230fbccf831277a70ea4bf333d8666cc9db3639b6c6e754706ab"
+    },
+    {
+      "id": "vocalset-m4_scales_lip_trill_e",
+      "corpus": "vocalset",
+      "cache_sha256": "8fc19d1a2dd38f2dcebf8b70d2ca30321ccdc69505d9997554caf748c46b80ed",
+      "source_feature_sha256": "82d9fbd063c859786c01087c446ae14af9c21558bde1a323ec76ae136f23fc14"
+    },
+    {
+      "id": "vocalset-m4_arpeggios_f_fast_forte_i",
+      "corpus": "vocalset",
+      "cache_sha256": "52d48c678584ea3be0f8ac859b37e522d6c41a08bc6cfecc177eaac79b9edb77",
+      "source_feature_sha256": "03ae713947ef2bfa8f7771b43a5b665f10ba221e54894d70733a91d4ceda3cdb"
+    },
+    {
+      "id": "vocalset-m4_arpeggios_vibrato_e",
+      "corpus": "vocalset",
+      "cache_sha256": "ed73b82e8d0625ec96ef505a9357b85e97f94747913586439980a5176db8b4eb",
+      "source_feature_sha256": "e01861c4282a08e65244c697f9e787f698d57270543141c38432ed7566128a91"
+    },
+    {
+      "id": "vocalset-m4_scales_f_slow_forte_a",
+      "corpus": "vocalset",
+      "cache_sha256": "f9f39f5c926f8f6b3e5a700b169b88e82d2149730bcb6e24bd033be70d2d1da4",
+      "source_feature_sha256": "33209ee634609cc99173b87720137a33436cd93fc37870f44181ddcfef50a75a"
+    },
+    {
+      "id": "vocalset-m4_caro_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "bae3c54d35fc48708757752b54348665f44461f713b016a8032ff727b1e20714",
+      "source_feature_sha256": "87bed18575ad1c5315d7048b7190ed8a39698a04a30abca77f5b5f9c4a1b26fe"
+    },
+    {
+      "id": "vocalset-m4_arpeggios_breathy_i",
+      "corpus": "vocalset",
+      "cache_sha256": "59a6154cb739ad5fbc17cfeadaa15e8900e0eb674a9cbe0fb18a82ae40380d7d",
+      "source_feature_sha256": "41946dc1b55b365b6c7881611e546878a304cb16cf67fee6d76431fbe7dc924d"
+    },
+    {
+      "id": "vocalset-m4_scales_f_fast_piano_i",
+      "corpus": "vocalset",
+      "cache_sha256": "48795d03755b447e07e1e31d493691796e8d1ecaa6a7008f613714874126c2af",
+      "source_feature_sha256": "a8b8e9476b143e4581269a41afc496dc7eefa86def0f77df7fbe7bc70bffef72"
+    },
+    {
+      "id": "vocalset-m4_scales_straight_i",
+      "corpus": "vocalset",
+      "cache_sha256": "6872228e7cdb2db9aab2607c1d54a9382c9c1f496a098ab5d345e06d3529bf1a",
+      "source_feature_sha256": "a433b393e13b57759c9d1b3c5d1e0ec9e7eba7654839e1df829e07aa177c6fdf"
+    },
+    {
+      "id": "vocalset-m4_long_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "899f9e631ab27c47b21bcad67bd6278fde96f6cc8e6cfc9d882b83bf2ee90272",
+      "source_feature_sha256": "8fde31bd8d05b73b5d96399a175b1c70102a4603eebdd870849773265d6dc367"
+    },
+    {
+      "id": "vocalset-m4_arpeggios_straight_e",
+      "corpus": "vocalset",
+      "cache_sha256": "9d90d950139f0af992f48a5de4f5345d127985ee9830dbf33375eb0ab660def1",
+      "source_feature_sha256": "7337a5ab81e601794757e2c0440de0379c2b97295ea25459b845da20bfe20665"
+    },
+    {
+      "id": "vocalset-m4_arpeggios_f_slow_piano_o",
+      "corpus": "vocalset",
+      "cache_sha256": "06064aba65e553c5fa1a3cd130dd4f372a410692e838eb3f56f11f58d031c8be",
+      "source_feature_sha256": "d22f1c5018d988bed9f8f8864fce700c7f6d501c88041017ab6378a3c4f307b5"
+    },
+    {
+      "id": "vocalset-m4_caro_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "6f140c920b967c94b351f86ccd2857aec1560a3f6aac14c77e222c27c9ffae53",
+      "source_feature_sha256": "78471e3393c8e73688a794cf3df56b0adfd5eb4cc938b5785d94f1fcddce1b94"
+    },
+    {
+      "id": "vocalset-m4_dona_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "1aa6e1c2e5139848bcccf813d2febaecd6cc091eed1284dcde1e3735b9833635",
+      "source_feature_sha256": "704d86cd9a2b9002768e71f0b1723a1daf4847eb39e1a690da995db2ee1b2962"
+    },
+    {
+      "id": "vocalset-m4_arpeggios_belt_u",
+      "corpus": "vocalset",
+      "cache_sha256": "3d3b3df6f9b784be753b3bde9929df5c84741a3399cb8d41847308496aee0812",
+      "source_feature_sha256": "381625c4e4035cf6c02c2cba7e3460474164c3739f116a370d7bcbe3ffca916f"
+    },
+    {
+      "id": "vocalset-m4_scales_f_slow_piano_u",
+      "corpus": "vocalset",
+      "cache_sha256": "be71d07b230daf2309fe56cbf75da461f9d0c234a6e0988206f7d18372cac954",
+      "source_feature_sha256": "5c1222687eee600cccb43231f1632674fcea60e35a7eae94bdb6cd67d98386e0"
+    },
+    {
+      "id": "vocalset-m4_arpeggios_f_slow_forte_i",
+      "corpus": "vocalset",
+      "cache_sha256": "483463b46151cb4aa42f8692785adf1c0ad787d9118629f4a066e202be122576",
+      "source_feature_sha256": "619393fd1fc0bf1df69ba85aef906fd19a73bb961a080942d43c09d6c53b2be2"
+    },
+    {
+      "id": "vocadito-7",
+      "corpus": "vocadito",
+      "cache_sha256": "9acd37ef9b025cbf1d8dd130f62554c253b0a15d92f39f98494c5b2ad3b51e15",
+      "source_feature_sha256": "02457e77ddfa21a0f43f650bd48e1468e0bc48a339342d7de04aa43652692214"
+    },
+    {
+      "id": "vocadito-9",
+      "corpus": "vocadito",
+      "cache_sha256": "ba5a53ca437c4a3d5bf63215fffd81e5ee28d7de1739d1fb5c2a5d3367b768ed",
+      "source_feature_sha256": "f1eb554d9ece18671f8a6cf946752b9aa074d2800b0ea92cecba613722ec959d"
+    },
+    {
+      "id": "vocadito-13",
+      "corpus": "vocadito",
+      "cache_sha256": "2fa8283d6e04844e459f93f94af0ef9b2d76221994311ce218e43b92dadd07ba",
+      "source_feature_sha256": "49a70c298860695fe357c4de9566ec3d03f816ce54e9a54385080470ede80979"
+    },
+    {
+      "id": "vocadito-16",
+      "corpus": "vocadito",
+      "cache_sha256": "b16aa561f57068a81e376dffe959086e149d82eff5cfe52b38dddc3f1a3acc84",
+      "source_feature_sha256": "0bc7abfd20ecb0b85966f0efe12c04a9e9d1dcbe5a0c438dcc760a47b0bafa14"
+    },
+    {
+      "id": "vocadito-27",
+      "corpus": "vocadito",
+      "cache_sha256": "0ea89320dcd2b315e72edb2adc8701a977c4df26a78ca478caad95fd9d40ce5f",
+      "source_feature_sha256": "7b5940f4c9812252283a34a9db081c21232342d2d88901704172d658ed7c4423"
+    },
+    {
+      "id": "vocadito-30",
+      "corpus": "vocadito",
+      "cache_sha256": "b75541a7e0844ae750adce99541868852b890bdbc50ce4f87afb1a0a5ce76119",
+      "source_feature_sha256": "ff7b659700ae323eb9840368c7082a1e42229a0b0cccda54a4933c2e07a21929"
+    },
+    {
+      "id": "vocadito-35",
+      "corpus": "vocadito",
+      "cache_sha256": "e91e2f6ecacf22b370d91e784fa1e44ba7f81fe79158dc59eb3136aca47365de",
+      "source_feature_sha256": "71b6c186a4def8be37e869abc9a272904df3cae6c08e927ab48f59215e3ab365"
+    },
+    {
+      "id": "vocadito-36",
+      "corpus": "vocadito",
+      "cache_sha256": "df0b4a2dbe70a52abef531575f3af219d5559459eb491b787c589b3203e9a008",
+      "source_feature_sha256": "a70cd702bec8d4e488f187ca132ebacdc057f9464765c85a1bf35ffd27bbd715"
+    },
+    {
+      "id": "vocalset-f2_arpeggios_f_slow_piano_e",
+      "corpus": "vocalset",
+      "cache_sha256": "b09e57545ef0d7b303690c4ac266c28aa192463106474a5f470fa72d63131496",
+      "source_feature_sha256": "8cf80d1ae7f7001447512526835de83c292b479f328b856af8714a65813fcee8"
+    },
+    {
+      "id": "vocalset-f2_dona_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "c71956b08e65339fef90ca1e3e593ae27c73f3e3431e581fc7077dcb3b86ba16",
+      "source_feature_sha256": "13a43b8f63787f0e43e62b37d0802b8992dbd47b91739587b7a9b045d33e1819"
+    },
+    {
+      "id": "vocalset-f2_row_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "f836008429045a24c80dcc6e274598d8f863ea7ec23fad80f77bbf6d8ab82272",
+      "source_feature_sha256": "73ce8317fbc77ae1a24bc14e97d96a30ffa310b809e5a0c17c8e56faffce29ff"
+    },
+    {
+      "id": "vocalset-f2_scales_c_fast_piano_o",
+      "corpus": "vocalset",
+      "cache_sha256": "418326b79d5fd3b91a26d17e0e6b0a33c5f415c02644244c3576141c02b3a39a",
+      "source_feature_sha256": "95e90c3a0182bf7d2744f2e8705a83fec5f2caf5fe6783d2e628f6377a277a6b"
+    },
+    {
+      "id": "vocalset-f2_arpeggios_belt_i",
+      "corpus": "vocalset",
+      "cache_sha256": "0c9102f04ad420a9ba8c45d11afb258e63354735a9d650a053ad9d84bed17b11",
+      "source_feature_sha256": "28ff8356474f1d7fef38e583d02d5015e223ec4cf1764912e8443e693641e3c9"
+    },
+    {
+      "id": "vocalset-f2_scales_f_slow_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "5f487bb7e2beb265a4a1cb9ce3877eae7f1e4ded8033a94b231bb92671f6ba2f",
+      "source_feature_sha256": "41ffc37da6085d77c7db739852751e194ad714001b4384929437ff232b4ed3cf"
+    },
+    {
+      "id": "vocalset-f2_long_trill_o",
+      "corpus": "vocalset",
+      "cache_sha256": "7f1f5bf0a4a0f10f3585618a9da3ec7d0a18c460eeb12551910a34d14c9ddf46",
+      "source_feature_sha256": "05d5d2787df31249cb52702ef2492e227599779d19b450068665f2ea5c0b7434"
+    },
+    {
+      "id": "vocalset-f2_scales_breathy_i",
+      "corpus": "vocalset",
+      "cache_sha256": "1313e4273cd1eb4b945ccc10f73c011a20e7dd00bf5c7f6dc826b6c067fb9d94",
+      "source_feature_sha256": "bd42eba1291ff80d8f96cd5066326d5dac8116f1dc7bd147b0f0094f6be15506"
+    },
+    {
+      "id": "vocalset-f2_arpeggios_straight_a",
+      "corpus": "vocalset",
+      "cache_sha256": "9f5f163aa1032698a4f0185f858aff9a99073de41f63e0154ba7e32925525c42",
+      "source_feature_sha256": "1614a13b5088f50ed7f6eaa6ac16ad73e593e105c6fdfbde9b9b1c0b10b36a9b"
+    },
+    {
+      "id": "vocalset-f2_long_trillo_o",
+      "corpus": "vocalset",
+      "cache_sha256": "3ef10b00fdeddb2a8a95b035a1fa0595475241730c32236444ba2d7078120b43",
+      "source_feature_sha256": "ede3234482d1dfac956d7b7ef2adae23a91fb21a4fa0b43165dbde7e22c1fd37"
+    },
+    {
+      "id": "vocalset-f2_long_straight_a",
+      "corpus": "vocalset",
+      "cache_sha256": "4375fb0fc92404bf646c4386dd46e478d7a840c6cda4a515ef064ddb06542dac",
+      "source_feature_sha256": "bad6aa41aa429fe04dec62f37ff433077f8f2028c65724e051d8abf54d3128d9"
+    },
+    {
+      "id": "vocalset-f2_scales_belt_i",
+      "corpus": "vocalset",
+      "cache_sha256": "4c8b4b554b44570168346b5f1314e0cb6b4b85d68aafb3249408ed17252f68fd",
+      "source_feature_sha256": "5ae0dd127aeaef20a87f44a843051e51b86cf5a6e39dd5ea6dba0fc255e79eac"
+    },
+    {
+      "id": "vocalset-f6_arpeggios_lip_trill_i",
+      "corpus": "vocalset",
+      "cache_sha256": "68ec404aecd7775454bbab82563318b3a845e19ef27927755dd44490131d7de8",
+      "source_feature_sha256": "7fe130719aaef2d67f6f2c0da4262fbcb26f6918e1e3b699e0d24b38e6b4028c"
+    },
+    {
+      "id": "vocalset-f6_dona_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "b831db96a378204416accc7254da154fd19ced9afc0495d0e4f9536bcd1c3536",
+      "source_feature_sha256": "c192c56cddada8a18f30468abe0386db75e25a63a10a4a37d8a594571f577aa1"
+    },
+    {
+      "id": "vocalset-f6_long_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "21cbe45c6cdf754571070c453e5efc216e06fc99bf07b6467702032526d16ac1",
+      "source_feature_sha256": "87ca45a7f0f3997200cf46f85f191764123a54391991d1fd6f110f7bc3970fbd"
+    },
+    {
+      "id": "vocalset-f6_scales_breathy_u",
+      "corpus": "vocalset",
+      "cache_sha256": "3177af8f69344d5ede2a9da7ab101e0dfadf83e2a55c6be2239f4ca755bec432",
+      "source_feature_sha256": "8e2087a985b69930676301ca0f726417b4a5ac9e51ea62b7bcfa6c6e195ebb7e"
+    },
+    {
+      "id": "vocalset-f6_arpeggios_c_fast_forte_o",
+      "corpus": "vocalset",
+      "cache_sha256": "eb5201b2a057e211ecc7d919a47c338e2735a7f612eceb7900dca18910d04c5e",
+      "source_feature_sha256": "e82fc37f9a9e4d56da55565034705ff433c5b9315376138db333aa81cb0a18ce"
+    },
+    {
+      "id": "vocalset-f6_long_straight_i",
+      "corpus": "vocalset",
+      "cache_sha256": "33978cc2fbbc7b7ad18eada40ca4752072226702178e1558f902302ca041bf42",
+      "source_feature_sha256": "792d89c3b030e1ef60f7bea47b74feaf02f27f28387e8c5c0c1d303fc7637a13"
+    },
+    {
+      "id": "vocalset-f6_arpeggios_belt_2_u",
+      "corpus": "vocalset",
+      "cache_sha256": "34dde7cf809baf4d4419926858d8670b793da3fb463f282c9bcb1e2ae5012340",
+      "source_feature_sha256": "1d60dff529691acf50b98d1238d5ee4a5898c07d597d4acb641a86000e3779c5"
+    },
+    {
+      "id": "vocalset-f6_caro_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "7146661319887ee64cdb073e887db8a642a38fd3652941d920e0b69bd1b7fc0c",
+      "source_feature_sha256": "0776535799b4f9bb9a76a90df3f930cf9754e625f078b0e2bac320681696475d"
+    },
+    {
+      "id": "vocalset-f6_row_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "ad02ef8b6a5729fce420e6e0f5eca9688d8f3b5d455d0fc324404e62796a5a0f",
+      "source_feature_sha256": "8c5136bcc751b2e5a6e30a841764252ca32eb74d7533a6c2c11238e32e5a4ad1"
+    },
+    {
+      "id": "vocalset-f6_scales_c_slow_forte_a",
+      "corpus": "vocalset",
+      "cache_sha256": "cb4b5503baa5629f94ea78400258f6884bafb300a845caf92f59382e2c34dcda",
+      "source_feature_sha256": "7ba5b235498fc50879dc5a6e51bbc1364dd3badfaf8dacc794be4443d5b189da"
+    },
+    {
+      "id": "vocalset-f6_arpeggios_c_slow_piano_a",
+      "corpus": "vocalset",
+      "cache_sha256": "f2bbe9e50c0c3d04c27fe144b5ed3d241fbae4a44f62a86c05f82cd595271b32",
+      "source_feature_sha256": "ffbfeaeb94d4e9c25b593c8e98a7bc07de7d2cdb2e977c4af0fa2736b20461a6"
+    },
+    {
+      "id": "vocalset-f6_row_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "9e6fcb44e22bbe471b04031009c7bec9055880656a3707e2160cb4e9a98063fd",
+      "source_feature_sha256": "57e9431ea8d8440afc5fe43bd84fb61ff857cbe44ff029a4a35372cba9fbe85f"
+    },
+    {
+      "id": "vocalset-m9_arpeggios_c_slow_piano_i",
+      "corpus": "vocalset",
+      "cache_sha256": "a6d027190b307b976e5f42c5a72d61250d270745c7a5e1ea7ea8eb6410b80b57",
+      "source_feature_sha256": "15973df915cafdff696662a07235fa362614f8dcb5c0bc20176d539ede029d6c"
+    },
+    {
+      "id": "vocalset-m9_arpeggios_breathy_i",
+      "corpus": "vocalset",
+      "cache_sha256": "628edac26080395b6ab8d8525a7d0bcd1e745d6539fe09049aa611041739ab4d",
+      "source_feature_sha256": "a182130b3e9d431911f108b5408a9110b43aad7be2fc25646b20721635cf1fc2"
+    },
+    {
+      "id": "vocalset-m9_dona_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "458a1582e7f67fa93e616f7ffdcd9572d3bd8ff9b43d7171f12e3c5de8be39f7",
+      "source_feature_sha256": "e070a5a6f62e745346669019543d52c630f85a609918061850bb8b9cfe014767"
+    },
+    {
+      "id": "vocalset-m9_scales_c_fast_piano_e",
+      "corpus": "vocalset",
+      "cache_sha256": "dae518f148f02710d8a2e146276ed2f9fff0a7681b6a413e8068a45d3aca5aae",
+      "source_feature_sha256": "25bc5eaabfc10049c73a5bb7bbf21bb489f679608890256ab8ca83ac53e9c337"
+    },
+    {
+      "id": "vocalset-m9_scales_belt_u",
+      "corpus": "vocalset",
+      "cache_sha256": "e041b796099452926af51052908add67c51ca2bc0866df60e67a25d3c18ed56c",
+      "source_feature_sha256": "9c7fe7b9513404a9ef2a915e36ffa0172c9244c40b98b1b2c07ac78540c4af7b"
+    },
+    {
+      "id": "vocalset-m9_scales_c_slow_piano_i",
+      "corpus": "vocalset",
+      "cache_sha256": "f444eac51e9f314ff42e6ed220502a4d593cc8fc260f7ed5c42c1f3be32de8d0",
+      "source_feature_sha256": "cda3fc97bfc238699781a87159335580e497be1f782102ff098b06e683ae47e8"
+    },
+    {
+      "id": "vocalset-m9_caro_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "10db2ad3c7ddbc6f0f578e349d17a630e74dae94723dc54d9b6483612cb32a51",
+      "source_feature_sha256": "5de6398e341393eeffdd832a3004dfd50f863d81f6aa069cf38497b465756cc5"
+    },
+    {
+      "id": "vocalset-m9_dona_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "8afedfb803d554a84395324a1dd01a3a5ddc73f1d8a613ceac47dc4f1d3f5122",
+      "source_feature_sha256": "c9993ab5d117de268764e1dfe85da3e300cc1c85251fea3d3eb86502d6518c71"
+    },
+    {
+      "id": "vocalset-m9_scales_c_slow_forte_e",
+      "corpus": "vocalset",
+      "cache_sha256": "3dc058647ede340eb0f60f8dadd1c027e8a9baca178f43ab8b41b5eef6369a45",
+      "source_feature_sha256": "fcce4914c9a324ab60fd221a4a558814d8d846b988658be7678eaf29487d3f9a"
+    },
+    {
+      "id": "vocalset-m9_arpeggios_straight_u",
+      "corpus": "vocalset",
+      "cache_sha256": "9bce53d174a2a6578fc0f494ff301062ee85d1ec69bfdce0141e6868191f8760",
+      "source_feature_sha256": "54bcbad6b90e8b43a9f6387ddf9ba60b67dae69ba14dbddb5ceb9739d297704e"
+    },
+    {
+      "id": "vocalset-m9_scales_breathy_a",
+      "corpus": "vocalset",
+      "cache_sha256": "fa558130e0b8b122a362bd7ff073ac55893aa5114e90a73156191d67b8264737",
+      "source_feature_sha256": "6a44e7305ba3a434033ffc14686ef37f33162dfd9c93b33754d9b9d9f31bf9f5"
+    },
+    {
+      "id": "vocalset-m9_row_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "f97aa96dac6e8d07ad1ab12ad73e136a192b932896432822121a7d7908d90b8a",
+      "source_feature_sha256": "a6570b371d5e8274c97b8949b4e0c72a044376caf65a4f87efe77b486f4c2284"
+    },
+    {
+      "id": "vocalset-m2_arpeggios_lip_trill_u",
+      "corpus": "vocalset",
+      "cache_sha256": "1dff23ce553083b9c0d268612f78d73630c4fc0b322f548b2a6cc4cc24db57f1",
+      "source_feature_sha256": "d1516bcd31c9aaf466e3d55d80512fe07260e966332216d7c7fe1dfec5b29491"
+    },
+    {
+      "id": "vocalset-m2_scales_breathy_u",
+      "corpus": "vocalset",
+      "cache_sha256": "35b6de6f643b17bc2ed69cfbdd086e1e7f492ff75aa77399eb40fa34f579ef29",
+      "source_feature_sha256": "b408c7ceacf0cb1b8c52973978c3f52f04882705a2390a960924b174e43be80a"
+    },
+    {
+      "id": "vocalset-m2_row_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "43a34ba44a31eb5a4c83634a1f38c41c547dd102ada2b8523d51b266d4eba84a",
+      "source_feature_sha256": "72c76ec12effd790a8eb8d8bf37b4f044c7eb8c906431ef9a0a1a08e2c655965"
+    },
+    {
+      "id": "vocalset-m2_scales_f_fast_forte_u",
+      "corpus": "vocalset",
+      "cache_sha256": "5d7eb540f335bdd2a5da19a4472591365f5cbd60c28a418771c16e681bca587e",
+      "source_feature_sha256": "fd6ca9680cdf1e9d2275c79583895f5572d1a3c4a5ac48fc3c28b57b9768b831"
+    },
+    {
+      "id": "vocalset-m2_scales_belt_u",
+      "corpus": "vocalset",
+      "cache_sha256": "3b2804437eed154404487ed0cf4ff8e7cbe53970841e9a00e0a83783132e234e",
+      "source_feature_sha256": "d64dd0939973239ecbf0967a27fcfd1b5bba265bbb0371d66f816e82fe8ae232"
+    },
+    {
+      "id": "vocalset-m2_scales_f_slow_piano_i",
+      "corpus": "vocalset",
+      "cache_sha256": "cf4de62730b45d1e08ec7b176fde7f2e90f7c8cb7f19b32622affcd83718807d",
+      "source_feature_sha256": "48a199d4f24ef280702d735dbb46e447b40e3c00a0727fc3262de025082dcdbc"
+    },
+    {
+      "id": "vocalset-m2_arpeggios_straight_u",
+      "corpus": "vocalset",
+      "cache_sha256": "428858f14826c4df85b66f221bd8b2699a07e7403709c044182a7a06d0085acc",
+      "source_feature_sha256": "74303e34691aea7bf72234fcc008e06d4c434589dd8134b0f8cd0f174f399d01"
+    },
+    {
+      "id": "vocalset-m2_long_trill_e",
+      "corpus": "vocalset",
+      "cache_sha256": "3b2d37db8cc22104e36c286f5a640a9d355bc437d1822007418f9f03418ccea2",
+      "source_feature_sha256": "4f319ed6c722db51534160dfe4dc8e975bb337f6c8b0ed4d6410d99e2e58e896"
+    },
+    {
+      "id": "vocalset-m2_caro_straight",
+      "corpus": "vocalset",
+      "cache_sha256": "bf062d2512dadf92d513e66c7dea081068c66faa1854e364c3215ecd1bea97e4",
+      "source_feature_sha256": "bfdd7d814b917cc264d0d39bcba306a522ebbcb7fc7fe617175ec3eb597758fd"
+    },
+    {
+      "id": "vocalset-m2_long_trillo_e",
+      "corpus": "vocalset",
+      "cache_sha256": "d99c6ab06e8347790bd6948cae0cfc6ab7dde729d956e3664af1404978fae170",
+      "source_feature_sha256": "3627d98fb6d2b54645179a99d1c0c709de42828189555af0c9eecace14924ef3"
+    },
+    {
+      "id": "vocalset-m2_caro_vibrato",
+      "corpus": "vocalset",
+      "cache_sha256": "02ba51329094edcaaabd36dc51f0b3e7962961a3d23e0c6d8f881e7946210b0d",
+      "source_feature_sha256": "d62bf13ad8daf39dbadcc47368defab23533c176a6971a5b751ee1ccfb501a5d"
+    },
+    {
+      "id": "vocalset-m2_arpeggios_c_fast_forte_i",
+      "corpus": "vocalset",
+      "cache_sha256": "ebcd7e2ce5a5921c01482a2b79e9704a598b69c26839edfdcf46e5f2f5b97f3e",
+      "source_feature_sha256": "064714c660861a6e9ed501daf28e8bfd57370373183ec25eb364d80300a20bc7"
+    }
+  ],
+  "train_clips": 314,
+  "validation_clips": 56,
+  "rights": "Existing CC-BY-4.0 Vocadito and VocalSet sources; source-group partitions and corrected clocks retained.",
+  "selection": "Validation only. No lost matched attacks, holds or per-reference pitch coverage in any recording; no corpus onset MAE regression; positive gain required.",
+  "test_used": false,
+  "no_user_audio_or_scores": true,
+  "scope": "Three-class attack correction. Fixed melody pitches and event counts; adjacent touching release moves with attack; at most 20 ms. Training and validation only; not deployed."
+}

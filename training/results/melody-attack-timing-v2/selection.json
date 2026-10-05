@@ -1,0 +1,31 @@
+{
+  "selected": true,
+  "winner": {
+    "threshold": 0.9,
+    "scale": 1.0,
+    "passes": true,
+    "changed_attacks": 7,
+    "aggregate": {
+      "vocadito": {
+        "timing_pairs": 298,
+        "before_mae": 0.03176338094295299,
+        "after_mae": 0.03169626684899326
+      },
+      "vocalset": {
+        "timing_pairs": 544,
+        "before_mae": 0.06663126838235295,
+        "after_mae": 0.06641068014705882
+      }
+    }
+  },
+  "training_events": 7953,
+  "training_class_counts": [
+    2092,
+    5682,
+    179
+  ],
+  "checkpoint_sha256": "5ea024346591169c9e816e373dc4e17498d6b1e84e8ba3eb63dc646b2b0d34ec",
+  "plan_sha256": "98db6e09d28104f2e9b05887c637ffbad2213cf5a550b42fa53107f79f5bb4cd",
+  "test_used": false,
+  "not_deployed": true
+}

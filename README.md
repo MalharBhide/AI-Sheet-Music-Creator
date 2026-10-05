@@ -66,8 +66,9 @@ detected melody or harmony is correct.
 
 Full-song melody recognition now includes a locally trained neural decoder. See the [transcription framework](docs/transcription-framework.md), [training workflow](training/README.md), and [model card with held-out results](docs/melody-model-card.md).
 
-Precise rhythm now preserves clearly detected eighth-note triplets alongside
-straight sixteenths. See the [timing update and measured limits](docs/rhythm-timing-update.md).
+Precise rhythm now preserves supported fast repeated notes alongside straight
+sixteenths and eighth-note triplets. See the [repeat-timing fix and offline
+training results](docs/fast-repeat-timing.md). See the [timing update and measured limits](docs/rhythm-timing-update.md).
 
 The [melody and repeated-note update](docs/melody-repeat-update.md)
 omits complete octave copies of the lead in balanced backing, aligns rhythm to

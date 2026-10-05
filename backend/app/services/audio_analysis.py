@@ -127,6 +127,39 @@ def triplet_beats(notes: list, tempo_bpm: float) -> set[int]:
     return chosen
 
 
+
+def precise_lattice(grid: str) -> int:
+    """One clock for straight sixteenths, evidenced 32nds and eighth triplets."""
+    return 24 if grid == 'sixteenth' else 2
+
+
+def fast_beats(notes: list, tempo_bpm: float) -> set[int]:
+    """Require a supported run of four adjacent 32nd positions within a beat.
+
+    Chord duplication, loose timing and isolated off-grid notes cannot create
+    support. Ordinary straight sixteenths do not have the required odd slots.
+    """
+    positions = defaultdict(set)
+    for item in notes:
+        if not math.isfinite(item.start) or item.start < 0:
+            continue
+        position = item.start * tempo_bpm / 60
+        nearest = math.floor(position * 8 + .5)
+        beat = nearest // 8 if abs(position - nearest / 8) <= .03 else math.floor(position)
+        positions[beat].add(round(position, 6))
+    chosen = set()
+    for beat, values in positions.items():
+        times = np.asarray(sorted(values))
+        slots = {int(math.floor(at * 8 + .5)) % 8 for at in times
+                 if abs(at - math.floor(at * 8 + .5) / 8) <= .03}
+        if not any(set(range(first, first + 4)).issubset(slots) for first in range(5)):
+            continue
+        fine_error = np.mean((times - np.floor(times * 8 + .5) / 8) ** 2)
+        straight_error = np.mean((times - np.floor(times * 4 + .5) / 4) ** 2)
+        if fine_error < .5 * straight_error:
+            chosen.add(beat)
+    return chosen
+
 def clean_notes(notes: list, *, role: str, detail: str, tempo_bpm: float,
                 grid: str) -> list:
     """Remove detection glitches and make a conservative, playable reduction.
@@ -138,9 +171,8 @@ def clean_notes(notes: list, *, role: str, detail: str, tempo_bpm: float,
     import pretty_midi
 
     subdivisions = 4 if grid == 'sixteenth' else 2
-    # A twelfth-quarter lattice represents straight sixteenths and eighth-note
-    # triplets exactly. It does not make every note a tiny twelfth-quarter note.
-    lattice = 12 if grid == 'sixteenth' else 2
+    # A shared clock represents supported subdivisions without a second rounding.
+    lattice = precise_lattice(grid)
     step = 60 / tempo_bpm / lattice
     # The supervised vocal decoder already rejects brief pitch glitches. A
     # second generic 90 ms filter deletes legitimate fast melody notes.
@@ -154,13 +186,16 @@ def clean_notes(notes: list, *, role: str, detail: str, tempo_bpm: float,
                   and item.end - item.start >= minimum and low <= item.pitch <= high
                   and item.velocity >= velocity_floor]
     triplets = triplet_beats(candidates, tempo_bpm) if grid == 'sixteenth' else set()
+    fast = fast_beats(candidates, tempo_bpm) - triplets if grid == 'sixteenth' else set()
 
     def ticks(seconds):
         position = max(0., seconds) * tempo_bpm / 60
         # Give small early/late jitter near a beat boundary the same beat owner.
         nearest_triplet = math.floor(position * 3 + .5)
         beat = nearest_triplet // 3 if abs(position - nearest_triplet / 3) <= .06 else math.floor(position)
-        division = 3 if beat in triplets else subdivisions
+        fine_tick = math.floor(position * 8 + .5)
+        fine_owner = fine_tick // 8 if abs(position - fine_tick / 8) <= .03 else math.floor(position)
+        division = 3 if beat in triplets else 8 if fine_owner in fast else subdivisions
         return math.floor(position * division + .5) * (lattice // division)
 
     valid = []
@@ -170,7 +205,7 @@ def clean_notes(notes: list, *, role: str, detail: str, tempo_bpm: float,
         # a dense run of unrelated tiny notes.
         start_tick = ticks(item.start)
         beat = start_tick // lattice
-        minimum_ticks = lattice // (3 if beat in triplets else subdivisions)
+        minimum_ticks = lattice // (3 if beat in triplets else 8 if beat in fast else subdivisions)
         start = start_tick * step
         end = max(start_tick + minimum_ticks, ticks(item.end)) * step
         valid.append(pretty_midi.Note(velocity=int(item.velocity), pitch=int(item.pitch),
@@ -258,11 +293,18 @@ def estimate_grid_phase(notes: list, *, tempo_bpm: float, grid: str) -> float:
         return offset
     if grid != 'sixteenth':
         return 0.0
+    from types import SimpleNamespace
+
+    fine_strength, fine_offset = phase(8)
+    if fine_strength >= .8:
+        shifted = [SimpleNamespace(start=max(0., item.start - fine_offset)) for item in selected]
+        recognized = fast_beats(shifted, tempo_bpm)
+        coverage = sum(math.floor(item.start * tempo_bpm / 60 + 1e-6) in recognized for item in shifted)
+        if len(recognized) >= 2 and coverage >= .75 * len(shifted):
+            return fine_offset
     strength, offset = phase(3)
     if strength < .8:
         return 0.0
-    from types import SimpleNamespace
-
     shifted = [SimpleNamespace(start=max(0., item.start - offset)) for item in selected]
     recognized = triplet_beats(shifted, tempo_bpm)
     coverage = sum(math.floor(item.start * tempo_bpm / 60 + 1e-6) in recognized for item in shifted)

@@ -1,0 +1,21 @@
+{
+  "passes": true,
+  "application_training_tests": 606,
+  "native_pipeline_tests": 6,
+  "focused_tests": 74,
+  "symbolic_repeat_cases": 6,
+  "unchanged_control_cases": 12,
+  "audio_model_weights_changed": false,
+  "original_note_size_preserved": true,
+  "no_user_audio_or_score_regeneration": true,
+  "sources": {
+    "backend/app/services/audio_analysis.py": "845c688c6a8fa69ef933e98e50771e839c37e1d29cd79b05fa8b0d8b1c5dfcce",
+    "backend/app/services/midi_to_score.py": "2036bd7c2cc84827ef8d435699a8787c8a22d2d1977431e9ac0b478799965a7d",
+    "scripts/benchmark_fast_rhythm.py": "fc894a82f825f90a7c76b45d1343eef7ca2b8685ed56851311cd24d608bc5a93"
+  },
+  "logs": {
+    "fast-rhythm-full-tests.log": "1d16bad03e8a2d7b23ba3d377c15f791302060e4097ae167fa34be47f131a85f",
+    "fast-rhythm-native-tests.log": "0ad5c5d2bf63d5981ba573d00fabeb405bdca1e2dad51986103f61620b073632",
+    "timing-focused-tests.log": "daeb98e123474351f6d0fc29ab642c209ee01d09fce98b0115a25638c49d82a5"
+  }
+}

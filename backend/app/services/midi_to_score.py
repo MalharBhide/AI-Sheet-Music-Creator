@@ -21,6 +21,7 @@ from music21 import (
 )
 
 from app.models import ScoreOptions
+from app.services.audio_analysis import precise_lattice
 
 
 @dataclass(frozen=True)
@@ -177,9 +178,8 @@ def midi_to_musicxml(midi_path: Path, xml_path: Path, options: ScoreOptions, tit
     or rejects a recording. Notation is prepared one measure at a time to avoid
     repeatedly scanning a full recording while filling rests and splitting ties.
     """
-    # Precise decoding can retain straight sixteenths and clear eighth triplets.
-    # Their common lattice prevents a second quantization from erasing triplets.
-    grid = 12 if options.grid == "sixteenth" else 2
+    # Use the decoder clock so supported fast attacks survive into notation.
+    grid = precise_lattice(options.grid)
     effective_tempo = options.tempo_bpm or 120.0
     tonal_key = None
     if key_signature:
