@@ -154,7 +154,6 @@ class _GeneralEngine:
         self.verification = None
         self.bass_verifier = None
         self.bass_articulation = None
-        self.bass_residual = None
         self.bass_verification = None
 
     def predict(self, path: Path, role: str, bpm: float):
@@ -186,26 +185,20 @@ class _GeneralEngine:
             return self.vocal_model.predict(path, arrays, bpm)
         if role == 'bass' and self.detail == 'balanced':
             from app.services.bass_articulation import BassArticulation
-            from app.services.bass_residual import BassResidual
             from app.services.bass_verifier import BassVerifier
 
             if self.bass_verifier is None:
                 self.bass_verifier = BassVerifier()
                 self.bass_articulation = BassArticulation()
-                self.bass_residual = BassResidual()
                 self.bass_verification = {'model': self.bass_verifier.name,
                                           'articulation_model': self.bass_articulation.name,
-                                          'residual_model': self.bass_residual.name,
                                           'window_candidates': 0, 'window_rejections': 0,
-                                          'window_merged_boundaries': 0, 'window_residual_rejections': 0}
+                                          'window_merged_boundaries': 0}
             # Bass training uses these same frequency-bounded Basic Pitch
             # arrays and events. It does not use the accompaniment decoder.
             self.bass_verification['window_candidates'] += sum(len(p.notes) for p in midi.instruments)
             self.bass_verification['window_rejections'] += self.bass_verifier.filter(path, arrays, midi)
             self.bass_verification['window_merged_boundaries'] += self.bass_articulation.filter(path, arrays, midi, self.bass_verifier)
-            # Recompute note evidence after repairing holds; pre-merge features
-            # would describe a different interval than the note being judged.
-            self.bass_verification['window_residual_rejections'] += self.bass_residual.filter(path, arrays, midi, self.bass_verifier)
         if verify:
             from app.services.accompaniment_verifier import AccompanimentVerifier
 
@@ -333,8 +326,6 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
         engine_name += f" + {bass_verification['model']}"
         if bass_verification.get('articulation_model'):
             engine_name += f" + {bass_verification['articulation_model']}"
-        if bass_verification.get('residual_model'):
-            engine_name += f" + {bass_verification['residual_model']}"
     return {"engine": engine_name,
             "accompaniment_verification": verification,
             "bass_verification": bass_verification,

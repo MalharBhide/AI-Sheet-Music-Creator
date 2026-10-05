@@ -1,0 +1,100 @@
+{
+  "passes": true,
+  "cases": [
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-held",
+      "duration": 30.0,
+      "raw_candidates": 2,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "residual_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-repeated",
+      "duration": 30.0,
+      "raw_candidates": 48,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "residual_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-held-v1-octave",
+      "duration": 30.0,
+      "raw_candidates": 24,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "residual_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "slakh-bass-v1-Track00006-oracle-000",
+      "duration": 30.0,
+      "raw_candidates": 28,
+      "v10_rejected": 3,
+      "merged_boundaries": 0,
+      "residual_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-residual-fresh-v1-261901",
+      "duration": 30.0,
+      "raw_candidates": 18,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "residual_rejected": 1,
+      "passes": true
+    },
+    {
+      "case": "decoded.wav",
+      "directory": "bass-residual-fresh-v1-261906",
+      "duration": 30.0,
+      "raw_candidates": 24,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "residual_rejected": 1,
+      "passes": true
+    },
+    {
+      "case": "window-32.wav",
+      "directory": "bass-residual-native-v1",
+      "duration": 32.0,
+      "raw_candidates": 7,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "residual_rejected": 0,
+      "passes": true
+    },
+    {
+      "case": "short.wav",
+      "directory": "bass-residual-native-v1",
+      "duration": 0.049977324263038546,
+      "raw_candidates": 0,
+      "v10_rejected": 0,
+      "merged_boundaries": 0,
+      "residual_rejected": 0,
+      "passes": true
+    }
+  ],
+  "checkpoint_sha256": "2230f5804e22a0bc0e94a906dd4747eed039d929c3da39e3e5de8619274f4afb",
+  "portable_runtime_report_sha256": "53077bf04da0b77814027566cd14bf28c4d926d1c976c4cdcae0692c8edc3715",
+  "routing_source_sha256": "741b5befe2b5f5ded1ae62ebb2811b37f2587b0e62c32a5a9fc160d1b3aa4a8a",
+  "runtime_source_sha256": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+  "script_sha256": "86ee5cbfadfb89b945342e409a47a97ab16ed526c3058e6e2f92f81bc7a17cbc",
+  "bass_metadata": {
+    "model": "Bass note verifier v1 (trained conservative consensus)",
+    "articulation_model": "Bass articulation v1 (trained key-release protection)",
+    "residual_model": "Bass residual v1 (trained unsupported-pitch rejection)",
+    "window_candidates": 151,
+    "window_rejections": 3,
+    "window_merged_boundaries": 0,
+    "window_residual_rejections": 2
+  },
+  "checks": "Native bounded Basic Pitch and actual post-hold audio/features; frozen sklearn residual decisions match the complete V10 + V11 + residual route. Exact retained pitches/attacks/ends/velocities. Original/licensed fixtures only; no user uploads or scores."
+}

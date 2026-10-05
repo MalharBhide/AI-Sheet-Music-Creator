@@ -1,0 +1,17 @@
+{
+  "passes": true,
+  "recordings": 705,
+  "v11_retained_events": 43831,
+  "rejected_events": 642,
+  "maximum_probability_error": 0.0,
+  "tolerance": 1e-12,
+  "checkpoint_sha256": "2230f5804e22a0bc0e94a906dd4747eed039d929c3da39e3e5de8619274f4afb",
+  "batch_selection_sha256": "23515ad0f2276a3fa2753d7167624e3a853b51761f46217fc8520922c92c12de",
+  "arrays": {
+    "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+    "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb"
+  },
+  "runtime_source_sha256": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+  "script_sha256": "9a4041a7feadee54d60534d5fd85f6606a114fb8a3e3e07ce7c7d33c27b3c10c",
+  "scope": "Exact train/validation/consumed/fresh feature and sklearn probability parity; original pitch/start/end/velocity/identity/source preserved. Rejected total includes fitting and is not independent accuracy. No user uploads or scores."
+}

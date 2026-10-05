@@ -35,7 +35,7 @@ function updateUrl(jobId: string | null) {
   else url.searchParams.delete("job");
   window.history.replaceState(null, "", url);
 }
-function pieceName(filename?: string) { return filename?.replace(/\.[^.]+$/, "") || "Untitled recording"; }
+function pieceName(filename?: string) { return filename?.replace(/\.[^.]+$/, "").replace(/_/g, " ").replace(/\s+/g, " ").trim() || "Untitled recording"; }
 
 export default function App() {
   const [jobId, setJobId] = useState<string | null>(initialJobId);
@@ -167,8 +167,7 @@ export default function App() {
         <aside className="studio-sidebar">
           <section className="setup-card" aria-label={jobId ? "Score downloads" : "Transcription setup"}>
             {jobId ? <>
-              <h2 className="sidebar-title">Your score</h2>
-              <p className="piece-label">{job ? pieceName(job.original_filename) : "Loading…"}</p>
+              <h2 className="sidebar-title">Downloads</h2>
               {done && <span className="ready-label"><Check size={14} /> Ready to play</span>}
             </> : <>
               <h2 className="sidebar-title">Start with a recording</h2>

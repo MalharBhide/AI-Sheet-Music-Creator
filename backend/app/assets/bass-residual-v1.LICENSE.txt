@@ -1,0 +1,30 @@
+Bass unsupported-pitch residual v1 (website V12)
+
+Copyright 2026 Piano Scribe contributors.
+Newly trained portable model arrays: Creative Commons Attribution 4.0.
+https://creativecommons.org/licenses/by/4.0/
+
+Training recipe and limitations: docs/bass-residual-v12.md.
+Two 200-tree classifiers on actual post-V11 bass intervals, with fixed
+74/28-feature context/guardian heads and strict .05/.1 rejection thresholds.
+This release retains V10 note verification and V11 key-release protection.
+The underlying Basic Pitch, Demucs, vocal and solo-piano networks are unchanged.
+
+Training data (CC BY 4.0):
+GuitarSet 1.1.0: Qingyang Xi, Rachel M. Bittner, Johan Pauwels, Xuzhou Ye,
+and Juan P. Bello. https://zenodo.org/records/3371780
+BabySlakh v2: Ethan Manilow, Gordon Wichern, Prem Seetharaman, Jonathan Le Roux.
+Cutting Music Source Separation Some Slakh, WASPAA 2019.
+https://zenodo.org/records/4603870
+
+Additional data: original project-authored bass signals and note sequences.
+Original MP3 variants and separated full-mixture Demucs bass crops keep their
+source-group training/validation partition. No user recordings or scores used.
+Frozen provenance: training/results/bass-residual-expanded-v3.
+
+Scope: balanced Full-song bass, frequency-bounded Basic Pitch pitches 21–59.
+Both heads must independently reject a note. Context edges, other registers,
+threshold equality and either-head veto are protected. Retained objects keep
+pitch, attack, end, velocity and source part. Candidate evidence is recomputed
+after hold repair. This is a limited-corpus improvement, not an assurance of
+correct transcription for arbitrary commercial songs.

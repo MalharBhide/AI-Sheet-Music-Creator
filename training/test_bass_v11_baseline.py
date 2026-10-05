@@ -10,6 +10,19 @@ from bass_training_data import eligible
 from train_bass_consensus import score
 
 
+@pytest.fixture(autouse=True)
+def isolated_historical_route_contract(monkeypatch):
+    # These unit fixtures exercise V11 logic with mocked data. Permit today's
+    # route only within the fixture; real experiment contracts remain frozen.
+    from pathlib import Path
+
+    import current_bass_v11_baseline as historical
+    from prepare_robust_training_stems import digest
+
+    route = 'backend/app/services/piano_transcription.py'
+    monkeypatch.setitem(historical.SOURCES, route, digest(Path(__file__).resolve().parents[1] / route))
+
+
 def test_v11_decisions_preserve_identity_and_extend_the_actual_interval(monkeypatch):
     events = np.array([[3., 4., 40., 90.], [4., 5., 40., 60.], [5., 6., 40., 70.], [7., 8., 44., 80.]])
     item = {'events': events, 'x': np.zeros((4, 52), np.float32), 'eligible': eligible(events, 12.)}
@@ -71,3 +84,9 @@ def test_v11_empty_rows_and_per_head_nonfinite_confidence():
     item = fixture()
     with pytest.raises(ValueError, match='confidence'):
         features(item['events'], item['x'], np.full(3, 1.2), np.zeros(3))
+
+
+def test_historical_contract_rejects_changed_route(monkeypatch):
+    monkeypatch.setitem(baseline.SOURCES, 'backend/app/services/piano_transcription.py', 'stale-route')
+    with pytest.raises(ValueError, match='declare a new experiment'):
+        baseline.hashes()

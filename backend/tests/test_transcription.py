@@ -180,6 +180,7 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
     from app.services import (
         accompaniment_verifier,
         bass_articulation,
+        bass_residual,
         bass_verifier,
         source_separation,
         vocal_melody,
@@ -228,6 +229,17 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
             return 0
 
     monkeypatch.setattr(bass_articulation, 'BassArticulation', BassArticulation)
+
+    class BassResidual:
+        name = 'Test bass residual'
+
+        def filter(self, path, acoustic, output, baseline):
+            assert isinstance(baseline, BassVerifier)
+            assert [n.pitch for n in output.instruments[0].notes] == [36, 48]
+            return 0
+
+    monkeypatch.setattr(bass_residual, 'BassResidual', BassResidual)
+
     fake_inference.results.extend([
         [],  # Vocal decoding must still run when Basic Pitch emits no events.
         [(36, 0, 1), (48, 0, 1)],
@@ -246,7 +258,8 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
         'model': 'Test verifier', 'window_candidates': 5, 'window_rejections': 1}
     assert report['bass_verification'] == {
         'model': 'Test bass verifier', 'articulation_model': 'Test bass articulation',
-        'window_candidates': 2, 'window_rejections': 0, 'window_merged_boundaries': 0}
+        'residual_model': 'Test bass residual', 'window_candidates': 2,
+        'window_rejections': 0, 'window_merged_boundaries': 0, 'window_residual_rejections': 0}
     assert report['support_notes_changed_for_bass'] == 1
     assert [(n.pitch, n.start, n.end) for n in result.instruments[1].notes] == [(36, 0, 1)]
     assert fake_inference.calls[2][1]['minimum_frequency'] is None
@@ -328,7 +341,7 @@ def test_detailed_accompaniment_keeps_its_validated_detector_path(tmp_path, fake
 
 
 def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp_path, fake_inference, monkeypatch):
-    from app.services import bass_articulation, bass_verifier
+    from app.services import bass_articulation, bass_residual, bass_verifier
     from app.services.piano_transcription import _GeneralEngine
 
     path = tmp_path / 'bass.wav'
@@ -360,6 +373,23 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
             return 0
 
     monkeypatch.setattr(bass_articulation, 'BassArticulation', BassArticulation)
+
+    residuals = []
+
+    class BassResidual:
+        name = 'Test bass residual'
+
+        def __init__(self):
+            residuals.append(self)
+
+        def filter(self, path, acoustic, output, baseline):
+            assert baseline is constructions[0]
+            assert [n.pitch for n in output.instruments[0].notes] == [40]
+            assert len(articulations) == 1
+            return 0
+
+    monkeypatch.setattr(bass_residual, 'BassResidual', BassResidual)
+
     fake_inference.results.extend([[(40, 3., 4.), (52, 3., 4.)]] * 2)
     engine = _GeneralEngine('balanced')
     for _ in range(2):
@@ -367,9 +397,11 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
         assert [(n.pitch, n.start, n.end) for n in output.instruments[0].notes] == [(40, 3., 4.)]
     assert len(constructions) == 1 and engine.note_verifier is None and engine.verification is None
     assert len(articulations) == 1 and engine.bass_articulation is articulations[0]
+    assert len(residuals) == 1 and engine.bass_residual is residuals[0]
     assert engine.bass_verification['window_candidates'] == 4
     assert engine.bass_verification['window_rejections'] == 2
     assert engine.bass_verification['window_merged_boundaries'] == 0
+    assert engine.bass_verification['window_residual_rejections'] == 0
     parameters = fake_inference.calls[0][1]
     assert parameters['minimum_frequency'] == pytest.approx(27.5)
     assert parameters['maximum_frequency'] == pytest.approx(261.6255653)
@@ -386,7 +418,7 @@ def test_detailed_bass_keeps_original_decoder_without_consensus(tmp_path, fake_i
     engine = _GeneralEngine('detailed')
     assert engine.predict(path, 'bass', 120).instruments[0].notes[0].pitch == 40
     assert engine.bass_verifier is None and engine.bass_verification is None
-    assert engine.bass_articulation is None
+    assert engine.bass_articulation is None and engine.bass_residual is None
     assert fake_inference.calls[0][1]['melodia_trick'] is True
 
 

@@ -1,0 +1,74 @@
+"""Unsupported-pitch rejection must protect vetoes, timing and part identity."""
+
+from types import SimpleNamespace
+
+import numpy as np
+import pytest
+from app.models import PipelineError
+from app.services import bass_residual as service
+
+
+def setup(monkeypatch, first=0., second=0.):
+    verifier = service.BassResidual.__new__(service.BassResidual)
+    verifier.models = [SimpleNamespace(threshold=t, probability=lambda x, p=p: np.full(len(x), p))
+                       for p, t in ((first, .05), (second, .1))]
+    baseline = SimpleNamespace(models=[SimpleNamespace(feature_count=n, probability=lambda x: np.full(len(x), .9))
+                                     for n in (52, 26)])
+    notes = [SimpleNamespace(start=3., end=4., pitch=40, velocity=80, origin=i) for i in range(2)]
+    midi = SimpleNamespace(instruments=[SimpleNamespace(notes=[note]) for note in notes])
+    monkeypatch.setattr(service.sf, 'read', lambda *a, **kw: (np.zeros(30 * 22050, np.float32), 22050))
+    monkeypatch.setattr(service, 'note_features', lambda samples, rate, acoustic, notes, **kw: np.zeros((len(notes), 52), np.float32))
+    return verifier, baseline, midi, notes
+
+
+def test_only_both_heads_can_remove_notes_and_objects_are_not_changed(monkeypatch):
+    verifier, baseline, midi, notes = setup(monkeypatch)
+    original = [vars(n).copy() for n in notes]
+    notes[1].pitch = 60
+    original[1]['pitch'] = 60
+    assert verifier.filter('fixture.wav', {}, midi, baseline) == 1
+    assert not midi.instruments[0].notes
+    assert midi.instruments[1].notes == [notes[1]]
+    assert original == [vars(n) for n in notes]
+
+
+@pytest.mark.parametrize('first,second', [(.05, 0.), (0., .1), (1., 0.), (0., 1.)])
+def test_either_head_or_threshold_equality_preserves_notes(monkeypatch, first, second):
+    verifier, baseline, midi, notes = setup(monkeypatch, first, second)
+    assert verifier.filter('fixture.wav', {}, midi, baseline) == 0
+    assert all(part.notes == [n] for part, n in zip(midi.instruments, notes, strict=True))
+
+
+@pytest.mark.parametrize('start,end,pitch', [(2.49, 4., 40), (3., 27.51, 40), (3., 4., 20), (3., 4., 60)])
+def test_window_edges_and_other_registers_are_protected(monkeypatch, start, end, pitch):
+    verifier, baseline, midi, notes = setup(monkeypatch)
+    for note in notes:
+        note.start, note.end, note.pitch = start, end, pitch
+    assert verifier.filter('fixture.wav', {}, midi, baseline) == 0
+
+
+def test_empty_notes_skip_audio_and_invalid_audio_fails_clearly(monkeypatch):
+    verifier, baseline, midi, _ = setup(monkeypatch)
+    monkeypatch.setattr(service.sf, 'read', lambda *a, **kw: pytest.fail('Empty audio read'))
+    assert verifier.filter('fixture.wav', {}, SimpleNamespace(instruments=[]), baseline) == 0
+    for samples, rate in [(np.zeros(4), 44100), (np.zeros((4, 2)), 22050), (np.full(4, np.nan), 22050), (np.zeros(0), 22050)]:
+        monkeypatch.setattr(service.sf, 'read', lambda *a, samples=samples, rate=rate, **kw: (samples, rate))
+        with pytest.raises(PipelineError, match='finite mono'):
+            verifier.filter('fixture.wav', {}, midi, baseline)
+
+
+def test_released_arrays_load_and_corruption_is_rejected(tmp_path, monkeypatch):
+    models = service.BassResidual().models
+    assert [m.feature_count for m in models] == [74, 28]
+    assert [m.threshold for m in models] == [.05, .1]
+    damaged = tmp_path / 'damaged.npz'
+    damaged.write_bytes(b'invalid')
+    monkeypatch.setattr(service, 'CHECKPOINTS', ((damaged, 'wrong-sha', service.NAMES, .05), service.CHECKPOINTS[1]))
+    with pytest.raises(PipelineError, match='missing or damaged'):
+        service.BassResidual()
+
+
+@pytest.mark.parametrize('confidence', [np.array([np.nan]), np.array([1.01]), np.array([-.01]), np.array([])])
+def test_invalid_confidence_cannot_become_a_rejection(confidence):
+    with pytest.raises(ValueError, match='confidence'):
+        service.features(np.array([[3., 4., 40., 80.]]), np.zeros((1, 52)), confidence, np.array([.9]))

@@ -10,6 +10,19 @@ from prepare_robust_training_stems import digest
 from test_bass_boundary_release import frozen
 
 
+@pytest.fixture(autouse=True)
+def isolated_historical_route_contract(monkeypatch):
+    # These unit fixtures exercise V11 logic with mocked data. Permit today's
+    # route only within the fixture; real experiment contracts remain frozen.
+    from pathlib import Path
+
+    import current_bass_v11_baseline as historical
+    from prepare_robust_training_stems import digest
+
+    route = 'backend/app/services/piano_transcription.py'
+    monkeypatch.setitem(historical.SOURCES, route, digest(Path(__file__).resolve().parents[1] / route))
+
+
 def residual(tmp_path):
     run, old, data, winner = frozen(tmp_path)
     source = old.with_name('precision')

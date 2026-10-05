@@ -50,7 +50,11 @@ correct notes. Frozen plans, checkpoints' hashes, curves and rejection evidence
 are archived under `training/results/bass-residual-v11-v1` and
 `training/results/bass-residual-coverage-v2`.
 
-The next bounded batch is running locally. Its frozen acquisition plan adds 48
+The following paragraphs record the pending state at V11. This batch has now
+completed and its tested successor was released as V12; see
+[bass-residual-v12.md](bass-residual-v12.md) for the final result.
+
+The next bounded batch was running locally. Its frozen acquisition plan adds 48
 MP3/Demucs bass crops at 30/60/90 seconds from existing licensed Slakh training
 and validation source groups (36 train, 12 validation). No reserved Slakh groups
 are decoded. It also adds 80 original generator seeds 261801–261880 (64 train,

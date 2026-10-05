@@ -1,0 +1,15 @@
+{
+  "passes": true,
+  "checkpoint_sha256": "2230f5804e22a0bc0e94a906dd4747eed039d929c3da39e3e5de8619274f4afb",
+  "batch_selection_sha256": "23515ad0f2276a3fa2753d7167624e3a853b51761f46217fc8520922c92c12de",
+  "threshold": 0.05,
+  "guardian_threshold": 0.1,
+  "recordings": 122,
+  "retained_events": 8439,
+  "sha256": {
+    "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+    "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb"
+  },
+  "tolerance": 1e-12,
+  "scope": "Frozen validation sklearn/portable probabilities; arrays only, no production routing."
+}

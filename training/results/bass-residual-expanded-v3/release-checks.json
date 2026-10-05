@@ -1,0 +1,89 @@
+{
+  "passes": true,
+  "backend_training_regression": {
+    "passed": 436,
+    "integration_skipped_here": 6,
+    "log_sha256": "05dd84930ae01644958ae8a05607f820398533791b64225affd352a38a3edfb5"
+  },
+  "native_pipeline_integration": {
+    "passed": 6,
+    "log_sha256": "20978faf5a33b93a8b014e0dbbf70e766fd98d38a1aa2b7d10f84d678e0b03dd",
+    "scope": "Isolated project-authored fixtures, all exports, playback, long/short/silent/full-mixture MP3 and multiple pages"
+  },
+  "frontend_tests": {
+    "passed": 26
+  },
+  "frontend_build": true,
+  "backend_build": true,
+  "ruff": true,
+  "git_diff_check": true,
+  "browser": {
+    "saved_score_open": true,
+    "full_width_score_workspace": true,
+    "console_errors_or_warnings": [],
+    "no_uploads_or_new_jobs": true
+  },
+  "native_routing_report_sha256": "d5ee200a740816e3cb3b9939c71c58bc545a3730b04817ea7a7d877e5d4f269d",
+  "runtime_parity_report_sha256": "53077bf04da0b77814027566cd14bf28c4d926d1c976c4cdcae0692c8edc3715",
+  "notation_readability_report_sha256": "eaf001364f3665af68e36be7de75159f657645f34997aab213d76288ff16cc6e",
+  "health_through_frontend_proxy": {
+    "status": "ok",
+    "ready": true,
+    "dependencies": {
+      "ffmpeg": true,
+      "basic_pitch": true,
+      "piano_transcription": true,
+      "piano_model": true,
+      "vocal_model": true,
+      "accompaniment_model": true,
+      "accompaniment_context_models": true,
+      "accompaniment_residual_model": true,
+      "accompaniment_left_hand_model": true,
+      "accompaniment_left_refinement_model": true,
+      "accompaniment_left_consensus_models": true,
+      "accompaniment_pitch_preserving_models": true,
+      "accompaniment_repeat_attack_models": true,
+      "bass_consensus_models": true,
+      "bass_articulation_models": true,
+      "bass_residual_models": true,
+      "source_separation": true,
+      "music21": true,
+      "musescore": true
+    },
+    "limits": {
+      "max_upload_mb": 0,
+      "max_audio_seconds": 0,
+      "retention_hours": 24
+    }
+  },
+  "live_verification": {
+    "passes": true,
+    "source_and_asset_hashes": {
+      "app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "app/services/piano_transcription.py": "741b5befe2b5f5ded1ae62ebb2811b37f2587b0e62c32a5a9fc160d1b3aa4a8a",
+      "app/services/midi_to_score.py": "d98c82211a88a8b0f142dd109082e0a46fe9397e4c5a5cc77940e9be6ea0e227",
+      "app/routes/dependencies.py": "c2ba172d6c9b013355341e8aaa1c701b5ab6d318fa7148d78f6a6e49aaa634b0",
+      "app/assets/bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "app/assets/bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb",
+      "app/assets/bass-residual-v1.LICENSE.txt": "9f9edeb5a1027cbdfb0aa34f3ed0070df353b8354542ec577437b93993912c8a"
+    },
+    "models": [
+      [
+        74,
+        0.05
+      ],
+      [
+        28,
+        0.1
+      ]
+    ],
+    "queue_counts": [
+      [
+        "completed",
+        7
+      ]
+    ]
+  },
+  "no_user_audio_or_scores_used": true,
+  "scope": "V12 bass residual and layout release. Dataset preservation is measured per recording and is not a guarantee for arbitrary songs."
+}

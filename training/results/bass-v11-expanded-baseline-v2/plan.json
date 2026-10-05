@@ -1,0 +1,108 @@
+{
+  "version": "shipped-bass-v11-baseline-v1",
+  "baseline_hashes": {
+    "version": "shipped-bass-v11-baseline-v1",
+    "v10": {
+      "version": "shipped-bass-v10-baseline-v1",
+      "arrays": {
+        "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+        "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd"
+      },
+      "thresholds": [
+        0.1,
+        0.1
+      ],
+      "sources": {
+        "training/current_bass_baseline.py": "52c5ff81f84237e2f06bf0993c64c21a2b85c9f0761b20c7fa28bf0bc978ad81",
+        "training/bass_training_data.py": "89933478f12e60df3ffa770d9e484f8465c0f54157bec469b141e584666b5d6d",
+        "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+        "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+        "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+        "backend/app/services/piano_transcription.py": "0b9a6b1a442c98bfe58a2110d912ad84b042f14f391195c048c5766a733f2e23"
+      }
+    },
+    "articulation_arrays": {
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51"
+    },
+    "articulation_thresholds": [
+      0.05,
+      0.05
+    ],
+    "sources": {
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/piano_transcription.py": "0b9a6b1a442c98bfe58a2110d912ad84b042f14f391195c048c5766a733f2e23"
+    },
+    "helper_sha256": "cbb77ac5d903d4dd57d53ec1700cfc5d5597d132ca4dfcb106ded6a91c346e4b"
+  },
+  "fitting_manifests": {
+    "/training/slakh-bass-v1": "9469b634adf201dd43a7638f9efe3a68a095d5ef907d157081a6e14e3316e2f8",
+    "/training/bass-positive-data-v1": "d9b63fb0f1668f94c4f20c6384166a78169277c35f8d76410c0b0fb5fa060582",
+    "/training/slakh-bass-demucs-expanded-v1": "8ab947382ef3ecdbc33a6ec69c35874248e2d9f1874b89beff5e951cd00067e0",
+    "/training/bass-original-expanded-v1": "e1d3195d30abf1b55e0fdfa64f0ee31d3f291364e9884c8921913ab32203917d"
+  },
+  "consumed_regression_manifests": {
+    "/training/bass-held-regression-v1": "40ea140c65811bc38173d52c74baca8340949418403273540c3a0ceb221bc8b6",
+    "/training/slakh-bass-positive-reserved-v2": "f22f2eabbb274852247cecdaebc1c7ed1a669899c3fd245f0aee1b1f54c94b6f",
+    "/training/bass-boundary-stress-v1": "f09ae6dc5a477665f4268b752d1d0e32845784a90ab8b3d28e09438e0e6d3895",
+    "/training/bass-articulation-stress-v2": "afda029cca2660d1e82c704b893f0dbddecb625bc84445c7b8148aa5ddfb8cec"
+  },
+  "code_sha256": "f91432fea7d8a0bd57a441e205479f2d0a808d36950a4a905d9ac5621b18d9e7",
+  "feature_version": "note-evidence-context-v2",
+  "features": [
+    "duration",
+    "velocity",
+    "note_mean",
+    "note_max",
+    "note_q20",
+    "note_q80",
+    "note_occupancy",
+    "onset_at_attack",
+    "onset_max",
+    "onset_mean",
+    "octave_below",
+    "octave_above",
+    "fifth_below",
+    "fifth_above",
+    "nineteen_below",
+    "nineteen_above",
+    "relative_note",
+    "polyphony",
+    "cqt_mean",
+    "cqt_max",
+    "cqt_attack_rise",
+    "cqt_semitone_below",
+    "cqt_semitone_above",
+    "cqt_octave_below",
+    "cqt_octave_above",
+    "cqt_nineteen_below",
+    "note_attack_rise",
+    "note_pre_attack",
+    "note_post_attack",
+    "onset_octave_below",
+    "onset_nineteen_below",
+    "onset_two_octaves_below",
+    "attack_independence",
+    "cqt_octave_above_support",
+    "cqt_nineteen_above_support",
+    "cqt_two_octaves_above_support",
+    "cqt_third_above_support",
+    "cqt_octave_below_ratio",
+    "cqt_nineteen_below_ratio",
+    "cqt_two_octaves_below_ratio",
+    "cqt_local_peak",
+    "envelope_octave_correlation",
+    "envelope_nineteen_correlation",
+    "envelope_two_octaves_correlation",
+    "cqt_attack_octave_below",
+    "cqt_attack_nineteen_below",
+    "cqt_attack_two_octaves_below",
+    "note_octave_attack_rise",
+    "note_nineteen_attack_rise",
+    "onset_relative_to_note",
+    "note_end_level",
+    "note_release_drop"
+  ],
+  "no_user_audio_or_scores": true,
+  "scope": "Reuse per-note independent evidence only for unchanged intervals; recompute actual native BP/CQT evidence for every merged interval. Test caches remain consumed regression only."
+}

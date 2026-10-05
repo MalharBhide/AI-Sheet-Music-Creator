@@ -8,6 +8,19 @@ import pytest
 from prepare_robust_training_stems import digest
 
 
+@pytest.fixture(autouse=True)
+def isolated_historical_route_contract(monkeypatch):
+    # These unit fixtures exercise V11 logic with mocked data. Permit today's
+    # route only within the fixture; real experiment contracts remain frozen.
+    from pathlib import Path
+
+    import current_bass_v11_baseline as historical
+    from prepare_robust_training_stems import digest
+
+    route = 'backend/app/services/piano_transcription.py'
+    monkeypatch.setitem(historical.SOURCES, route, digest(Path(__file__).resolve().parents[1] / route))
+
+
 def complete(tmp_path):
     root = tmp_path / 'slakh-bass-demucs-expanded-v1'
     root.mkdir()

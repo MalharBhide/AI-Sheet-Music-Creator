@@ -1,10 +1,9 @@
 import xml.etree.ElementTree as ET
 
 import pytest
-from music21 import chord, converter, note, stream, tempo
-
 from app.models import ScoreOptions
 from app.services.midi_to_score import midi_to_musicxml
+from music21 import chord, converter, note, stream, tempo
 
 
 def make_midi(path, *, empty_left=False):
@@ -174,3 +173,35 @@ def test_musicxml_preserves_per_pitch_dynamics_through_chords_and_barlines(tmp_p
     for element in parsed.recurse().notes:
         for pitched_note in element.notes if isinstance(element, chord.Chord) else [element]:
             assert pitched_note.volume.velocity == velocities[pitched_note.pitch.midi]
+
+
+def test_polyphonic_rests_are_hidden_without_changing_notes_or_holds(tmp_path):
+    from app.services.playback import _score_midi
+
+    midi, xml = tmp_path / 'voices.mid', tmp_path / 'voices.musicxml'
+    make_midi(midi)
+    midi_to_musicxml(midi, xml, ScoreOptions(), 'Clear voices')
+    tree = ET.parse(xml)
+    hidden = [n for n in tree.findall('.//note') if n.find('rest') is not None and n.get('print-object') == 'no']
+    assert hidden
+    assert not [n for n in tree.findall('.//note') if n.find('pitch') is not None and n.get('print-object') == 'no']
+    assert {s.text for s in tree.findall('.//note/stem')} >= {'up', 'down'}
+    playback = _score_midi(converter.parse(str(xml)), 120)
+    actual = sorted((n.pitch, round(n.start * 2, 6), round((n.end - n.start) * 2, 6))
+                    for part in playback.instruments for n in part.notes)
+    assert actual == sorted([(p, 0., 1.) for p in [60, 64, 67]]
+                            + [(72, 1., 5.), (76, 2., 1.), (77, 3., 1.), (48, 0., 6.)])
+
+
+def test_readable_page_scaling_and_phrase_breaks_are_written_to_musicxml(tmp_path):
+    midi, xml = tmp_path / 'phrase.mid', tmp_path / 'phrase.musicxml'
+    score = stream.Stream()
+    for beat in range(24):
+        score.insert(beat, note.Note(72, quarterLength=1))
+    score.write('midi', fp=str(midi))
+    midi_to_musicxml(midi, xml, ScoreOptions(), 'Six bars')
+    tree = ET.parse(xml)
+    assert tree.findtext('.//scaling/millimeters') == '8'
+    assert tree.findtext('.//page-width') == '1050'
+    assert tree.findtext('.//staff-layout/staff-distance') == '75'
+    assert tree.find(".//measure[@number='5']/print[@new-system='yes']") is not None
