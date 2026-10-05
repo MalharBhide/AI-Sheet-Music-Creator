@@ -1,0 +1,74 @@
+{
+  "profile": {
+    "name": "local-attacks",
+    "width": 32,
+    "class_weights": [
+      24.0,
+      6.0,
+      24.0,
+      1.0
+    ],
+    "seed": 264002
+  },
+  "plan_sha256": "52476b7cd93a58ffb483fb02aebe1e65e8456b75a70ec287e634d8519ee7efed",
+  "training_counts": {
+    "guitarset-bass-register": {
+      "recordings": 238,
+      "class_counts": [
+        1425,
+        13624,
+        739,
+        2545
+      ]
+    },
+    "original-bass-texture": {
+      "recordings": 72,
+      "class_counts": [
+        116,
+        1348,
+        41,
+        523
+      ]
+    },
+    "original-bass-timbres": {
+      "recordings": 128,
+      "class_counts": [
+        106,
+        2557,
+        115,
+        122
+      ]
+    },
+    "slakh-demucs-bass": {
+      "recordings": 46,
+      "class_counts": [
+        165,
+        971,
+        31,
+        1009
+      ]
+    },
+    "slakh-oracle-bass": {
+      "recordings": 44,
+      "class_counts": [
+        73,
+        1023,
+        2,
+        1184
+      ]
+    },
+    "vienna-piano-mp3-bass": {
+      "recordings": 42,
+      "class_counts": [
+        293,
+        2132,
+        64,
+        284
+      ]
+    }
+  },
+  "training_events": 30492,
+  "training_recordings": 573,
+  "validation_recordings": 160,
+  "test_used_for_selection": false
+}

@@ -103,20 +103,45 @@ def _chord_segments(groups: dict) -> list[_Span]:
     return spans
 
 
+def _attack_chords(groups: dict) -> list[list[_Span]]:
+    """Stack simultaneous different pitches, retaining their individual holds.
+
+    Group only attacks already on the same notation tick. Notes at later ticks
+    remain separate voices. Same-key duplicates with different releases retain
+    their original events rather than losing an attack during chord folding.
+    """
+    attacks = defaultdict(dict)
+    for interval, pitches in groups.items():
+        attacks[interval[0]][interval] = pitches
+    bundles = []
+    for simultaneous in attacks.values():
+        pitches = [pitch for values in simultaneous.values() for pitch in values]
+        if len(pitches) != len(set(pitches)):
+            bundles.extend([_Span(start, end, tuple(sorted(values)),
+                                  velocities=tuple(sorted(values.items())))]
+                           for (start, end), values in simultaneous.items())
+        else:
+            spans = _chord_segments(simultaneous)
+            if spans:
+                bundles.append(spans)
+    return sorted(bundles, key=lambda spans: (spans[0].start, spans[-1].end, spans[0].pitches))
+
+
 def _voices(groups: dict) -> list[list[_Span]]:
     voices: list[list[_Span]] = []
     ends: list[int] = []
-    for (start, end), pitches in sorted(groups.items()):
-        voice_index = next((i for i, stop in enumerate(ends) if stop <= start), None)
+    for spans in _attack_chords(groups):
+        # Reserve a single voice through the complete chord hold. A new melody
+        # attack must not take the voice needed by a tied continuing pitch.
+        voice_index = next((i for i, stop in enumerate(ends) if stop <= spans[0].start), None)
         if voice_index is None:
             if len(voices) == 4:
                 return [_chord_segments(groups)]
             voice_index = len(voices)
             voices.append([])
             ends.append(0)
-        voices[voice_index].append(_Span(start, end, tuple(sorted(pitches)),
-                                        velocities=tuple(sorted(pitches.items()))))
-        ends[voice_index] = end
+        voices[voice_index].extend(spans)
+        ends[voice_index] = spans[-1].end
     return voices or [[]]
 
 
@@ -173,7 +198,8 @@ def midi_to_musicxml(midi_path: Path, xml_path: Path, options: ScoreOptions, tit
                      key_signature: str | None = None) -> None:
     """Quantize a whole recording into two piano staves, including its silent time.
 
-    Ordinary polyphony uses independent voices. Dense passages use chord segments
+    Simultaneous pitches use chords with their own holds; later attacks retain
+    independent voices. Dense passages use chord segments
     with individual pitch ties, so MuseScore's four-voice limit never drops notes
     or rejects a recording. Notation is prepared one measure at a time to avoid
     repeatedly scanning a full recording while filling rests and splitting ties.

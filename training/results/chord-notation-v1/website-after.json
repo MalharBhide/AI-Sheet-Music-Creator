@@ -1,0 +1,56 @@
+{
+  "passes": true,
+  "health": {
+    "status": "ok",
+    "ready": true,
+    "dependencies": {
+      "ffmpeg": true,
+      "basic_pitch": true,
+      "piano_transcription": true,
+      "piano_model": true,
+      "vocal_model": true,
+      "accompaniment_model": true,
+      "accompaniment_context_models": true,
+      "accompaniment_residual_model": true,
+      "accompaniment_left_hand_model": true,
+      "accompaniment_left_refinement_model": true,
+      "accompaniment_left_consensus_models": true,
+      "accompaniment_pitch_preserving_models": true,
+      "accompaniment_repeat_attack_models": true,
+      "bass_consensus_models": true,
+      "bass_articulation_models": true,
+      "bass_residual_models": true,
+      "bass_texture_models": true,
+      "bass_harmonic_models": true,
+      "bass_temporal_model": true,
+      "bass_refinement_model": true,
+      "source_separation": true,
+      "music21": true,
+      "musescore": true
+    },
+    "limits": {
+      "max_upload_mb": 0,
+      "max_audio_seconds": 0,
+      "retention_hours": 24
+    }
+  },
+  "sources": {
+    "notation": "230e99e6a1cef92bbc3056386edb7d9c5d2485a008a3e592329b9f5b3ce436f4",
+    "route": "d46c98ae93a62abc6b3ca8bcf6a71ba5416d304ddbc63f5b9443ba9f5d835182",
+    "audio_analysis": "845c688c6a8fa69ef933e98e50771e839c37e1d29cd79b05fa8b0d8b1c5dfcce"
+  },
+  "arrays": {
+    "bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775",
+    "bass-temporal-v1.npz": "0edc221998bbaacb052fbffe43f6efcce6e759290d0cdb9a7314028521e162c4",
+    "vocal-melody-v1.pt": "60209b56b6618335f22d1e4e9fc4604d7a2e501df3242d4a18e3df01d81034f9"
+  },
+  "queue": [
+    [
+      "completed",
+      7
+    ]
+  ],
+  "original_note_size_preserved": true,
+  "no_user_audio_or_score_regeneration": true,
+  "scope": "Read-only live frontend/backend proxy and exact source/asset hashes; chord-only notation update."
+}

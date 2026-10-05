@@ -1,0 +1,86 @@
+{
+  "version": "attack-local-cqt-stft-v1",
+  "baseline_hashes": {
+    "version": "shipped-bass-v16-baseline-v1",
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51",
+      "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb",
+      "bass-texture-v1.npz": "f1e829c7d4328afc38268cc8dbe8afb526c6860efafd3d272170cf3aca768d3e",
+      "bass-texture-guardian-v1.npz": "82f4ed13e9cf5a7a832a8a066f23ff9f7642aa187da664779a900d55b807e994",
+      "bass-harmonic-v1.npz": "8184a7c4009d2e26bc1d2f264ec58d8503182cda79667b9c3af7a8bb856ce66c",
+      "bass-harmonic-guardian-v1.npz": "bcab8b156e54db37c3c19dd74e553106499722503abb043ba7fb491d3418f76e",
+      "bass-temporal-v1.npz": "0edc221998bbaacb052fbffe43f6efcce6e759290d0cdb9a7314028521e162c4",
+      "bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775"
+    },
+    "thresholds": [
+      [
+        0.1,
+        0.1
+      ],
+      [
+        0.05,
+        0.05
+      ],
+      [
+        0.05,
+        0.1
+      ],
+      [
+        0.025,
+        0.3
+      ],
+      [
+        0.025,
+        0.3
+      ],
+      [
+        0.005,
+        0.3
+      ],
+      [
+        0.2,
+        0.3
+      ]
+    ],
+    "sources": {
+      "backend/app/services/piano_transcription.py": "d46c98ae93a62abc6b3ca8bcf6a71ba5416d304ddbc63f5b9443ba9f5d835182",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "backend/app/services/bass_texture.py": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c",
+      "backend/app/services/bass_harmonic.py": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7",
+      "backend/app/services/bass_temporal.py": "3cf000fb9d6174e64d4197d1b03c126f27239b541b4a032f75d73510dfffb68a",
+      "backend/app/services/bass_temporal_refinement.py": "e712f3f5e0937918ec013ccc3c863afc5a18349ebcf46c047764b1e37b39a18c",
+      "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/candidate_relations.py": "3a1b6caf5eaebf444f3cdcddb7abc8835c86f665721ab476e03c1c1dbc58d029",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "training/current_bass_v16_baseline.py": "7c7d4c928a2a40c8d7df2816dee596232ded3a9cdc7abb9a9003a7d6e4f9b511"
+    }
+  },
+  "code_sha256": {
+    "training/prepare_attack_local_bass.py": "07eda4182d4fab793758e4823c13456f46d44a9b8aeaf1fd0932645631fcc611",
+    "training/attack_local_features.py": "7c284d47d5eb55af2ff0811addd8eac1d13264f438c599360e9ef7505639b85f",
+    "training/bass_v16_data.py": "fb8851d9dae5cb8efb243b3188898942dcd8c225aa94226a5b06430560520434",
+    "training/current_bass_v16_baseline.py": "7c7d4c928a2a40c8d7df2816dee596232ded3a9cdc7abb9a9003a7d6e4f9b511",
+    "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2"
+  },
+  "parent_root": "/training/bass-v16-baseline-v1",
+  "parent_manifest_sha256": "72e8de4841f9b401bd07fdd9949cbf3f9c3c31ab2af90ef18665376a0ba9be82",
+  "parent_plan_sha256": "63218dbc9ba584f7629080647be29d20b19f6ee06c6d270201991dc0dcc596fc",
+  "groups": {
+    "train": 573,
+    "validation": 160
+  },
+  "rate": 22050,
+  "hop": 128,
+  "steps": 61,
+  "channels": 18,
+  "feature_scope": "61 observed positions centered on predicted attack; 9 pitch-relative CQT channels, short/long STFT fundamental and 2nd\u20134th harmonic bands, short-window flux. No labels or fitted probabilities.",
+  "no_test_audio_or_metrics": true,
+  "no_user_audio_or_scores": true
+}
