@@ -1,10 +1,13 @@
 """Broader bass training still excludes held regressions and freezes selection."""
 
 import json
+from types import SimpleNamespace
 
 import bass_positive_release as release
+import numpy as np
 import pytest
 import train_bass_positive_consensus as training
+from bass_predictions import probability
 from prepare_robust_training_stems import digest
 from test_bass_release import frozen
 
@@ -55,3 +58,17 @@ def test_expanded_frozen_loader_checks_new_policy_and_extra_manifest_hash(tmp_pa
     (path / 'manifest.json').write_text('{}')
     with pytest.raises(ValueError, match='additional frozen bass data'):
         release.load_frozen(data, run)
+
+
+def test_empty_bass_window_does_not_call_sklearn_and_still_validates_feature_shape():
+    model = SimpleNamespace(n_features_in_=52, predict_proba=lambda x: pytest.fail('Empty sklearn call'))
+    assert probability(model, np.empty((0, 52), dtype=np.float32)).shape == (0,)
+    with pytest.raises(ValueError, match='feature contract'):
+        probability(model, np.empty((0, 26)))
+    with pytest.raises(ValueError, match='feature contract'):
+        probability(model, np.full((1, 52), np.nan))
+    item = {'id': 'empty', 'corpus': 'fixture', 'seconds': 20., 'events': np.empty((0, 4)),
+            'reference': np.array([[3., 4., 40.]]), 'pitch_reference': np.array([[3., 4., 40.]]),
+            'eligible': np.empty(0, dtype=bool)}
+    result = training.score([item], [np.empty(0)], [np.empty(0)], .01, .05)
+    assert result['passes'] and result['false_notes_removed'] == 0

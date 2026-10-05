@@ -310,5 +310,11 @@ Expanded bass KEEP data preparation adds original source/timbre seeds and licens
 GuitarSet training/validation performers. `prepare_bass_positive_data.py` and
 `train_bass_positive_consensus.py` keep consumed stress separate, freeze extra
 manifests, and select the best gated checkpoint before release evaluation.
-Preparation is running; website V9 remains unchanged. Full suite: 346 passed,
+Preparation completed (377 extra clips). Expanded fitting restarted in a new run
+after checked empty-window inference fixed a sklearn failure. Website V9 remains
+unchanged. Full suite: 346 passed,
 six opt-in cases skipped. See the bass framework for the guarded release chain.
+
+The expanded frozen winner retains 4,150 validation matches, removes 142 false
+detections, and passes consumed bass stress with all 210 matches intact. Reserved
+Slakh preparation is underway; no candidate is deployed.

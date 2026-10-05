@@ -29,7 +29,7 @@ def run_export(directory, run):
             (models[0], 'bass-positive-consensus-v2.npz', winner['threshold'], NAMES, 52),
             (models[1], 'bass-positive-guardian-v2.npz', winner['guardian_threshold'], FEATURE_NAMES, 26)):
         path = output / name
-        export(model, threshold, path, [{'x': item['x'][:, :columns]} for item in validation],
+        export(model, threshold, path, [{'x': item['x'][:, :columns]} for item in validation if len(item['x'])],
                feature_names=names, feature_version=CONTEXT_VERSION)
         result['arrays'].append({'filename': name, 'sha256': digest(path), 'threshold': threshold,
                                  'feature_count': columns})

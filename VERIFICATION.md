@@ -588,3 +588,28 @@ The GitHub Actions native-pipeline job runs the same integration suite in the ba
 - Full backend/training suite: 346 passed, six opt-in cases skipped. Python lint
   and diff checks pass. Data preparation remains in progress; no expanded model
   fitted/deployed or user upload processed at this checkpoint.
+
+
+## Expanded bass completion and empty-window inference — 2026-10-04
+
+- All 377 additional clips prepared: 303 training / 74 validation, 26,680 key
+  annotations, 27,184 pitch supports; every new MP3 codec lag zero. Combined
+  fitting: 359 training / 94 validation, 22,684 eligible events.
+- First attempt fails before selection on a no-note bass window, which sklearn
+  cannot predict. Added checked empty feature inference in fitting/release and
+  excludes empty windows from sklearn export parity calls. Empty feature shapes
+  and nonfinite inputs still fail; no-note windows preserve baseline measurements.
+- Focused empty/expanded/freeze tests: four passed. Interrupted first pair and
+  all data provenance archived. Fitting restarts in a new run; no reserved test
+  inference, score generation, candidate promotion or website change.
+
+
+## Expanded bass frozen winner — 2026-10-04
+
+- Four paired models fit all 22,684 eligible examples. Regularized 400-tree pair
+  wins solely on validation, thresholds .1/.1. All 4,150 matches and every hold
+  and pitch interval retained; false detections 3,030→2,888.
+- Eight consumed original stress cases preserve all 210 matches, all offset and
+  pitch-coverage gates, and unchanged ten false detections. No test-based retuning.
+- Four reserved Slakh groups now qualify for one-shot preparation. No portable
+  assets exported or production model/routing changed at this checkpoint.

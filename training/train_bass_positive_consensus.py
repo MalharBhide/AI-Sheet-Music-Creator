@@ -13,6 +13,7 @@ from pathlib import Path
 import numpy as np
 import sklearn
 from app.services.note_evidence import CONTEXT_VERSION
+from bass_predictions import probability
 from bass_training_data import EDGE_SECONDS, NAMES, VERSION, load
 from prepare_robust_training_stems import digest, preserve
 from sklearn.ensemble import HistGradientBoostingClassifier
@@ -35,6 +36,7 @@ POLICY = 'balanced-bass-positive-consensus-v2'
 def contracts():
     root = Path(__file__).resolve().parents[1]
     names = ('training/train_bass_positive_consensus.py', 'training/train_bass_consensus.py', 'training/bass_training_data.py',
+             'training/bass_predictions.py',
              'training/bass_positive_release.py', 'training/prepare_bass_positive_data.py',
              'training/prepare_slakh_bass_positive_test.py',
              'training/export_bass_positive_consensus.py', 'training/export_context_verifier.py',
@@ -131,8 +133,8 @@ def train(directory, output, extras):
         best, stage_rows, memo = None, [], {}
         for trees in staged[0]:
             checkpoint = at_stage(models, trees)
-            context = [checkpoint[0].predict_proba(item['x'])[:, 1] for item in validation]
-            acoustic = [checkpoint[1].predict_proba(item['x'][:, :26])[:, 1] for item in validation]
+            context = [probability(checkpoint[0], item['x']) for item in validation]
+            acoustic = [probability(checkpoint[1], item['x'][:, :26]) for item in validation]
             chosen, search = select(validation, context, acoustic, memo)
             loss = sum(next(row['validation_log_loss'] for row in curves[name] if row['trees'] == trees)
                        for name in ('context', 'guardian')) / 2

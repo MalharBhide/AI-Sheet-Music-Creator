@@ -1,0 +1,72 @@
+{
+  "selected": true,
+  "winner": {
+    "name": "regularized",
+    "selected": true,
+    "policy": "balanced-bass-positive-consensus-v2",
+    "validation_false_notes_removed": 142,
+    "threshold": 0.1,
+    "guardian_threshold": 0.1,
+    "trees": 400,
+    "validation_log_loss": 0.7539856112103355,
+    "plan_sha256": "c1c8515e2b44f13f893b8a8b0f4acc10b46c568103aa20cebd2a3a58c668be6f",
+    "checkpoint_sha256": "b7472b3842fd58985cf12ea7f2ebcabdc4aab34dda382baeb62f444862e2a766",
+    "test_not_evaluated": true
+  },
+  "candidates": [
+    {
+      "name": "regularized",
+      "selected": true,
+      "policy": "balanced-bass-positive-consensus-v2",
+      "validation_false_notes_removed": 142,
+      "threshold": 0.1,
+      "guardian_threshold": 0.1,
+      "trees": 400,
+      "validation_log_loss": 0.7539856112103355,
+      "plan_sha256": "c1c8515e2b44f13f893b8a8b0f4acc10b46c568103aa20cebd2a3a58c668be6f",
+      "checkpoint_sha256": "b7472b3842fd58985cf12ea7f2ebcabdc4aab34dda382baeb62f444862e2a766",
+      "test_not_evaluated": true
+    },
+    {
+      "name": "capacity",
+      "selected": true,
+      "policy": "balanced-bass-positive-consensus-v2",
+      "validation_false_notes_removed": 115,
+      "threshold": 0.025,
+      "guardian_threshold": 0.05,
+      "trees": 500,
+      "validation_log_loss": 0.6587579804043666,
+      "plan_sha256": "c1c8515e2b44f13f893b8a8b0f4acc10b46c568103aa20cebd2a3a58c668be6f",
+      "checkpoint_sha256": "a7cb360a4f9399f0756fb79a50414be77ef43b408f3061c8035957ff6056fa8c",
+      "test_not_evaluated": true
+    },
+    {
+      "name": "recall",
+      "selected": true,
+      "policy": "balanced-bass-positive-consensus-v2",
+      "validation_false_notes_removed": 130,
+      "threshold": 0.2,
+      "guardian_threshold": 0.1,
+      "trees": 500,
+      "validation_log_loss": 0.9293862253681437,
+      "plan_sha256": "c1c8515e2b44f13f893b8a8b0f4acc10b46c568103aa20cebd2a3a58c668be6f",
+      "checkpoint_sha256": "d464ff4c6e21a2b6dc8fc92604cc0a1509485775618b9612240fa26c267efe03",
+      "test_not_evaluated": true
+    },
+    {
+      "name": "shallow",
+      "selected": true,
+      "policy": "balanced-bass-positive-consensus-v2",
+      "validation_false_notes_removed": 92,
+      "threshold": 0.1,
+      "guardian_threshold": 0.3,
+      "trees": 200,
+      "validation_log_loss": 0.9078845808954702,
+      "plan_sha256": "c1c8515e2b44f13f893b8a8b0f4acc10b46c568103aa20cebd2a3a58c668be6f",
+      "checkpoint_sha256": "9888cea7a24b01627ecbd3c6f33024307958a915253bfd2cf7c04300604fdd4f",
+      "test_not_evaluated": true
+    }
+  ],
+  "plan_sha256": "c1c8515e2b44f13f893b8a8b0f4acc10b46c568103aa20cebd2a3a58c668be6f",
+  "test_used_for_selection": false
+}

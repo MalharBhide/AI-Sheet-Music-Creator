@@ -5,6 +5,7 @@ import json
 import pickle
 from pathlib import Path
 
+from bass_predictions import probability
 from bass_training_data import load
 from prepare_robust_training_stems import digest, preserve
 from train_bass_positive_consensus import (
@@ -99,8 +100,8 @@ def evaluate(directory, run, data, stage):
         groups = {source for source, group in partition.items() if group == 'test'}
         if {item['source_group'] for item in items} != groups:
             raise ValueError('Reserved Slakh evaluation requires all four frozen groups')
-    result = score(items, [models[0].predict_proba(item['x'])[:, 1] for item in items],
-                   [models[1].predict_proba(item['x'][:, :26])[:, 1] for item in items],
+    result = score(items, [probability(models[0], item['x']) for item in items],
+                   [probability(models[1], item['x'][:, :26]) for item in items],
                    winner['threshold'], winner['guardian_threshold'])
     result.update(checkpoint_sha256=winner['checkpoint_sha256'],
                   batch_selection_sha256=digest(run / 'batch-selection.json'),
