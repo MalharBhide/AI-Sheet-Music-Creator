@@ -130,4 +130,33 @@ holds, pitch coverage and fixed-pair timing. No runner-up, confidence switch,
 replacement seeds or new fixtures may follow a failed test. Runtime probability/
 filter parity and native physical pipeline checks remain mandatory before release.
 
-Training is running. No V29 weights are exported or deployed.
+Both profiles completed 80 epochs. Validation selected `neighbor-protected`,
+width 64, epoch 60, removal confidence .7 and guardian .5. It removes five/three
+additional incorrect notes at normal/stricter confidence, with all 206 validation
+recordings preserving attacks, holds, pitch coverage and fixed-pair timing. The
+checkpoint SHA256 is `d103dd713febd85e235616d8342eadccb5212b1788fb391e6703af103970f7c4`.
+All 785 backend/training tests pass (six unchanged-production native checks
+skipped), plus five focused model/policy tests. The frozen 392-record regression
+removes 15/eight extra wrong notes but both settings lose 7.3977 ms of supported
+pitch coverage in the same earlier continuation regression. Matched attacks,
+holds and fixed-pair timing remain unchanged. **V29 is rejected.** No runner-up
+or confidence switch is tried. The actual first-pass tool refuses the failed
+candidate before output creation. All four reserved NSynth instruments, two
+reserved GMD performers, and seeds 274101–274132 remain unconsumed. No V29
+weights are exported or deployed.
+
+## Other source checks
+
+The official [PianoVAM dataset card](https://huggingface.co/datasets/PianoVAM/PianoVAM_v1)
+declares CC BY-NC-SA 4.0; its [authors' code repository](https://github.com/yonghyunk1m/PianoVAM-Code)
+also restricts commercial use. The research paper's separate CC BY publication
+license is not the recording dataset's license. PianoVAM is not acquired or
+fitted for this potentially commercial product.
+
+The [original MusicNet assessment](musicnet-training-assessment.md) remains a
+possible next source. The publisher still supplies the pinned 11.1 GB archive
+and reports an estimated 4% annotation error. The bounded, fully verified GMD
+acquisition demonstrates that limited local storage need not rule out a large
+source archive, but MusicNet would need its own streaming tar acquisition and
+label/clock inspection. No MusicNet audio or labels enter these completed or
+currently frozen studies.
