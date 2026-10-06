@@ -1,0 +1,30 @@
+{
+  "fit_status": "complete",
+  "production_model_changed": false,
+  "no_user_audio_or_scores": true,
+  "full_application_training_tests": {
+    "passed": 702,
+    "skipped": 6,
+    "log_sha256": "c8ef725b0df2a28c5102d6f476e87f583321df9f8f2de577c3a875aaaaea23d7"
+  },
+  "focused_decluttering_tests": {
+    "passed": 11,
+    "log_sha256": "c729a8aae57fdadbcfc91e7edfad6ba12c61c83e116400dbb8554ad0700398b4"
+  },
+  "ruff": "27 added training sources/tests passed",
+  "export_guard_tests": {
+    "passed": 2,
+    "log_sha256": "17424e1e2ed3aa3a65fbb66f0308f9a51d18212678c51d1cd67aed53b870c68d"
+  },
+  "consumed_mp3_cache_identity_verified": 64,
+  "release_passes": false,
+  "consumed_regressions": 360,
+  "regression_false_notes_removed": {
+    "raw": 212,
+    "margin": 206
+  },
+  "regression_failed_recordings": 1,
+  "first_pass_seeds_unused": true,
+  "new_ml_weights_deployed": false,
+  "reason": "Both configurations lose 0.007397732426303705 seconds of supplied reference pitch coverage on one recording, despite preserving all matched attacks/holds. No first-pass inference or export."
+}

@@ -1,0 +1,17 @@
+{
+  "passes": true,
+  "application_training_tests": 674,
+  "release_guard_tests": 2,
+  "focused_consensus_tests": 18,
+  "native_pipeline_tests_preceding_unchanged_runtime": 6,
+  "fit_profiles": 2,
+  "epochs_per_fit": 60,
+  "consumed_regressions": 296,
+  "first_pass_project_authored_mp3s": 32,
+  "release_passes": false,
+  "reason": "First-pass stricter confidence/half strength has zero onset gain; raw and margin preservation gates pass. Frozen positive-gain gate rejects the candidate.",
+  "new_ml_weights_deployed": false,
+  "no_user_audio_or_scores": true,
+  "test_log_sha256": "a5fa6e18f0d09b0e3a81929e9ad5278f780ced4c1e58ac084e9978742e714be9",
+  "guard_log_sha256": "5b39ddddeb729a90efb31e097a1330b33b02abe6202b2f19d4db243a183791fb"
+}
