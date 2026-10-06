@@ -1,0 +1,77 @@
+{
+  "passes": true,
+  "recordings": 4,
+  "per_recording": [
+    {
+      "id": "attack-release-v25-fresh-270101",
+      "source_group": "original-bass-seed-270101",
+      "events": 21,
+      "removed": 0,
+      "source_audio_sha256": "a2ec548cc799a43aebe437c256e1af431f0707f5675db5b5fcfb9b52a94ff44c",
+      "cache_sha256": "5e0e7087afc7db900b40d7d0dd44295829ac9799b6c7c64ffd00bd8f683fb739",
+      "maximum_feature_error": {
+        "base_x": 0.0,
+        "x": 0.0,
+        "frames": 0.0,
+        "attack_frames": 0.0,
+        "release_frames": 0.0
+      },
+      "all_retained_fields_objects_parts_preserved": true
+    },
+    {
+      "id": "attack-release-v25-fresh-270102",
+      "source_group": "original-bass-seed-270102",
+      "events": 17,
+      "removed": 0,
+      "source_audio_sha256": "c2895f1a94fe4c6386e3832a8647928068e0fefecaaacdc715427052695f4dc1",
+      "cache_sha256": "1fbc8c65eee0bd5cd8e0a3c9460a9812ee888c63684ec526cd78a4060e321424",
+      "maximum_feature_error": {
+        "base_x": 0.0,
+        "x": 0.0,
+        "frames": 0.0,
+        "attack_frames": 0.0,
+        "release_frames": 0.0
+      },
+      "all_retained_fields_objects_parts_preserved": true
+    },
+    {
+      "id": "attack-release-v25-fresh-270117",
+      "source_group": "original-bass-seed-270117",
+      "events": 9,
+      "removed": 1,
+      "source_audio_sha256": "6c44d789fcc2d39a4110d89d53d35744368ca9d0973f31750a3842311f41e955",
+      "cache_sha256": "013b18ef45326c6f328014cc41e021a0265fbe7707f4cd59502cbb4aea0d95df",
+      "maximum_feature_error": {
+        "base_x": 0.0,
+        "x": 0.0,
+        "frames": 0.0,
+        "attack_frames": 0.0,
+        "release_frames": 0.0
+      },
+      "all_retained_fields_objects_parts_preserved": true
+    },
+    {
+      "id": "attack-release-v25-fresh-270118",
+      "source_group": "original-bass-seed-270118",
+      "events": 31,
+      "removed": 3,
+      "source_audio_sha256": "af3c036fc97f0024af66602b8819cf7e522e2b42296654eda64ce36e28c8fff1",
+      "cache_sha256": "e36b2552b09f05bf4112c5abb11c8172e3364474c42ce8fa26ede4b3fc5b6c22",
+      "maximum_feature_error": {
+        "base_x": 0.0,
+        "x": 0.0,
+        "frames": 0.0,
+        "attack_frames": 0.0,
+        "release_frames": 0.0
+      },
+      "all_retained_fields_objects_parts_preserved": true
+    }
+  ],
+  "asset_sha256": "f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c",
+  "checkpoint_sha256": "c1d8d11c559c6cd47f32a1cdfe89ca19c1e691c942119a166c90cc780fb5a074",
+  "first_pass_manifest_sha256": "82a67b21ee674137056aab2c2b0a4636830a29e505f8509551f2d15a23a27a60",
+  "source_sha256": "a36612d1fd2bcead2645b297878ed6f1a34424bfb8a023a7d25ae0022f43275a",
+  "tolerance": 1e-06,
+  "no_user_audio_or_scores": true,
+  "scope": "Four consumed project-authored MP3 fixtures, two per family. Native unchanged V16 baseline, physical context/coarse/attack/ending features, actual portable filter and exact source note/part retention. No new test or accuracy claim."
+}

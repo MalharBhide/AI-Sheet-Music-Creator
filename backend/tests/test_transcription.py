@@ -180,6 +180,7 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
     from app.services import (
         accompaniment_verifier,
         bass_articulation,
+        bass_attack_declutter,
         bass_harmonic,
         bass_residual,
         bass_temporal,
@@ -278,9 +279,19 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
         def filter(self, path, acoustic, output):
             assert getattr(output, '_temporal_checked', False)
             assert [n.pitch for n in output.instruments[0].notes] == [36, 48]
+            output._refinement_checked = True
             return 0
 
     monkeypatch.setattr(bass_temporal_refinement, 'BassTemporalRefinement', BassTemporalRefinement)
+
+    class BassAttackDeclutter:
+        name = 'Test attack/release verifier'
+
+        def filter(self, path, acoustic, output):
+            assert getattr(output, '_refinement_checked', False)
+            return 0
+
+    monkeypatch.setattr(bass_attack_declutter, 'BassAttackDeclutter', BassAttackDeclutter)
 
 
     fake_inference.results.extend([
@@ -302,9 +313,11 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
     assert report['bass_verification'] == {
         'model': 'Test bass verifier', 'articulation_model': 'Test bass articulation',
         'residual_model': 'Test bass residual', 'texture_model': 'Test bass texture',
-        'harmonic_model': 'Test bass harmonic', 'temporal_model': 'Test bass temporal', 'refinement_model': 'Test bass refinement', 'window_candidates': 2,
+        'harmonic_model': 'Test bass harmonic', 'temporal_model': 'Test bass temporal', 'refinement_model': 'Test bass refinement',
+        'attack_release_model': 'Test attack/release verifier', 'window_candidates': 2,
         'window_rejections': 0, 'window_merged_boundaries': 0, 'window_residual_rejections': 0,
-        'window_texture_rejections': 0, 'window_harmonic_rejections': 0, 'window_temporal_rejections': 0, 'window_refinement_rejections': 0}
+        'window_texture_rejections': 0, 'window_harmonic_rejections': 0, 'window_temporal_rejections': 0, 'window_refinement_rejections': 0,
+        'window_attack_release_rejections': 0}
     assert report['support_notes_changed_for_bass'] == 1
     assert [(n.pitch, n.start, n.end) for n in result.instruments[1].notes] == [(36, 0, 1)]
     assert fake_inference.calls[2][1]['minimum_frequency'] is None
@@ -388,6 +401,7 @@ def test_detailed_accompaniment_keeps_its_validated_detector_path(tmp_path, fake
 def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp_path, fake_inference, monkeypatch):
     from app.services import (
         bass_articulation,
+        bass_attack_declutter,
         bass_harmonic,
         bass_residual,
         bass_temporal,
@@ -500,9 +514,19 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
             assert getattr(output, '_temporal_checked', False)
             assert [n.pitch for n in output.instruments[0].notes] == [40]
             assert len(temporals) == 1
+            output._refinement_checked = True
             return 0
 
     monkeypatch.setattr(bass_temporal_refinement, 'BassTemporalRefinement', BassTemporalRefinement)
+
+    class BassAttackDeclutter:
+        name = 'Test attack/release verifier'
+
+        def filter(self, path, acoustic, output):
+            assert getattr(output, '_refinement_checked', False)
+            return 0
+
+    monkeypatch.setattr(bass_attack_declutter, 'BassAttackDeclutter', BassAttackDeclutter)
 
 
     fake_inference.results.extend([[(40, 3., 4.), (52, 3., 4.)]] * 2)
@@ -525,6 +549,7 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
     assert engine.bass_verification['window_harmonic_rejections'] == 0
     assert engine.bass_verification['window_temporal_rejections'] == 0
     assert engine.bass_verification['window_refinement_rejections'] == 0
+    assert engine.bass_verification['window_attack_release_rejections'] == 0
     parameters = fake_inference.calls[0][1]
     assert parameters['minimum_frequency'] == pytest.approx(27.5)
     assert parameters['maximum_frequency'] == pytest.approx(261.6255653)

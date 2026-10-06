@@ -1,0 +1,116 @@
+{
+  "full_backend_training_tests": {
+    "passed": 742,
+    "skipped": 6,
+    "log_sha256": "47120d3d9b8f023b31ad0c05ea1b12c4d7cd6d9a2e02c76fb05b7144f9270b2d"
+  },
+  "ruff_changed_files": "passed",
+  "native_integration": {
+    "passed": 6,
+    "log_sha256": "fb5d0c44cfcc47903c0727edfd7cf8dfa4bb82225c9c8edc15e13d74f8f68b16",
+    "fixtures": "Project-authored WAV, long VBR MP3, short MP3, silent MP3, full-mix MP3 and multipage score."
+  },
+  "deployment": {
+    "status": "verified",
+    "image": "sha256:48bbe917ac0a2404de2d4cfd3c70f1d6c55029cfed1f068edfbb4d30522361a8",
+    "local_url": "http://localhost:5173/",
+    "html_reachable": true,
+    "health": {
+      "status": "ok",
+      "ready": true,
+      "dependencies": {
+        "ffmpeg": true,
+        "basic_pitch": true,
+        "piano_transcription": true,
+        "piano_model": true,
+        "vocal_model": true,
+        "accompaniment_model": true,
+        "accompaniment_context_models": true,
+        "accompaniment_residual_model": true,
+        "accompaniment_left_hand_model": true,
+        "accompaniment_left_refinement_model": true,
+        "accompaniment_left_consensus_models": true,
+        "accompaniment_pitch_preserving_models": true,
+        "accompaniment_repeat_attack_models": true,
+        "bass_consensus_models": true,
+        "bass_articulation_models": true,
+        "bass_residual_models": true,
+        "bass_texture_models": true,
+        "bass_harmonic_models": true,
+        "bass_temporal_model": true,
+        "bass_refinement_model": true,
+        "bass_attack_release_model": true,
+        "source_separation": true,
+        "music21": true,
+        "musescore": true
+      },
+      "limits": {
+        "max_upload_mb": 0,
+        "max_audio_seconds": 0,
+        "retention_hours": 24
+      }
+    },
+    "running_model_check": {
+      "asset_sha256": "f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c",
+      "checksum_matches": true,
+      "model": "Bass attack/release verifier v1 (trained held-note evidence)",
+      "source_sha256": {
+        "app/services/piano_transcription.py": "ca07ef6e53e2ffb5a2609503a3c0f23ef94d79f9d533616965f1b6cb119c93dc",
+        "app/services/midi_to_score.py": "230e99e6a1cef92bbc3056386edb7d9c5d2485a008a3e592329b9f5b3ce436f4"
+      },
+      "jobs_by_status": [
+        [
+          "completed",
+          5
+        ]
+      ],
+      "no_user_transcription_requested": true
+    },
+    "saved_scores_regenerated": false
+  },
+  "no_user_uploads_or_score_regeneration": true,
+  "staff_size_mm": 7,
+  "source_sha256": {
+    "backend/app/services/piano_transcription.py": "ca07ef6e53e2ffb5a2609503a3c0f23ef94d79f9d533616965f1b6cb119c93dc",
+    "backend/app/routes/dependencies.py": "d3f08b8032e0265cbe69565a1275ec3eaf289b9b0ac6f0af6fcabb8061edd897",
+    "backend/app/services/midi_to_score.py": "230e99e6a1cef92bbc3056386edb7d9c5d2485a008a3e592329b9f5b3ce436f4",
+    "backend/app/assets/bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775",
+    "backend/app/assets/bass-attack-declutter-v1.npz": "f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c",
+    "backend/app/assets/bass-attack-declutter-v1.LICENSE.txt": "c15508b91f040e64b90b100608df42a78a6916f124f29d4c4efcd37d1e3f3485"
+  },
+  "local_image_build": "Reuse existing verified backend runtime dependencies; copy current app and reinstall package with --no-deps. Standard production Dockerfile unchanged.",
+  "built_image_model_check": {
+    "asset_sha256": "f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c",
+    "checksum_matches": true,
+    "model": "Bass attack/release verifier v1 (trained held-note evidence)",
+    "remove_threshold": 0.8,
+    "guardian_threshold": 0.5,
+    "dependencies": {
+      "ffmpeg": true,
+      "basic_pitch": true,
+      "piano_transcription": true,
+      "piano_model": true,
+      "vocal_model": true,
+      "accompaniment_model": true,
+      "accompaniment_context_models": true,
+      "accompaniment_residual_model": true,
+      "accompaniment_left_hand_model": true,
+      "accompaniment_left_refinement_model": true,
+      "accompaniment_left_consensus_models": true,
+      "accompaniment_pitch_preserving_models": true,
+      "accompaniment_repeat_attack_models": true,
+      "bass_consensus_models": true,
+      "bass_articulation_models": true,
+      "bass_residual_models": true,
+      "bass_texture_models": true,
+      "bass_harmonic_models": true,
+      "bass_temporal_model": true,
+      "bass_refinement_model": true,
+      "bass_attack_release_model": true,
+      "source_separation": true,
+      "music21": true,
+      "musescore": true
+    }
+  },
+  "runtime_build_log_sha256": "629ab809b47ed6134ef7f8e36f309f9d505430cb8e2a62002c82ba3e4fd8aba2"
+}

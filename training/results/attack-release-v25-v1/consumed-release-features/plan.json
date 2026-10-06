@@ -1,0 +1,2639 @@
+{
+  "checkpoint_sha256": "c1d8d11c559c6cd47f32a1cdfe89ca19c1e691c942119a166c90cc780fb5a074",
+  "batch_selection_sha256": "c6e224c9c120e2fbb6d145de5f834d882f448d7cd11c9accfa4b0057d56b11f2",
+  "fitting_plan_sha256": "bdb70c92d9c12e1884b7894713554e9caa5adc88b04655f09f29f6c2ab178126",
+  "baseline_hashes": {
+    "version": "shipped-bass-v16-baseline-v1",
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51",
+      "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb",
+      "bass-texture-v1.npz": "f1e829c7d4328afc38268cc8dbe8afb526c6860efafd3d272170cf3aca768d3e",
+      "bass-texture-guardian-v1.npz": "82f4ed13e9cf5a7a832a8a066f23ff9f7642aa187da664779a900d55b807e994",
+      "bass-harmonic-v1.npz": "8184a7c4009d2e26bc1d2f264ec58d8503182cda79667b9c3af7a8bb856ce66c",
+      "bass-harmonic-guardian-v1.npz": "bcab8b156e54db37c3c19dd74e553106499722503abb043ba7fb491d3418f76e",
+      "bass-temporal-v1.npz": "0edc221998bbaacb052fbffe43f6efcce6e759290d0cdb9a7314028521e162c4",
+      "bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775"
+    },
+    "thresholds": [
+      [
+        0.1,
+        0.1
+      ],
+      [
+        0.05,
+        0.05
+      ],
+      [
+        0.05,
+        0.1
+      ],
+      [
+        0.025,
+        0.3
+      ],
+      [
+        0.025,
+        0.3
+      ],
+      [
+        0.005,
+        0.3
+      ],
+      [
+        0.2,
+        0.3
+      ]
+    ],
+    "sources": {
+      "backend/app/services/piano_transcription.py": "d46c98ae93a62abc6b3ca8bcf6a71ba5416d304ddbc63f5b9443ba9f5d835182",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "backend/app/services/bass_texture.py": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c",
+      "backend/app/services/bass_harmonic.py": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7",
+      "backend/app/services/bass_temporal.py": "3cf000fb9d6174e64d4197d1b03c126f27239b541b4a032f75d73510dfffb68a",
+      "backend/app/services/bass_temporal_refinement.py": "e712f3f5e0937918ec013ccc3c863afc5a18349ebcf46c047764b1e37b39a18c",
+      "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/candidate_relations.py": "3a1b6caf5eaebf444f3cdcddb7abc8835c86f665721ab476e03c1c1dbc58d029",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "training/current_bass_v16_baseline.py": "7c7d4c928a2a40c8d7df2816dee596232ded3a9cdc7abb9a9003a7d6e4f9b511"
+    }
+  },
+  "code_sha256": {
+    "training/pitch_consensus_early.py": "100bfdcf94eedb85b5fcfeb3a84328c3b8bc407d5673562501598245ce62056c",
+    "training/score_early_consensus.py": "3c6e2cec3fdc5af613d05397e309cf381a4004ed8e34edfc80bdaaacd8bba29c",
+    "training/train_early_consensus_v22.py": "a0c50c5eb2c7a948730a11bcacc282805d420099a3f6df5b4db20e71ed84f09d",
+    "training/evaluate_early_consensus_v22.py": "c26ff119fe5af74255a64b3fa2c4201d0c1f25796c494fe8e006d434213d01ba",
+    "training/fresh_early_consensus_v22.py": "269863c8d701bc2751b1ef8642abfd78e9f862207ee8a3e483dc41861f395e1d",
+    "training/train_pitch_consensus_v21.py": "e23c7d6572d8ae0f5aafe4aed60edc5cf26bd04b6fed40642be3b7a3064a0471",
+    "training/evaluate_pitch_consensus_v21.py": "6f698e746aaa83f11d8bd4eedd98e5aad15ec917c704afeaf20fa7af0a22fb8f",
+    "training/fresh_pitch_consensus_v21.py": "c6f9fb2d33c1ea58453b726d1c6b1a97ed3893a1ee12fe6e89892dd5c41f1389",
+    "training/train_pitch_consensus_v20.py": "c17486efb9c9ac750382abcd81d35b68e064617d3b6697b4e740f9bc80df8c99",
+    "training/evaluate_pitch_consensus_v20.py": "7d93e83a1fc6113b7aa0544c25c18ff9d9bef679e1b07e44d96d137271b01fb1",
+    "training/pitch_consensus_timing.py": "32e157a8034bb2c648372a8031b38e3c12e579e3e8b4e4e494a2bcd5b3f3fe76",
+    "training/score_pitch_consensus_timing.py": "5cfc423a239dbfbd0d82f7cce4c798e3a1eb4bff0538ab44c73e77409944c084",
+    "training/fresh_pitch_consensus_v20.py": "81abc06359506824d23f6f0dda68f12427995057ec82e8874f36ec6041b46a2c",
+    "training/train_attack_local_bass_v19.py": "8049218356d210f19a36a7e0ff5b1da6be77a8f5cc004d06b4bb494f213c5d07",
+    "training/evaluate_attack_local_bass_v19.py": "b3720328910e3196c01dada5efbf6c402e6feed75e1e91a915ecc2e290a89c63",
+    "training/prepare_bass_positive_data.py": "929b1cded6f0dcf071dfdc3f8e0ea09c00d5401f05aa9325773d325acc188d65",
+    "training/prepare_bass_texture_v12.py": "628c26e278e329646dd806bf920d21409c5a91a5e3938c6074be547afde36d7e",
+    "training/prepare_slakh_bass.py": "7f2f8be64fce97e9ade2348c2a7eb39ac9966191753da8ebe7810d2f24dcc0be",
+    "training/attack_local_bass_data.py": "1376637beea563adbaabd4b4a273ba8200ea2e8bdaf52156a258becc82083a39",
+    "training/attack_local_features.py": "7c284d47d5eb55af2ff0811addd8eac1d13264f438c599360e9ef7505639b85f",
+    "training/attack_local_model.py": "c717770a064000ad09e7d3612e554fcab9dbe4c864795ac9268975e6139bf675",
+    "training/prepare_attack_local_bass.py": "07eda4182d4fab793758e4823c13456f46d44a9b8aeaf1fd0932645631fcc611",
+    "training/train_bass_joint_timing_v18.py": "d7dac8a72ad578c39473dbb78eb5289987fb701c323b7df36f08f9baded53171",
+    "training/bass_joint_timing_v18.py": "0e0e167be40d1fa333b1e500c2acff830ab95cbb9d9bf1245fa54371ed8c5cbf",
+    "training/bass_joint_timing.py": "11638d8f327d7f35f5cdc892cec3c6a089b62de34e398ac5b988634033a20790",
+    "training/score_bass_joint_timing.py": "552534528cac11b950fd868a18c3866450329090b151a3b92201c1f8d93dd57d",
+    "training/bass_v16_data.py": "fb8851d9dae5cb8efb243b3188898942dcd8c225aa94226a5b06430560520434",
+    "training/current_bass_v16_baseline.py": "7c7d4c928a2a40c8d7df2816dee596232ded3a9cdc7abb9a9003a7d6e4f9b511",
+    "training/prepare_bass_v16_baseline.py": "5192101f93be136b8024c768ed08f52e7dd8597f15167557f2dba8f17a406f9e",
+    "training/bass_temporal_data.py": "d87d78ce69f0ae590f6b1d566ab298d9433ce15e14b566f8f8e0b9853059f344",
+    "training/bass_residual_coverage_data.py": "893eb4b3d887797202fd55e65e251222d3ae76245b2a5231b2739dc02d98489a",
+    "training/pitch_support_targets.py": "cae7c61505710491fad6c140695f813792912eb4c48f7f64c13177c8b70bfabf",
+    "training/pitch_interval_coverage.py": "87408dad16d6bdbfae854cca7327f44eb9b4ddd6f972e930f5b7d01629f666ee",
+    "training/train_melody_timing.py": "040ac9e2f881c3b0d6adec84086acf55ce82356899b3ffe8aa002ddc1743fd25",
+    "training/train_note_verifier.py": "5380ef2010909c42cb161a3108c27c619ab687915d5c28fc46291718a49cf117",
+    "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2",
+    "backend/app/services/bass_harmonic.py": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7",
+    "training/train_attack_release_v25.py": "32cbea2d7fb2a9047a90b4ef516eb0e5ea2e642370e48ddbeca995afd856ce0c",
+    "training/evaluate_attack_release_v25.py": "de0474f691f4eda05010f9eedfb16882cedf6525582ebb385cc066dc9c3cb0fe",
+    "training/fresh_attack_release_v25.py": "c00341aed058ea6d900a35b325fc11705d9a52669e8992632e5feb9afc119a32",
+    "training/score_declutter_local.py": "691db879ffe203c3e7411d04fd1afd2bfd7e12c1a84ef0be43475e6c3c57f3f1",
+    "training/attack_release_model.py": "518f22b0c44aaf41112ba91b88b3f6967e5f15cbbd46e5e387bd59304a936067",
+    "training/partial_hold_training.py": "d4eac8695238598e250b2b1c0600805004b0709e3d8bf1fb6dcb72cf5bf56e2b",
+    "training/release_local_features.py": "a42de471567b3d4b17e0a9a1f56737e5673931e53f9e68ecea335b63001c750b",
+    "training/prepare_release_local_bass.py": "2e2ccd9667d1fbfd6b76afcf0e6dfa3716581228ae2a29efe6467c5f530e246f",
+    "training/release_local_bass_data.py": "70b640cbada843a003c3d666946022528b7013f2cb367f2810dfdde639b50c5f"
+  },
+  "records": [
+    {
+      "id": "bass-held-v1-held",
+      "source_group": "bass-held-v1-held",
+      "audio": "/training/bass-held-regression-v1/bass-held-v1-held/decoded.wav",
+      "audio_sha256": "bdeecd107004afac6763205d24107bde40e3bb1cb89a1609d8247c7e2c17ae4c",
+      "cache_sha256": "2d9da691f9c4c103e23977ab872a74f3aa457177f8909655df5f726e48491f0d"
+    },
+    {
+      "id": "bass-held-v1-repeated",
+      "source_group": "bass-held-v1-repeated",
+      "audio": "/training/bass-held-regression-v1/bass-held-v1-repeated/decoded.wav",
+      "audio_sha256": "fdd3bd3dc4e7d8d9170550e331c19d279a86138579d1527158b827aac08a40c6",
+      "cache_sha256": "4a29f59bbe6a4d9b3b2f3c9a8a6d000dfa9acba673948332adb3949d2d8366b7"
+    },
+    {
+      "id": "bass-held-v1-triplet",
+      "source_group": "bass-held-v1-triplet",
+      "audio": "/training/bass-held-regression-v1/bass-held-v1-triplet/decoded.wav",
+      "audio_sha256": "9c61212e69d30f07bb6850ef2314be5b2316eb897877b072a3b259213ed391ec",
+      "cache_sha256": "dbefae749a0002276e3e6bc77718b2dbb275c469481b7c7257b738d987001699"
+    },
+    {
+      "id": "bass-held-v1-octave",
+      "source_group": "bass-held-v1-octave",
+      "audio": "/training/bass-held-regression-v1/bass-held-v1-octave/decoded.wav",
+      "audio_sha256": "91f007ba9023fde824dc29f7b65f2e287946cebd55b26853225586ce533ccc0e",
+      "cache_sha256": "47188421a49507b50814449f6eedde87e9f0f08c30b4946f49c130f7c8bd6f8c"
+    },
+    {
+      "id": "bass-held-v1-low",
+      "source_group": "bass-held-v1-low",
+      "audio": "/training/bass-held-regression-v1/bass-held-v1-low/decoded.wav",
+      "audio_sha256": "912bc32d2f4ffca9d0e5cef81a2a89a6494be36caa6cad419c9f52081228c87b",
+      "cache_sha256": "7fc462fb11c945ceae0baf618704db0ba40607724a3e857430c2373879a36dc5"
+    },
+    {
+      "id": "bass-held-v1-legato",
+      "source_group": "bass-held-v1-legato",
+      "audio": "/training/bass-held-regression-v1/bass-held-v1-legato/decoded.wav",
+      "audio_sha256": "bf69912bdb875db0b4792d8e5881ef0c963199afbe523287a5985de6bd027c4f",
+      "cache_sha256": "abee4c782aaf13b22de189e42b0db9017b5c3f50da868e0e872d675c53fe4018"
+    },
+    {
+      "id": "bass-held-v1-sparse",
+      "source_group": "bass-held-v1-sparse",
+      "audio": "/training/bass-held-regression-v1/bass-held-v1-sparse/decoded.wav",
+      "audio_sha256": "0ac1009c1a70705fd4b12a2eaedbbef2ab0b32e7762c7ddd6a22a904bebf850b",
+      "cache_sha256": "48b7f000256812eee96f039a89d43ada4354ef5d1daa689524ea3414fab70921"
+    },
+    {
+      "id": "bass-held-v1-syncopated",
+      "source_group": "bass-held-v1-syncopated",
+      "audio": "/training/bass-held-regression-v1/bass-held-v1-syncopated/decoded.wav",
+      "audio_sha256": "7b691cf80ab7a070829263628647a6822c405cd4a22f55ec13ad8520f794f5cb",
+      "cache_sha256": "c9699df7254fde2700f6444006b204a40af601f2bda320cf8386bcba525f44c0"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00005-oracle-000",
+      "source_group": "Track00005",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00005-oracle-000/decoded.wav",
+      "audio_sha256": "0dbf9b217740891780d335ec2ca17179c5d7855132e38565f9b406b91dc113d1",
+      "cache_sha256": "c5327844c44c2beee481ea013fe0826fe2e6dfbf1c3b14ed1c16ad7849add785"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00005-oracle-030",
+      "source_group": "Track00005",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00005-oracle-030/decoded.wav",
+      "audio_sha256": "08689224e95f12d53cde5e55c329065cd4ee8b032a43715c557db4fdcd14a4c2",
+      "cache_sha256": "5e15f36b965d3789083e211e7dbdf7f04ac0cbaf424effe9034c7c5607f1ab8f"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00005-oracle-060",
+      "source_group": "Track00005",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00005-oracle-060/decoded.wav",
+      "audio_sha256": "9019f9a8eb165a9801c8cf954306ba8da04ed906fec4f8ab1b15ffe5cb45b7ac",
+      "cache_sha256": "01216b70b7dfd381984acd149513f74df2189dd74b50e7362c83c69a270c676d"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00005-oracle-090",
+      "source_group": "Track00005",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00005-oracle-090/decoded.wav",
+      "audio_sha256": "137f8ff60af176b6570321c11eb792d7a2551ddb95a681b737b2966ba20b052e",
+      "cache_sha256": "d888f536fd0898617dabc1e6e6c9508682fb7a52e9e524d1634b626c21c68779"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00005-demucs-000",
+      "source_group": "Track00005",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00005-demucs-000/bass.wav",
+      "audio_sha256": "03125701bb3b848acf8d5188ac27dfef6779bfe8f51d7770fc88f60b29a213db",
+      "cache_sha256": "743ad5938a8c7023d7377b7471348b2059e6751924d79e64ddb8042a8551a704"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00009-oracle-000",
+      "source_group": "Track00009",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00009-oracle-000/decoded.wav",
+      "audio_sha256": "722c68ad16475e5dce7cb5cdf9bfccbaa8468341e4d29e97532cb4b74971dd45",
+      "cache_sha256": "6a6354e3b5397b0201b2eaaa584df0597dddc85e26df72cc00ba1836577c8119"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00009-oracle-030",
+      "source_group": "Track00009",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00009-oracle-030/decoded.wav",
+      "audio_sha256": "6976936d3e29a49a060a22d1b48c1812cbbcc0aa1f72a58b2b51a2e07acecbc5",
+      "cache_sha256": "d3de811257089fbba69f7ebe2ed77152bbf2f986e8afd6188418de9155ec5bb3"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00009-oracle-060",
+      "source_group": "Track00009",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00009-oracle-060/decoded.wav",
+      "audio_sha256": "30ab0ca463f784d6aa7dac0f4860eab138b309abeb38141c788884d893cbb95b",
+      "cache_sha256": "3db9ca8019f81272f7e2e2a6075020a68bfd3ffcd217691a25be93013e07650a"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00009-oracle-090",
+      "source_group": "Track00009",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00009-oracle-090/decoded.wav",
+      "audio_sha256": "0f46415e55b6e3c208d5a6e2b58fa1b6493102499252a0a653f59471fbd8cc35",
+      "cache_sha256": "2f36bf22071a785f591e294b09a9d59dc17e0aa42aa1f5824893689d058d1d94"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00009-demucs-000",
+      "source_group": "Track00009",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00009-demucs-000/bass.wav",
+      "audio_sha256": "7c13e5d9db1ff5c449fdfe5c59070ebd1d333da4f5942d32c8f8abf5d2dd23a9",
+      "cache_sha256": "80cb041ae1adb844d6c879b9f8eb0ae91c6ccca59c61831aa3a616f28e48b358"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00012-oracle-000",
+      "source_group": "Track00012",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00012-oracle-000/decoded.wav",
+      "audio_sha256": "afcb3c3a597fa678e808946975b880ad2cc67e92228222b3f51c79d09528311e",
+      "cache_sha256": "2f30379c3f487e194fb3316189927e29964b2991b87b2886c2fbf4a49d9b5a05"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00012-oracle-030",
+      "source_group": "Track00012",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00012-oracle-030/decoded.wav",
+      "audio_sha256": "bc91f34ae607ff2b725fb4459819fd45e777b9950a9e58e411971bad0f947ad7",
+      "cache_sha256": "068ff0b45f000ea5b286c01117608ff5b7cf286ef92f17a66a9285683b7db0c2"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00012-oracle-060",
+      "source_group": "Track00012",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00012-oracle-060/decoded.wav",
+      "audio_sha256": "210c3ab65da501cdc006e3b5b434fc62d3231e98f9092daf4732b3b5c3b8b597",
+      "cache_sha256": "941a4f66a6cc4a8fa99447f83beffcdae50ae308303706e17f1f72147a7c5bea"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00012-oracle-090",
+      "source_group": "Track00012",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00012-oracle-090/decoded.wav",
+      "audio_sha256": "87f1614520601d682ab4e7ef59be36e3770646acf91497da17d7492c1fadfa7d",
+      "cache_sha256": "b503e95b3e8970095e3390313128aeb81e08fb4c237bbdef7829460e596719c2"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00012-demucs-000",
+      "source_group": "Track00012",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00012-demucs-000/bass.wav",
+      "audio_sha256": "002c3a92f716c8c333ba741e369317d1df787850dccb9eb3f3e378b1b5c941b5",
+      "cache_sha256": "e244d5e184b19bbe902df2013777b145c0a4d205d9edca1f1efef5fffb86af82"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00015-oracle-000",
+      "source_group": "Track00015",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00015-oracle-000/decoded.wav",
+      "audio_sha256": "4c1227808c166ac4cd2bed3a582f73480f39b055866e739719bf6288d7842df6",
+      "cache_sha256": "261a1adfaa2c58bb29ea7ef585c5a938607f47f32873199d40becf45a31ee03f"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00015-oracle-030",
+      "source_group": "Track00015",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00015-oracle-030/decoded.wav",
+      "audio_sha256": "cf415e88d50bec1a264cd03ba0e561b4a914d0148830e831d4cec9fc4ffb658a",
+      "cache_sha256": "7d0148fb19636cf2939b085ef1b0bd139487866a50daa62d3e41f456c6f6d6df"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00015-oracle-060",
+      "source_group": "Track00015",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00015-oracle-060/decoded.wav",
+      "audio_sha256": "80f98e616e3110f410d9423b5dc1124b867f5d73bcb492ce9f565c1fac8eef6e",
+      "cache_sha256": "850e9366f33b772875d68a290368baa2084581b9cf22d4240840a0bfcb633f14"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00015-oracle-090",
+      "source_group": "Track00015",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00015-oracle-090/decoded.wav",
+      "audio_sha256": "27d8013f7f0bdea3ceaf4e76337f24bb5af6ecb902b62861be6bf841673be141",
+      "cache_sha256": "e6244ff2bc5c1e85f10f6edf2c70e8074fbb6052f3a1e9db1309b0b4ef71870d"
+    },
+    {
+      "id": "slakh-bass-positive-reserved-v2-Track00015-demucs-000",
+      "source_group": "Track00015",
+      "audio": "/training/slakh-bass-positive-reserved-v2/slakh-bass-positive-reserved-v2-Track00015-demucs-000/bass.wav",
+      "audio_sha256": "fa72dc3fdc4d917ef1a1f890611d2853f94c0c21cbfd99f8cf8abed8307c3e40",
+      "cache_sha256": "ac8f6f5c371173522fa2edca2a7b36c3277d8e7492cd41373601af95d9e2f334"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261201",
+      "source_group": "original-bass-seed-261201",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261201/decoded.wav",
+      "audio_sha256": "d86dfa4e81327766a77c45b3a7a8683ccdd48d9d59b4867fbc848e703ffda780",
+      "cache_sha256": "0e8fd01da40a6d2ea51dec484f669fb6df328f58cdac5b4c9ae40660b6b0caa4"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261202",
+      "source_group": "original-bass-seed-261202",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261202/decoded.wav",
+      "audio_sha256": "84822c1701269f36ba6650e91222b8656f231992ac2b0f87a9bfa53487b670bf",
+      "cache_sha256": "75d56dc7f4edb340aa5c8aced1cd73658d5f57ffaab7226baf0af8ec27669c62"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261203",
+      "source_group": "original-bass-seed-261203",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261203/decoded.wav",
+      "audio_sha256": "b9b5dd694e41c3e28bb6ab097e5e795aef59338705ecee565ea78e07403e0f41",
+      "cache_sha256": "15a39b7ba0de37da436a687570dddcb5c29d0622907787865961836407765768"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261204",
+      "source_group": "original-bass-seed-261204",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261204/decoded.wav",
+      "audio_sha256": "21af6ce7af5ec2435a61e1f2a1eaf6a7730b0f6ce330ed019ce1aed34b2c5142",
+      "cache_sha256": "0c8d1d4230b14e7405e6e0649eee79f6d0a247e8600d09c92093ae97656506d9"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261205",
+      "source_group": "original-bass-seed-261205",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261205/decoded.wav",
+      "audio_sha256": "3b2ed78f7e105e00d0eca4563cac58adb49ad69d68604aaf69f7ca5ddfbba1f3",
+      "cache_sha256": "eef78985c0598db90d105c06a2ecdf53477dc11bdb0d23381c6c7dcee6507935"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261206",
+      "source_group": "original-bass-seed-261206",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261206/decoded.wav",
+      "audio_sha256": "4f1304cf1eeacb9b27af9486e28d203e6d6aebbfcde73ba6e843214f7d9d9bbf",
+      "cache_sha256": "4c59861899501818effc53e8559ec7140e9ba848e001a16de5ecf2fe01ea6acf"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261207",
+      "source_group": "original-bass-seed-261207",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261207/decoded.wav",
+      "audio_sha256": "a5fc587a66c53292fdca67a5291f93cc9e659365420e99aa670adc9eea927921",
+      "cache_sha256": "81794313effca3b99e76b840118d920a6a8d90240e1ed688e6bfbd623bf56b7f"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261208",
+      "source_group": "original-bass-seed-261208",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261208/decoded.wav",
+      "audio_sha256": "e8ee34ad94275eff75f36b543d6d09abbe043b9a83151bc6b7c64fd5060e1180",
+      "cache_sha256": "63a483b99fb6b111ac881c80151ca56d93d766c52970bf3f373794e3a9766f06"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261209",
+      "source_group": "original-bass-seed-261209",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261209/decoded.wav",
+      "audio_sha256": "e0f0b523c110910f159ddc670dbf50723666131d1f98b47526e39a9c991ca98c",
+      "cache_sha256": "5343a8f2ae95a270eb2c314442910acda11e63dffe01818a33be0ac4db876689"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261210",
+      "source_group": "original-bass-seed-261210",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261210/decoded.wav",
+      "audio_sha256": "24d50ef9a6ee69926e097c2416d62de91862423d5c652ddc76eb37d6f4355279",
+      "cache_sha256": "649e9d07bb079296232ec53ce32f464fdcb27a18dbc71c24ead153d10794033d"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261211",
+      "source_group": "original-bass-seed-261211",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261211/decoded.wav",
+      "audio_sha256": "f6c0dd7f3b685903e1ca0a14992a829d9fa5f23423caa7870f1b863a2d83ef98",
+      "cache_sha256": "5dd75a7b2019b578c72ec418427adac992365171c8c3bafc0ed18ebd8829344c"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261212",
+      "source_group": "original-bass-seed-261212",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261212/decoded.wav",
+      "audio_sha256": "c05f98e7fc32f4716d63cdbb8e766c83bca35dc9450ae4b7f9ffddebeaf49747",
+      "cache_sha256": "8e5bcb1c1ebb448ffdcd36820a76b185757166c8ac76aa53d303c7025fa2a8cf"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261213",
+      "source_group": "original-bass-seed-261213",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261213/decoded.wav",
+      "audio_sha256": "4eb40bc8f78be4fa29ae3c4f2e0ca70012525e240e9e0f19ef167a030fd36ee5",
+      "cache_sha256": "5c5936e758e8a259f92293065aea61be154cc3694a246cd2effcad475f718387"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261214",
+      "source_group": "original-bass-seed-261214",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261214/decoded.wav",
+      "audio_sha256": "130cc9fa10db2756b22c47b3c8faca0f6159e298880190e50967d95c6d93abde",
+      "cache_sha256": "cd30442360586566cac195a8ee56f02bf525a5e3deda97a40feecdc76a2433a2"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261215",
+      "source_group": "original-bass-seed-261215",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261215/decoded.wav",
+      "audio_sha256": "813865854cf40f8da7425f27ef3de6c49fb4cd05f4ecae793ce45ceb6e123476",
+      "cache_sha256": "f44ca700bc9b19b5de76b9c7bee8224893c4a0e246aa423acb53f412cae0ad27"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261216",
+      "source_group": "original-bass-seed-261216",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261216/decoded.wav",
+      "audio_sha256": "a148b41ef73021b91d7bf685af9f7e11ccd63e285bdee9a010c5db1f7fbf7637",
+      "cache_sha256": "5163bb86f97f17a8f7b4b3c7042e63cb8c26a1ab319a4050fac05b3f2c48f38d"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261217",
+      "source_group": "original-bass-seed-261217",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261217/decoded.wav",
+      "audio_sha256": "8feee57c5bbf03485b3d44648c3490c9a2efd6d29885b3232c84fbb95f3570f6",
+      "cache_sha256": "110dfb7b4d9b9bde74d0e462056991bd3973338338418f6d85ae5a9634112b92"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261218",
+      "source_group": "original-bass-seed-261218",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261218/decoded.wav",
+      "audio_sha256": "edc377916aad920c47bab40a37c405ba4e8e50dd2dc433897959e8c383b60486",
+      "cache_sha256": "9161d60f694cfb3af39a97a6895588b64790ada0971c10e1139d841b658f9880"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261219",
+      "source_group": "original-bass-seed-261219",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261219/decoded.wav",
+      "audio_sha256": "f0362b9c1eae4f8e9cef725292d980d097d476f9473c12f7d93fd0d9a82378e6",
+      "cache_sha256": "0f3d1718687368e7e42435f1e58d176dad480e98e114be466f4c521d7cf794af"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261220",
+      "source_group": "original-bass-seed-261220",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261220/decoded.wav",
+      "audio_sha256": "5d0bff59324e6f1a0013606269edc73f4f843b8196f7249532e05d826af98861",
+      "cache_sha256": "86dd7a6358765dbb526d3ada4428f3628d1ce15b9983f3088a703f3a1f278b82"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261221",
+      "source_group": "original-bass-seed-261221",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261221/decoded.wav",
+      "audio_sha256": "f4b0b61c0f6e3301c2a37fcc63c57bd2d957fb8b3af03cafca055d17b6574568",
+      "cache_sha256": "0a215094ddb66240cd783bce6846994a4937802f5ca9f327239b316d731886c8"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261222",
+      "source_group": "original-bass-seed-261222",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261222/decoded.wav",
+      "audio_sha256": "02186febf1759371fd86756d5b0e8fef304324b86cb37ad1ad7253f283ce5c67",
+      "cache_sha256": "5b8b6f285c2582a7a364bcde080657a6982751996812246394c198c233551c54"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261223",
+      "source_group": "original-bass-seed-261223",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261223/decoded.wav",
+      "audio_sha256": "4776dc19fd0508775d90808d065129e370a88e424ebc45ed196b99c794ec143d",
+      "cache_sha256": "90642da6cd5da6361f5eea6bf3bf92225bb2ff3fa70c42c54caa273c7c3f0f2f"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261224",
+      "source_group": "original-bass-seed-261224",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261224/decoded.wav",
+      "audio_sha256": "b854ee47dee8b54e78ecaeb0f12d4f225dfd6332c8caba92040e4ebf5fbc81fa",
+      "cache_sha256": "f99583a1753277ed22a30fefa6de8ea1e8f47d3ecb78f6bc9028883ed34cb002"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261225",
+      "source_group": "original-bass-seed-261225",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261225/decoded.wav",
+      "audio_sha256": "e2fcb864a94f7c3a484194cebb643fa72aa94b781877ccaeb89252540595fa97",
+      "cache_sha256": "14bb1da28e885ab98938fe22743d7db651c94e98bbdc12489fb1a8ac47742e5a"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261226",
+      "source_group": "original-bass-seed-261226",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261226/decoded.wav",
+      "audio_sha256": "f7878beea023ee51d4e97d0cfc0268ef40245e5eae93d1ab133fe89cf1e6e871",
+      "cache_sha256": "80b4af28ed349bd70a884021e51641c839d5c42db1784345e7d80b183b839745"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261227",
+      "source_group": "original-bass-seed-261227",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261227/decoded.wav",
+      "audio_sha256": "6591d159ecad4b45f7f138b6f5db91e62cb2b809a1d826a67cba4f4191bd105c",
+      "cache_sha256": "8fb2acd7a365d279d481dfd8d87a4ae383e5ed2bf0b0d05bce5ef0ede3e4b0a7"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261228",
+      "source_group": "original-bass-seed-261228",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261228/decoded.wav",
+      "audio_sha256": "207b932a70fb728d591ecf4e82a5983134e1d662a7fd97b1d45fc1a374ab91d3",
+      "cache_sha256": "2a2d5bde7370351ab1584a51b9995b4d952adf501132300484970c23ccdf31dd"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261229",
+      "source_group": "original-bass-seed-261229",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261229/decoded.wav",
+      "audio_sha256": "bdc074a668eb6f8a644f31fa71ec2fa4afaa564eefaabf036bc249c121048082",
+      "cache_sha256": "1c6572286d52f80f44359430255a9753e0163d512e1e6cb124b0e9178b5d6c2b"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261230",
+      "source_group": "original-bass-seed-261230",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261230/decoded.wav",
+      "audio_sha256": "a9cfe9dbcb0707e6e104dc09fa850b0b51e572d1199c359d9637ebd80a70b94c",
+      "cache_sha256": "5d8c17bee3f244ca6a547645078d917d0f64901582fb443123b27236039af926"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261231",
+      "source_group": "original-bass-seed-261231",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261231/decoded.wav",
+      "audio_sha256": "f85c3ee54f16717952c685172dbacc8b3adfa8804d02657de82d15a641ada53d",
+      "cache_sha256": "80df8ce88774b8ced346e116daecb64598d0468b7fde350d182ef46fec8cd4af"
+    },
+    {
+      "id": "bass-boundary-stress-v1-261232",
+      "source_group": "original-bass-seed-261232",
+      "audio": "/training/bass-boundary-stress-v1/bass-boundary-stress-v1-261232/decoded.wav",
+      "audio_sha256": "271aea97394cd7e21cbb7c90a07bafb0143b090cf79938f76fbeea52be4e7b1c",
+      "cache_sha256": "1a83977f3723382fccff6a0f36e2b46670a00db7c4532f6bb88dd2c389c7c5ad"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261301",
+      "source_group": "original-bass-seed-261301",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261301/decoded.wav",
+      "audio_sha256": "8fb6a8ac7e180c3ca4d91863f71476a4b92c0eac753ab47b3b37ecaea9e0de3e",
+      "cache_sha256": "287df295f89885235a02a7a9b5549900157d3f96d85c6e9b7894b8654124a576"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261302",
+      "source_group": "original-bass-seed-261302",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261302/decoded.wav",
+      "audio_sha256": "87dfdbca5303d4a54274a8f7cb789a337af14932688bb13af18a9c85de944cd3",
+      "cache_sha256": "4e98d954ceeff2e839ed3dab1159fc6e5ecbaaa206d75ce744d92a486a3ac22a"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261303",
+      "source_group": "original-bass-seed-261303",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261303/decoded.wav",
+      "audio_sha256": "2cf83a4ac1be4eeabde723583822481340d075e17683469ef5674c983b6b1991",
+      "cache_sha256": "5c6c03f4099409b4b737149638ef825814ba7534145ac483b86dee39d639798d"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261304",
+      "source_group": "original-bass-seed-261304",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261304/decoded.wav",
+      "audio_sha256": "a82357d2050b780791a954a6b00c85daed8e9d60857e2df4a58c204754b4e047",
+      "cache_sha256": "dc44c9dc5c3f0e87e697bcb9b98b06a452cecb9f188caf97f67118fc4cd213af"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261305",
+      "source_group": "original-bass-seed-261305",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261305/decoded.wav",
+      "audio_sha256": "760a2baea1f99236b6fdea3abba45a6b3e18f783cfde0676d2453a894ed5b2d4",
+      "cache_sha256": "e91b29c3e23063527ef5d027afe635455f730002f76e6f0903a4c214bfe7b8cf"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261306",
+      "source_group": "original-bass-seed-261306",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261306/decoded.wav",
+      "audio_sha256": "b742992fd8eed3d4064c8bba9f5fb891079629a8b0cdfa036311d2c3440afc16",
+      "cache_sha256": "12bef14132f8de05a35e0e71cd67e5c88e6cecbcf2dece7bf2fd4a16a94ddcf6"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261307",
+      "source_group": "original-bass-seed-261307",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261307/decoded.wav",
+      "audio_sha256": "8522215ca1bc81affba47b4e00ad31d8b0c49e14a3cf1f3e7e2fc9bee5714f4b",
+      "cache_sha256": "4f7cd843b5f1c1c24c03e0b2ac615c128583033d6388c6f9e6cb1ade69ca6b3a"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261308",
+      "source_group": "original-bass-seed-261308",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261308/decoded.wav",
+      "audio_sha256": "09fbf236cedf19291820487c22687b938443f125d53a655fb1a8bf69386977a6",
+      "cache_sha256": "42f1f2babcafb9dc4673ef9f1454d9957af74e2d8a637739794783d48a8041b8"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261309",
+      "source_group": "original-bass-seed-261309",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261309/decoded.wav",
+      "audio_sha256": "2f5e31ab7f1ea6674b11b76e60b2ec62b2d4c5a9526ea7b88904b9f0b389698f",
+      "cache_sha256": "56952837eee634e712393377628fd6cbb8775c765138d2e6c0f6b46602d25379"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261310",
+      "source_group": "original-bass-seed-261310",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261310/decoded.wav",
+      "audio_sha256": "26c33bf84536f3b80020876024676153960852c545f7a34d17ba400b936efba2",
+      "cache_sha256": "fc63e97e1397d7768279355b49fe92220904feda8eb84ad746ef231ec5be9f0a"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261311",
+      "source_group": "original-bass-seed-261311",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261311/decoded.wav",
+      "audio_sha256": "60330610f631532518a258a1cbb925146475a30e25ca116bc0dada3bb47baf0a",
+      "cache_sha256": "8cc7cf7e2863ae81be96be2a1e7be5c8325f00eac5f2b2afe2f4465ff629cb85"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261312",
+      "source_group": "original-bass-seed-261312",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261312/decoded.wav",
+      "audio_sha256": "4352d7ea04fac437965c951abd5b8d3aac25c02142736eb7704762c7f44656d2",
+      "cache_sha256": "35098cb2f54961fd77d82d8561410b8ff62e22afaccc3cff6a959d7198987dbf"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261313",
+      "source_group": "original-bass-seed-261313",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261313/decoded.wav",
+      "audio_sha256": "6f454799b662ca681d1069538591b6ebefceaf59d736f271fddb30cff62bcf1f",
+      "cache_sha256": "526983c62c748b59d459f5abc970b4118269cbfeaf1d86ea5cdafba9fef23f50"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261314",
+      "source_group": "original-bass-seed-261314",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261314/decoded.wav",
+      "audio_sha256": "49ec79cd63579b751827d1786e4eeec8e9e5757bf1395c1837a6cfe7f4303ae0",
+      "cache_sha256": "0795eb21eb24b77843a5ef39539710ae2f10011c99dad4d25bc4f25ee3b5e75e"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261315",
+      "source_group": "original-bass-seed-261315",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261315/decoded.wav",
+      "audio_sha256": "bb47ed8bcfed82169d93b482948d4cdac11f0619956253d8a56ba0587f64019c",
+      "cache_sha256": "c8a4c476ef37372628cc8ead19b951feee20de80ddbe5e1c9fd184360c7931f0"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261316",
+      "source_group": "original-bass-seed-261316",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261316/decoded.wav",
+      "audio_sha256": "ed8bd87d4918a8de4f7207e79d0894f119f63074034ae98608a3a92174816f70",
+      "cache_sha256": "0702fc65ef909d23ed91925b7f9a666817288be1a2614e67146c039066432f6a"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261317",
+      "source_group": "original-bass-seed-261317",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261317/decoded.wav",
+      "audio_sha256": "64070585194a8bf9e0df1f7fcb1d490ebc26bca00206a3f871d4138fccac01c6",
+      "cache_sha256": "3c0076b53be14bf2578deea83838acd007b5d6998d4c1adbb0f9aef4ee2f22a4"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261318",
+      "source_group": "original-bass-seed-261318",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261318/decoded.wav",
+      "audio_sha256": "12ac099a6c619e7b79411a027f80196a76aa580ffe5f5e8e6a5c514fb4b0eb7a",
+      "cache_sha256": "e9c95db8423f9e0e43619e39ce10df84d5062a9a2a0483a8fcc638e4e1ecec77"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261319",
+      "source_group": "original-bass-seed-261319",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261319/decoded.wav",
+      "audio_sha256": "50e588c3eaf432116d19e1265384cb99b0f47c3c825d0bdc4efa38ad77cc4bd5",
+      "cache_sha256": "eb3b43c5f24dea19ed6521160fd32486e8782ffae0ddbc68c6ea7f4aab365074"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261320",
+      "source_group": "original-bass-seed-261320",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261320/decoded.wav",
+      "audio_sha256": "bc574d8671dcb01414cf2d6b54dbd7542b50db0eaf3a50a314721e9d961aeda0",
+      "cache_sha256": "3f6033f4a455af6ec69607dd3d230b7b231e75ea5a86a5d2f45aa4649271ae16"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261321",
+      "source_group": "original-bass-seed-261321",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261321/decoded.wav",
+      "audio_sha256": "3fcef4d0847910f27d06c3a9adca84215558c00235a488404160fa0b93a7fc82",
+      "cache_sha256": "a68a1b048049e448095606d2e26764307734671906db796583de00bf65edcece"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261322",
+      "source_group": "original-bass-seed-261322",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261322/decoded.wav",
+      "audio_sha256": "1d79c54cd50d661cb521dd1a2b7d32dab1f7a11c959231ce37b0ab06300bde91",
+      "cache_sha256": "30b84845a055c0b3a84e600011c504f383f4d569107db6680f63dcffaa9a3ee7"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261323",
+      "source_group": "original-bass-seed-261323",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261323/decoded.wav",
+      "audio_sha256": "3070a94d610f0b41bbbd178d9edf0c6c839414b4665f17f33df873af412f3f58",
+      "cache_sha256": "57a29c79c4e1ab44a9dec75fb8ceea3620260dc21e8e52a2c381d14c33066dc9"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261324",
+      "source_group": "original-bass-seed-261324",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261324/decoded.wav",
+      "audio_sha256": "18c692d94e5ea89ea9fdca4777c26c91901ded0fbb47e7e0fa44686f2c579b5d",
+      "cache_sha256": "44495ba11276c66e4ea7183170ea2cd55ee553557fe6173046c133565ca8943e"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261325",
+      "source_group": "original-bass-seed-261325",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261325/decoded.wav",
+      "audio_sha256": "ee8418ada3a374494f3152a5e9b489c479b3cfe40aa8aca118919e35650f31a4",
+      "cache_sha256": "c4d0869fe1b35597a7aa5a78e9d2835581f59b7342cf4e7684f3e8f8e009fb9d"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261326",
+      "source_group": "original-bass-seed-261326",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261326/decoded.wav",
+      "audio_sha256": "f21946bfec0745777f09b9f9d6d4bd1bc02e8a01d4fe898a142bec724524a312",
+      "cache_sha256": "ce094481d8b2a2d42f4028e2ed2cf55bfff356bceeed66be21b5431695628e65"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261327",
+      "source_group": "original-bass-seed-261327",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261327/decoded.wav",
+      "audio_sha256": "4ed31d26e9214f41d0c306017bed6ee89dae5dc1d24a3680ab9e8055150cfb53",
+      "cache_sha256": "2677ec6fd102a0d9c57ba2bfb56b3338ceeb1692c1cda83cd6f0fc0af6dd64a0"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261328",
+      "source_group": "original-bass-seed-261328",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261328/decoded.wav",
+      "audio_sha256": "d687e20c6ea3daf987e7764289a29f9c3b6aa8e14d332e2e8a0515b8ab76ed95",
+      "cache_sha256": "1b9e7bfb1d71b3d594197fb0724ac11cb207ff84a34cfa6ef1981a535c80c110"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261329",
+      "source_group": "original-bass-seed-261329",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261329/decoded.wav",
+      "audio_sha256": "9c1f2247a50feb83149c84d8518c2421e29f148613a2d235866dab8c33ead849",
+      "cache_sha256": "7b652b42a67e1e010f4f0e8bd20d9f48812bb6c70c3e387d08930f4c8fc353ff"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261330",
+      "source_group": "original-bass-seed-261330",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261330/decoded.wav",
+      "audio_sha256": "b9b852cb382a20388692bc3bd7e8956e233e80dd1302812c7b2ed8296bcb9ae8",
+      "cache_sha256": "9f3c1b430418b9e541cdb972e8245cb0aaf69a5463ace44774b9281f18bd0b63"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261331",
+      "source_group": "original-bass-seed-261331",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261331/decoded.wav",
+      "audio_sha256": "bd329a4d6568ceca26e1735222c404f06862eadcc22e0f039afea43690297586",
+      "cache_sha256": "34d6eeff2ec25ed9f03c53ce53a2c9536b0d94f0f788271feacf2abc15b7e5c2"
+    },
+    {
+      "id": "bass-articulation-stress-v2-261332",
+      "source_group": "original-bass-seed-261332",
+      "audio": "/training/bass-articulation-stress-v2/bass-articulation-stress-v2-261332/decoded.wav",
+      "audio_sha256": "e7338c3d9ad492c73dbb81fedffd0535d7827099b93b0b131d41a4fadd998f42",
+      "cache_sha256": "64d2807b02572e0451d41cb33e95938d21e42d19073c5bc2931e62d4f77857c6"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261901",
+      "source_group": "original-bass-seed-261901",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261901/decoded.wav",
+      "audio_sha256": "b4017fc39ca3ec84faa2f727fb3f527716059a6603629258122be1069f7c87b5",
+      "cache_sha256": "33ce3b9ae88a5b52bbf5419502a5be5dac8228548a5f6914ae6a85ca354f08dd"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261902",
+      "source_group": "original-bass-seed-261902",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261902/decoded.wav",
+      "audio_sha256": "d05efc758fb79fcca35b1662e9ffae99c5b426368ed2fa3f6f2478da6e1c7ea8",
+      "cache_sha256": "7b5ea56ae353283c002e8ead46d1349a386f45020b73d3a8913eb2b435371ce2"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261903",
+      "source_group": "original-bass-seed-261903",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261903/decoded.wav",
+      "audio_sha256": "b632c336dd8b888c198ff93163b82292bd76d7cd1041013728a1a8b5472b785a",
+      "cache_sha256": "66030e4d2b048bf1f5f447f13cea2673096c72ea36f5d663f7a7fd0c87a664e1"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261904",
+      "source_group": "original-bass-seed-261904",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261904/decoded.wav",
+      "audio_sha256": "51a2ca655c4a5ef66cecc07ce0f885b7a14c25de5bf7b9f141b3b9272a28ad78",
+      "cache_sha256": "297b6834b275341760e0d7648c87020fc6b78ed874311bf768314acbb5f1b15b"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261905",
+      "source_group": "original-bass-seed-261905",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261905/decoded.wav",
+      "audio_sha256": "9f6934c07400345f6790d1929c71a644de8809fc923f79588cfc27636c7713b0",
+      "cache_sha256": "98f48e292e08c04c8efe45f2a9777b0ecbdcfb707f3b7cbc57b7584491a4aed4"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261906",
+      "source_group": "original-bass-seed-261906",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261906/decoded.wav",
+      "audio_sha256": "eaa83834a4885e0b8a7c7b37a386c2e5445de61e1de65aea7101b134b7c7896b",
+      "cache_sha256": "5da80657b2d9469814780442a7d0405a90d9b5fb35080999bba56e25a28f1557"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261907",
+      "source_group": "original-bass-seed-261907",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261907/decoded.wav",
+      "audio_sha256": "4f9779b694dc5956470ab2551f6d8c806f03e7ee2d77ac84882272fa04f054ac",
+      "cache_sha256": "7ba4fb782c84e05e2988766581d2c9bb575a1b0989c139a89b2bf62dc986e4ed"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261908",
+      "source_group": "original-bass-seed-261908",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261908/decoded.wav",
+      "audio_sha256": "c7bdef763d0140dd9aa4f949e1ff0d0e8e038c04eabab6af04d30ef9687758d9",
+      "cache_sha256": "af875bbe2f7133955a42505e22e39c6d670aee21bd811617747bb78295c62564"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261909",
+      "source_group": "original-bass-seed-261909",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261909/decoded.wav",
+      "audio_sha256": "bee1a4cf20c9206b1beb6f50143207a83f95523abb48a18e401fe51ecebee81e",
+      "cache_sha256": "2948e067b3521ea74edd076ee53c5759ace4ecb70228f4ecc5d5519632bc8fa9"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261910",
+      "source_group": "original-bass-seed-261910",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261910/decoded.wav",
+      "audio_sha256": "6a7d5becd7180421101a047cffd58df42c14067cc46aba16492c5ab03834a51e",
+      "cache_sha256": "3f04e3542648b253761ccbf490d1c3509c75c6a93d791b4569abb57d43a4782a"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261911",
+      "source_group": "original-bass-seed-261911",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261911/decoded.wav",
+      "audio_sha256": "1a1ab3ee45dd86ed3b6165b58178ec92838b45a7d91bc2cce93f64aa8a843612",
+      "cache_sha256": "b7cacae744484833bdc535e7efe6e6fe7bc2d211b3047c6b3f34889139ec1fc4"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261912",
+      "source_group": "original-bass-seed-261912",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261912/decoded.wav",
+      "audio_sha256": "4a7a76c91f6761d78761c68b2234f3568ea3fe7d05ffd07381114314ba95d79b",
+      "cache_sha256": "2994e3a72ca769f286622e8efc589c115eaaf7ea0414ed3499402017d62ea915"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261913",
+      "source_group": "original-bass-seed-261913",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261913/decoded.wav",
+      "audio_sha256": "09c15ba922a4d39f5082eb61623a224bddaef78ae131ebe55c22bb2eb9ed4187",
+      "cache_sha256": "c9737c5c49ba7c52d2ebfe21047f26746d44618679d985480afdf08200ae186b"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261914",
+      "source_group": "original-bass-seed-261914",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261914/decoded.wav",
+      "audio_sha256": "47e5a63eac33e86cdd3e2bbcd1510945cfdf54dfa8da7798980adb23a98a2f7b",
+      "cache_sha256": "9aa92f48df87650207eed07be2c64a9607d3c8d454e8d09d841ef21ad34a323b"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261915",
+      "source_group": "original-bass-seed-261915",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261915/decoded.wav",
+      "audio_sha256": "7bca96f049f60c96c4ccae78c434f278055450f69d169c5afe38c56a05394b5f",
+      "cache_sha256": "6b545b393b010dfef1738a53c21805547d35718f634756b9e614576a94ae119e"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261916",
+      "source_group": "original-bass-seed-261916",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261916/decoded.wav",
+      "audio_sha256": "99032664757d8d571b722db76c6c05a344fc6f26e4b42b4ee4dbb16798213308",
+      "cache_sha256": "4a4cc2759c237b8e5526841717f3b48f26fe2dfca681b0cd760a70f75d49a4d6"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261917",
+      "source_group": "original-bass-seed-261917",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261917/decoded.wav",
+      "audio_sha256": "5b157600286db9b85ed475ca5cef0d30f669135efb7a901cc5222a1ddc037f67",
+      "cache_sha256": "0e0f1e1cadc6ee4239454f5fa38c074015a9aa541c1c5ea4db555cc2d0259098"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261918",
+      "source_group": "original-bass-seed-261918",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261918/decoded.wav",
+      "audio_sha256": "b9732c316c7a57bf622d79e1a86e2fb9f8b6acacb8290c7df932073a0528ab39",
+      "cache_sha256": "2e589bd2e61da062c7f88ca7b59b6310522eff47d4a8f91611b1a245773bbcd4"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261919",
+      "source_group": "original-bass-seed-261919",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261919/decoded.wav",
+      "audio_sha256": "b47b6174ee32e4b777f7564d6f57a7c289a3debd1f7cd88627c301631f8a5996",
+      "cache_sha256": "7871bf0ee2290c2413a899eec07581bc78d9c463bd6961fe08a90afc1a0c450b"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261920",
+      "source_group": "original-bass-seed-261920",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261920/decoded.wav",
+      "audio_sha256": "2ac93a729e65e2e33227e0c55681d7023eb7ebd6c0dbe9e7325b2490a6048dea",
+      "cache_sha256": "0362a318250bb596017a35fe470baf4767005e4f98305f91b44d1f2ab0a4dd51"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261921",
+      "source_group": "original-bass-seed-261921",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261921/decoded.wav",
+      "audio_sha256": "213cc2804ff45dab67bfdce9d86956dcb1d37a24a3ac6acf3528d7d02ce0619a",
+      "cache_sha256": "9beb8cbccb41ec381dae295e2d61c2ee6fad85ca315c301e9d7a7f47ccc8114b"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261922",
+      "source_group": "original-bass-seed-261922",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261922/decoded.wav",
+      "audio_sha256": "72c023b187cb2921c0cfbd0236cbaf90ffb463f0a12ef7e50a06b130bd01af73",
+      "cache_sha256": "3e107b2abcfe3781e1c13543e775f1e931aeac4de7c9efa4561a21e2ee2cfb12"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261923",
+      "source_group": "original-bass-seed-261923",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261923/decoded.wav",
+      "audio_sha256": "d151f0efae418e40a5d15a77b2ef058647d2d0e8d4872847decc5e19804ca847",
+      "cache_sha256": "cfb932dc0f9bf273561a4f91d09c0ac85459772503ef7cb6226ef5276d592103"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261924",
+      "source_group": "original-bass-seed-261924",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261924/decoded.wav",
+      "audio_sha256": "b2a6fc9049de0abb5d9d4ec5b80a1cea59b1865adf1ce3d587d77d585360ca10",
+      "cache_sha256": "df45e78f840a29655868b080f3c7d19f93db0be0ef24158e3618487f7caa602f"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261925",
+      "source_group": "original-bass-seed-261925",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261925/decoded.wav",
+      "audio_sha256": "c011030c852175358af08ac76268cd2fc687feaed33e6a56189292aa40decd29",
+      "cache_sha256": "4b9886b830aad6247825608abfc3d05850d2bba231df2324a24da62a829931a4"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261926",
+      "source_group": "original-bass-seed-261926",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261926/decoded.wav",
+      "audio_sha256": "66e934f4509f9334d4c65b4fb11b396eea255151d76a4a7756d8e56552bb7dac",
+      "cache_sha256": "715bdb0d82d8c852081b5796714d69a1c5ec090217d2bcef4c580c2b55cb0481"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261927",
+      "source_group": "original-bass-seed-261927",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261927/decoded.wav",
+      "audio_sha256": "0364402dfa5a9fdbcc531fa6dc08039f40b061a44990817d189b6a229cfd3dfa",
+      "cache_sha256": "2d60acee9d2d4a0b47fe63ba2b9bd347f6cbfc2e87e94100f06f55c540875c3d"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261928",
+      "source_group": "original-bass-seed-261928",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261928/decoded.wav",
+      "audio_sha256": "5a8b8c2252029377f0ffb5a48bc0603b5b7cc43d2d8ca1c4b3eb6e243f937ced",
+      "cache_sha256": "98220ea6ddc5fa7953fab40bae2c672f4f03128a5d8ebde30ea715c14d559e8f"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261929",
+      "source_group": "original-bass-seed-261929",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261929/decoded.wav",
+      "audio_sha256": "04f71aad18f946b7047fbc2d54198c6c1618e331c4d5670349c165f73fc52764",
+      "cache_sha256": "9132c2da8b50f1a0325d4645d02d7e98bf55df7c9c6216e5e468e4ddd257316d"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261930",
+      "source_group": "original-bass-seed-261930",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261930/decoded.wav",
+      "audio_sha256": "cfaf394407094f4accf6f22b5eca1c7062183aee08770246506fd44e5a3e6cfc",
+      "cache_sha256": "5c9374b340d554e2f66c5a1a53e8bf6d45151c7f21d32f8473e270183a1e3408"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261931",
+      "source_group": "original-bass-seed-261931",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261931/decoded.wav",
+      "audio_sha256": "c8a8650d0120cfb13fb827bea4578d9ee2f8b42309baebde19a2f11c1d6c8af7",
+      "cache_sha256": "b40b8c129d87f3a78368c4bad819871869ccefeb9a12549fa00ff6c033f9d708"
+    },
+    {
+      "id": "bass-residual-fresh-v1-261932",
+      "source_group": "original-bass-seed-261932",
+      "audio": "/training/bass-residual-fresh-v1/bass-residual-fresh-v1-261932/decoded.wav",
+      "audio_sha256": "71e15e8baafb95dff1e819839b682e5c11dbea476178a6e8dc1ca0a3705e7e1c",
+      "cache_sha256": "43703e3360471247255cf6feabab54407033522750e092fc453bd0f61a41fe56"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262301",
+      "source_group": "original-bass-seed-262301",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262301/decoded.wav",
+      "audio_sha256": "339d79e0d4b38505ef056235f196a2d2952c8a2e961357ad8636daeaffe0dcb7",
+      "cache_sha256": "969da1301e91adcd4878cf2ebe04c67898f862252698fcc8a7c405e7bef20124"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262302",
+      "source_group": "original-bass-seed-262302",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262302/decoded.wav",
+      "audio_sha256": "d30598bd9773c9dba7da8d6eb194f763549d63fae0c74af0242b15f35fdcdbb0",
+      "cache_sha256": "06ce7ba39f8c843cc2d3bf802fce2c716b52e2851205ced6d1558ab132d52fe8"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262303",
+      "source_group": "original-bass-seed-262303",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262303/decoded.wav",
+      "audio_sha256": "3b7425e305dd7a5d769d5c49d0b9007b23eae4bd13c1c8a3b3982f33e3b5332f",
+      "cache_sha256": "7a26038e28d8f666bd52369a19fd3c7c0c88bef8ffc7fc3cd4c3b385af0ce08c"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262304",
+      "source_group": "original-bass-seed-262304",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262304/decoded.wav",
+      "audio_sha256": "9a72b7cdac9bd42bc085bdeacc46027adf54720d160c033428450d2f7b5badce",
+      "cache_sha256": "e4ad032b5518c36030b4113310ebed4681b5f1dbfcf29dfdcb63feabe079cb27"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262305",
+      "source_group": "original-bass-seed-262305",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262305/decoded.wav",
+      "audio_sha256": "d9ef2eb3f2a6d3141191fae435f51dc51f3be65212ee7867cd12c771717316a8",
+      "cache_sha256": "08903a0b734a9426c5923defaa973005abf2b41708672fb302ad66a082e639b7"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262306",
+      "source_group": "original-bass-seed-262306",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262306/decoded.wav",
+      "audio_sha256": "ffc08ba4ec2ff1735b90d533b78fb56cb756d5278f77e3294b5a7fd25250bcc2",
+      "cache_sha256": "3863334a2cb378e7d1635f66c3a57057cf2e9d48081ac3585dee165d9919b95e"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262307",
+      "source_group": "original-bass-seed-262307",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262307/decoded.wav",
+      "audio_sha256": "afc797ae2c333cd57269abd228e483e50c1b1df3b78ef0b6a3d5b7ace67af788",
+      "cache_sha256": "387c0d1445cbdef957eb133987baa9602034ac611068147c2bd46f16076bebaa"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262308",
+      "source_group": "original-bass-seed-262308",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262308/decoded.wav",
+      "audio_sha256": "4a1173a864b75219e7960bd3a2c133dab1ffeaf4bb50793fdfc8a92891a9b3bf",
+      "cache_sha256": "080e28b2bd0f582585cac5d408fdde525f774c68054bf111b7835f725b2dfaf7"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262309",
+      "source_group": "original-bass-seed-262309",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262309/decoded.wav",
+      "audio_sha256": "3b55b6c37f24f0f2b89a1623a2480fe76a083fe96ffd99715b92d3b9c027535a",
+      "cache_sha256": "41771f3934928739549fad7551f10180d789380af74b346446be12eb0e28d9d2"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262310",
+      "source_group": "original-bass-seed-262310",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262310/decoded.wav",
+      "audio_sha256": "40ed38edebacfe50044b95e413457b155236b617b688aa119a5c3cc2e1ba3a40",
+      "cache_sha256": "50ae7decbe6e2f8fb188e8ee5612baf1e7ec14905f5fc28406c254508e1b2760"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262311",
+      "source_group": "original-bass-seed-262311",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262311/decoded.wav",
+      "audio_sha256": "86a075f2929f4eed32d7bf06e30e73665c38691e870517afb9260cb8d8ecddc6",
+      "cache_sha256": "6446127b1fe24b1908047f4bc7a114f55fbdc44a8f906138d310d74105a8fa2e"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262312",
+      "source_group": "original-bass-seed-262312",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262312/decoded.wav",
+      "audio_sha256": "6cf9797ac3ce1ac9ba1c55357d7c115a2913aa2753f60a769bb0c9c498562859",
+      "cache_sha256": "edb89c172b1c195d779dec242b5e90041d4854708797330b35cf291fdc97fc22"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262313",
+      "source_group": "original-bass-seed-262313",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262313/decoded.wav",
+      "audio_sha256": "62f572e81e37a1946a081d06d74ed6fc8f55df8f6ccc17cb9e6b9c0d97259f79",
+      "cache_sha256": "14cd6c115bbb20e3bbe63d1db4b38687d8d0b518db03707a184dc76136d154e3"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262314",
+      "source_group": "original-bass-seed-262314",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262314/decoded.wav",
+      "audio_sha256": "09a60083220fd4270a33c7b5d808f5eac9c995f94076f87bd6347975c5e34c92",
+      "cache_sha256": "4ee58cfb7aad447828b193bf0146771ab5e73000f0ac004a6cdd90c4e2299506"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262315",
+      "source_group": "original-bass-seed-262315",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262315/decoded.wav",
+      "audio_sha256": "97fa705f0aab45eca10c44160c764e383437c813dd253f0e376ffe7c5c74d3d7",
+      "cache_sha256": "03e5145b24a460bdc73fe3b0b99a3321a53506937e2d20a48c717d2835280bc8"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262316",
+      "source_group": "original-bass-seed-262316",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262316/decoded.wav",
+      "audio_sha256": "73062afdcf275c61315fa14fb99be20ce84168c5d67107234172fac4730a000f",
+      "cache_sha256": "2da0a951157102fc8bef3838c70015820b125c2e5897722dbf5026b134626fb9"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262317",
+      "source_group": "original-bass-seed-262317",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262317/decoded.wav",
+      "audio_sha256": "955763796205e2bea02ba228e403b0c39a3a2c314913d656440ad404f1d12550",
+      "cache_sha256": "a562421d0c2dcad6df3b581f3f5cc525f1617bf0a49b5bd3bb3a5f62ca67dba1"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262318",
+      "source_group": "original-bass-seed-262318",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262318/decoded.wav",
+      "audio_sha256": "3c6c7f23509962692d826fd2bffe1a78b0ade51c1d0803afd016d1689c5ffd89",
+      "cache_sha256": "cec3afa66c6423c976744415ca5e2f0824221fd7aa53e1ab7b40fdadd026546d"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262319",
+      "source_group": "original-bass-seed-262319",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262319/decoded.wav",
+      "audio_sha256": "7739f663d8356bbf133effbc5c16f8688807a1edf9353cc1e6ffc2b6c7b0a671",
+      "cache_sha256": "4afb8bb8bfb073da749f0bf2e4834d18fc4fe1c05ae20de0711b4ad785e43493"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262320",
+      "source_group": "original-bass-seed-262320",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262320/decoded.wav",
+      "audio_sha256": "7c78e8a57b888a16d495fbaee776a2f0e363d421078f961b0681224a815582f9",
+      "cache_sha256": "87ddf0c585dbe017b545cb9be45a94441861c4ab6352b3daa5a9d0299c96a019"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262321",
+      "source_group": "original-bass-seed-262321",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262321/decoded.wav",
+      "audio_sha256": "e35b7ed580625551cb92b028967acc01f5f4dd5f74605096044cf1bbaf3ff4e2",
+      "cache_sha256": "2b74f9f60faa964c0839cd9c1d370210a9810e295867aa74aa283211a2127e5d"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262322",
+      "source_group": "original-bass-seed-262322",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262322/decoded.wav",
+      "audio_sha256": "df5de5fb6aa0ed2417348bf7e3d60780bab43c991b2133842cb44b1debba5e77",
+      "cache_sha256": "63e2ea96a063801555b21f0c7e54ba699f8e174d33ed2b48c37f5cfd2c6ef86d"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262323",
+      "source_group": "original-bass-seed-262323",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262323/decoded.wav",
+      "audio_sha256": "b82709a84aa230ac012c86943afc1c81ea1978c76483cee23ff43528f0cced2f",
+      "cache_sha256": "25499eac23d2528f4f4a7347419f1fa1eea52308dde94d931f326f4ac24c79d6"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262324",
+      "source_group": "original-bass-seed-262324",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262324/decoded.wav",
+      "audio_sha256": "2960554d2bf0afa3786a0e58a761a7b9680d38b42cce2931d0bb3b904b271e80",
+      "cache_sha256": "3b6c05d722b97d109ea25f4f1f489c47176cceaadf582bfc44af60c47cfe952a"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262325",
+      "source_group": "original-bass-seed-262325",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262325/decoded.wav",
+      "audio_sha256": "a2b55342877e28899fb8851eee3622fbac40404136046e442ffb061417b7a403",
+      "cache_sha256": "abc6ccfe322a8eeb883dd6cc339b5ff53b562faa972798aef50bbc067d124b41"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262326",
+      "source_group": "original-bass-seed-262326",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262326/decoded.wav",
+      "audio_sha256": "5aa4f6d314ae7cc83833d60b4961271cc24469cbd88aee411b213243a9bc3c5d",
+      "cache_sha256": "ed16d9e634dd16731778355a4686c71e9d27ffbef8614283d5c41db41793e4cd"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262327",
+      "source_group": "original-bass-seed-262327",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262327/decoded.wav",
+      "audio_sha256": "a41e84505ac7100148070d717783a755ada5068b755bb793027c6f31201b0aed",
+      "cache_sha256": "aa2b81ec64ea111340624483a921e2f0bceca380f478cc6c21641b5a5a6dfabf"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262328",
+      "source_group": "original-bass-seed-262328",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262328/decoded.wav",
+      "audio_sha256": "2b25b3c3c3d20d758f97b6d7036b63f8082f42b29c8c9746ad3b9d971f13b6f2",
+      "cache_sha256": "732547ac0a81f334442a9540e5278a5a1470a2167e262d83c5a195153014505e"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262329",
+      "source_group": "original-bass-seed-262329",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262329/decoded.wav",
+      "audio_sha256": "17746bf8e124dc443731761c13447f5335108561ffaf6d3d885cebd8c84c7efb",
+      "cache_sha256": "209384b7d7e8e021eaf8f48a6ef9ccf45e7d6f448103d912df6185ae4e663d11"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262330",
+      "source_group": "original-bass-seed-262330",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262330/decoded.wav",
+      "audio_sha256": "a34a8bd45eacbb6ec140542c4fe99ebcd1cb2e3b627137b568cdb14c74656c83",
+      "cache_sha256": "a413097fd41f9a28dfca9e294994cdf0a8ce6ac24b8ce27097e7101b21965be3"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262331",
+      "source_group": "original-bass-seed-262331",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262331/decoded.wav",
+      "audio_sha256": "276114a250a905326dea10035d22b0e4307b4bc35a2c3ee1b334f4a7b39125c1",
+      "cache_sha256": "e16125efdc4307d1b4aaa7799b6a0867bf3a0f25ea1a6cc8e2e2c596da90772d"
+    },
+    {
+      "id": "bass-salience-fresh-v1-262332",
+      "source_group": "original-bass-seed-262332",
+      "audio": "/training/bass-salience-fresh-v1/bass-salience-fresh-v1-262332/decoded.wav",
+      "audio_sha256": "4132651448c84d3d46c44819ee69001564125b4125acbd12a73f5b2c05360320",
+      "cache_sha256": "e59cc6d984ac58fb2cbf3cbf5bcaae120e2d5c3feb0509cfd323aaedcade0158"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262601",
+      "source_group": "original-bass-seed-262601",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262601/decoded.wav",
+      "audio_sha256": "70fdb653f1ba720cee76d2576484c5484983050796062850f49cf00f457b0286",
+      "cache_sha256": "e37729e80de6cf8a7412a43a0605649204909a8ee8cd4cb8f0f1b34135a4c0ec"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262602",
+      "source_group": "original-bass-seed-262602",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262602/decoded.wav",
+      "audio_sha256": "6a83f3e7e275fc8c61040cbe79b00ea8bdebe430743fc756414a60b53c15e278",
+      "cache_sha256": "e5c88d959c4fb00a768e9e528735b0d504414d4f83eee1073ad2bae9e3f22d49"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262603",
+      "source_group": "original-bass-seed-262603",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262603/decoded.wav",
+      "audio_sha256": "c54dc08b4606d4ad6bbed6ccdd4bf082f21b4430b5efb75626e1cf36a491f4c7",
+      "cache_sha256": "7414f72a47aa10b0b912b287dff0aa24c2afa3b7340f3da813f27a70e669180b"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262604",
+      "source_group": "original-bass-seed-262604",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262604/decoded.wav",
+      "audio_sha256": "4ae0269ccc8ee6e2ec2c8892ebd2c63342a8a57449a6725503f1970cbedd7059",
+      "cache_sha256": "7ad6a0cb49acfb58f82d152a176bff5fb6ff8cd71e0cf95ea7ef41f808b0e64f"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262605",
+      "source_group": "original-bass-seed-262605",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262605/decoded.wav",
+      "audio_sha256": "dd0526c6638607896c26c852b14df024169d2bc72e96a374f1910d15179d7a76",
+      "cache_sha256": "3204eea3ffbb0d583af18ace141e2a410f4081af878f484a3039243b44f9b233"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262606",
+      "source_group": "original-bass-seed-262606",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262606/decoded.wav",
+      "audio_sha256": "7d29a09b7fc9b3b5e1bc490352a9a7fdb37755384892a216cb73dc41c2f4c074",
+      "cache_sha256": "99634892ac3f024be7b9fb08bcec7ace131fedfc1125a08a9550a101ae65dbdb"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262607",
+      "source_group": "original-bass-seed-262607",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262607/decoded.wav",
+      "audio_sha256": "ac127d52589441dbd1ad23747360af7f38ba797ae47b3c4901d5e34fc628505d",
+      "cache_sha256": "6d224bf9e104b002c6ac1a7fcec6635f31230e6dcc0a354831c7397ec6b6f5c6"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262608",
+      "source_group": "original-bass-seed-262608",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262608/decoded.wav",
+      "audio_sha256": "cabebb1ad61866dbfcdf1206be791999a596284493bc749a6f01869f63f71dd7",
+      "cache_sha256": "42bd7268993e524ee3379ef3972997aee18a58f84a4783ec2926cbee9c610070"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262609",
+      "source_group": "original-bass-seed-262609",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262609/decoded.wav",
+      "audio_sha256": "ba71ef68e4399c9dbe981545a9b04c7ffe4e39de0fd602851630a569e22a7287",
+      "cache_sha256": "7ee4072c8e3533a41038d7ca714655ccfd1a546bb3aeb1d40220622383578d83"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262610",
+      "source_group": "original-bass-seed-262610",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262610/decoded.wav",
+      "audio_sha256": "2ccb7c3f07350afb8530d6695e861475aeafb3efbf89747f3485ec35f9033f49",
+      "cache_sha256": "5c0eaae46b6941a21cea12356e5dd9f0e77e1d14a03defd94ce9ccc812a7b6e3"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262611",
+      "source_group": "original-bass-seed-262611",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262611/decoded.wav",
+      "audio_sha256": "7a8f2eb32a018f2ffee2d5c91694d3db525f1c83a1561cd8105996a8372a063e",
+      "cache_sha256": "e292a703e1f307fc94a603fc552352d4a188693ca1fdd70e3afdef3bc37fc22b"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262612",
+      "source_group": "original-bass-seed-262612",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262612/decoded.wav",
+      "audio_sha256": "e2c8441bf4aea5fc5a2ac8150322b5d762d87773c80c3e2f60cb2af75451baf6",
+      "cache_sha256": "aa186ace8f7a7f3264304dbd1418c3c8d5223aad7da81382d435fd1910f01b00"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262613",
+      "source_group": "original-bass-seed-262613",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262613/decoded.wav",
+      "audio_sha256": "2f615f705e71d5fe1f2db9d855a257343285de4741b6d0757547ebe4f01ddd06",
+      "cache_sha256": "b360a0efe18b06a44a213cf22bbf3ce9b0a61b55891869c5e9f6118c55b5beff"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262614",
+      "source_group": "original-bass-seed-262614",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262614/decoded.wav",
+      "audio_sha256": "184fae2514a2fd7d6fe5e1095e55e6a33c76b22198cfdff9e2246a87edec8d05",
+      "cache_sha256": "e74d6abffabf656d229b5e1044bf97592001ffce2dc9c2da8bfc547e3e7854c3"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262615",
+      "source_group": "original-bass-seed-262615",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262615/decoded.wav",
+      "audio_sha256": "7fff3580fb07bed23b745a56e6cd25ca61091ef0563200d639bc1eba07dc94d7",
+      "cache_sha256": "8f0345387b4a18deea4132e61a7fbc4e455d93adf1a6e45334a006955a3cbe39"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262616",
+      "source_group": "original-bass-seed-262616",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262616/decoded.wav",
+      "audio_sha256": "5b4fd93c4a950273616175e4c7950d7188569a504a7ad7486195717a0255da41",
+      "cache_sha256": "0fb9316c6a7a7d25f6926b32ac6f4e9207e10f49c6864ddeac673c8482870833"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262617",
+      "source_group": "original-bass-seed-262617",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262617/decoded.wav",
+      "audio_sha256": "7903097def51f130e8cd1b45bd6bfc052469b2f34180d0f84ed362830d7318f2",
+      "cache_sha256": "ac717f9ebfd9def1e15b6ce169a8fecd0a127b59d1289b9d4a8de985477e4825"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262618",
+      "source_group": "original-bass-seed-262618",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262618/decoded.wav",
+      "audio_sha256": "5b7cd86de39746895e2f1992e5426bbf88cd526f6fbb7c3af024f0aa5677ef27",
+      "cache_sha256": "e704a5c12c5e37139480ff02e33e3eeb3c3baa4e8e0c6e66cb262892b5a6f4bc"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262619",
+      "source_group": "original-bass-seed-262619",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262619/decoded.wav",
+      "audio_sha256": "00bc7f23fd2cbbdc5b565f1b7596cb6b87fcb8d002907b09f98a7da084285faa",
+      "cache_sha256": "547bc27d4d6832488b9b4558ff45cc6359aed1fcde8e0efb7b13b3269c249b31"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262620",
+      "source_group": "original-bass-seed-262620",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262620/decoded.wav",
+      "audio_sha256": "346b9a1257120efb22c02d480a6e9e6c266cd4b2cced23809f18f0c797354c15",
+      "cache_sha256": "8180cc3c9034679daf7e82e5b9757df8b50a8a14692b3aa3eb104a55cc7e0a72"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262621",
+      "source_group": "original-bass-seed-262621",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262621/decoded.wav",
+      "audio_sha256": "e25a536c9d9363e8677b1328ac947f08e080a2d22eecc421fa1e56af8592bc4a",
+      "cache_sha256": "b7e8acb20aed6e1bb02edddacb4c7fee94a1d923a9b5d3cfeaedffb68ff04880"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262622",
+      "source_group": "original-bass-seed-262622",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262622/decoded.wav",
+      "audio_sha256": "6abf17f54d943efd5c855329beeb228e80d7e26b6c6c9dcb2506b5d07fc79434",
+      "cache_sha256": "ef6d709b63141bb0e43d561f6490050242b45da66f13ca1b6b9c66f1c9a3381e"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262623",
+      "source_group": "original-bass-seed-262623",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262623/decoded.wav",
+      "audio_sha256": "05365a92afe8c2b73da92796e7146af5427d9d195c6256cf65e4e4a31c737931",
+      "cache_sha256": "8e79608e40bc59a60c302ce874c20c3ba9456bb36ee8522e3b9d93d905746ed6"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262624",
+      "source_group": "original-bass-seed-262624",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262624/decoded.wav",
+      "audio_sha256": "f3418d6cd58c4eb6ce0e391ccaf08a93decb9035ea05f06f1375a32164645fec",
+      "cache_sha256": "d2d6af752bf5df683c6c348dca088ef0251d9638a698789c659b0594f3241e42"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262625",
+      "source_group": "original-bass-seed-262625",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262625/decoded.wav",
+      "audio_sha256": "98e2e81fc46a3a53501f23941b7bc484050cc897603328283e48330c2ab5ac0c",
+      "cache_sha256": "17587d0460fc8b44b8f294058a8ec36f769a8e40bf9f0924cc30d41f47c50ccd"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262626",
+      "source_group": "original-bass-seed-262626",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262626/decoded.wav",
+      "audio_sha256": "b4744bc4cc85274913f0857a0e3acb3ffd9320af478b747d10875b9e4797ae8e",
+      "cache_sha256": "bada4ed891aeb97795d325a58ac4b3ff0353e654330479b7fc4dd87767c15f34"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262627",
+      "source_group": "original-bass-seed-262627",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262627/decoded.wav",
+      "audio_sha256": "489501e63f2d67e101e078f261c708e29f30d83afd7a01d48a23c4984f4ec59e",
+      "cache_sha256": "dbd1f5f5fbfc7dc6c90b95de1fdb955b070dab368763ac0d226fed3a56015bb8"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262628",
+      "source_group": "original-bass-seed-262628",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262628/decoded.wav",
+      "audio_sha256": "f9cb4a64ef6d7f5b3b97a9c5b951960bd964823f9786a151bd5de65d60f3ca97",
+      "cache_sha256": "96b0a768b351772509e8151ad74fa8e1442f69a04ea618489e64fc7d92ad96b5"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262629",
+      "source_group": "original-bass-seed-262629",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262629/decoded.wav",
+      "audio_sha256": "07429a35926115df1c75f0fccc44f994e8d548fbc2bf88a60ee04e37873cf9da",
+      "cache_sha256": "ba35b01dc45e93755646a790268fc4692380dca5e590eec4a68e6d0b58097859"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262630",
+      "source_group": "original-bass-seed-262630",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262630/decoded.wav",
+      "audio_sha256": "1d73d3487b7df0bf366af513c2519e589ae9ed7e85980fc7daab6a60f577ebf3",
+      "cache_sha256": "ee897a8ecf3e3e3b4eeb0db33dcca424427d957b341bdbe9844c867ac69b1c02"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262631",
+      "source_group": "original-bass-seed-262631",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262631/decoded.wav",
+      "audio_sha256": "0efe4b8c5c324a397cb873e5db407f78d823ccdc3240041901175b4f07095a1d",
+      "cache_sha256": "604a55c91fa4c222709231c20bbed975e8cab3d9d621cbc4cd019a315a35e5d9"
+    },
+    {
+      "id": "bass-texture-fresh-v1-262632",
+      "source_group": "original-bass-seed-262632",
+      "audio": "/training/bass-texture-fresh-v1/bass-texture-fresh-v1-262632/decoded.wav",
+      "audio_sha256": "70ddb2897545c00a283525ca71b6cf4d61c3b78a9da3e832836aa6296a47e6f3",
+      "cache_sha256": "20909ae91cfb3e70fbbf47cc176a6d1ed5e353d6f69b619d129b08bc3f2edb59"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262801",
+      "source_group": "original-bass-seed-262801",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262801/decoded.wav",
+      "audio_sha256": "f3da2bd304f52048db6884139778d74ff3517ff31d85d6fdb151823f23d09df9",
+      "cache_sha256": "1a76a146dea46e3f6d18e3d5719ef2df8304c7039707ff0448ac4488d5282bee"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262802",
+      "source_group": "original-bass-seed-262802",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262802/decoded.wav",
+      "audio_sha256": "0eb0bac0e9044be92d4046c10b074ee63a9fba683b30783c7828f3487f1da24e",
+      "cache_sha256": "1a96af6ff77c236bacdf4ea4cc9f5964f1afba518afa5f69884f11178c1de7e6"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262803",
+      "source_group": "original-bass-seed-262803",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262803/decoded.wav",
+      "audio_sha256": "c7a983195a52b19d1db2e9e89ff0ba4c8bf880c17f420dd7ddb842fef3a3e4f0",
+      "cache_sha256": "fc1c8688bd79f5d83e88d63e29585e057e4e8c973163e94d74c9717d8cc69150"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262804",
+      "source_group": "original-bass-seed-262804",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262804/decoded.wav",
+      "audio_sha256": "0ce6ef78641a8be78695ceba06de4153acac7b3330e29dfebe9ebd6f301bfe7a",
+      "cache_sha256": "bfb3ccb6ec9ddf3d909a03befc0c003039ca0074a4acebaa71347734bae27541"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262805",
+      "source_group": "original-bass-seed-262805",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262805/decoded.wav",
+      "audio_sha256": "a28f3fcbc17dbc04c1901ba550183a8a79674a7b6c9ec595b6f9f5979dc09e81",
+      "cache_sha256": "c942eb0a6f9bc1bcec27437d6994b426d1f76ef81c49e234529c1df7b6702155"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262806",
+      "source_group": "original-bass-seed-262806",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262806/decoded.wav",
+      "audio_sha256": "5cc395e8d855bf414cee23f4e2da5aab9d14ac17bc4e4bcb794a74f7ca531fd0",
+      "cache_sha256": "d7e1b291841fa95a126287fd195807cc1da80fe554639fabe5a57149de39f2fa"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262807",
+      "source_group": "original-bass-seed-262807",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262807/decoded.wav",
+      "audio_sha256": "232255aa7fb23b429ebe104369bff2614e224b53ef6174f77b545ca48ffc72a2",
+      "cache_sha256": "ec253ad0fcfe252f63b24943af543ae694c8358576862724dcfa90ae0f956242"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262808",
+      "source_group": "original-bass-seed-262808",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262808/decoded.wav",
+      "audio_sha256": "e598e37a1a1b49deca94929374adc99769de6cca3cd02ba7ca09c8788a06b387",
+      "cache_sha256": "157dfca17e76b8391c8618c3ed83e64c358a066c591608f5181f290cad16075d"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262809",
+      "source_group": "original-bass-seed-262809",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262809/decoded.wav",
+      "audio_sha256": "b13453392a8401c05251799c76143f578910ca82fac8804b58783c982e071053",
+      "cache_sha256": "aca6a6e7bad6165e9609e965ba8ab94464264607e29048a7ebad6eabf7f68183"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262810",
+      "source_group": "original-bass-seed-262810",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262810/decoded.wav",
+      "audio_sha256": "41d805a2dc2113fc4dff35ef2fda933587553e1b3ddc938d8dc78ed3cb67607e",
+      "cache_sha256": "7c299fc2329710271e1aaa98291d31826e0e2011ad7badb0462dfbef178b5ae8"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262811",
+      "source_group": "original-bass-seed-262811",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262811/decoded.wav",
+      "audio_sha256": "906c4e9adf1a444d7b978f4d125180ba3486bc0fb194e2c00e528eec90f56e84",
+      "cache_sha256": "77bc78fd05ed818ccc82f2695d4a6fe1624973e2256abc8812fad4499c5df370"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262812",
+      "source_group": "original-bass-seed-262812",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262812/decoded.wav",
+      "audio_sha256": "f33178691db315a04cf2b61f1bfdac50dc3e775ed86c46094edaca4f8550e05a",
+      "cache_sha256": "0bd2da1257d895c292671d8000c2d3234070cd9cfb61c507ef980f1e3829abf7"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262813",
+      "source_group": "original-bass-seed-262813",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262813/decoded.wav",
+      "audio_sha256": "2b217c8d8bba3baaf8dceefad81da77f370eaee5973db4186fdd56c9107f0eb7",
+      "cache_sha256": "5af06a6e089863801b804c950db3c07565f10d185a7367bbe0d67845cf15a58a"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262814",
+      "source_group": "original-bass-seed-262814",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262814/decoded.wav",
+      "audio_sha256": "091fcb3e0bf6247930fe88f2d66cb7894e8b636325c9b6edbb832f419008e2fd",
+      "cache_sha256": "ae696ef71c2df0289e42d50e1d420ed578e953a6adc4f48c1930d0f7054c3ee5"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262815",
+      "source_group": "original-bass-seed-262815",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262815/decoded.wav",
+      "audio_sha256": "abfdebad7173e64280e655dc18e45385e4411270368ab84627c8d8df910c5e11",
+      "cache_sha256": "fb036921be2634e2eb1bc825cc05962f2dee6dfffde92f6fbafc2bcea0d1e7cd"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262816",
+      "source_group": "original-bass-seed-262816",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262816/decoded.wav",
+      "audio_sha256": "2fa8d08d377233fad780e92db6a430681d60e66b3c21d21884cfebc433f2dd65",
+      "cache_sha256": "d510e25b64d83742f7591f69a0a2a92eb717dc305ce0a1dfbc34dff1894c2f7a"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262817",
+      "source_group": "original-bass-seed-262817",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262817/decoded.wav",
+      "audio_sha256": "2c54fab9cb1ffd3ebfbcd9f347edca052b74363484c1d77efd4baf2d56e50403",
+      "cache_sha256": "1e8d02ff46879fa787db77153396f80dee69c6b8ead9114ca7a11f2f48c71edd"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262818",
+      "source_group": "original-bass-seed-262818",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262818/decoded.wav",
+      "audio_sha256": "9da2ff93ad6484153bebb1e734a5ccf36a110951b74f701325550ef938f7577e",
+      "cache_sha256": "e6ee6adf3d8721039038b71430137dfc8bde2c1070e638c4d82f14f077c9ce08"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262819",
+      "source_group": "original-bass-seed-262819",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262819/decoded.wav",
+      "audio_sha256": "696137ac1eaf7451c68439e6eea6c7d4a9edb6a6f8711a97cd59da31f7b3d3c3",
+      "cache_sha256": "6eed1d2c2c76f06c7835592fc62ef70d0a2b5a9a1a4e36eb24498d524009310e"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262820",
+      "source_group": "original-bass-seed-262820",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262820/decoded.wav",
+      "audio_sha256": "3d3564131ed318f41b76889ce44c41b1845eb35fa4fbdd633f942ad8c92b60ba",
+      "cache_sha256": "1b024296ea1e1164ed1af19c59e9ddbfd4a3f2be278b9878d52808f4c61b282b"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262821",
+      "source_group": "original-bass-seed-262821",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262821/decoded.wav",
+      "audio_sha256": "4de387e58d3a9ab5e1cddfe2cc240bf6cbf0e8c92a480e3a2ada1b8f304fb4b8",
+      "cache_sha256": "64523d4c0a9f7dcf05cb94359e9447fd72c209a4a9d996f642bd9c6e0d1a7f9b"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262822",
+      "source_group": "original-bass-seed-262822",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262822/decoded.wav",
+      "audio_sha256": "81c7b97deaca920e6c1a8cbcf06613e7ae3ca4bb9c0242b703eaedbaedbe64b3",
+      "cache_sha256": "9075bf8bad4fce32cffcac7d16a5bf80e85096f23a5e499aa4e63b0662fd86be"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262823",
+      "source_group": "original-bass-seed-262823",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262823/decoded.wav",
+      "audio_sha256": "f9e28e209fb4f3aab9c34eed048f357f933c4b65a54fa03adea2f1f0fef3b3c8",
+      "cache_sha256": "5c2c1bc02e5d55631dba713ba1688219f6904f2f2b42c83076ec272f1b605f8d"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262824",
+      "source_group": "original-bass-seed-262824",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262824/decoded.wav",
+      "audio_sha256": "188e8063f814405c30a0092d6991eded7bc3b1520fb46f76fbea1a0c56b5961b",
+      "cache_sha256": "0143ab332b1e1f2dfb85bb101769b10726162876f8fe841c33d5db29dfcad719"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262825",
+      "source_group": "original-bass-seed-262825",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262825/decoded.wav",
+      "audio_sha256": "6fa95341086a994756c2e17ea533ae41d0f0f6909daf6cccbfd767cf6f7fe02a",
+      "cache_sha256": "83b4adca3e05420730ed0cfa6577c3d27b3f452522a7a952cbac0cca19326253"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262826",
+      "source_group": "original-bass-seed-262826",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262826/decoded.wav",
+      "audio_sha256": "dc0994df6a93715915dbb4ba661a1fc003d8937715474070caa5031ae209c30a",
+      "cache_sha256": "5d73c30b7b7ab6ee87b298ce43bbe53e358752afec76fbd4a830cc21fdff192f"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262827",
+      "source_group": "original-bass-seed-262827",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262827/decoded.wav",
+      "audio_sha256": "089b06e8200fde5ab9582bc213328318ce0bff8a017eb81f82754232f3b0b62a",
+      "cache_sha256": "c709efbf6e0dd98be3dd777460f7e34d880287956918c5b5d3e41ad67096a708"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262828",
+      "source_group": "original-bass-seed-262828",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262828/decoded.wav",
+      "audio_sha256": "e58cc0962f844e23b5559891ee6997803f5f87087042082a0fa3a2821239f3af",
+      "cache_sha256": "47ab644d72a724f3523e98540b1ab88b9f859e03f055eee14e2785b0a8816861"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262829",
+      "source_group": "original-bass-seed-262829",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262829/decoded.wav",
+      "audio_sha256": "5c4d9ca94f9739578c1c1b4ff3e2efd8579d732cabf868156af9459177cdc4d4",
+      "cache_sha256": "8ddf59faab9c32546efc752740381468ea5efc373d75cff11433aeebe773dd0d"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262830",
+      "source_group": "original-bass-seed-262830",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262830/decoded.wav",
+      "audio_sha256": "53c75766bc8843ae75a47229a0818320d3da476935f950c3f5b912348178ee5d",
+      "cache_sha256": "a7dd9820eb8008bdd95990df764031f509c87f23fb78a0b6f77ab567cd4b55b1"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262831",
+      "source_group": "original-bass-seed-262831",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262831/decoded.wav",
+      "audio_sha256": "f0e5726fc68e18f94b6d83d20fee7c08b208a0ea4f20e37b092f71d78f018381",
+      "cache_sha256": "4cc1530c400f2582370ce63ef49c48342ad2e35dbdd0888661c17faea1e93d3d"
+    },
+    {
+      "id": "bass-harmonic-fresh-v1-262832",
+      "source_group": "original-bass-seed-262832",
+      "audio": "/training/bass-harmonic-fresh-v1/bass-harmonic-fresh-v1-262832/decoded.wav",
+      "audio_sha256": "ddc8662dbbc20802b913e23eb7df2269250e00de54f1157fc481d2730ae77a34",
+      "cache_sha256": "0dc23eee840078ec1e5ff6bcc8558564f91b69c9162580c20f24a56d50a1e8a0"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263101",
+      "source_group": "original-bass-seed-263101",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263101/decoded.wav",
+      "audio_sha256": "f3433bcb8b39729860987e4804551187a0848fef0b1a3d3cb2df9df8fc7ff0df",
+      "cache_sha256": "09eaff48982a76d9b8ca3a79c692156cca1d5b5e3d5482d8fac63faca18b0334"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263102",
+      "source_group": "original-bass-seed-263102",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263102/decoded.wav",
+      "audio_sha256": "a84c83a172681579668f1a5ddf0b4403db6b5dd69663cf4cde2c9a8b9b849be7",
+      "cache_sha256": "5b99e1aefefde536c84d6c3d142fe43eab6678388e44a67441729585ffefe96f"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263103",
+      "source_group": "original-bass-seed-263103",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263103/decoded.wav",
+      "audio_sha256": "129d0bd5a6a37747f1a4a98e565c1a6262d3097db41e27ad814b2a8a278e6863",
+      "cache_sha256": "5e1e540369ef9085f38856a2a331153be9cb02ff7139b544965d3d639db22d96"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263104",
+      "source_group": "original-bass-seed-263104",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263104/decoded.wav",
+      "audio_sha256": "c04eda53ff22de0625071b6daa451a901328cc046699f1035f83f2e60a7d63e0",
+      "cache_sha256": "c566a1dd8f2a2b6effab95536edef812bb873b16526e7248407d560f732af1d7"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263105",
+      "source_group": "original-bass-seed-263105",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263105/decoded.wav",
+      "audio_sha256": "4069fbecb9a0f55b76a98e66c9554f8dc4705ebaba170cd22b0a5fcfc979213c",
+      "cache_sha256": "459974783bc12dba974ffac057890782d3f0851182c63f2970a5b67de12f1d86"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263106",
+      "source_group": "original-bass-seed-263106",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263106/decoded.wav",
+      "audio_sha256": "0caa6e30d4ff889f263275ba7b47ea9c6a34623af69191cf41f52ffe45530f68",
+      "cache_sha256": "c636137c5f235597452379c65bd69fa474bcb6e0768ee2db653aafe7f302fd68"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263107",
+      "source_group": "original-bass-seed-263107",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263107/decoded.wav",
+      "audio_sha256": "f6b2899a4a9b29a40ee7d91a254cb418b91afd1c3df1195e28f212b93f5692bd",
+      "cache_sha256": "22a4cf123d38511bfdd292c3ed72a5e085baa612ae3ff0aa29ddc2cebcb3ee8a"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263108",
+      "source_group": "original-bass-seed-263108",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263108/decoded.wav",
+      "audio_sha256": "94e38532dc5b56386d3a7480f4c5cf607894a36ca93b802cc66eabd524f2bbd9",
+      "cache_sha256": "1600ab0e06c714108a08572586a1d5869ca106ebd104a9f78a96c5f2e558b9d0"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263109",
+      "source_group": "original-bass-seed-263109",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263109/decoded.wav",
+      "audio_sha256": "5a50297081fa7d8be221f241175af78cacb7ec3ac392fdc56fe6a2d5f981998a",
+      "cache_sha256": "a167eec228e24f3be0b0db5ee48fb730594ae48db9dfd3c1e71d92bd4f72e024"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263110",
+      "source_group": "original-bass-seed-263110",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263110/decoded.wav",
+      "audio_sha256": "38ac3032a932b75eef1b8455ece5944e2a630c52b52f74752ee755016d410a71",
+      "cache_sha256": "ba5aff392f38172e304a5472cb4c66a5e850fecc88211e089704eaf87129349b"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263111",
+      "source_group": "original-bass-seed-263111",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263111/decoded.wav",
+      "audio_sha256": "09665d95eed3617e937a287454b87e919d3d6706d380335fc4f24d9b65848d45",
+      "cache_sha256": "986f998b96547d758aa105a11f2d4dd2568e1fa6b554ef991f3a30157adda89c"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263112",
+      "source_group": "original-bass-seed-263112",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263112/decoded.wav",
+      "audio_sha256": "2b3fcd76147d86fe0de481afd1a5ba4f1c1b0f51446e15c4bca327acf02743d8",
+      "cache_sha256": "5b461612bff34815484c81b881a9862b95c17171ce07090ed917753bce9c6df7"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263113",
+      "source_group": "original-bass-seed-263113",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263113/decoded.wav",
+      "audio_sha256": "a114ee4f112d63cbb4d422a152f4e490808a50423acb556e6b53c7b484ecf92c",
+      "cache_sha256": "e7962a55a1ca89c084d3e3dc691cde34270c241d14313527447d871d84c27d7a"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263114",
+      "source_group": "original-bass-seed-263114",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263114/decoded.wav",
+      "audio_sha256": "9d8ec9c96d5aded37daca551973e9aea274de34a0ec24c99287994174128e731",
+      "cache_sha256": "871647820217ddab48d3519f476183fa42d93a53026114b3da380c63492b40f7"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263115",
+      "source_group": "original-bass-seed-263115",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263115/decoded.wav",
+      "audio_sha256": "1c6b77c43dc3d68ad6eeaf8048cbcb8c9e1e3eb1755af0ef629dcd2fa132c1ee",
+      "cache_sha256": "ec9f2b5d6ac9aff90b5aed330993a1cbb69f9c0a2827deb41aaac363c72c1427"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263116",
+      "source_group": "original-bass-seed-263116",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263116/decoded.wav",
+      "audio_sha256": "5a022e634c534060679cbb05d1f135de6c8522773088ed85ddbaff892eff4c8b",
+      "cache_sha256": "5e2169ba67d90d49cdb76c0c956169974e51921406027d80a2e31a89d6a43072"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263117",
+      "source_group": "original-bass-seed-263117",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263117/decoded.wav",
+      "audio_sha256": "d75b9b219f751521f61297275a84efb813bc146f468b6016b91749aa468231ef",
+      "cache_sha256": "5b8ecef058f98facb58f0a38aa32a0fe20266d97b3652227e24ce15a0674a8a7"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263118",
+      "source_group": "original-bass-seed-263118",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263118/decoded.wav",
+      "audio_sha256": "aecf9b1d7585c9781916df1afe3d7231ed9dedc3b703b4bf5ed25f85beea21fe",
+      "cache_sha256": "5fe6c499e9e4f6fdebc40736564117cebc917404fedb50f50c5e814faf12ab31"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263119",
+      "source_group": "original-bass-seed-263119",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263119/decoded.wav",
+      "audio_sha256": "c89f564b4d187ded98f9d5f55856d0a7b76842e0a670b86a976de55471eb70fd",
+      "cache_sha256": "255d6a1ca84c992d22419298ff4966dc09a7294ee2a703c4e994adff36dd0bb5"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263120",
+      "source_group": "original-bass-seed-263120",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263120/decoded.wav",
+      "audio_sha256": "a6a37aaad5a581d74da2d413a84fb9bca43fd531b7b019fcf63e083fa2714f17",
+      "cache_sha256": "cb8f98f6f9203ef9c5fed785e57a5d3359ea674824c0042c142ad08781a8c4d7"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263121",
+      "source_group": "original-bass-seed-263121",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263121/decoded.wav",
+      "audio_sha256": "068b10d4ac25a30e31c90fe00e2dd72d8c2fd9c72d69094adb7081750fa203e0",
+      "cache_sha256": "a8cd086ab518cd600f3ff960591e357da8a030df6df6010db292418e206892f1"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263122",
+      "source_group": "original-bass-seed-263122",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263122/decoded.wav",
+      "audio_sha256": "80f4edb037076f8e30d1aee30b31ed26c7c4410747910586f8f5a8bfdac1697a",
+      "cache_sha256": "67cf9ec3ae496c0d23354d3e7a0f16dcf2c8e9a1a524ba80b4467ecebceec3da"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263123",
+      "source_group": "original-bass-seed-263123",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263123/decoded.wav",
+      "audio_sha256": "87c374b37d8162afdfc5d5421a48411723eab5e9bdd9c2f923f3782f8e0f38ec",
+      "cache_sha256": "576770eb0f332e4ea60c51d42f07b37c69c4ed950980642c61c2454b874eee10"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263124",
+      "source_group": "original-bass-seed-263124",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263124/decoded.wav",
+      "audio_sha256": "af320c4d6a5e652fa6fa10e15109077855457ed92094d6922ecc4bd4dce4db65",
+      "cache_sha256": "5d6eadb693565107e829cac4179ad592b17129db98f50a5c3718c556b9f96e19"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263125",
+      "source_group": "original-bass-seed-263125",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263125/decoded.wav",
+      "audio_sha256": "8b239907cece5d7036b3e571578f92503c381b947541c90316c98c6e479e5b4a",
+      "cache_sha256": "29e18cab1a5a63bdc4f9a7ad5b363d6a45f72c6b1ecef47d284b57ed178d7774"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263126",
+      "source_group": "original-bass-seed-263126",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263126/decoded.wav",
+      "audio_sha256": "0ba4cd7ba7fc5c7cba259e0bbccc3b72877c17eed17d5c35f43c2bb7795de5ba",
+      "cache_sha256": "e1658c73297dd27002afc89e641f4ece008379c2134217babe14b49a0748ba10"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263127",
+      "source_group": "original-bass-seed-263127",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263127/decoded.wav",
+      "audio_sha256": "27346e2781f01f3ee7dcab78884b0007f58c7b8a135668109f4f9c3912fe4754",
+      "cache_sha256": "0b9cdfe2f5ea8bf13f346f4eeef819c766a1d8acdfb9850b4153267a3de12116"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263128",
+      "source_group": "original-bass-seed-263128",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263128/decoded.wav",
+      "audio_sha256": "63a25e4bb1ef466f186e95ca29d6eb81d5d0f8f6eb45c392ee6b88d839c22466",
+      "cache_sha256": "b20c123c867eb9f27fb0b283eb8a849b3fd53c38ff612058eda3cf6806f2c008"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263129",
+      "source_group": "original-bass-seed-263129",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263129/decoded.wav",
+      "audio_sha256": "0cbf2bf5c9b55e24ac2ba752d9b492d525cf0fedbc2bc3e89e60bb8cc4807db9",
+      "cache_sha256": "7a5f4bac087b03b598dc7f23a405f17bc0b2e080ad58c29df9e0c66fe5edcbaf"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263130",
+      "source_group": "original-bass-seed-263130",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263130/decoded.wav",
+      "audio_sha256": "85c467da984014c6d84aeecaf01b7cb6915f801e8b5755f49fea9fe9fa17c2c2",
+      "cache_sha256": "5d392f7d3f4ffe70da5885b82970a8254f1ab5e0635004e7a1166eafb155c411"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263131",
+      "source_group": "original-bass-seed-263131",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263131/decoded.wav",
+      "audio_sha256": "3fcf41c36e193190ce3e49c11d6bc725d17949a9d9422bdc326f8ee4accd0aa2",
+      "cache_sha256": "c36ff4eb5381e53833479f4c785b7250838ab7ad687dafba2456e8da261caca3"
+    },
+    {
+      "id": "bass-temporal-fresh-v1-263132",
+      "source_group": "original-bass-seed-263132",
+      "audio": "/training/bass-temporal-fresh-v1/bass-temporal-fresh-v1-263132/decoded.wav",
+      "audio_sha256": "5993a41fe292db091711d2ea522805ca88c29b1918424c846c2f4d2a32e83bd5",
+      "cache_sha256": "8b85ab0c72c764ffcdcfb502ca76dddb71cd1a0d3eb2c4329372464244e0621c"
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op10_no3_p19-piano-mp3",
+      "source_group": "vienna-performance-Chopin_op10_no3_p19",
+      "audio": "/training/v16-piano-regression-v1/v16-piano-regression-Chopin_op10_no3_p19-piano-mp3/decoded.wav",
+      "audio_sha256": "2d0586e064bf9b6b077220cb5b43f6f6a533f638f87ddab6dea538ddcf6a3f21",
+      "cache_sha256": "eb1a5cfcc43aa0dbcb2135c110b63153a666cf5de58ce9e7afb03e2d93b5de82"
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op10_no3_p20-piano-mp3",
+      "source_group": "vienna-performance-Chopin_op10_no3_p20",
+      "audio": "/training/v16-piano-regression-v1/v16-piano-regression-Chopin_op10_no3_p20-piano-mp3/decoded.wav",
+      "audio_sha256": "b1a66640c440c9c11eee2ace16ab99a230249acc5d4f21e38bd468be4d4e7bc0",
+      "cache_sha256": "673dfe19c500e3c069e7c0af088161f563b48d9729f76eb505169b8d68aafba6"
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op10_no3_p21-piano-mp3",
+      "source_group": "vienna-performance-Chopin_op10_no3_p21",
+      "audio": "/training/v16-piano-regression-v1/v16-piano-regression-Chopin_op10_no3_p21-piano-mp3/decoded.wav",
+      "audio_sha256": "b280504f45321440cf92a555a578acff4ef9e8bb17ec952e3b88c4ada188f8f5",
+      "cache_sha256": "38a9087db87a361046789017d074ecffc578c8f2ec9e0312a033211df09445ad"
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op10_no3_p22-piano-mp3",
+      "source_group": "vienna-performance-Chopin_op10_no3_p22",
+      "audio": "/training/v16-piano-regression-v1/v16-piano-regression-Chopin_op10_no3_p22-piano-mp3/decoded.wav",
+      "audio_sha256": "8334a2e2664b90ce4b45313f2c68d9ad44cd53fb2837815c378846911167774d",
+      "cache_sha256": "75ec39c0336382039beb7a5c93110fccf81af9f28e663fe90450b83fbd35e0eb"
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op38_p19-piano-mp3",
+      "source_group": "vienna-performance-Chopin_op38_p19",
+      "audio": "/training/v16-piano-regression-v1/v16-piano-regression-Chopin_op38_p19-piano-mp3/decoded.wav",
+      "audio_sha256": "fc4456800c82f9ddb508f35ef48eca7925698540d9beb14dbf606bc06417b491",
+      "cache_sha256": "b627cfcb9f850e2be745ea29da631c2a39eec87a43ce819e6d1362f7bd6cdb97"
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op38_p20-piano-mp3",
+      "source_group": "vienna-performance-Chopin_op38_p20",
+      "audio": "/training/v16-piano-regression-v1/v16-piano-regression-Chopin_op38_p20-piano-mp3/decoded.wav",
+      "audio_sha256": "0536a9a5a83d16203bdffdad9ac3db86a5dd911c3892a6c5d81370ca06c70121",
+      "cache_sha256": "d57a4a781d5e4ddf4ffe04ac55d89ee2a6e4b83a0a3c8e1124ab4a537280b6ce"
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op38_p21-piano-mp3",
+      "source_group": "vienna-performance-Chopin_op38_p21",
+      "audio": "/training/v16-piano-regression-v1/v16-piano-regression-Chopin_op38_p21-piano-mp3/decoded.wav",
+      "audio_sha256": "cd23a74dd3158648bba4394848a30b0a287e3dbbec639737ddac237ce0e407d9",
+      "cache_sha256": "ee667ee705d98672d74c3f81092a7aeba25df34c4b0ef882af129bf2f681c267"
+    },
+    {
+      "id": "v16-piano-regression-Chopin_op38_p22-piano-mp3",
+      "source_group": "vienna-performance-Chopin_op38_p22",
+      "audio": "/training/v16-piano-regression-v1/v16-piano-regression-Chopin_op38_p22-piano-mp3/decoded.wav",
+      "audio_sha256": "fc62c8eb4be1533b3f8c95b5df93b00bad774222ad3294ee0b8e892e42bd19e1",
+      "cache_sha256": "ec808b9f2095a24a3bea424ee440b5bce160fe6d185baab06dae77018ae0408b"
+    },
+    {
+      "id": "v16-piano-regression-Mozart_K331_1st-mov_p19-piano-mp3",
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p19",
+      "audio": "/training/v16-piano-regression-v1/v16-piano-regression-Mozart_K331_1st-mov_p19-piano-mp3/decoded.wav",
+      "audio_sha256": "f6859f252ef05425980ca34a34a44055f616a1c2c2e862392f6ba8daa7eaf622",
+      "cache_sha256": "bc33712cb7e9db432f91a5a428b72bbd655c53e5aac0130625932b56cde1e602"
+    },
+    {
+      "id": "v16-piano-regression-Mozart_K331_1st-mov_p20-piano-mp3",
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p20",
+      "audio": "/training/v16-piano-regression-v1/v16-piano-regression-Mozart_K331_1st-mov_p20-piano-mp3/decoded.wav",
+      "audio_sha256": "f97a10982fda51050aa306bc0229b30d6ae4f3264d07eee34147425b2a73adc0",
+      "cache_sha256": "392b1271c00f8c2e08efafbf8237890e0b791a651cde02ee0c9ddb2e4ac693ba"
+    },
+    {
+      "id": "v16-piano-regression-Mozart_K331_1st-mov_p21-piano-mp3",
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p21",
+      "audio": "/training/v16-piano-regression-v1/v16-piano-regression-Mozart_K331_1st-mov_p21-piano-mp3/decoded.wav",
+      "audio_sha256": "b19914550265bf980506af102416ddfab182f60127c3bc14a127f0c4aa680509",
+      "cache_sha256": "efd5cf510f31f9069b72710fefc99f4820f6c1bfb6d729973f66909a1f0f99cc"
+    },
+    {
+      "id": "v16-piano-regression-Mozart_K331_1st-mov_p22-piano-mp3",
+      "source_group": "vienna-performance-Mozart_K331_1st-mov_p22",
+      "audio": "/training/v16-piano-regression-v1/v16-piano-regression-Mozart_K331_1st-mov_p22-piano-mp3/decoded.wav",
+      "audio_sha256": "f1686d3882da74deb6189c22d406cb9d258ee766a8dcb16ba11eebda1d498de4",
+      "cache_sha256": "bf69c115691b879b9488571c6203683f7349071251b477fbcbf276a733175d90"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263301",
+      "source_group": "original-bass-seed-263301",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263301/decoded.wav",
+      "audio_sha256": "507dd869bb65f9691fbfe2d8190bc7476469f484b7949081a2d6e0ad2b0da323",
+      "cache_sha256": "04827a01570ffeeda4ebf2c2f29f7b0ab9f72731316592284093350357f83d14"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263302",
+      "source_group": "original-bass-seed-263302",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263302/decoded.wav",
+      "audio_sha256": "cd0184d57935c787b179f747791580f3dd3576ba448cade4158786d01513ab1b",
+      "cache_sha256": "7d3d73d8db3d70aaca8671f6216e0fac5244bfd580d2f5a2ff6429a9480c68f3"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263303",
+      "source_group": "original-bass-seed-263303",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263303/decoded.wav",
+      "audio_sha256": "93350f7163f9b1a06d32942d2801e89d3e5b253554b822cb878d25bd24614a45",
+      "cache_sha256": "975ba20d1a059539d3aee7fc02eb90b4b6b836b1576f9574fb9bbcce4d8b83d7"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263304",
+      "source_group": "original-bass-seed-263304",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263304/decoded.wav",
+      "audio_sha256": "5c8cc7ab605ef833f74f5825840eea842a295fe25640bfc85321b5cc093b0237",
+      "cache_sha256": "ce9f70696224e53bd1f3a475bf06b9d976dd02dddfccbe34b22be9b39d437773"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263305",
+      "source_group": "original-bass-seed-263305",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263305/decoded.wav",
+      "audio_sha256": "3d5e04605ddc5214ed5c09bc8a224495d205f1914c01429aede345d1d8d5dd66",
+      "cache_sha256": "daaa7180e7f7a4c6c80e0bb0d10a0b183980782bde91dcbcbe06a1b38f4eadde"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263306",
+      "source_group": "original-bass-seed-263306",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263306/decoded.wav",
+      "audio_sha256": "620b6cd0e63bd50eb8a5eae3a54b0c70f4a6ad048048f8320f15e64c8137d8bf",
+      "cache_sha256": "c5005aa5fe11969272f9ca03b6914e40f6a3653d85e392b8255a381a30395943"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263307",
+      "source_group": "original-bass-seed-263307",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263307/decoded.wav",
+      "audio_sha256": "59245553c093a6fc50fead277313c6d14d9328c29017e8e92a4e7cb87aa51686",
+      "cache_sha256": "5968e9cc2b7a96330960ad616c935c2bde7ccc4929d3149f2c2738b317bc5741"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263308",
+      "source_group": "original-bass-seed-263308",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263308/decoded.wav",
+      "audio_sha256": "f31c15fd1466d03d0bfac22158f67cb99b83bbac1d99a6e6c6cdff706803b34b",
+      "cache_sha256": "62ce162a74ada3c4b73c72812ae6db956abe27c8665e964870695e64f0e4fe25"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263309",
+      "source_group": "original-bass-seed-263309",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263309/decoded.wav",
+      "audio_sha256": "935a8d7a6c2b89b87df1476c65cfc0ef97368eb7e720bd2bc4707c9b1a51c9d6",
+      "cache_sha256": "eaf03874b934547f09116f1bd5d7eb997245c0b48bad6709e0f592498e3c3556"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263310",
+      "source_group": "original-bass-seed-263310",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263310/decoded.wav",
+      "audio_sha256": "b52331dcc5c77d57e86f10ef7a56d4039b4dc56707c0bad2568e896cc8b51947",
+      "cache_sha256": "9db906efa832aaa9a693b51b866c2e42e758c4241714666b5b738afe50b33302"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263311",
+      "source_group": "original-bass-seed-263311",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263311/decoded.wav",
+      "audio_sha256": "b3027a7620a46c499d9fc894999ff7e6d7b6c195940284218d67e99c08affc13",
+      "cache_sha256": "b47b780ee492401793e06b29237def54af94db9ad4119fd4c6ece4eb5d7d5a80"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263312",
+      "source_group": "original-bass-seed-263312",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263312/decoded.wav",
+      "audio_sha256": "2fc99dcf204696ccc88b21d75a0a5abb1cb3d61c6f6874e875878c7ba20226bc",
+      "cache_sha256": "a4443df6d3eafb968f8bc70684647821c2effe3dbcfd481e9a7ddc319e9271dd"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263313",
+      "source_group": "original-bass-seed-263313",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263313/decoded.wav",
+      "audio_sha256": "f758a16fc359fa0b098ba522d6b1f7a464bdf1574aa057c785e8896348940513",
+      "cache_sha256": "b30d6face1e79ef6cbfe195bf49592302485e2b49f337976f5c5a385c7adf212"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263314",
+      "source_group": "original-bass-seed-263314",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263314/decoded.wav",
+      "audio_sha256": "385038bf180885c38bac2c7bcdc4d8edc12bc5b5b0751d22c3148810f89ea0cd",
+      "cache_sha256": "aa0f1c6d9a0203707072ae0bca0612ab908026cce135b9c73f9c3e3ba6674563"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263315",
+      "source_group": "original-bass-seed-263315",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263315/decoded.wav",
+      "audio_sha256": "f06cbb51a408040bae9e2f1ab1a8c149a97d4fc088888a8dd9aa61e32b1251d0",
+      "cache_sha256": "38fe5f404dd77b22e484ca3f61af838affd9e62c744e40a173c2549dc9a917b2"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263316",
+      "source_group": "original-bass-seed-263316",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263316/decoded.wav",
+      "audio_sha256": "830ac67c44483eaf6e4fa32bcc9309dfc4bdd664d83bc179bf379ca75356ff81",
+      "cache_sha256": "b29c2e4e01599281c6dc2e0c80f409b3a067568cd5a0c9012d8c096cdb8e2871"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263317",
+      "source_group": "original-bass-seed-263317",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263317/decoded.wav",
+      "audio_sha256": "77e80653d1380ec1a724243839f8d3c6c0972a50028ca92b8f2d0bdb7d5c648a",
+      "cache_sha256": "b8d1eff30bd2295cf19bbcd84adc239c4746e75a1ed569855c3691186148292e"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263318",
+      "source_group": "original-bass-seed-263318",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263318/decoded.wav",
+      "audio_sha256": "caeaeb8cfbed574d85814212d427ddb84c15842928a74660c23aa5322aad2f44",
+      "cache_sha256": "fb3e46d8b969280e3efc742885c162fa1df3fbdadebe51255e35cfce3a2466db"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263319",
+      "source_group": "original-bass-seed-263319",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263319/decoded.wav",
+      "audio_sha256": "1ae322d55647f1c1719079327558a89a739bb113e5a8e0c77f815a7b5ced61f8",
+      "cache_sha256": "c1a74f3fcaa8296cf06d85c6d89ccebefb0d4cea7a2a76dca502e441ecfd5a6b"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263320",
+      "source_group": "original-bass-seed-263320",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263320/decoded.wav",
+      "audio_sha256": "de45cb819adbfb4083b4a06eb96f61fa89001466dbfb04837c31b5ccaa83bfee",
+      "cache_sha256": "11e6d11aef208dc46997c1a4a8d7f0480812b37bc101349c4a942ea3f003e857"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263321",
+      "source_group": "original-bass-seed-263321",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263321/decoded.wav",
+      "audio_sha256": "e49a707ae70d8847374b2bfa44faa0390d579d68534097f0a8feb142cee4ea5c",
+      "cache_sha256": "cf2cc4c04ff55ff6ee8079e22a1fa59cb68eeef0e41e14ce43b60bf057a67005"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263322",
+      "source_group": "original-bass-seed-263322",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263322/decoded.wav",
+      "audio_sha256": "29ff3b2147ddb0b484da751173972bbd23e90872632e679f8ca12a58cd65a9a9",
+      "cache_sha256": "6adebcebe220aff436f3927d5e9cd9ac5cf3d53bf124f099f7ba8fe4491ed5d9"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263323",
+      "source_group": "original-bass-seed-263323",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263323/decoded.wav",
+      "audio_sha256": "26321360cfd5e2a119560f866009295556515e398a9f2ccc8a96d227994fc50c",
+      "cache_sha256": "d09820fb0d4474fb275a8d7f873845a2c22386e039d5246ff140671b2fc43d06"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263324",
+      "source_group": "original-bass-seed-263324",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263324/decoded.wav",
+      "audio_sha256": "d10d6ecfaea0925388da0f7517a77093b3cf5f64a33504e399cc58ec041e2a4e",
+      "cache_sha256": "c7e65061e0d482104f7c2efc68a0c555a32d431840949215bbd1ca9e771640b2"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263325",
+      "source_group": "original-bass-seed-263325",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263325/decoded.wav",
+      "audio_sha256": "c899dd364c768ca97d5a2c74ac229527e0fa2ceb7e9995ccf009d247cde46b85",
+      "cache_sha256": "f4adb459014d3c5c549286c1c3af753dfa49b144ae068c2af02b21441764259f"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263326",
+      "source_group": "original-bass-seed-263326",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263326/decoded.wav",
+      "audio_sha256": "bf51e0cf2705527b53b5066c441c8bcb728cc5e51f5b09cd34aa5842b120d4c0",
+      "cache_sha256": "b2b6840aacf7d0639c5ea610cdd63f0276949e29874377fd95223da4f60b07ab"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263327",
+      "source_group": "original-bass-seed-263327",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263327/decoded.wav",
+      "audio_sha256": "16b087ee880d5e393eec271707e25afba516dce59aa1665fdb9c5ec62f90ec59",
+      "cache_sha256": "a44b200ef421fc9140c491713af10eaaebcb468a49e51e6486266e8500c70348"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263328",
+      "source_group": "original-bass-seed-263328",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263328/decoded.wav",
+      "audio_sha256": "8e3a82a2e329daf4cd70654754934c2012e4dcaf5b3773ec21c79a5ad45333a8",
+      "cache_sha256": "495abf62d08911a93275f31ce91ba019813f094f866459ec747e2840934a91a9"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263329",
+      "source_group": "original-bass-seed-263329",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263329/decoded.wav",
+      "audio_sha256": "de2caaf517f0b60731851fe5286057cfc04dbbf1ed383e50d9f0b07489baa454",
+      "cache_sha256": "263b1c86ec62f2edc456243f367e58237a5588d78d3704e0993989abd93a7e80"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263330",
+      "source_group": "original-bass-seed-263330",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263330/decoded.wav",
+      "audio_sha256": "c1d14927253efb2009508b4bcbe2e46863d1a049f9b5575d8c4e2da8579cec2d",
+      "cache_sha256": "b9cfc2e2e4cc055241bfc3869220ee21574093488774bae36d05c69fddd2b885"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263331",
+      "source_group": "original-bass-seed-263331",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263331/decoded.wav",
+      "audio_sha256": "88fecbf24a73ac9e27009228a04cd85373c368ef804bc51941f059186a833645",
+      "cache_sha256": "02022bf4df6aa15bd39dc2ea39b6aa10243d5aff7aaf09bf18f63c1355255811"
+    },
+    {
+      "id": "bass-temporal-v16-fresh-v1-263332",
+      "source_group": "original-bass-seed-263332",
+      "audio": "/training/bass-temporal-v16-fresh-v1/bass-temporal-v16-fresh-v1-263332/decoded.wav",
+      "audio_sha256": "26103b2ea2d57b0e93e3c4655073cb42a42a34998fb68295fe164c734a8662ee",
+      "cache_sha256": "ddeebb9d305c76e27e6de59b74164546fcc1bc9f9ed9445c5cbdd283cb69115c"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265101",
+      "source_group": "original-bass-seed-265101",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265101/decoded.wav",
+      "audio_sha256": "1b8570d32c3b41dc13a7b094239f2eef1b23ade39298f269f36f80b73fd2b470",
+      "cache_sha256": "a6ed71d804938c5f1a3ea9be38f1c22d8d868e090504abb64e0c3dedb8d0fc07"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265102",
+      "source_group": "original-bass-seed-265102",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265102/decoded.wav",
+      "audio_sha256": "ff063da080db48542486ccbb6fd3e0f7cd9979871098c86ca5409e078af1933e",
+      "cache_sha256": "22fb40ebcaac8567768b57972d614f7b8ca60d6beffdbf217eb9f58eb0557560"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265103",
+      "source_group": "original-bass-seed-265103",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265103/decoded.wav",
+      "audio_sha256": "c7a5b20e236998653d2237b5b97f4ee0f70bd6403b9b6a5d91ebbae3b435d17a",
+      "cache_sha256": "2e1f24ea348edf6f27a9070cab2ce2afa815a4d1c694aefd84712ae22c612c8e"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265104",
+      "source_group": "original-bass-seed-265104",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265104/decoded.wav",
+      "audio_sha256": "5feadcdd8796f298ccaab0b0ed3ef94d8025ca4be53b40568ca384598218c966",
+      "cache_sha256": "9047951b88afab8270735c302a06c3e713e42a24b1eeea226cb6a7f00f12196e"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265105",
+      "source_group": "original-bass-seed-265105",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265105/decoded.wav",
+      "audio_sha256": "a90749bafb71445c1019864f66c4b4b9f6a071cffe19b61fed61b654cb94fbf3",
+      "cache_sha256": "4c850d8a086c90eee40d9b563ad659b9dcf11b6da7673ef2de962dc34f6c1744"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265106",
+      "source_group": "original-bass-seed-265106",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265106/decoded.wav",
+      "audio_sha256": "73d6dd548a8c634488dc38066bce856c753da44ecf6476816cd30f32db4e605c",
+      "cache_sha256": "a492a626d790824747c7ed1f5d2468ad958be45b7882a72b2cf84adb97c3b990"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265107",
+      "source_group": "original-bass-seed-265107",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265107/decoded.wav",
+      "audio_sha256": "d2a4e086a72969e137b644f1204db293371b7c80ed8f2f3b380b5d55f4254e35",
+      "cache_sha256": "81d2cafcc43da97a6085e96f5e154e3303907c9e1fc420dabdd8e9a71b10af28"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265108",
+      "source_group": "original-bass-seed-265108",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265108/decoded.wav",
+      "audio_sha256": "1931c8d38f944528adca62b7726c97e7075e90e4fd0f235e5641be0ddd41655d",
+      "cache_sha256": "d21feb821a7eeffe0ea95375335f9386391044b0a665cd7360f4271e7dc14a92"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265109",
+      "source_group": "original-bass-seed-265109",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265109/decoded.wav",
+      "audio_sha256": "a184c80c45f3a2559612a1eb280ea86a7cf9caae87800b3458b15825fdb5063e",
+      "cache_sha256": "2491454d8dd48a450577dcb1c2f449af3f0b1ed494f6304e4a3c32c0984f9048"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265110",
+      "source_group": "original-bass-seed-265110",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265110/decoded.wav",
+      "audio_sha256": "c15b3f6395626877f924b7dc4b86caf05c67473948b339bbfa02d149b16a8ff1",
+      "cache_sha256": "7703f2ab370c8601c1e4f4c3f92f3c7d00d3861f7e20fe728df88642d499ca73"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265111",
+      "source_group": "original-bass-seed-265111",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265111/decoded.wav",
+      "audio_sha256": "d95bd8b9fff6d422541b068e5b02a84a6c07ad11ec4f1a4e8967196787c66f0d",
+      "cache_sha256": "e84c9958e315f74b6d49d79487524a245c8a4fecad7804509b0125728abf9c66"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265112",
+      "source_group": "original-bass-seed-265112",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265112/decoded.wav",
+      "audio_sha256": "9191141306e02e2f11a2880d533b6c37b18b7efe91e7e475c9f6467b73c71a4a",
+      "cache_sha256": "d9b01d971da0026d163c42098c741e0840ef3efc3f688687b1aba3e34614d9b1"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265113",
+      "source_group": "original-bass-seed-265113",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265113/decoded.wav",
+      "audio_sha256": "6fbcd2bec8985a26fd8123dedc305027c9a8065ac45543d11360fb709861dc7e",
+      "cache_sha256": "a05991d909544104da9fbe12440e830c27cb51dc0e1b278cf2c353b0d76e8aeb"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265114",
+      "source_group": "original-bass-seed-265114",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265114/decoded.wav",
+      "audio_sha256": "6feff7ba494f2e1c02a938a29402c661839499de0d8a54a44fd929c0814b09bb",
+      "cache_sha256": "24310510b02573c69614338965ee8158f6da2bc52772fe4d3bec33b2c9db4aea"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265115",
+      "source_group": "original-bass-seed-265115",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265115/decoded.wav",
+      "audio_sha256": "057c6be2da4ccd8fa2e4a3139976d8c7107a18bc4b6af656666db362d2dad9fd",
+      "cache_sha256": "4156cf3421afb6f58db3bdc693264cce09b4a59f5337de618749fbf82301f536"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265116",
+      "source_group": "original-bass-seed-265116",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265116/decoded.wav",
+      "audio_sha256": "f06bbd1614ef40b047f551e729ca3e7d585f69da7b1e12712c0161df80a0f8d0",
+      "cache_sha256": "4c9077555506657b6e0bdf86bd1cb95af947d238343fca3e45b3d90336c188c0"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265117",
+      "source_group": "original-bass-seed-265117",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265117/decoded.wav",
+      "audio_sha256": "8f88a34e4e36c06a0fa6c7a2594503122a5984856a718e584e04c8b19addb79b",
+      "cache_sha256": "44c823947ce37d75202b0f2d51693f8b14c89e402f2723e44863d88a98760ad7"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265118",
+      "source_group": "original-bass-seed-265118",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265118/decoded.wav",
+      "audio_sha256": "fe91d0a7f7a18563ed18091c91f929ce0924762ae9f069d0700b723376f9f86f",
+      "cache_sha256": "a746385b9e78063d328c270dde0697361f98e4c995743cd3162b1993707ff625"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265119",
+      "source_group": "original-bass-seed-265119",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265119/decoded.wav",
+      "audio_sha256": "155b8ff9899507e296bc6424c501e1c83ba952cde99fda41227634a60f716767",
+      "cache_sha256": "224ed7fd5a264f9ca1051d1fbf3b35f64bfc0b0afcdb589cf6842a78989d4337"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265120",
+      "source_group": "original-bass-seed-265120",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265120/decoded.wav",
+      "audio_sha256": "ce68a74e2ee7c42b75490f3ea1c52475d58bd5e516c14d338d777ba423b7e90a",
+      "cache_sha256": "0b30ba0bce5e15d392b23ad288d91b1158ea8e6033c2e5f41e3ec6de41145dc8"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265121",
+      "source_group": "original-bass-seed-265121",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265121/decoded.wav",
+      "audio_sha256": "43097ed208d867f78ed3d857e79fb7d3c2a18182e41a21723237d0dd5b80a10a",
+      "cache_sha256": "abf21a69c53f6a14f7314a993089dbde1fbfcf6a1c6d46a69b44fb074d868f9d"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265122",
+      "source_group": "original-bass-seed-265122",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265122/decoded.wav",
+      "audio_sha256": "8ac5b4862902f64695e23f2518ce0071099e8e7e0f9f31f02b4acc085210ad8b",
+      "cache_sha256": "3a1c6766169d436c468f9cb7077da8f63fe0250299b17a20b6716a9f2769d17c"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265123",
+      "source_group": "original-bass-seed-265123",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265123/decoded.wav",
+      "audio_sha256": "a9c704abd1f6935cd7091acbcfd68de329b303dfcf1962e8eb08fae7a3fb1712",
+      "cache_sha256": "d449868c08d87e66c71b29b5d9b32d02786548590b32d524c2ae37c1ccf7833c"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265124",
+      "source_group": "original-bass-seed-265124",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265124/decoded.wav",
+      "audio_sha256": "23b9488b5cbf4d82b096001545f324cb17483aaf1322db8476cadee0445db1d7",
+      "cache_sha256": "a63df2785234c61fc147b7c69a00674ced31d72c4eaa65af01862137cf6ec8c3"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265125",
+      "source_group": "original-bass-seed-265125",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265125/decoded.wav",
+      "audio_sha256": "49e34baba442011fcda2debdfd500bac4d898cdf6bcd89c983395f8a94c2fffd",
+      "cache_sha256": "e36c063a65921d5069a5f9e55962ec9d88a5999a2b5ad5090d10e351c2634ce5"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265126",
+      "source_group": "original-bass-seed-265126",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265126/decoded.wav",
+      "audio_sha256": "d48a53dcb0508887688f5390eaa31cceab2c874be3d2e75eb9fcd7fc964c9464",
+      "cache_sha256": "04d44b567cfe11a2ad8bda66608959f3e870a63dba58dcc5d438d416da0804e0"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265127",
+      "source_group": "original-bass-seed-265127",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265127/decoded.wav",
+      "audio_sha256": "7d653bc0d225a7525ca0af2a056dbbcdfe678dbee1155515b22a181ee3c6507c",
+      "cache_sha256": "57c88e6734076d760024ce98bf8c572052ffc6a90bc4415c569b491fb4394d28"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265128",
+      "source_group": "original-bass-seed-265128",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265128/decoded.wav",
+      "audio_sha256": "9c4084c3bcbf199484b86eb01819a926474ab6cf0e144981019ddcb3607621b2",
+      "cache_sha256": "6d6e67b16ec6ed52e2d33834521139ba3bd89e4a593cb5fcac469055662a786f"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265129",
+      "source_group": "original-bass-seed-265129",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265129/decoded.wav",
+      "audio_sha256": "b764216dc4abd62d88ccd2419aa6b49a7fe7a760d3ef87534f8c77162571974a",
+      "cache_sha256": "8505fbd9a6627254d6b81fa92f1cd4d06c742df15825b4330bc042eb67aca9a8"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265130",
+      "source_group": "original-bass-seed-265130",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265130/decoded.wav",
+      "audio_sha256": "69c05126878dc664370076a9d7834ad5bfbe0ac7e12ccfa6c5ef2698eafcccd3",
+      "cache_sha256": "00cc298e280e06c68c3d61c5eddd526253df3bf692ad1facec87ded426c3a036"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265131",
+      "source_group": "original-bass-seed-265131",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265131/decoded.wav",
+      "audio_sha256": "50b69b7d62b5a4b8ac57938c2f238f01f26a18ad54f46f591922c95211906e1c",
+      "cache_sha256": "4fc5915cb97e881078bf0fe89c840c53137f75af9922b99be4570449b1a95cff"
+    },
+    {
+      "id": "pitch-consensus-v20-fresh-265132",
+      "source_group": "original-bass-seed-265132",
+      "audio": "/training/pitch-consensus-v20-fresh-v1/pitch-consensus-v20-fresh-265132/decoded.wav",
+      "audio_sha256": "1c2a00b59c6e5821937fe17994541a99ef437f2e4fd616d22fc1f9758ea5bf7f",
+      "cache_sha256": "e0a776e00647cd984aa62487ae3ec54ccdc37494eecefc7b86065d45846983d0"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267101",
+      "source_group": "original-bass-seed-267101",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267101/decoded.wav",
+      "audio_sha256": "157cac276742b031ea77caa466cfae786c1fb79efc6ba1de3db3a518ec9bbc7a",
+      "cache_sha256": "6ed4e98eface280af4f50bf9b00d981c43bb147e2bb724c82209909af595cc5d"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267102",
+      "source_group": "original-bass-seed-267102",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267102/decoded.wav",
+      "audio_sha256": "883a076446d2302cc8a0d78172b4a54ff99ef2d029d5b554a57d9acfbc6c9d72",
+      "cache_sha256": "ad773694ec1af40728b47c78ab5bf33d1cb4b1082bd713034abe17017aae4a40"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267103",
+      "source_group": "original-bass-seed-267103",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267103/decoded.wav",
+      "audio_sha256": "b208c71fa6ffd41584ae18d31965583e4b6dfdafc8a5236225c18f821381ff3f",
+      "cache_sha256": "c08c7d099c98e76069f462163075b87b1f8246eee632ef7c805964e1d6a85f5e"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267104",
+      "source_group": "original-bass-seed-267104",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267104/decoded.wav",
+      "audio_sha256": "dd2cdd05564396764d1b4121e4aa8556c81b834281135010bd508dd86561c159",
+      "cache_sha256": "d5af1807f42c4e1ee4dfe1871b4c5ce6cbdae5b710c7cf2f496065d9d9b4a2c6"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267105",
+      "source_group": "original-bass-seed-267105",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267105/decoded.wav",
+      "audio_sha256": "decbdb084cd53bec5673731de598b4e57df8d5d0e3f5ebf8e507c1a2ccd32405",
+      "cache_sha256": "bad8dbd13398e65fb34f064b52e8b7dc26f103fc3e5e79e287ec3840dd909d78"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267106",
+      "source_group": "original-bass-seed-267106",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267106/decoded.wav",
+      "audio_sha256": "df5ad98ff5f09edbb9bcbe562b6e95fff38201e89455546752346a5df9ea469e",
+      "cache_sha256": "29c9b10d0e5f583bbfa0a6347837ecda240cc562eb2559552cdc7e28e537b69c"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267107",
+      "source_group": "original-bass-seed-267107",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267107/decoded.wav",
+      "audio_sha256": "e11b498f43740ef04ca9cde1f0c7d2d5ce078b6a5672492c012005b693d62fa9",
+      "cache_sha256": "5028220cc616b3fcb4512cf89f1ec8d00ba009c073f2e25288b4417f05dadd7f"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267108",
+      "source_group": "original-bass-seed-267108",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267108/decoded.wav",
+      "audio_sha256": "ebe509b9c275455a9469c8a316d9b254d665f3594473c8ca39af7a3ae7bbaf1c",
+      "cache_sha256": "13ae28eeb0e01e3ba0d2b9ae53b0e25aab12c6ff48e1f4b86ced69407f7889a6"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267109",
+      "source_group": "original-bass-seed-267109",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267109/decoded.wav",
+      "audio_sha256": "3320523d3e830c2f74434270daf1a7305faf2dfb61c4d94a71c40c7d8ddde3f5",
+      "cache_sha256": "63b125201aee3d8bc87bf1794c742e6a7400d3e0a647320030870c7e6dabf02b"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267110",
+      "source_group": "original-bass-seed-267110",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267110/decoded.wav",
+      "audio_sha256": "9fe2d79ccfdf01cd0d2c33194876ac185f8a226fc9870572ee92ed0b113e9121",
+      "cache_sha256": "ab8425d5020335a2c1b7956cd74520bfd9d332615047c41287ce3f0f1b9f70d4"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267111",
+      "source_group": "original-bass-seed-267111",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267111/decoded.wav",
+      "audio_sha256": "51165f8067f471228e61e843bf4a0a1728896c26aaa4519b78ce04ab54af4698",
+      "cache_sha256": "f2a639a07a37a809fbec001efdad999792f8e8185fa2a165b7366b18b232d106"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267112",
+      "source_group": "original-bass-seed-267112",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267112/decoded.wav",
+      "audio_sha256": "98a4e9b099e28014dfdeba35d19c4c9f3d475b177f238f6d78e6138dee7ec9cb",
+      "cache_sha256": "867393d194439ff8b2e10b7ec9096f4dded7476d0ffc11a1e3c7c4661e01a756"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267113",
+      "source_group": "original-bass-seed-267113",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267113/decoded.wav",
+      "audio_sha256": "187f88faa5b9e59a07110cf83b2684db46557a783e6ea2f545807432a6114e20",
+      "cache_sha256": "bbfddaec8be3f72a68d24e4d5b4052bd3b4516ce2ea338068aec406612b32397"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267114",
+      "source_group": "original-bass-seed-267114",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267114/decoded.wav",
+      "audio_sha256": "4286851794f1b3d090509386a4f5c06990fc7ea3562a4c3a808e20b4df7f0a42",
+      "cache_sha256": "0604d39fe19f91c6c2fb351a05e61dd4c4896aeb36a363ea75530dc0bbf12457"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267115",
+      "source_group": "original-bass-seed-267115",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267115/decoded.wav",
+      "audio_sha256": "fa73d07148340a11c0427df0f37fbde58e4bebb2e021e82287fb597eb275df96",
+      "cache_sha256": "936b1bdd51fdfdf57faae7afce999775097d33ef60f26e30d5778a2481b91db9"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267116",
+      "source_group": "original-bass-seed-267116",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267116/decoded.wav",
+      "audio_sha256": "3095e966dcdcb49044b5819b43bfeedab04e94111f46c341a6ad67d10e1418f2",
+      "cache_sha256": "b233f98bb6fa80d98f1de41d57af04b705c61747c1c5e18576ff37fcf68179c4"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267117",
+      "source_group": "original-bass-seed-267117",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267117/decoded.wav",
+      "audio_sha256": "8ca608c55f5b66c90c3cfda8fc9183b0c7fbacc4b848c1e0827c5bd4be622362",
+      "cache_sha256": "99019c606c3b8c704e78e4a3649be98007845d497cb2e53936fa9f7049ff3b61"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267118",
+      "source_group": "original-bass-seed-267118",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267118/decoded.wav",
+      "audio_sha256": "7109f21e2db8cf9882a2be4fb29833e80431f70de4a4706733046d3791c4c30c",
+      "cache_sha256": "b81def57b2fcf099b4d10e02421b2f13241b7bdda5d0a43612e2ae15c273697d"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267119",
+      "source_group": "original-bass-seed-267119",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267119/decoded.wav",
+      "audio_sha256": "d0d26abce97f3572dccf1d135de0b6ddd60ff8e34da09eeae5e26a66aa928187",
+      "cache_sha256": "f24228032031d478e9cea4c14e4996a8a611eaa7b9aa384074da44318c025a14"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267120",
+      "source_group": "original-bass-seed-267120",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267120/decoded.wav",
+      "audio_sha256": "1aee90154a62cb5313436b049c4bfe13c4831659175b46e9c400cd9342efa0ba",
+      "cache_sha256": "9b3a2c96a73097b11fdb94167ca228213bb97f3cd5856101c98b48132aef7830"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267121",
+      "source_group": "original-bass-seed-267121",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267121/decoded.wav",
+      "audio_sha256": "bb5aa5a04756f14ff4863e888b694c317c9023c37172bb8e0d88a681cbef3134",
+      "cache_sha256": "e0b544938fde58c018e4878781dbf1c5a006f8da84cfdeda59bed93b5e2c8fa2"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267122",
+      "source_group": "original-bass-seed-267122",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267122/decoded.wav",
+      "audio_sha256": "59a5b8c8c511fc606efd91e8cb91fd608ecca254bbe291fe95d5703a819f3839",
+      "cache_sha256": "ae926684b4a6fd4884bcae11b6e675a0ff4658050a8e97ffa02d158a9a68b4eb"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267123",
+      "source_group": "original-bass-seed-267123",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267123/decoded.wav",
+      "audio_sha256": "22b92bee5ee104991b282e1d6ac15aa545bcb23da2de845d09cdf5229bdabbf1",
+      "cache_sha256": "db11ddc5d1eafcad2f0a6c4690c8d27306d29bab293e9935124f998f75ee2521"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267124",
+      "source_group": "original-bass-seed-267124",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267124/decoded.wav",
+      "audio_sha256": "0339a750e9e7509fa5f21745395832fa1acabba56f17eacf77a355cca375c479",
+      "cache_sha256": "13f64f11ed0d880a182351271e82ece77c8885625bb38de1dbfd9a84e5acdfc4"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267125",
+      "source_group": "original-bass-seed-267125",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267125/decoded.wav",
+      "audio_sha256": "ea4a0c26fe56a82c6ca68ce90a0f2e36ba207ba79a6a912e97c8b1b1ec7a2523",
+      "cache_sha256": "3717a078fbacaba450467b816550469d143486917996e2379675616ead57f999"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267126",
+      "source_group": "original-bass-seed-267126",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267126/decoded.wav",
+      "audio_sha256": "ad1f26610d5b1b096682552fe44bc1c582cb8cf8fa8fd2abef375dca0c7e260f",
+      "cache_sha256": "3da4dd9735f5b2ce13d5b9650cac86e5da486ff7a143dca4d376231ce1cd2c9c"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267127",
+      "source_group": "original-bass-seed-267127",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267127/decoded.wav",
+      "audio_sha256": "fece9793834d65d22c75e6d8c2870efc73d07999f6535cdb05a0d82b3608c097",
+      "cache_sha256": "33d15236aa65e75ece00dcbbd8e8ccac17ccf1deecc3a4e345b5951ca49159ee"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267128",
+      "source_group": "original-bass-seed-267128",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267128/decoded.wav",
+      "audio_sha256": "ecbdad4d26c25c5bf0a31aa47f3570b65373482c93fb97c52ad2564b88d1080e",
+      "cache_sha256": "b246808fc1128c63989969d58c14d848c74737c69f882e33e1689fef4e3f2d13"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267129",
+      "source_group": "original-bass-seed-267129",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267129/decoded.wav",
+      "audio_sha256": "94fe0a7d5485ab68dd3b82a58e471715f8eedfa5550ec064133b17af718eb3b9",
+      "cache_sha256": "e28f4385a579ca0b1a9c6a78c864883bfda76eae85b7f5539e2f9dde2da4def5"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267130",
+      "source_group": "original-bass-seed-267130",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267130/decoded.wav",
+      "audio_sha256": "bc10b7cddcb4a390d3b9b06bae2807b5d9306dc08a521688ff716d22b4c97ed1",
+      "cache_sha256": "2a7ba40e6d8cea7bcd8af6fb9c901e59b6fd010f10db0893965dd187bd986078"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267131",
+      "source_group": "original-bass-seed-267131",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267131/decoded.wav",
+      "audio_sha256": "3db3473bfdb576ee18a58b4dba1e81b23083a792cd6fb0c0b3a44f64c39b5086",
+      "cache_sha256": "1817ca083ce19af0a043cc669a282ec3f1d9934d455f3efac025b890ce40015f"
+    },
+    {
+      "id": "early-consensus-v22-fresh-267132",
+      "source_group": "original-bass-seed-267132",
+      "audio": "/training/early-consensus-v22-fresh-v1/early-consensus-v22-fresh-267132/decoded.wav",
+      "audio_sha256": "f0b121542e6eb7bb54a2a7ea401c09b0f521dd96d008af66bcbb22154b0f69a8",
+      "cache_sha256": "6e7d0e020a5c7882246c77529fb597344ded1fe6e78e13cb69cf88d4ac6ac5c4"
+    }
+  ],
+  "recordings": 360,
+  "no_fitting_selection_user_audio_or_inference": true
+}

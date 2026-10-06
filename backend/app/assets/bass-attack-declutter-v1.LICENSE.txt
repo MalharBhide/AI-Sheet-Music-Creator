@@ -1,0 +1,35 @@
+Bass attack/release verifier v1 (website V25)
+
+Copyright 2026 Piano Scribe contributors.
+Newly trained portable model arrays: Creative Commons Attribution 4.0.
+https://creativecommons.org/licenses/by/4.0/
+
+Training recipe and limitations: docs/attack-release-decluttering-v25.md.
+Three acoustic views (coarse context, attack, ending) with independent V14
+acoustic guardian. Removal confidence .8 and guardian threshold .5.
+All seven preceding bass stages and other transcription networks are retained.
+
+Training data (CC BY 4.0):
+Vienna 4x22: Werner Goebl. https://doi.org/10.21939/4X22
+Acoustic piano performances with aligned key releases and pedal support.
+
+GuitarSet 1.1.0: Qingyang Xi, Rachel M. Bittner, Johan Pauwels, Xuzhou Ye,
+and Juan P. Bello. https://zenodo.org/records/3371780
+BabySlakh v2: Ethan Manilow, Gordon Wichern, Prem Seetharaman, Jonathan Le Roux.
+Cutting Music Source Separation Some Slakh, WASPAA 2019.
+https://zenodo.org/records/4603870
+
+Additional data: original project-authored bass signals and note sequences.
+Original MP3 and separated full-mixture Demucs variants retain their existing
+source-group training/validation partition. No user recordings or scores used.
+Frozen provenance: training/results/attack-release-v25-v1 and associated
+release-local-bass-v1 and attack-release-v25-fresh-v1 metadata.
+Selected checkpoint: support-conservative epoch 60.
+Checkpoint SHA256: c1d8d11c559c6cd47f32a1cdfe89ca19c1e691c942119a166c90cc780fb5a074
+Portable SHA256: f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c
+
+Scope: balanced Full-song bass, pitches 21–59. First/last 2.5 seconds are
+protected. Removal requires neural and acoustic rejection independently.
+Retained objects preserve pitch, attack, endpoint, velocity and source part.
+No user recordings or saved scores were used. This limited-corpus improvement
+is not an assurance of correct transcription for arbitrary commercial songs.

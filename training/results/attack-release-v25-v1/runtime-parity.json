@@ -1,0 +1,33 @@
+{
+  "passes": true,
+  "recordings": 1125,
+  "partitions": {
+    "train": 573,
+    "validation": 160,
+    "consumed": 360,
+    "first_pass": 32
+  },
+  "input_events": 57627,
+  "removed_events": 723,
+  "maximum_probability_error": 0.0,
+  "tolerance": 1e-06,
+  "thread_counts": [
+    1,
+    2
+  ],
+  "both_confidence_decisions_identical": true,
+  "retained_pitch_clock_velocity_object_part_identity_preserved": true,
+  "global_thread_setting_unchanged_by_runtime": true,
+  "asset_sha256": "f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c",
+  "checkpoint_sha256": "c1d8d11c559c6cd47f32a1cdfe89ca19c1e691c942119a166c90cc780fb5a074",
+  "batch_selection_sha256": "c6e224c9c120e2fbb6d145de5f834d882f448d7cd11c9accfa4b0057d56b11f2",
+  "runtime_source_sha256": {
+    "attack_local_evidence": "7c284d47d5eb55af2ff0811addd8eac1d13264f438c599360e9ef7505639b85f",
+    "release_local_evidence": "b3d259307fe597c7276e9f2371416df16e41866984535fc1c03bba6f83fc9150",
+    "attack_local_network": "958d93766a3193adec1a33ac5d1dcb2fcf4af4366bc1a45ea33311a86b456de0",
+    "bass_attack_declutter": "1b8d65a74f2c884ab2994fefa25901d974ea1a857525224bccabc0aa39cb1529"
+  },
+  "script_sha256": "f975f29afa18ba9fa2f4ec756cead2effefd2fe80a8ef4d5025f035ed7e54c5d",
+  "no_user_audio_or_scores": true,
+  "physical_feature_and_native_pipeline_checks_still_required": true
+}

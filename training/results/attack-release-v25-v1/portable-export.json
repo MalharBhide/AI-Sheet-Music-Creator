@@ -1,0 +1,30 @@
+{
+  "passes": true,
+  "version": "attack-release-bass-support-v25-v1",
+  "checkpoint_sha256": "c1d8d11c559c6cd47f32a1cdfe89ca19c1e691c942119a166c90cc780fb5a074",
+  "batch_selection_sha256": "c6e224c9c120e2fbb6d145de5f834d882f448d7cd11c9accfa4b0057d56b11f2",
+  "asset_sha256": "f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c",
+  "plan_sha256": "bdb70c92d9c12e1884b7894713554e9caa5adc88b04655f09f29f6c2ab178126",
+  "first_pass_sha256": "0e8b3f6eea7ee86cd65491a565623fe460dadef7b36f8520913539df6763b08a",
+  "consumed_regression_sha256": "57c2e4d27911b5092d06057218845502bb825d2241ce33d01fb70472b822960e",
+  "fresh_manifest_sha256": "82a67b21ee674137056aab2c2b0a4636830a29e505f8509551f2d15a23a27a60",
+  "source_sha256": "c298a10f37fc9d27b3e134b18b3a447505d783004cf530ca14ad0a2aa363fc9f",
+  "frozen_selection": {
+    "profile": "support-conservative",
+    "width": 24,
+    "selected": true,
+    "epoch": 60,
+    "checkpoint": "support-conservative/epoch-060.pt",
+    "checkpoint_sha256": "c1d8d11c559c6cd47f32a1cdfe89ca19c1e691c942119a166c90cc780fb5a074",
+    "validation_sha256": "f7e273df318c33d56cd13b54f379e2ffb23b8ef5691a2dd5bd1662f57b2118c4",
+    "false_notes_removed": 105,
+    "margin_false_notes_removed": 93,
+    "validation_log_loss": 0.5639201402664185,
+    "threshold": 0.8,
+    "guardian_threshold": 0.5,
+    "plan_sha256": "bdb70c92d9c12e1884b7894713554e9caa5adc88b04655f09f29f6c2ab178126",
+    "test_used_for_selection": false
+  },
+  "no_user_audio_or_scores": true,
+  "runtime_parity_still_required": true
+}

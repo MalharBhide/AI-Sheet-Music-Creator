@@ -1,7 +1,7 @@
 {
-  "fit_status": "running",
+  "fit_status": "complete",
   "no_user_audio_or_scores": true,
-  "new_ml_weights_deployed": false,
+  "new_ml_weights_deployed": true,
   "full_backend_training_tests": {
     "passed": 730,
     "skipped": 6,
@@ -13,5 +13,31 @@
   },
   "ending_preparation_recordings": 733,
   "ending_preparation_manifest_sha256": "53d6e86908f56d255266ca37af6d50c9f601ac9c1816fc406df54b095e6fd9d4",
-  "ruff": "passed"
+  "ruff": "passed",
+  "consumed_regression_passes": true,
+  "consumed_regressions": 360,
+  "regression_false_notes_removed": {
+    "raw": 196,
+    "margin": 182
+  },
+  "inactive_runtime_random_fixture_tests": 11,
+  "first_pass_status": "complete",
+  "first_pass_passes": true,
+  "first_pass_recordings": 32,
+  "first_pass_false_notes_removed": {
+    "raw": 26,
+    "margin": 22
+  },
+  "now_required_consumed_regressions": 392,
+  "runtime_parity_status": "passed",
+  "runtime_parity_recordings": 1125,
+  "runtime_maximum_probability_error": 0.0,
+  "physical_runtime_parity_recordings": 4,
+  "physical_runtime_parity_status": "passed",
+  "release_backend_training_tests": {
+    "passed": 742,
+    "skipped": 6
+  },
+  "native_integration_tests_passed": 6,
+  "website_health_ready": true
 }
