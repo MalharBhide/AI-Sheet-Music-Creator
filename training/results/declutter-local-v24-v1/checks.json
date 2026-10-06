@@ -1,5 +1,5 @@
 {
-  "fit_status": "running",
+  "fit_status": "complete",
   "no_user_audio_or_scores": true,
   "new_ml_weights_deployed": false,
   "full_backend_training_tests": {
@@ -8,5 +8,18 @@
     "log_sha256": "4bed3d2443b0a1667815eb02f9d40aec107ab7e442c8ffc94e8ebb713c069377"
   },
   "partial_hold_supervision_tests": 5,
-  "ruff": "passed"
+  "ruff": "passed",
+  "release_passes": false,
+  "consumed_regressions": 360,
+  "regression_false_notes_removed": {
+    "raw": 219,
+    "margin": 208
+  },
+  "regression_passes": {
+    "raw": false,
+    "margin": true
+  },
+  "first_pass_seeds_unused": true,
+  "reason": "Normal confidence loses 0.007397732426303705 seconds of supplied reference pitch coverage in one recording. No first-pass inference, export or deployment. Stricter configuration alone cannot replace the frozen candidate.",
+  "inactive_runtime_fixture_tests": 11
 }

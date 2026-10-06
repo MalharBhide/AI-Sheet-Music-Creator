@@ -1,0 +1,56 @@
+{
+  "selected": true,
+  "winner": {
+    "profile": "support-conservative",
+    "width": 24,
+    "selected": true,
+    "epoch": 60,
+    "checkpoint": "support-conservative/epoch-060.pt",
+    "checkpoint_sha256": "85c2ceb5c1e5c37525b22ff2c7a22adabf327134c2d9a2a4945401df9cb58791",
+    "validation_sha256": "213e39b136366543394b7f82e9eaf9ade562d3e0579832f608c91b25eafb114e",
+    "false_notes_removed": 120,
+    "margin_false_notes_removed": 101,
+    "validation_log_loss": 0.599477231502533,
+    "threshold": 0.7,
+    "guardian_threshold": 0.5,
+    "plan_sha256": "a0cc411dd540ed6a4ad64a785221b33c0e2e2e76f572838fb7676e81e0c6d733",
+    "test_used_for_selection": false
+  },
+  "candidates": [
+    {
+      "profile": "support-conservative",
+      "width": 24,
+      "selected": true,
+      "epoch": 60,
+      "checkpoint": "support-conservative/epoch-060.pt",
+      "checkpoint_sha256": "85c2ceb5c1e5c37525b22ff2c7a22adabf327134c2d9a2a4945401df9cb58791",
+      "validation_sha256": "213e39b136366543394b7f82e9eaf9ade562d3e0579832f608c91b25eafb114e",
+      "false_notes_removed": 120,
+      "margin_false_notes_removed": 101,
+      "validation_log_loss": 0.599477231502533,
+      "threshold": 0.7,
+      "guardian_threshold": 0.5,
+      "plan_sha256": "a0cc411dd540ed6a4ad64a785221b33c0e2e2e76f572838fb7676e81e0c6d733",
+      "test_used_for_selection": false
+    },
+    {
+      "profile": "support-protected",
+      "width": 32,
+      "selected": true,
+      "epoch": 80,
+      "checkpoint": "support-protected/epoch-080.pt",
+      "checkpoint_sha256": "0ae675fea46f3d33757112a625525328f34a764cd96bf88c29d91cb421626311",
+      "validation_sha256": "a760e5c972d5844ac427be289d1cd6bb874d8be4ab55695b0816f3bbcdcb65a8",
+      "false_notes_removed": 114,
+      "margin_false_notes_removed": 93,
+      "validation_log_loss": 0.7241265177726746,
+      "threshold": 0.6,
+      "guardian_threshold": 0.5,
+      "plan_sha256": "a0cc411dd540ed6a4ad64a785221b33c0e2e2e76f572838fb7676e81e0c6d733",
+      "test_used_for_selection": false
+    }
+  ],
+  "plan_sha256": "a0cc411dd540ed6a4ad64a785221b33c0e2e2e76f572838fb7676e81e0c6d733",
+  "test_used_for_selection": false,
+  "no_user_audio_or_scores": true
+}

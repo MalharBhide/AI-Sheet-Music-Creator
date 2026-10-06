@@ -1,0 +1,64 @@
+{
+  "profile": {
+    "name": "support-conservative",
+    "width": 24,
+    "positive_weight": 16.0,
+    "fragment_weight": 4.0,
+    "seed": 269001
+  },
+  "plan_sha256": "a0cc411dd540ed6a4ad64a785221b33c0e2e2e76f572838fb7676e81e0c6d733",
+  "training_counts": {
+    "guitarset-bass-register": {
+      "recordings": 238,
+      "class_counts": [
+        15788,
+        2545
+      ],
+      "boosted_partial_hold_events": 308
+    },
+    "original-bass-texture": {
+      "recordings": 72,
+      "class_counts": [
+        1505,
+        523
+      ],
+      "boosted_partial_hold_events": 27
+    },
+    "original-bass-timbres": {
+      "recordings": 128,
+      "class_counts": [
+        2778,
+        122
+      ],
+      "boosted_partial_hold_events": 32
+    },
+    "slakh-demucs-bass": {
+      "recordings": 46,
+      "class_counts": [
+        1167,
+        1009
+      ],
+      "boosted_partial_hold_events": 25
+    },
+    "slakh-oracle-bass": {
+      "recordings": 44,
+      "class_counts": [
+        1098,
+        1184
+      ],
+      "boosted_partial_hold_events": 5
+    },
+    "vienna-piano-mp3-bass": {
+      "recordings": 42,
+      "class_counts": [
+        2489,
+        284
+      ],
+      "boosted_partial_hold_events": 253
+    }
+  },
+  "training_events": 30492,
+  "training_recordings": 573,
+  "validation_recordings": 160,
+  "test_used_for_selection": false
+}
