@@ -1,0 +1,69 @@
+{
+  "version": "attack-ending-periodicity-fusion-v27-v1",
+  "baseline_hashes": {
+    "version": "shipped-bass-v25-baseline-v1",
+    "sources": {
+      "backend/app/services/piano_transcription.py": "ca07ef6e53e2ffb5a2609503a3c0f23ef94d79f9d533616965f1b6cb119c93dc",
+      "backend/app/routes/dependencies.py": "d3f08b8032e0265cbe69565a1275ec3eaf289b9b0ac6f0af6fcabb8061edd897",
+      "backend/app/services/midi_to_score.py": "230e99e6a1cef92bbc3056386edb7d9c5d2485a008a3e592329b9f5b3ce436f4",
+      "backend/app/assets/bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775",
+      "backend/app/assets/bass-attack-declutter-v1.npz": "f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c",
+      "backend/app/assets/bass-attack-declutter-v1.LICENSE.txt": "c15508b91f040e64b90b100608df42a78a6916f124f29d4c4efcd37d1e3f3485",
+      "backend/app/services/attack_local_evidence.py": "e399e4213054788a701f59aee77c57cce56a80f3191a606317d9994ebcb454bc",
+      "backend/app/services/release_local_evidence.py": "226cc21ed43aadfc7034e43c443f3fe765a7f201dc9de1523d4377d09c35a460",
+      "backend/app/services/attack_local_network.py": "db9fa5903b949f16a93c59d741224bb040858b3481d12cf3a61a2a7f645e5511",
+      "backend/app/services/bass_attack_declutter.py": "828569fddda91e70014d079b1e9e819d930e939716f5c96f5b9cf871fb1bcba4",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "backend/app/services/bass_texture.py": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c",
+      "backend/app/services/bass_harmonic.py": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7",
+      "backend/app/services/bass_temporal.py": "3cf000fb9d6174e64d4197d1b03c126f27239b541b4a032f75d73510dfffb68a",
+      "backend/app/services/bass_temporal_refinement.py": "e712f3f5e0937918ec013ccc3c863afc5a18349ebcf46c047764b1e37b39a18c",
+      "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/candidate_relations.py": "3a1b6caf5eaebf444f3cdcddb7abc8835c86f665721ab476e03c1c1dbc58d029",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "training/current_bass_v16_baseline.py": "7c7d4c928a2a40c8d7df2816dee596232ded3a9cdc7abb9a9003a7d6e4f9b511"
+    },
+    "release_sha256": "a91c801f49f3b311d0a039692b6e66c45191074d630b66f3467450df5399c31a",
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51",
+      "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb",
+      "bass-texture-v1.npz": "f1e829c7d4328afc38268cc8dbe8afb526c6860efafd3d272170cf3aca768d3e",
+      "bass-texture-guardian-v1.npz": "82f4ed13e9cf5a7a832a8a066f23ff9f7642aa187da664779a900d55b807e994",
+      "bass-harmonic-v1.npz": "8184a7c4009d2e26bc1d2f264ec58d8503182cda79667b9c3af7a8bb856ce66c",
+      "bass-harmonic-guardian-v1.npz": "bcab8b156e54db37c3c19dd74e553106499722503abb043ba7fb491d3418f76e",
+      "bass-temporal-v1.npz": "0edc221998bbaacb052fbffe43f6efcce6e759290d0cdb9a7314028521e162c4",
+      "bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775",
+      "bass-attack-declutter-v1.npz": "f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c"
+    },
+    "thresholds": {
+      "remove": 0.8,
+      "guardian": 0.5
+    },
+    "preceding_source_commit": "e56554c"
+  },
+  "code_sha256": {
+    "training/prepare_fusion_v27.py": "dd73f6844b2d3b8231d759c75f3526d258ba91c04142101d8b3ab8e222c34120",
+    "training/attack_local_features.py": "7c284d47d5eb55af2ff0811addd8eac1d13264f438c599360e9ef7505639b85f",
+    "training/release_local_features.py": "a42de471567b3d4b17e0a9a1f56737e5673931e53f9e68ecea335b63001c750b",
+    "training/periodicity_bass_data.py": "119cf3e34d5c35e132dfef88a52218897f422d4ea6a51a19f6c88153d5b63b6b"
+  },
+  "periodicity_root": "/training/periodicity-bass-v1",
+  "periodicity_manifest_sha256": "1cc5ce20bbca92582561bfadb4635229c3787a9c3811b8c800490808d421c1c8",
+  "nsynth_root": "/training/nsynth-bass-v25-v1",
+  "nsynth_manifest_sha256": "4691accb4a2730e47ad83c7671744c941551d63d2faf429f127057b099fc7dc9",
+  "legacy_root": "/training/release-local-bass-v1",
+  "legacy_manifest_sha256": "53d6e86908f56d255266ca37af6d50c9f601ac9c1816fc406df54b095e6fd9d4",
+  "groups": {
+    "train": 639,
+    "validation": 178
+  },
+  "no_regression_audio_or_metrics": true,
+  "no_user_audio_or_transcription_inference": true
+}
