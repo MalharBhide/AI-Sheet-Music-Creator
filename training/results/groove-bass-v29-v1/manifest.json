@@ -1,0 +1,5779 @@
+{
+  "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+  "items": [
+    {
+      "id": "groove-v25-groove-source-00-drums_only",
+      "source_group": "groove-drummer1/nsynth-bass_electronic_018",
+      "drum_source": "groove-source-00",
+      "drummer": "drummer1",
+      "instrument_str": "bass_electronic_018",
+      "drum_audio_sha256": "9596a7ccfd18693204c00261ee701a452ec7281797ab8f962ff6042249901258",
+      "group": "train",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-00-drums_only/decoded.wav",
+      "audio_sha256": "8598d169bcfa4eccc4276374364f39ab004857e1fae22b8c108e33bcfc140f16",
+      "cache_sha256": "bc6a74ac0bac09b5a2658b52f2adda53acca3927b0d92c93a50e100080a6fb0c",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 3,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-00-single",
+      "source_group": "groove-drummer1/nsynth-bass_electronic_025",
+      "drum_source": "groove-source-00",
+      "drummer": "drummer1",
+      "instrument_str": "bass_electronic_025",
+      "drum_audio_sha256": "9596a7ccfd18693204c00261ee701a452ec7281797ab8f962ff6042249901258",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-00-single/decoded.wav",
+      "audio_sha256": "de2b9214bcf076d3cc9ee34a2a4b0c8900328f5afcdba84fb8bded5f9eb5a55e",
+      "cache_sha256": "37ac709d34feea0ea8657ab43481ce765f7dd295e0d523c99ee3f89706225b99",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          26
+        ],
+        [
+          7.25,
+          10.25,
+          33
+        ],
+        [
+          11.75,
+          14.75,
+          40
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          26
+        ],
+        [
+          7.25,
+          11.25,
+          33
+        ],
+        [
+          11.75,
+          15.75,
+          40
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_025-026-075",
+        "bass_electronic_025-033-075",
+        "bass_electronic_025-040-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 9,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-00-repeat",
+      "source_group": "groove-drummer1/nsynth-bass_electronic_027",
+      "drum_source": "groove-source-00",
+      "drummer": "drummer1",
+      "instrument_str": "bass_electronic_027",
+      "drum_audio_sha256": "9596a7ccfd18693204c00261ee701a452ec7281797ab8f962ff6042249901258",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-00-repeat/decoded.wav",
+      "audio_sha256": "6881a90cea81d70ac8495374a5b1e400dad96c20a4af71d8e16d356cafbe3975",
+      "cache_sha256": "eedc90b1c9b0e1f71c112faf53494d44df44c62f2979760d8c70f15346f7b541",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          42
+        ],
+        [
+          7.25,
+          10.25,
+          42
+        ],
+        [
+          11.75,
+          14.75,
+          42
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          42
+        ],
+        [
+          7.25,
+          11.25,
+          42
+        ],
+        [
+          11.75,
+          15.75,
+          42
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_027-042-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 7,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-00-octave",
+      "source_group": "groove-drummer1/nsynth-bass_synthetic_009",
+      "drum_source": "groove-source-00",
+      "drummer": "drummer1",
+      "instrument_str": "bass_synthetic_009",
+      "drum_audio_sha256": "9596a7ccfd18693204c00261ee701a452ec7281797ab8f962ff6042249901258",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-00-octave/decoded.wav",
+      "audio_sha256": "52068c580ddc6d1ef9f529e8bc8d353d7a2349669ab6e5bd0f08db3e3a865b31",
+      "cache_sha256": "7cc1b48968f9fd8b4db812b863ad2841002127d1942338ba2964982fccaed399",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          36
+        ],
+        [
+          2.75,
+          5.75,
+          48
+        ],
+        [
+          7.25,
+          10.25,
+          36
+        ],
+        [
+          7.25,
+          10.25,
+          48
+        ],
+        [
+          11.75,
+          14.75,
+          36
+        ],
+        [
+          11.75,
+          14.75,
+          48
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          36
+        ],
+        [
+          2.75,
+          6.75,
+          48
+        ],
+        [
+          7.25,
+          11.25,
+          36
+        ],
+        [
+          7.25,
+          11.25,
+          48
+        ],
+        [
+          11.75,
+          15.75,
+          36
+        ],
+        [
+          11.75,
+          15.75,
+          48
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_009-036-075",
+        "bass_synthetic_009-048-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 33,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-00-dyad",
+      "source_group": "groove-drummer1/nsynth-bass_synthetic_033",
+      "drum_source": "groove-source-00",
+      "drummer": "drummer1",
+      "instrument_str": "bass_synthetic_033",
+      "drum_audio_sha256": "9596a7ccfd18693204c00261ee701a452ec7281797ab8f962ff6042249901258",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-00-dyad/decoded.wav",
+      "audio_sha256": "38caf485670f2eaed7b3009fd7a366bb98e68525eeba44d3767f78dc072a9c86",
+      "cache_sha256": "3fbbabcb2cc17243e99bc18d60899631613deb288046542d0bbdf0bd40469077",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          27
+        ],
+        [
+          2.75,
+          5.75,
+          33
+        ],
+        [
+          7.25,
+          10.25,
+          27
+        ],
+        [
+          7.25,
+          10.25,
+          33
+        ],
+        [
+          11.75,
+          14.75,
+          27
+        ],
+        [
+          11.75,
+          14.75,
+          33
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          27
+        ],
+        [
+          2.75,
+          6.75,
+          33
+        ],
+        [
+          7.25,
+          11.25,
+          27
+        ],
+        [
+          7.25,
+          11.25,
+          33
+        ],
+        [
+          11.75,
+          15.75,
+          27
+        ],
+        [
+          11.75,
+          15.75,
+          33
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_033-027-075",
+        "bass_synthetic_033-033-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 36,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-00-quiet",
+      "source_group": "groove-drummer1/nsynth-bass_synthetic_034",
+      "drum_source": "groove-source-00",
+      "drummer": "drummer1",
+      "instrument_str": "bass_synthetic_034",
+      "drum_audio_sha256": "9596a7ccfd18693204c00261ee701a452ec7281797ab8f962ff6042249901258",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-00-quiet/decoded.wav",
+      "audio_sha256": "dd8d94ffaa7763f93bf462c523bada91c9629cf8c5da3504ec1a4edea8ccda4e",
+      "cache_sha256": "1e0f135926fbd3d4b6f8ff3915d4de1421bc6ed5e2b4ebf72e93972fcadea6b2",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          43
+        ],
+        [
+          7.25,
+          10.25,
+          33
+        ],
+        [
+          11.75,
+          14.75,
+          43
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          43
+        ],
+        [
+          7.25,
+          11.25,
+          33
+        ],
+        [
+          11.75,
+          15.75,
+          43
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_034-033-075",
+        "bass_synthetic_034-043-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 10,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-00-layered",
+      "source_group": "groove-drummer1/nsynth-keyboard_acoustic_004",
+      "drum_source": "groove-source-00",
+      "drummer": "drummer1",
+      "instrument_str": "keyboard_acoustic_004",
+      "drum_audio_sha256": "9596a7ccfd18693204c00261ee701a452ec7281797ab8f962ff6042249901258",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-00-layered/decoded.wav",
+      "audio_sha256": "9460b55113be57bf532b4e16babd9fb147865a866ef29697fbb4c2ad1bb8760f",
+      "cache_sha256": "1137203f35a45a8d6314b43aad6c985be6094aa0f1d699d2ab0d23eba10ed3cb",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          50
+        ],
+        [
+          2.75,
+          5.75,
+          47
+        ],
+        [
+          7.25,
+          10.25,
+          47
+        ],
+        [
+          11.75,
+          14.75,
+          50
+        ],
+        [
+          11.75,
+          14.75,
+          47
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          50
+        ],
+        [
+          2.75,
+          6.75,
+          47
+        ],
+        [
+          7.25,
+          11.25,
+          47
+        ],
+        [
+          11.75,
+          15.75,
+          50
+        ],
+        [
+          11.75,
+          15.75,
+          47
+        ]
+      ],
+      "source_notes": [
+        "keyboard_acoustic_004-047-075",
+        "keyboard_acoustic_004-050-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 16,
+      "kind": "layered",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-01-drums_only",
+      "source_group": "groove-drummer1/nsynth-keyboard_electronic_001",
+      "drum_source": "groove-source-01",
+      "drummer": "drummer1",
+      "instrument_str": "keyboard_electronic_001",
+      "drum_audio_sha256": "a7e377fa0f9f15651fb43c8be1e420ef34fba61c0c980b56380e9cc3c21f170e",
+      "group": "train",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-01-drums_only/decoded.wav",
+      "audio_sha256": "a992502c36162cf711f70a676af5759399d2ddd2cbfb7f204342ed2c8e7a44da",
+      "cache_sha256": "e390ca4ef3453fb10097c09e92b6c09c61ae13294f757bafe44c2536a92aa34d",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 0,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-01-single",
+      "source_group": "groove-drummer1/nsynth-keyboard_electronic_002",
+      "drum_source": "groove-source-01",
+      "drummer": "drummer1",
+      "instrument_str": "keyboard_electronic_002",
+      "drum_audio_sha256": "a7e377fa0f9f15651fb43c8be1e420ef34fba61c0c980b56380e9cc3c21f170e",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-01-single/decoded.wav",
+      "audio_sha256": "79f5c40d1111b3ef859069d95e089056fcbb3677b2cc69e0d96d878c819b6615",
+      "cache_sha256": "32db334e0252198843d45149d28c1a1ef42c929c24584b0e81508a671b5e297a",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          53
+        ],
+        [
+          7.25,
+          10.25,
+          23
+        ],
+        [
+          11.75,
+          14.75,
+          31
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          53
+        ],
+        [
+          7.25,
+          11.25,
+          23
+        ],
+        [
+          11.75,
+          15.75,
+          31
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_002-023-075",
+        "keyboard_electronic_002-031-075",
+        "keyboard_electronic_002-053-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 6,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-01-repeat",
+      "source_group": "groove-drummer1/nsynth-keyboard_electronic_003",
+      "drum_source": "groove-source-01",
+      "drummer": "drummer1",
+      "instrument_str": "keyboard_electronic_003",
+      "drum_audio_sha256": "a7e377fa0f9f15651fb43c8be1e420ef34fba61c0c980b56380e9cc3c21f170e",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-01-repeat/decoded.wav",
+      "audio_sha256": "9e55e16fc4b184cd3e3342bc113cf33fa07ef84df0fef36f4651215b7160ba3a",
+      "cache_sha256": "d18900802c1aa00c58e5b808f57f5182a5be3903f2d595030e29625967a707f2",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          51
+        ],
+        [
+          7.25,
+          10.25,
+          51
+        ],
+        [
+          11.75,
+          14.75,
+          51
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          51
+        ],
+        [
+          7.25,
+          11.25,
+          51
+        ],
+        [
+          11.75,
+          15.75,
+          51
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_003-051-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 43,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-01-octave",
+      "source_group": "groove-drummer1/nsynth-keyboard_electronic_069",
+      "drum_source": "groove-source-01",
+      "drummer": "drummer1",
+      "instrument_str": "keyboard_electronic_069",
+      "drum_audio_sha256": "a7e377fa0f9f15651fb43c8be1e420ef34fba61c0c980b56380e9cc3c21f170e",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-01-octave/decoded.wav",
+      "audio_sha256": "3767bf2ddb3a9c2c8334dbcaa05eb2b626a623c53889765eaf0b3d2ccecbea35",
+      "cache_sha256": "74b46a1121a803bc08965d930c52be737ddd3c4eb3f2dd0c6d850dad5067b3be",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          53
+        ],
+        [
+          2.75,
+          5.75,
+          41
+        ],
+        [
+          7.25,
+          10.25,
+          53
+        ],
+        [
+          7.25,
+          10.25,
+          41
+        ],
+        [
+          11.75,
+          14.75,
+          53
+        ],
+        [
+          11.75,
+          14.75,
+          41
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          53
+        ],
+        [
+          2.75,
+          6.75,
+          41
+        ],
+        [
+          7.25,
+          11.25,
+          53
+        ],
+        [
+          7.25,
+          11.25,
+          41
+        ],
+        [
+          11.75,
+          15.75,
+          53
+        ],
+        [
+          11.75,
+          15.75,
+          41
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_069-041-075",
+        "keyboard_electronic_069-053-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 25,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-01-dyad",
+      "source_group": "groove-drummer1/nsynth-bass_electronic_018",
+      "drum_source": "groove-source-01",
+      "drummer": "drummer1",
+      "instrument_str": "bass_electronic_018",
+      "drum_audio_sha256": "a7e377fa0f9f15651fb43c8be1e420ef34fba61c0c980b56380e9cc3c21f170e",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-01-dyad/decoded.wav",
+      "audio_sha256": "6bccf28eba3031e836282ae2bdb42e28e738dcfb9503af27a6c9f5c2419bcc07",
+      "cache_sha256": "008a097a9a7615ba8877d81a599144ab64dc827707335ed8a792212184cb8b55",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          34
+        ],
+        [
+          2.75,
+          5.75,
+          56
+        ],
+        [
+          7.25,
+          10.25,
+          34
+        ],
+        [
+          7.25,
+          10.25,
+          56
+        ],
+        [
+          11.75,
+          14.75,
+          34
+        ],
+        [
+          11.75,
+          14.75,
+          56
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          34
+        ],
+        [
+          2.75,
+          6.75,
+          56
+        ],
+        [
+          7.25,
+          11.25,
+          34
+        ],
+        [
+          7.25,
+          11.25,
+          56
+        ],
+        [
+          11.75,
+          15.75,
+          34
+        ],
+        [
+          11.75,
+          15.75,
+          56
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_018-034-075",
+        "bass_electronic_018-056-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 23,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-01-quiet",
+      "source_group": "groove-drummer1/nsynth-bass_electronic_025",
+      "drum_source": "groove-source-01",
+      "drummer": "drummer1",
+      "instrument_str": "bass_electronic_025",
+      "drum_audio_sha256": "a7e377fa0f9f15651fb43c8be1e420ef34fba61c0c980b56380e9cc3c21f170e",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-01-quiet/decoded.wav",
+      "audio_sha256": "ac3e98f1632d2d70b28fb520bc063a1c75f761b22516462ec280b02cb22152b0",
+      "cache_sha256": "69bc5918ee6dd8af503d1bbe696d96e5b806a27fd3b31867068ff8c80a50c00f",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          26
+        ],
+        [
+          7.25,
+          10.25,
+          33
+        ],
+        [
+          11.75,
+          14.75,
+          26
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          26
+        ],
+        [
+          7.25,
+          11.25,
+          33
+        ],
+        [
+          11.75,
+          15.75,
+          26
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_025-026-075",
+        "bass_electronic_025-033-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 11,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-01-layered",
+      "source_group": "groove-drummer1/nsynth-bass_electronic_027",
+      "drum_source": "groove-source-01",
+      "drummer": "drummer1",
+      "instrument_str": "bass_electronic_027",
+      "drum_audio_sha256": "a7e377fa0f9f15651fb43c8be1e420ef34fba61c0c980b56380e9cc3c21f170e",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-01-layered/decoded.wav",
+      "audio_sha256": "74b04ce5ef5ac3875c4fd2f69e323df261dc536b6e8cfc7e731f6d0d0c911e1b",
+      "cache_sha256": "e1291ce291309674668ea6be65fc2c2ed3ef4fb085f72e591d9dd56bae6833d2",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          42
+        ],
+        [
+          2.75,
+          5.75,
+          52
+        ],
+        [
+          7.25,
+          10.25,
+          52
+        ],
+        [
+          11.75,
+          14.75,
+          42
+        ],
+        [
+          11.75,
+          14.75,
+          52
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          42
+        ],
+        [
+          2.75,
+          6.75,
+          52
+        ],
+        [
+          7.25,
+          11.25,
+          52
+        ],
+        [
+          11.75,
+          15.75,
+          42
+        ],
+        [
+          11.75,
+          15.75,
+          52
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_027-042-075",
+        "bass_electronic_027-052-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 10,
+      "kind": "layered",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-02-drums_only",
+      "source_group": "groove-drummer10/nsynth-bass_synthetic_009",
+      "drum_source": "groove-source-02",
+      "drummer": "drummer10",
+      "instrument_str": "bass_synthetic_009",
+      "drum_audio_sha256": "5fa5f6f61175493d8a106ad2a5bc88771101f041b9f4309005cd0ebe767ff7cd",
+      "group": "train",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-02-drums_only/decoded.wav",
+      "audio_sha256": "0bd5644db557ad951cce691b983c5b0a7e19fdb7643f9f101763c6a4ea47f615",
+      "cache_sha256": "2d3494251b9ca5f3fb430c229bb6e503ee7a1a88e81f9528c1c1c25296e386fd",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 2,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-02-single",
+      "source_group": "groove-drummer10/nsynth-bass_synthetic_033",
+      "drum_source": "groove-source-02",
+      "drummer": "drummer10",
+      "instrument_str": "bass_synthetic_033",
+      "drum_audio_sha256": "5fa5f6f61175493d8a106ad2a5bc88771101f041b9f4309005cd0ebe767ff7cd",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-02-single/decoded.wav",
+      "audio_sha256": "62ccb7a2f8008d85a0a41bcd26ffb8eac6c420b64310c16af37752d8b8b76dae",
+      "cache_sha256": "2f9ee84a6d7d0624deedab907b7bb47aeacb877667f41587c95ffb78b1731b28",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          27
+        ],
+        [
+          7.25,
+          10.25,
+          33
+        ],
+        [
+          11.75,
+          14.75,
+          21
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          27
+        ],
+        [
+          7.25,
+          11.25,
+          33
+        ],
+        [
+          11.75,
+          15.75,
+          21
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_033-021-075",
+        "bass_synthetic_033-027-075",
+        "bass_synthetic_033-033-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 13,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-02-repeat",
+      "source_group": "groove-drummer10/nsynth-bass_synthetic_034",
+      "drum_source": "groove-source-02",
+      "drummer": "drummer10",
+      "instrument_str": "bass_synthetic_034",
+      "drum_audio_sha256": "5fa5f6f61175493d8a106ad2a5bc88771101f041b9f4309005cd0ebe767ff7cd",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-02-repeat/decoded.wav",
+      "audio_sha256": "5f358ab5c67b313eefe202a9f55755d1b96e6bc8fe251886881b9f49b41a2b6f",
+      "cache_sha256": "72c30170ab9d19c63af22dcd8e5eec76dba67a7dc3e6bd600c142a3646747969",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          43
+        ],
+        [
+          7.25,
+          10.25,
+          43
+        ],
+        [
+          11.75,
+          14.75,
+          43
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          43
+        ],
+        [
+          7.25,
+          11.25,
+          43
+        ],
+        [
+          11.75,
+          15.75,
+          43
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_034-043-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 17,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-02-octave",
+      "source_group": "groove-drummer10/nsynth-keyboard_acoustic_004",
+      "drum_source": "groove-source-02",
+      "drummer": "drummer10",
+      "instrument_str": "keyboard_acoustic_004",
+      "drum_audio_sha256": "5fa5f6f61175493d8a106ad2a5bc88771101f041b9f4309005cd0ebe767ff7cd",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-02-octave/decoded.wav",
+      "audio_sha256": "c9c115faf0ef382ea9ddb7407a75e4c393b745df7a9b91a44119e3fad6a9f8f7",
+      "cache_sha256": "504956f44b69ae6410c51fc7a29faddf2aa61b77ee11941ddf01a1c5565f226e",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          50
+        ],
+        [
+          2.75,
+          5.75,
+          38
+        ],
+        [
+          7.25,
+          10.25,
+          50
+        ],
+        [
+          7.25,
+          10.25,
+          38
+        ],
+        [
+          11.75,
+          14.75,
+          50
+        ],
+        [
+          11.75,
+          14.75,
+          38
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          50
+        ],
+        [
+          2.75,
+          6.75,
+          38
+        ],
+        [
+          7.25,
+          11.25,
+          50
+        ],
+        [
+          7.25,
+          11.25,
+          38
+        ],
+        [
+          11.75,
+          15.75,
+          50
+        ],
+        [
+          11.75,
+          15.75,
+          38
+        ]
+      ],
+      "source_notes": [
+        "keyboard_acoustic_004-038-075",
+        "keyboard_acoustic_004-050-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 13,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-02-dyad",
+      "source_group": "groove-drummer10/nsynth-keyboard_electronic_001",
+      "drum_source": "groove-source-02",
+      "drummer": "drummer10",
+      "instrument_str": "keyboard_electronic_001",
+      "drum_audio_sha256": "5fa5f6f61175493d8a106ad2a5bc88771101f041b9f4309005cd0ebe767ff7cd",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-02-dyad/decoded.wav",
+      "audio_sha256": "e80faaeeb7b91c4eb39b6ed9e1875cf6a3c69a985d12fb2168e7bb830c130a56",
+      "cache_sha256": "534fe2ecb9b353ecb0efd690579ef8c21ec039e0fc70aae58a93ebd57df85ece",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          21
+        ],
+        [
+          2.75,
+          5.75,
+          25
+        ],
+        [
+          7.25,
+          10.25,
+          21
+        ],
+        [
+          7.25,
+          10.25,
+          25
+        ],
+        [
+          11.75,
+          14.75,
+          21
+        ],
+        [
+          11.75,
+          14.75,
+          25
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          21
+        ],
+        [
+          2.75,
+          6.75,
+          25
+        ],
+        [
+          7.25,
+          11.25,
+          21
+        ],
+        [
+          7.25,
+          11.25,
+          25
+        ],
+        [
+          11.75,
+          15.75,
+          21
+        ],
+        [
+          11.75,
+          15.75,
+          25
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_001-021-075",
+        "keyboard_electronic_001-025-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 5,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-02-quiet",
+      "source_group": "groove-drummer10/nsynth-keyboard_electronic_002",
+      "drum_source": "groove-source-02",
+      "drummer": "drummer10",
+      "instrument_str": "keyboard_electronic_002",
+      "drum_audio_sha256": "5fa5f6f61175493d8a106ad2a5bc88771101f041b9f4309005cd0ebe767ff7cd",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-02-quiet/decoded.wav",
+      "audio_sha256": "8c6bf9084245ffbb389d3f51420f8685f5f7efed98f9422bd2e013d26b62dd42",
+      "cache_sha256": "077f988093d9234a408bfa2a36bec747e9d2595216b470cfa784f3006b139031",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          53
+        ],
+        [
+          7.25,
+          10.25,
+          23
+        ],
+        [
+          11.75,
+          14.75,
+          53
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          53
+        ],
+        [
+          7.25,
+          11.25,
+          23
+        ],
+        [
+          11.75,
+          15.75,
+          53
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_002-023-075",
+        "keyboard_electronic_002-053-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 8,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-02-layered",
+      "source_group": "groove-drummer10/nsynth-keyboard_electronic_003",
+      "drum_source": "groove-source-02",
+      "drummer": "drummer10",
+      "instrument_str": "keyboard_electronic_003",
+      "drum_audio_sha256": "5fa5f6f61175493d8a106ad2a5bc88771101f041b9f4309005cd0ebe767ff7cd",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-02-layered/decoded.wav",
+      "audio_sha256": "11a7e8746b4a9629de2ba64d2437a5fc3e5c99562f5668e87ac114179038bd09",
+      "cache_sha256": "695eee5ddad8425d3960cc693b7ecbffb68ffa5d8447d4fb0797e5a13b8e8521",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          51
+        ],
+        [
+          2.75,
+          5.75,
+          39
+        ],
+        [
+          7.25,
+          10.25,
+          39
+        ],
+        [
+          11.75,
+          14.75,
+          51
+        ],
+        [
+          11.75,
+          14.75,
+          39
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          51
+        ],
+        [
+          2.75,
+          6.75,
+          39
+        ],
+        [
+          7.25,
+          11.25,
+          39
+        ],
+        [
+          11.75,
+          15.75,
+          51
+        ],
+        [
+          11.75,
+          15.75,
+          39
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_003-039-075",
+        "keyboard_electronic_003-051-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 43,
+      "kind": "layered",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-03-drums_only",
+      "source_group": "groove-drummer10/nsynth-keyboard_electronic_069",
+      "drum_source": "groove-source-03",
+      "drummer": "drummer10",
+      "instrument_str": "keyboard_electronic_069",
+      "drum_audio_sha256": "90fd8d24a800aea08a29753b94cf1dfd3cea5d35284a357b3eb2b57cb4ba5a39",
+      "group": "train",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-03-drums_only/decoded.wav",
+      "audio_sha256": "3f143817044f9fb427c8c53ddaffd1370e414cae08abad6eceadea1d5b2051b3",
+      "cache_sha256": "f21e4338ce872b9151af8a8bb28cc2c77ef9ab5189782b52c274f45944af02f8",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 1,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-03-single",
+      "source_group": "groove-drummer10/nsynth-bass_electronic_018",
+      "drum_source": "groove-source-03",
+      "drummer": "drummer10",
+      "instrument_str": "bass_electronic_018",
+      "drum_audio_sha256": "90fd8d24a800aea08a29753b94cf1dfd3cea5d35284a357b3eb2b57cb4ba5a39",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-03-single/decoded.wav",
+      "audio_sha256": "1cd03388a3b746e6a677b73ef10b5e984bf1e98c750ed6a6e2ca9ef11ee0cd6a",
+      "cache_sha256": "6620e320fdbb7b849b725734b5d8e8b67193cee5c46a5ce8399e15b4e3fabf38",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          34
+        ],
+        [
+          7.25,
+          10.25,
+          56
+        ],
+        [
+          11.75,
+          14.75,
+          25
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          34
+        ],
+        [
+          7.25,
+          11.25,
+          56
+        ],
+        [
+          11.75,
+          15.75,
+          25
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_018-025-075",
+        "bass_electronic_018-034-075",
+        "bass_electronic_018-056-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 13,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-03-repeat",
+      "source_group": "groove-drummer10/nsynth-bass_electronic_025",
+      "drum_source": "groove-source-03",
+      "drummer": "drummer10",
+      "instrument_str": "bass_electronic_025",
+      "drum_audio_sha256": "90fd8d24a800aea08a29753b94cf1dfd3cea5d35284a357b3eb2b57cb4ba5a39",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-03-repeat/decoded.wav",
+      "audio_sha256": "d5ee1287873478d69a7df6fd36860e8ff018cf6a6e8c1206edcbe1f7616b1f62",
+      "cache_sha256": "7b6e11b9f07d2368ad7770fbb92faa3c5cfd23d9ee1949aac44015bb0c00aa6f",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          26
+        ],
+        [
+          7.25,
+          10.25,
+          26
+        ],
+        [
+          11.75,
+          14.75,
+          26
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          26
+        ],
+        [
+          7.25,
+          11.25,
+          26
+        ],
+        [
+          11.75,
+          15.75,
+          26
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_025-026-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 5,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-03-octave",
+      "source_group": "groove-drummer10/nsynth-bass_electronic_027",
+      "drum_source": "groove-source-03",
+      "drummer": "drummer10",
+      "instrument_str": "bass_electronic_027",
+      "drum_audio_sha256": "90fd8d24a800aea08a29753b94cf1dfd3cea5d35284a357b3eb2b57cb4ba5a39",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-03-octave/decoded.wav",
+      "audio_sha256": "d0bf333230d60d61db921ab2c72133182b3593c0fa834c62578cef776f3eaa74",
+      "cache_sha256": "84c228c74dafa8122ae0492e93abf04aad41cc0bac9bf70eb7ee4daadedc5f3b",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          42
+        ],
+        [
+          2.75,
+          5.75,
+          54
+        ],
+        [
+          7.25,
+          10.25,
+          42
+        ],
+        [
+          7.25,
+          10.25,
+          54
+        ],
+        [
+          11.75,
+          14.75,
+          42
+        ],
+        [
+          11.75,
+          14.75,
+          54
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          42
+        ],
+        [
+          2.75,
+          6.75,
+          54
+        ],
+        [
+          7.25,
+          11.25,
+          42
+        ],
+        [
+          7.25,
+          11.25,
+          54
+        ],
+        [
+          11.75,
+          15.75,
+          42
+        ],
+        [
+          11.75,
+          15.75,
+          54
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_027-042-075",
+        "bass_electronic_027-054-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 13,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-03-dyad",
+      "source_group": "groove-drummer10/nsynth-bass_synthetic_009",
+      "drum_source": "groove-source-03",
+      "drummer": "drummer10",
+      "instrument_str": "bass_synthetic_009",
+      "drum_audio_sha256": "90fd8d24a800aea08a29753b94cf1dfd3cea5d35284a357b3eb2b57cb4ba5a39",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-03-dyad/decoded.wav",
+      "audio_sha256": "5740a6527530d8903a8cf28d56673ec413e3007859b76975ef7a363ba1bcaaa7",
+      "cache_sha256": "8068a9caee14fbcc4d5cb07aa420293b70096b0fef207c24646c0d90b8cedcb0",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          36
+        ],
+        [
+          2.75,
+          5.75,
+          47
+        ],
+        [
+          7.25,
+          10.25,
+          36
+        ],
+        [
+          7.25,
+          10.25,
+          47
+        ],
+        [
+          11.75,
+          14.75,
+          36
+        ],
+        [
+          11.75,
+          14.75,
+          47
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          36
+        ],
+        [
+          2.75,
+          6.75,
+          47
+        ],
+        [
+          7.25,
+          11.25,
+          36
+        ],
+        [
+          7.25,
+          11.25,
+          47
+        ],
+        [
+          11.75,
+          15.75,
+          36
+        ],
+        [
+          11.75,
+          15.75,
+          47
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_009-036-075",
+        "bass_synthetic_009-047-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 59,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-03-quiet",
+      "source_group": "groove-drummer10/nsynth-bass_synthetic_033",
+      "drum_source": "groove-source-03",
+      "drummer": "drummer10",
+      "instrument_str": "bass_synthetic_033",
+      "drum_audio_sha256": "90fd8d24a800aea08a29753b94cf1dfd3cea5d35284a357b3eb2b57cb4ba5a39",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-03-quiet/decoded.wav",
+      "audio_sha256": "d08b88881be312e1e3735d729d3c28f799d5a9da88fab36647a91a40b8947ed6",
+      "cache_sha256": "f0c54d374ae1ad83b1aca5f129537f4cb58a21f7695aa6ed6d1763e3e33906a3",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          27
+        ],
+        [
+          7.25,
+          10.25,
+          33
+        ],
+        [
+          11.75,
+          14.75,
+          27
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          27
+        ],
+        [
+          7.25,
+          11.25,
+          33
+        ],
+        [
+          11.75,
+          15.75,
+          27
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_033-027-075",
+        "bass_synthetic_033-033-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 6,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-03-layered",
+      "source_group": "groove-drummer10/nsynth-bass_synthetic_034",
+      "drum_source": "groove-source-03",
+      "drummer": "drummer10",
+      "instrument_str": "bass_synthetic_034",
+      "drum_audio_sha256": "90fd8d24a800aea08a29753b94cf1dfd3cea5d35284a357b3eb2b57cb4ba5a39",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-03-layered/decoded.wav",
+      "audio_sha256": "01f08857769f3e320ceffd5ed88f0fce04093a8b807292bb760ce6a3a167b63c",
+      "cache_sha256": "0448bff9cf64a2f9ae3b89e41050100e8de9fd0a0cdb78b25cfeb23d6deaa13c",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          43
+        ],
+        [
+          2.75,
+          5.75,
+          33
+        ],
+        [
+          7.25,
+          10.25,
+          33
+        ],
+        [
+          11.75,
+          14.75,
+          43
+        ],
+        [
+          11.75,
+          14.75,
+          33
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          43
+        ],
+        [
+          2.75,
+          6.75,
+          33
+        ],
+        [
+          7.25,
+          11.25,
+          33
+        ],
+        [
+          11.75,
+          15.75,
+          43
+        ],
+        [
+          11.75,
+          15.75,
+          33
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_034-033-075",
+        "bass_synthetic_034-043-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 12,
+      "kind": "layered",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-04-drums_only",
+      "source_group": "groove-drummer3/nsynth-keyboard_acoustic_004",
+      "drum_source": "groove-source-04",
+      "drummer": "drummer3",
+      "instrument_str": "keyboard_acoustic_004",
+      "drum_audio_sha256": "fa805009564b9475a8020c550df4a028e210d4ad2545b0aa5f6b57d86300b376",
+      "group": "train",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-04-drums_only/decoded.wav",
+      "audio_sha256": "ee3db34deedfb933f8db52eb7dc2157bb93e7d42c6dab8c7c32e2c58956f623a",
+      "cache_sha256": "958b52cfca2f713c23d7f98bb09e338beb76fd7a5707de372a044b3ecc662473",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 1,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-04-single",
+      "source_group": "groove-drummer3/nsynth-keyboard_electronic_001",
+      "drum_source": "groove-source-04",
+      "drummer": "drummer3",
+      "instrument_str": "keyboard_electronic_001",
+      "drum_audio_sha256": "fa805009564b9475a8020c550df4a028e210d4ad2545b0aa5f6b57d86300b376",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-04-single/decoded.wav",
+      "audio_sha256": "e6482fbd5416d4091735c1e7faecccfd9ec255337121a43a72a78b4be4c4a1f6",
+      "cache_sha256": "dd0b44c2dab9b7a84f3a812c9020b345721bc4934ae73f3e10487942d855d3cd",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          21
+        ],
+        [
+          7.25,
+          10.25,
+          25
+        ],
+        [
+          11.75,
+          14.75,
+          21
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          21
+        ],
+        [
+          7.25,
+          11.25,
+          25
+        ],
+        [
+          11.75,
+          15.75,
+          21
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_001-021-075",
+        "keyboard_electronic_001-025-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 6,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-04-repeat",
+      "source_group": "groove-drummer3/nsynth-keyboard_electronic_002",
+      "drum_source": "groove-source-04",
+      "drummer": "drummer3",
+      "instrument_str": "keyboard_electronic_002",
+      "drum_audio_sha256": "fa805009564b9475a8020c550df4a028e210d4ad2545b0aa5f6b57d86300b376",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-04-repeat/decoded.wav",
+      "audio_sha256": "c880c1575a3aea985da022c2c66f023271d12aa18506b6308ba7a4d7e336dcc0",
+      "cache_sha256": "b84fb51f0d5e0abbad5126b1450e709b2e787d12330dd13fad4afbb1486a21cc",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          53
+        ],
+        [
+          7.25,
+          10.25,
+          53
+        ],
+        [
+          11.75,
+          14.75,
+          53
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          53
+        ],
+        [
+          7.25,
+          11.25,
+          53
+        ],
+        [
+          11.75,
+          15.75,
+          53
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_002-053-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 10,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-04-octave",
+      "source_group": "groove-drummer3/nsynth-keyboard_electronic_003",
+      "drum_source": "groove-source-04",
+      "drummer": "drummer3",
+      "instrument_str": "keyboard_electronic_003",
+      "drum_audio_sha256": "fa805009564b9475a8020c550df4a028e210d4ad2545b0aa5f6b57d86300b376",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-04-octave/decoded.wav",
+      "audio_sha256": "51c5eecd3ffcbd46be4c372b05fa1d69e3c5278d901dc30caa825dc8ebf3078d",
+      "cache_sha256": "48b14f3eb76445d6be98140c8267b25a9c8d4d582fa6908046c51c81889babf7",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          51
+        ],
+        [
+          2.75,
+          5.75,
+          39
+        ],
+        [
+          7.25,
+          10.25,
+          51
+        ],
+        [
+          7.25,
+          10.25,
+          39
+        ],
+        [
+          11.75,
+          14.75,
+          51
+        ],
+        [
+          11.75,
+          14.75,
+          39
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          51
+        ],
+        [
+          2.75,
+          6.75,
+          39
+        ],
+        [
+          7.25,
+          11.25,
+          51
+        ],
+        [
+          7.25,
+          11.25,
+          39
+        ],
+        [
+          11.75,
+          15.75,
+          51
+        ],
+        [
+          11.75,
+          15.75,
+          39
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_003-039-075",
+        "keyboard_electronic_003-051-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 37,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-04-dyad",
+      "source_group": "groove-drummer3/nsynth-keyboard_electronic_069",
+      "drum_source": "groove-source-04",
+      "drummer": "drummer3",
+      "instrument_str": "keyboard_electronic_069",
+      "drum_audio_sha256": "fa805009564b9475a8020c550df4a028e210d4ad2545b0aa5f6b57d86300b376",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-04-dyad/decoded.wav",
+      "audio_sha256": "d09dd16a1ccbbd8c5cba918e334c3cb9291106dd7c1ba2a375767e1a259be2c3",
+      "cache_sha256": "2ba237a37a730adf4d26009e7aca6b1e66a6055c3e7af6ba81649c6641497307",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          53
+        ],
+        [
+          2.75,
+          5.75,
+          50
+        ],
+        [
+          7.25,
+          10.25,
+          53
+        ],
+        [
+          7.25,
+          10.25,
+          50
+        ],
+        [
+          11.75,
+          14.75,
+          53
+        ],
+        [
+          11.75,
+          14.75,
+          50
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          53
+        ],
+        [
+          2.75,
+          6.75,
+          50
+        ],
+        [
+          7.25,
+          11.25,
+          53
+        ],
+        [
+          7.25,
+          11.25,
+          50
+        ],
+        [
+          11.75,
+          15.75,
+          53
+        ],
+        [
+          11.75,
+          15.75,
+          50
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_069-050-075",
+        "keyboard_electronic_069-053-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 26,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-04-quiet",
+      "source_group": "groove-drummer3/nsynth-bass_electronic_018",
+      "drum_source": "groove-source-04",
+      "drummer": "drummer3",
+      "instrument_str": "bass_electronic_018",
+      "drum_audio_sha256": "fa805009564b9475a8020c550df4a028e210d4ad2545b0aa5f6b57d86300b376",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-04-quiet/decoded.wav",
+      "audio_sha256": "e54af09d2e71034869d5f589910ace4597ac4e296606a76a75a5d1ea45d0b1c6",
+      "cache_sha256": "38e269aa1e71f1fd399e8bc78ee00a3689fb07211fcf17d1b8d455b221e4f435",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          34
+        ],
+        [
+          7.25,
+          10.25,
+          56
+        ],
+        [
+          11.75,
+          14.75,
+          34
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          34
+        ],
+        [
+          7.25,
+          11.25,
+          56
+        ],
+        [
+          11.75,
+          15.75,
+          34
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_018-034-075",
+        "bass_electronic_018-056-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 3,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-04-layered",
+      "source_group": "groove-drummer3/nsynth-bass_electronic_025",
+      "drum_source": "groove-source-04",
+      "drummer": "drummer3",
+      "instrument_str": "bass_electronic_025",
+      "drum_audio_sha256": "fa805009564b9475a8020c550df4a028e210d4ad2545b0aa5f6b57d86300b376",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-04-layered/decoded.wav",
+      "audio_sha256": "abe2e59ac23a019a8dfd15a62c39aa232a5dcd7c597c70f9ce6cda6d0922f31a",
+      "cache_sha256": "c778766139d71c1421debe882ce649ebf49b3bd6174ea0d3f599d312571b7711",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          26
+        ],
+        [
+          2.75,
+          5.75,
+          33
+        ],
+        [
+          7.25,
+          10.25,
+          33
+        ],
+        [
+          11.75,
+          14.75,
+          26
+        ],
+        [
+          11.75,
+          14.75,
+          33
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          26
+        ],
+        [
+          2.75,
+          6.75,
+          33
+        ],
+        [
+          7.25,
+          11.25,
+          33
+        ],
+        [
+          11.75,
+          15.75,
+          26
+        ],
+        [
+          11.75,
+          15.75,
+          33
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_025-026-075",
+        "bass_electronic_025-033-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 17,
+      "kind": "layered",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-05-drums_only",
+      "source_group": "groove-drummer3/nsynth-bass_electronic_027",
+      "drum_source": "groove-source-05",
+      "drummer": "drummer3",
+      "instrument_str": "bass_electronic_027",
+      "drum_audio_sha256": "051d02f4d4c923748f08fce23ff0d725a5e79c8e6c04506fbc7ed27241d3be6c",
+      "group": "train",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-05-drums_only/decoded.wav",
+      "audio_sha256": "ea5ac659f5fa4e7faad12ce5bcefc571d7cd1741e75def05992bd2cafcff89fa",
+      "cache_sha256": "e390ca4ef3453fb10097c09e92b6c09c61ae13294f757bafe44c2536a92aa34d",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 0,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-05-single",
+      "source_group": "groove-drummer3/nsynth-bass_synthetic_009",
+      "drum_source": "groove-source-05",
+      "drummer": "drummer3",
+      "instrument_str": "bass_synthetic_009",
+      "drum_audio_sha256": "051d02f4d4c923748f08fce23ff0d725a5e79c8e6c04506fbc7ed27241d3be6c",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-05-single/decoded.wav",
+      "audio_sha256": "0968847deb30fcd5b51153a89f5028bf442656000cf6b9c83f99191a44824a0d",
+      "cache_sha256": "a3b2c4e73d1bc6bb8d1a9a064c0d1ca765b459b759e0ff635bcb5ed8ae5944af",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          36
+        ],
+        [
+          7.25,
+          10.25,
+          47
+        ],
+        [
+          11.75,
+          14.75,
+          55
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          36
+        ],
+        [
+          7.25,
+          11.25,
+          47
+        ],
+        [
+          11.75,
+          15.75,
+          55
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_009-036-075",
+        "bass_synthetic_009-047-075",
+        "bass_synthetic_009-055-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 18,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-05-repeat",
+      "source_group": "groove-drummer3/nsynth-bass_synthetic_033",
+      "drum_source": "groove-source-05",
+      "drummer": "drummer3",
+      "instrument_str": "bass_synthetic_033",
+      "drum_audio_sha256": "051d02f4d4c923748f08fce23ff0d725a5e79c8e6c04506fbc7ed27241d3be6c",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-05-repeat/decoded.wav",
+      "audio_sha256": "aabae45cecbbec2205b4da5bc1d0ccab940dcee7a91e2664caeac0ecdd5ba57a",
+      "cache_sha256": "f54bb3610c813e178a97291d54d0d49c7f9ef0957adcdf39c36b008ef805fea2",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          27
+        ],
+        [
+          7.25,
+          10.25,
+          27
+        ],
+        [
+          11.75,
+          14.75,
+          27
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          27
+        ],
+        [
+          7.25,
+          11.25,
+          27
+        ],
+        [
+          11.75,
+          15.75,
+          27
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_033-027-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 9,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-05-octave",
+      "source_group": "groove-drummer3/nsynth-bass_synthetic_034",
+      "drum_source": "groove-source-05",
+      "drummer": "drummer3",
+      "instrument_str": "bass_synthetic_034",
+      "drum_audio_sha256": "051d02f4d4c923748f08fce23ff0d725a5e79c8e6c04506fbc7ed27241d3be6c",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-05-octave/decoded.wav",
+      "audio_sha256": "e5eb39cce2d9664ea6429c6d4041f7b3d891d9b7505bf15e42dcdc46caabb465",
+      "cache_sha256": "99392e04b018e4095a5ac25211cf1aeb994bcd08441f4a7b556c7608372a4073",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          43
+        ],
+        [
+          2.75,
+          5.75,
+          55
+        ],
+        [
+          7.25,
+          10.25,
+          43
+        ],
+        [
+          7.25,
+          10.25,
+          55
+        ],
+        [
+          11.75,
+          14.75,
+          43
+        ],
+        [
+          11.75,
+          14.75,
+          55
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          43
+        ],
+        [
+          2.75,
+          6.75,
+          55
+        ],
+        [
+          7.25,
+          11.25,
+          43
+        ],
+        [
+          7.25,
+          11.25,
+          55
+        ],
+        [
+          11.75,
+          15.75,
+          43
+        ],
+        [
+          11.75,
+          15.75,
+          55
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_034-043-075",
+        "bass_synthetic_034-055-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 14,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-05-dyad",
+      "source_group": "groove-drummer3/nsynth-keyboard_acoustic_004",
+      "drum_source": "groove-source-05",
+      "drummer": "drummer3",
+      "instrument_str": "keyboard_acoustic_004",
+      "drum_audio_sha256": "051d02f4d4c923748f08fce23ff0d725a5e79c8e6c04506fbc7ed27241d3be6c",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-05-dyad/decoded.wav",
+      "audio_sha256": "a6c33b6a7241089b17ce4f3d081a58c5c2b4001358cdc49f3097a2e38667b11c",
+      "cache_sha256": "9be578e38268cc97a79869ac99cb5d21f0e1ec7d80eb50a80338b2167e388217",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          50
+        ],
+        [
+          2.75,
+          5.75,
+          47
+        ],
+        [
+          7.25,
+          10.25,
+          50
+        ],
+        [
+          7.25,
+          10.25,
+          47
+        ],
+        [
+          11.75,
+          14.75,
+          50
+        ],
+        [
+          11.75,
+          14.75,
+          47
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          50
+        ],
+        [
+          2.75,
+          6.75,
+          47
+        ],
+        [
+          7.25,
+          11.25,
+          50
+        ],
+        [
+          7.25,
+          11.25,
+          47
+        ],
+        [
+          11.75,
+          15.75,
+          50
+        ],
+        [
+          11.75,
+          15.75,
+          47
+        ]
+      ],
+      "source_notes": [
+        "keyboard_acoustic_004-047-075",
+        "keyboard_acoustic_004-050-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 8,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-05-quiet",
+      "source_group": "groove-drummer3/nsynth-keyboard_electronic_001",
+      "drum_source": "groove-source-05",
+      "drummer": "drummer3",
+      "instrument_str": "keyboard_electronic_001",
+      "drum_audio_sha256": "051d02f4d4c923748f08fce23ff0d725a5e79c8e6c04506fbc7ed27241d3be6c",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-05-quiet/decoded.wav",
+      "audio_sha256": "cc74ffb275e056245e11a2d3c68c722ac25c569d6fbeb6c332244f310aa9b52a",
+      "cache_sha256": "ca79d6fa75186978d1665e3187462c45f383109c874f0c59ceaa38ed8ff65d96",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          21
+        ],
+        [
+          7.25,
+          10.25,
+          25
+        ],
+        [
+          11.75,
+          14.75,
+          21
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          21
+        ],
+        [
+          7.25,
+          11.25,
+          25
+        ],
+        [
+          11.75,
+          15.75,
+          21
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_001-021-075",
+        "keyboard_electronic_001-025-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 3,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-05-layered",
+      "source_group": "groove-drummer3/nsynth-keyboard_electronic_002",
+      "drum_source": "groove-source-05",
+      "drummer": "drummer3",
+      "instrument_str": "keyboard_electronic_002",
+      "drum_audio_sha256": "051d02f4d4c923748f08fce23ff0d725a5e79c8e6c04506fbc7ed27241d3be6c",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-05-layered/decoded.wav",
+      "audio_sha256": "79053b4fd18fd18f397507e884f9a130dbd06e14ccb522da6aea200927658893",
+      "cache_sha256": "986904f1f5df5e4698f0e0ae16cc6ac51216d3621db36197e8547f72423b0d79",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          53
+        ],
+        [
+          2.75,
+          5.75,
+          23
+        ],
+        [
+          7.25,
+          10.25,
+          23
+        ],
+        [
+          11.75,
+          14.75,
+          53
+        ],
+        [
+          11.75,
+          14.75,
+          23
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          53
+        ],
+        [
+          2.75,
+          6.75,
+          23
+        ],
+        [
+          7.25,
+          11.25,
+          23
+        ],
+        [
+          11.75,
+          15.75,
+          53
+        ],
+        [
+          11.75,
+          15.75,
+          23
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_002-023-075",
+        "keyboard_electronic_002-053-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 8,
+      "kind": "layered",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-06-drums_only",
+      "source_group": "groove-drummer4/nsynth-keyboard_electronic_003",
+      "drum_source": "groove-source-06",
+      "drummer": "drummer4",
+      "instrument_str": "keyboard_electronic_003",
+      "drum_audio_sha256": "ab08ad91759c53556dfe540ba6fcb3d8d3e0c3b74c8f6dce053568fb58bd4f21",
+      "group": "train",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-06-drums_only/decoded.wav",
+      "audio_sha256": "41c4b642e4326a782357135bca848e8799dcb45189dc86631558c79270356386",
+      "cache_sha256": "142f7a163adad92e7ed95a2575ccf49f7de0416e01c8aca992025e4442f7b914",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 1,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-06-single",
+      "source_group": "groove-drummer4/nsynth-keyboard_electronic_069",
+      "drum_source": "groove-source-06",
+      "drummer": "drummer4",
+      "instrument_str": "keyboard_electronic_069",
+      "drum_audio_sha256": "ab08ad91759c53556dfe540ba6fcb3d8d3e0c3b74c8f6dce053568fb58bd4f21",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-06-single/decoded.wav",
+      "audio_sha256": "42c2519d35a74db41e35918a3057058f71cc83335f21e4e0dbf38ddaf3772268",
+      "cache_sha256": "137fa2cc4f4787a8d20ffa8bd0d47fc5cd2a38f30f8cacd9b000009c7937f6e6",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          53
+        ],
+        [
+          7.25,
+          10.25,
+          50
+        ],
+        [
+          11.75,
+          14.75,
+          35
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          53
+        ],
+        [
+          7.25,
+          11.25,
+          50
+        ],
+        [
+          11.75,
+          15.75,
+          35
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_069-035-075",
+        "keyboard_electronic_069-050-075",
+        "keyboard_electronic_069-053-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 9,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-06-repeat",
+      "source_group": "groove-drummer4/nsynth-bass_electronic_018",
+      "drum_source": "groove-source-06",
+      "drummer": "drummer4",
+      "instrument_str": "bass_electronic_018",
+      "drum_audio_sha256": "ab08ad91759c53556dfe540ba6fcb3d8d3e0c3b74c8f6dce053568fb58bd4f21",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-06-repeat/decoded.wav",
+      "audio_sha256": "e4737fb23c841906db29b35b80f47b748cc5ce1d69403cfbdb47ce2b126eba55",
+      "cache_sha256": "795426dd8d373fd59aa37ccf3933d2225219956afd50021cf753039db312c89f",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          34
+        ],
+        [
+          7.25,
+          10.25,
+          34
+        ],
+        [
+          11.75,
+          14.75,
+          34
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          34
+        ],
+        [
+          7.25,
+          11.25,
+          34
+        ],
+        [
+          11.75,
+          15.75,
+          34
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_018-034-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 11,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-06-octave",
+      "source_group": "groove-drummer4/nsynth-bass_electronic_025",
+      "drum_source": "groove-source-06",
+      "drummer": "drummer4",
+      "instrument_str": "bass_electronic_025",
+      "drum_audio_sha256": "ab08ad91759c53556dfe540ba6fcb3d8d3e0c3b74c8f6dce053568fb58bd4f21",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-06-octave/decoded.wav",
+      "audio_sha256": "8ddf4476475063b0f8e4d0694fbfd88ce2322f808a60d3a7d1c6ccc56cfcfe2f",
+      "cache_sha256": "08312c9b6f696b99776d0060c46c13efc0eb390b1946f869cbd3d295e22d604c",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          26
+        ],
+        [
+          2.75,
+          5.75,
+          38
+        ],
+        [
+          7.25,
+          10.25,
+          26
+        ],
+        [
+          7.25,
+          10.25,
+          38
+        ],
+        [
+          11.75,
+          14.75,
+          26
+        ],
+        [
+          11.75,
+          14.75,
+          38
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          26
+        ],
+        [
+          2.75,
+          6.75,
+          38
+        ],
+        [
+          7.25,
+          11.25,
+          26
+        ],
+        [
+          7.25,
+          11.25,
+          38
+        ],
+        [
+          11.75,
+          15.75,
+          26
+        ],
+        [
+          11.75,
+          15.75,
+          38
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_025-026-075",
+        "bass_electronic_025-038-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 8,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-06-dyad",
+      "source_group": "groove-drummer4/nsynth-bass_electronic_027",
+      "drum_source": "groove-source-06",
+      "drummer": "drummer4",
+      "instrument_str": "bass_electronic_027",
+      "drum_audio_sha256": "ab08ad91759c53556dfe540ba6fcb3d8d3e0c3b74c8f6dce053568fb58bd4f21",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-06-dyad/decoded.wav",
+      "audio_sha256": "f3799e16e9f61040df0c86cb1e1b20c11ec58b513a3750b476b086c84acb2076",
+      "cache_sha256": "c4f40a9c70c56723d9994960298b5e5382aa9f58b753815c30f0ade5a7dbf639",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          42
+        ],
+        [
+          2.75,
+          5.75,
+          52
+        ],
+        [
+          7.25,
+          10.25,
+          42
+        ],
+        [
+          7.25,
+          10.25,
+          52
+        ],
+        [
+          11.75,
+          14.75,
+          42
+        ],
+        [
+          11.75,
+          14.75,
+          52
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          42
+        ],
+        [
+          2.75,
+          6.75,
+          52
+        ],
+        [
+          7.25,
+          11.25,
+          42
+        ],
+        [
+          7.25,
+          11.25,
+          52
+        ],
+        [
+          11.75,
+          15.75,
+          42
+        ],
+        [
+          11.75,
+          15.75,
+          52
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_027-042-075",
+        "bass_electronic_027-052-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 12,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-06-quiet",
+      "source_group": "groove-drummer4/nsynth-bass_synthetic_009",
+      "drum_source": "groove-source-06",
+      "drummer": "drummer4",
+      "instrument_str": "bass_synthetic_009",
+      "drum_audio_sha256": "ab08ad91759c53556dfe540ba6fcb3d8d3e0c3b74c8f6dce053568fb58bd4f21",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-06-quiet/decoded.wav",
+      "audio_sha256": "4a93dfa967883ec45fd210d20637c3afb6ddd1fecd6e5d93d18f50f1718466d5",
+      "cache_sha256": "27bd20a92cac297b183b38059ca53976393d1e63c48baf3052c3b4e25437e90a",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          36
+        ],
+        [
+          7.25,
+          10.25,
+          47
+        ],
+        [
+          11.75,
+          14.75,
+          36
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          36
+        ],
+        [
+          7.25,
+          11.25,
+          47
+        ],
+        [
+          11.75,
+          15.75,
+          36
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_009-036-075",
+        "bass_synthetic_009-047-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 12,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-06-layered",
+      "source_group": "groove-drummer4/nsynth-bass_synthetic_033",
+      "drum_source": "groove-source-06",
+      "drummer": "drummer4",
+      "instrument_str": "bass_synthetic_033",
+      "drum_audio_sha256": "ab08ad91759c53556dfe540ba6fcb3d8d3e0c3b74c8f6dce053568fb58bd4f21",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-06-layered/decoded.wav",
+      "audio_sha256": "d9d5d66001eba3f260e3bb98efa3373c1df1ca0d23345140fd82b126fcbbee1e",
+      "cache_sha256": "3472616e33bc0c6d3df74f64514bd7fecfa266953524ecfc384c927fa3abdace",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          27
+        ],
+        [
+          2.75,
+          5.75,
+          33
+        ],
+        [
+          7.25,
+          10.25,
+          33
+        ],
+        [
+          11.75,
+          14.75,
+          27
+        ],
+        [
+          11.75,
+          14.75,
+          33
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          27
+        ],
+        [
+          2.75,
+          6.75,
+          33
+        ],
+        [
+          7.25,
+          11.25,
+          33
+        ],
+        [
+          11.75,
+          15.75,
+          27
+        ],
+        [
+          11.75,
+          15.75,
+          33
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_033-027-075",
+        "bass_synthetic_033-033-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 24,
+      "kind": "layered",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-07-drums_only",
+      "source_group": "groove-drummer4/nsynth-bass_synthetic_034",
+      "drum_source": "groove-source-07",
+      "drummer": "drummer4",
+      "instrument_str": "bass_synthetic_034",
+      "drum_audio_sha256": "1fab1cece8ebada8321e434addcac26e25b11f4530b696016514bb7669b5b73d",
+      "group": "train",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-07-drums_only/decoded.wav",
+      "audio_sha256": "161868ef14c57a789895e0d717f449dd7e1c0aa2235d915d2c987f558d36dadb",
+      "cache_sha256": "4020b5c3d972d294d1d9387b6d5f03d4579bc68be6a1eeaa8b9c1e7aed774ef4",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 8,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-07-single",
+      "source_group": "groove-drummer4/nsynth-keyboard_acoustic_004",
+      "drum_source": "groove-source-07",
+      "drummer": "drummer4",
+      "instrument_str": "keyboard_acoustic_004",
+      "drum_audio_sha256": "1fab1cece8ebada8321e434addcac26e25b11f4530b696016514bb7669b5b73d",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-07-single/decoded.wav",
+      "audio_sha256": "63a133f35473c78b199fe51a6be9a69a9a3a09c8015d6d7343d1ef264edfbbf7",
+      "cache_sha256": "aa3d6adad7aa13e2654efedc7b1fa5cbc5d141523762cfb65d8ec65ba34161f0",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          50
+        ],
+        [
+          7.25,
+          10.25,
+          47
+        ],
+        [
+          11.75,
+          14.75,
+          21
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          50
+        ],
+        [
+          7.25,
+          11.25,
+          47
+        ],
+        [
+          11.75,
+          15.75,
+          21
+        ]
+      ],
+      "source_notes": [
+        "keyboard_acoustic_004-021-075",
+        "keyboard_acoustic_004-047-075",
+        "keyboard_acoustic_004-050-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 11,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-07-repeat",
+      "source_group": "groove-drummer4/nsynth-keyboard_electronic_001",
+      "drum_source": "groove-source-07",
+      "drummer": "drummer4",
+      "instrument_str": "keyboard_electronic_001",
+      "drum_audio_sha256": "1fab1cece8ebada8321e434addcac26e25b11f4530b696016514bb7669b5b73d",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-07-repeat/decoded.wav",
+      "audio_sha256": "9b9dbefd9e6679fd87d208fee6341bfc2296e6d77858bda84e734d30853c2c7d",
+      "cache_sha256": "6073ffd6c36c9abfbc0db51a83f3b7293730873a50115576c0649c8e389addc6",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          21
+        ],
+        [
+          7.25,
+          10.25,
+          21
+        ],
+        [
+          11.75,
+          14.75,
+          21
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          21
+        ],
+        [
+          7.25,
+          11.25,
+          21
+        ],
+        [
+          11.75,
+          15.75,
+          21
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_001-021-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 6,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-07-octave",
+      "source_group": "groove-drummer4/nsynth-keyboard_electronic_002",
+      "drum_source": "groove-source-07",
+      "drummer": "drummer4",
+      "instrument_str": "keyboard_electronic_002",
+      "drum_audio_sha256": "1fab1cece8ebada8321e434addcac26e25b11f4530b696016514bb7669b5b73d",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-07-octave/decoded.wav",
+      "audio_sha256": "28fccf5a434a620e0240a3b273af4f1faaccdd47dbd28b7f07b6e0fbf9b734a5",
+      "cache_sha256": "e34616c45cf84afa0f687fe10498b79ade8648c31e5ef44dfd74a3470876c725",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          53
+        ],
+        [
+          2.75,
+          5.75,
+          41
+        ],
+        [
+          7.25,
+          10.25,
+          53
+        ],
+        [
+          7.25,
+          10.25,
+          41
+        ],
+        [
+          11.75,
+          14.75,
+          53
+        ],
+        [
+          11.75,
+          14.75,
+          41
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          53
+        ],
+        [
+          2.75,
+          6.75,
+          41
+        ],
+        [
+          7.25,
+          11.25,
+          53
+        ],
+        [
+          7.25,
+          11.25,
+          41
+        ],
+        [
+          11.75,
+          15.75,
+          53
+        ],
+        [
+          11.75,
+          15.75,
+          41
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_002-041-075",
+        "keyboard_electronic_002-053-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 12,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-07-dyad",
+      "source_group": "groove-drummer4/nsynth-keyboard_electronic_003",
+      "drum_source": "groove-source-07",
+      "drummer": "drummer4",
+      "instrument_str": "keyboard_electronic_003",
+      "drum_audio_sha256": "1fab1cece8ebada8321e434addcac26e25b11f4530b696016514bb7669b5b73d",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-07-dyad/decoded.wav",
+      "audio_sha256": "f7489cd28a1ff7c32a5a3ea580728971abeef0c719d9d16ae60b7c4c3c42674b",
+      "cache_sha256": "0b240f5450d4a4b44749c7fdb9d6c474a965bf7ed863e41696f8c0a03bf3e6fe",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          51
+        ],
+        [
+          2.75,
+          5.75,
+          39
+        ],
+        [
+          7.25,
+          10.25,
+          51
+        ],
+        [
+          7.25,
+          10.25,
+          39
+        ],
+        [
+          11.75,
+          14.75,
+          51
+        ],
+        [
+          11.75,
+          14.75,
+          39
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          51
+        ],
+        [
+          2.75,
+          6.75,
+          39
+        ],
+        [
+          7.25,
+          11.25,
+          51
+        ],
+        [
+          7.25,
+          11.25,
+          39
+        ],
+        [
+          11.75,
+          15.75,
+          51
+        ],
+        [
+          11.75,
+          15.75,
+          39
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_003-039-075",
+        "keyboard_electronic_003-051-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 43,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-07-quiet",
+      "source_group": "groove-drummer4/nsynth-keyboard_electronic_069",
+      "drum_source": "groove-source-07",
+      "drummer": "drummer4",
+      "instrument_str": "keyboard_electronic_069",
+      "drum_audio_sha256": "1fab1cece8ebada8321e434addcac26e25b11f4530b696016514bb7669b5b73d",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-07-quiet/decoded.wav",
+      "audio_sha256": "59fbab01ea67a57894fed49a2b6878264e48afcfd7e0fe302c665e4a51487c2d",
+      "cache_sha256": "dffdaf93505991579ce80759b45a7b7a1312c121c661dfb308ae8cd3f8ce8bfc",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          53
+        ],
+        [
+          7.25,
+          10.25,
+          50
+        ],
+        [
+          11.75,
+          14.75,
+          53
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          53
+        ],
+        [
+          7.25,
+          11.25,
+          50
+        ],
+        [
+          11.75,
+          15.75,
+          53
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_069-050-075",
+        "keyboard_electronic_069-053-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 14,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-07-layered",
+      "source_group": "groove-drummer4/nsynth-bass_electronic_018",
+      "drum_source": "groove-source-07",
+      "drummer": "drummer4",
+      "instrument_str": "bass_electronic_018",
+      "drum_audio_sha256": "1fab1cece8ebada8321e434addcac26e25b11f4530b696016514bb7669b5b73d",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-07-layered/decoded.wav",
+      "audio_sha256": "84182453f9af20b4241649bc75f7e971b9f87f5b0481897527b0818fc3f6bdd7",
+      "cache_sha256": "442d2c293aa6d746f4417e444af630da60a89e91c382092b06a7c711edb68301",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          34
+        ],
+        [
+          2.75,
+          5.75,
+          56
+        ],
+        [
+          7.25,
+          10.25,
+          56
+        ],
+        [
+          11.75,
+          14.75,
+          34
+        ],
+        [
+          11.75,
+          14.75,
+          56
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          34
+        ],
+        [
+          2.75,
+          6.75,
+          56
+        ],
+        [
+          7.25,
+          11.25,
+          56
+        ],
+        [
+          11.75,
+          15.75,
+          34
+        ],
+        [
+          11.75,
+          15.75,
+          56
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_018-034-075",
+        "bass_electronic_018-056-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 15,
+      "kind": "layered",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-08-drums_only",
+      "source_group": "groove-drummer5/nsynth-bass_electronic_025",
+      "drum_source": "groove-source-08",
+      "drummer": "drummer5",
+      "instrument_str": "bass_electronic_025",
+      "drum_audio_sha256": "ebc337525636ce8a7968c87178a2d795c483fe31d8cc0745d8bf6964574e60bf",
+      "group": "train",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-08-drums_only/decoded.wav",
+      "audio_sha256": "b092bf1e46a73bb50a0009db77e6ac3e1aee95ad695ff03ec45f088256ff36b3",
+      "cache_sha256": "031698d3506d97caaeb9f3f5b58d2a09482360015f1fe9f72396d01253253405",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 3,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-08-single",
+      "source_group": "groove-drummer5/nsynth-bass_electronic_027",
+      "drum_source": "groove-source-08",
+      "drummer": "drummer5",
+      "instrument_str": "bass_electronic_027",
+      "drum_audio_sha256": "ebc337525636ce8a7968c87178a2d795c483fe31d8cc0745d8bf6964574e60bf",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-08-single/decoded.wav",
+      "audio_sha256": "ef4edadc503deb14ed3bf6fee4edce2fcae343083dd5ca1db7ffe1f4c2b3f1de",
+      "cache_sha256": "6cce214ca662dddfddb84bf62849643d34ea04f5af9365c47a3759fbb465bd48",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          42
+        ],
+        [
+          7.25,
+          10.25,
+          52
+        ],
+        [
+          11.75,
+          14.75,
+          30
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          42
+        ],
+        [
+          7.25,
+          11.25,
+          52
+        ],
+        [
+          11.75,
+          15.75,
+          30
+        ]
+      ],
+      "source_notes": [
+        "bass_electronic_027-030-075",
+        "bass_electronic_027-042-075",
+        "bass_electronic_027-052-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 7,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-08-repeat",
+      "source_group": "groove-drummer5/nsynth-bass_synthetic_009",
+      "drum_source": "groove-source-08",
+      "drummer": "drummer5",
+      "instrument_str": "bass_synthetic_009",
+      "drum_audio_sha256": "ebc337525636ce8a7968c87178a2d795c483fe31d8cc0745d8bf6964574e60bf",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-08-repeat/decoded.wav",
+      "audio_sha256": "32634e9114be36104396427f102ae20287c1aa2ab661b6040133b938480f7b7e",
+      "cache_sha256": "d414d90fca29aa3371a87721887d334354d601591dd696fb5f83194e7094f71b",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          36
+        ],
+        [
+          7.25,
+          10.25,
+          36
+        ],
+        [
+          11.75,
+          14.75,
+          36
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          36
+        ],
+        [
+          7.25,
+          11.25,
+          36
+        ],
+        [
+          11.75,
+          15.75,
+          36
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_009-036-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 19,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-08-octave",
+      "source_group": "groove-drummer5/nsynth-bass_synthetic_033",
+      "drum_source": "groove-source-08",
+      "drummer": "drummer5",
+      "instrument_str": "bass_synthetic_033",
+      "drum_audio_sha256": "ebc337525636ce8a7968c87178a2d795c483fe31d8cc0745d8bf6964574e60bf",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-08-octave/decoded.wav",
+      "audio_sha256": "e2547d355eeacdffa591ef07fc12a36fe15d380e9e34f94c00bef73fe3e18337",
+      "cache_sha256": "7defc811286e6384b6c3101d7d1a40e1e6d51299d181655186565e74bc1f29da",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          27
+        ],
+        [
+          2.75,
+          5.75,
+          39
+        ],
+        [
+          7.25,
+          10.25,
+          27
+        ],
+        [
+          7.25,
+          10.25,
+          39
+        ],
+        [
+          11.75,
+          14.75,
+          27
+        ],
+        [
+          11.75,
+          14.75,
+          39
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          27
+        ],
+        [
+          2.75,
+          6.75,
+          39
+        ],
+        [
+          7.25,
+          11.25,
+          27
+        ],
+        [
+          7.25,
+          11.25,
+          39
+        ],
+        [
+          11.75,
+          15.75,
+          27
+        ],
+        [
+          11.75,
+          15.75,
+          39
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_033-027-075",
+        "bass_synthetic_033-039-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 13,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-08-dyad",
+      "source_group": "groove-drummer5/nsynth-bass_synthetic_034",
+      "drum_source": "groove-source-08",
+      "drummer": "drummer5",
+      "instrument_str": "bass_synthetic_034",
+      "drum_audio_sha256": "ebc337525636ce8a7968c87178a2d795c483fe31d8cc0745d8bf6964574e60bf",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-08-dyad/decoded.wav",
+      "audio_sha256": "2e61879e4668b2687cfb66c650c1981f93042b483b1cb53732983ae64097d43c",
+      "cache_sha256": "cdbd5ae32689827f64453ed2dc92dc2f94383882e4434a62ba8ef7659f2ee51e",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          43
+        ],
+        [
+          2.75,
+          5.75,
+          33
+        ],
+        [
+          7.25,
+          10.25,
+          43
+        ],
+        [
+          7.25,
+          10.25,
+          33
+        ],
+        [
+          11.75,
+          14.75,
+          43
+        ],
+        [
+          11.75,
+          14.75,
+          33
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          43
+        ],
+        [
+          2.75,
+          6.75,
+          33
+        ],
+        [
+          7.25,
+          11.25,
+          43
+        ],
+        [
+          7.25,
+          11.25,
+          33
+        ],
+        [
+          11.75,
+          15.75,
+          43
+        ],
+        [
+          11.75,
+          15.75,
+          33
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_034-033-075",
+        "bass_synthetic_034-043-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 18,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-08-quiet",
+      "source_group": "groove-drummer5/nsynth-keyboard_acoustic_004",
+      "drum_source": "groove-source-08",
+      "drummer": "drummer5",
+      "instrument_str": "keyboard_acoustic_004",
+      "drum_audio_sha256": "ebc337525636ce8a7968c87178a2d795c483fe31d8cc0745d8bf6964574e60bf",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-08-quiet/decoded.wav",
+      "audio_sha256": "cfd19532e795b82466ef13716457daded4e4acda718e14165516a3420668b939",
+      "cache_sha256": "dd3e388f260e7b39ca801b60b90405a6a640fb512d59129156d9870b2c037b63",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          50
+        ],
+        [
+          7.25,
+          10.25,
+          47
+        ],
+        [
+          11.75,
+          14.75,
+          50
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          50
+        ],
+        [
+          7.25,
+          11.25,
+          47
+        ],
+        [
+          11.75,
+          15.75,
+          50
+        ]
+      ],
+      "source_notes": [
+        "keyboard_acoustic_004-047-075",
+        "keyboard_acoustic_004-050-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 9,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-08-layered",
+      "source_group": "groove-drummer5/nsynth-keyboard_electronic_001",
+      "drum_source": "groove-source-08",
+      "drummer": "drummer5",
+      "instrument_str": "keyboard_electronic_001",
+      "drum_audio_sha256": "ebc337525636ce8a7968c87178a2d795c483fe31d8cc0745d8bf6964574e60bf",
+      "group": "train",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-08-layered/decoded.wav",
+      "audio_sha256": "ad5b3c23607c743249767268c5d91088bb282e4b5e8c373389fab6a9c90a4e4f",
+      "cache_sha256": "5ae165463b2c774ce73489980d5344016d454af09fa5641cd0b00ffe85f8b011",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          21
+        ],
+        [
+          2.75,
+          5.75,
+          25
+        ],
+        [
+          7.25,
+          10.25,
+          25
+        ],
+        [
+          11.75,
+          14.75,
+          21
+        ],
+        [
+          11.75,
+          14.75,
+          25
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          21
+        ],
+        [
+          2.75,
+          6.75,
+          25
+        ],
+        [
+          7.25,
+          11.25,
+          25
+        ],
+        [
+          11.75,
+          15.75,
+          21
+        ],
+        [
+          11.75,
+          15.75,
+          25
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_001-021-075",
+        "keyboard_electronic_001-025-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 10,
+      "kind": "layered",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-09-drums_only",
+      "source_group": "groove-drummer6/nsynth-bass_synthetic_068",
+      "drum_source": "groove-source-09",
+      "drummer": "drummer6",
+      "instrument_str": "bass_synthetic_068",
+      "drum_audio_sha256": "cd12b7ac3194ebfbf2b0d597fa65e413b39e62f6bf7adec2dd260090eb60afb4",
+      "group": "validation",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-09-drums_only/decoded.wav",
+      "audio_sha256": "8bf634c73dd9bcb00a3c1acf355c478b1fda8ddb4ee2001008c2dcdedd7258b6",
+      "cache_sha256": "49370c9cdef63c29173af3411a4864bfa6e147a7a3a203e25a0236d7ce5c5e46",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 2,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-09-single",
+      "source_group": "groove-drummer6/nsynth-bass_synthetic_098",
+      "drum_source": "groove-source-09",
+      "drummer": "drummer6",
+      "instrument_str": "bass_synthetic_098",
+      "drum_audio_sha256": "cd12b7ac3194ebfbf2b0d597fa65e413b39e62f6bf7adec2dd260090eb60afb4",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-09-single/decoded.wav",
+      "audio_sha256": "8b767dd653f8333d5db9d3b430da1fa9d87885f0ea05d90ef4ee9132bd3ecedd",
+      "cache_sha256": "df3fdd3d3621e98e28e982622069134986ba8252f764dd877e452af1a8355204",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          28
+        ],
+        [
+          11.75,
+          14.75,
+          52
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          28
+        ],
+        [
+          11.75,
+          15.75,
+          52
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_098-028-075",
+        "bass_synthetic_098-044-075",
+        "bass_synthetic_098-052-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 4,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-09-repeat",
+      "source_group": "groove-drummer6/nsynth-keyboard_electronic_078",
+      "drum_source": "groove-source-09",
+      "drummer": "drummer6",
+      "instrument_str": "keyboard_electronic_078",
+      "drum_audio_sha256": "cd12b7ac3194ebfbf2b0d597fa65e413b39e62f6bf7adec2dd260090eb60afb4",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-09-repeat/decoded.wav",
+      "audio_sha256": "ebbe03091ed6dbf9e139638cd7b4b40f036f34ebb9cfb375e1d6bc82e1f938f9",
+      "cache_sha256": "7b19ff3d9663644c07448f6f00d25f75419b73c06b70d8f3895ccff9043adf3e",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          44
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          44
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_078-044-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 13,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-09-octave",
+      "source_group": "groove-drummer6/nsynth-bass_synthetic_068",
+      "drum_source": "groove-source-09",
+      "drummer": "drummer6",
+      "instrument_str": "bass_synthetic_068",
+      "drum_audio_sha256": "cd12b7ac3194ebfbf2b0d597fa65e413b39e62f6bf7adec2dd260090eb60afb4",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-09-octave/decoded.wav",
+      "audio_sha256": "6580f3b022c2f34ba3e289461e0c580551707637eff5ec9cdd14b07e87346101",
+      "cache_sha256": "333c53b8c33076517d72c2d2a50d227c29a22a4caa7f37bd94e802c7faefd4a1",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          57
+        ],
+        [
+          2.75,
+          5.75,
+          45
+        ],
+        [
+          7.25,
+          10.25,
+          57
+        ],
+        [
+          7.25,
+          10.25,
+          45
+        ],
+        [
+          11.75,
+          14.75,
+          57
+        ],
+        [
+          11.75,
+          14.75,
+          45
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          57
+        ],
+        [
+          2.75,
+          6.75,
+          45
+        ],
+        [
+          7.25,
+          11.25,
+          57
+        ],
+        [
+          7.25,
+          11.25,
+          45
+        ],
+        [
+          11.75,
+          15.75,
+          57
+        ],
+        [
+          11.75,
+          15.75,
+          45
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_068-045-075",
+        "bass_synthetic_068-057-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 16,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-09-dyad",
+      "source_group": "groove-drummer6/nsynth-bass_synthetic_098",
+      "drum_source": "groove-source-09",
+      "drummer": "drummer6",
+      "instrument_str": "bass_synthetic_098",
+      "drum_audio_sha256": "cd12b7ac3194ebfbf2b0d597fa65e413b39e62f6bf7adec2dd260090eb60afb4",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-09-dyad/decoded.wav",
+      "audio_sha256": "038b9e59ad7a7e23fa278eb1cad7ac29e3c540d2d4164db17c6b3a551fddfd4c",
+      "cache_sha256": "c30e202389360cabd4d5584a8aa5375e2d36167af52793f3731170fd3e5ff141",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          2.75,
+          5.75,
+          28
+        ],
+        [
+          7.25,
+          10.25,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          28
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ],
+        [
+          11.75,
+          14.75,
+          28
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          2.75,
+          6.75,
+          28
+        ],
+        [
+          7.25,
+          11.25,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          28
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ],
+        [
+          11.75,
+          15.75,
+          28
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_098-028-075",
+        "bass_synthetic_098-044-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 7,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-09-quiet",
+      "source_group": "groove-drummer6/nsynth-keyboard_electronic_078",
+      "drum_source": "groove-source-09",
+      "drummer": "drummer6",
+      "instrument_str": "keyboard_electronic_078",
+      "drum_audio_sha256": "cd12b7ac3194ebfbf2b0d597fa65e413b39e62f6bf7adec2dd260090eb60afb4",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-09-quiet/decoded.wav",
+      "audio_sha256": "132fa9afc0b6f5b2e6e50e04916a8c33fd4d380eaae61572cd83b4323de01b63",
+      "cache_sha256": "ef78f3510fd4fa66d485b8d91e48076e061406077af56a7a0fd4e9e8c2c827a7",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          40
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          40
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_078-040-075",
+        "keyboard_electronic_078-044-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 9,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-09-layered",
+      "source_group": "groove-drummer6/nsynth-bass_synthetic_068",
+      "drum_source": "groove-source-09",
+      "drummer": "drummer6",
+      "instrument_str": "bass_synthetic_068",
+      "drum_audio_sha256": "cd12b7ac3194ebfbf2b0d597fa65e413b39e62f6bf7adec2dd260090eb60afb4",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-09-layered/decoded.wav",
+      "audio_sha256": "34909b6e8d2c038a8e2b05d0176c856928da7898c36b290dbbdca68545de057d",
+      "cache_sha256": "fed7697a2cadc77e7d188f0d11fd7d2b06f29494deb79fa97460242f7c757c63",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          57
+        ],
+        [
+          2.75,
+          5.75,
+          49
+        ],
+        [
+          7.25,
+          10.25,
+          49
+        ],
+        [
+          11.75,
+          14.75,
+          57
+        ],
+        [
+          11.75,
+          14.75,
+          49
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          57
+        ],
+        [
+          2.75,
+          6.75,
+          49
+        ],
+        [
+          7.25,
+          11.25,
+          49
+        ],
+        [
+          11.75,
+          15.75,
+          57
+        ],
+        [
+          11.75,
+          15.75,
+          49
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_068-049-075",
+        "bass_synthetic_068-057-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 13,
+      "kind": "layered",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-10-drums_only",
+      "source_group": "groove-drummer6/nsynth-bass_synthetic_098",
+      "drum_source": "groove-source-10",
+      "drummer": "drummer6",
+      "instrument_str": "bass_synthetic_098",
+      "drum_audio_sha256": "5f8144d699dd1f94e0150acddbf7197258de77df1fdbd6a990616ddfe5dd90e3",
+      "group": "validation",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-10-drums_only/decoded.wav",
+      "audio_sha256": "2ebed73f9594017ce144b54fae814ca53b10999f3edf58d1b43c124ef319196b",
+      "cache_sha256": "e390ca4ef3453fb10097c09e92b6c09c61ae13294f757bafe44c2536a92aa34d",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 0,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-10-single",
+      "source_group": "groove-drummer6/nsynth-keyboard_electronic_078",
+      "drum_source": "groove-source-10",
+      "drummer": "drummer6",
+      "instrument_str": "keyboard_electronic_078",
+      "drum_audio_sha256": "5f8144d699dd1f94e0150acddbf7197258de77df1fdbd6a990616ddfe5dd90e3",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-10-single/decoded.wav",
+      "audio_sha256": "23c3bc9239841cd509242cfa5e888da8151c59c56836f6a57b70435ec978ad67",
+      "cache_sha256": "0bf0824f7e18fb7d5174e74058469a64c6b9f5c292e08c4391b28ad158405625",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          40
+        ],
+        [
+          11.75,
+          14.75,
+          45
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          40
+        ],
+        [
+          11.75,
+          15.75,
+          45
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_078-040-075",
+        "keyboard_electronic_078-044-075",
+        "keyboard_electronic_078-045-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 13,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-10-repeat",
+      "source_group": "groove-drummer6/nsynth-bass_synthetic_068",
+      "drum_source": "groove-source-10",
+      "drummer": "drummer6",
+      "instrument_str": "bass_synthetic_068",
+      "drum_audio_sha256": "5f8144d699dd1f94e0150acddbf7197258de77df1fdbd6a990616ddfe5dd90e3",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-10-repeat/decoded.wav",
+      "audio_sha256": "eee0b594b810d5f694a2c76fdebaf623447d8e8d6b02d4e8378e5c3686c6d8c3",
+      "cache_sha256": "049eec1e18e831a23ba4948e34c16b25baa4748c613c8e3d8bc9cfbf40efafcf",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          57
+        ],
+        [
+          7.25,
+          10.25,
+          57
+        ],
+        [
+          11.75,
+          14.75,
+          57
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          57
+        ],
+        [
+          7.25,
+          11.25,
+          57
+        ],
+        [
+          11.75,
+          15.75,
+          57
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_068-057-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 12,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-10-octave",
+      "source_group": "groove-drummer6/nsynth-bass_synthetic_098",
+      "drum_source": "groove-source-10",
+      "drummer": "drummer6",
+      "instrument_str": "bass_synthetic_098",
+      "drum_audio_sha256": "5f8144d699dd1f94e0150acddbf7197258de77df1fdbd6a990616ddfe5dd90e3",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-10-octave/decoded.wav",
+      "audio_sha256": "a483eac4294fc04bbc5e3ab571981b641c50effc751b2d67b8e83f347eea3062",
+      "cache_sha256": "c67e26ff1236f0ab4a029fca171644dc8404817649225a459f576ebf1e63e9f9",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          2.75,
+          5.75,
+          56
+        ],
+        [
+          7.25,
+          10.25,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          56
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ],
+        [
+          11.75,
+          14.75,
+          56
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          2.75,
+          6.75,
+          56
+        ],
+        [
+          7.25,
+          11.25,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          56
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ],
+        [
+          11.75,
+          15.75,
+          56
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_098-044-075",
+        "bass_synthetic_098-056-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 7,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-10-dyad",
+      "source_group": "groove-drummer6/nsynth-keyboard_electronic_078",
+      "drum_source": "groove-source-10",
+      "drummer": "drummer6",
+      "instrument_str": "keyboard_electronic_078",
+      "drum_audio_sha256": "5f8144d699dd1f94e0150acddbf7197258de77df1fdbd6a990616ddfe5dd90e3",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-10-dyad/decoded.wav",
+      "audio_sha256": "01da4dd62a73999e7e64f018d204e97edbe791bed71609200b836412648288e6",
+      "cache_sha256": "1626bbc9153304a452c73fed630f4ad20ba46c71d38a97b94170abf11ffafc45",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          2.75,
+          5.75,
+          40
+        ],
+        [
+          7.25,
+          10.25,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          40
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ],
+        [
+          11.75,
+          14.75,
+          40
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          2.75,
+          6.75,
+          40
+        ],
+        [
+          7.25,
+          11.25,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          40
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ],
+        [
+          11.75,
+          15.75,
+          40
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_078-040-075",
+        "keyboard_electronic_078-044-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 22,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-10-quiet",
+      "source_group": "groove-drummer6/nsynth-bass_synthetic_068",
+      "drum_source": "groove-source-10",
+      "drummer": "drummer6",
+      "instrument_str": "bass_synthetic_068",
+      "drum_audio_sha256": "5f8144d699dd1f94e0150acddbf7197258de77df1fdbd6a990616ddfe5dd90e3",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-10-quiet/decoded.wav",
+      "audio_sha256": "14ad0a316e23d305e48aac41f7463f9ff38d3e8dc0ff1603671235cd71e03ad2",
+      "cache_sha256": "acaeddcc1151733df3b59e5810d1607d437689025b522118d6fc4908aa63f6ad",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          57
+        ],
+        [
+          7.25,
+          10.25,
+          49
+        ],
+        [
+          11.75,
+          14.75,
+          57
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          57
+        ],
+        [
+          7.25,
+          11.25,
+          49
+        ],
+        [
+          11.75,
+          15.75,
+          57
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_068-049-075",
+        "bass_synthetic_068-057-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 3,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-10-layered",
+      "source_group": "groove-drummer6/nsynth-bass_synthetic_098",
+      "drum_source": "groove-source-10",
+      "drummer": "drummer6",
+      "instrument_str": "bass_synthetic_098",
+      "drum_audio_sha256": "5f8144d699dd1f94e0150acddbf7197258de77df1fdbd6a990616ddfe5dd90e3",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-10-layered/decoded.wav",
+      "audio_sha256": "edf765bc38fe7158a9ebb20db993d429519eee1735babb821392a2a8b5c929df",
+      "cache_sha256": "b0901e1778edead991979edfdfdfa3d53c91e4a75cb252a57f35d98d8d4d5319",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          2.75,
+          5.75,
+          28
+        ],
+        [
+          7.25,
+          10.25,
+          28
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ],
+        [
+          11.75,
+          14.75,
+          28
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          2.75,
+          6.75,
+          28
+        ],
+        [
+          7.25,
+          11.25,
+          28
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ],
+        [
+          11.75,
+          15.75,
+          28
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_098-028-075",
+        "bass_synthetic_098-044-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 7,
+      "kind": "layered",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-11-drums_only",
+      "source_group": "groove-drummer7/nsynth-keyboard_electronic_078",
+      "drum_source": "groove-source-11",
+      "drummer": "drummer7",
+      "instrument_str": "keyboard_electronic_078",
+      "drum_audio_sha256": "caecf9833eae29248f0d70af49862744b3d4bc0fe8a61f24ab3504992834bba3",
+      "group": "validation",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-11-drums_only/decoded.wav",
+      "audio_sha256": "ef08ca6aa7f2170622a74f8832cb90a6d81b5d1a6546532624e19eebdc047055",
+      "cache_sha256": "fd7e63c9feb1f2c1221583981882ea08d114693f3fec9b2d400322256f2ec7ea",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 1,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-11-single",
+      "source_group": "groove-drummer7/nsynth-bass_synthetic_068",
+      "drum_source": "groove-source-11",
+      "drummer": "drummer7",
+      "instrument_str": "bass_synthetic_068",
+      "drum_audio_sha256": "caecf9833eae29248f0d70af49862744b3d4bc0fe8a61f24ab3504992834bba3",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-11-single/decoded.wav",
+      "audio_sha256": "70d89552b5d4bfff738a83d6d91b0b0a846a2289757f00177761ae7eb75689af",
+      "cache_sha256": "c6aa58883c6fa323a1dd99b422cf0e936ca79c36ed7ccb97b86fead29d9f4cd9",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          57
+        ],
+        [
+          7.25,
+          10.25,
+          49
+        ],
+        [
+          11.75,
+          14.75,
+          37
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          57
+        ],
+        [
+          7.25,
+          11.25,
+          49
+        ],
+        [
+          11.75,
+          15.75,
+          37
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_068-037-075",
+        "bass_synthetic_068-049-075",
+        "bass_synthetic_068-057-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 11,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-11-repeat",
+      "source_group": "groove-drummer7/nsynth-bass_synthetic_098",
+      "drum_source": "groove-source-11",
+      "drummer": "drummer7",
+      "instrument_str": "bass_synthetic_098",
+      "drum_audio_sha256": "caecf9833eae29248f0d70af49862744b3d4bc0fe8a61f24ab3504992834bba3",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-11-repeat/decoded.wav",
+      "audio_sha256": "cfb5e6c48fe71f557af6e5b35221538bde6b124e4c3de55c2ae3f0bbf363bc1c",
+      "cache_sha256": "c3fab0e6899b5ef08252f1689e28d282c1a6a44002b9111321779df2a3a4c44c",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          44
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          44
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_098-044-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 4,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-11-octave",
+      "source_group": "groove-drummer7/nsynth-keyboard_electronic_078",
+      "drum_source": "groove-source-11",
+      "drummer": "drummer7",
+      "instrument_str": "keyboard_electronic_078",
+      "drum_audio_sha256": "caecf9833eae29248f0d70af49862744b3d4bc0fe8a61f24ab3504992834bba3",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-11-octave/decoded.wav",
+      "audio_sha256": "f9e216c9505f736cd8be66f528987202aea02c9ae07ce3765463afc471574227",
+      "cache_sha256": "7f17abd62e8a81ec12b04086c8c1e31c9e036f3710b15034d394cc0e2f8bbf59",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          2.75,
+          5.75,
+          56
+        ],
+        [
+          7.25,
+          10.25,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          56
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ],
+        [
+          11.75,
+          14.75,
+          56
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          2.75,
+          6.75,
+          56
+        ],
+        [
+          7.25,
+          11.25,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          56
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ],
+        [
+          11.75,
+          15.75,
+          56
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_078-044-075",
+        "keyboard_electronic_078-056-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 13,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-11-dyad",
+      "source_group": "groove-drummer7/nsynth-bass_synthetic_068",
+      "drum_source": "groove-source-11",
+      "drummer": "drummer7",
+      "instrument_str": "bass_synthetic_068",
+      "drum_audio_sha256": "caecf9833eae29248f0d70af49862744b3d4bc0fe8a61f24ab3504992834bba3",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-11-dyad/decoded.wav",
+      "audio_sha256": "b2db323d409d691ff4e4804df88a3bafed41ed2c7977eb456eb5f33c53876ba7",
+      "cache_sha256": "64e6e9c56a393846e0b527dc8e935b2833473f5065205e7106076bb88b449077",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          57
+        ],
+        [
+          2.75,
+          5.75,
+          49
+        ],
+        [
+          7.25,
+          10.25,
+          57
+        ],
+        [
+          7.25,
+          10.25,
+          49
+        ],
+        [
+          11.75,
+          14.75,
+          57
+        ],
+        [
+          11.75,
+          14.75,
+          49
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          57
+        ],
+        [
+          2.75,
+          6.75,
+          49
+        ],
+        [
+          7.25,
+          11.25,
+          57
+        ],
+        [
+          7.25,
+          11.25,
+          49
+        ],
+        [
+          11.75,
+          15.75,
+          57
+        ],
+        [
+          11.75,
+          15.75,
+          49
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_068-049-075",
+        "bass_synthetic_068-057-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 17,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-11-quiet",
+      "source_group": "groove-drummer7/nsynth-bass_synthetic_098",
+      "drum_source": "groove-source-11",
+      "drummer": "drummer7",
+      "instrument_str": "bass_synthetic_098",
+      "drum_audio_sha256": "caecf9833eae29248f0d70af49862744b3d4bc0fe8a61f24ab3504992834bba3",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-11-quiet/decoded.wav",
+      "audio_sha256": "9a3d684e41e8f0c64cdd1f7899d94c000c731b2246dbcf32e8f9eee347159567",
+      "cache_sha256": "940b93ab5cf6070b028bb114c2495f48a7bedd649d6113266d4eb9ed9162be8d",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          28
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          28
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_098-028-075",
+        "bass_synthetic_098-044-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 5,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-11-layered",
+      "source_group": "groove-drummer7/nsynth-keyboard_electronic_078",
+      "drum_source": "groove-source-11",
+      "drummer": "drummer7",
+      "instrument_str": "keyboard_electronic_078",
+      "drum_audio_sha256": "caecf9833eae29248f0d70af49862744b3d4bc0fe8a61f24ab3504992834bba3",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-11-layered/decoded.wav",
+      "audio_sha256": "8da6a29fafbc74c498725e3a68bd068ff53145e7a449b6658a5c897c9002b806",
+      "cache_sha256": "e0c0d54c3f9723176da348f61c243002554da8c9f6ed3e4655395cfc5eadba9a",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          2.75,
+          5.75,
+          40
+        ],
+        [
+          7.25,
+          10.25,
+          40
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ],
+        [
+          11.75,
+          14.75,
+          40
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          2.75,
+          6.75,
+          40
+        ],
+        [
+          7.25,
+          11.25,
+          40
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ],
+        [
+          11.75,
+          15.75,
+          40
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_078-040-075",
+        "keyboard_electronic_078-044-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 13,
+      "kind": "layered",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-12-drums_only",
+      "source_group": "groove-drummer7/nsynth-bass_synthetic_068",
+      "drum_source": "groove-source-12",
+      "drummer": "drummer7",
+      "instrument_str": "bass_synthetic_068",
+      "drum_audio_sha256": "baae21fbbc05c902f40007ba0c9fe67d5938a31344cb3f2a37ec342b1b21a636",
+      "group": "validation",
+      "corpus": "groove-drums-only",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-12-drums_only/decoded.wav",
+      "audio_sha256": "856114a479a3228681b632b2baaf1d22a966614a5a923ea7cf6a4359a60e6d04",
+      "cache_sha256": "eb9b4758214dd12d95e340136ae6591aa5a70f89ba1c61ef4a4db958d7a98203",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [],
+      "pitch_reference": [],
+      "source_notes": [],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 7,
+      "kind": "drums_only",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-12-single",
+      "source_group": "groove-drummer7/nsynth-bass_synthetic_098",
+      "drum_source": "groove-source-12",
+      "drummer": "drummer7",
+      "instrument_str": "bass_synthetic_098",
+      "drum_audio_sha256": "baae21fbbc05c902f40007ba0c9fe67d5938a31344cb3f2a37ec342b1b21a636",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-12-single/decoded.wav",
+      "audio_sha256": "7ef220917ed7ff64a397dae581c644588c30c281a7c0d74bc8ab3c8b5ecfab24",
+      "cache_sha256": "17967eb2744290560fbc8b2f461526bbeb83de0c549a068986912b23a83a5a01",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          28
+        ],
+        [
+          11.75,
+          14.75,
+          52
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          28
+        ],
+        [
+          11.75,
+          15.75,
+          52
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_098-028-075",
+        "bass_synthetic_098-044-075",
+        "bass_synthetic_098-052-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 8,
+      "kind": "single",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-12-repeat",
+      "source_group": "groove-drummer7/nsynth-keyboard_electronic_078",
+      "drum_source": "groove-source-12",
+      "drummer": "drummer7",
+      "instrument_str": "keyboard_electronic_078",
+      "drum_audio_sha256": "baae21fbbc05c902f40007ba0c9fe67d5938a31344cb3f2a37ec342b1b21a636",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-12-repeat/decoded.wav",
+      "audio_sha256": "6911f3fba316d469f0b795bd62bc5eaacb3dd032932ca06156a8ee958dd59034",
+      "cache_sha256": "ac7b318ab3618561d3f561b654f412330c59cc93030c8b8e42b372e133217473",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          44
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          44
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_078-044-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 17,
+      "kind": "repeat",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-12-octave",
+      "source_group": "groove-drummer7/nsynth-bass_synthetic_068",
+      "drum_source": "groove-source-12",
+      "drummer": "drummer7",
+      "instrument_str": "bass_synthetic_068",
+      "drum_audio_sha256": "baae21fbbc05c902f40007ba0c9fe67d5938a31344cb3f2a37ec342b1b21a636",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-12-octave/decoded.wav",
+      "audio_sha256": "7e151db12a6a03040f79966e3c55d898b613855cde316cb12b2c5058f5e48a81",
+      "cache_sha256": "bb45031fc3f0ed24d9bfbea2a5e9cc9dec6c56ba5e35b7ea9eed254ebc2746e9",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          57
+        ],
+        [
+          2.75,
+          5.75,
+          45
+        ],
+        [
+          7.25,
+          10.25,
+          57
+        ],
+        [
+          7.25,
+          10.25,
+          45
+        ],
+        [
+          11.75,
+          14.75,
+          57
+        ],
+        [
+          11.75,
+          14.75,
+          45
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          57
+        ],
+        [
+          2.75,
+          6.75,
+          45
+        ],
+        [
+          7.25,
+          11.25,
+          57
+        ],
+        [
+          7.25,
+          11.25,
+          45
+        ],
+        [
+          11.75,
+          15.75,
+          57
+        ],
+        [
+          11.75,
+          15.75,
+          45
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_068-045-075",
+        "bass_synthetic_068-057-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 14,
+      "kind": "octave",
+      "bitrate": 48
+    },
+    {
+      "id": "groove-v25-groove-source-12-dyad",
+      "source_group": "groove-drummer7/nsynth-bass_synthetic_098",
+      "drum_source": "groove-source-12",
+      "drummer": "drummer7",
+      "instrument_str": "bass_synthetic_098",
+      "drum_audio_sha256": "baae21fbbc05c902f40007ba0c9fe67d5938a31344cb3f2a37ec342b1b21a636",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-12-dyad/decoded.wav",
+      "audio_sha256": "3e89e3fd6182d3e50aff49a232a87f854619120ebe834898b513fcff2ba00ed1",
+      "cache_sha256": "041e22105b711b5de744ef723a4ac1f6eee1628a65eca72a3bd92dd2ab2e3d86",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          2.75,
+          5.75,
+          28
+        ],
+        [
+          7.25,
+          10.25,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          28
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ],
+        [
+          11.75,
+          14.75,
+          28
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          2.75,
+          6.75,
+          28
+        ],
+        [
+          7.25,
+          11.25,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          28
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ],
+        [
+          11.75,
+          15.75,
+          28
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_098-028-075",
+        "bass_synthetic_098-044-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 9,
+      "kind": "dyad",
+      "bitrate": 128
+    },
+    {
+      "id": "groove-v25-groove-source-12-quiet",
+      "source_group": "groove-drummer7/nsynth-keyboard_electronic_078",
+      "drum_source": "groove-source-12",
+      "drummer": "drummer7",
+      "instrument_str": "keyboard_electronic_078",
+      "drum_audio_sha256": "baae21fbbc05c902f40007ba0c9fe67d5938a31344cb3f2a37ec342b1b21a636",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-12-quiet/decoded.wav",
+      "audio_sha256": "13367228183c3de3495403fc0c142629b99df769bb604237aacaf354f8c2cfb6",
+      "cache_sha256": "4ba794420a001c2440531de59ec46d8bb42343943b531cd772edbed33f4943a1",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          44
+        ],
+        [
+          7.25,
+          10.25,
+          40
+        ],
+        [
+          11.75,
+          14.75,
+          44
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          44
+        ],
+        [
+          7.25,
+          11.25,
+          40
+        ],
+        [
+          11.75,
+          15.75,
+          44
+        ]
+      ],
+      "source_notes": [
+        "keyboard_electronic_078-040-075",
+        "keyboard_electronic_078-044-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 12,
+      "kind": "quiet",
+      "bitrate": 192
+    },
+    {
+      "id": "groove-v25-groove-source-12-layered",
+      "source_group": "groove-drummer7/nsynth-bass_synthetic_068",
+      "drum_source": "groove-source-12",
+      "drummer": "drummer7",
+      "instrument_str": "bass_synthetic_068",
+      "drum_audio_sha256": "baae21fbbc05c902f40007ba0c9fe67d5938a31344cb3f2a37ec342b1b21a636",
+      "group": "validation",
+      "corpus": "groove-pitched-mixture",
+      "audio": "/training/groove-bass-v29-v1/groove-v25-groove-source-12-layered/decoded.wav",
+      "audio_sha256": "6cb271b757cd214ac88c0d5d944f33f93ab567f99ea75a528dc1ebf7dee41111",
+      "cache_sha256": "e9b8088eb802ba9b381da8d2579aade66265e3e3e7a5f9c28febc0b385712aae",
+      "duration": 19.0,
+      "seconds": 19.0,
+      "reference": [
+        [
+          2.75,
+          5.75,
+          57
+        ],
+        [
+          2.75,
+          5.75,
+          49
+        ],
+        [
+          7.25,
+          10.25,
+          49
+        ],
+        [
+          11.75,
+          14.75,
+          57
+        ],
+        [
+          11.75,
+          14.75,
+          49
+        ]
+      ],
+      "pitch_reference": [
+        [
+          2.75,
+          6.75,
+          57
+        ],
+        [
+          2.75,
+          6.75,
+          49
+        ],
+        [
+          7.25,
+          11.25,
+          49
+        ],
+        [
+          11.75,
+          15.75,
+          57
+        ],
+        [
+          11.75,
+          15.75,
+          49
+        ]
+      ],
+      "source_notes": [
+        "bass_synthetic_068-049-075",
+        "bass_synthetic_068-057-075"
+      ],
+      "plan_sha256": "92d2f3b930f81ae5d2479f5955ecc201782325ecc747c58f56cf619e0740bb2d",
+      "candidate_notes": 17,
+      "kind": "layered",
+      "bitrate": 48
+    }
+  ],
+  "reserved_instruments_untouched": true,
+  "reserved_drum_performers_untouched": true,
+  "no_user_audio_or_scores": true
+}

@@ -1,0 +1,10 @@
+{
+  "source_sha256": "6fcc73cf210283f6eb3011461109b8adbe66657bf79c3b9e9b33c551fa3721dc",
+  "producer_sha256": "41106e4f7f7991b07f75b71efa6f791541762e24336a224d410f2c76ab24952c",
+  "metadata_sha256": "3e17eef2f18012c0160c183ad5b106964eb429876cceb1eee1b746def4e6b11b",
+  "selection": "Original train/validation only, duration 8\u201340 seconds; at most two clips per eligible performer preferring distinct primary styles; nine eligible performers sorted first five train, next two validation, last two reserved. All original test sequences untouched.",
+  "scope": "Project-specific performer split, not the official GMD benchmark. Electronic TD-11 drum audio is a nuisance source for piano transcription; drum MIDI numbers are not piano pitch labels.",
+  "no_decoder_inference": true,
+  "no_user_audio_or_scores": true,
+  "reserved_inference_policy": "After a frozen validation winner passes all consumed regression recordings; never fitting or selection"
+}

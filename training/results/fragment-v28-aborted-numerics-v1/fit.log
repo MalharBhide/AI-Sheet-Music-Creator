@@ -1,0 +1,36 @@
+WARNING:root:Coremltools is not installed. If you plan to use a CoreML Saved Model, reinstall basic-pitch with `pip install 'basic-pitch[coreml]'`
+WARNING:root:tflite-runtime is not installed. If you plan to use a TFLite Model, reinstall basic-pitch with `pip install 'basic-pitch tflite-runtime'` or `pip install 'basic-pitch[tf]'
+WARNING:root:onnxruntime is not installed. If you plan to use an ONNX Model, reinstall basic-pitch with `pip install 'basic-pitch[onnx]'`
+/usr/local/lib/python3.11/site-packages/resampy/filters.py:50: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+{"profile": "subtype-conservative", "epoch": 1, "loss": 0.4435448933392763, "seconds": 2.076674792999256}
+{"profile": "subtype-conservative", "epoch": 2, "loss": 0.36856446526944636, "seconds": 1.791973584000516}
+{"profile": "subtype-conservative", "epoch": 3, "loss": 0.359729921258986, "seconds": 1.691103541999837}
+{"profile": "subtype-conservative", "epoch": 4, "loss": 0.3700668718665838, "seconds": 1.7121992510001292}
+{"profile": "subtype-conservative", "epoch": 5, "loss": 0.32970507107675073, "seconds": 1.7082167920016218}
+{"profile": "subtype-conservative", "epoch": 6, "loss": 0.32586121596395967, "seconds": 1.696726583999407}
+{"profile": "subtype-conservative", "epoch": 7, "loss": 0.33579232208430765, "seconds": 1.6363555010011623}
+{"profile": "subtype-conservative", "epoch": 8, "loss": 0.30303896106779576, "seconds": 1.626950208999915}
+{"profile": "subtype-conservative", "epoch": 9, "loss": 0.3148853354156017, "seconds": 1.6262007509994874}
+{"profile": "subtype-conservative", "epoch": 10, "loss": 0.25944612082093954, "seconds": 1.6728908339991904}
+{"profile": "subtype-conservative", "epoch": 11, "loss": 0.2937706958502531, "seconds": 1.647414375000153}
+{"profile": "subtype-conservative", "epoch": 12, "loss": 0.2822007931768894, "seconds": 1.6444082090001757}
+{"profile": "subtype-conservative", "epoch": 13, "loss": 0.28517877385020257, "seconds": 1.7457580840000446}
+{"profile": "subtype-conservative", "epoch": 14, "loss": 0.24498900547623634, "seconds": 1.6629446679999091}
+{"profile": "subtype-conservative", "epoch": 15, "loss": 0.23681362271308898, "seconds": 1.802585707999242}
+{"profile": "subtype-conservative", "epoch": 16, "loss": 0.23957225047051905, "seconds": 1.6895463340006245}
+{"profile": "subtype-conservative", "epoch": 17, "loss": 0.2366905365139246, "seconds": 1.6428891260002274}
+{"profile": "subtype-conservative", "epoch": 18, "loss": 0.2403246209025383, "seconds": 1.7384237090009265}
+{"profile": "subtype-conservative", "epoch": 19, "loss": 0.21971714701503514, "seconds": 1.6444670840010076}
+Traceback (most recent call last):
+  File "/src/training/train_fragment_v28.py", line 283, in <module>
+    train(args.baseline, args.warm, args.output)
+  File "/src/training/train_fragment_v28.py", line 200, in train
+    chosen, search = choose(validation, ps, guards, THRESHOLDS, GUARDIANS, memo)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/src/training/score_declutter_local.py", line 37, in choose
+    raw = evaluate(items, ps, guardians, threshold, guardian_threshold, memo)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/src/training/score_declutter_local.py", line 19, in evaluate
+    raise ValueError('Invalid binary support probabilities')
+ValueError: Invalid binary support probabilities

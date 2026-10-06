@@ -1,0 +1,9 @@
+WARNING:root:Coremltools is not installed. If you plan to use a CoreML Saved Model, reinstall basic-pitch with `pip install 'basic-pitch[coreml]'`
+WARNING:root:tflite-runtime is not installed. If you plan to use a TFLite Model, reinstall basic-pitch with `pip install 'basic-pitch tflite-runtime'` or `pip install 'basic-pitch[tf]'
+WARNING:root:onnxruntime is not installed. If you plan to use an ONNX Model, reinstall basic-pitch with `pip install 'basic-pitch[onnx]'`
+/usr/local/lib/python3.11/site-packages/resampy/filters.py:50: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+{"profile": "neighbor-conservative", "epoch": 1, "loss": 0.5397982958704233, "seconds": 2.053798334000021}
+{"profile": "neighbor-conservative", "epoch": 2, "loss": 0.4076490752398968, "seconds": 1.6615876670002763}
+{"profile": "neighbor-conservative", "epoch": 3, "loss": 0.3623117355629802, "seconds": 1.6728470010002638}
+{"profile": "neighbor-conservative", "epoch": 4, "loss": 0.3338828932493925, "seconds": 1.8389302930008853}
