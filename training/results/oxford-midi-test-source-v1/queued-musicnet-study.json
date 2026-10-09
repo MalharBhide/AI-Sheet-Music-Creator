@@ -1,0 +1,19 @@
+{
+  "version": "musicnet-v33-local-sequential-driver-v1",
+  "producer_sha256": "ba6798f550c4cd7e1c1fe6b0bace5d30544d65122e3fe556590af39b4b064774",
+  "original_acquisition_pid": 48,
+  "original_acquisition_command": [
+    "python",
+    "/src/training/acquire_musicnet_subset.py",
+    "/training/musicnet/musicnet_metadata.csv",
+    "/training/musicnet-piano-subset-v1"
+  ],
+  "no_restart_or_deployment_or_user_audio": true,
+  "phases": [
+    "verified-source",
+    "training-validation-observations",
+    "frozen-fit",
+    "consumed-regression-if-selected",
+    "first-pass-if-regression-passes"
+  ]
+}
