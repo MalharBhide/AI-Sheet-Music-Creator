@@ -1,0 +1,16 @@
+........................................................................ [ 21%]
+........................................................................ [ 43%]
+................................................................ssssss.. [ 65%]
+........................................................................ [ 86%]
+............................................                             [100%]
+=============================== warnings summary ===============================
+../../usr/local/lib/python3.11/site-packages/starlette/testclient.py:53
+  /usr/local/lib/python3.11/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+tests/test_accompaniment_candidates.py::test_original_candidate_bounds_and_untouched_evidence
+  /usr/local/lib/python3.11/site-packages/resampy/filters.py:50: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+    import pkg_resources
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+326 passed, 6 skipped, 2 warnings in 24.71s

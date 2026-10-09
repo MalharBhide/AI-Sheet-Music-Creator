@@ -78,3 +78,24 @@ set. Prior NSynth/GMD first-pass sources are now consumed regressions and cannot
 be reported as fresh evidence. Both confidence settings must reduce wrong notes
 and preserve attacks, holds, pitch coverage, and fixed-pair timing per recording.
 A failed first pass is retained, with no replacement clips or confidence retuning.
+
+Optional V33 runtime modules are now prepared but **not wired into the website**.
+They load an explicit hashed format-4 asset, retain the exact released physical
+feature extraction, reject malformed weights/normalization/confidence values, and
+keep the same event eligibility and guardian protections. Random nonzero model
+fixtures verify exact prediction parity with the training implementation.
+
+`export_musicnet_anchor_v33.py` refuses failed consumed or first-pass evidence and
+requires every predeclared reserved/test identity. `verify_musicnet_v33_runtime.py`
+will compare all fitting, consumed, and first-pass recordings, both confidence
+masks, and independently recomputed physical features. Runtime and export source
+hashes are sealed; a successful export does not authorize deployment by itself.
+The actual candidate still requires these checks and native pipeline verification.
+
+Backend checkpoint unit tests require Torch even without the full transcription
+extras. CI now installs the project's pinned CPU Torch 2.5.1 runtime using the
+[official CPU wheel index](https://pytorch.org/get-started/previous-versions/).
+Training-to-runtime parity tests remain under `training/`, so backend-only tests
+do not need to import training scripts. The local preparation suite passed 862
+tests (6 skipped); the backend-only scope passed 326 (6 skipped). This validates
+release preparation, not MusicNet accuracy or a new model release.

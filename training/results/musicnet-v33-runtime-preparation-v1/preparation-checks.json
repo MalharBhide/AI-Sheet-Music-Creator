@@ -1,0 +1,40 @@
+{
+  "actual_released_anchor_runtime_check": {
+    "actual_released_checkpoint_sha256": "78fcb4f2c0effdac1dfbb7de54efba88a63429aeb358c9c02620c360764122eb",
+    "fixtures": 24,
+    "maximum_initial_runtime_error": 0.0,
+    "no_new_training_or_deployment": true,
+    "passes": true,
+    "profiles": 2
+  },
+  "candidate_not_fitted_yet": true,
+  "current_v32_route_unchanged": true,
+  "no_candidate_asset_or_weights_deployed": true,
+  "no_user_audio_or_scores": true,
+  "passes": true,
+  "source_sha256": {
+    ".github/workflows/ci.yml": "de0aab393d50b3041872ab8ca39a9c6d3e24c6d2347779adb45b71f3fb2a4717",
+    "backend/app/services/bass_musicnet_declutter.py": "d7b3a9c8760482d3ee4c89a9deb1ac54f4232e346c93639a99ef4beb432e30b2",
+    "backend/app/services/bass_musicnet_network.py": "82ddca261135690bdf2275e735055ee20816397d149a221bc37f709768d6848a",
+    "training/export_musicnet_anchor_v33.py": "31106e3863b0f32fa27a958b937b4190dc678d741833a296dd67701b7c05d83c",
+    "training/test_musicnet_portable.py": "be804002e970e641ed7a0ba3f558ce8169c0540b93cac637ce0a3f148345dd22",
+    "training/test_musicnet_v33_export_gate.py": "c922207d2d8660387ba3d2e6a2ca490315cac4f9f725716dec8d63a26d4cbab0",
+    "training/verify_musicnet_v33_runtime.py": "b07a21a5b88847e2ad962a7a0c8ad6a92511a3a8bfa2e8ae8e433bea42c70594"
+  },
+  "tests": {
+    "backend_only": {
+      "passed": 326,
+      "skipped": 6
+    },
+    "full": {
+      "passed": 862,
+      "skipped": 6
+    },
+    "optional_transcription_extras_unavailable": {
+      "not_a_fresh_dependency_install": true,
+      "passed": 320,
+      "simulated_import_and_find_spec_absence": true,
+      "skipped": 12
+    }
+  }
+}

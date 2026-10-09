@@ -18,6 +18,9 @@ jobs:
           python-version: '3.11'
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - run: pip install -e './backend[dev]'
+      # Acoustic checkpoint unit tests require Torch and bounded waveform features require SciPy.
+      - run: pip install 'torch==2.5.1' --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install 'scipy==1.17.1'
       - run: python -m pytest -q
         working-directory: backend
   frontend:
