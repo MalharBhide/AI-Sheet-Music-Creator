@@ -1,0 +1,298 @@
+{
+  "assessment_root": "/training/cocochorales-assessment-v1",
+  "assessment_sha256": "559602e1bfedbdf833276fe80a7df45099902b7a25ac21024db8dcf750a77f7d",
+  "publisher_url": "https://magenta.withgoogle.com/datasets/cocochorales",
+  "publisher_sha256": "f27cdeba528684915baf3cdf6f2e8e4cf2fe5ab8da8488eba877039e8bdbb06d",
+  "publisher_md5_list_sha256": "8c5250c7f27bd8bb948f4226285e5ba2731cb15762866b38d3b7b61a7064e35d",
+  "producer_sha256": "ae8ce316ff57ce1fa2b8868bff9ab5a8236277a1eb20f56490eaeadfb1404d10",
+  "objects": [
+    {
+      "name": "note_expression/train/1.tar.bz2",
+      "bytes": 10623029,
+      "generation": "1662150859533321",
+      "etag": "\"ed8b8a526ef39e5ad7a8b8e10efaa7bc\"",
+      "md5": "ed8b8a526ef39e5ad7a8b8e10efaa7bc"
+    },
+    {
+      "name": "main_dataset/train/1.tar.bz2",
+      "bytes": 5114972715,
+      "generation": "1662148138537381",
+      "etag": "\"999ba8284b0646a6c7f3ef357e15fd59\"",
+      "md5": "999ba8284b0646a6c7f3ef357e15fd59"
+    },
+    {
+      "name": "note_expression/valid/1.tar.bz2",
+      "bytes": 10614348,
+      "generation": "1662150849919441",
+      "etag": "\"bf043b30443ac8435c303a76e7d6e6c4\"",
+      "md5": "bf043b30443ac8435c303a76e7d6e6c4"
+    },
+    {
+      "name": "main_dataset/valid/1.tar.bz2",
+      "bytes": 5091380388,
+      "generation": "1662147031275204",
+      "etag": "\"697766f8e53ffc9f64708b8bf4acedb1\"",
+      "md5": "697766f8e53ffc9f64708b8bf4acedb1"
+    }
+  ],
+  "selected": [
+    {
+      "member": "./string_track001708.yaml",
+      "original_midi": "132.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "68b01fb7aa71da8b6de4d5c7bb65536334e1d20c7b01dd7cb4d0d101aea28442",
+      "id": "string_track001708",
+      "group": "train"
+    },
+    {
+      "member": "./string_track001060.yaml",
+      "original_midi": "21925.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "69ea75054bc398bfa6bfc2029a67c23b04f5c4d5b0c15a2f0d49ae8d23f36a19",
+      "id": "string_track001060",
+      "group": "train"
+    },
+    {
+      "member": "./string_track000272.yaml",
+      "original_midi": "44810.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "5ee77ca44a8c78b483fd6b89583294c1cdb3f35df2f23c0cb937ae46a47f687a",
+      "id": "string_track000272",
+      "group": "train"
+    },
+    {
+      "member": "./string_track001917.yaml",
+      "original_midi": "68040.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "7a8d5c24d7dd2596bc8a132dbc6c179d73da3657abfb5dc4e0a8e3dbe634a43e",
+      "id": "string_track001917",
+      "group": "train"
+    },
+    {
+      "member": "./string_track001260.yaml",
+      "original_midi": "91444.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "678b0975783239a64725acb9b819f0535a500726ac33c8579e3437abfc043353",
+      "id": "string_track001260",
+      "group": "train"
+    },
+    {
+      "member": "./string_track001542.yaml",
+      "original_midi": "114730.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "8d48b337655378c4cfe1b3f9fa3900978d7c9e8c0ec4587ea2ccdf8c16ecdce0",
+      "id": "string_track001542",
+      "group": "train"
+    },
+    {
+      "member": "./string_track000729.yaml",
+      "original_midi": "135367.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "c4ea2f27ffd8226e7ee52c701d31874d6bb3006e424abe629bce6a686209fcff",
+      "id": "string_track000729",
+      "group": "train"
+    },
+    {
+      "member": "./string_track001456.yaml",
+      "original_midi": "155788.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "ba50d3669e1633f946354f46a64f9d66191c908a8296e93ced20ec4fec536c13",
+      "id": "string_track001456",
+      "group": "train"
+    },
+    {
+      "member": "./string_track000154.yaml",
+      "original_midi": "177643.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "79e0a5487caf338521d10c726323e9a13de4ac653eafda19ff0d0e98c519f0c5",
+      "id": "string_track000154",
+      "group": "train"
+    },
+    {
+      "member": "./string_track001408.yaml",
+      "original_midi": "199003.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "d8a2bd8dad1313ae45be2da7669bc676e79f1fae95c4c4bbedf7ea111752faab",
+      "id": "string_track001408",
+      "group": "train"
+    },
+    {
+      "member": "./string_track001596.yaml",
+      "original_midi": "219856.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "8116cfacfb344ac705129dcfb25fd85aba1eaf8364e1359f3316f1b0692a8946",
+      "id": "string_track001596",
+      "group": "train"
+    },
+    {
+      "member": "./string_track000726.yaml",
+      "original_midi": "239890.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "cfdbf338f0085ec3002a5049b971863797804f80ac58ead4ced652891312945b",
+      "id": "string_track000726",
+      "group": "train"
+    },
+    {
+      "member": "./string_track192575.yaml",
+      "original_midi": "203.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "93f6c7124e1476e5ca23b43ba793dfdb5273b10785161583de5726c928448b95",
+      "id": "string_track192575",
+      "group": "validation"
+    },
+    {
+      "member": "./string_track192515.yaml",
+      "original_midi": "47658.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "0ddfc2cf08706b42c17265070be092be94d471975267295ea91abe08ff85a7f1",
+      "id": "string_track192515",
+      "group": "validation"
+    },
+    {
+      "member": "./string_track192591.yaml",
+      "original_midi": "96646.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "d0b49259a0a878801d65e3d8b050d9257d254472781aacef1116d0376d3639f8",
+      "id": "string_track192591",
+      "group": "validation"
+    },
+    {
+      "member": "./string_track192034.yaml",
+      "original_midi": "143703.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "b6d738878bbfd8bd520fb857655db9c3221716fe52016728149eb7d01cebc402",
+      "id": "string_track192034",
+      "group": "validation"
+    },
+    {
+      "member": "./string_track193028.yaml",
+      "original_midi": "190207.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "933dde70be8ed2fc326ce470604c101488cc12d3b85119ba6a99d52ac643a879",
+      "id": "string_track193028",
+      "group": "validation"
+    },
+    {
+      "member": "./string_track193259.yaml",
+      "original_midi": "239919.mid",
+      "ensemble": "string",
+      "instruments": {
+        "0": "violin",
+        "1": "violin",
+        "2": "viola",
+        "3": "cello"
+      },
+      "member_sha256": "064f506e412b6e51c95060a2bcee3919da057cd7f1b131d98f169996f897963b",
+      "id": "string_track193259",
+      "group": "validation"
+    }
+  ],
+  "license": "CC BY 4.0",
+  "attribution": "Yusong Wu, Josh Gardner, Ethan Manilow, Ian Simon, Curtis Hawthorne, Jesse Engel. The Chamber Ensemble Generator: Limitless High-Quality MIR Data via Generative Modeling (2022).",
+  "selection": "Twelve train and six validation original MIDI identities, evenly spaced after numeric MIDI-ID sorting of the two verified metadata packages. No original test archives, label outcomes or predictions select examples. No other ensembles are used.",
+  "no_fitting_inference_or_user_audio": true,
+  "no_complete_archives_stored": true,
+  "labels": "Retain original MIDI and synthesis-control CSVs. Use synthesis CSV frame timestamps (250 Hz) for expressive timing; verify pitch and label clock semantics before observation. No pickle loading."
+}

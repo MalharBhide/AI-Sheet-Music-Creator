@@ -158,3 +158,12 @@ wrong-note accuracy at both confidence settings. No regression, Oxford first pas
 export or deployment followed. The website continues using V32. The next study
 needs stronger physical evidence or additional verified source diversity; lowering
 protection by itself is not an accepted improvement.
+
+
+At the user's wrap-up request, the CocoChorales bounded acquisition was stopped.
+Both original note-expression archives verified, but the main audio objects
+remain incomplete and are refused by the actual source reader. No CocoChorales
+model was fit or deployed. Timing/parser/streaming safeguards and the interruption
+witnesses are archived in `training/results/cocochorales-subset-wrap-up-v1`.
+The final complete suite passed 910 tests (6 skipped); the website remains healthy
+with its approved V32 weights, and no training/acquisition worker remains active.

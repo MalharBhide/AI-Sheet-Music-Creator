@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/lukewys/chamber-ensemble-generator",
+  "commit": "4647edbce6719fe907e17fcc072651def168eaa5",
+  "read_source_sha256": {
+    "synth_params_augmentation.py": "d39fd1ce8e2466c49c1e9f0b99d8616be0904930e6f84b6ca52b75e6230970dd",
+    "data_pipeline.md": "f2828a48d5f865ffb55286f6bf2609dfc0d58c8c57e8d60f2e7aa9449a15d003",
+    "audio_augmentation.py": "3e3a053780a5bb57a5622ed7a5540997ee540e5077f7e026e227c699d56ebe01",
+    "midi_augmentation.py": "a29e30b61762a3090afc75f5802ca4f7f39e3b78ddac2dc610984240bcdfd1d1",
+    "expression_augmentation.py": "71d637d727dd6cebb2c4f09d6734d842f0384507872905dffe442d9df0dcc977",
+    "data_postprocess/postprocess_cocochorales.py": "0834dff818846f96a7c5fccab3f2c2180fed4ebe0883fd27c87308bede4213a4",
+    "data_postprocess/postprocess_and_unchunk_cocochorales.py": "711deaee0873383f41ef6378aaf75650bdc771a593f2202649b97f45e5aab983",
+    "data_postprocess/postprocess_utils.py": "21f63a67204d1443eb23e59d6d7eab1dbbd353946fc10fcb30badf5e0bd24d53"
+  },
+  "timing": "Use synthesis-control CSV onset/offset/note_length in 250 Hz frames. Preserve repeated attacks; reject noninteger, reversed, overlapping monophonic or escaping waveform clocks. Preserve a conservative 1-second synthesis/reverb decay support tail without claiming exact key releases.",
+  "pitch": "pitch_correction_amount is a coefficient correcting mean Hz deviation toward the nominal MIDI frequency; it is not a semitone transposition. It must not be added to CSV pitches. Synthesized intonation/vibrato is not exact acoustic pitch ground truth.",
+  "numbering": "Upstream postprocess_utils.py uses one-based stem audio/MIDI filenames and zero-based note-expression CSVs, unlike the illustrative format document. Observe actual retained identities, not assumed matching basenames.",
+  "no_audio_inference_or_model_fitting": true
+}

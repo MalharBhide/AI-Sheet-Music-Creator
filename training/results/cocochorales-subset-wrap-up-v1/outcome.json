@@ -1,0 +1,31 @@
+{
+  "status": "stopped_at_user_wrap_up_request",
+  "new_weights_deployed": false,
+  "current_v32_retained": true,
+  "selected_sources": {
+    "train": 12,
+    "validation": 6
+  },
+  "verified_note_expression_objects": 2,
+  "verified_note_expression_files": 72,
+  "audio_objects_complete": false,
+  "audio_objects_used_for_observation_or_training": false,
+  "actual_partial_source_refused": true,
+  "acquisition_workers_terminal_exit_codes": [
+    143,
+    143
+  ],
+  "plan_sha256": "6e97fce5d5aba7f11560bd6473863173f34bfa9c81489d09e6b994b498866a42",
+  "producer_sha256": "ae8ce316ff57ce1fa2b8868bff9ab5a8236277a1eb20f56490eaeadfb1404d10",
+  "incomplete_main_objects_have_no_verification_witness": true,
+  "no_user_audio_or_scores": true,
+  "no_remaining_running_training_or_acquisition": true,
+  "verification": {
+    "complete_suite_passed": 910,
+    "skipped": 6,
+    "test_log_sha256": "0af2d43869ac2d0dbd79d45b9f34f96f7b7c2bbd97332c8e384d6ca025b2fd13",
+    "website_ready": true,
+    "running_model_sha256": "edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955",
+    "no_active_training_or_acquisition_workers": true
+  }
+}
