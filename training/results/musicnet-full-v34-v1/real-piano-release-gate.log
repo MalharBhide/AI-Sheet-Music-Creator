@@ -1,0 +1,15 @@
+WARNING:root:Coremltools is not installed. If you plan to use a CoreML Saved Model, reinstall basic-pitch with `pip install 'basic-pitch[coreml]'`
+WARNING:root:tflite-runtime is not installed. If you plan to use a TFLite Model, reinstall basic-pitch with `pip install 'basic-pitch tflite-runtime'` or `pip install 'basic-pitch[tf]'
+WARNING:root:onnxruntime is not installed. If you plan to use an ONNX Model, reinstall basic-pitch with `pip install 'basic-pitch[onnx]'`
+/usr/local/lib/python3.11/site-packages/resampy/filters.py:50: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Traceback (most recent call last):
+  File "/src/training/gate_musicnet_real_piano_v34.py", line 86, in <module>
+    result = require_real_piano(run)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/src/training/gate_musicnet_real_piano_v34.py", line 68, in require_real_piano
+    outcomes = real_benefit(report, declared)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/src/training/gate_musicnet_real_piano_v34.py", line 43, in real_benefit
+    raise ValueError("No independently positive reserved real-piano benefit")
+ValueError: No independently positive reserved real-piano benefit

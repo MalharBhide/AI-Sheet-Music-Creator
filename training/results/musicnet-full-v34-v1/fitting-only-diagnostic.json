@@ -1,0 +1,61 @@
+{
+  "only_train_validation": true,
+  "no_test_inputs": true,
+  "plan_sha256": "9baabbab41f517ced255c82bc089ed67d1865e784d13ebb5408dfbb05baf5cc5",
+  "counts": {
+    "train": {
+      "recordings": 63,
+      "keep_supervised": 3584,
+      "remove_supervised": 265,
+      "remove_eligible": 201,
+      "remove_above_85": 12,
+      "remove_above_925": 6,
+      "remove_guardian_blocked": 12,
+      "keep_above_85": 0,
+      "keep_above_925": 0,
+      "guardian_quantiles_remove": [
+        0.4858196334686275,
+        0.9588792674594815,
+        0.9871543877639268,
+        0.9944716277806352,
+        0.9971172904162272,
+        0.9994554337405492
+      ],
+      "probability_quantiles_remove": [
+        1.6282536307699047e-05,
+        0.001738314051181078,
+        0.019219476729631424,
+        0.13288907706737518,
+        0.6134375929832458,
+        0.9993345141410828
+      ]
+    },
+    "validation": {
+      "recordings": 15,
+      "keep_supervised": 1259,
+      "remove_supervised": 97,
+      "remove_eligible": 65,
+      "remove_above_85": 5,
+      "remove_above_925": 5,
+      "remove_guardian_blocked": 5,
+      "keep_above_85": 2,
+      "keep_above_925": 2,
+      "guardian_quantiles_remove": [
+        0.5623567002619807,
+        0.9556829751847241,
+        0.981597225570563,
+        0.9935145436960214,
+        0.9958502318921408,
+        0.9990241413141743
+      ],
+      "probability_quantiles_remove": [
+        3.852400823234348e-06,
+        0.002670703688636422,
+        0.010989150032401085,
+        0.05911676585674286,
+        0.5004471659660341,
+        0.9993119239807129
+      ]
+    }
+  }
+}

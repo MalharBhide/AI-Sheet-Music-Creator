@@ -1,0 +1,6294 @@
+{
+  "passes": true,
+  "raw": {
+    "timing_threshold": 1.01,
+    "remove_threshold": 0.85,
+    "strength": 1.0,
+    "passes": true,
+    "failed_recordings": [],
+    "onset_error_reduction_seconds": 0.0,
+    "retimed_notes": 0,
+    "false_notes_removed": 1,
+    "aggregate": {
+      "original-periodicity-first-pass": {
+        "baseline": {
+          "precision": 0.7922272047832586,
+          "recall": 0.8983050847457628,
+          "f1": 0.8419380460683081,
+          "true_positives": 530,
+          "false_positives": 139,
+          "predicted": 669,
+          "reference": 590,
+          "seconds": 960.0,
+          "false_positives_per_minute": 8.6875
+        },
+        "candidate": {
+          "precision": 0.7934131736526946,
+          "recall": 0.8983050847457628,
+          "f1": 0.8426073131955485,
+          "true_positives": 530,
+          "false_positives": 138,
+          "predicted": 668,
+          "reference": 590,
+          "seconds": 960.0,
+          "false_positives_per_minute": 8.625
+        },
+        "timing": {
+          "pairs": 545,
+          "repeated_spacing_pairs": 358,
+          "before_onset_release_mae_seconds": [
+            0.012410425014042511,
+            0.12860279281588508
+          ],
+          "before_repeated_spacing_mae_seconds": 0.014843534881364064,
+          "after_onset_release_mae_seconds": [
+            0.012410425014042511,
+            0.12860279281588508
+          ],
+          "after_repeated_spacing_mae_seconds": 0.014843534881364064
+        }
+      },
+      "reserved-musicnet-real-piano": {
+        "baseline": {
+          "precision": 0.573394495412844,
+          "recall": 0.2143163309044149,
+          "f1": 0.31201248049922,
+          "true_positives": 500,
+          "false_positives": 372,
+          "predicted": 872,
+          "reference": 2333,
+          "seconds": 360.0,
+          "false_positives_per_minute": 62.0
+        },
+        "candidate": {
+          "precision": 0.573394495412844,
+          "recall": 0.2143163309044149,
+          "f1": 0.31201248049922,
+          "true_positives": 500,
+          "false_positives": 372,
+          "predicted": 872,
+          "reference": 2333,
+          "seconds": 360.0,
+          "false_positives_per_minute": 62.0
+        },
+        "timing": {
+          "pairs": 649,
+          "repeated_spacing_pairs": 447,
+          "before_onset_release_mae_seconds": [
+            0.03868068579255016,
+            0.25761703021218757
+          ],
+          "before_repeated_spacing_mae_seconds": 0.04950009892100014,
+          "after_onset_release_mae_seconds": [
+            0.03868068579255016,
+            0.25761703021218757
+          ],
+          "after_repeated_spacing_mae_seconds": 0.04950009892100014
+        }
+      }
+    },
+    "per_recording": [
+      {
+        "id": "musicnet-v34-reserved-1733-0",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.42105263157894735,
+          "recall": 0.17777777777777778,
+          "f1": 0.25,
+          "true_positives": 8,
+          "false_positives": 11,
+          "predicted": 19,
+          "reference": 45,
+          "seconds": 20.0,
+          "false_positives_per_minute": 33.0
+        },
+        "candidate": {
+          "precision": 0.42105263157894735,
+          "recall": 0.17777777777777778,
+          "f1": 0.25,
+          "true_positives": 8,
+          "false_positives": 11,
+          "predicted": 19,
+          "reference": 45,
+          "seconds": 20.0,
+          "false_positives_per_minute": 33.0
+        },
+        "matches": {
+          "attack": {
+            "before": 8,
+            "after": 8,
+            "lost": 0
+          },
+          "hold": {
+            "before": 2,
+            "after": 2,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 15,
+          "before_onset_release_error_sum": [
+            0.8881741496598607,
+            7.600078911564625
+          ],
+          "after_onset_release_error_sum": [
+            0.8881741496598607,
+            7.600078911564625
+          ],
+          "repeated_spacing_pairs": 9,
+          "before_repeated_spacing_error_sum": 0.43863401360543897,
+          "after_repeated_spacing_error_sum": 0.43863401360543897,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-1733-1",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.37037037037037035,
+          "recall": 0.20833333333333334,
+          "f1": 0.26666666666666666,
+          "true_positives": 10,
+          "false_positives": 17,
+          "predicted": 27,
+          "reference": 48,
+          "seconds": 20.0,
+          "false_positives_per_minute": 51.0
+        },
+        "candidate": {
+          "precision": 0.37037037037037035,
+          "recall": 0.20833333333333334,
+          "f1": 0.26666666666666666,
+          "true_positives": 10,
+          "false_positives": 17,
+          "predicted": 27,
+          "reference": 48,
+          "seconds": 20.0,
+          "false_positives_per_minute": 51.0
+        },
+        "matches": {
+          "attack": {
+            "before": 10,
+            "after": 10,
+            "lost": 0
+          },
+          "hold": {
+            "before": 7,
+            "after": 7,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 20,
+          "before_onset_release_error_sum": [
+            1.2854013605442236,
+            10.655110204081632
+          ],
+          "after_onset_release_error_sum": [
+            1.2854013605442236,
+            10.655110204081632
+          ],
+          "repeated_spacing_pairs": 12,
+          "before_repeated_spacing_error_sum": 0.76762947845805,
+          "after_repeated_spacing_error_sum": 0.76762947845805,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-1733-2",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.26666666666666666,
+          "recall": 0.14814814814814814,
+          "f1": 0.19047619047619047,
+          "true_positives": 8,
+          "false_positives": 22,
+          "predicted": 30,
+          "reference": 54,
+          "seconds": 20.0,
+          "false_positives_per_minute": 66.0
+        },
+        "candidate": {
+          "precision": 0.26666666666666666,
+          "recall": 0.14814814814814814,
+          "f1": 0.19047619047619047,
+          "true_positives": 8,
+          "false_positives": 22,
+          "predicted": 30,
+          "reference": 54,
+          "seconds": 20.0,
+          "false_positives_per_minute": 66.0
+        },
+        "matches": {
+          "attack": {
+            "before": 8,
+            "after": 8,
+            "lost": 0
+          },
+          "hold": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 19,
+          "before_onset_release_error_sum": [
+            1.2784503401360534,
+            7.646517460317462
+          ],
+          "after_onset_release_error_sum": [
+            1.2784503401360534,
+            7.646517460317462
+          ],
+          "repeated_spacing_pairs": 9,
+          "before_repeated_spacing_error_sum": 1.0978349206349205,
+          "after_repeated_spacing_error_sum": 1.0978349206349205,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-1763-0",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.36065573770491804,
+          "recall": 0.13580246913580246,
+          "f1": 0.19730941704035873,
+          "true_positives": 22,
+          "false_positives": 39,
+          "predicted": 61,
+          "reference": 162,
+          "seconds": 20.0,
+          "false_positives_per_minute": 117.0
+        },
+        "candidate": {
+          "precision": 0.36065573770491804,
+          "recall": 0.13580246913580246,
+          "f1": 0.19730941704035873,
+          "true_positives": 22,
+          "false_positives": 39,
+          "predicted": 61,
+          "reference": 162,
+          "seconds": 20.0,
+          "false_positives_per_minute": 117.0
+        },
+        "matches": {
+          "attack": {
+            "before": 22,
+            "after": 22,
+            "lost": 0
+          },
+          "hold": {
+            "before": 5,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 40,
+          "before_onset_release_error_sum": [
+            1.8975306122449087,
+            18.1178394557823
+          ],
+          "after_onset_release_error_sum": [
+            1.8975306122449087,
+            18.1178394557823
+          ],
+          "repeated_spacing_pairs": 27,
+          "before_repeated_spacing_error_sum": 1.618867573696146,
+          "after_repeated_spacing_error_sum": 1.618867573696146,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-1763-1",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.5588235294117647,
+          "recall": 0.09223300970873786,
+          "f1": 0.15833333333333333,
+          "true_positives": 19,
+          "false_positives": 15,
+          "predicted": 34,
+          "reference": 206,
+          "seconds": 20.0,
+          "false_positives_per_minute": 45.0
+        },
+        "candidate": {
+          "precision": 0.5588235294117647,
+          "recall": 0.09223300970873786,
+          "f1": 0.15833333333333333,
+          "true_positives": 19,
+          "false_positives": 15,
+          "predicted": 34,
+          "reference": 206,
+          "seconds": 20.0,
+          "false_positives_per_minute": 45.0
+        },
+        "matches": {
+          "attack": {
+            "before": 19,
+            "after": 19,
+            "lost": 0
+          },
+          "hold": {
+            "before": 4,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 23,
+          "before_onset_release_error_sum": [
+            0.8237351473922859,
+            5.126767346938774
+          ],
+          "after_onset_release_error_sum": [
+            0.8237351473922859,
+            5.126767346938774
+          ],
+          "repeated_spacing_pairs": 12,
+          "before_repeated_spacing_error_sum": 0.5688888888888854,
+          "after_repeated_spacing_error_sum": 0.5688888888888854,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-1763-2",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.5846153846153846,
+          "recall": 0.15510204081632653,
+          "f1": 0.24516129032258063,
+          "true_positives": 38,
+          "false_positives": 27,
+          "predicted": 65,
+          "reference": 245,
+          "seconds": 20.0,
+          "false_positives_per_minute": 81.0
+        },
+        "candidate": {
+          "precision": 0.5846153846153846,
+          "recall": 0.15510204081632653,
+          "f1": 0.24516129032258063,
+          "true_positives": 38,
+          "false_positives": 27,
+          "predicted": 65,
+          "reference": 245,
+          "seconds": 20.0,
+          "false_positives_per_minute": 81.0
+        },
+        "matches": {
+          "attack": {
+            "before": 38,
+            "after": 38,
+            "lost": 0
+          },
+          "hold": {
+            "before": 15,
+            "after": 15,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 51,
+          "before_onset_release_error_sum": [
+            2.045703401360523,
+            8.111371882086129
+          ],
+          "after_onset_release_error_sum": [
+            2.045703401360523,
+            8.111371882086129
+          ],
+          "repeated_spacing_pairs": 39,
+          "before_repeated_spacing_error_sum": 1.8498380952380902,
+          "after_repeated_spacing_error_sum": 1.8498380952380902,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2231-0",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.6338028169014085,
+          "recall": 0.25,
+          "f1": 0.35856573705179284,
+          "true_positives": 45,
+          "false_positives": 26,
+          "predicted": 71,
+          "reference": 180,
+          "seconds": 20.0,
+          "false_positives_per_minute": 78.0
+        },
+        "candidate": {
+          "precision": 0.6338028169014085,
+          "recall": 0.25,
+          "f1": 0.35856573705179284,
+          "true_positives": 45,
+          "false_positives": 26,
+          "predicted": 71,
+          "reference": 180,
+          "seconds": 20.0,
+          "false_positives_per_minute": 78.0
+        },
+        "matches": {
+          "attack": {
+            "before": 45,
+            "after": 45,
+            "lost": 0
+          },
+          "hold": {
+            "before": 30,
+            "after": 30,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 50,
+          "before_onset_release_error_sum": [
+            1.791744671201812,
+            4.59996825396826
+          ],
+          "after_onset_release_error_sum": [
+            1.791744671201812,
+            4.59996825396826
+          ],
+          "repeated_spacing_pairs": 40,
+          "before_repeated_spacing_error_sum": 1.7401804988662173,
+          "after_repeated_spacing_error_sum": 1.7401804988662173,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2231-1",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.7236842105263158,
+          "recall": 0.27638190954773867,
+          "f1": 0.4,
+          "true_positives": 55,
+          "false_positives": 21,
+          "predicted": 76,
+          "reference": 199,
+          "seconds": 20.0,
+          "false_positives_per_minute": 63.0
+        },
+        "candidate": {
+          "precision": 0.7236842105263158,
+          "recall": 0.27638190954773867,
+          "f1": 0.4,
+          "true_positives": 55,
+          "false_positives": 21,
+          "predicted": 76,
+          "reference": 199,
+          "seconds": 20.0,
+          "false_positives_per_minute": 63.0
+        },
+        "matches": {
+          "attack": {
+            "before": 55,
+            "after": 55,
+            "lost": 0
+          },
+          "hold": {
+            "before": 30,
+            "after": 30,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 60,
+          "before_onset_release_error_sum": [
+            1.9772625850340202,
+            5.77354285714286
+          ],
+          "after_onset_release_error_sum": [
+            1.9772625850340202,
+            5.77354285714286
+          ],
+          "repeated_spacing_pairs": 45,
+          "before_repeated_spacing_error_sum": 1.9803029478458087,
+          "after_repeated_spacing_error_sum": 1.9803029478458087,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2231-2",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.8333333333333334,
+          "recall": 0.22959183673469388,
+          "f1": 0.36,
+          "true_positives": 45,
+          "false_positives": 9,
+          "predicted": 54,
+          "reference": 196,
+          "seconds": 20.0,
+          "false_positives_per_minute": 27.0
+        },
+        "candidate": {
+          "precision": 0.8333333333333334,
+          "recall": 0.22959183673469388,
+          "f1": 0.36,
+          "true_positives": 45,
+          "false_positives": 9,
+          "predicted": 54,
+          "reference": 196,
+          "seconds": 20.0,
+          "false_positives_per_minute": 27.0
+        },
+        "matches": {
+          "attack": {
+            "before": 45,
+            "after": 45,
+            "lost": 0
+          },
+          "hold": {
+            "before": 23,
+            "after": 23,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 48,
+          "before_onset_release_error_sum": [
+            0.9701723356009195,
+            3.82340000000001
+          ],
+          "after_onset_release_error_sum": [
+            0.9701723356009195,
+            3.82340000000001
+          ],
+          "repeated_spacing_pairs": 36,
+          "before_repeated_spacing_error_sum": 0.943076190476201,
+          "after_repeated_spacing_error_sum": 0.943076190476201,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2237-0",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.6909090909090909,
+          "recall": 0.2275449101796407,
+          "f1": 0.34234234234234234,
+          "true_positives": 38,
+          "false_positives": 17,
+          "predicted": 55,
+          "reference": 167,
+          "seconds": 20.0,
+          "false_positives_per_minute": 51.0
+        },
+        "candidate": {
+          "precision": 0.6909090909090909,
+          "recall": 0.2275449101796407,
+          "f1": 0.34234234234234234,
+          "true_positives": 38,
+          "false_positives": 17,
+          "predicted": 55,
+          "reference": 167,
+          "seconds": 20.0,
+          "false_positives_per_minute": 51.0
+        },
+        "matches": {
+          "attack": {
+            "before": 38,
+            "after": 38,
+            "lost": 0
+          },
+          "hold": {
+            "before": 23,
+            "after": 23,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 45,
+          "before_onset_release_error_sum": [
+            1.1744934240362788,
+            4.509093424036306
+          ],
+          "after_onset_release_error_sum": [
+            1.1744934240362788,
+            4.509093424036306
+          ],
+          "repeated_spacing_pairs": 30,
+          "before_repeated_spacing_error_sum": 1.099151020408151,
+          "after_repeated_spacing_error_sum": 1.099151020408151,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2237-1",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.7045454545454546,
+          "recall": 0.33695652173913043,
+          "f1": 0.45588235294117646,
+          "true_positives": 62,
+          "false_positives": 26,
+          "predicted": 88,
+          "reference": 184,
+          "seconds": 20.0,
+          "false_positives_per_minute": 78.0
+        },
+        "candidate": {
+          "precision": 0.7045454545454546,
+          "recall": 0.33695652173913043,
+          "f1": 0.45588235294117646,
+          "true_positives": 62,
+          "false_positives": 26,
+          "predicted": 88,
+          "reference": 184,
+          "seconds": 20.0,
+          "false_positives_per_minute": 78.0
+        },
+        "matches": {
+          "attack": {
+            "before": 62,
+            "after": 62,
+            "lost": 0
+          },
+          "hold": {
+            "before": 29,
+            "after": 29,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 68,
+          "before_onset_release_error_sum": [
+            1.7427043083900124,
+            9.582235374149658
+          ],
+          "after_onset_release_error_sum": [
+            1.7427043083900124,
+            9.582235374149658
+          ],
+          "repeated_spacing_pairs": 54,
+          "before_repeated_spacing_error_sum": 2.137519727891147,
+          "after_repeated_spacing_error_sum": 2.137519727891147,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2237-2",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.7469879518072289,
+          "recall": 0.34065934065934067,
+          "f1": 0.4679245283018868,
+          "true_positives": 62,
+          "false_positives": 21,
+          "predicted": 83,
+          "reference": 182,
+          "seconds": 20.0,
+          "false_positives_per_minute": 63.0
+        },
+        "candidate": {
+          "precision": 0.7469879518072289,
+          "recall": 0.34065934065934067,
+          "f1": 0.4679245283018868,
+          "true_positives": 62,
+          "false_positives": 21,
+          "predicted": 83,
+          "reference": 182,
+          "seconds": 20.0,
+          "false_positives_per_minute": 63.0
+        },
+        "matches": {
+          "attack": {
+            "before": 62,
+            "after": 62,
+            "lost": 0
+          },
+          "hold": {
+            "before": 30,
+            "after": 30,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 66,
+          "before_onset_release_error_sum": [
+            1.4710122448979397,
+            9.436415419501127
+          ],
+          "after_onset_release_error_sum": [
+            1.4710122448979397,
+            9.436415419501127
+          ],
+          "repeated_spacing_pairs": 52,
+          "before_repeated_spacing_error_sum": 1.7026730158729975,
+          "after_repeated_spacing_error_sum": 1.7026730158729975,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2486-0",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.4,
+          "recall": 0.36,
+          "f1": 0.37894736842105264,
+          "true_positives": 18,
+          "false_positives": 27,
+          "predicted": 45,
+          "reference": 50,
+          "seconds": 20.0,
+          "false_positives_per_minute": 81.0
+        },
+        "candidate": {
+          "precision": 0.4,
+          "recall": 0.36,
+          "f1": 0.37894736842105264,
+          "true_positives": 18,
+          "false_positives": 27,
+          "predicted": 45,
+          "reference": 50,
+          "seconds": 20.0,
+          "false_positives_per_minute": 81.0
+        },
+        "matches": {
+          "attack": {
+            "before": 18,
+            "after": 18,
+            "lost": 0
+          },
+          "hold": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 32,
+          "before_onset_release_error_sum": [
+            1.9055641723356018,
+            22.489601814058954
+          ],
+          "after_onset_release_error_sum": [
+            1.9055641723356018,
+            22.489601814058954
+          ],
+          "repeated_spacing_pairs": 20,
+          "before_repeated_spacing_error_sum": 1.7469555555555596,
+          "after_repeated_spacing_error_sum": 1.7469555555555596,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2486-1",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.5909090909090909,
+          "recall": 0.1780821917808219,
+          "f1": 0.2736842105263158,
+          "true_positives": 13,
+          "false_positives": 9,
+          "predicted": 22,
+          "reference": 73,
+          "seconds": 20.0,
+          "false_positives_per_minute": 27.0
+        },
+        "candidate": {
+          "precision": 0.5909090909090909,
+          "recall": 0.1780821917808219,
+          "f1": 0.2736842105263158,
+          "true_positives": 13,
+          "false_positives": 9,
+          "predicted": 22,
+          "reference": 73,
+          "seconds": 20.0,
+          "false_positives_per_minute": 27.0
+        },
+        "matches": {
+          "attack": {
+            "before": 13,
+            "after": 13,
+            "lost": 0
+          },
+          "hold": {
+            "before": 8,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 16,
+          "before_onset_release_error_sum": [
+            0.7027614512471636,
+            14.891204081632655
+          ],
+          "after_onset_release_error_sum": [
+            0.7027614512471636,
+            14.891204081632655
+          ],
+          "repeated_spacing_pairs": 11,
+          "before_repeated_spacing_error_sum": 1.0061614512471624,
+          "after_repeated_spacing_error_sum": 1.0061614512471624,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2486-2",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.42857142857142855,
+          "recall": 0.24193548387096775,
+          "f1": 0.30927835051546393,
+          "true_positives": 15,
+          "false_positives": 20,
+          "predicted": 35,
+          "reference": 62,
+          "seconds": 20.0,
+          "false_positives_per_minute": 60.0
+        },
+        "candidate": {
+          "precision": 0.42857142857142855,
+          "recall": 0.24193548387096775,
+          "f1": 0.30927835051546393,
+          "true_positives": 15,
+          "false_positives": 20,
+          "predicted": 35,
+          "reference": 62,
+          "seconds": 20.0,
+          "false_positives_per_minute": 60.0
+        },
+        "matches": {
+          "attack": {
+            "before": 15,
+            "after": 15,
+            "lost": 0
+          },
+          "hold": {
+            "before": 5,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 21,
+          "before_onset_release_error_sum": [
+            0.838462585034009,
+            9.367633560090706
+          ],
+          "after_onset_release_error_sum": [
+            0.838462585034009,
+            9.367633560090706
+          ],
+          "repeated_spacing_pairs": 7,
+          "before_repeated_spacing_error_sum": 0.5237877551020418,
+          "after_repeated_spacing_error_sum": 0.5237877551020418,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2567-0",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.25,
+          "recall": 0.1076923076923077,
+          "f1": 0.15053763440860216,
+          "true_positives": 7,
+          "false_positives": 21,
+          "predicted": 28,
+          "reference": 65,
+          "seconds": 20.0,
+          "false_positives_per_minute": 63.0
+        },
+        "candidate": {
+          "precision": 0.25,
+          "recall": 0.1076923076923077,
+          "f1": 0.15053763440860216,
+          "true_positives": 7,
+          "false_positives": 21,
+          "predicted": 28,
+          "reference": 65,
+          "seconds": 20.0,
+          "false_positives_per_minute": 63.0
+        },
+        "matches": {
+          "attack": {
+            "before": 7,
+            "after": 7,
+            "lost": 0
+          },
+          "hold": {
+            "before": 3,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 16,
+          "before_onset_release_error_sum": [
+            0.9958126984127048,
+            8.313946938775516
+          ],
+          "after_onset_release_error_sum": [
+            0.9958126984127048,
+            8.313946938775516
+          ],
+          "repeated_spacing_pairs": 6,
+          "before_repeated_spacing_error_sum": 0.6487650793650839,
+          "after_repeated_spacing_error_sum": 0.6487650793650839,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2567-1",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.4375,
+          "recall": 0.13861386138613863,
+          "f1": 0.21052631578947367,
+          "true_positives": 14,
+          "false_positives": 18,
+          "predicted": 32,
+          "reference": 101,
+          "seconds": 20.0,
+          "false_positives_per_minute": 54.0
+        },
+        "candidate": {
+          "precision": 0.4375,
+          "recall": 0.13861386138613863,
+          "f1": 0.21052631578947367,
+          "true_positives": 14,
+          "false_positives": 18,
+          "predicted": 32,
+          "reference": 101,
+          "seconds": 20.0,
+          "false_positives_per_minute": 54.0
+        },
+        "matches": {
+          "attack": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          },
+          "hold": {
+            "before": 8,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 26,
+          "before_onset_release_error_sum": [
+            1.7619006802721144,
+            9.51246848072562
+          ],
+          "after_onset_release_error_sum": [
+            1.7619006802721144,
+            9.51246848072562
+          ],
+          "repeated_spacing_pairs": 15,
+          "before_repeated_spacing_error_sum": 1.082386394557835,
+          "after_repeated_spacing_error_sum": 1.082386394557835,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2567-2",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.44680851063829785,
+          "recall": 0.18421052631578946,
+          "f1": 0.2608695652173913,
+          "true_positives": 21,
+          "false_positives": 26,
+          "predicted": 47,
+          "reference": 114,
+          "seconds": 20.0,
+          "false_positives_per_minute": 78.0
+        },
+        "candidate": {
+          "precision": 0.44680851063829785,
+          "recall": 0.18421052631578946,
+          "f1": 0.2608695652173913,
+          "true_positives": 21,
+          "false_positives": 26,
+          "predicted": 47,
+          "reference": 114,
+          "seconds": 20.0,
+          "false_positives_per_minute": 78.0
+        },
+        "matches": {
+          "attack": {
+            "before": 21,
+            "after": 21,
+            "lost": 0
+          },
+          "hold": {
+            "before": 3,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 33,
+          "before_onset_release_error_sum": [
+            1.55287891156462,
+            7.63625714285714
+          ],
+          "after_onset_release_error_sum": [
+            1.55287891156462,
+            7.63625714285714
+          ],
+          "repeated_spacing_pairs": 23,
+          "before_repeated_spacing_error_sum": 1.1738916099773236,
+          "after_repeated_spacing_error_sum": 1.1738916099773236,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279101",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8,
+          "true_positives": 14,
+          "false_positives": 7,
+          "predicted": 21,
+          "reference": 14,
+          "seconds": 30.0,
+          "false_positives_per_minute": 14.0
+        },
+        "candidate": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8,
+          "true_positives": 14,
+          "false_positives": 7,
+          "predicted": 21,
+          "reference": 14,
+          "seconds": 30.0,
+          "false_positives_per_minute": 14.0
+        },
+        "matches": {
+          "attack": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          },
+          "hold": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 14,
+          "before_onset_release_error_sum": [
+            0.19210748299319924,
+            0.8590589332548029
+          ],
+          "after_onset_release_error_sum": [
+            0.19210748299319924,
+            0.8590589332548029
+          ],
+          "repeated_spacing_pairs": 8,
+          "before_repeated_spacing_error_sum": 0.12015736961450862,
+          "after_repeated_spacing_error_sum": 0.12015736961450862,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279102",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.7,
+          "recall": 1.0,
+          "f1": 0.8235294117647058,
+          "true_positives": 14,
+          "false_positives": 6,
+          "predicted": 20,
+          "reference": 14,
+          "seconds": 30.0,
+          "false_positives_per_minute": 12.0
+        },
+        "candidate": {
+          "precision": 0.7,
+          "recall": 1.0,
+          "f1": 0.8235294117647058,
+          "true_positives": 14,
+          "false_positives": 6,
+          "predicted": 20,
+          "reference": 14,
+          "seconds": 30.0,
+          "false_positives_per_minute": 12.0
+        },
+        "matches": {
+          "attack": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          },
+          "hold": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 14,
+          "before_onset_release_error_sum": [
+            0.2156231292516977,
+            2.8066486776253137
+          ],
+          "after_onset_release_error_sum": [
+            0.2156231292516977,
+            2.8066486776253137
+          ],
+          "repeated_spacing_pairs": 8,
+          "before_repeated_spacing_error_sum": 0.19950566893423272,
+          "after_repeated_spacing_error_sum": 0.19950566893423272,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279103",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9545454545454546,
+          "recall": 0.9545454545454546,
+          "f1": 0.9545454545454546,
+          "true_positives": 21,
+          "false_positives": 1,
+          "predicted": 22,
+          "reference": 22,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "candidate": {
+          "precision": 0.9545454545454546,
+          "recall": 0.9545454545454546,
+          "f1": 0.9545454545454546,
+          "true_positives": 21,
+          "false_positives": 1,
+          "predicted": 22,
+          "reference": 22,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "matches": {
+          "attack": {
+            "before": 21,
+            "after": 21,
+            "lost": 0
+          },
+          "hold": {
+            "before": 15,
+            "after": 15,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 22,
+          "before_onset_release_error_sum": [
+            0.22387346938776442,
+            1.8920027653131175
+          ],
+          "after_onset_release_error_sum": [
+            0.22387346938776442,
+            1.8920027653131175
+          ],
+          "repeated_spacing_pairs": 17,
+          "before_repeated_spacing_error_sum": 0.22127256235828163,
+          "after_repeated_spacing_error_sum": 0.22127256235828163,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279104",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.7777777777777778,
+          "recall": 0.6363636363636364,
+          "f1": 0.7,
+          "true_positives": 14,
+          "false_positives": 4,
+          "predicted": 18,
+          "reference": 22,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "candidate": {
+          "precision": 0.7777777777777778,
+          "recall": 0.6363636363636364,
+          "f1": 0.7,
+          "true_positives": 14,
+          "false_positives": 4,
+          "predicted": 18,
+          "reference": 22,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "matches": {
+          "attack": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          },
+          "hold": {
+            "before": 8,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 16,
+          "before_onset_release_error_sum": [
+            0.47976961451247835,
+            2.09583904113929
+          ],
+          "after_onset_release_error_sum": [
+            0.47976961451247835,
+            2.09583904113929
+          ],
+          "repeated_spacing_pairs": 10,
+          "before_repeated_spacing_error_sum": 0.1881024943310612,
+          "after_repeated_spacing_error_sum": 0.1881024943310612,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279105",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 15,
+          "false_positives": 0,
+          "predicted": 15,
+          "reference": 15,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 15,
+          "false_positives": 0,
+          "predicted": 15,
+          "reference": 15,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 15,
+            "after": 15,
+            "lost": 0
+          },
+          "hold": {
+            "before": 12,
+            "after": 12,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 15,
+          "before_onset_release_error_sum": [
+            0.08831428571428379,
+            1.0946497324000743
+          ],
+          "after_onset_release_error_sum": [
+            0.08831428571428379,
+            1.0946497324000743
+          ],
+          "repeated_spacing_pairs": 8,
+          "before_repeated_spacing_error_sum": 0.09772925170068625,
+          "after_repeated_spacing_error_sum": 0.09772925170068625,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279106",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9230769230769231,
+          "recall": 0.9230769230769231,
+          "f1": 0.9230769230769231,
+          "true_positives": 12,
+          "false_positives": 1,
+          "predicted": 13,
+          "reference": 13,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "candidate": {
+          "precision": 0.9230769230769231,
+          "recall": 0.9230769230769231,
+          "f1": 0.9230769230769231,
+          "true_positives": 12,
+          "false_positives": 1,
+          "predicted": 13,
+          "reference": 13,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "matches": {
+          "attack": {
+            "before": 12,
+            "after": 12,
+            "lost": 0
+          },
+          "hold": {
+            "before": 11,
+            "after": 11,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 12,
+          "before_onset_release_error_sum": [
+            0.05504716553287814,
+            0.9266965480956024
+          ],
+          "after_onset_release_error_sum": [
+            0.05504716553287814,
+            0.9266965480956024
+          ],
+          "repeated_spacing_pairs": 8,
+          "before_repeated_spacing_error_sum": 0.045808163265305346,
+          "after_repeated_spacing_error_sum": 0.045808163265305346,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279107",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 20,
+          "false_positives": 0,
+          "predicted": 20,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 20,
+          "false_positives": 0,
+          "predicted": 20,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 20,
+            "after": 20,
+            "lost": 0
+          },
+          "hold": {
+            "before": 19,
+            "after": 19,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 20,
+          "before_onset_release_error_sum": [
+            0.07797142857143857,
+            1.3279556645925932
+          ],
+          "after_onset_release_error_sum": [
+            0.07797142857143857,
+            1.3279556645925932
+          ],
+          "repeated_spacing_pairs": 14,
+          "before_repeated_spacing_error_sum": 0.08252244897959748,
+          "after_repeated_spacing_error_sum": 0.08252244897959748,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279108",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.5333333333333333,
+          "recall": 0.9411764705882353,
+          "f1": 0.6808510638297872,
+          "true_positives": 16,
+          "false_positives": 14,
+          "predicted": 30,
+          "reference": 17,
+          "seconds": 30.0,
+          "false_positives_per_minute": 28.0
+        },
+        "candidate": {
+          "precision": 0.5333333333333333,
+          "recall": 0.9411764705882353,
+          "f1": 0.6808510638297872,
+          "true_positives": 16,
+          "false_positives": 14,
+          "predicted": 30,
+          "reference": 17,
+          "seconds": 30.0,
+          "false_positives_per_minute": 28.0
+        },
+        "matches": {
+          "attack": {
+            "before": 16,
+            "after": 16,
+            "lost": 0
+          },
+          "hold": {
+            "before": 13,
+            "after": 13,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 17,
+          "before_onset_release_error_sum": [
+            0.38935736961451184,
+            1.5303404994752805
+          ],
+          "after_onset_release_error_sum": [
+            0.38935736961451184,
+            1.5303404994752805
+          ],
+          "repeated_spacing_pairs": 10,
+          "before_repeated_spacing_error_sum": 0.15911972789115936,
+          "after_repeated_spacing_error_sum": 0.15911972789115936,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279109",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.5714285714285714,
+          "recall": 0.9411764705882353,
+          "f1": 0.7111111111111111,
+          "true_positives": 16,
+          "false_positives": 12,
+          "predicted": 28,
+          "reference": 17,
+          "seconds": 30.0,
+          "false_positives_per_minute": 24.0
+        },
+        "candidate": {
+          "precision": 0.5714285714285714,
+          "recall": 0.9411764705882353,
+          "f1": 0.7111111111111111,
+          "true_positives": 16,
+          "false_positives": 12,
+          "predicted": 28,
+          "reference": 17,
+          "seconds": 30.0,
+          "false_positives_per_minute": 24.0
+        },
+        "matches": {
+          "attack": {
+            "before": 16,
+            "after": 16,
+            "lost": 0
+          },
+          "hold": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 16,
+          "before_onset_release_error_sum": [
+            0.4092634920635163,
+            5.636354878702605
+          ],
+          "after_onset_release_error_sum": [
+            0.4092634920635163,
+            5.636354878702605
+          ],
+          "repeated_spacing_pairs": 11,
+          "before_repeated_spacing_error_sum": 0.5881147392290256,
+          "after_repeated_spacing_error_sum": 0.5881147392290256,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279110",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 17,
+          "false_positives": 0,
+          "predicted": 17,
+          "reference": 17,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 17,
+          "false_positives": 0,
+          "predicted": 17,
+          "reference": 17,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 17,
+            "after": 17,
+            "lost": 0
+          },
+          "hold": {
+            "before": 15,
+            "after": 15,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 17,
+          "before_onset_release_error_sum": [
+            0.17118276643991104,
+            1.7237312811081993
+          ],
+          "after_onset_release_error_sum": [
+            0.17118276643991104,
+            1.7237312811081993
+          ],
+          "repeated_spacing_pairs": 9,
+          "before_repeated_spacing_error_sum": 0.17676281179138664,
+          "after_repeated_spacing_error_sum": 0.17676281179138664,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279111",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 0.9090909090909091,
+          "f1": 0.9523809523809523,
+          "true_positives": 10,
+          "false_positives": 0,
+          "predicted": 10,
+          "reference": 11,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 0.9090909090909091,
+          "f1": 0.9523809523809523,
+          "true_positives": 10,
+          "false_positives": 0,
+          "predicted": 10,
+          "reference": 11,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 10,
+            "after": 10,
+            "lost": 0
+          },
+          "hold": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 10,
+          "before_onset_release_error_sum": [
+            0.05581904761904877,
+            0.6453177298678003
+          ],
+          "after_onset_release_error_sum": [
+            0.05581904761904877,
+            0.6453177298678003
+          ],
+          "repeated_spacing_pairs": 5,
+          "before_repeated_spacing_error_sum": 0.029648979591836877,
+          "after_repeated_spacing_error_sum": 0.029648979591836877,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279112",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9,
+          "recall": 0.8571428571428571,
+          "f1": 0.8780487804878049,
+          "true_positives": 18,
+          "false_positives": 2,
+          "predicted": 20,
+          "reference": 21,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "candidate": {
+          "precision": 0.9,
+          "recall": 0.8571428571428571,
+          "f1": 0.8780487804878049,
+          "true_positives": 18,
+          "false_positives": 2,
+          "predicted": 20,
+          "reference": 21,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "matches": {
+          "attack": {
+            "before": 18,
+            "after": 18,
+            "lost": 0
+          },
+          "hold": {
+            "before": 16,
+            "after": 16,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 20,
+          "before_onset_release_error_sum": [
+            0.37235600907029953,
+            1.5517084946381998
+          ],
+          "after_onset_release_error_sum": [
+            0.37235600907029953,
+            1.5517084946381998
+          ],
+          "repeated_spacing_pairs": 15,
+          "before_repeated_spacing_error_sum": 0.41294104308391066,
+          "after_repeated_spacing_error_sum": 0.41294104308391066,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279113",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.5454545454545454,
+          "recall": 0.375,
+          "f1": 0.4444444444444444,
+          "true_positives": 6,
+          "false_positives": 5,
+          "predicted": 11,
+          "reference": 16,
+          "seconds": 30.0,
+          "false_positives_per_minute": 10.0
+        },
+        "candidate": {
+          "precision": 0.5454545454545454,
+          "recall": 0.375,
+          "f1": 0.4444444444444444,
+          "true_positives": 6,
+          "false_positives": 5,
+          "predicted": 11,
+          "reference": 16,
+          "seconds": 30.0,
+          "false_positives_per_minute": 10.0
+        },
+        "matches": {
+          "attack": {
+            "before": 6,
+            "after": 6,
+            "lost": 0
+          },
+          "hold": {
+            "before": 3,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 7,
+          "before_onset_release_error_sum": [
+            0.2033052154195003,
+            2.8213784591802753
+          ],
+          "after_onset_release_error_sum": [
+            0.2033052154195003,
+            2.8213784591802753
+          ],
+          "repeated_spacing_pairs": 4,
+          "before_repeated_spacing_error_sum": 0.3368888888888888,
+          "after_repeated_spacing_error_sum": 0.3368888888888888,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279114",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444,
+          "f1": 0.9444444444444444,
+          "true_positives": 17,
+          "false_positives": 1,
+          "predicted": 18,
+          "reference": 18,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "candidate": {
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444,
+          "f1": 0.9444444444444444,
+          "true_positives": 17,
+          "false_positives": 1,
+          "predicted": 18,
+          "reference": 18,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "matches": {
+          "attack": {
+            "before": 17,
+            "after": 17,
+            "lost": 0
+          },
+          "hold": {
+            "before": 12,
+            "after": 12,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 17,
+          "before_onset_release_error_sum": [
+            0.24824535147393334,
+            1.4138915977649882
+          ],
+          "after_onset_release_error_sum": [
+            0.24824535147393334,
+            1.4138915977649882
+          ],
+          "repeated_spacing_pairs": 11,
+          "before_repeated_spacing_error_sum": 0.18845260770974992,
+          "after_repeated_spacing_error_sum": 0.18845260770974992,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279115",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 18,
+          "false_positives": 0,
+          "predicted": 18,
+          "reference": 18,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 18,
+          "false_positives": 0,
+          "predicted": 18,
+          "reference": 18,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 18,
+            "after": 18,
+            "lost": 0
+          },
+          "hold": {
+            "before": 11,
+            "after": 11,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 18,
+          "before_onset_release_error_sum": [
+            0.08481179138322181,
+            1.9035560381493406
+          ],
+          "after_onset_release_error_sum": [
+            0.08481179138322181,
+            1.9035560381493406
+          ],
+          "repeated_spacing_pairs": 11,
+          "before_repeated_spacing_error_sum": 0.04116190476189718,
+          "after_repeated_spacing_error_sum": 0.04116190476189718,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279116",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.8571428571428571,
+          "recall": 0.8275862068965517,
+          "f1": 0.8421052631578947,
+          "true_positives": 24,
+          "false_positives": 4,
+          "predicted": 28,
+          "reference": 29,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "candidate": {
+          "precision": 0.8571428571428571,
+          "recall": 0.8275862068965517,
+          "f1": 0.8421052631578947,
+          "true_positives": 24,
+          "false_positives": 4,
+          "predicted": 28,
+          "reference": 29,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "matches": {
+          "attack": {
+            "before": 24,
+            "after": 24,
+            "lost": 0
+          },
+          "hold": {
+            "before": 13,
+            "after": 13,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 24,
+          "before_onset_release_error_sum": [
+            0.6478099773242785,
+            3.9073334315909483
+          ],
+          "after_onset_release_error_sum": [
+            0.6478099773242785,
+            3.9073334315909483
+          ],
+          "repeated_spacing_pairs": 16,
+          "before_repeated_spacing_error_sum": 0.39303764172335365,
+          "after_repeated_spacing_error_sum": 0.39303764172335365,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279117",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.3888888888888889,
+          "recall": 0.7,
+          "f1": 0.5,
+          "true_positives": 14,
+          "false_positives": 22,
+          "predicted": 36,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 44.0
+        },
+        "candidate": {
+          "precision": 0.4,
+          "recall": 0.7,
+          "f1": 0.509090909090909,
+          "true_positives": 14,
+          "false_positives": 21,
+          "predicted": 35,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 42.0
+        },
+        "matches": {
+          "attack": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          },
+          "hold": {
+            "before": 10,
+            "after": 10,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 17,
+          "before_onset_release_error_sum": [
+            0.45542040816328067,
+            5.60981736854259
+          ],
+          "after_onset_release_error_sum": [
+            0.45542040816328067,
+            5.60981736854259
+          ],
+          "repeated_spacing_pairs": 10,
+          "before_repeated_spacing_error_sum": 0.33639365079366135,
+          "after_repeated_spacing_error_sum": 0.33639365079366135,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 1,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279118",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.8260869565217391,
+          "recall": 0.95,
+          "f1": 0.8837209302325582,
+          "true_positives": 19,
+          "false_positives": 4,
+          "predicted": 23,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "candidate": {
+          "precision": 0.8260869565217391,
+          "recall": 0.95,
+          "f1": 0.8837209302325582,
+          "true_positives": 19,
+          "false_positives": 4,
+          "predicted": 23,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "matches": {
+          "attack": {
+            "before": 19,
+            "after": 19,
+            "lost": 0
+          },
+          "hold": {
+            "before": 15,
+            "after": 15,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 19,
+          "before_onset_release_error_sum": [
+            0.10204126984126827,
+            0.9175933596974866
+          ],
+          "after_onset_release_error_sum": [
+            0.10204126984126827,
+            0.9175933596974866
+          ],
+          "repeated_spacing_pairs": 14,
+          "before_repeated_spacing_error_sum": 0.11691609977323747,
+          "after_repeated_spacing_error_sum": 0.11691609977323747,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279119",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9523809523809523,
+          "recall": 0.9523809523809523,
+          "f1": 0.9523809523809523,
+          "true_positives": 20,
+          "false_positives": 1,
+          "predicted": 21,
+          "reference": 21,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "candidate": {
+          "precision": 0.9523809523809523,
+          "recall": 0.9523809523809523,
+          "f1": 0.9523809523809523,
+          "true_positives": 20,
+          "false_positives": 1,
+          "predicted": 21,
+          "reference": 21,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "matches": {
+          "attack": {
+            "before": 20,
+            "after": 20,
+            "lost": 0
+          },
+          "hold": {
+            "before": 19,
+            "after": 19,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 20,
+          "before_onset_release_error_sum": [
+            0.12514829931972926,
+            0.9227161608124739
+          ],
+          "after_onset_release_error_sum": [
+            0.12514829931972926,
+            0.9227161608124739
+          ],
+          "repeated_spacing_pairs": 14,
+          "before_repeated_spacing_error_sum": 0.11901814058957605,
+          "after_repeated_spacing_error_sum": 0.11901814058957605,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279120",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9047619047619048,
+          "recall": 0.95,
+          "f1": 0.926829268292683,
+          "true_positives": 19,
+          "false_positives": 2,
+          "predicted": 21,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "candidate": {
+          "precision": 0.9047619047619048,
+          "recall": 0.95,
+          "f1": 0.926829268292683,
+          "true_positives": 19,
+          "false_positives": 2,
+          "predicted": 21,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "matches": {
+          "attack": {
+            "before": 19,
+            "after": 19,
+            "lost": 0
+          },
+          "hold": {
+            "before": 16,
+            "after": 16,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 19,
+          "before_onset_release_error_sum": [
+            0.11511473922902216,
+            1.117217523507756
+          ],
+          "after_onset_release_error_sum": [
+            0.11511473922902216,
+            1.117217523507756
+          ],
+          "repeated_spacing_pairs": 13,
+          "before_repeated_spacing_error_sum": 0.11604353741495155,
+          "after_repeated_spacing_error_sum": 0.11604353741495155,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279121",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9473684210526315,
+          "recall": 0.9473684210526315,
+          "f1": 0.9473684210526315,
+          "true_positives": 18,
+          "false_positives": 1,
+          "predicted": 19,
+          "reference": 19,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "candidate": {
+          "precision": 0.9473684210526315,
+          "recall": 0.9473684210526315,
+          "f1": 0.9473684210526315,
+          "true_positives": 18,
+          "false_positives": 1,
+          "predicted": 19,
+          "reference": 19,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "matches": {
+          "attack": {
+            "before": 18,
+            "after": 18,
+            "lost": 0
+          },
+          "hold": {
+            "before": 17,
+            "after": 17,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 18,
+          "before_onset_release_error_sum": [
+            0.07658231292516948,
+            0.8392188541218655
+          ],
+          "after_onset_release_error_sum": [
+            0.07658231292516948,
+            0.8392188541218655
+          ],
+          "repeated_spacing_pairs": 12,
+          "before_repeated_spacing_error_sum": 0.057560544217677645,
+          "after_repeated_spacing_error_sum": 0.057560544217677645,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279122",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.35294117647058826,
+          "recall": 0.46153846153846156,
+          "f1": 0.4,
+          "true_positives": 6,
+          "false_positives": 11,
+          "predicted": 17,
+          "reference": 13,
+          "seconds": 30.0,
+          "false_positives_per_minute": 22.0
+        },
+        "candidate": {
+          "precision": 0.35294117647058826,
+          "recall": 0.46153846153846156,
+          "f1": 0.4,
+          "true_positives": 6,
+          "false_positives": 11,
+          "predicted": 17,
+          "reference": 13,
+          "seconds": 30.0,
+          "false_positives_per_minute": 22.0
+        },
+        "matches": {
+          "attack": {
+            "before": 6,
+            "after": 6,
+            "lost": 0
+          },
+          "hold": {
+            "before": 3,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 8,
+          "before_onset_release_error_sum": [
+            0.2562498866213163,
+            6.7476064180550805
+          ],
+          "after_onset_release_error_sum": [
+            0.2562498866213163,
+            6.7476064180550805
+          ],
+          "repeated_spacing_pairs": 4,
+          "before_repeated_spacing_error_sum": 0.10506031746031663,
+          "after_repeated_spacing_error_sum": 0.10506031746031663,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279123",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 9,
+          "false_positives": 0,
+          "predicted": 9,
+          "reference": 9,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 9,
+          "false_positives": 0,
+          "predicted": 9,
+          "reference": 9,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          },
+          "hold": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 9,
+          "before_onset_release_error_sum": [
+            0.04416598639456115,
+            0.4384066929530821
+          ],
+          "after_onset_release_error_sum": [
+            0.04416598639456115,
+            0.4384066929530821
+          ],
+          "repeated_spacing_pairs": 6,
+          "before_repeated_spacing_error_sum": 0.04711111111111599,
+          "after_repeated_spacing_error_sum": 0.04711111111111599,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279124",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.8484848484848485,
+          "recall": 0.9655172413793104,
+          "f1": 0.9032258064516129,
+          "true_positives": 28,
+          "false_positives": 5,
+          "predicted": 33,
+          "reference": 29,
+          "seconds": 30.0,
+          "false_positives_per_minute": 10.0
+        },
+        "candidate": {
+          "precision": 0.8484848484848485,
+          "recall": 0.9655172413793104,
+          "f1": 0.9032258064516129,
+          "true_positives": 28,
+          "false_positives": 5,
+          "predicted": 33,
+          "reference": 29,
+          "seconds": 30.0,
+          "false_positives_per_minute": 10.0
+        },
+        "matches": {
+          "attack": {
+            "before": 28,
+            "after": 28,
+            "lost": 0
+          },
+          "hold": {
+            "before": 20,
+            "after": 20,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 28,
+          "before_onset_release_error_sum": [
+            0.21891065759635886,
+            1.9932742079696038
+          ],
+          "after_onset_release_error_sum": [
+            0.21891065759635886,
+            1.9932742079696038
+          ],
+          "repeated_spacing_pairs": 20,
+          "before_repeated_spacing_error_sum": 0.23230430839002203,
+          "after_repeated_spacing_error_sum": 0.23230430839002203,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279125",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.6666666666666666,
+          "recall": 0.75,
+          "f1": 0.7058823529411765,
+          "true_positives": 6,
+          "false_positives": 3,
+          "predicted": 9,
+          "reference": 8,
+          "seconds": 30.0,
+          "false_positives_per_minute": 6.0
+        },
+        "candidate": {
+          "precision": 0.6666666666666666,
+          "recall": 0.75,
+          "f1": 0.7058823529411765,
+          "true_positives": 6,
+          "false_positives": 3,
+          "predicted": 9,
+          "reference": 8,
+          "seconds": 30.0,
+          "false_positives_per_minute": 6.0
+        },
+        "matches": {
+          "attack": {
+            "before": 6,
+            "after": 6,
+            "lost": 0
+          },
+          "hold": {
+            "before": 5,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 6,
+          "before_onset_release_error_sum": [
+            0.0511260770975106,
+            2.655791469758782
+          ],
+          "after_onset_release_error_sum": [
+            0.0511260770975106,
+            2.655791469758782
+          ],
+          "repeated_spacing_pairs": 1,
+          "before_repeated_spacing_error_sum": 0.004429478458053637,
+          "after_repeated_spacing_error_sum": 0.004429478458053637,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279126",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9090909090909091,
+          "recall": 0.9523809523809523,
+          "f1": 0.9302325581395349,
+          "true_positives": 20,
+          "false_positives": 2,
+          "predicted": 22,
+          "reference": 21,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "candidate": {
+          "precision": 0.9090909090909091,
+          "recall": 0.9523809523809523,
+          "f1": 0.9302325581395349,
+          "true_positives": 20,
+          "false_positives": 2,
+          "predicted": 22,
+          "reference": 21,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "matches": {
+          "attack": {
+            "before": 20,
+            "after": 20,
+            "lost": 0
+          },
+          "hold": {
+            "before": 18,
+            "after": 18,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 20,
+          "before_onset_release_error_sum": [
+            0.09266485260770496,
+            1.3615655833600115
+          ],
+          "after_onset_release_error_sum": [
+            0.09266485260770496,
+            1.3615655833600115
+          ],
+          "repeated_spacing_pairs": 14,
+          "before_repeated_spacing_error_sum": 0.04865895691609001,
+          "after_repeated_spacing_error_sum": 0.04865895691609001,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279127",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.42857142857142855,
+          "recall": 0.9,
+          "f1": 0.5806451612903226,
+          "true_positives": 9,
+          "false_positives": 12,
+          "predicted": 21,
+          "reference": 10,
+          "seconds": 30.0,
+          "false_positives_per_minute": 24.0
+        },
+        "candidate": {
+          "precision": 0.42857142857142855,
+          "recall": 0.9,
+          "f1": 0.5806451612903226,
+          "true_positives": 9,
+          "false_positives": 12,
+          "predicted": 21,
+          "reference": 10,
+          "seconds": 30.0,
+          "false_positives_per_minute": 24.0
+        },
+        "matches": {
+          "attack": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          },
+          "hold": {
+            "before": 4,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 10,
+          "before_onset_release_error_sum": [
+            0.27420997732425745,
+            7.617115533491635
+          ],
+          "after_onset_release_error_sum": [
+            0.27420997732425745,
+            7.617115533491635
+          ],
+          "repeated_spacing_pairs": 5,
+          "before_repeated_spacing_error_sum": 0.2159637188208623,
+          "after_repeated_spacing_error_sum": 0.2159637188208623,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279128",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.6451612903225806,
+          "recall": 0.8333333333333334,
+          "f1": 0.7272727272727273,
+          "true_positives": 20,
+          "false_positives": 11,
+          "predicted": 31,
+          "reference": 24,
+          "seconds": 30.0,
+          "false_positives_per_minute": 22.0
+        },
+        "candidate": {
+          "precision": 0.6451612903225806,
+          "recall": 0.8333333333333334,
+          "f1": 0.7272727272727273,
+          "true_positives": 20,
+          "false_positives": 11,
+          "predicted": 31,
+          "reference": 24,
+          "seconds": 30.0,
+          "false_positives_per_minute": 22.0
+        },
+        "matches": {
+          "attack": {
+            "before": 20,
+            "after": 20,
+            "lost": 0
+          },
+          "hold": {
+            "before": 16,
+            "after": 16,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 22,
+          "before_onset_release_error_sum": [
+            0.5768149659863973,
+            2.9977787601196093
+          ],
+          "after_onset_release_error_sum": [
+            0.5768149659863973,
+            2.9977787601196093
+          ],
+          "repeated_spacing_pairs": 16,
+          "before_repeated_spacing_error_sum": 0.23797868480726514,
+          "after_repeated_spacing_error_sum": 0.23797868480726514,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279129",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.8947368421052632,
+          "recall": 1.0,
+          "f1": 0.9444444444444444,
+          "true_positives": 34,
+          "false_positives": 4,
+          "predicted": 38,
+          "reference": 34,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "candidate": {
+          "precision": 0.8947368421052632,
+          "recall": 1.0,
+          "f1": 0.9444444444444444,
+          "true_positives": 34,
+          "false_positives": 4,
+          "predicted": 38,
+          "reference": 34,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "matches": {
+          "attack": {
+            "before": 34,
+            "after": 34,
+            "lost": 0
+          },
+          "hold": {
+            "before": 23,
+            "after": 23,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 34,
+          "before_onset_release_error_sum": [
+            0.14179909297053594,
+            2.086522891742189
+          ],
+          "after_onset_release_error_sum": [
+            0.14179909297053594,
+            2.086522891742189
+          ],
+          "repeated_spacing_pairs": 27,
+          "before_repeated_spacing_error_sum": 0.14998911564625406,
+          "after_repeated_spacing_error_sum": 0.14998911564625406,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279130",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.8666666666666667,
+          "recall": 1.0,
+          "f1": 0.9285714285714286,
+          "true_positives": 13,
+          "false_positives": 2,
+          "predicted": 15,
+          "reference": 13,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "candidate": {
+          "precision": 0.8666666666666667,
+          "recall": 1.0,
+          "f1": 0.9285714285714286,
+          "true_positives": 13,
+          "false_positives": 2,
+          "predicted": 15,
+          "reference": 13,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "matches": {
+          "attack": {
+            "before": 13,
+            "after": 13,
+            "lost": 0
+          },
+          "hold": {
+            "before": 12,
+            "after": 12,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 13,
+          "before_onset_release_error_sum": [
+            0.10476462585034563,
+            0.7535727228350853
+          ],
+          "after_onset_release_error_sum": [
+            0.10476462585034563,
+            0.7535727228350853
+          ],
+          "repeated_spacing_pairs": 8,
+          "before_repeated_spacing_error_sum": 0.06628208616779752,
+          "after_repeated_spacing_error_sum": 0.06628208616779752,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279131",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9285714285714286,
+          "recall": 0.9629629629629629,
+          "f1": 0.9454545454545454,
+          "true_positives": 26,
+          "false_positives": 2,
+          "predicted": 28,
+          "reference": 27,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "candidate": {
+          "precision": 0.9285714285714286,
+          "recall": 0.9629629629629629,
+          "f1": 0.9454545454545454,
+          "true_positives": 26,
+          "false_positives": 2,
+          "predicted": 28,
+          "reference": 27,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "matches": {
+          "attack": {
+            "before": 26,
+            "after": 26,
+            "lost": 0
+          },
+          "hold": {
+            "before": 21,
+            "after": 21,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 26,
+          "before_onset_release_error_sum": [
+            0.14074467120181744,
+            1.3081528058672887
+          ],
+          "after_onset_release_error_sum": [
+            0.14074467120181744,
+            1.3081528058672887
+          ],
+          "repeated_spacing_pairs": 18,
+          "before_repeated_spacing_error_sum": 0.11845804988661923,
+          "after_repeated_spacing_error_sum": 0.11845804988661923,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279132",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 0.9444444444444444,
+          "f1": 0.9714285714285714,
+          "true_positives": 17,
+          "false_positives": 0,
+          "predicted": 17,
+          "reference": 18,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 0.9444444444444444,
+          "f1": 0.9714285714285714,
+          "true_positives": 17,
+          "false_positives": 0,
+          "predicted": 17,
+          "reference": 18,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 17,
+            "after": 17,
+            "lost": 0
+          },
+          "hold": {
+            "before": 17,
+            "after": 17,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 17,
+          "before_onset_release_error_sum": [
+            0.07306621315193063,
+            0.5857079589243854
+          ],
+          "after_onset_release_error_sum": [
+            0.07306621315193063,
+            0.5857079589243854
+          ],
+          "repeated_spacing_pairs": 11,
+          "before_repeated_spacing_error_sum": 0.06059138321995228,
+          "after_repeated_spacing_error_sum": 0.06059138321995228,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      }
+    ],
+    "guardian_threshold": 0.3
+  },
+  "margin": {
+    "timing_threshold": 1.01,
+    "remove_threshold": 0.925,
+    "strength": 1.0,
+    "passes": true,
+    "failed_recordings": [],
+    "onset_error_reduction_seconds": 0.0,
+    "retimed_notes": 0,
+    "false_notes_removed": 1,
+    "aggregate": {
+      "original-periodicity-first-pass": {
+        "baseline": {
+          "precision": 0.7922272047832586,
+          "recall": 0.8983050847457628,
+          "f1": 0.8419380460683081,
+          "true_positives": 530,
+          "false_positives": 139,
+          "predicted": 669,
+          "reference": 590,
+          "seconds": 960.0,
+          "false_positives_per_minute": 8.6875
+        },
+        "candidate": {
+          "precision": 0.7934131736526946,
+          "recall": 0.8983050847457628,
+          "f1": 0.8426073131955485,
+          "true_positives": 530,
+          "false_positives": 138,
+          "predicted": 668,
+          "reference": 590,
+          "seconds": 960.0,
+          "false_positives_per_minute": 8.625
+        },
+        "timing": {
+          "pairs": 545,
+          "repeated_spacing_pairs": 358,
+          "before_onset_release_mae_seconds": [
+            0.012410425014042511,
+            0.12860279281588508
+          ],
+          "before_repeated_spacing_mae_seconds": 0.014843534881364064,
+          "after_onset_release_mae_seconds": [
+            0.012410425014042511,
+            0.12860279281588508
+          ],
+          "after_repeated_spacing_mae_seconds": 0.014843534881364064
+        }
+      },
+      "reserved-musicnet-real-piano": {
+        "baseline": {
+          "precision": 0.573394495412844,
+          "recall": 0.2143163309044149,
+          "f1": 0.31201248049922,
+          "true_positives": 500,
+          "false_positives": 372,
+          "predicted": 872,
+          "reference": 2333,
+          "seconds": 360.0,
+          "false_positives_per_minute": 62.0
+        },
+        "candidate": {
+          "precision": 0.573394495412844,
+          "recall": 0.2143163309044149,
+          "f1": 0.31201248049922,
+          "true_positives": 500,
+          "false_positives": 372,
+          "predicted": 872,
+          "reference": 2333,
+          "seconds": 360.0,
+          "false_positives_per_minute": 62.0
+        },
+        "timing": {
+          "pairs": 649,
+          "repeated_spacing_pairs": 447,
+          "before_onset_release_mae_seconds": [
+            0.03868068579255016,
+            0.25761703021218757
+          ],
+          "before_repeated_spacing_mae_seconds": 0.04950009892100014,
+          "after_onset_release_mae_seconds": [
+            0.03868068579255016,
+            0.25761703021218757
+          ],
+          "after_repeated_spacing_mae_seconds": 0.04950009892100014
+        }
+      }
+    },
+    "per_recording": [
+      {
+        "id": "musicnet-v34-reserved-1733-0",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.42105263157894735,
+          "recall": 0.17777777777777778,
+          "f1": 0.25,
+          "true_positives": 8,
+          "false_positives": 11,
+          "predicted": 19,
+          "reference": 45,
+          "seconds": 20.0,
+          "false_positives_per_minute": 33.0
+        },
+        "candidate": {
+          "precision": 0.42105263157894735,
+          "recall": 0.17777777777777778,
+          "f1": 0.25,
+          "true_positives": 8,
+          "false_positives": 11,
+          "predicted": 19,
+          "reference": 45,
+          "seconds": 20.0,
+          "false_positives_per_minute": 33.0
+        },
+        "matches": {
+          "attack": {
+            "before": 8,
+            "after": 8,
+            "lost": 0
+          },
+          "hold": {
+            "before": 2,
+            "after": 2,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 15,
+          "before_onset_release_error_sum": [
+            0.8881741496598607,
+            7.600078911564625
+          ],
+          "after_onset_release_error_sum": [
+            0.8881741496598607,
+            7.600078911564625
+          ],
+          "repeated_spacing_pairs": 9,
+          "before_repeated_spacing_error_sum": 0.43863401360543897,
+          "after_repeated_spacing_error_sum": 0.43863401360543897,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-1733-1",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.37037037037037035,
+          "recall": 0.20833333333333334,
+          "f1": 0.26666666666666666,
+          "true_positives": 10,
+          "false_positives": 17,
+          "predicted": 27,
+          "reference": 48,
+          "seconds": 20.0,
+          "false_positives_per_minute": 51.0
+        },
+        "candidate": {
+          "precision": 0.37037037037037035,
+          "recall": 0.20833333333333334,
+          "f1": 0.26666666666666666,
+          "true_positives": 10,
+          "false_positives": 17,
+          "predicted": 27,
+          "reference": 48,
+          "seconds": 20.0,
+          "false_positives_per_minute": 51.0
+        },
+        "matches": {
+          "attack": {
+            "before": 10,
+            "after": 10,
+            "lost": 0
+          },
+          "hold": {
+            "before": 7,
+            "after": 7,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 20,
+          "before_onset_release_error_sum": [
+            1.2854013605442236,
+            10.655110204081632
+          ],
+          "after_onset_release_error_sum": [
+            1.2854013605442236,
+            10.655110204081632
+          ],
+          "repeated_spacing_pairs": 12,
+          "before_repeated_spacing_error_sum": 0.76762947845805,
+          "after_repeated_spacing_error_sum": 0.76762947845805,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-1733-2",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.26666666666666666,
+          "recall": 0.14814814814814814,
+          "f1": 0.19047619047619047,
+          "true_positives": 8,
+          "false_positives": 22,
+          "predicted": 30,
+          "reference": 54,
+          "seconds": 20.0,
+          "false_positives_per_minute": 66.0
+        },
+        "candidate": {
+          "precision": 0.26666666666666666,
+          "recall": 0.14814814814814814,
+          "f1": 0.19047619047619047,
+          "true_positives": 8,
+          "false_positives": 22,
+          "predicted": 30,
+          "reference": 54,
+          "seconds": 20.0,
+          "false_positives_per_minute": 66.0
+        },
+        "matches": {
+          "attack": {
+            "before": 8,
+            "after": 8,
+            "lost": 0
+          },
+          "hold": {
+            "before": 1,
+            "after": 1,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 19,
+          "before_onset_release_error_sum": [
+            1.2784503401360534,
+            7.646517460317462
+          ],
+          "after_onset_release_error_sum": [
+            1.2784503401360534,
+            7.646517460317462
+          ],
+          "repeated_spacing_pairs": 9,
+          "before_repeated_spacing_error_sum": 1.0978349206349205,
+          "after_repeated_spacing_error_sum": 1.0978349206349205,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-1763-0",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.36065573770491804,
+          "recall": 0.13580246913580246,
+          "f1": 0.19730941704035873,
+          "true_positives": 22,
+          "false_positives": 39,
+          "predicted": 61,
+          "reference": 162,
+          "seconds": 20.0,
+          "false_positives_per_minute": 117.0
+        },
+        "candidate": {
+          "precision": 0.36065573770491804,
+          "recall": 0.13580246913580246,
+          "f1": 0.19730941704035873,
+          "true_positives": 22,
+          "false_positives": 39,
+          "predicted": 61,
+          "reference": 162,
+          "seconds": 20.0,
+          "false_positives_per_minute": 117.0
+        },
+        "matches": {
+          "attack": {
+            "before": 22,
+            "after": 22,
+            "lost": 0
+          },
+          "hold": {
+            "before": 5,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 40,
+          "before_onset_release_error_sum": [
+            1.8975306122449087,
+            18.1178394557823
+          ],
+          "after_onset_release_error_sum": [
+            1.8975306122449087,
+            18.1178394557823
+          ],
+          "repeated_spacing_pairs": 27,
+          "before_repeated_spacing_error_sum": 1.618867573696146,
+          "after_repeated_spacing_error_sum": 1.618867573696146,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-1763-1",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.5588235294117647,
+          "recall": 0.09223300970873786,
+          "f1": 0.15833333333333333,
+          "true_positives": 19,
+          "false_positives": 15,
+          "predicted": 34,
+          "reference": 206,
+          "seconds": 20.0,
+          "false_positives_per_minute": 45.0
+        },
+        "candidate": {
+          "precision": 0.5588235294117647,
+          "recall": 0.09223300970873786,
+          "f1": 0.15833333333333333,
+          "true_positives": 19,
+          "false_positives": 15,
+          "predicted": 34,
+          "reference": 206,
+          "seconds": 20.0,
+          "false_positives_per_minute": 45.0
+        },
+        "matches": {
+          "attack": {
+            "before": 19,
+            "after": 19,
+            "lost": 0
+          },
+          "hold": {
+            "before": 4,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 23,
+          "before_onset_release_error_sum": [
+            0.8237351473922859,
+            5.126767346938774
+          ],
+          "after_onset_release_error_sum": [
+            0.8237351473922859,
+            5.126767346938774
+          ],
+          "repeated_spacing_pairs": 12,
+          "before_repeated_spacing_error_sum": 0.5688888888888854,
+          "after_repeated_spacing_error_sum": 0.5688888888888854,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-1763-2",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.5846153846153846,
+          "recall": 0.15510204081632653,
+          "f1": 0.24516129032258063,
+          "true_positives": 38,
+          "false_positives": 27,
+          "predicted": 65,
+          "reference": 245,
+          "seconds": 20.0,
+          "false_positives_per_minute": 81.0
+        },
+        "candidate": {
+          "precision": 0.5846153846153846,
+          "recall": 0.15510204081632653,
+          "f1": 0.24516129032258063,
+          "true_positives": 38,
+          "false_positives": 27,
+          "predicted": 65,
+          "reference": 245,
+          "seconds": 20.0,
+          "false_positives_per_minute": 81.0
+        },
+        "matches": {
+          "attack": {
+            "before": 38,
+            "after": 38,
+            "lost": 0
+          },
+          "hold": {
+            "before": 15,
+            "after": 15,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 51,
+          "before_onset_release_error_sum": [
+            2.045703401360523,
+            8.111371882086129
+          ],
+          "after_onset_release_error_sum": [
+            2.045703401360523,
+            8.111371882086129
+          ],
+          "repeated_spacing_pairs": 39,
+          "before_repeated_spacing_error_sum": 1.8498380952380902,
+          "after_repeated_spacing_error_sum": 1.8498380952380902,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2231-0",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.6338028169014085,
+          "recall": 0.25,
+          "f1": 0.35856573705179284,
+          "true_positives": 45,
+          "false_positives": 26,
+          "predicted": 71,
+          "reference": 180,
+          "seconds": 20.0,
+          "false_positives_per_minute": 78.0
+        },
+        "candidate": {
+          "precision": 0.6338028169014085,
+          "recall": 0.25,
+          "f1": 0.35856573705179284,
+          "true_positives": 45,
+          "false_positives": 26,
+          "predicted": 71,
+          "reference": 180,
+          "seconds": 20.0,
+          "false_positives_per_minute": 78.0
+        },
+        "matches": {
+          "attack": {
+            "before": 45,
+            "after": 45,
+            "lost": 0
+          },
+          "hold": {
+            "before": 30,
+            "after": 30,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 50,
+          "before_onset_release_error_sum": [
+            1.791744671201812,
+            4.59996825396826
+          ],
+          "after_onset_release_error_sum": [
+            1.791744671201812,
+            4.59996825396826
+          ],
+          "repeated_spacing_pairs": 40,
+          "before_repeated_spacing_error_sum": 1.7401804988662173,
+          "after_repeated_spacing_error_sum": 1.7401804988662173,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2231-1",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.7236842105263158,
+          "recall": 0.27638190954773867,
+          "f1": 0.4,
+          "true_positives": 55,
+          "false_positives": 21,
+          "predicted": 76,
+          "reference": 199,
+          "seconds": 20.0,
+          "false_positives_per_minute": 63.0
+        },
+        "candidate": {
+          "precision": 0.7236842105263158,
+          "recall": 0.27638190954773867,
+          "f1": 0.4,
+          "true_positives": 55,
+          "false_positives": 21,
+          "predicted": 76,
+          "reference": 199,
+          "seconds": 20.0,
+          "false_positives_per_minute": 63.0
+        },
+        "matches": {
+          "attack": {
+            "before": 55,
+            "after": 55,
+            "lost": 0
+          },
+          "hold": {
+            "before": 30,
+            "after": 30,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 60,
+          "before_onset_release_error_sum": [
+            1.9772625850340202,
+            5.77354285714286
+          ],
+          "after_onset_release_error_sum": [
+            1.9772625850340202,
+            5.77354285714286
+          ],
+          "repeated_spacing_pairs": 45,
+          "before_repeated_spacing_error_sum": 1.9803029478458087,
+          "after_repeated_spacing_error_sum": 1.9803029478458087,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2231-2",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.8333333333333334,
+          "recall": 0.22959183673469388,
+          "f1": 0.36,
+          "true_positives": 45,
+          "false_positives": 9,
+          "predicted": 54,
+          "reference": 196,
+          "seconds": 20.0,
+          "false_positives_per_minute": 27.0
+        },
+        "candidate": {
+          "precision": 0.8333333333333334,
+          "recall": 0.22959183673469388,
+          "f1": 0.36,
+          "true_positives": 45,
+          "false_positives": 9,
+          "predicted": 54,
+          "reference": 196,
+          "seconds": 20.0,
+          "false_positives_per_minute": 27.0
+        },
+        "matches": {
+          "attack": {
+            "before": 45,
+            "after": 45,
+            "lost": 0
+          },
+          "hold": {
+            "before": 23,
+            "after": 23,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 48,
+          "before_onset_release_error_sum": [
+            0.9701723356009195,
+            3.82340000000001
+          ],
+          "after_onset_release_error_sum": [
+            0.9701723356009195,
+            3.82340000000001
+          ],
+          "repeated_spacing_pairs": 36,
+          "before_repeated_spacing_error_sum": 0.943076190476201,
+          "after_repeated_spacing_error_sum": 0.943076190476201,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2237-0",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.6909090909090909,
+          "recall": 0.2275449101796407,
+          "f1": 0.34234234234234234,
+          "true_positives": 38,
+          "false_positives": 17,
+          "predicted": 55,
+          "reference": 167,
+          "seconds": 20.0,
+          "false_positives_per_minute": 51.0
+        },
+        "candidate": {
+          "precision": 0.6909090909090909,
+          "recall": 0.2275449101796407,
+          "f1": 0.34234234234234234,
+          "true_positives": 38,
+          "false_positives": 17,
+          "predicted": 55,
+          "reference": 167,
+          "seconds": 20.0,
+          "false_positives_per_minute": 51.0
+        },
+        "matches": {
+          "attack": {
+            "before": 38,
+            "after": 38,
+            "lost": 0
+          },
+          "hold": {
+            "before": 23,
+            "after": 23,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 45,
+          "before_onset_release_error_sum": [
+            1.1744934240362788,
+            4.509093424036306
+          ],
+          "after_onset_release_error_sum": [
+            1.1744934240362788,
+            4.509093424036306
+          ],
+          "repeated_spacing_pairs": 30,
+          "before_repeated_spacing_error_sum": 1.099151020408151,
+          "after_repeated_spacing_error_sum": 1.099151020408151,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2237-1",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.7045454545454546,
+          "recall": 0.33695652173913043,
+          "f1": 0.45588235294117646,
+          "true_positives": 62,
+          "false_positives": 26,
+          "predicted": 88,
+          "reference": 184,
+          "seconds": 20.0,
+          "false_positives_per_minute": 78.0
+        },
+        "candidate": {
+          "precision": 0.7045454545454546,
+          "recall": 0.33695652173913043,
+          "f1": 0.45588235294117646,
+          "true_positives": 62,
+          "false_positives": 26,
+          "predicted": 88,
+          "reference": 184,
+          "seconds": 20.0,
+          "false_positives_per_minute": 78.0
+        },
+        "matches": {
+          "attack": {
+            "before": 62,
+            "after": 62,
+            "lost": 0
+          },
+          "hold": {
+            "before": 29,
+            "after": 29,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 68,
+          "before_onset_release_error_sum": [
+            1.7427043083900124,
+            9.582235374149658
+          ],
+          "after_onset_release_error_sum": [
+            1.7427043083900124,
+            9.582235374149658
+          ],
+          "repeated_spacing_pairs": 54,
+          "before_repeated_spacing_error_sum": 2.137519727891147,
+          "after_repeated_spacing_error_sum": 2.137519727891147,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2237-2",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.7469879518072289,
+          "recall": 0.34065934065934067,
+          "f1": 0.4679245283018868,
+          "true_positives": 62,
+          "false_positives": 21,
+          "predicted": 83,
+          "reference": 182,
+          "seconds": 20.0,
+          "false_positives_per_minute": 63.0
+        },
+        "candidate": {
+          "precision": 0.7469879518072289,
+          "recall": 0.34065934065934067,
+          "f1": 0.4679245283018868,
+          "true_positives": 62,
+          "false_positives": 21,
+          "predicted": 83,
+          "reference": 182,
+          "seconds": 20.0,
+          "false_positives_per_minute": 63.0
+        },
+        "matches": {
+          "attack": {
+            "before": 62,
+            "after": 62,
+            "lost": 0
+          },
+          "hold": {
+            "before": 30,
+            "after": 30,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 66,
+          "before_onset_release_error_sum": [
+            1.4710122448979397,
+            9.436415419501127
+          ],
+          "after_onset_release_error_sum": [
+            1.4710122448979397,
+            9.436415419501127
+          ],
+          "repeated_spacing_pairs": 52,
+          "before_repeated_spacing_error_sum": 1.7026730158729975,
+          "after_repeated_spacing_error_sum": 1.7026730158729975,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2486-0",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.4,
+          "recall": 0.36,
+          "f1": 0.37894736842105264,
+          "true_positives": 18,
+          "false_positives": 27,
+          "predicted": 45,
+          "reference": 50,
+          "seconds": 20.0,
+          "false_positives_per_minute": 81.0
+        },
+        "candidate": {
+          "precision": 0.4,
+          "recall": 0.36,
+          "f1": 0.37894736842105264,
+          "true_positives": 18,
+          "false_positives": 27,
+          "predicted": 45,
+          "reference": 50,
+          "seconds": 20.0,
+          "false_positives_per_minute": 81.0
+        },
+        "matches": {
+          "attack": {
+            "before": 18,
+            "after": 18,
+            "lost": 0
+          },
+          "hold": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 32,
+          "before_onset_release_error_sum": [
+            1.9055641723356018,
+            22.489601814058954
+          ],
+          "after_onset_release_error_sum": [
+            1.9055641723356018,
+            22.489601814058954
+          ],
+          "repeated_spacing_pairs": 20,
+          "before_repeated_spacing_error_sum": 1.7469555555555596,
+          "after_repeated_spacing_error_sum": 1.7469555555555596,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2486-1",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.5909090909090909,
+          "recall": 0.1780821917808219,
+          "f1": 0.2736842105263158,
+          "true_positives": 13,
+          "false_positives": 9,
+          "predicted": 22,
+          "reference": 73,
+          "seconds": 20.0,
+          "false_positives_per_minute": 27.0
+        },
+        "candidate": {
+          "precision": 0.5909090909090909,
+          "recall": 0.1780821917808219,
+          "f1": 0.2736842105263158,
+          "true_positives": 13,
+          "false_positives": 9,
+          "predicted": 22,
+          "reference": 73,
+          "seconds": 20.0,
+          "false_positives_per_minute": 27.0
+        },
+        "matches": {
+          "attack": {
+            "before": 13,
+            "after": 13,
+            "lost": 0
+          },
+          "hold": {
+            "before": 8,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 16,
+          "before_onset_release_error_sum": [
+            0.7027614512471636,
+            14.891204081632655
+          ],
+          "after_onset_release_error_sum": [
+            0.7027614512471636,
+            14.891204081632655
+          ],
+          "repeated_spacing_pairs": 11,
+          "before_repeated_spacing_error_sum": 1.0061614512471624,
+          "after_repeated_spacing_error_sum": 1.0061614512471624,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2486-2",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.42857142857142855,
+          "recall": 0.24193548387096775,
+          "f1": 0.30927835051546393,
+          "true_positives": 15,
+          "false_positives": 20,
+          "predicted": 35,
+          "reference": 62,
+          "seconds": 20.0,
+          "false_positives_per_minute": 60.0
+        },
+        "candidate": {
+          "precision": 0.42857142857142855,
+          "recall": 0.24193548387096775,
+          "f1": 0.30927835051546393,
+          "true_positives": 15,
+          "false_positives": 20,
+          "predicted": 35,
+          "reference": 62,
+          "seconds": 20.0,
+          "false_positives_per_minute": 60.0
+        },
+        "matches": {
+          "attack": {
+            "before": 15,
+            "after": 15,
+            "lost": 0
+          },
+          "hold": {
+            "before": 5,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 21,
+          "before_onset_release_error_sum": [
+            0.838462585034009,
+            9.367633560090706
+          ],
+          "after_onset_release_error_sum": [
+            0.838462585034009,
+            9.367633560090706
+          ],
+          "repeated_spacing_pairs": 7,
+          "before_repeated_spacing_error_sum": 0.5237877551020418,
+          "after_repeated_spacing_error_sum": 0.5237877551020418,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2567-0",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.25,
+          "recall": 0.1076923076923077,
+          "f1": 0.15053763440860216,
+          "true_positives": 7,
+          "false_positives": 21,
+          "predicted": 28,
+          "reference": 65,
+          "seconds": 20.0,
+          "false_positives_per_minute": 63.0
+        },
+        "candidate": {
+          "precision": 0.25,
+          "recall": 0.1076923076923077,
+          "f1": 0.15053763440860216,
+          "true_positives": 7,
+          "false_positives": 21,
+          "predicted": 28,
+          "reference": 65,
+          "seconds": 20.0,
+          "false_positives_per_minute": 63.0
+        },
+        "matches": {
+          "attack": {
+            "before": 7,
+            "after": 7,
+            "lost": 0
+          },
+          "hold": {
+            "before": 3,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 16,
+          "before_onset_release_error_sum": [
+            0.9958126984127048,
+            8.313946938775516
+          ],
+          "after_onset_release_error_sum": [
+            0.9958126984127048,
+            8.313946938775516
+          ],
+          "repeated_spacing_pairs": 6,
+          "before_repeated_spacing_error_sum": 0.6487650793650839,
+          "after_repeated_spacing_error_sum": 0.6487650793650839,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2567-1",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.4375,
+          "recall": 0.13861386138613863,
+          "f1": 0.21052631578947367,
+          "true_positives": 14,
+          "false_positives": 18,
+          "predicted": 32,
+          "reference": 101,
+          "seconds": 20.0,
+          "false_positives_per_minute": 54.0
+        },
+        "candidate": {
+          "precision": 0.4375,
+          "recall": 0.13861386138613863,
+          "f1": 0.21052631578947367,
+          "true_positives": 14,
+          "false_positives": 18,
+          "predicted": 32,
+          "reference": 101,
+          "seconds": 20.0,
+          "false_positives_per_minute": 54.0
+        },
+        "matches": {
+          "attack": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          },
+          "hold": {
+            "before": 8,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 26,
+          "before_onset_release_error_sum": [
+            1.7619006802721144,
+            9.51246848072562
+          ],
+          "after_onset_release_error_sum": [
+            1.7619006802721144,
+            9.51246848072562
+          ],
+          "repeated_spacing_pairs": 15,
+          "before_repeated_spacing_error_sum": 1.082386394557835,
+          "after_repeated_spacing_error_sum": 1.082386394557835,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-reserved-2567-2",
+        "corpus": "reserved-musicnet-real-piano",
+        "baseline": {
+          "precision": 0.44680851063829785,
+          "recall": 0.18421052631578946,
+          "f1": 0.2608695652173913,
+          "true_positives": 21,
+          "false_positives": 26,
+          "predicted": 47,
+          "reference": 114,
+          "seconds": 20.0,
+          "false_positives_per_minute": 78.0
+        },
+        "candidate": {
+          "precision": 0.44680851063829785,
+          "recall": 0.18421052631578946,
+          "f1": 0.2608695652173913,
+          "true_positives": 21,
+          "false_positives": 26,
+          "predicted": 47,
+          "reference": 114,
+          "seconds": 20.0,
+          "false_positives_per_minute": 78.0
+        },
+        "matches": {
+          "attack": {
+            "before": 21,
+            "after": 21,
+            "lost": 0
+          },
+          "hold": {
+            "before": 3,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 33,
+          "before_onset_release_error_sum": [
+            1.55287891156462,
+            7.63625714285714
+          ],
+          "after_onset_release_error_sum": [
+            1.55287891156462,
+            7.63625714285714
+          ],
+          "repeated_spacing_pairs": 23,
+          "before_repeated_spacing_error_sum": 1.1738916099773236,
+          "after_repeated_spacing_error_sum": 1.1738916099773236,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279101",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8,
+          "true_positives": 14,
+          "false_positives": 7,
+          "predicted": 21,
+          "reference": 14,
+          "seconds": 30.0,
+          "false_positives_per_minute": 14.0
+        },
+        "candidate": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8,
+          "true_positives": 14,
+          "false_positives": 7,
+          "predicted": 21,
+          "reference": 14,
+          "seconds": 30.0,
+          "false_positives_per_minute": 14.0
+        },
+        "matches": {
+          "attack": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          },
+          "hold": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 14,
+          "before_onset_release_error_sum": [
+            0.19210748299319924,
+            0.8590589332548029
+          ],
+          "after_onset_release_error_sum": [
+            0.19210748299319924,
+            0.8590589332548029
+          ],
+          "repeated_spacing_pairs": 8,
+          "before_repeated_spacing_error_sum": 0.12015736961450862,
+          "after_repeated_spacing_error_sum": 0.12015736961450862,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279102",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.7,
+          "recall": 1.0,
+          "f1": 0.8235294117647058,
+          "true_positives": 14,
+          "false_positives": 6,
+          "predicted": 20,
+          "reference": 14,
+          "seconds": 30.0,
+          "false_positives_per_minute": 12.0
+        },
+        "candidate": {
+          "precision": 0.7,
+          "recall": 1.0,
+          "f1": 0.8235294117647058,
+          "true_positives": 14,
+          "false_positives": 6,
+          "predicted": 20,
+          "reference": 14,
+          "seconds": 30.0,
+          "false_positives_per_minute": 12.0
+        },
+        "matches": {
+          "attack": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          },
+          "hold": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 14,
+          "before_onset_release_error_sum": [
+            0.2156231292516977,
+            2.8066486776253137
+          ],
+          "after_onset_release_error_sum": [
+            0.2156231292516977,
+            2.8066486776253137
+          ],
+          "repeated_spacing_pairs": 8,
+          "before_repeated_spacing_error_sum": 0.19950566893423272,
+          "after_repeated_spacing_error_sum": 0.19950566893423272,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279103",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9545454545454546,
+          "recall": 0.9545454545454546,
+          "f1": 0.9545454545454546,
+          "true_positives": 21,
+          "false_positives": 1,
+          "predicted": 22,
+          "reference": 22,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "candidate": {
+          "precision": 0.9545454545454546,
+          "recall": 0.9545454545454546,
+          "f1": 0.9545454545454546,
+          "true_positives": 21,
+          "false_positives": 1,
+          "predicted": 22,
+          "reference": 22,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "matches": {
+          "attack": {
+            "before": 21,
+            "after": 21,
+            "lost": 0
+          },
+          "hold": {
+            "before": 15,
+            "after": 15,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 22,
+          "before_onset_release_error_sum": [
+            0.22387346938776442,
+            1.8920027653131175
+          ],
+          "after_onset_release_error_sum": [
+            0.22387346938776442,
+            1.8920027653131175
+          ],
+          "repeated_spacing_pairs": 17,
+          "before_repeated_spacing_error_sum": 0.22127256235828163,
+          "after_repeated_spacing_error_sum": 0.22127256235828163,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279104",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.7777777777777778,
+          "recall": 0.6363636363636364,
+          "f1": 0.7,
+          "true_positives": 14,
+          "false_positives": 4,
+          "predicted": 18,
+          "reference": 22,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "candidate": {
+          "precision": 0.7777777777777778,
+          "recall": 0.6363636363636364,
+          "f1": 0.7,
+          "true_positives": 14,
+          "false_positives": 4,
+          "predicted": 18,
+          "reference": 22,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "matches": {
+          "attack": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          },
+          "hold": {
+            "before": 8,
+            "after": 8,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 16,
+          "before_onset_release_error_sum": [
+            0.47976961451247835,
+            2.09583904113929
+          ],
+          "after_onset_release_error_sum": [
+            0.47976961451247835,
+            2.09583904113929
+          ],
+          "repeated_spacing_pairs": 10,
+          "before_repeated_spacing_error_sum": 0.1881024943310612,
+          "after_repeated_spacing_error_sum": 0.1881024943310612,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279105",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 15,
+          "false_positives": 0,
+          "predicted": 15,
+          "reference": 15,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 15,
+          "false_positives": 0,
+          "predicted": 15,
+          "reference": 15,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 15,
+            "after": 15,
+            "lost": 0
+          },
+          "hold": {
+            "before": 12,
+            "after": 12,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 15,
+          "before_onset_release_error_sum": [
+            0.08831428571428379,
+            1.0946497324000743
+          ],
+          "after_onset_release_error_sum": [
+            0.08831428571428379,
+            1.0946497324000743
+          ],
+          "repeated_spacing_pairs": 8,
+          "before_repeated_spacing_error_sum": 0.09772925170068625,
+          "after_repeated_spacing_error_sum": 0.09772925170068625,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279106",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9230769230769231,
+          "recall": 0.9230769230769231,
+          "f1": 0.9230769230769231,
+          "true_positives": 12,
+          "false_positives": 1,
+          "predicted": 13,
+          "reference": 13,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "candidate": {
+          "precision": 0.9230769230769231,
+          "recall": 0.9230769230769231,
+          "f1": 0.9230769230769231,
+          "true_positives": 12,
+          "false_positives": 1,
+          "predicted": 13,
+          "reference": 13,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "matches": {
+          "attack": {
+            "before": 12,
+            "after": 12,
+            "lost": 0
+          },
+          "hold": {
+            "before": 11,
+            "after": 11,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 12,
+          "before_onset_release_error_sum": [
+            0.05504716553287814,
+            0.9266965480956024
+          ],
+          "after_onset_release_error_sum": [
+            0.05504716553287814,
+            0.9266965480956024
+          ],
+          "repeated_spacing_pairs": 8,
+          "before_repeated_spacing_error_sum": 0.045808163265305346,
+          "after_repeated_spacing_error_sum": 0.045808163265305346,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279107",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 20,
+          "false_positives": 0,
+          "predicted": 20,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 20,
+          "false_positives": 0,
+          "predicted": 20,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 20,
+            "after": 20,
+            "lost": 0
+          },
+          "hold": {
+            "before": 19,
+            "after": 19,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 20,
+          "before_onset_release_error_sum": [
+            0.07797142857143857,
+            1.3279556645925932
+          ],
+          "after_onset_release_error_sum": [
+            0.07797142857143857,
+            1.3279556645925932
+          ],
+          "repeated_spacing_pairs": 14,
+          "before_repeated_spacing_error_sum": 0.08252244897959748,
+          "after_repeated_spacing_error_sum": 0.08252244897959748,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279108",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.5333333333333333,
+          "recall": 0.9411764705882353,
+          "f1": 0.6808510638297872,
+          "true_positives": 16,
+          "false_positives": 14,
+          "predicted": 30,
+          "reference": 17,
+          "seconds": 30.0,
+          "false_positives_per_minute": 28.0
+        },
+        "candidate": {
+          "precision": 0.5333333333333333,
+          "recall": 0.9411764705882353,
+          "f1": 0.6808510638297872,
+          "true_positives": 16,
+          "false_positives": 14,
+          "predicted": 30,
+          "reference": 17,
+          "seconds": 30.0,
+          "false_positives_per_minute": 28.0
+        },
+        "matches": {
+          "attack": {
+            "before": 16,
+            "after": 16,
+            "lost": 0
+          },
+          "hold": {
+            "before": 13,
+            "after": 13,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 17,
+          "before_onset_release_error_sum": [
+            0.38935736961451184,
+            1.5303404994752805
+          ],
+          "after_onset_release_error_sum": [
+            0.38935736961451184,
+            1.5303404994752805
+          ],
+          "repeated_spacing_pairs": 10,
+          "before_repeated_spacing_error_sum": 0.15911972789115936,
+          "after_repeated_spacing_error_sum": 0.15911972789115936,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279109",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.5714285714285714,
+          "recall": 0.9411764705882353,
+          "f1": 0.7111111111111111,
+          "true_positives": 16,
+          "false_positives": 12,
+          "predicted": 28,
+          "reference": 17,
+          "seconds": 30.0,
+          "false_positives_per_minute": 24.0
+        },
+        "candidate": {
+          "precision": 0.5714285714285714,
+          "recall": 0.9411764705882353,
+          "f1": 0.7111111111111111,
+          "true_positives": 16,
+          "false_positives": 12,
+          "predicted": 28,
+          "reference": 17,
+          "seconds": 30.0,
+          "false_positives_per_minute": 24.0
+        },
+        "matches": {
+          "attack": {
+            "before": 16,
+            "after": 16,
+            "lost": 0
+          },
+          "hold": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 16,
+          "before_onset_release_error_sum": [
+            0.4092634920635163,
+            5.636354878702605
+          ],
+          "after_onset_release_error_sum": [
+            0.4092634920635163,
+            5.636354878702605
+          ],
+          "repeated_spacing_pairs": 11,
+          "before_repeated_spacing_error_sum": 0.5881147392290256,
+          "after_repeated_spacing_error_sum": 0.5881147392290256,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279110",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 17,
+          "false_positives": 0,
+          "predicted": 17,
+          "reference": 17,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 17,
+          "false_positives": 0,
+          "predicted": 17,
+          "reference": 17,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 17,
+            "after": 17,
+            "lost": 0
+          },
+          "hold": {
+            "before": 15,
+            "after": 15,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 17,
+          "before_onset_release_error_sum": [
+            0.17118276643991104,
+            1.7237312811081993
+          ],
+          "after_onset_release_error_sum": [
+            0.17118276643991104,
+            1.7237312811081993
+          ],
+          "repeated_spacing_pairs": 9,
+          "before_repeated_spacing_error_sum": 0.17676281179138664,
+          "after_repeated_spacing_error_sum": 0.17676281179138664,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279111",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 0.9090909090909091,
+          "f1": 0.9523809523809523,
+          "true_positives": 10,
+          "false_positives": 0,
+          "predicted": 10,
+          "reference": 11,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 0.9090909090909091,
+          "f1": 0.9523809523809523,
+          "true_positives": 10,
+          "false_positives": 0,
+          "predicted": 10,
+          "reference": 11,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 10,
+            "after": 10,
+            "lost": 0
+          },
+          "hold": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 10,
+          "before_onset_release_error_sum": [
+            0.05581904761904877,
+            0.6453177298678003
+          ],
+          "after_onset_release_error_sum": [
+            0.05581904761904877,
+            0.6453177298678003
+          ],
+          "repeated_spacing_pairs": 5,
+          "before_repeated_spacing_error_sum": 0.029648979591836877,
+          "after_repeated_spacing_error_sum": 0.029648979591836877,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279112",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9,
+          "recall": 0.8571428571428571,
+          "f1": 0.8780487804878049,
+          "true_positives": 18,
+          "false_positives": 2,
+          "predicted": 20,
+          "reference": 21,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "candidate": {
+          "precision": 0.9,
+          "recall": 0.8571428571428571,
+          "f1": 0.8780487804878049,
+          "true_positives": 18,
+          "false_positives": 2,
+          "predicted": 20,
+          "reference": 21,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "matches": {
+          "attack": {
+            "before": 18,
+            "after": 18,
+            "lost": 0
+          },
+          "hold": {
+            "before": 16,
+            "after": 16,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 20,
+          "before_onset_release_error_sum": [
+            0.37235600907029953,
+            1.5517084946381998
+          ],
+          "after_onset_release_error_sum": [
+            0.37235600907029953,
+            1.5517084946381998
+          ],
+          "repeated_spacing_pairs": 15,
+          "before_repeated_spacing_error_sum": 0.41294104308391066,
+          "after_repeated_spacing_error_sum": 0.41294104308391066,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279113",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.5454545454545454,
+          "recall": 0.375,
+          "f1": 0.4444444444444444,
+          "true_positives": 6,
+          "false_positives": 5,
+          "predicted": 11,
+          "reference": 16,
+          "seconds": 30.0,
+          "false_positives_per_minute": 10.0
+        },
+        "candidate": {
+          "precision": 0.5454545454545454,
+          "recall": 0.375,
+          "f1": 0.4444444444444444,
+          "true_positives": 6,
+          "false_positives": 5,
+          "predicted": 11,
+          "reference": 16,
+          "seconds": 30.0,
+          "false_positives_per_minute": 10.0
+        },
+        "matches": {
+          "attack": {
+            "before": 6,
+            "after": 6,
+            "lost": 0
+          },
+          "hold": {
+            "before": 3,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 7,
+          "before_onset_release_error_sum": [
+            0.2033052154195003,
+            2.8213784591802753
+          ],
+          "after_onset_release_error_sum": [
+            0.2033052154195003,
+            2.8213784591802753
+          ],
+          "repeated_spacing_pairs": 4,
+          "before_repeated_spacing_error_sum": 0.3368888888888888,
+          "after_repeated_spacing_error_sum": 0.3368888888888888,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279114",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444,
+          "f1": 0.9444444444444444,
+          "true_positives": 17,
+          "false_positives": 1,
+          "predicted": 18,
+          "reference": 18,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "candidate": {
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444,
+          "f1": 0.9444444444444444,
+          "true_positives": 17,
+          "false_positives": 1,
+          "predicted": 18,
+          "reference": 18,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "matches": {
+          "attack": {
+            "before": 17,
+            "after": 17,
+            "lost": 0
+          },
+          "hold": {
+            "before": 12,
+            "after": 12,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 17,
+          "before_onset_release_error_sum": [
+            0.24824535147393334,
+            1.4138915977649882
+          ],
+          "after_onset_release_error_sum": [
+            0.24824535147393334,
+            1.4138915977649882
+          ],
+          "repeated_spacing_pairs": 11,
+          "before_repeated_spacing_error_sum": 0.18845260770974992,
+          "after_repeated_spacing_error_sum": 0.18845260770974992,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279115",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 18,
+          "false_positives": 0,
+          "predicted": 18,
+          "reference": 18,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 18,
+          "false_positives": 0,
+          "predicted": 18,
+          "reference": 18,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 18,
+            "after": 18,
+            "lost": 0
+          },
+          "hold": {
+            "before": 11,
+            "after": 11,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 18,
+          "before_onset_release_error_sum": [
+            0.08481179138322181,
+            1.9035560381493406
+          ],
+          "after_onset_release_error_sum": [
+            0.08481179138322181,
+            1.9035560381493406
+          ],
+          "repeated_spacing_pairs": 11,
+          "before_repeated_spacing_error_sum": 0.04116190476189718,
+          "after_repeated_spacing_error_sum": 0.04116190476189718,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279116",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.8571428571428571,
+          "recall": 0.8275862068965517,
+          "f1": 0.8421052631578947,
+          "true_positives": 24,
+          "false_positives": 4,
+          "predicted": 28,
+          "reference": 29,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "candidate": {
+          "precision": 0.8571428571428571,
+          "recall": 0.8275862068965517,
+          "f1": 0.8421052631578947,
+          "true_positives": 24,
+          "false_positives": 4,
+          "predicted": 28,
+          "reference": 29,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "matches": {
+          "attack": {
+            "before": 24,
+            "after": 24,
+            "lost": 0
+          },
+          "hold": {
+            "before": 13,
+            "after": 13,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 24,
+          "before_onset_release_error_sum": [
+            0.6478099773242785,
+            3.9073334315909483
+          ],
+          "after_onset_release_error_sum": [
+            0.6478099773242785,
+            3.9073334315909483
+          ],
+          "repeated_spacing_pairs": 16,
+          "before_repeated_spacing_error_sum": 0.39303764172335365,
+          "after_repeated_spacing_error_sum": 0.39303764172335365,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279117",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.3888888888888889,
+          "recall": 0.7,
+          "f1": 0.5,
+          "true_positives": 14,
+          "false_positives": 22,
+          "predicted": 36,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 44.0
+        },
+        "candidate": {
+          "precision": 0.4,
+          "recall": 0.7,
+          "f1": 0.509090909090909,
+          "true_positives": 14,
+          "false_positives": 21,
+          "predicted": 35,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 42.0
+        },
+        "matches": {
+          "attack": {
+            "before": 14,
+            "after": 14,
+            "lost": 0
+          },
+          "hold": {
+            "before": 10,
+            "after": 10,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 17,
+          "before_onset_release_error_sum": [
+            0.45542040816328067,
+            5.60981736854259
+          ],
+          "after_onset_release_error_sum": [
+            0.45542040816328067,
+            5.60981736854259
+          ],
+          "repeated_spacing_pairs": 10,
+          "before_repeated_spacing_error_sum": 0.33639365079366135,
+          "after_repeated_spacing_error_sum": 0.33639365079366135,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 1,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279118",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.8260869565217391,
+          "recall": 0.95,
+          "f1": 0.8837209302325582,
+          "true_positives": 19,
+          "false_positives": 4,
+          "predicted": 23,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "candidate": {
+          "precision": 0.8260869565217391,
+          "recall": 0.95,
+          "f1": 0.8837209302325582,
+          "true_positives": 19,
+          "false_positives": 4,
+          "predicted": 23,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "matches": {
+          "attack": {
+            "before": 19,
+            "after": 19,
+            "lost": 0
+          },
+          "hold": {
+            "before": 15,
+            "after": 15,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 19,
+          "before_onset_release_error_sum": [
+            0.10204126984126827,
+            0.9175933596974866
+          ],
+          "after_onset_release_error_sum": [
+            0.10204126984126827,
+            0.9175933596974866
+          ],
+          "repeated_spacing_pairs": 14,
+          "before_repeated_spacing_error_sum": 0.11691609977323747,
+          "after_repeated_spacing_error_sum": 0.11691609977323747,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279119",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9523809523809523,
+          "recall": 0.9523809523809523,
+          "f1": 0.9523809523809523,
+          "true_positives": 20,
+          "false_positives": 1,
+          "predicted": 21,
+          "reference": 21,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "candidate": {
+          "precision": 0.9523809523809523,
+          "recall": 0.9523809523809523,
+          "f1": 0.9523809523809523,
+          "true_positives": 20,
+          "false_positives": 1,
+          "predicted": 21,
+          "reference": 21,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "matches": {
+          "attack": {
+            "before": 20,
+            "after": 20,
+            "lost": 0
+          },
+          "hold": {
+            "before": 19,
+            "after": 19,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 20,
+          "before_onset_release_error_sum": [
+            0.12514829931972926,
+            0.9227161608124739
+          ],
+          "after_onset_release_error_sum": [
+            0.12514829931972926,
+            0.9227161608124739
+          ],
+          "repeated_spacing_pairs": 14,
+          "before_repeated_spacing_error_sum": 0.11901814058957605,
+          "after_repeated_spacing_error_sum": 0.11901814058957605,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279120",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9047619047619048,
+          "recall": 0.95,
+          "f1": 0.926829268292683,
+          "true_positives": 19,
+          "false_positives": 2,
+          "predicted": 21,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "candidate": {
+          "precision": 0.9047619047619048,
+          "recall": 0.95,
+          "f1": 0.926829268292683,
+          "true_positives": 19,
+          "false_positives": 2,
+          "predicted": 21,
+          "reference": 20,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "matches": {
+          "attack": {
+            "before": 19,
+            "after": 19,
+            "lost": 0
+          },
+          "hold": {
+            "before": 16,
+            "after": 16,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 19,
+          "before_onset_release_error_sum": [
+            0.11511473922902216,
+            1.117217523507756
+          ],
+          "after_onset_release_error_sum": [
+            0.11511473922902216,
+            1.117217523507756
+          ],
+          "repeated_spacing_pairs": 13,
+          "before_repeated_spacing_error_sum": 0.11604353741495155,
+          "after_repeated_spacing_error_sum": 0.11604353741495155,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279121",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9473684210526315,
+          "recall": 0.9473684210526315,
+          "f1": 0.9473684210526315,
+          "true_positives": 18,
+          "false_positives": 1,
+          "predicted": 19,
+          "reference": 19,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "candidate": {
+          "precision": 0.9473684210526315,
+          "recall": 0.9473684210526315,
+          "f1": 0.9473684210526315,
+          "true_positives": 18,
+          "false_positives": 1,
+          "predicted": 19,
+          "reference": 19,
+          "seconds": 30.0,
+          "false_positives_per_minute": 2.0
+        },
+        "matches": {
+          "attack": {
+            "before": 18,
+            "after": 18,
+            "lost": 0
+          },
+          "hold": {
+            "before": 17,
+            "after": 17,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 18,
+          "before_onset_release_error_sum": [
+            0.07658231292516948,
+            0.8392188541218655
+          ],
+          "after_onset_release_error_sum": [
+            0.07658231292516948,
+            0.8392188541218655
+          ],
+          "repeated_spacing_pairs": 12,
+          "before_repeated_spacing_error_sum": 0.057560544217677645,
+          "after_repeated_spacing_error_sum": 0.057560544217677645,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279122",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.35294117647058826,
+          "recall": 0.46153846153846156,
+          "f1": 0.4,
+          "true_positives": 6,
+          "false_positives": 11,
+          "predicted": 17,
+          "reference": 13,
+          "seconds": 30.0,
+          "false_positives_per_minute": 22.0
+        },
+        "candidate": {
+          "precision": 0.35294117647058826,
+          "recall": 0.46153846153846156,
+          "f1": 0.4,
+          "true_positives": 6,
+          "false_positives": 11,
+          "predicted": 17,
+          "reference": 13,
+          "seconds": 30.0,
+          "false_positives_per_minute": 22.0
+        },
+        "matches": {
+          "attack": {
+            "before": 6,
+            "after": 6,
+            "lost": 0
+          },
+          "hold": {
+            "before": 3,
+            "after": 3,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 8,
+          "before_onset_release_error_sum": [
+            0.2562498866213163,
+            6.7476064180550805
+          ],
+          "after_onset_release_error_sum": [
+            0.2562498866213163,
+            6.7476064180550805
+          ],
+          "repeated_spacing_pairs": 4,
+          "before_repeated_spacing_error_sum": 0.10506031746031663,
+          "after_repeated_spacing_error_sum": 0.10506031746031663,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279123",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 9,
+          "false_positives": 0,
+          "predicted": 9,
+          "reference": 9,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 9,
+          "false_positives": 0,
+          "predicted": 9,
+          "reference": 9,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          },
+          "hold": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 9,
+          "before_onset_release_error_sum": [
+            0.04416598639456115,
+            0.4384066929530821
+          ],
+          "after_onset_release_error_sum": [
+            0.04416598639456115,
+            0.4384066929530821
+          ],
+          "repeated_spacing_pairs": 6,
+          "before_repeated_spacing_error_sum": 0.04711111111111599,
+          "after_repeated_spacing_error_sum": 0.04711111111111599,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279124",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.8484848484848485,
+          "recall": 0.9655172413793104,
+          "f1": 0.9032258064516129,
+          "true_positives": 28,
+          "false_positives": 5,
+          "predicted": 33,
+          "reference": 29,
+          "seconds": 30.0,
+          "false_positives_per_minute": 10.0
+        },
+        "candidate": {
+          "precision": 0.8484848484848485,
+          "recall": 0.9655172413793104,
+          "f1": 0.9032258064516129,
+          "true_positives": 28,
+          "false_positives": 5,
+          "predicted": 33,
+          "reference": 29,
+          "seconds": 30.0,
+          "false_positives_per_minute": 10.0
+        },
+        "matches": {
+          "attack": {
+            "before": 28,
+            "after": 28,
+            "lost": 0
+          },
+          "hold": {
+            "before": 20,
+            "after": 20,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 28,
+          "before_onset_release_error_sum": [
+            0.21891065759635886,
+            1.9932742079696038
+          ],
+          "after_onset_release_error_sum": [
+            0.21891065759635886,
+            1.9932742079696038
+          ],
+          "repeated_spacing_pairs": 20,
+          "before_repeated_spacing_error_sum": 0.23230430839002203,
+          "after_repeated_spacing_error_sum": 0.23230430839002203,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279125",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.6666666666666666,
+          "recall": 0.75,
+          "f1": 0.7058823529411765,
+          "true_positives": 6,
+          "false_positives": 3,
+          "predicted": 9,
+          "reference": 8,
+          "seconds": 30.0,
+          "false_positives_per_minute": 6.0
+        },
+        "candidate": {
+          "precision": 0.6666666666666666,
+          "recall": 0.75,
+          "f1": 0.7058823529411765,
+          "true_positives": 6,
+          "false_positives": 3,
+          "predicted": 9,
+          "reference": 8,
+          "seconds": 30.0,
+          "false_positives_per_minute": 6.0
+        },
+        "matches": {
+          "attack": {
+            "before": 6,
+            "after": 6,
+            "lost": 0
+          },
+          "hold": {
+            "before": 5,
+            "after": 5,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 6,
+          "before_onset_release_error_sum": [
+            0.0511260770975106,
+            2.655791469758782
+          ],
+          "after_onset_release_error_sum": [
+            0.0511260770975106,
+            2.655791469758782
+          ],
+          "repeated_spacing_pairs": 1,
+          "before_repeated_spacing_error_sum": 0.004429478458053637,
+          "after_repeated_spacing_error_sum": 0.004429478458053637,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279126",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9090909090909091,
+          "recall": 0.9523809523809523,
+          "f1": 0.9302325581395349,
+          "true_positives": 20,
+          "false_positives": 2,
+          "predicted": 22,
+          "reference": 21,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "candidate": {
+          "precision": 0.9090909090909091,
+          "recall": 0.9523809523809523,
+          "f1": 0.9302325581395349,
+          "true_positives": 20,
+          "false_positives": 2,
+          "predicted": 22,
+          "reference": 21,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "matches": {
+          "attack": {
+            "before": 20,
+            "after": 20,
+            "lost": 0
+          },
+          "hold": {
+            "before": 18,
+            "after": 18,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 20,
+          "before_onset_release_error_sum": [
+            0.09266485260770496,
+            1.3615655833600115
+          ],
+          "after_onset_release_error_sum": [
+            0.09266485260770496,
+            1.3615655833600115
+          ],
+          "repeated_spacing_pairs": 14,
+          "before_repeated_spacing_error_sum": 0.04865895691609001,
+          "after_repeated_spacing_error_sum": 0.04865895691609001,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279127",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.42857142857142855,
+          "recall": 0.9,
+          "f1": 0.5806451612903226,
+          "true_positives": 9,
+          "false_positives": 12,
+          "predicted": 21,
+          "reference": 10,
+          "seconds": 30.0,
+          "false_positives_per_minute": 24.0
+        },
+        "candidate": {
+          "precision": 0.42857142857142855,
+          "recall": 0.9,
+          "f1": 0.5806451612903226,
+          "true_positives": 9,
+          "false_positives": 12,
+          "predicted": 21,
+          "reference": 10,
+          "seconds": 30.0,
+          "false_positives_per_minute": 24.0
+        },
+        "matches": {
+          "attack": {
+            "before": 9,
+            "after": 9,
+            "lost": 0
+          },
+          "hold": {
+            "before": 4,
+            "after": 4,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 10,
+          "before_onset_release_error_sum": [
+            0.27420997732425745,
+            7.617115533491635
+          ],
+          "after_onset_release_error_sum": [
+            0.27420997732425745,
+            7.617115533491635
+          ],
+          "repeated_spacing_pairs": 5,
+          "before_repeated_spacing_error_sum": 0.2159637188208623,
+          "after_repeated_spacing_error_sum": 0.2159637188208623,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279128",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.6451612903225806,
+          "recall": 0.8333333333333334,
+          "f1": 0.7272727272727273,
+          "true_positives": 20,
+          "false_positives": 11,
+          "predicted": 31,
+          "reference": 24,
+          "seconds": 30.0,
+          "false_positives_per_minute": 22.0
+        },
+        "candidate": {
+          "precision": 0.6451612903225806,
+          "recall": 0.8333333333333334,
+          "f1": 0.7272727272727273,
+          "true_positives": 20,
+          "false_positives": 11,
+          "predicted": 31,
+          "reference": 24,
+          "seconds": 30.0,
+          "false_positives_per_minute": 22.0
+        },
+        "matches": {
+          "attack": {
+            "before": 20,
+            "after": 20,
+            "lost": 0
+          },
+          "hold": {
+            "before": 16,
+            "after": 16,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 22,
+          "before_onset_release_error_sum": [
+            0.5768149659863973,
+            2.9977787601196093
+          ],
+          "after_onset_release_error_sum": [
+            0.5768149659863973,
+            2.9977787601196093
+          ],
+          "repeated_spacing_pairs": 16,
+          "before_repeated_spacing_error_sum": 0.23797868480726514,
+          "after_repeated_spacing_error_sum": 0.23797868480726514,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279129",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.8947368421052632,
+          "recall": 1.0,
+          "f1": 0.9444444444444444,
+          "true_positives": 34,
+          "false_positives": 4,
+          "predicted": 38,
+          "reference": 34,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "candidate": {
+          "precision": 0.8947368421052632,
+          "recall": 1.0,
+          "f1": 0.9444444444444444,
+          "true_positives": 34,
+          "false_positives": 4,
+          "predicted": 38,
+          "reference": 34,
+          "seconds": 30.0,
+          "false_positives_per_minute": 8.0
+        },
+        "matches": {
+          "attack": {
+            "before": 34,
+            "after": 34,
+            "lost": 0
+          },
+          "hold": {
+            "before": 23,
+            "after": 23,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 34,
+          "before_onset_release_error_sum": [
+            0.14179909297053594,
+            2.086522891742189
+          ],
+          "after_onset_release_error_sum": [
+            0.14179909297053594,
+            2.086522891742189
+          ],
+          "repeated_spacing_pairs": 27,
+          "before_repeated_spacing_error_sum": 0.14998911564625406,
+          "after_repeated_spacing_error_sum": 0.14998911564625406,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279130",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.8666666666666667,
+          "recall": 1.0,
+          "f1": 0.9285714285714286,
+          "true_positives": 13,
+          "false_positives": 2,
+          "predicted": 15,
+          "reference": 13,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "candidate": {
+          "precision": 0.8666666666666667,
+          "recall": 1.0,
+          "f1": 0.9285714285714286,
+          "true_positives": 13,
+          "false_positives": 2,
+          "predicted": 15,
+          "reference": 13,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "matches": {
+          "attack": {
+            "before": 13,
+            "after": 13,
+            "lost": 0
+          },
+          "hold": {
+            "before": 12,
+            "after": 12,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 13,
+          "before_onset_release_error_sum": [
+            0.10476462585034563,
+            0.7535727228350853
+          ],
+          "after_onset_release_error_sum": [
+            0.10476462585034563,
+            0.7535727228350853
+          ],
+          "repeated_spacing_pairs": 8,
+          "before_repeated_spacing_error_sum": 0.06628208616779752,
+          "after_repeated_spacing_error_sum": 0.06628208616779752,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279131",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 0.9285714285714286,
+          "recall": 0.9629629629629629,
+          "f1": 0.9454545454545454,
+          "true_positives": 26,
+          "false_positives": 2,
+          "predicted": 28,
+          "reference": 27,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "candidate": {
+          "precision": 0.9285714285714286,
+          "recall": 0.9629629629629629,
+          "f1": 0.9454545454545454,
+          "true_positives": 26,
+          "false_positives": 2,
+          "predicted": 28,
+          "reference": 27,
+          "seconds": 30.0,
+          "false_positives_per_minute": 4.0
+        },
+        "matches": {
+          "attack": {
+            "before": 26,
+            "after": 26,
+            "lost": 0
+          },
+          "hold": {
+            "before": 21,
+            "after": 21,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 26,
+          "before_onset_release_error_sum": [
+            0.14074467120181744,
+            1.3081528058672887
+          ],
+          "after_onset_release_error_sum": [
+            0.14074467120181744,
+            1.3081528058672887
+          ],
+          "repeated_spacing_pairs": 18,
+          "before_repeated_spacing_error_sum": 0.11845804988661923,
+          "after_repeated_spacing_error_sum": 0.11845804988661923,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      },
+      {
+        "id": "musicnet-v34-fresh-279132",
+        "corpus": "original-periodicity-first-pass",
+        "baseline": {
+          "precision": 1.0,
+          "recall": 0.9444444444444444,
+          "f1": 0.9714285714285714,
+          "true_positives": 17,
+          "false_positives": 0,
+          "predicted": 17,
+          "reference": 18,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "candidate": {
+          "precision": 1.0,
+          "recall": 0.9444444444444444,
+          "f1": 0.9714285714285714,
+          "true_positives": 17,
+          "false_positives": 0,
+          "predicted": 17,
+          "reference": 18,
+          "seconds": 30.0,
+          "false_positives_per_minute": 0.0
+        },
+        "matches": {
+          "attack": {
+            "before": 17,
+            "after": 17,
+            "lost": 0
+          },
+          "hold": {
+            "before": 17,
+            "after": 17,
+            "lost": 0
+          }
+        },
+        "coverage": {
+          "passes": true,
+          "lost_reference_seconds": 0.0,
+          "references_with_lost_coverage": 0
+        },
+        "timing": {
+          "pairs": 17,
+          "before_onset_release_error_sum": [
+            0.07306621315193063,
+            0.5857079589243854
+          ],
+          "after_onset_release_error_sum": [
+            0.07306621315193063,
+            0.5857079589243854
+          ],
+          "repeated_spacing_pairs": 11,
+          "before_repeated_spacing_error_sum": 0.06059138321995228,
+          "after_repeated_spacing_error_sum": 0.06059138321995228,
+          "passes": true
+        },
+        "retimed_notes": 0,
+        "removed_notes": 0,
+        "passes": true
+      }
+    ],
+    "guardian_threshold": 0.3
+  },
+  "recordings": 50,
+  "first_pass_complete": true,
+  "now_consumed_regression": true,
+  "no_retuning": true,
+  "checkpoint_sha256": "ff0ac7189be3c60ec36cbd20c969fc6cdd7304ee91f69734405dafd484127d87",
+  "batch_selection_sha256": "635abec484d2168ba514e8c8d0b3096c0e0f2a233d3cce1cc70a38b8d237a034",
+  "test_manifest_sha256": "a641ff19895bcee6b806f69dd643ef6dd31aac2c6219eac58185a984b97b8478",
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false
+}

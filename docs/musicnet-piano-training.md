@@ -50,7 +50,7 @@ reader tests verify these boundaries and reject invalid clock/instrument/pitch
 values and unverified transfers.
 
 Acquisition is complete: all 32 selected works passed the full original archive
-checksum, with 21 train / 5 validation / 6 reserved works. The observer is preparing
+checksum, with 21 train / 5 validation / 6 reserved works. The observer completed
 78 fitting/validation MP3 excerpts. The first V33 fit completed both predeclared
 80-epoch profiles on 765 train / 221 validation fixtures; neither passed both
 confidence checks with a positive noise-reduction gain. V33 remains withheld. V32 completed a spectral-feature fit on the already verified licensed corpus
@@ -105,8 +105,25 @@ release preparation, not MusicNet accuracy or a new model release.
 
 The complete first real-piano study is archived in
 `training/results/musicnet-anchor-v33-v1`. It produced no validation winner,
-so consumed-regression and first-pass runs were correctly skipped. The 18
-reserved real-piano excerpts remain unused. An additional release policy,
+so consumed-regression and first-pass runs were correctly skipped. At the V33 study boundary, the 18
+reserved real-piano excerpts remained unused; V34 subsequently consumed them. An additional release policy,
 declared before fitting began, also requires a separate positive false-note
 reduction on reserved real-piano recordings at both confidence settings.
 Authored-only gains cannot qualify a future real-piano release.
+
+
+The completed V34 full-encoding study is archived in
+`training/results/musicnet-full-v34-v1`. A frozen validation winner preserved all
+469 consumed regressions and all 50 predeclared first-pass recordings, but its
+1/1 first-pass false-note gain came entirely from authored fixtures. Both reserved
+real-piano gains were zero, so the separately declared real-piano release gate
+refused export. No retuning or runner-up evaluation followed. V32 remains deployed.
+All 50 recordings now count as consumed evidence: the next study must cover 519
+regressions. All eight Oxford MIDI-test pairs still remain untouched.
+
+A fitting/validation-only diagnostic found that all 12/5 labeled false MusicNet
+notes scored above .85 were blocked by the old guardian. This identifies a possible
+domain-calibration problem; it does not justify raising confidence cutoffs on
+consumed tests. A future protection model must learn from training data, select
+on validation, preserve all regression attacks/holds/coverage, and demonstrate
+independent real-piano benefit before any release.

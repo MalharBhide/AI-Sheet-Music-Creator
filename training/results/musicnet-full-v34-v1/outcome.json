@@ -1,0 +1,75 @@
+{
+  "released": false,
+  "new_weights_deployed": false,
+  "current_v32_retained": true,
+  "reason": "Frozen candidate passed validation, consumed regression and aggregate first pass but failed the predeclared independently positive reserved real-piano benefit gate at both settings. No retuning or runner-up selection.",
+  "epochs_per_profile": 80,
+  "profiles": 2,
+  "fitting_counts": {
+    "train": 765,
+    "validation": 221
+  },
+  "plan_sha256": "9baabbab41f517ced255c82bc089ed67d1865e784d13ebb5408dfbb05baf5cc5",
+  "winner": {
+    "profile": "full-encodings-conservative",
+    "width": 128,
+    "cap": 4.0,
+    "epoch": 80,
+    "checkpoint": "full-encodings-conservative/epoch-080.pt",
+    "checkpoint_sha256": "ff0ac7189be3c60ec36cbd20c969fc6cdd7304ee91f69734405dafd484127d87",
+    "threshold": 0.85,
+    "guardian_threshold": 0.3,
+    "false_notes_removed": 5,
+    "margin_false_notes_removed": 1,
+    "plan_sha256": "9baabbab41f517ced255c82bc089ed67d1865e784d13ebb5408dfbb05baf5cc5",
+    "test_used_for_selection": false,
+    "validation_sha256": "05839fb8ac4f4124d6fa710c4a02c6a4986d243c4ee510039d044341b5ca6211"
+  },
+  "regression": {
+    "recordings": 469,
+    "passes": true,
+    "false_notes_removed": {
+      "raw": 16,
+      "margin": 11
+    }
+  },
+  "first_pass": {
+    "recordings": 50,
+    "passes": true,
+    "false_notes_removed": {
+      "raw": 1,
+      "margin": 1
+    },
+    "real_piano": {
+      "raw": {
+        "recordings": 18,
+        "false_notes_removed": 0
+      },
+      "margin": {
+        "recordings": 18,
+        "false_notes_removed": 0
+      }
+    }
+  },
+  "future_consumed_regressions": 519,
+  "oxford_pairs_still_untouched": 8,
+  "actual_training_checkpoints": {
+    "full-encodings-conservative/epoch-020.pt": "a3ba0a2946de9038a99c632a84c4bb2ec9760368c9ae3e52520700a8c7c0ab7b",
+    "full-encodings-conservative/epoch-040.pt": "afd51a66ffb70ec6213a7687c3b4d2c3999bc2f3c900f0ecc357fb4cfa0b8218",
+    "full-encodings-conservative/epoch-060.pt": "2a6d4a1c3dd695a14dff800cf258ac3050c4128fce16c9e5bae40de314a0d5cd",
+    "full-encodings-conservative/epoch-080.pt": "ff0ac7189be3c60ec36cbd20c969fc6cdd7304ee91f69734405dafd484127d87",
+    "full-encodings-protected/epoch-020.pt": "07443b83a3ba422daf3e4c86ca95a87c505e5509a6aac51e77b9223e3a75faa3",
+    "full-encodings-protected/epoch-040.pt": "ca5a211d19b7cc62aaf1e3a583a67bcd202d4ec46bcfe2aae40f387bbdc270b4",
+    "full-encodings-protected/epoch-060.pt": "df10478646c83a93c918df9f2d21912de69e00f22369e21698e4a89e8a36045f",
+    "full-encodings-protected/epoch-080.pt": "5621987b8359da53f71ef7f015ccd02def2e9ab5305203974556d9233b5344c6"
+  },
+  "verification": {
+    "full_suite_passed": 878,
+    "skipped": 6,
+    "log_sha256": "35818e4eee754148666cb217b8bdba65824e3628d1d0bdf3b600bf92e2e06b01",
+    "additional_real_piano_gate_tests_passed": 3,
+    "extra_gate_log_sha256": "86f623ef5e0510866b1a57a6c820bd9cef67cf2dff074a8c90537398929eeee0"
+  },
+  "no_user_audio_or_scores": true,
+  "no_portable_export_or_deployment_after_failed_real_gate": true
+}

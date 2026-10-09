@@ -1,0 +1,609 @@
+{
+  "checkpoint_sha256": "ff0ac7189be3c60ec36cbd20c969fc6cdd7304ee91f69734405dafd484127d87",
+  "batch_selection_sha256": "635abec484d2168ba514e8c8d0b3096c0e0f2a233d3cce1cc70a38b8d237a034",
+  "consumed_regression_sha256": "b2837820f588f37e8bb1169f9c5551f40f0cf766865e3c904f9a815c1a5a5ab1",
+  "baseline_hashes": {
+    "version": "shipped-bass-v32-baseline-v1",
+    "sources": {
+      "backend/app/services/midi_to_score.py": "230e99e6a1cef92bbc3056386edb7d9c5d2485a008a3e592329b9f5b3ce436f4",
+      "backend/app/assets/bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775",
+      "backend/app/assets/bass-attack-declutter-v1.npz": "f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c",
+      "backend/app/assets/bass-attack-declutter-v1.LICENSE.txt": "c15508b91f040e64b90b100608df42a78a6916f124f29d4c4efcd37d1e3f3485",
+      "backend/app/services/attack_local_evidence.py": "e399e4213054788a701f59aee77c57cce56a80f3191a606317d9994ebcb454bc",
+      "backend/app/services/release_local_evidence.py": "226cc21ed43aadfc7034e43c443f3fe765a7f201dc9de1523d4377d09c35a460",
+      "backend/app/services/attack_local_network.py": "db9fa5903b949f16a93c59d741224bb040858b3481d12cf3a61a2a7f645e5511",
+      "backend/app/services/bass_attack_declutter.py": "828569fddda91e70014d079b1e9e819d930e939716f5c96f5b9cf871fb1bcba4",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "backend/app/services/bass_texture.py": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c",
+      "backend/app/services/bass_harmonic.py": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7",
+      "backend/app/services/bass_temporal.py": "3cf000fb9d6174e64d4197d1b03c126f27239b541b4a032f75d73510dfffb68a",
+      "backend/app/services/bass_temporal_refinement.py": "e712f3f5e0937918ec013ccc3c863afc5a18349ebcf46c047764b1e37b39a18c",
+      "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/candidate_relations.py": "3a1b6caf5eaebf444f3cdcddb7abc8835c86f665721ab476e03c1c1dbc58d029",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "training/current_bass_v16_baseline.py": "7c7d4c928a2a40c8d7df2816dee596232ded3a9cdc7abb9a9003a7d6e4f9b511",
+      "backend/app/services/piano_transcription.py": "ab8f97bb09c3687e59a21974d97878690cd5e28c625ee6db34fef4caffd429e7",
+      "backend/app/routes/dependencies.py": "95835aa2b041290785120d9b2e143aeeacf398226fce5c51f8b72048473c07af",
+      "backend/app/assets/bass-embedding-v1.npz": "edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955",
+      "backend/app/assets/bass-embedding-v1.LICENSE.txt": "ffb07f8e7d5696f297fe1c81d71ced6fa4ab97080f3967e4ad0955cef1ad3db7",
+      "backend/app/services/bass_embedding_declutter.py": "06230bc93ff62cfbfc306ca06721ce99777ce2cb978e242a7ccb284e3189c909",
+      "backend/app/services/bass_embedding_network.py": "0070e38536d0afa5e6b0e11cd4543bb5924a9958239a5dfaeb0e7621358aa628",
+      "backend/app/services/waveform_recurrence.py": "ce1b78d31f65ad30695c8ba93bab3301b144cfab6a49a09deafa97a7f9108770",
+      "backend/app/services/release_neighbors.py": "1402dd7d5f0090c01ab12e9a5b409a0acc36f4fed717ca37f2b1a2c51a6e4216"
+    },
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51",
+      "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb",
+      "bass-texture-v1.npz": "f1e829c7d4328afc38268cc8dbe8afb526c6860efafd3d272170cf3aca768d3e",
+      "bass-texture-guardian-v1.npz": "82f4ed13e9cf5a7a832a8a066f23ff9f7642aa187da664779a900d55b807e994",
+      "bass-harmonic-v1.npz": "8184a7c4009d2e26bc1d2f264ec58d8503182cda79667b9c3af7a8bb856ce66c",
+      "bass-harmonic-guardian-v1.npz": "bcab8b156e54db37c3c19dd74e553106499722503abb043ba7fb491d3418f76e",
+      "bass-temporal-v1.npz": "0edc221998bbaacb052fbffe43f6efcce6e759290d0cdb9a7314028521e162c4",
+      "bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775",
+      "bass-attack-declutter-v1.npz": "f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c",
+      "bass-embedding-v1.npz": "edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955"
+    },
+    "release_sha256": "728a9a6a2748bd18a2d57c2101f4cae0d8791c901e9b8875800be0192c572775",
+    "thresholds": {
+      "remove": 0.8,
+      "guardian": 0.5
+    },
+    "preceding_source_commit": "d214a3e",
+    "all_eight_v25_stages_retained": true
+  },
+  "first_pass_declaration": {
+    "source_root": "/training/musicnet-piano-subset-v1",
+    "source_manifest_sha256": "51fc54ee4e30f56840e461e48d57ab6a2f8b39db219863a98ac0ab57242f9aa3",
+    "jobs": [
+      {
+        "id": "musicnet-v34-reserved-1733-0",
+        "publisher_id": "1733",
+        "work": [
+          "Schubert",
+          "D959",
+          "Piano Sonata in A major"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/1733.csv",
+        "labels_sha256": "95963e43e92482d6d75200662c8236c5b3529588430cde6f7e6b2539815e6db8",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 546.0114285714286
+        },
+        "excerpt_index": 0,
+        "excerpt": {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1733-0.wav",
+          "audio_sha256": "93fde7e6df513d3fd89c7f7b32ec9a9020c41a979ff893dc17450223ef7dbbc4"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-1733-1",
+        "publisher_id": "1733",
+        "work": [
+          "Schubert",
+          "D959",
+          "Piano Sonata in A major"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/1733.csv",
+        "labels_sha256": "95963e43e92482d6d75200662c8236c5b3529588430cde6f7e6b2539815e6db8",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 546.0114285714286
+        },
+        "excerpt_index": 1,
+        "excerpt": {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1733-1.wav",
+          "audio_sha256": "e2f5d426a7b5ff3f143dc2aec41b74629efe621499640b717d9ece64dd191755"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-1733-2",
+        "publisher_id": "1733",
+        "work": [
+          "Schubert",
+          "D959",
+          "Piano Sonata in A major"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/1733.csv",
+        "labels_sha256": "95963e43e92482d6d75200662c8236c5b3529588430cde6f7e6b2539815e6db8",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 546.0114285714286
+        },
+        "excerpt_index": 2,
+        "excerpt": {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1733-2.wav",
+          "audio_sha256": "4de48cf8eaa5802285cd6aee62b024a2eaefc20bbb2315f54741b432d3fde0a2"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-1763-0",
+        "publisher_id": "1763",
+        "work": [
+          "Schubert",
+          "OP142",
+          "4 Impromptus"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/1763.csv",
+        "labels_sha256": "d4982621cf536c9dda07863e7e9db5f3c6cb79e2db88f241f2d920433b7c242e",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 600.32
+        },
+        "excerpt_index": 0,
+        "excerpt": {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1763-0.wav",
+          "audio_sha256": "bdb48896432f95e3828e7cff588d26350014535e1dff0741e5a09e9e8b08fda5"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-1763-1",
+        "publisher_id": "1763",
+        "work": [
+          "Schubert",
+          "OP142",
+          "4 Impromptus"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/1763.csv",
+        "labels_sha256": "d4982621cf536c9dda07863e7e9db5f3c6cb79e2db88f241f2d920433b7c242e",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 600.32
+        },
+        "excerpt_index": 1,
+        "excerpt": {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1763-1.wav",
+          "audio_sha256": "076c3a2eef4b230760afc384c32a854b9428ee92ece3e3629b21aa3226a591fb"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-1763-2",
+        "publisher_id": "1763",
+        "work": [
+          "Schubert",
+          "OP142",
+          "4 Impromptus"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/1763.csv",
+        "labels_sha256": "d4982621cf536c9dda07863e7e9db5f3c6cb79e2db88f241f2d920433b7c242e",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 600.32
+        },
+        "excerpt_index": 2,
+        "excerpt": {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1763-2.wav",
+          "audio_sha256": "1e6f1adc6d372baa6777c2aa0d82a4c9ad94b60f5825cabe821a9c73abfddbc5"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-2231-0",
+        "publisher_id": "2231",
+        "work": [
+          "Bach",
+          "BWV866",
+          "WTK I, No. 21: Prelude and Fugue in B-flat major"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/2231.csv",
+        "labels_sha256": "90250a1a2844fd642875f6a10931266b0c2502fe2c6dcbc4cd1d469f41fec8d5",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 115.64408163265306
+        },
+        "excerpt_index": 0,
+        "excerpt": {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2231-0.wav",
+          "audio_sha256": "1166075ddc3a4b1d7a4514214934243ffe36145eeae4f18e54868967bf5540d4"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-2231-1",
+        "publisher_id": "2231",
+        "work": [
+          "Bach",
+          "BWV866",
+          "WTK I, No. 21: Prelude and Fugue in B-flat major"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/2231.csv",
+        "labels_sha256": "90250a1a2844fd642875f6a10931266b0c2502fe2c6dcbc4cd1d469f41fec8d5",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 115.64408163265306
+        },
+        "excerpt_index": 1,
+        "excerpt": {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2231-1.wav",
+          "audio_sha256": "8d108ba53d20e831431e3860b74a7701484517d533c242bda8071774e9c18934"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-2231-2",
+        "publisher_id": "2231",
+        "work": [
+          "Bach",
+          "BWV866",
+          "WTK I, No. 21: Prelude and Fugue in B-flat major"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/2231.csv",
+        "labels_sha256": "90250a1a2844fd642875f6a10931266b0c2502fe2c6dcbc4cd1d469f41fec8d5",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 115.64408163265306
+        },
+        "excerpt_index": 2,
+        "excerpt": {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2231-2.wav",
+          "audio_sha256": "e0974ee0102d29684ae81754d4047ad2b37231c17dd46b31f9ee634a77fd0445"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-2237-0",
+        "publisher_id": "2237",
+        "work": [
+          "Bach",
+          "BWV868",
+          "WTK I, No. 23: Prelude and Fugue in B major"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/2237.csv",
+        "labels_sha256": "ccc7689da32f04dbd6d6f9c82d6afb2abf92d5fa8f67f8a28e4759ce4658399c",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 109.19183673469388
+        },
+        "excerpt_index": 0,
+        "excerpt": {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2237-0.wav",
+          "audio_sha256": "bb8053f741fbc13948e65c7e9fc0d67318aa0cc06810e8988bee541e017db182"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-2237-1",
+        "publisher_id": "2237",
+        "work": [
+          "Bach",
+          "BWV868",
+          "WTK I, No. 23: Prelude and Fugue in B major"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/2237.csv",
+        "labels_sha256": "ccc7689da32f04dbd6d6f9c82d6afb2abf92d5fa8f67f8a28e4759ce4658399c",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 109.19183673469388
+        },
+        "excerpt_index": 1,
+        "excerpt": {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2237-1.wav",
+          "audio_sha256": "9125db836a080794b3f91c0d2fb9c22a36c8d9b0d6428a82d7205a6a1c486c76"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-2237-2",
+        "publisher_id": "2237",
+        "work": [
+          "Bach",
+          "BWV868",
+          "WTK I, No. 23: Prelude and Fugue in B major"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/2237.csv",
+        "labels_sha256": "ccc7689da32f04dbd6d6f9c82d6afb2abf92d5fa8f67f8a28e4759ce4658399c",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 109.19183673469388
+        },
+        "excerpt_index": 2,
+        "excerpt": {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2237-2.wav",
+          "audio_sha256": "b3c45623dcd4d051566963e3ae810fd67e64529fa91e7dd629d504dad4de7ffd"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-2486-0",
+        "publisher_id": "2486",
+        "work": [
+          "Beethoven",
+          "OP7",
+          "Piano Sonata No 4 in E-flat major"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/2486.csv",
+        "labels_sha256": "45240451ac01f55346abe9aae509a2f9e1839054e7b3d9ed7d82ac45e846a971",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 448.1567346938775
+        },
+        "excerpt_index": 0,
+        "excerpt": {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2486-0.wav",
+          "audio_sha256": "a0089f02075db058438bfa636cf1a0958bc9cf4e99e47e3593e6935ffd94ece0"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-2486-1",
+        "publisher_id": "2486",
+        "work": [
+          "Beethoven",
+          "OP7",
+          "Piano Sonata No 4 in E-flat major"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/2486.csv",
+        "labels_sha256": "45240451ac01f55346abe9aae509a2f9e1839054e7b3d9ed7d82ac45e846a971",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 448.1567346938775
+        },
+        "excerpt_index": 1,
+        "excerpt": {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2486-1.wav",
+          "audio_sha256": "37ea3dc880f07942f56b8049a3f477ba409dc0f286e3e79c3c9be8a0381e2f66"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-2486-2",
+        "publisher_id": "2486",
+        "work": [
+          "Beethoven",
+          "OP7",
+          "Piano Sonata No 4 in E-flat major"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/2486.csv",
+        "labels_sha256": "45240451ac01f55346abe9aae509a2f9e1839054e7b3d9ed7d82ac45e846a971",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 448.1567346938775
+        },
+        "excerpt_index": 2,
+        "excerpt": {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2486-2.wav",
+          "audio_sha256": "d08a3b28e2837eb793d2ee60753d03617bcfe8e667664fe80e635aeebdabd4a5"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-2567-0",
+        "publisher_id": "2567",
+        "work": [
+          "Beethoven",
+          "OP90",
+          "Piano Sonata No 27 in E minor"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/2567.csv",
+        "labels_sha256": "5c137666f05a492a757e8dadc1a66b8d138b7887dd6ade8f20f9a8c126830125",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 387.1608163265306
+        },
+        "excerpt_index": 0,
+        "excerpt": {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2567-0.wav",
+          "audio_sha256": "80d29cc5649e44f5e29ee0befb6cf4ae860c84efb83ddd0366c98d7d228d6315"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-2567-1",
+        "publisher_id": "2567",
+        "work": [
+          "Beethoven",
+          "OP90",
+          "Piano Sonata No 27 in E minor"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/2567.csv",
+        "labels_sha256": "5c137666f05a492a757e8dadc1a66b8d138b7887dd6ade8f20f9a8c126830125",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 387.1608163265306
+        },
+        "excerpt_index": 1,
+        "excerpt": {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2567-1.wav",
+          "audio_sha256": "de58a1a31def03741d014df030f252410179fd144b0281fc480f676a5e95749a"
+        }
+      },
+      {
+        "id": "musicnet-v34-reserved-2567-2",
+        "publisher_id": "2567",
+        "work": [
+          "Beethoven",
+          "OP90",
+          "Piano Sonata No 27 in E minor"
+        ],
+        "labels": "/training/musicnet-piano-subset-v1/labels/2567.csv",
+        "labels_sha256": "5c137666f05a492a757e8dadc1a66b8d138b7887dd6ade8f20f9a8c126830125",
+        "clock": {
+          "sample_rate": 44100,
+          "channels": 1,
+          "format_code": 3,
+          "bits": 32,
+          "original_duration": 387.1608163265306
+        },
+        "excerpt_index": 2,
+        "excerpt": {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2567-2.wav",
+          "audio_sha256": "20cac963133938e416cf03a2e6997793ad6d076d90ce37a3ad65f091e6cceb76"
+        }
+      }
+    ],
+    "procedural_seeds": [
+      279101,
+      279102,
+      279103,
+      279104,
+      279105,
+      279106,
+      279107,
+      279108,
+      279109,
+      279110,
+      279111,
+      279112,
+      279113,
+      279114,
+      279115,
+      279116,
+      279117,
+      279118,
+      279119,
+      279120,
+      279121,
+      279122,
+      279123,
+      279124,
+      279125,
+      279126,
+      279127,
+      279128,
+      279129,
+      279130,
+      279131,
+      279132
+    ],
+    "expected_recordings": 50,
+    "no_reserved_audio_or_labels_read": true
+  },
+  "procedural_seeds": [
+    279101,
+    279102,
+    279103,
+    279104,
+    279105,
+    279106,
+    279107,
+    279108,
+    279109,
+    279110,
+    279111,
+    279112,
+    279113,
+    279114,
+    279115,
+    279116,
+    279117,
+    279118,
+    279119,
+    279120,
+    279121,
+    279122,
+    279123,
+    279124,
+    279125,
+    279126,
+    279127,
+    279128,
+    279129,
+    279130,
+    279131,
+    279132
+  ],
+  "mp3_bitrates": [
+    48,
+    128,
+    192
+  ],
+  "code_sha256": {
+    "training/fresh_musicnet_full_v34.py": "b3834b843239cadeab94842ab588d0802c6bdea340ba359f110027d66dc14fe5",
+    "training/attack_local_features.py": "7c284d47d5eb55af2ff0811addd8eac1d13264f438c599360e9ef7505639b85f",
+    "training/release_local_features.py": "a42de471567b3d4b17e0a9a1f56737e5673931e53f9e68ecea335b63001c750b",
+    "training/prepare_musicnet_v32.py": "60b6dcd2df1bfda4298a9d38b442a9ab0d38c47bf61231237e5526d8506188e3",
+    "training/reserved_musicnet_v34.py": "33fb56e71a415138ef95f6e7f56fe7efe395d1fcc35383121e25b0627b80f2e1",
+    "training/periodicity_features.py": "817e51e8ecce71cbe2c0d342b4e994b3365b12939cd93ec6783a3c83fa8e33b4",
+    "training/musicnet_full_encoding_model.py": "6d1833e4653229fdbef5047e43dae8cecd4c0419858efef7519e9daa690ebbed",
+    "training/acquire_musicnet_subset.py": "2f7cbeca28b73e4be8c4e19528f4841e569e87f696483ec49d9c0b0ad6c7d0a9",
+    "training/release_neighbor_features.py": "c6ff1cb217401a66affe385cde46cc182aaf869dc492a7845a92bc425e98ab71",
+    "training/prepare_bass_positive_data.py": "929b1cded6f0dcf071dfdc3f8e0ea09c00d5401f05aa9325773d325acc188d65",
+    "training/prepare_bass_texture_v12.py": "628c26e278e329646dd806bf920d21409c5a91a5e3938c6074be547afde36d7e",
+    "training/prepare_slakh_bass.py": "7f2f8be64fce97e9ade2348c2a7eb39ac9966191753da8ebe7810d2f24dcc0be",
+    "backend/app/services/piano_transcription.py": "ab8f97bb09c3687e59a21974d97878690cd5e28c625ee6db34fef4caffd429e7"
+  },
+  "expected_recordings": 50,
+  "no_fitting_selection_user_audio_or_scores": true
+}
