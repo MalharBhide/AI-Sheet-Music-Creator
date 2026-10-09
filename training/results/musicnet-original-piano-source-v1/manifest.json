@@ -1,0 +1,1546 @@
+{
+  "plan_sha256": "27a5425741eee3c9e280761fe33f3257d7c8ee44f5b27310809e252f154d137d",
+  "source_sha256": "0396afc04ddb80704d4d97981f6e4b7cba049163321df2eaa33a796876869bb2",
+  "items": [
+    {
+      "id": "1733",
+      "composer": "Schubert",
+      "composition": "Piano Sonata in A major",
+      "movement": "2. Andantino",
+      "ensemble": "Solo Piano",
+      "source": "Museopen",
+      "transcriber": "Segundo G. Yogore",
+      "catalog_name": "D959",
+      "seconds": "546",
+      "group": "reserved",
+      "work": [
+        "Schubert",
+        "D959",
+        "Piano Sonata in A major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 546.0114285714286
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1733-0.wav",
+          "audio_sha256": "93fde7e6df513d3fd89c7f7b32ec9a9020c41a979ff893dc17450223ef7dbbc4"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1733-1.wav",
+          "audio_sha256": "e2f5d426a7b5ff3f143dc2aec41b74629efe621499640b717d9ece64dd191755"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1733-2.wav",
+          "audio_sha256": "4de48cf8eaa5802285cd6aee62b024a2eaefc20bbb2315f54741b432d3fde0a2"
+        }
+      ],
+      "original_member": "musicnet/train_data/1733.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/1733.csv",
+      "labels_sha256": "95963e43e92482d6d75200662c8236c5b3529588430cde6f7e6b2539815e6db8",
+      "original_label_member": "musicnet/train_labels/1733.csv"
+    },
+    {
+      "id": "1749",
+      "composer": "Schubert",
+      "composition": "Piano Sonata in A minor",
+      "movement": "1. Moderato",
+      "ensemble": "Solo Piano",
+      "source": "Museopen",
+      "transcriber": "Segundo G. Yogore",
+      "catalog_name": "D845",
+      "seconds": "696",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D845",
+        "Piano Sonata in A minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 696.3722448979591
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1749-0.wav",
+          "audio_sha256": "4873925e4cb71ddb46909972f9a3b041cb0286589a86caf71fab1c1866d40a0a"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1749-1.wav",
+          "audio_sha256": "1a7c948f6c86acd7a864ef203a712eaa60367845ba36eb67adbd83ea53264dfa"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1749-2.wav",
+          "audio_sha256": "e6c8e89a8a1a6f6a7d6b5b45839380b391c550fa758ea0e73ef65c9fdb890bfa"
+        }
+      ],
+      "original_member": "musicnet/train_data/1749.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/1749.csv",
+      "labels_sha256": "e5a8d00814d72af034a57f1fcfda84086b478c08945b4b4d081adfd56b2560c1",
+      "original_label_member": "musicnet/train_labels/1749.csv"
+    },
+    {
+      "id": "1755",
+      "composer": "Schubert",
+      "composition": "Piano Sonata in A minor",
+      "movement": "2. Andante",
+      "ensemble": "Solo Piano",
+      "source": "Museopen",
+      "transcriber": "Segundo G. Yogore",
+      "catalog_name": "D784",
+      "seconds": "229",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D784",
+        "Piano Sonata in A minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 229.7991836734694
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1755-0.wav",
+          "audio_sha256": "7935edc63402246d387cbfa3bafa101233b97a8d89ec5d6582fe78a167e2d3d5"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1755-1.wav",
+          "audio_sha256": "e1baa7afba2f9a1ba8bb0291ab2230e4e0a0e36825de0a4d1a9362eeef652bc1"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1755-2.wav",
+          "audio_sha256": "7cfa8a7ad1c2184235e9bf7fc3c62eca196501e47ae780283ff7a50447f5cb5a"
+        }
+      ],
+      "original_member": "musicnet/train_data/1755.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/1755.csv",
+      "labels_sha256": "049c8f176c37c21486b2dd931fd19a1f81e5cac6b567bc25d1e16f436a6b7d7a",
+      "original_label_member": "musicnet/train_labels/1755.csv"
+    },
+    {
+      "id": "1757",
+      "composer": "Schubert",
+      "composition": "Piano Sonata in C minor",
+      "movement": "1. Allegro",
+      "ensemble": "Solo Piano",
+      "source": "Museopen",
+      "transcriber": "Martin Charles Bucknall",
+      "catalog_name": "D958",
+      "seconds": "710",
+      "group": "validation",
+      "work": [
+        "Schubert",
+        "D958",
+        "Piano Sonata in C minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 710.6089795918367
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1757-0.wav",
+          "audio_sha256": "c292fc6656a86a67572cb12ae9719c5f8052a6bde5cba19fa87e2c3256b4af8d"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1757-1.wav",
+          "audio_sha256": "6a8ecee758613edb1c743c33e425bb5d0144e64ce9524f21949d0bbb9757a0dd"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1757-2.wav",
+          "audio_sha256": "fa4bd10345fada6887fba1316ab43cbeddb23d96c546a26652c09f2f0e85b7a8"
+        }
+      ],
+      "original_member": "musicnet/train_data/1757.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/1757.csv",
+      "labels_sha256": "c9f965830883b07c3d0cf846d9134ad420a42494a238335bb3f59921f6107913",
+      "original_label_member": "musicnet/train_labels/1757.csv"
+    },
+    {
+      "id": "1763",
+      "composer": "Schubert",
+      "composition": "4 Impromptus",
+      "movement": "1. Impromptu in F minor",
+      "ensemble": "Solo Piano",
+      "source": "Charlie Albright",
+      "transcriber": "Jeruen Espino Dery",
+      "catalog_name": "OP142",
+      "seconds": "600",
+      "group": "reserved",
+      "work": [
+        "Schubert",
+        "OP142",
+        "4 Impromptus"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 600.32
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1763-0.wav",
+          "audio_sha256": "bdb48896432f95e3828e7cff588d26350014535e1dff0741e5a09e9e8b08fda5"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1763-1.wav",
+          "audio_sha256": "076c3a2eef4b230760afc384c32a854b9428ee92ece3e3629b21aa3226a591fb"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1763-2.wav",
+          "audio_sha256": "1e6f1adc6d372baa6777c2aa0d82a4c9ad94b60f5825cabe821a9c73abfddbc5"
+        }
+      ],
+      "original_member": "musicnet/train_data/1763.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/1763.csv",
+      "labels_sha256": "d4982621cf536c9dda07863e7e9db5f3c6cb79e2db88f241f2d920433b7c242e",
+      "original_label_member": "musicnet/train_labels/1763.csv"
+    },
+    {
+      "id": "1768",
+      "composer": "Schubert",
+      "composition": "Piano Sonata in A major",
+      "movement": "2. Andante",
+      "ensemble": "Solo Piano",
+      "source": "Museopen",
+      "transcriber": "Segundo G. Yogore",
+      "catalog_name": "D664",
+      "seconds": "290",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D664",
+        "Piano Sonata in A major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 290.8734693877551
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1768-0.wav",
+          "audio_sha256": "6a849bf8c48c5985409fba4ba8ef0343b2857576643867bd04f443a3b488e20c"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1768-1.wav",
+          "audio_sha256": "81bf5e440b34b7f95dc8d0a5e0bfffaf5e2d3a40a4b5f9fead44d25520a9989c"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1768-2.wav",
+          "audio_sha256": "dbbc662cb2da936617fa34fcf72ba6278ca7772a6e0252f8dc1b9762453130ce"
+        }
+      ],
+      "original_member": "musicnet/train_data/1768.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/1768.csv",
+      "labels_sha256": "37a48deab264355a30d172679fa4097d4e47cc050c54567a621f55a1e24b3022",
+      "original_label_member": "musicnet/train_labels/1768.csv"
+    },
+    {
+      "id": "1771",
+      "composer": "Schubert",
+      "composition": "Piano Sonata in D-flat major",
+      "movement": "1. Allegro moderato",
+      "ensemble": "Solo Piano",
+      "source": "Museopen",
+      "transcriber": "Segundo G. Yogore",
+      "catalog_name": "D568",
+      "seconds": "647",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D568",
+        "Piano Sonata in D-flat major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 647.3665306122449
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1771-0.wav",
+          "audio_sha256": "5bd66b97b81f5ced1f1e8028e0cd444476d97879918f4b339be21c1ebbf2ec0c"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1771-1.wav",
+          "audio_sha256": "95b8e4436d816bdea5053ab3ecd2724df43aa11b74f4cdfcab7e5622415731c3"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1771-2.wav",
+          "audio_sha256": "fa369b1ca76e84243b3602e4e55669bebb499b67890a70f805a3cdcef3e0a236"
+        }
+      ],
+      "original_member": "musicnet/train_data/1771.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/1771.csv",
+      "labels_sha256": "be87dcde4a58cc19f1c1d74db2a9652a1b632918b614eb3eac4ba245b9e9ebc5",
+      "original_label_member": "musicnet/train_labels/1771.csv"
+    },
+    {
+      "id": "1775",
+      "composer": "Schubert",
+      "composition": "Piano Sonata in D major",
+      "movement": "1. Allegro vivace",
+      "ensemble": "Solo Piano",
+      "source": "Museopen",
+      "transcriber": "Segundo G. Yogore",
+      "catalog_name": "D850",
+      "seconds": "578",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D850",
+        "Piano Sonata in D major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 578.2204081632653
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1775-0.wav",
+          "audio_sha256": "e94041c78d10b2c35cd5420bc10788efbdab3928f62114048449cb61027b7e2b"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1775-1.wav",
+          "audio_sha256": "75f81b8060bc5aca96460bb7f7d9802c46acf425389c92aba8f6db63c7f2d39c"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/1775-2.wav",
+          "audio_sha256": "51b83c4b655a06d178d458bcf2ca5ce27a40ac00ade184ef4a058930bfbd848b"
+        }
+      ],
+      "original_member": "musicnet/train_data/1775.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/1775.csv",
+      "labels_sha256": "3ddab4850c93f8de59d93aaee1b5bd85a472ba7288b37ffb72882fed519ec065",
+      "original_label_member": "musicnet/train_labels/1775.csv"
+    },
+    {
+      "id": "2207",
+      "composer": "Bach",
+      "composition": "WTK I, No. 10: Prelude and Fugue in E minor",
+      "movement": "2. Fugue",
+      "ensemble": "Solo Piano",
+      "source": "Kimiko Ishizaka",
+      "transcriber": "www.bachcentral.com",
+      "catalog_name": "BWV855",
+      "seconds": "89",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV855",
+        "WTK I, No. 10: Prelude and Fugue in E minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 89.62612244897959
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2207-0.wav",
+          "audio_sha256": "87977d6bc8c4e182a4089f3c06ae52df8d0daf8df5370a987d9e63c1cffba741"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2207-1.wav",
+          "audio_sha256": "60dcc288f3977ab65fda305f28219c77cdb4e8cc159e248ba53ea0ce6b538ea8"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2207-2.wav",
+          "audio_sha256": "578b8fc9c940caa595cfab76047f4a5e81d6405788cb604ece7794a12619741b"
+        }
+      ],
+      "original_member": "musicnet/train_data/2207.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2207.csv",
+      "labels_sha256": "ad94ab5da8020a555aea5fc430bf40f638a8ccce0ef900fafcc2ab98a5e04470",
+      "original_label_member": "musicnet/train_labels/2207.csv"
+    },
+    {
+      "id": "2209",
+      "composer": "Bach",
+      "composition": "WTK I, No. 4: Prelude and Fugue in C-sharp minor",
+      "movement": "2. Fugue",
+      "ensemble": "Solo Piano",
+      "source": "Kimiko Ishizaka",
+      "transcriber": "www.bachcentral.com",
+      "catalog_name": "BWV849",
+      "seconds": "160",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV849",
+        "WTK I, No. 4: Prelude and Fugue in C-sharp minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 160.78367346938776
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2209-0.wav",
+          "audio_sha256": "a022b00b7764d2a3d41e693cf24314ec7d8217034cee0f931c2568f08b432228"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2209-1.wav",
+          "audio_sha256": "cb57b3c99e9f4f9c8e71121de177a83c036382bbdcf3ea572e5dbe54fe7928eb"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2209-2.wav",
+          "audio_sha256": "77618512678f5ac10989b4267e7d8e2291aa348f7b58c4ad1f6e63d8402dbef1"
+        }
+      ],
+      "original_member": "musicnet/train_data/2209.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2209.csv",
+      "labels_sha256": "aa4b13d846ed42c7ac3317b19a248da7fd66d5f30a8a867b3a1d837bac0f57d2",
+      "original_label_member": "musicnet/train_labels/2209.csv"
+    },
+    {
+      "id": "2211",
+      "composer": "Bach",
+      "composition": "WTK I, No. 12: Prelude and Fugue in F minor",
+      "movement": "2. Fugue",
+      "ensemble": "Solo Piano",
+      "source": "Kimiko Ishizaka",
+      "transcriber": "www.bachcentral.com",
+      "catalog_name": "BWV857",
+      "seconds": "237",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV857",
+        "WTK I, No. 12: Prelude and Fugue in F minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 237.21795918367346
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2211-0.wav",
+          "audio_sha256": "ba05d9bc4d9de5cae8d8bb2c64620644d7483ee6f4e1e443d36d6735d64c929b"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2211-1.wav",
+          "audio_sha256": "7b2e60440d2fbc5be0ea803809faea5050ec239bcd1076a56855cb26a6856eb2"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2211-2.wav",
+          "audio_sha256": "3d1b71a4e49fd4c5f963f970fcd910734d7d9f2acdee4d9b0f5670865bf5442f"
+        }
+      ],
+      "original_member": "musicnet/train_data/2211.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2211.csv",
+      "labels_sha256": "e23228d78952ec6c02ef6df8bcddc7654e712ec354d857e33f0835acfbae6eae",
+      "original_label_member": "musicnet/train_labels/2211.csv"
+    },
+    {
+      "id": "2213",
+      "composer": "Bach",
+      "composition": "WTK I, No. 2: Prelude and Fugue in C minor",
+      "movement": "2. Fugue",
+      "ensemble": "Solo Piano",
+      "source": "Kimiko Ishizaka",
+      "transcriber": "www.bachcentral.com",
+      "catalog_name": "BWV847",
+      "seconds": "115",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV847",
+        "WTK I, No. 2: Prelude and Fugue in C minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 115.98367346938775
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2213-0.wav",
+          "audio_sha256": "ed05f2e7f0f8d7c5d3c53bd6d4b5bba527a6bb9e37f285c1f0c61274730a4507"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2213-1.wav",
+          "audio_sha256": "a2e2941f6ad4b20cab8f6b4d5b403f3361a41cb7c439e137978216cef7faea29"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2213-2.wav",
+          "audio_sha256": "f647cfc8c3e4804651c11b5281f139e6cf37ddee2f125d5d8157e0bfdd03bd19"
+        }
+      ],
+      "original_member": "musicnet/train_data/2213.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2213.csv",
+      "labels_sha256": "51c16ce3a4cef90a1aa9622181a5bfe9e65116700ec75d8a106dee4dcd721f71",
+      "original_label_member": "musicnet/train_labels/2213.csv"
+    },
+    {
+      "id": "2215",
+      "composer": "Bach",
+      "composition": "WTK I, No. 1: Prelude and Fugue in C major",
+      "movement": "2. Fugue",
+      "ensemble": "Solo Piano",
+      "source": "Kimiko Ishizaka",
+      "transcriber": "www.bachcentral.com",
+      "catalog_name": "BWV846",
+      "seconds": "116",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV846",
+        "WTK I, No. 1: Prelude and Fugue in C major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 116.42775510204082
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2215-0.wav",
+          "audio_sha256": "d87c170cd816342efd54bb7a0bc53a984f09f4fa55d732757153cc485c561f9d"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2215-1.wav",
+          "audio_sha256": "479746a9b11e6ab069c1f1aeea9a4af3d280a09e1d5aec443eb7f76513c7d82e"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2215-2.wav",
+          "audio_sha256": "70162853807e7d04f8d705028c84738e0cb0c9479cddbe485a30fa473b22fd0e"
+        }
+      ],
+      "original_member": "musicnet/train_data/2215.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2215.csv",
+      "labels_sha256": "f90038ba86740f9a18e7929c76ce96ad0300c8ed34f446ac77e95f7f0c0541ad",
+      "original_label_member": "musicnet/train_labels/2215.csv"
+    },
+    {
+      "id": "2227",
+      "composer": "Bach",
+      "composition": "WTK I, No. 6: Prelude and Fugue in D minor",
+      "movement": "2. Fugue",
+      "ensemble": "Solo Piano",
+      "source": "Kimiko Ishizaka",
+      "transcriber": "www.bachcentral.com",
+      "catalog_name": "BWV851",
+      "seconds": "129",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV851",
+        "WTK I, No. 6: Prelude and Fugue in D minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 129.43673469387755
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2227-0.wav",
+          "audio_sha256": "ce4202de8397bc4212c245b17fb0f14f2c4e508617e34b7dc9aa67650a956495"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2227-1.wav",
+          "audio_sha256": "9494ee3eede1c491e10b694d23bd56d0a72bb83f606ac5fa65f10feb2f7c7a91"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2227-2.wav",
+          "audio_sha256": "709e4e7b6fb464f9eabd876cc8230be5b4cc4920cac53b797b022a70330e5a6c"
+        }
+      ],
+      "original_member": "musicnet/train_data/2227.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2227.csv",
+      "labels_sha256": "3597a054dc12df452f9ca11466e343da030685316c06b3136913db9d9ae3ff26",
+      "original_label_member": "musicnet/train_labels/2227.csv"
+    },
+    {
+      "id": "2231",
+      "composer": "Bach",
+      "composition": "WTK I, No. 21: Prelude and Fugue in B-flat major",
+      "movement": "2. Fugue",
+      "ensemble": "Solo Piano",
+      "source": "Kimiko Ishizaka",
+      "transcriber": "www.bachcentral.com",
+      "catalog_name": "BWV866",
+      "seconds": "115",
+      "group": "reserved",
+      "work": [
+        "Bach",
+        "BWV866",
+        "WTK I, No. 21: Prelude and Fugue in B-flat major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 115.64408163265306
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2231-0.wav",
+          "audio_sha256": "1166075ddc3a4b1d7a4514214934243ffe36145eeae4f18e54868967bf5540d4"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2231-1.wav",
+          "audio_sha256": "8d108ba53d20e831431e3860b74a7701484517d533c242bda8071774e9c18934"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2231-2.wav",
+          "audio_sha256": "e0974ee0102d29684ae81754d4047ad2b37231c17dd46b31f9ee634a77fd0445"
+        }
+      ],
+      "original_member": "musicnet/train_data/2231.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2231.csv",
+      "labels_sha256": "90250a1a2844fd642875f6a10931266b0c2502fe2c6dcbc4cd1d469f41fec8d5",
+      "original_label_member": "musicnet/train_labels/2231.csv"
+    },
+    {
+      "id": "2237",
+      "composer": "Bach",
+      "composition": "WTK I, No. 23: Prelude and Fugue in B major",
+      "movement": "2. Fugue",
+      "ensemble": "Solo Piano",
+      "source": "Kimiko Ishizaka",
+      "transcriber": "www.bachcentral.com",
+      "catalog_name": "BWV868",
+      "seconds": "109",
+      "group": "reserved",
+      "work": [
+        "Bach",
+        "BWV868",
+        "WTK I, No. 23: Prelude and Fugue in B major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 109.19183673469388
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2237-0.wav",
+          "audio_sha256": "bb8053f741fbc13948e65c7e9fc0d67318aa0cc06810e8988bee541e017db182"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2237-1.wav",
+          "audio_sha256": "9125db836a080794b3f91c0d2fb9c22a36c8d9b0d6428a82d7205a6a1c486c76"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2237-2.wav",
+          "audio_sha256": "b3c45623dcd4d051566963e3ae810fd67e64529fa91e7dd629d504dad4de7ffd"
+        }
+      ],
+      "original_member": "musicnet/train_data/2237.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2237.csv",
+      "labels_sha256": "ccc7689da32f04dbd6d6f9c82d6afb2abf92d5fa8f67f8a28e4759ce4658399c",
+      "original_label_member": "musicnet/train_labels/2237.csv"
+    },
+    {
+      "id": "2239",
+      "composer": "Bach",
+      "composition": "WTK I, No. 17: Prelude and Fugue in A-flat major",
+      "movement": "2. Fugue",
+      "ensemble": "Solo Piano",
+      "source": "Kimiko Ishizaka",
+      "transcriber": "www.bachcentral.com",
+      "catalog_name": "BWV862",
+      "seconds": "120",
+      "group": "validation",
+      "work": [
+        "Bach",
+        "BWV862",
+        "WTK I, No. 17: Prelude and Fugue in A-flat major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 120.0326530612245
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2239-0.wav",
+          "audio_sha256": "f291dea12aaecf8284b617a1477ce5ef20fce0f46a14cd3c2918cdffd286c4b8"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2239-1.wav",
+          "audio_sha256": "408cdebedee994f471d70a8d1bde22bf25317bfbfc7181eb11d9bef992475efd"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2239-2.wav",
+          "audio_sha256": "2c610d12f34950beee046aeb481617ea0b771e718f871e8fd3d1eb4c8cfa132e"
+        }
+      ],
+      "original_member": "musicnet/train_data/2239.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2239.csv",
+      "labels_sha256": "c35df6e2e0d0538e51c90177eff5d33784df20a50f05b5bd52b8e01fd10cbd8d",
+      "original_label_member": "musicnet/train_labels/2239.csv"
+    },
+    {
+      "id": "2292",
+      "composer": "Bach",
+      "composition": "WTK I, No. 19: Prelude and Fugue in A major",
+      "movement": "1. Prelude",
+      "ensemble": "Solo Piano",
+      "source": "Kimiko Ishizaka",
+      "transcriber": "www.bachcentral.com",
+      "catalog_name": "BWV864",
+      "seconds": "91",
+      "group": "validation",
+      "work": [
+        "Bach",
+        "BWV864",
+        "WTK I, No. 19: Prelude and Fugue in A major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 91.32408163265306
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2292-0.wav",
+          "audio_sha256": "d57b599977cc4c3590cb2e9b42758cb607cbaa0ab8bde43c4a5dca39f313aeb2"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2292-1.wav",
+          "audio_sha256": "5ec398e1c6c7a8f7e12c6e4b6db28f0cc7f1d9a35271bbe1da4fb92577791965"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2292-2.wav",
+          "audio_sha256": "7b91ba585e783525c38abfa48211bfe332ba59be9b059ead089d608ceb3472c7"
+        }
+      ],
+      "original_member": "musicnet/train_data/2292.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2292.csv",
+      "labels_sha256": "f4d42b17a18f7a543c5bc6a2db00920de3f93a07ebbea04af145a8772ab77213",
+      "original_label_member": "musicnet/train_labels/2292.csv"
+    },
+    {
+      "id": "2300",
+      "composer": "Bach",
+      "composition": "WTK I, No. 8: Prelude and Fugue in E-flat minor",
+      "movement": "1. Prelude",
+      "ensemble": "Solo Piano",
+      "source": "Kimiko Ishizaka",
+      "transcriber": "www.bachcentral.com",
+      "catalog_name": "BWV853",
+      "seconds": "238",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV853",
+        "WTK I, No. 8: Prelude and Fugue in E-flat minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 238.18448979591838
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2300-0.wav",
+          "audio_sha256": "e46dd5f52b24b5473b83d74a272d7ac911bfae563e87c68b7724ea3a47a3624a"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2300-1.wav",
+          "audio_sha256": "a59ca7a41495d25928b1dfc45e5aace4ca0ccaa4d9f7c0a8e28afc955ae4f062"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2300-2.wav",
+          "audio_sha256": "30412a25fc99ea7233d489a143eed171e2be2284bc2397865369780d5d22d56a"
+        }
+      ],
+      "original_member": "musicnet/train_data/2300.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2300.csv",
+      "labels_sha256": "0935eda2e97e3f3db583237400b3ef3f4445d226df0bd40b7ad1861326198704",
+      "original_label_member": "musicnet/train_labels/2300.csv"
+    },
+    {
+      "id": "2304",
+      "composer": "Bach",
+      "composition": "WTK I, No. 14: Prelude and Fugue in F-sharp minor",
+      "movement": "2. Fugue",
+      "ensemble": "Solo Piano",
+      "source": "Kimiko Ishizaka",
+      "transcriber": "www.bachcentral.com",
+      "catalog_name": "BWV859",
+      "seconds": "196",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV859",
+        "WTK I, No. 14: Prelude and Fugue in F-sharp minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 196.36244897959185
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2304-0.wav",
+          "audio_sha256": "4717052e487f6659b561bb24d7528e184d42984c33f1e41f279ed9fea1f41b42"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2304-1.wav",
+          "audio_sha256": "bee184acf6acd0969f2a1f44fa034fa6fb4dc670eff364fd7545902775f17516"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2304-2.wav",
+          "audio_sha256": "1fb6b9e9b72aabe34303948d5b8f7c7639954a4b50b61b948c51982a939f9959"
+        }
+      ],
+      "original_member": "musicnet/train_data/2304.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2304.csv",
+      "labels_sha256": "a561f05807418ffbcd2ac9e7e8e5c825c695c1eeee0aa12e158bc48f5827cf70",
+      "original_label_member": "musicnet/train_labels/2304.csv"
+    },
+    {
+      "id": "2410",
+      "composer": "Beethoven",
+      "composition": "Piano Sonata No 13 in E-flat major",
+      "movement": "1. Andante - Allegro - Andante",
+      "ensemble": "Solo Piano",
+      "source": "Paul Pitman",
+      "transcriber": "piano-midi.de",
+      "catalog_name": "OP27NO1",
+      "seconds": "313",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP27NO1",
+        "Piano Sonata No 13 in E-flat major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 313.46938775510205
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2410-0.wav",
+          "audio_sha256": "64d4a85dfb7ec4a7b002c3b38a6e9cc3e9ee2cff79811f324e4e64982262d874"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2410-1.wav",
+          "audio_sha256": "2a6576c9bb7c80286774d4c99f1a8d1416935c984b78fea1a51532e6219af1ad"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2410-2.wav",
+          "audio_sha256": "6077db694cd546dffd0481b0aa64e7ecfa564c8bfcf9efa3fc9f327ec26764bf"
+        }
+      ],
+      "original_member": "musicnet/train_data/2410.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2410.csv",
+      "labels_sha256": "5f991c37963129f3c402ac3c0510086caeeeaf3d7591ef48b1c093fd92e18bcf",
+      "original_label_member": "musicnet/train_labels/2410.csv"
+    },
+    {
+      "id": "2422",
+      "composer": "Beethoven",
+      "composition": "Piano Sonata No 1 in F minor",
+      "movement": "1. Allegro",
+      "ensemble": "Solo Piano",
+      "source": "Paul Pitman",
+      "transcriber": "suzumidi",
+      "catalog_name": "OP2NO1",
+      "seconds": "241",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP2NO1",
+        "Piano Sonata No 1 in F minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 241.55428571428573
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2422-0.wav",
+          "audio_sha256": "50a0265e1282d95510211465b61169276cb378b194d905849b11f5197113528c"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2422-1.wav",
+          "audio_sha256": "a131b1eecf3f1ff6441e857061793ab176adf5ce5c215b8773d4c42004e0dcf8"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2422-2.wav",
+          "audio_sha256": "921a314fb6b3b90b278dad24e99fa0482aee8e6e4fa9683efb8ee7e3b4641307"
+        }
+      ],
+      "original_member": "musicnet/train_data/2422.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2422.csv",
+      "labels_sha256": "4ec9d97f7f29379444ad50ff1025f61d09c62eb2ad115b12e9ad02b14aad6319",
+      "original_label_member": "musicnet/train_labels/2422.csv"
+    },
+    {
+      "id": "2436",
+      "composer": "Beethoven",
+      "composition": "Piano Sonata No 21 in C major",
+      "movement": "1. Allegro con brio",
+      "ensemble": "Solo Piano",
+      "source": "Paul Pitman",
+      "transcriber": "piano-midi.de",
+      "catalog_name": "OP53",
+      "seconds": "684",
+      "group": "validation",
+      "work": [
+        "Beethoven",
+        "OP53",
+        "Piano Sonata No 21 in C major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 684.3820408163265
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2436-0.wav",
+          "audio_sha256": "be7a2c48dacf21eb44b4c174dc1bece4ad89ab7e73152fa68258fa6cc9300427"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2436-1.wav",
+          "audio_sha256": "ce28c61a883af5285dc7bf633ae591d4ffdb16ef969caf30452461aeb6aeba84"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2436-2.wav",
+          "audio_sha256": "ca6c5c4aeddb1de2f7e6cc641de4a6490f57f3d0a5b6ddfee98b614c839ebda4"
+        }
+      ],
+      "original_member": "musicnet/train_data/2436.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2436.csv",
+      "labels_sha256": "fdd5368d22d366fece69c2e906077a16c3531a0b4edd273c6b0227b67ae73086",
+      "original_label_member": "musicnet/train_labels/2436.csv"
+    },
+    {
+      "id": "2486",
+      "composer": "Beethoven",
+      "composition": "Piano Sonata No 4 in E-flat major",
+      "movement": "2. Largo, con gran espressione",
+      "ensemble": "Solo Piano",
+      "source": "Paul Pitman",
+      "transcriber": "piano-midi.de",
+      "catalog_name": "OP7",
+      "seconds": "448",
+      "group": "reserved",
+      "work": [
+        "Beethoven",
+        "OP7",
+        "Piano Sonata No 4 in E-flat major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 448.1567346938775
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2486-0.wav",
+          "audio_sha256": "a0089f02075db058438bfa636cf1a0958bc9cf4e99e47e3593e6935ffd94ece0"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2486-1.wav",
+          "audio_sha256": "37ea3dc880f07942f56b8049a3f477ba409dc0f286e3e79c3c9be8a0381e2f66"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2486-2.wav",
+          "audio_sha256": "d08a3b28e2837eb793d2ee60753d03617bcfe8e667664fe80e635aeebdabd4a5"
+        }
+      ],
+      "original_member": "musicnet/train_data/2486.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2486.csv",
+      "labels_sha256": "45240451ac01f55346abe9aae509a2f9e1839054e7b3d9ed7d82ac45e846a971",
+      "original_label_member": "musicnet/train_labels/2486.csv"
+    },
+    {
+      "id": "2540",
+      "composer": "Beethoven",
+      "composition": "Piano Sonata No 28 in A major",
+      "movement": "1. Etwas lebhaft und mit der innigsten Empfindung",
+      "ensemble": "Solo Piano",
+      "source": "Paul Pitman",
+      "transcriber": "piano-midi.de",
+      "catalog_name": "OP101",
+      "seconds": "263",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP101",
+        "Piano Sonata No 28 in A major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 263.5232653061224
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2540-0.wav",
+          "audio_sha256": "2653d3107800c5ec7d6c22cb86a9b0a9ac1947a0cc393b96c56fab134b12a464"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2540-1.wav",
+          "audio_sha256": "8b2fb35c15fb8692f403943dc6d53dbd5dd5d9a2ed195d636cefe79693dca9c4"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2540-2.wav",
+          "audio_sha256": "1b8bc5ec1d8fe5407b60fa162644e00d556c0f900f4c36dc1b173292d4ac8345"
+        }
+      ],
+      "original_member": "musicnet/train_data/2540.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2540.csv",
+      "labels_sha256": "c1f25889987fcd258b69c13eed8408e7daa741ce0c058213cce489e961346a5e",
+      "original_label_member": "musicnet/train_labels/2540.csv"
+    },
+    {
+      "id": "2555",
+      "composer": "Beethoven",
+      "composition": "Piano Sonata No 30 in E major",
+      "movement": "1. Vivace ma non troppo / Adagio espresivo",
+      "ensemble": "Solo Piano",
+      "source": "Paul Pitman",
+      "transcriber": "piano-midi.de",
+      "catalog_name": "OP109",
+      "seconds": "223",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP109",
+        "Piano Sonata No 30 in E major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 223.7126530612245
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2555-0.wav",
+          "audio_sha256": "a58b911dcea2b345859454eb808f1b76c419f936fe7fe8806a2f5db9937ebe1d"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2555-1.wav",
+          "audio_sha256": "9486420b90fd8d029935857fdf4e1f4f18ed9c42aa04fbb2971c47f1c4038d97"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2555-2.wav",
+          "audio_sha256": "6e238fa72d5eac868b8f942d7b65b481b2afa99dd3fe346e6216c9bfdb232604"
+        }
+      ],
+      "original_member": "musicnet/train_data/2555.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2555.csv",
+      "labels_sha256": "e4cb9ed09ae5c14608623e18e5823d59589cff9d9b65a4acf2b6a38bfb8bce30",
+      "original_label_member": "musicnet/train_labels/2555.csv"
+    },
+    {
+      "id": "2567",
+      "composer": "Beethoven",
+      "composition": "Piano Sonata No 27 in E minor",
+      "movement": "1. Mit Lebhaftigkeit und durchaus mit Empfindung und Ausdruck",
+      "ensemble": "Solo Piano",
+      "source": "Paul Pitman",
+      "transcriber": "piano-midi.de",
+      "catalog_name": "OP90",
+      "seconds": "387",
+      "group": "reserved",
+      "work": [
+        "Beethoven",
+        "OP90",
+        "Piano Sonata No 27 in E minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 387.1608163265306
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2567-0.wav",
+          "audio_sha256": "80d29cc5649e44f5e29ee0befb6cf4ae860c84efb83ddd0366c98d7d228d6315"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2567-1.wav",
+          "audio_sha256": "de58a1a31def03741d014df030f252410179fd144b0281fc480f676a5e95749a"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2567-2.wav",
+          "audio_sha256": "20cac963133938e416cf03a2e6997793ad6d076d90ce37a3ad65f091e6cceb76"
+        }
+      ],
+      "original_member": "musicnet/train_data/2567.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2567.csv",
+      "labels_sha256": "5c137666f05a492a757e8dadc1a66b8d138b7887dd6ade8f20f9a8c126830125",
+      "original_label_member": "musicnet/train_labels/2567.csv"
+    },
+    {
+      "id": "2575",
+      "composer": "Beethoven",
+      "composition": "Piano Sonata No 8 in C minor",
+      "movement": "2. Adagio cantabile",
+      "ensemble": "Solo Piano",
+      "source": "Paul Pitman",
+      "transcriber": "piano-midi.de",
+      "catalog_name": "OP13",
+      "seconds": "303",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP13",
+        "Piano Sonata No 8 in C minor"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 303.88244897959186
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2575-0.wav",
+          "audio_sha256": "1892e7016694a4952d707b18ec73e5a433d1cacf51bca5c32c2a0caecd30aad8"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2575-1.wav",
+          "audio_sha256": "196163d63865911b6cbcf1e8ab671d4bc45f9dd5080f1a8e60b52367356ed246"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2575-2.wav",
+          "audio_sha256": "8fa5de0352a1e3d79262725047f80039ff8043d95f70aea54ef974549d667ad9"
+        }
+      ],
+      "original_member": "musicnet/train_data/2575.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2575.csv",
+      "labels_sha256": "9b09de301307d2555f15c892b838ef44e71e81c01c9e1e302a648a53d175754e",
+      "original_label_member": "musicnet/train_labels/2575.csv"
+    },
+    {
+      "id": "2593",
+      "composer": "Beethoven",
+      "composition": "Piano Sonata No 18 in E-flat major",
+      "movement": "1. Allegro",
+      "ensemble": "Solo Piano",
+      "source": "Paul Pitman",
+      "transcriber": "piano-midi.de",
+      "catalog_name": "OP31NO3",
+      "seconds": "512",
+      "group": "validation",
+      "work": [
+        "Beethoven",
+        "OP31NO3",
+        "Piano Sonata No 18 in E-flat major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 512.8881632653062
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2593-0.wav",
+          "audio_sha256": "a99d25a9473671b69349fb24f3a416fb3dfe005f5323495392b452a331493996"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2593-1.wav",
+          "audio_sha256": "5036e3e02ddb82d41af07c3dc6dff235014b26659b7b3b4c17549c18d2e1ab3a"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2593-2.wav",
+          "audio_sha256": "37bbb738d6dd4821a1e22aa8f3eb74c6d95f89f67e9b7bb3d6d2546a55044c4c"
+        }
+      ],
+      "original_member": "musicnet/train_data/2593.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2593.csv",
+      "labels_sha256": "9cca972e751b6fb7dab2f889b103ddd5752fa6c94a2ad2f29bdb309f19db9a49",
+      "original_label_member": "musicnet/train_labels/2593.csv"
+    },
+    {
+      "id": "2607",
+      "composer": "Beethoven",
+      "composition": "Piano Sonata No 16 in G major",
+      "movement": "2. Adagio grazioso",
+      "ensemble": "Solo Piano",
+      "source": "Paul Pitman",
+      "transcriber": "piano-midi.de",
+      "catalog_name": "OP31NO1",
+      "seconds": "673",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP31NO1",
+        "Piano Sonata No 16 in G major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 673.985306122449
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2607-0.wav",
+          "audio_sha256": "84c2e99522dcccaf114f97170d00d5abf2ca22226c970b54249a791bb37c2d8c"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2607-1.wav",
+          "audio_sha256": "59c7ce03add415e36627a4d062a598f7d08073b9796671fddd3599fd74940999"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2607-2.wav",
+          "audio_sha256": "60a388b30819864686eecb062ffcbb8807c1689262836b4ae4a014a9daea6488"
+        }
+      ],
+      "original_member": "musicnet/train_data/2607.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2607.csv",
+      "labels_sha256": "bea468df5bce06b5ef2c498e21b2def088572c1f21c42edbd7273bf163847bc3",
+      "original_label_member": "musicnet/train_labels/2607.csv"
+    },
+    {
+      "id": "2611",
+      "composer": "Beethoven",
+      "composition": "Piano Sonata No 7 in D major",
+      "movement": "2. Largo e mesto",
+      "ensemble": "Solo Piano",
+      "source": "Paul Pitman",
+      "transcriber": "piano-midi.de",
+      "catalog_name": "OP10NO3",
+      "seconds": "563",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP10NO3",
+        "Piano Sonata No 7 in D major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 563.2522448979591
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2611-0.wav",
+          "audio_sha256": "3607f12ab120309a7c9a058e2a13f28c3c67544e27211ebcb4c63afc64ed9c45"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2611-1.wav",
+          "audio_sha256": "262cda3b5be89daeb343c9cdd57023a2e37bc0c9e6e322e287555c0f8c1436bf"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2611-2.wav",
+          "audio_sha256": "954c692aaf48d76bec668659c24d82a00a4bfd11c4ff7b2a41984a5d87bfe8a8"
+        }
+      ],
+      "original_member": "musicnet/train_data/2611.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2611.csv",
+      "labels_sha256": "cfa3443e529b9ec1e6ad457290a9a9e9202d27223cd93ef7ea898034cd37df98",
+      "original_label_member": "musicnet/train_labels/2611.csv"
+    },
+    {
+      "id": "2632",
+      "composer": "Beethoven",
+      "composition": "Piano Sonata No 10 in G major",
+      "movement": "2. Andante",
+      "ensemble": "Solo Piano",
+      "source": "Paul Pitman",
+      "transcriber": "piano-midi.de",
+      "catalog_name": "OP14NO2",
+      "seconds": "341",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP14NO2",
+        "Piano Sonata No 10 in G major"
+      ],
+      "clock": {
+        "sample_rate": 44100,
+        "channels": 1,
+        "format_code": 3,
+        "bits": 32,
+        "original_duration": 341.89061224489797
+      },
+      "excerpts": [
+        {
+          "start_sample": 661500,
+          "end_sample": 1543500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2632-0.wav",
+          "audio_sha256": "f37a1ef139545f983d31b7e59261f5c5ab2407d58ed52c6b4359b284be0e9600"
+        },
+        {
+          "start_sample": 1543500,
+          "end_sample": 2425500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2632-1.wav",
+          "audio_sha256": "4610d08088ea0c3f38b2b7a11fa9d9ea0e8b936d770d6dc2f28ff27b8c7bf9c5"
+        },
+        {
+          "start_sample": 2425500,
+          "end_sample": 3307500,
+          "audio": "/training/musicnet-piano-subset-v1/audio/2632-2.wav",
+          "audio_sha256": "d865dcfb6f2b471d2327ef9fa91514012898ed00492075c676ec0705d787f395"
+        }
+      ],
+      "original_member": "musicnet/train_data/2632.wav",
+      "labels": "/training/musicnet-piano-subset-v1/labels/2632.csv",
+      "labels_sha256": "b00515949ba4232c3113b5b6ea9d79b9f12bf40c174aee7b7b4866daa5007bf7",
+      "original_label_member": "musicnet/train_labels/2632.csv"
+    }
+  ],
+  "excluded_selected_test_only_ids": [],
+  "work_disjoint": true,
+  "reserved_inference_not_performed": true,
+  "no_user_audio_or_scores": true
+}

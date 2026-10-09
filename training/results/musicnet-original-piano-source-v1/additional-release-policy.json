@@ -1,0 +1,7 @@
+{
+  "version": "musicnet-v33-real-piano-release-policy-v1",
+  "declared_before_fitting": true,
+  "source_manifest_sha256": "51fc54ee4e30f56840e461e48d57ab6a2f8b39db219863a98ac0ab57242f9aa3",
+  "required_additional_release_gate": "Both confidence settings must remove at least one labeled false note on reserved MusicNet real-piano excerpts, separately from authored fixtures. Every recording must retain existing preservation gates. No confidence retuning or runner-up selection after first pass.",
+  "website_model_unchanged_until_all_gates_pass": true
+}

@@ -1,0 +1,162 @@
+{
+  "created": "2021-07-21T18:48:23.482821+00:00",
+  "modified": "2021-07-22T13:48:21.787676+00:00",
+  "id": 5120004,
+  "conceptrecid": "5120003",
+  "doi": "10.5281/zenodo.5120004",
+  "conceptdoi": "10.5281/zenodo.5120003",
+  "doi_url": "https://doi.org/10.5281/zenodo.5120004",
+  "metadata": {
+    "title": "MusicNet",
+    "doi": "10.5281/zenodo.5120004",
+    "publication_date": "2016-11-30",
+    "description": "<p>MusicNet is a collection of 330 freely-licensed classical music recordings, together with over 1 million annotated labels indicating the precise time of each note in every recording, the instrument that plays each note, and the note&#39;s position in the metrical structure of the composition. The labels are acquired from musical scores aligned to recordings by dynamic time warping. The labels are verified by trained musicians; we estimate a labeling error rate of 4%. We offer the MusicNet labels to the machine learning and music communities as a resource for training models and a common benchmark for comparing results. This dataset was introduced in the paper &quot;Learning Features of Music from Scratch.&quot; [1]</p>\n\n<p>&nbsp;</p>\n\n<p>This repository consists of 3 top-level files:</p>\n\n<ul>\n\t<li><strong>musicnet.tar.gz</strong> - This file contains the MusicNet dataset itself, consisting of PCM-encoded audio wave files (.wav) and corresponding CSV-encoded&nbsp;note label files (.csv). The data is organized according to the train/test split described and used in &quot;Invariances and Data Augmentation for Supervised Music Transcription&quot;. [2]</li>\n\t<li><strong>musicnet_metadata.csv</strong> -&nbsp;This file contains track-level information about recordings contained in MusicNet.&nbsp;The data and label files are named with MusicNet ids, which you can use to cross-index the data and labels with this metadata file.</li>\n\t<li><strong>musicnet_midis.tar.gz</strong> - This file contains the reference MIDI files used to construct the MusicNet labels.&nbsp;</li>\n</ul>\n\n<p>&nbsp;</p>\n\n<p>A PyTorch interface for accessing the MusicNet dataset&nbsp;is available on <a href=\"https://github.com/jthickstun/pytorch_musicnet\">GitHub</a>. For an audio/visual introduction and summary&nbsp;of this dataset, see the <a href=\"https://musicnet-inspector.github.io/\">MusicNet inspector</a>, created by&nbsp;Jong Wook Kim.&nbsp;The audio recordings&nbsp;in MusicNet consist of Creative Commons licensed&nbsp;and Public Domain performances, sourced from the Isabella Stewart Gardner Museum, the European Archive Foundation, and Musopen. The provenance of specific recordings and midis&nbsp;are described in the metadata file.</p>\n\n<p>&nbsp;</p>\n\n<p>[1] Learning Features of Music from Scratch. John Thickstun, Zaid Harchaoui, and Sham M. Kakade. In International Conference on Learning Representations (ICLR), 2017.&nbsp;<a href=\"https://arxiv.org/abs/1611.09827\">ArXiv Report</a>.</p>\n\n<pre><code>@inproceedings{thickstun2017learning,\n    title={Learning Features of Music from Scratch},\n    author = {John Thickstun and Zaid Harchaoui and Sham M. Kakade},\n    year={2017},\n    booktitle = {International Conference on Learning Representations (ICLR)}\n}</code></pre>\n\n<p>[2] Invariances and Data Augmentation for Supervised Music Transcription. John Thickstun, Zaid Harchaoui, Dean P. Foster, and Sham M. Kakade. In International Conference on Acoustics, Speech, and Signal Processing (ICASSP), 2018.&nbsp;<a href=\"https://arxiv.org/abs/1711.04845\">ArXiv Report</a>.&nbsp;</p>\n\n<pre><code>@inproceedings{thickstun2018invariances,\ntitle={Invariances and Data Augmentation for Supervised Music Transcription},\nauthor = {John Thickstun and Zaid Harchaoui and Dean P. Foster and Sham M. Kakade},\nyear={2018},\nbooktitle = {International Conference on Acoustics, Speech, and Signal Processing (ICASSP)}\n}</code></pre>\n\n<p>&nbsp;</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "John Thickstun",
+        "affiliation": "University of Washington"
+      },
+      {
+        "name": "Zaid Harchaoui",
+        "affiliation": "University of Washington"
+      },
+      {
+        "name": "Sham M. Kakade",
+        "affiliation": "University of Washington"
+      }
+    ],
+    "keywords": [
+      "music",
+      "music transcription",
+      "music information retrieval",
+      "multi-label classification"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "arXiv:1611.09827",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-conferencepaper",
+        "scheme": "arxiv"
+      },
+      {
+        "identifier": "arXiv:1711.04845",
+        "relation": "isReferencedBy",
+        "resource_type": "publication-conferencepaper",
+        "scheme": "arxiv"
+      }
+    ],
+    "version": "1.0",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "communities": [
+      {
+        "id": "mir"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "5120003"
+          }
+        }
+      ]
+    },
+    "notes": "This work was supported by the Washington Research Foundation Fund for Innovation in Data-Intensive Discovery, and the CIFAR program \"Learning in Machines and Brains.\""
+  },
+  "title": "MusicNet",
+  "links": {
+    "self": "https://zenodo.org/api/records/5120004",
+    "self_html": "https://zenodo.org/records/5120004",
+    "preview_html": "https://zenodo.org/records/5120004?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.5120004",
+    "self_doi": "https://doi.org/10.5281/zenodo.5120004",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.5120004",
+    "reserve_doi": "https://zenodo.org/api/records/5120004/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/5120003",
+    "parent_html": "https://zenodo.org/records/5120003",
+    "parent_doi": "https://doi.org/10.5281/zenodo.5120003",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.5120003",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:5120004/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:5120004/sequence/default",
+    "files": "https://zenodo.org/api/records/5120004/files",
+    "media_files": "https://zenodo.org/api/records/5120004/media-files",
+    "archive": "https://zenodo.org/api/records/5120004/files-archive",
+    "archive_media": "https://zenodo.org/api/records/5120004/media-files-archive",
+    "latest": "https://zenodo.org/api/records/5120004/versions/latest",
+    "latest_html": "https://zenodo.org/records/5120004/latest",
+    "versions": "https://zenodo.org/api/records/5120004/versions",
+    "draft": "https://zenodo.org/api/records/5120004/draft",
+    "access_links": "https://zenodo.org/api/records/5120004/access/links",
+    "access_grants": "https://zenodo.org/api/records/5120004/access/grants",
+    "access_users": "https://zenodo.org/api/records/5120004/access/users",
+    "access_request": "https://zenodo.org/api/records/5120004/access/request",
+    "access": "https://zenodo.org/api/records/5120004/access",
+    "communities": "https://zenodo.org/api/records/5120004/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/5120004/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/5120004/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/5120004/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/5120004/quota-increase",
+    "requests": "https://zenodo.org/api/records/5120004/requests"
+  },
+  "updated": "2021-07-22T13:48:21.787676+00:00",
+  "recid": "5120004",
+  "revision": 5,
+  "files": [
+    {
+      "id": "b8efa10c-55df-4678-81fb-5001f0e9c8cf",
+      "key": "musicnet.tar.gz",
+      "size": 11097394998,
+      "checksum": "md5:844764911fa0d5b97c97da944a057590",
+      "links": {
+        "self": "https://zenodo.org/api/records/5120004/files/musicnet.tar.gz/content"
+      }
+    },
+    {
+      "id": "d5218942-1358-44ce-95a5-b4e7dad98248",
+      "key": "musicnet_metadata.csv",
+      "size": 43775,
+      "checksum": "md5:1caef62cee9c875235e62aac368b49d8",
+      "links": {
+        "self": "https://zenodo.org/api/records/5120004/files/musicnet_metadata.csv/content"
+      }
+    },
+    {
+      "id": "6afb0da1-af31-4203-bcb9-9a082ce1fc96",
+      "key": "musicnet_midis.tar.gz",
+      "size": 2601302,
+      "checksum": "md5:b5fa98a113bfc51c8a445def9f24dc7e",
+      "links": {
+        "self": "https://zenodo.org/api/records/5120004/files/musicnet_midis.tar.gz/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "237211"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 42356,
+    "unique_downloads": 23440,
+    "views": 27795,
+    "unique_views": 25238,
+    "version_downloads": 42182,
+    "version_unique_downloads": 23304,
+    "version_unique_views": 25102,
+    "version_views": 27641
+  },
+  "state": "done",
+  "submitted": true
+}

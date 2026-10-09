@@ -49,8 +49,11 @@ conservative supervision, not a claim of perfect ground truth. Eight label and
 reader tests verify these boundaries and reject invalid clock/instrument/pitch
 values and unverified transfers.
 
-Acquisition is currently in progress. No MusicNet recording has entered fitting
-or validation selection yet. V32 completed a spectral-feature fit on the already verified licensed corpus
+Acquisition is complete: all 32 selected works passed the full original archive
+checksum, with 21 train / 5 validation / 6 reserved works. The observer is preparing
+78 fitting/validation MP3 excerpts. The first V33 fit completed both predeclared
+80-epoch profiles on 765 train / 221 validation fixtures; neither passed both
+confidence checks with a positive noise-reduction gain. V33 remains withheld. V32 completed a spectral-feature fit on the already verified licensed corpus
 and passed all release gates while this transfer runs.
 Future MusicNet candidates require separately frozen training/validation plans,
 all consumed regressions, untouched first-pass source groups and runtime/native
@@ -99,3 +102,11 @@ Training-to-runtime parity tests remain under `training/`, so backend-only tests
 do not need to import training scripts. The local preparation suite passed 862
 tests (6 skipped); the backend-only scope passed 326 (6 skipped). This validates
 release preparation, not MusicNet accuracy or a new model release.
+
+The complete first real-piano study is archived in
+`training/results/musicnet-anchor-v33-v1`. It produced no validation winner,
+so consumed-regression and first-pass runs were correctly skipped. The 18
+reserved real-piano excerpts remain unused. An additional release policy,
+declared before fitting began, also requires a separate positive false-note
+reduction on reserved real-piano recordings at both confidence settings.
+Authored-only gains cannot qualify a future real-piano release.

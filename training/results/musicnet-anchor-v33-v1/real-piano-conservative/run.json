@@ -1,0 +1,105 @@
+{
+  "profile": {
+    "name": "real-piano-conservative",
+    "width": 64,
+    "cap": 2.0,
+    "positive_weight": 16.0,
+    "fragment_weight": 8.0,
+    "seed": 278001
+  },
+  "plan_sha256": "e60e3fdcf437f4c035772c2484e41dab7909af5575028812e447bd51c6412abe",
+  "training_counts": {
+    "groove-drums-only": {
+      "recordings": 6,
+      "class_counts": [
+        0,
+        13
+      ],
+      "boosted_partial_hold_events": 0
+    },
+    "groove-pitched-mixture": {
+      "recordings": 54,
+      "class_counts": [
+        616,
+        209
+      ],
+      "boosted_partial_hold_events": 0
+    },
+    "guitarset-bass-register": {
+      "recordings": 238,
+      "class_counts": [
+        15788,
+        2529
+      ],
+      "boosted_partial_hold_events": 308
+    },
+    "musicnet-real-piano": {
+      "recordings": 63,
+      "class_counts": [
+        2647,
+        201
+      ],
+      "boosted_partial_hold_events": 78
+    },
+    "nsynth-bass": {
+      "recordings": 36,
+      "class_counts": [
+        295,
+        129
+      ],
+      "boosted_partial_hold_events": 0
+    },
+    "nsynth-keyboard": {
+      "recordings": 30,
+      "class_counts": [
+        163,
+        58
+      ],
+      "boosted_partial_hold_events": 0
+    },
+    "original-bass-texture": {
+      "recordings": 72,
+      "class_counts": [
+        1505,
+        374
+      ],
+      "boosted_partial_hold_events": 27
+    },
+    "original-bass-timbres": {
+      "recordings": 128,
+      "class_counts": [
+        2778,
+        111
+      ],
+      "boosted_partial_hold_events": 32
+    },
+    "slakh-demucs-bass": {
+      "recordings": 46,
+      "class_counts": [
+        1167,
+        952
+      ],
+      "boosted_partial_hold_events": 25
+    },
+    "slakh-oracle-bass": {
+      "recordings": 44,
+      "class_counts": [
+        1098,
+        1004
+      ],
+      "boosted_partial_hold_events": 5
+    },
+    "vienna-piano-mp3-bass": {
+      "recordings": 42,
+      "class_counts": [
+        2489,
+        284
+      ],
+      "boosted_partial_hold_events": 253
+    }
+  },
+  "training_events": 34410,
+  "training_recordings": 765,
+  "validation_recordings": 221,
+  "test_used_for_selection": false
+}

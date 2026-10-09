@@ -1,0 +1,35 @@
+{
+  "actual_training_checkpoints": {
+    "real-piano-conservative/epoch-020.pt": "6eecf27deb28026f4e58c35e1fc48277ecbe12e431c416e92c639315b42725e3",
+    "real-piano-conservative/epoch-040.pt": "ef0d6965393c527a481c468cc33498aca035d803d74ac731d4bcd1844ff84b98",
+    "real-piano-conservative/epoch-060.pt": "5341fbe6bfeb72f57d8a7f254bf9a03c3174237e048662f78e1b4ae5b437a8fa",
+    "real-piano-conservative/epoch-080.pt": "f710bed1ed87e215ae4a5f30af99b2b688ef69813aeb90b0f99696b6f2a9fefd",
+    "real-piano-protected/epoch-020.pt": "1aa41272d76d9fa404c768d2392b164ed0c8a0d1e50d8562eec05a7beb074e16",
+    "real-piano-protected/epoch-040.pt": "f57c0c070eb22cc89824e11f9928175a03797b7c4db1f63e28122bc91f1bce6e",
+    "real-piano-protected/epoch-060.pt": "924a0062d94afe0b2abdc855477ed6d5b73d763d323078137309f8ccf4396ee3",
+    "real-piano-protected/epoch-080.pt": "c3a8445de2c4409ce164446aceb0dcd79eb8d51ca8a6153f21679b146db5c500"
+  },
+  "current_v32_model_retained": true,
+  "epochs_per_profile": 80,
+  "fitting_recordings": 765,
+  "new_real_piano_training_excerpts": 63,
+  "new_real_piano_validation_excerpts": 15,
+  "new_weights_deployed": false,
+  "no_consumed_regression_or_first_pass_run": true,
+  "no_user_audio_or_scores": true,
+  "observation_manifest_sha256": "423e548ef6c22d21c330b83c24e34d0c9f6a2d1204daf73600398780da20929d",
+  "reason": "No frozen checkpoint has positive validation false-note reduction at both normal and stricter confidence settings while preserving every recording.",
+  "reserved_real_piano_excerpts_untouched": 18,
+  "selected": false,
+  "study_plan_sha256": "e60e3fdcf437f4c035772c2484e41dab7909af5575028812e447bd51c6412abe",
+  "trained_profiles": 2,
+  "updates_per_epoch": 40,
+  "validation_recordings": 221,
+  "verification": {
+    "passed": 865,
+    "real_piano_gate_tests_passed": 3,
+    "skipped": 6,
+    "test_log_sha256": "de77f1fad55ed9d2e1123f7a5b2682f68350c465a73970e9b52350d7936548fa",
+    "website_health_ready": true
+  }
+}
