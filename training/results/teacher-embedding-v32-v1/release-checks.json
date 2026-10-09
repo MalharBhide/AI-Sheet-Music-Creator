@@ -1,0 +1,92 @@
+{
+  "deployment": {
+    "status": "verified",
+    "image": "sha256:ff121f6cf39ec47430ac149ecefa30d600c2f5a12ad39374960a799f089c917d",
+    "local_url": "http://localhost:5173/",
+    "backend_host_port": 18000,
+    "health": {
+      "status": "ok",
+      "ready": true,
+      "dependencies": {
+        "ffmpeg": true,
+        "basic_pitch": true,
+        "piano_transcription": true,
+        "piano_model": true,
+        "vocal_model": true,
+        "accompaniment_model": true,
+        "accompaniment_context_models": true,
+        "accompaniment_residual_model": true,
+        "accompaniment_left_hand_model": true,
+        "accompaniment_left_refinement_model": true,
+        "accompaniment_left_consensus_models": true,
+        "accompaniment_pitch_preserving_models": true,
+        "accompaniment_repeat_attack_models": true,
+        "bass_consensus_models": true,
+        "bass_articulation_models": true,
+        "bass_residual_models": true,
+        "bass_texture_models": true,
+        "bass_harmonic_models": true,
+        "bass_temporal_model": true,
+        "bass_refinement_model": true,
+        "bass_attack_release_model": true,
+        "bass_spectral_recurrence_model": true,
+        "source_separation": true,
+        "music21": true,
+        "musescore": true
+      },
+      "limits": {
+        "max_upload_mb": 0,
+        "max_audio_seconds": 0,
+        "retention_hours": 24
+      }
+    },
+    "homepage_status": 200,
+    "running_model_check": {
+      "model": "Bass spectral/recurrence verifier v1",
+      "asset_sha256": "edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955",
+      "remove_threshold": 0.8,
+      "guardian_threshold": 0.5,
+      "source_sha256": {
+        "app/services/piano_transcription.py": "ab8f97bb09c3687e59a21974d97878690cd5e28c625ee6db34fef4caffd429e7",
+        "app/routes/dependencies.py": "95835aa2b041290785120d9b2e143aeeacf398226fce5c51f8b72048473c07af",
+        "app/services/bass_embedding_declutter.py": "06230bc93ff62cfbfc306ca06721ce99777ce2cb978e242a7ccb284e3189c909",
+        "app/services/bass_embedding_network.py": "0070e38536d0afa5e6b0e11cd4543bb5924a9958239a5dfaeb0e7621358aa628",
+        "app/services/waveform_recurrence.py": "ce1b78d31f65ad30695c8ba93bab3301b144cfab6a49a09deafa97a7f9108770",
+        "app/services/release_neighbors.py": "1402dd7d5f0090c01ab12e9a5b409a0acc36f4fed717ca37f2b1a2c51a6e4216",
+        "app/services/midi_to_score.py": "230e99e6a1cef92bbc3056386edb7d9c5d2485a008a3e592329b9f5b3ce436f4"
+      }
+    }
+  },
+  "full_backend_training_tests": {
+    "passed": 832,
+    "skipped": 6,
+    "log_sha256": "f73e41ff1fad871abf4a43bde2704d38b8774861a2aa13e092fc522990c8c27a"
+  },
+  "native_integration": {
+    "passed": 6,
+    "log_sha256": "26007ba805124d3b284acc0257ad12a4928b14b8c840686ca2e1b9e7326616ab",
+    "staged_module_origins_asserted": true
+  },
+  "runtime_parity_sha256": "b6c2d93adad613ba1416b0497bb95f49a3f9a717faf0fb12e83f8502f6f645f9",
+  "installation_gates_sha256": "63a54952e63a34cba08fb698f1aa18dc52b879c5278ddb0f38e1757a4b7838bd",
+  "source_sha256": {
+    "backend/app/services/piano_transcription.py": "ab8f97bb09c3687e59a21974d97878690cd5e28c625ee6db34fef4caffd429e7",
+    "backend/app/routes/dependencies.py": "95835aa2b041290785120d9b2e143aeeacf398226fce5c51f8b72048473c07af",
+    "backend/app/assets/bass-embedding-v1.npz": "edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955",
+    "backend/app/assets/bass-embedding-v1.LICENSE.txt": "ffb07f8e7d5696f297fe1c81d71ced6fa4ab97080f3967e4ad0955cef1ad3db7",
+    "backend/app/services/bass_embedding_declutter.py": "06230bc93ff62cfbfc306ca06721ce99777ce2cb978e242a7ccb284e3189c909",
+    "backend/app/services/bass_embedding_network.py": "0070e38536d0afa5e6b0e11cd4543bb5924a9958239a5dfaeb0e7621358aa628",
+    "backend/app/services/waveform_recurrence.py": "ce1b78d31f65ad30695c8ba93bab3301b144cfab6a49a09deafa97a7f9108770",
+    "backend/app/services/release_neighbors.py": "1402dd7d5f0090c01ab12e9a5b409a0acc36f4fed717ca37f2b1a2c51a6e4216"
+  },
+  "previous_v25_asset_unchanged": true,
+  "original_engraving_unchanged": true,
+  "new_weights_deployed": true,
+  "no_user_audio_or_scores": true,
+  "packaging": {
+    "approved_base_image": "sha256:48bbe917ac0a2404de2d4cfd3c70f1d6c55029cfed1f068edfbb4d30522361a8",
+    "method": "Exact gated files copied onto approved local image after registry metadata timeout",
+    "overlay_build_log_sha256": "0e412b421aad3881afc29c494bcc934c6fa8be21459a47cf302bbab609443ff7",
+    "dockerfile_sha256": "b900a08596338c9f79d6553769c61b384d616340579832e1719b64401c443117"
+  }
+}

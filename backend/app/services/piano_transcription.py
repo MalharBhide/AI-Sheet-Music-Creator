@@ -160,6 +160,7 @@ class _GeneralEngine:
         self.bass_temporal = None
         self.bass_temporal_refinement = None
         self.bass_attack_declutter = None
+        self.bass_embedding_declutter = None
         self.bass_verification = None
 
     def predict(self, path: Path, role: str, bpm: float):
@@ -192,6 +193,7 @@ class _GeneralEngine:
         if role == 'bass' and self.detail == 'balanced':
             from app.services.bass_articulation import BassArticulation
             from app.services.bass_attack_declutter import BassAttackDeclutter
+            from app.services.bass_embedding_declutter import BassEmbeddingDeclutter
             from app.services.bass_harmonic import BassHarmonic
             from app.services.bass_residual import BassResidual
             from app.services.bass_temporal import BassTemporal
@@ -208,6 +210,9 @@ class _GeneralEngine:
                 self.bass_temporal = BassTemporal()
                 self.bass_temporal_refinement = BassTemporalRefinement()
                 self.bass_attack_declutter = BassAttackDeclutter()
+                self.bass_embedding_declutter = BassEmbeddingDeclutter(
+                    Path(__file__).resolve().parents[1] / 'assets/bass-embedding-v1.npz',
+                    'edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955')
                 self.bass_verification = {'model': self.bass_verifier.name,
                                           'articulation_model': self.bass_articulation.name,
                                           'residual_model': self.bass_residual.name,
@@ -216,11 +221,13 @@ class _GeneralEngine:
                                           'temporal_model': self.bass_temporal.name,
                                           'refinement_model': self.bass_temporal_refinement.name,
                                           'attack_release_model': self.bass_attack_declutter.name,
+                                          'spectral_recurrence_model': self.bass_embedding_declutter.name,
                                           'window_candidates': 0, 'window_rejections': 0,
                                           'window_merged_boundaries': 0, 'window_residual_rejections': 0,
                                           'window_texture_rejections': 0, 'window_harmonic_rejections': 0,
                                           'window_temporal_rejections': 0, 'window_refinement_rejections': 0,
-                                          'window_attack_release_rejections': 0}
+                                          'window_attack_release_rejections': 0,
+                                          'window_spectral_recurrence_rejections': 0}
             # Bass training uses these same frequency-bounded Basic Pitch
             # arrays and events. It does not use the accompaniment decoder.
             self.bass_verification['window_candidates'] += sum(len(p.notes) for p in midi.instruments)
@@ -239,6 +246,8 @@ class _GeneralEngine:
             # V25 evaluates attack and ending evidence on post-V16 survivors.
             # It only rejects unsupported notes; retained clocks and holds stay exact.
             self.bass_verification['window_attack_release_rejections'] += self.bass_attack_declutter.filter(path, arrays, midi)
+            # V32 evaluates actual V25 survivors without changing retained notes.
+            self.bass_verification['window_spectral_recurrence_rejections'] += self.bass_embedding_declutter.filter(path, arrays, midi)
         if verify:
             from app.services.accompaniment_verifier import AccompanimentVerifier
 
@@ -378,6 +387,8 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
             engine_name += f" + {bass_verification['refinement_model']}"
         if bass_verification.get('attack_release_model'):
             engine_name += f" + {bass_verification['attack_release_model']}"
+        if bass_verification.get('spectral_recurrence_model'):
+            engine_name += f" + {bass_verification['spectral_recurrence_model']}"
     return {"engine": engine_name,
             "accompaniment_verification": verification,
             "bass_verification": bass_verification,

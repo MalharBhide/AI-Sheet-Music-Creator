@@ -1,0 +1,4 @@
+FROM piano-scribe-v25-approved:local
+COPY app/services/piano_transcription.py app/services/bass_embedding_declutter.py app/services/bass_embedding_network.py app/services/waveform_recurrence.py app/services/release_neighbors.py /app/backend/app/services/
+COPY app/routes/dependencies.py /app/backend/app/routes/dependencies.py
+COPY app/assets/bass-embedding-v1.npz app/assets/bass-embedding-v1.LICENSE.txt /app/backend/app/assets/

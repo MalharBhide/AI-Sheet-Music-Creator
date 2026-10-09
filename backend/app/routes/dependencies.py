@@ -1,5 +1,6 @@
 import importlib.util
 import shutil
+from pathlib import Path
 from uuid import UUID
 
 from fastapi import HTTPException, Request
@@ -28,6 +29,8 @@ from app.services.bass_texture import CHECKPOINTS as BASS_TEXTURE_CHECKPOINTS
 from app.services.bass_verifier import CHECKPOINTS as BASS_CHECKPOINTS
 from app.services.vocal_melody import CHECKPOINT
 
+BASS_EMBEDDING_CHECKPOINT = Path(__file__).resolve().parents[1] / 'assets/bass-embedding-v1.npz'
+
 
 def dependencies(settings: Settings) -> dict[str, bool]:
     return {'ffmpeg': bool(shutil.which(settings.ffmpeg_bin)),
@@ -51,6 +54,7 @@ def dependencies(settings: Settings) -> dict[str, bool]:
             'bass_temporal_model': BASS_TEMPORAL_CHECKPOINT.is_file(),
             'bass_refinement_model': BASS_REFINEMENT_CHECKPOINT.is_file(),
             'bass_attack_release_model': BASS_ATTACK_RELEASE_CHECKPOINT.is_file(),
+            'bass_spectral_recurrence_model': BASS_EMBEDDING_CHECKPOINT.is_file(),
             'source_separation': importlib.util.find_spec('demucs') is not None,
             'music21': importlib.util.find_spec('music21') is not None,
             'musescore': settings.renderer() is not None}

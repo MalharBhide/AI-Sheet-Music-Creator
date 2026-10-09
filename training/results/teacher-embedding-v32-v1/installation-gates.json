@@ -1,0 +1,29 @@
+{
+  "staged_full_tests": {
+    "passed": 832,
+    "skipped": 6,
+    "log_sha256": "84b608308ba408025bcf785b19138f37387e21c12685f1992ec60f3bd2d77b01"
+  },
+  "native_pipeline": {
+    "passed": 6,
+    "log_sha256": "26007ba805124d3b284acc0257ad12a4928b14b8c840686ca2e1b9e7326616ab",
+    "staged_module_origins_asserted": true
+  },
+  "source_sha256": {
+    "app/services/piano_transcription.py": "ab8f97bb09c3687e59a21974d97878690cd5e28c625ee6db34fef4caffd429e7",
+    "app/routes/dependencies.py": "95835aa2b041290785120d9b2e143aeeacf398226fce5c51f8b72048473c07af",
+    "app/assets/bass-embedding-v1.npz": "edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955",
+    "app/assets/bass-embedding-v1.LICENSE.txt": "ffb07f8e7d5696f297fe1c81d71ced6fa4ab97080f3967e4ad0955cef1ad3db7",
+    "app/services/bass_embedding_declutter.py": "06230bc93ff62cfbfc306ca06721ce99777ce2cb978e242a7ccb284e3189c909",
+    "app/services/bass_embedding_network.py": "0070e38536d0afa5e6b0e11cd4543bb5924a9958239a5dfaeb0e7621358aa628",
+    "app/services/waveform_recurrence.py": "ce1b78d31f65ad30695c8ba93bab3301b144cfab6a49a09deafa97a7f9108770",
+    "app/services/release_neighbors.py": "1402dd7d5f0090c01ab12e9a5b409a0acc36f4fed717ca37f2b1a2c51a6e4216"
+  },
+  "runtime_parity_sha256": "b6c2d93adad613ba1416b0497bb95f49a3f9a717faf0fb12e83f8502f6f645f9",
+  "stage_sha256": "e37cdff5243ae5e123ea5545677912ba7d10163bd0f92c2b7d5bbf4e28fc83b7",
+  "checkpoint_sha256": "78fcb4f2c0effdac1dfbb7de54efba88a63429aeb358c9c02620c360764122eb",
+  "frozen_training_source": "/Users/malhar/AI-Sheet-Music-Creator/.training/v32-frozen-training-code",
+  "no_user_audio_or_scores": true,
+  "production_installed": true,
+  "installed_sources_match_staged": true
+}

@@ -181,6 +181,7 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
         accompaniment_verifier,
         bass_articulation,
         bass_attack_declutter,
+        bass_embedding_declutter,
         bass_harmonic,
         bass_residual,
         bass_temporal,
@@ -289,9 +290,25 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
 
         def filter(self, path, acoustic, output):
             assert getattr(output, '_refinement_checked', False)
+            output._attack_release_checked = True
             return 0
 
     monkeypatch.setattr(bass_attack_declutter, 'BassAttackDeclutter', BassAttackDeclutter)
+    embeddings = []
+
+    class BassEmbeddingDeclutter:
+        name = 'Test spectral/recurrence verifier'
+
+        def __init__(self, asset, expected_sha):
+            assert asset.name == 'bass-embedding-v1.npz'
+            assert expected_sha == 'edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955'
+            embeddings.append(self)
+
+        def filter(self, path, acoustic, output):
+            assert getattr(output, '_attack_release_checked', False)
+            return 0
+
+    monkeypatch.setattr(bass_embedding_declutter, 'BassEmbeddingDeclutter', BassEmbeddingDeclutter)
 
 
     fake_inference.results.extend([
@@ -314,10 +331,11 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
         'model': 'Test bass verifier', 'articulation_model': 'Test bass articulation',
         'residual_model': 'Test bass residual', 'texture_model': 'Test bass texture',
         'harmonic_model': 'Test bass harmonic', 'temporal_model': 'Test bass temporal', 'refinement_model': 'Test bass refinement',
-        'attack_release_model': 'Test attack/release verifier', 'window_candidates': 2,
+        'attack_release_model': 'Test attack/release verifier',
+        'spectral_recurrence_model': 'Test spectral/recurrence verifier', 'window_candidates': 2,
         'window_rejections': 0, 'window_merged_boundaries': 0, 'window_residual_rejections': 0,
         'window_texture_rejections': 0, 'window_harmonic_rejections': 0, 'window_temporal_rejections': 0, 'window_refinement_rejections': 0,
-        'window_attack_release_rejections': 0}
+        'window_attack_release_rejections': 0, 'window_spectral_recurrence_rejections': 0}
     assert report['support_notes_changed_for_bass'] == 1
     assert [(n.pitch, n.start, n.end) for n in result.instruments[1].notes] == [(36, 0, 1)]
     assert fake_inference.calls[2][1]['minimum_frequency'] is None
@@ -402,6 +420,7 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
     from app.services import (
         bass_articulation,
         bass_attack_declutter,
+        bass_embedding_declutter,
         bass_harmonic,
         bass_residual,
         bass_temporal,
@@ -524,9 +543,25 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
 
         def filter(self, path, acoustic, output):
             assert getattr(output, '_refinement_checked', False)
+            output._attack_release_checked = True
             return 0
 
     monkeypatch.setattr(bass_attack_declutter, 'BassAttackDeclutter', BassAttackDeclutter)
+    embeddings = []
+
+    class BassEmbeddingDeclutter:
+        name = 'Test spectral/recurrence verifier'
+
+        def __init__(self, asset, expected_sha):
+            assert asset.name == 'bass-embedding-v1.npz'
+            assert expected_sha == 'edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955'
+            embeddings.append(self)
+
+        def filter(self, path, acoustic, output):
+            assert getattr(output, '_attack_release_checked', False)
+            return 0
+
+    monkeypatch.setattr(bass_embedding_declutter, 'BassEmbeddingDeclutter', BassEmbeddingDeclutter)
 
 
     fake_inference.results.extend([[(40, 3., 4.), (52, 3., 4.)]] * 2)
@@ -550,6 +585,8 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
     assert engine.bass_verification['window_temporal_rejections'] == 0
     assert engine.bass_verification['window_refinement_rejections'] == 0
     assert engine.bass_verification['window_attack_release_rejections'] == 0
+    assert engine.bass_verification['window_spectral_recurrence_rejections'] == 0
+    assert len(embeddings) == 1 and engine.bass_embedding_declutter is embeddings[0]
     parameters = fake_inference.calls[0][1]
     assert parameters['minimum_frequency'] == pytest.approx(27.5)
     assert parameters['maximum_frequency'] == pytest.approx(261.6255653)

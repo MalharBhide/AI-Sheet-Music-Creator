@@ -1,0 +1,28 @@
+Bass spectral/recurrence verifier v1 (candidate V32)
+
+Copyright 2026 Piano Scribe contributors.
+Newly trained portable model arrays: Creative Commons Attribution 4.0.
+https://creativecommons.org/licenses/by/4.0/
+
+Frozen teacher: bass-attack-declutter-v1.npz; its unchanged V25 license and
+provenance remain beside this file. Vienna 4x22 (Werner Goebl), GuitarSet 1.1.0
+(Qingyang Xi, Rachel M. Bittner, Johan Pauwels, Xuzhou Ye, Juan P. Bello),
+BabySlakh v2 (Ethan Manilow, Gordon Wichern, Prem Seetharaman, Jonathan Le Roux)
+and project-authored note sequences. All source recordings CC BY 4.0.
+
+New correction fitting data, CC BY 4.0:
+NSynth: Jesse Engel, Cinjon Resnick, Adam Roberts, Sander Dieleman, Douglas Eck,
+Karen Simonyan and Mohammad Norouzi, Google.
+https://magenta.withgoogle.com/datasets/nsynth
+Groove MIDI Dataset: Jon Gillick, Adam Roberts, Jesse Engel, Douglas Eck and
+David Bamman, Google. Human-played electronic drum audio is nuisance evidence;
+drum MIDI numbers are never piano note truth.
+https://magenta.tensorflow.org/datasets/groove
+
+MusicNet is not used in this candidate. No user recordings or scores used.
+Recipe/provenance: docs/teacher-embedding-training.md and
+training/results/teacher-embedding-v32-v1.
+Scope: balanced full-song bass, pitches 21–59, after all eight V25 stages.
+First/last 2.5 seconds are protected; strong acoustic guardian evidence remains.
+Retained note objects preserve pitch, attack, endpoint, velocity and source part.
+This limited-corpus evidence does not establish accuracy for arbitrary songs.
