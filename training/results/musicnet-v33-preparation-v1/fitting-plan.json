@@ -1,0 +1,73 @@
+{
+  "version": "shipped-bass-v32-baseline-v1",
+  "baseline_hashes": {
+    "version": "shipped-bass-v32-baseline-v1",
+    "sources": {
+      "backend/app/services/midi_to_score.py": "230e99e6a1cef92bbc3056386edb7d9c5d2485a008a3e592329b9f5b3ce436f4",
+      "backend/app/assets/bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775",
+      "backend/app/assets/bass-attack-declutter-v1.npz": "f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c",
+      "backend/app/assets/bass-attack-declutter-v1.LICENSE.txt": "c15508b91f040e64b90b100608df42a78a6916f124f29d4c4efcd37d1e3f3485",
+      "backend/app/services/attack_local_evidence.py": "e399e4213054788a701f59aee77c57cce56a80f3191a606317d9994ebcb454bc",
+      "backend/app/services/release_local_evidence.py": "226cc21ed43aadfc7034e43c443f3fe765a7f201dc9de1523d4377d09c35a460",
+      "backend/app/services/attack_local_network.py": "db9fa5903b949f16a93c59d741224bb040858b3481d12cf3a61a2a7f645e5511",
+      "backend/app/services/bass_attack_declutter.py": "828569fddda91e70014d079b1e9e819d930e939716f5c96f5b9cf871fb1bcba4",
+      "backend/app/services/bass_verifier.py": "807bab5ab9a5c67c097bf8f26355df99224d81fa9efa13d2215f4ad6d1ef88e8",
+      "backend/app/services/bass_articulation.py": "e8cbcc8effe925461c12fbe735ab39144d06925b8ad2b05f89c53dbe284ab8a7",
+      "backend/app/services/bass_residual.py": "5be5df408054b180cd971e5fbb1ad7ea159a923d0f79bb73439060b87af2856b",
+      "backend/app/services/bass_texture.py": "fff2afb315b0004de4b37a2253c2f8d416a5d31d1da113a569a79ac421320b6c",
+      "backend/app/services/bass_harmonic.py": "f88881cbc4db6d12b4c9765f040161b675505c31d4e863e47e2a22b7cfbe87a7",
+      "backend/app/services/bass_temporal.py": "3cf000fb9d6174e64d4197d1b03c126f27239b541b4a032f75d73510dfffb68a",
+      "backend/app/services/bass_temporal_refinement.py": "e712f3f5e0937918ec013ccc3c863afc5a18349ebcf46c047764b1e37b39a18c",
+      "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2",
+      "backend/app/services/note_evidence.py": "a13733bea82c20197f84dbb6e558c7d6dec95adf698e2ec84163e9eb4fa7caad",
+      "backend/app/services/candidate_relations.py": "3a1b6caf5eaebf444f3cdcddb7abc8835c86f665721ab476e03c1c1dbc58d029",
+      "backend/app/services/note_context_model.py": "72c1d3a32bb38f624de2ace845661fb657c141db4a8755721c1c23c59ce7bc95",
+      "training/current_bass_v16_baseline.py": "7c7d4c928a2a40c8d7df2816dee596232ded3a9cdc7abb9a9003a7d6e4f9b511",
+      "backend/app/services/piano_transcription.py": "ab8f97bb09c3687e59a21974d97878690cd5e28c625ee6db34fef4caffd429e7",
+      "backend/app/routes/dependencies.py": "95835aa2b041290785120d9b2e143aeeacf398226fce5c51f8b72048473c07af",
+      "backend/app/assets/bass-embedding-v1.npz": "edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955",
+      "backend/app/assets/bass-embedding-v1.LICENSE.txt": "ffb07f8e7d5696f297fe1c81d71ced6fa4ab97080f3967e4ad0955cef1ad3db7",
+      "backend/app/services/bass_embedding_declutter.py": "06230bc93ff62cfbfc306ca06721ce99777ce2cb978e242a7ccb284e3189c909",
+      "backend/app/services/bass_embedding_network.py": "0070e38536d0afa5e6b0e11cd4543bb5924a9958239a5dfaeb0e7621358aa628",
+      "backend/app/services/waveform_recurrence.py": "ce1b78d31f65ad30695c8ba93bab3301b144cfab6a49a09deafa97a7f9108770",
+      "backend/app/services/release_neighbors.py": "1402dd7d5f0090c01ab12e9a5b409a0acc36f4fed717ca37f2b1a2c51a6e4216"
+    },
+    "arrays": {
+      "bass-positive-consensus-v2.npz": "9864e9c040629f5412fab624dbf565ebc04677d0d046ebf22d188da80dec00c7",
+      "bass-positive-guardian-v2.npz": "59e3b1cf6c2b27198c9aa046127f98a1aff15ee287a34e981113382c01f371dd",
+      "bass-articulation-v1.npz": "dec1bc16a2a41165e9c809fc8b11712f0392464f240ef6477b9c2d7195a6cd59",
+      "bass-articulation-guardian-v1.npz": "101556c153e6b34688e6003dd4178152522290f3543fdceeeeb8aef1d8d3dc51",
+      "bass-residual-v1.npz": "0362480f1210e4f7220fdd6984cee71260fd0145f87559710789bdfabc319988",
+      "bass-residual-guardian-v1.npz": "cc09f098276d7c31cbafef90fdf6f18f42424a7b4159270bc2e3c332372b9dfb",
+      "bass-texture-v1.npz": "f1e829c7d4328afc38268cc8dbe8afb526c6860efafd3d272170cf3aca768d3e",
+      "bass-texture-guardian-v1.npz": "82f4ed13e9cf5a7a832a8a066f23ff9f7642aa187da664779a900d55b807e994",
+      "bass-harmonic-v1.npz": "8184a7c4009d2e26bc1d2f264ec58d8503182cda79667b9c3af7a8bb856ce66c",
+      "bass-harmonic-guardian-v1.npz": "bcab8b156e54db37c3c19dd74e553106499722503abb043ba7fb491d3418f76e",
+      "bass-temporal-v1.npz": "0edc221998bbaacb052fbffe43f6efcce6e759290d0cdb9a7314028521e162c4",
+      "bass-temporal-refinement-v1.npz": "2db9b76e75c353d6d5070df725de0d79860a459559fa60b514aeaff437691775",
+      "bass-attack-declutter-v1.npz": "f4c5d1fe9c411eca32b28b3eb2c6c7e38e292e1a0d4191d2d6fa81542b6e424c",
+      "bass-embedding-v1.npz": "edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955"
+    },
+    "release_sha256": "728a9a6a2748bd18a2d57c2101f4cae0d8791c901e9b8875800be0192c572775",
+    "thresholds": {
+      "remove": 0.8,
+      "guardian": 0.5
+    },
+    "preceding_source_commit": "d214a3e",
+    "all_eight_v25_stages_retained": true
+  },
+  "baseline_root": "/training/fusion-bass-v27-v1",
+  "mixtures_root": "/training/groove-bass-v29-v1",
+  "baseline_manifest_sha256": "b8a323678337d3d26ac073c05bb2aec61542eac710659245eff1d32688e5d488",
+  "mixtures_manifest_sha256": "fc887f7de53e98dfb6aa8eed83b9fc4b5f13d9428534576da51bf15f9e9809a6",
+  "producer_sha256": "30d8553a16d52b87c65846d0d281d0e013d01da02baba8358401edbf56739ddf",
+  "groups": {
+    "train": 702,
+    "validation": 206
+  },
+  "legacy_code_replay": "v32-frozen-training-code with original V25 route and producer guards",
+  "no_audio_inference": true,
+  "no_regression_read": true,
+  "no_user_audio_or_scores": true,
+  "evidence_policy": "Retained acoustic/recurrence windows and note clocks are unchanged. Recompute event-neighbor features and context only on actual V32 survivors."
+}

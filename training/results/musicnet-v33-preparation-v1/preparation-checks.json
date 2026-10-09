@@ -1,0 +1,59 @@
+{
+  "actual_anchor_check": {
+    "actual_released_checkpoint_sha256": "78fcb4f2c0effdac1dfbb7de54efba88a63429aeb358c9c02620c360764122eb",
+    "fixtures": 24,
+    "maximum_initial_probability_error": 0.0,
+    "passes": true,
+    "profiles": 2
+  },
+  "baseline_caches": {
+    "fitting": {
+      "groups": {
+        "train": 702,
+        "validation": 206
+      },
+      "manifest_sha256": "33f8b53b88695f8fd31e007488ea9014f7d24fda3cafa2556747cac3ff08b4ac",
+      "plan_sha256": "25992bf949680ffa08140f85142c44a20e7280063f8a4e4a1f42ffd789c35a04",
+      "record_id_sha256": "beb8f71bf4b3ece0cdf5d2852ffac521d1f7995b3fc2c77a6a9b874ddcc4524f",
+      "recordings": 908,
+      "retained_notes": 47713,
+      "v32_removed": 21
+    },
+    "regression": {
+      "groups": {
+        "test": 469
+      },
+      "manifest_sha256": "505b582f66d8a9b4f0d40ded23b5ea1dc41e9698753ad65321255d6f9d8252da",
+      "plan_sha256": "945d3aef11993021a93053c52862b0efc5b5f452450ee63f11a83542553b27f7",
+      "record_id_sha256": "0f746a0cd4c395ce6b8c231c211e07491f978e346a445295b4fb03bbbbd99db0",
+      "recordings": 469,
+      "retained_notes": 12098,
+      "v32_removed": 17
+    }
+  },
+  "deployed_model": "Bass spectral/recurrence verifier v1 (V32)",
+  "framework_source_sha256": {
+    "bass_v32_data.py": "a98c63ba9af57c37e7669ce62749839f865e8ec7aff25573809c1ccf1c624e78",
+    "bass_v32_regression_data.py": "f2210b3bf5f68589a16e89289d6c950dcb6576295992b020b2c89a3f1d09ebfe",
+    "current_bass_v32_baseline.py": "b494715ad2875947a82b619122a48af09e7f4e1910c308d2fe773c4808987c2a",
+    "evaluate_musicnet_anchor_v33.py": "47ce044b3dc4bd286411d6d377b1568a5d552de4035ab1aa1173e7e82d37bae1",
+    "fresh_musicnet_anchor_v33.py": "5f9ed80393168ed7a7d89e19adda9e04135f37bd0024bb84bc6a349efb640e99",
+    "musicnet_anchor_model.py": "f41eca2737332dc4a9815e62e26f3b5a310d7551800de8403e757b609f744af2",
+    "musicnet_v32_data.py": "d59506c6bfecb2735d438e590c46125e7838e1d9a450f1903a4f9dd00804d926",
+    "prepare_bass_v32_baseline.py": "30d8553a16d52b87c65846d0d281d0e013d01da02baba8358401edbf56739ddf",
+    "prepare_bass_v32_regression.py": "722b931310bff51fb5b0a82081e3288ea07181cd3dbd17dbddbb454f7a8cee88",
+    "prepare_musicnet_v32.py": "60b6dcd2df1bfda4298a9d38b442a9ab0d38c47bf61231237e5526d8506188e3",
+    "reserved_musicnet_v33.py": "7f1fb4ca37c6b25ed39824ce9c4e617fed4394e244e4c6d4a068e2d17219c202",
+    "train_musicnet_anchor_v33.py": "aa9e0d09358a9109ee0e6946b218110e57d87adade90fe725deda882008ae03d"
+  },
+  "musicnet_acquisition_in_progress": true,
+  "no_candidate_released": true,
+  "no_new_dataset_fit_yet": true,
+  "no_user_audio_or_scores": true,
+  "passes": true,
+  "tests": {
+    "log_sha256": "b64aeaad6c71a959d16db034a4ba68a7944e9a4bbf6e06454c3cea640dd33486",
+    "passed": 846,
+    "skipped": 6
+  }
+}
