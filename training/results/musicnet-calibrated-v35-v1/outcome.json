@@ -1,0 +1,33 @@
+{
+  "selected": false,
+  "reason": "Neither predeclared profile has a checkpoint that preserves every validation recording and separately improves real-piano false-note accuracy at both confidence settings.",
+  "new_weights_deployed": false,
+  "current_v32_retained": true,
+  "profiles": 2,
+  "epochs_per_profile": 80,
+  "fitting_counts": {
+    "train": 765,
+    "validation": 221
+  },
+  "plan_sha256": "9024fad33e1dccdcbc6c669b49d903f92e7b8ea0f0b1e191354b77708d527b32",
+  "actual_training_checkpoints": {
+    "calibrated-conservative/epoch-020.pt": "31503070a8862096644f7c3fd9cb3339f0ab16dfe3f418d41ed25c516962d914",
+    "calibrated-conservative/epoch-040.pt": "eefb044e42795ce441bfa6db8191c405313629f83f3686be38879d3671d32178",
+    "calibrated-conservative/epoch-060.pt": "a93a099d6b49b68ef709bd053fcd56cfea4e2488832c85dc84a0b33c87b45963",
+    "calibrated-conservative/epoch-080.pt": "3d275bdff179ea58c9b9921fce1cb390e3059b6885bc280561fdc37f4cc62dfa",
+    "calibrated-protected/epoch-020.pt": "a49eb6559519148267d85a551dfe73176ab47f3be1300828bd6a4c816dabd530",
+    "calibrated-protected/epoch-040.pt": "52fbd805526e2869c9df072cd63b24ef0d8a96f5bf415e4b844c5d4e50cce1ff",
+    "calibrated-protected/epoch-060.pt": "dfb6b7ba9edfd52729a390633f665587a5a8e24a0de5614c8f4b0051c1f5d636",
+    "calibrated-protected/epoch-080.pt": "a74ef33b0cde00ba57e53cf08cd39d2b94f389416a5ce930d8cde3696c3c1956"
+  },
+  "no_consumed_regression_or_first_pass_run": true,
+  "all_519_regressions_still_required": true,
+  "oxford_pairs_still_untouched": 8,
+  "verification": {
+    "full_suite_passed": 886,
+    "skipped": 6,
+    "test_log_sha256": "575c6137f7727da4fc0dd6350aaa45cd2290ef60fa58205dbacee69e2124189b",
+    "additional_metadata_tests_passed": 7
+  },
+  "no_user_audio_or_scores": true
+}

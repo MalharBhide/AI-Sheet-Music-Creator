@@ -1,0 +1,13 @@
+{
+  "publisher": "https://magenta.withgoogle.com/datasets/cocochorales",
+  "base": "https://storage.googleapis.com/magentadata/datasets/cocochorales/cocochorales_full_v1_zipped/",
+  "format": "https://raw.githubusercontent.com/lukewys/chamber-ensemble-generator/master/data_format.md",
+  "archives": [
+    "metadata/train/1.tar.bz2",
+    "metadata/valid/1.tar.bz2"
+  ],
+  "producer_sha256": "351f02fad272407ee58cedd78ec8142aed54f06cb81ef42ccea20305d3b1bab9",
+  "no_audio_midi_or_note_labels": true,
+  "no_fitting_selection_inference_or_user_audio": true,
+  "metadata_grouping_policy": "All recordings from the same original midi_file must share a split across ensembles; official numeric recording splits alone are insufficient to prove independence."
+}

@@ -127,3 +127,34 @@ domain-calibration problem; it does not justify raising confidence cutoffs on
 consumed tests. A future protection model must learn from training data, select
 on validation, preserve all regression attacks/holds/coverage, and demonstrate
 independent real-piano benefit before any release.
+
+
+V35 now trains two acoustic heads on the verified MusicNet/previous licensed
+fitting partitions: a bounded correction to the frozen V32 removal logits and an
+independent learned protection head. The new head starts at .99 protection.
+All 155 normalizer values and the complete approved anchor remain frozen;
+preceding deployed stages and retained event clocks stay unchanged. Neither head
+uses labels, source IDs or fitted probabilities as feature inputs.
+
+The predeclared V35 selection rule requires separately positive real-piano
+validation benefit at both confidence settings, plus preservation of every
+validation recording. Any selected winner must then cover all 519 consumed
+recordings before the one predeclared Oxford/authored first pass. The entire
+Oxford pianist group remains reserved; no fitting or alignment tuning uses it.
+The new protection head is experimental and is not wired into the website.
+
+A separate CocoChorales source assessment verified two original metadata
+packages and their publisher checksums. It is a possible additional synthetic
+chamber source, not a piano accuracy benchmark, and is not included in the frozen
+V35 fit. See `training/results/cocochorales-source-assessment-v1` for the license,
+attribution, scope and verification witnesses.
+
+
+V35 completed both 80-epoch profiles without a qualifying validation winner.
+The evidence is archived in `training/results/musicnet-calibrated-v35-v1`.
+Removing the old protection bottleneck did not safely generalize: no checkpoint
+preserved every validation recording and independently improved real-piano
+wrong-note accuracy at both confidence settings. No regression, Oxford first pass,
+export or deployment followed. The website continues using V32. The next study
+needs stronger physical evidence or additional verified source diversity; lowering
+protection by itself is not an accepted improvement.
