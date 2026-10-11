@@ -1,0 +1,21 @@
+{
+  "passes": true,
+  "source_sha256": {
+    "app/services/piano_transcription.py": "81f7136a9b8189d0e889046ede222d4897f18ce136ae724994a6d2ae9cb46c6a",
+    "app/routes/dependencies.py": "bfbbf2eb88dcb591ca6120dda0a750715b6dcbe75435b06d80c5f7b74f760195",
+    "app/services/chord_release.py": "26c6f22bb07e7a572792195e51cb28beea0f9c832fc7b796a709de66cbe996c3",
+    "app/services/chord_release_network.py": "a61b751dfc08a001b10843f1204fa22fc685c4c32870c030eba8482af35f4b2c",
+    "app/assets/chord-release-v1.npz": "eeef2fae2d0c4ce180af47dbb9670c5c6b82095df5f01722fb06ea2a6534b6d0",
+    "app/assets/chord-release-v1.LICENSE.txt": "d9a1b1bfa05344315655d5b5bb62d8bd89456988242003a3c8c6d738ebd576bc"
+  },
+  "test_logs": {
+    "release-only-v38-staged-tests-repaired.log": "6751184298d000dd8026d14b5cb6a32c778ac0757cbcda8c7995f9e4ba04be7e",
+    "release-only-v38-native-integration.log": "669f75c75b8cd93be8a0f9815172d838fdae23bd34d798d8a4f9312eace21c9e"
+  },
+  "runtime_parity_sha256": "85770261c079229c1b7eb5546ff5323b86466e8553a98253ea4a7e534b80f4b9",
+  "native_routing_sha256": "60d27a642ee7d2fa79b8502198b351d8dac4c80fc83d473b0b35719cde4131fb",
+  "image_check_sha256": "3217a2a236bc418fc39d0f9285e6ce80b3e63cfe5016efb4b732aef16dd43394",
+  "installer_sha256": "71c96f7b5defd2d42f7bb2ca4750c3c9dba5096a7deb3819ca84014ba0c86b62",
+  "website_restart_still_required": true,
+  "no_user_audio_or_scores": true
+}

@@ -1,0 +1,43 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.chord-release-v38
+#1 transferring dockerfile: 400B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/piano-scribe-v38-base:local
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 186B 0.0s done
+#3 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/piano-scribe-v38-base:local@sha256:4be60a2390443f1ac0613a30e3be8a9530d1b82d5ea57fa9808b3415f011fbaf
+#4 resolve docker.io/library/piano-scribe-v38-base:local@sha256:4be60a2390443f1ac0613a30e3be8a9530d1b82d5ea57fa9808b3415f011fbaf 0.1s done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 287.32kB 0.1s done
+#5 DONE 0.1s
+
+#4 [1/4] FROM docker.io/library/piano-scribe-v38-base:local@sha256:4be60a2390443f1ac0613a30e3be8a9530d1b82d5ea57fa9808b3415f011fbaf
+#4 DONE 0.1s
+
+#6 [2/4] COPY app/services/piano_transcription.py app/services/chord_release.py app/services/chord_release_network.py /app/backend/app/services/
+#6 DONE 0.1s
+
+#7 [3/4] COPY app/routes/dependencies.py /app/backend/app/routes/dependencies.py
+#7 DONE 0.0s
+
+#8 [4/4] COPY app/assets/chord-release-v1.npz app/assets/chord-release-v1.LICENSE.txt /app/backend/app/assets/
+#8 DONE 0.0s
+
+#9 exporting to image
+#9 exporting layers 0.1s done
+#9 exporting manifest sha256:9e9b366c14b85a9399100b823e842f6e1763255a7ae726c5cb1f73f229ec4e32 done
+#9 exporting config sha256:ff421029343fe9c63e5b6fcda1083903557b2f2e55ca2c894d80194f001f92eb
+#9 exporting config sha256:ff421029343fe9c63e5b6fcda1083903557b2f2e55ca2c894d80194f001f92eb done
+#9 exporting attestation manifest sha256:bfe059cc9cecbcf1d8b9fd1f22c500451057cb386636f05c46ef590d0ccf9c53 0.0s done
+#9 exporting manifest list sha256:36fbe8ac4c5daed7c89318da914f897495c9e88fd8fa3c52089cc1d9f39a2c5d done
+#9 naming to docker.io/library/piano-scribe-v38-candidate:local done
+#9 unpacking to docker.io/library/piano-scribe-v38-candidate:local 0.0s done
+#9 DONE 0.2s

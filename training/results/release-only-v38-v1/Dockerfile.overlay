@@ -1,0 +1,4 @@
+FROM piano-scribe-v38-base:local
+COPY app/services/piano_transcription.py app/services/chord_release.py app/services/chord_release_network.py /app/backend/app/services/
+COPY app/routes/dependencies.py /app/backend/app/routes/dependencies.py
+COPY app/assets/chord-release-v1.npz app/assets/chord-release-v1.LICENSE.txt /app/backend/app/assets/

@@ -744,3 +744,29 @@ The GitHub Actions native-pipeline job runs the same integration suite in the ba
 - Final suite: 929 passed, six opt-in native integrations skipped. New-code Ruff
   and whitespace checks passed. Website health remains ready; approved V32
   model checksum remains unchanged. No notation size or frontend changes.
+
+## V38 deployed independent release specialist (2026-10-11)
+
+- Acquired a new public-domain Mutopia Joplin subset, with publisher license
+  pages and MIDI hashes. Work-disjoint 16 training / four validation clips;
+  a sixth work stayed reserved until the frozen candidate passed regressions.
+- Trained two new release-only CNNs for 40 epochs on 781 training clips. One
+  winner passed all 225 validation clips at normal and stricter confidence.
+  No V36/V37 weights, user audio or saved scores were processed.
+- All 519 consumed regressions and all 44 predeclared fresh MP3 clips pass every
+  pitch/hold/attack/coverage/spacing/unsupported-sustain preservation gate.
+  Normal-setting release-error sums improve 0.36 s validation, 5.56 s regression
+  and 0.20 s fresh. Wrong-note counts and note starts remain unchanged.
+- Portable probabilities and decisions match exactly across 1,569 clips /
+  69,521 notes; physical audio features match exactly on 44 fresh clips. Native
+  staged Basic Pitch reproduces all five actual fresh corrections.
+- Staged and installed backend/training suites: 947 passed, six integrations
+  skipped. All six native integrations pass separately, including long/short/
+  silent MP3s, full mixtures, downloadable formats, playback and page rendering.
+- Loaded model SHA256 is
+  `eeef2fae2d0c4ce180af47dbb9670c5c6b82095df5f01722fb06ea2a6534b6d0`.
+  Running website and frontend proxy report ready. All previous assets and
+  original engraving stay exact. V32 historical guards correctly refuse the
+  new route rather than silently accepting stale survivor caches.
+- Evidence and deployment identity: `training/results/release-only-v38-v1`;
+  measured scope/limits: `docs/chord-release-training-v38.md`.

@@ -3,7 +3,7 @@ from bass_v32_data import load
 from current_bass_v32_baseline import ASSET_SHA, hashes
 
 
-def test_current_release_inherits_every_v25_array_and_adds_only_new_asset():
+def test_historical_v32_arrays_stay_exact_and_old_route_guard_refuses_v38():
     import json
     from pathlib import Path
 
@@ -11,13 +11,15 @@ def test_current_release_inherits_every_v25_array_and_adds_only_new_asset():
     old = json.loads((root / "training/results/teacher-embedding-v32-v1/plan.json").read_text())[
         "baseline_hashes"
     ]
-    current = hashes()
-    assert current["arrays"] == {**old["arrays"], "bass-embedding-v1.npz": ASSET_SHA}
-    assert current["all_eight_v25_stages_retained"]
-    assert (
-        current["sources"]["backend/app/services/midi_to_score.py"]
-        == old["sources"]["backend/app/services/midi_to_score.py"]
-    )
+    from prepare_robust_training_stems import digest
+
+    for name, expected in {**old["arrays"], "bass-embedding-v1.npz": ASSET_SHA}.items():
+        assert digest(root / "backend/app/assets" / name) == expected
+    assert digest(root / "backend/app/services/midi_to_score.py") == old["sources"][
+        "backend/app/services/midi_to_score.py"]
+    # A changed route must not silently reuse caches declared as V32 survivors.
+    with pytest.raises(ValueError, match="Changed parity-checked V32"):
+        hashes()
 
 
 def test_legacy_v25_guard_rejects_new_route_without_weakening():

@@ -1,0 +1,21 @@
+{
+  "passes": true,
+  "recordings": 1569,
+  "physical_recordings": 44,
+  "notes_checked": 69521,
+  "maximum_feature_error": 0.0,
+  "maximum_probability_error": 0.0,
+  "identical_decisions_both_settings": true,
+  "asset": "/training/release-only-v38-v1/chord-release-v1.npz",
+  "asset_sha256": "eeef2fae2d0c4ce180af47dbb9670c5c6b82095df5f01722fb06ea2a6534b6d0",
+  "checkpoint_sha256": "19bda4c45c587868e262c33de468a2d6ce0691bd96f90e9674c29660b2c8978a",
+  "first_pass_sha256": "abfe93efccd4a7df51ad7f472c11305bbe1af713f5cf6a6f6ce095478704f297",
+  "source_sha256": {
+    "backend/app/services/chord_release.py": "26c6f22bb07e7a572792195e51cb28beea0f9c832fc7b796a709de66cbe996c3",
+    "backend/app/services/chord_release_network.py": "a61b751dfc08a001b10843f1204fa22fc685c4c32870c030eba8482af35f4b2c",
+    "training/export_release_only_v38.py": "56eea94c4322cf2fd8154d28243f4988fd30ab46efa408e5d71a67c15d5ad37a",
+    "training/evaluate_release_only_v38.py": "b63fb6b86a0d691456734c7ce4d4e0acab8e90330f16835a861a76d8cd5400f0"
+  },
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false
+}

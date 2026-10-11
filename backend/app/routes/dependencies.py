@@ -55,6 +55,7 @@ def dependencies(settings: Settings) -> dict[str, bool]:
             'bass_refinement_model': BASS_REFINEMENT_CHECKPOINT.is_file(),
             'bass_attack_release_model': BASS_ATTACK_RELEASE_CHECKPOINT.is_file(),
             'bass_spectral_recurrence_model': BASS_EMBEDDING_CHECKPOINT.is_file(),
+            'chord_release_model': (BASS_EMBEDDING_CHECKPOINT.parent / 'chord-release-v1.npz').is_file(),
             'source_separation': importlib.util.find_spec('demucs') is not None,
             'music21': importlib.util.find_spec('music21') is not None,
             'musescore': settings.renderer() is not None}
