@@ -1,0 +1,24 @@
+{
+  "training_completed": true,
+  "profiles_completed": 4,
+  "epochs_per_profile": 40,
+  "training_recordings": 765,
+  "validation_recordings": 221,
+  "selected_for_release": false,
+  "reason": "No frozen candidate improved wrong-note count, onset error and release error while passing every normal/stricter validation gate.",
+  "promising_validation_only_release_checkpoint": {
+    "profile": "protected-holds",
+    "epoch": 20,
+    "release_error_sum_reduction_seconds": 6.16,
+    "retimed_notes": 87,
+    "stricter_release_error_sum_reduction_seconds": 4.4,
+    "stricter_retimed_notes": 60,
+    "all_221_validation_recordings_preserved": true,
+    "onset_gain_seconds": 0.0,
+    "false_notes_removed": 0,
+    "selected": false
+  },
+  "regression_or_reserved_data_used": false,
+  "user_audio_or_scores_processed": false,
+  "new_weights_deployed": false
+}

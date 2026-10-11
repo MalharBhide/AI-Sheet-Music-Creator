@@ -724,3 +724,23 @@ The GitHub Actions native-pipeline job runs the same integration suite in the ba
 - Backend update layers application source over the previously tested image to
   preserve installed dependency/model versions. The deployed V32 asset remains
   SHA-256 edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955.
+
+## Independent chord boundaries — 2026-10-11
+
+- Completed four new 40-epoch neural training runs (V36/V37), using 765
+  training and 221 separate validation recordings. Trained support, onset and
+  independent release heads from verified V32 acoustic caches; no user audio,
+  saved scores, new transcription, consumed regressions or reserved data used.
+- Added observed chord/repeat context and training-only abstention targets that
+  protect true holds, pitch support and already-correct repeat/chord spacing.
+  All safety gates remain unchanged; deletion earns no timing improvement.
+- V36 candidates failed preservation checks. V37 protected-holds epoch 20
+  preserved all validation recordings and reduced summed release error 6.16 s
+  (87 notes), or 4.40 s (60 notes) at stricter confidence. Onset and false-note
+  counts did not improve, so no candidate met the declared combined objective.
+  Later checkpoints still regressed; none were selected or deployed.
+- Archived plans, supervision/classification reports, per-recording checks,
+  learning curves, executed source witnesses and hashes for all 12 checkpoints.
+- Final suite: 929 passed, six opt-in native integrations skipped. New-code Ruff
+  and whitespace checks passed. Website health remains ready; approved V32
+  model checksum remains unchanged. No notation size or frontend changes.
