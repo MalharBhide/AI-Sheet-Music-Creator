@@ -37,7 +37,6 @@ h1 em, .idle-preview h2 em { font-family: Georgia, serif; font-weight: 400; colo
 .setup-card, .score-workspace { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 4px 20px #23352a04; }
 .setup-card { padding: 23px; }
 .sidebar-title { font-size: 16px; font-weight: 600; margin: 0 0 20px; letter-spacing: -.3px; }
-.piece-label { font-family: Georgia, serif; font-size: 21px; line-height: 1.35; overflow-wrap: anywhere; margin: 0 0 14px; }
 .ready-label { font-size: 12px; display: inline-flex; align-items: center; gap: 6px; color: var(--accent); background: #edf5ee; padding: 6px 9px; border-radius: 6px; }
 .dropzone { padding: 25px 14px; min-height: 190px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; background: #f7f9f3; border: 1.5px dashed #c1cdbb; border-radius: 12px; cursor: pointer; }
 .dropzone:hover:not(.is-disabled), .dropzone.is-dragging { background: #eef5e9; border-color: var(--accent); }

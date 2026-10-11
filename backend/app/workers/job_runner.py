@@ -47,7 +47,14 @@ class JobRunner:
     def cleanup(self) -> None:
         cutoff = time.time() - self.settings.retention_hours * 3600
         for job_id in self.store.expired(cutoff):
-            shutil.rmtree(self.settings.jobs_dir / job_id, ignore_errors=True)
+            try:
+                shutil.rmtree(self.settings.jobs_dir / job_id)
+            except FileNotFoundError:
+                pass
+            except OSError:
+                logger.warning("Could not delete expired job %s; retrying on the next cleanup", job_id,
+                               exc_info=True)
+                continue
             self.store.delete(job_id)
         # Delete incomplete uploads left by a server crash before the DB insert.
         for directory in self.settings.jobs_dir.iterdir():
@@ -77,12 +84,12 @@ class JobRunner:
 
     @staticmethod
     def kill(process: subprocess.Popen) -> None:
-        if process.poll() is not None:
-            return
         try:
             if os.name == "posix":
+                # FFmpeg or a model subprocess can outlive a crashed worker.
+                # Its session remains ours even after the leader has exited.
                 os.killpg(process.pid, signal.SIGKILL)
-            else:
+            elif process.poll() is None:
                 process.kill()
         except ProcessLookupError:
             pass

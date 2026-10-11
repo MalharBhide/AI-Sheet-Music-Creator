@@ -17,9 +17,6 @@ export type ScoreOptions = {
   grid: "eighth" | "sixteenth";
 };
 
-export type PlaybackNote = { pitch: number; start: number; end: number; velocity: number };
-export type PlaybackData = { duration: number; tempo_bpm: number; notes: PlaybackNote[] };
-
 export type Job = {
   job_id: string;
   original_filename: string;
@@ -46,32 +43,74 @@ export type Health = {
   limits: { max_upload_mb: number; max_audio_seconds: number; retention_hours: number };
 };
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL || "/api").replace(/\/$/, "");
+const API_BASE = (import.meta.env?.VITE_API_BASE_URL || "/api").replace(/\/$/, "");
 
 export class ApiError extends Error {
-  constructor(message: string, public status: number) { super(message); }
+  status: number;
+  constructor(message: string, status: number) { super(message); this.status = status; }
 }
 
-async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
+async function request<T>(path: string, read: (response: Response) => Promise<T>, init: RequestInit = {}): Promise<T> {
   const controller = new AbortController();
   const abort = () => controller.abort();
   if (init.signal?.aborted) controller.abort();
   init.signal?.addEventListener("abort", abort, { once: true });
-  const timeout = window.setTimeout(abort, 15000);
+  const timeout = globalThis.setTimeout(abort, 15000);
   try {
     const response = await fetch(API_BASE + path, { ...init, signal: controller.signal });
-    const payload = await response.json().catch(() => null);
     if (!response.ok) {
+      const payload = await response.json().catch(() => null);
       const message = typeof payload?.detail === "string"
         ? payload.detail
         : "Request failed. Check the file and try again.";
       throw new ApiError(message, response.status);
     }
-    return payload as T;
+    return await read(response);
   } finally {
-    window.clearTimeout(timeout);
+    globalThis.clearTimeout(timeout);
     init.signal?.removeEventListener("abort", abort);
   }
+}
+
+async function readJson<T>(response: Response): Promise<T> {
+  const payload = await response.json().catch(() => null);
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    throw new ApiError("The server returned an unreadable response. Please try again.", response.status);
+  }
+  return payload as T;
+}
+
+function isJob(value: unknown): value is Job {
+  if (!value || typeof value !== "object") return false;
+  const job = value as Job;
+  const urls = job.download_urls;
+  return typeof job.job_id === "string" && !!job.job_id
+    && typeof job.original_filename === "string" && typeof job.created_at === "string"
+    && ["queued", "preprocessing", "transcribing", "scoring", "rendering", "done", "failed"].includes(job.status)
+    && Number.isFinite(job.progress) && job.progress >= 0 && job.progress <= 100
+    && !!urls && typeof urls === "object" && !Array.isArray(urls)
+    && Object.values(urls).every(url => url == null || typeof url === "string")
+    && Array.isArray(job.svg_pages) && job.svg_pages.every(url => typeof url === "string")
+    && (job.error == null || typeof job.error === "string")
+    && (job.analysis == null || (typeof job.analysis === "object" && !Array.isArray(job.analysis)
+      && (job.analysis.warnings == null || (Array.isArray(job.analysis.warnings)
+        && job.analysis.warnings.every(warning => typeof warning === "string")))));
+}
+
+async function readJob(response: Response): Promise<Job> {
+  const payload = await readJson<unknown>(response);
+  if (!isJob(payload)) throw new ApiError("The server returned an invalid score response. Please try again.", response.status);
+  return payload;
+}
+
+async function readHealth(response: Response): Promise<Health> {
+  const payload = await readJson<Health>(response);
+  if (typeof payload.ready !== "boolean" || !payload.limits
+    || ![payload.limits.max_upload_mb, payload.limits.max_audio_seconds, payload.limits.retention_hours]
+      .every(value => Number.isFinite(value) && value >= 0)) {
+    throw new ApiError("The server returned an invalid service response. Please reconnect.", response.status);
+  }
+  return payload;
 }
 
 export function uploadAudio(file: File, onProgress?: (percent: number) => void, options?: ScoreOptions): Promise<Job> {
@@ -90,8 +129,8 @@ export function uploadAudio(file: File, onProgress?: (percent: number) => void, 
       if (event.lengthComputable) onProgress?.(Math.round(event.loaded / event.total * 100));
     };
     xhr.onload = () => {
-      if (xhr.status >= 200 && xhr.status < 300 && xhr.response?.job_id) {
-        resolve(xhr.response as Job);
+      if (xhr.status >= 200 && xhr.status < 300 && isJob(xhr.response)) {
+        resolve(xhr.response);
       } else {
         const detail = xhr.response?.detail;
         reject(new ApiError(typeof detail === "string" ? detail : "Upload failed. Check the file and try again.", xhr.status));
@@ -104,13 +143,12 @@ export function uploadAudio(file: File, onProgress?: (percent: number) => void, 
 }
 
 export const fetchJob = (jobId: string, signal?: AbortSignal) =>
-  request<Job>("/jobs/" + encodeURIComponent(jobId), { signal });
-export const fetchHealth = (signal?: AbortSignal) => request<Health>("/health", { signal });
+  request("/jobs/" + encodeURIComponent(jobId), readJob, { signal });
+export const fetchHealth = (signal?: AbortSignal) => request("/health", readHealth, { signal });
 
-export async function fetchExample(): Promise<File> {
-  const response = await fetch(API_BASE + "/example");
-  if (!response.ok) throw new Error("The example is unavailable. Please choose your own recording.");
-  return new File([await response.blob()], "Piano study.wav", { type: "audio/wav" });
+export function fetchExample(signal?: AbortSignal): Promise<File> {
+  return request("/example", async response =>
+    new File([await response.blob()], "Piano study.wav", { type: "audio/wav" }), { signal });
 }
 
 export function apiUrl(path?: string | null): string | null {

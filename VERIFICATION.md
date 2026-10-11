@@ -695,3 +695,32 @@ The GitHub Actions native-pipeline job runs the same integration suite in the ba
   bass models, live heads .1/.1 and 52/26 features, exact tested service/routing
   hashes. Three existing completed jobs unchanged. All prior failed models kept
   offline; continued training must compare the deployed V10 baseline.
+
+## Codebase cleanup and reliability audit — 2026-10-11
+
+- Scanned application definitions and repository references before removing the
+  unused cached settings factory, duplicate playback types, and unused piece-label
+  CSS. Retained research exporters, regression fixtures, and byte-exact release
+  witnesses because they remain referenced by training and release checks.
+- Worker cleanup now terminates its process group even after its leader exits.
+  Expired-job deletion preserves the database record on filesystem errors, allowing
+  the next cleanup to retry instead of silently orphaning files.
+- API requests reject unreadable/malformed health and score responses before they
+  reach React. Example downloads share the existing 15-second timeout, including
+  body reads and cancellation. Large recording uploads remain unlimited by default.
+- Failed SVG previews retain navigation and offer a page retry and PDF link.
+  Enabled TypeScript unused-local and unused-parameter checks for future builds.
+- Verification: 913 backend/training-framework tests passed; six opt-in native
+  pipeline integrations skipped. 33 frontend tests passed; TypeScript and Vite
+  production build passed. Static E/F/B/UP checks passed on active Python code
+  (existing E501 policy retained; sealed historical result files excluded).
+- No training, user-audio transcription, score regeneration, model-weight changes,
+  or engraving-size changes were performed. Queue was idle before deployment;
+  no saved output files remained in the running container at audit time.
+- Deployment: updated both local containers; frontend-proxied health reports ready.
+  Verified served JS/CSS hashes and MIME types, missing-asset 404, malformed-job
+  422, and missing-download 404. A real sleeping subprocess confirmed that worker
+  process-group cleanup still works after the leader exits.
+- Backend update layers application source over the previously tested image to
+  preserve installed dependency/model versions. The deployed V32 asset remains
+  SHA-256 edc91517f39eef69e85a4c945b8fd0416d6973f952a9dcf4f8d139dc364a0955.

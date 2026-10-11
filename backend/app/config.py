@@ -1,6 +1,5 @@
 import json
 import shutil
-from functools import lru_cache
 from pathlib import Path
 from typing import Annotated
 
@@ -63,8 +62,3 @@ class Settings(BaseSettings):
             if executable := shutil.which(candidate):
                 return executable
         return None
-
-
-@lru_cache
-def get_settings() -> Settings:
-    return Settings()

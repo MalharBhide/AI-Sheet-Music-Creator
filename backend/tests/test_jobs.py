@@ -145,6 +145,7 @@ def test_disabled_job_deadline_allows_long_running_child(settings, monkeypatch):
     job = store.claim_next()
     settings.job_timeout_seconds = 0
     runner = JobRunner(settings, store)
+    monkeypatch.setattr(runner, 'kill', lambda process: None)
     monkeypatch.setattr(runner.stopping, 'wait', lambda _: False)
     monkeypatch.setattr('app.workers.job_runner.time.monotonic', lambda: 10**12)
 
@@ -194,3 +195,59 @@ def test_late_coordinator_failure_preserves_the_original_worker_error(settings):
     store.fail(job_id, 'The audio could not be decoded.')
     store.fail(job_id, 'Processing was interrupted by a server shutdown.')
     assert store.get(job_id)['error'] == 'The audio could not be decoded.'
+
+
+def test_expired_job_is_retained_for_retry_if_file_deletion_fails(settings, monkeypatch):
+    store, job_id, directory = seed(settings)
+    store.fail(job_id, 'Invalid audio')
+    with store.connect() as db:
+        db.execute('UPDATE jobs SET updated_at = ? WHERE id = ?', (time.time() - 25 * 3600, job_id))
+    runner = JobRunner(settings, store)
+    with monkeypatch.context() as patch:
+        def cannot_delete(*args, **kwargs):
+            raise PermissionError('Temporary filesystem failure')
+        patch.setattr('app.workers.job_runner.shutil.rmtree', cannot_delete)
+        runner.cleanup()
+        assert store.get(job_id) is not None
+        assert directory.exists()
+    runner.cleanup()
+    assert store.get(job_id) is None
+    assert not directory.exists()
+
+
+def test_worker_cleanup_terminates_descendants_after_leader_exits(monkeypatch):
+    import signal
+
+    calls = []
+
+    class ExitedWorker:
+        pid = 12345
+
+        def poll(self):
+            return 1
+
+        def wait(self, timeout):
+            calls.append(('wait', timeout))
+
+    monkeypatch.setattr('app.workers.job_runner.os.name', 'posix')
+    monkeypatch.setattr('app.workers.job_runner.os.killpg', lambda pid, sig: calls.append((pid, sig)))
+    JobRunner.kill(ExitedWorker())
+    assert calls == [(12345, signal.SIGKILL), ('wait', 5)]
+
+
+def test_worker_cleanup_reaps_leader_when_process_group_has_already_gone(monkeypatch):
+    waited = []
+
+    class ExitedWorker:
+        pid = 12345
+
+        def wait(self, timeout):
+            waited.append(timeout)
+
+    def missing_group(*args):
+        raise ProcessLookupError
+
+    monkeypatch.setattr('app.workers.job_runner.os.name', 'posix')
+    monkeypatch.setattr('app.workers.job_runner.os.killpg', missing_group)
+    JobRunner.kill(ExitedWorker())
+    assert waited == [5]

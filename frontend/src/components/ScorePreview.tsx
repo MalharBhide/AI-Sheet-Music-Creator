@@ -41,7 +41,7 @@ export default function ScorePreview({ status, previewUrls, pdfUrl, error, posit
     observer.observe(sheet);
     reveal();
     return () => observer.disconnect();
-  }, [follow, currentY, currentHeight, currentPage, zoom, pageNumber]);
+  }, [follow, currentY, currentHeight, currentPage, zoom, pageNumber, imageError]);
 
   useEffect(() => {
     const viewport = frame.current, sheet = paper.current;
@@ -50,14 +50,14 @@ export default function ScorePreview({ status, previewUrls, pdfUrl, error, posit
     if (left < viewport.scrollLeft + 24 || left > viewport.scrollLeft + viewport.clientWidth - 36) {
       viewport.scrollTo({ left: Math.max(0, left - viewport.clientWidth * .35) });
     }
-  }, [follow, currentX, currentPage, zoom, pageNumber]);
+  }, [follow, currentX, currentPage, zoom, pageNumber, imageError]);
 
   function browse(next: number) {
     setFollow(false); setPage(next);
     frame.current?.scrollTo({ top: 0, left: 0 });
   }
 
-  if (previewUrls.length && !imageError) {
+  if (previewUrls.length) {
     return <div className="preview-pages">
       <div className="preview-toolbar">
         <nav className="page-controls" aria-label="Score pages">
@@ -73,7 +73,11 @@ export default function ScorePreview({ status, previewUrls, pdfUrl, error, posit
         </div>
       </div>
       <div className="score-frame" ref={frame}>
-        <div className={`score-paper ${validMap ? "seekable" : ""}`} ref={paper} style={{ width: `${zoom}%` }}
+        {imageError ? <div className="empty-preview">
+          <FileMusic size={32} /><h2>This page couldn’t load.</h2>
+          <button className="button button-outline" onClick={() => setImageError(false)}>Retry page</button>
+          {pdfUrl && <p><a href={pdfUrl + "?preview=true"} target="_blank" rel="noreferrer">Open the PDF</a></p>}
+        </div> : <div className={`score-paper ${validMap ? "seekable" : ""}`} ref={paper} style={{ width: `${zoom}%` }}
           role={validMap ? 'button' : undefined} tabIndex={validMap ? 0 : undefined}
           aria-label={validMap ? 'Seek in sheet music. Click a note, or use left and right arrow keys.' : undefined}
           onClick={event => {
@@ -93,7 +97,7 @@ export default function ScorePreview({ status, previewUrls, pdfUrl, error, posit
           }}>
           <img src={previewUrls[pageNumber] + "?preview=true"} alt={`Piano sheet music, page ${pageNumber + 1}`} onError={() => setImageError(true)} />
           {current && current.page === pageNumber && <div className="score-cursor" data-time={current.time} aria-label="Current playback position in the score" role="img" style={{ left: `${current.x * 100}%`, top: `${current.y * 100}%`, height: `${current.height * 100}%` }} />}
-        </div>
+        </div>}
       </div>
       {validMap && <p className="preview-notice">Click a note to jump to that moment.</p>}
       {!validMap && <p className="preview-notice">Page following is unavailable for this score. You can still listen and browse the pages.</p>}
