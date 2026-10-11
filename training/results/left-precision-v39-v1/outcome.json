@@ -1,0 +1,76 @@
+{
+  "selected": false,
+  "reason": "No checkpoint preserved every validation recording and independently improved real-piano false-note counts at both confidence settings.",
+  "new_weights_deployed": false,
+  "approved_v38_retained": true,
+  "profiles": 2,
+  "epochs_per_profile": 40,
+  "training_recordings": 781,
+  "validation_recordings": 225,
+  "best_preserving_diagnostic": {
+    "profile": "support-small",
+    "stage": "search-040.json",
+    "eligible": false,
+    "raw": {
+      "threshold": 0.98,
+      "passes": true,
+      "failed_recordings": [],
+      "false_notes_removed": 3,
+      "real_piano_gain": 0,
+      "removed_notes": 3
+    },
+    "strict": {
+      "threshold": 0.985,
+      "passes": true,
+      "failed_recordings": [],
+      "false_notes_removed": 1,
+      "real_piano_gain": 0,
+      "removed_notes": 1
+    }
+  },
+  "actual_checkpoint_sha256": {
+    "support-protected/epoch-010.pt": "d33fb8aa283007c7b21e47c2f58f8ab8a90bbd50f40ae67695ac3101a64d443c",
+    "support-protected/epoch-020.pt": "a43c82b287f50bef6e30b94b6964d99642f7a2a9e0b98c04808fbf1065099b2a",
+    "support-protected/epoch-040.pt": "d24ee9f1b0fcf4a7b4ae6880fd0991ca76b48cf781342575c15ee37182eebfac",
+    "support-small/epoch-010.pt": "02b15e3f9b60eee1a3d907166707731bbe54cb9fc0a23f6079ed09b8544c9d40",
+    "support-small/epoch-020.pt": "2effb9518f067a02cef867ca0a658f4999877c839ce39903040b2316bc27a62d",
+    "support-small/epoch-040.pt": "e2c796d0b28eef09a3b84fac3766206529aad56198f4ff2f93ddfd704a40036d"
+  },
+  "frozen_source_witness_sha256": {
+    "bass_joint_timing.py": "11638d8f327d7f35f5cdc892cec3c6a089b62de34e398ac5b988634033a20790",
+    "bass_residual_coverage_data.py": "893eb4b3d887797202fd55e65e251222d3ae76245b2a5231b2739dc02d98489a",
+    "bass_temporal_data.py": "d87d78ce69f0ae590f6b1d566ab298d9433ce15e14b566f8f8e0b9853059f344",
+    "bass_v32_data.py": "a98c63ba9af57c37e7669ce62749839f865e8ec7aff25573809c1ccf1c624e78",
+    "cache_note_verifier.py": "d21d658a3eb1478e743a26727e9a27ad1f1819e6d151554fa1de65ffc69e9d48",
+    "chord_boundary_v36.py": "17af662427cda4b55c42fae5557001ee67db0134ca8968320dc8026d40bf31fb",
+    "left_precision_v39.py": "325edb8ac25eed9eca2bdd76a8ef1536c4d4104b8c15ed0edd3dec5cd385081a",
+    "musicnet_v32_data.py": "d59506c6bfecb2735d438e590c46125e7838e1d9a450f1903a4f9dd00804d926",
+    "periodicity_bass_data.py": "119cf3e34d5c35e132dfef88a52218897f422d4ea6a51a19f6c88153d5b63b6b",
+    "pitch_interval_coverage.py": "87408dad16d6bdbfae854cca7327f44eb9b4ddd6f972e930f5b7d01629f666ee",
+    "pitch_support_targets.py": "cae7c61505710491fad6c140695f813792912eb4c48f7f64c13177c8b70bfabf",
+    "prepare_left_precision_replay.py": "bdf5772819edf9b4ec0c49874a7fefb909f7f04e1d765162c0116a28ccda7f41",
+    "prepare_mutopia_boundaries.py": "b4ccfc9c9b46d6295fd814c19ec7140a519c1fe05f2f1755aac2b087dd0e71bf",
+    "score_bass_joint_timing.py": "552534528cac11b950fd868a18c3866450329090b151a3b92201c1f8d93dd57d",
+    "score_left_precision_v39.py": "ac8a4344068ad0a01e9d24ea8cc7bf733010448209c2f3e9579695ebc2b840ab",
+    "train_left_precision_v39.py": "d956353bb3954974c2c4ef583be2eda1923f8f9f5e5142c17590ddcdfed82053",
+    "train_melody_timing.py": "040ac9e2f881c3b0d6adec84086acf55ce82356899b3ffe8aa002ddc1743fd25"
+  },
+  "no_consumed_regression_or_first_pass_run": true,
+  "all_563_regressions_still_required": true,
+  "no_user_audio_or_scores": true,
+  "verification": {
+    "backend_and_training_tests_passed": 955,
+    "skipped_opt_in_integrations": 6,
+    "test_log_sha256": "6c05edc5ef264b7626edab29ae784514562654d2de305892ded040d49e61dc88",
+    "focused_new_tests_passed": 8,
+    "new_code_ruff": "passed",
+    "native_integrations_rerun": false,
+    "reason_native_not_rerun": "No production route, model asset or UI change; failed candidate refused export."
+  },
+  "website_check": {
+    "frontend_proxy_health": "ready",
+    "running_chord_release_asset_sha256": "eeef2fae2d0c4ce180af47dbb9670c5c6b82095df5f01722fb06ea2a6534b6d0",
+    "matches_approved_v38": true,
+    "no_runtime_or_asset_changes": true
+  }
+}

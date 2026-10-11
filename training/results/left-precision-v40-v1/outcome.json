@@ -1,0 +1,81 @@
+{
+  "selected_for_validation": true,
+  "approved_for_release": false,
+  "reason": "Frozen validation winner failed preservation in five of 563 consumed regressions at both settings. No runner-up, retuning, fresh first pass, export or deployment.",
+  "new_weights_deployed": false,
+  "approved_v38_retained": true,
+  "profiles": 2,
+  "epochs_per_profile": 100,
+  "training_recordings": 765,
+  "validation_recordings": 221,
+  "winner": {
+    "profile": {
+      "name": "support-protected",
+      "width": 20,
+      "keep_weight": 32,
+      "seed": 285002
+    },
+    "epoch": 50,
+    "threshold": 0.99,
+    "checkpoint": "support-protected/epoch-050.pt",
+    "checkpoint_sha256": "b2dcbacf3f789a3349ffea092578af5899680b9a2c42dc0c258cc30fd070db89",
+    "plan_sha256": "4656d36fb0c0b6177b6e0806b4da888dc59f8eaf4e2cc6129da133b54656029d",
+    "validation_sha256": "ed8f0c503919fdcde11eea7c714f5afc98df753ed870d7ee2a38d206969cddb0"
+  },
+  "regression": {
+    "raw": {
+      "threshold": 0.99,
+      "passes": false,
+      "failed_recordings": [
+        "slakh-bass-positive-reserved-v2-Track00005-demucs-000",
+        "bass-temporal-fresh-v1-263121",
+        "periodicity-v31-reserved-keyboard_synthetic_000-single",
+        "release-neighbor-v31-reserved-groove-source-13-dyad",
+        "release-neighbor-v31-reserved-groove-source-15-single"
+      ],
+      "false_notes_removed": 247,
+      "real_piano_gain": 0,
+      "removed_notes": 250
+    },
+    "strict": {
+      "threshold": 0.995,
+      "passes": false,
+      "failed_recordings": [
+        "slakh-bass-positive-reserved-v2-Track00005-demucs-000",
+        "bass-temporal-fresh-v1-263121",
+        "periodicity-v31-reserved-keyboard_synthetic_000-single",
+        "release-neighbor-v31-reserved-groove-source-13-dyad",
+        "release-neighbor-v31-reserved-groove-source-15-single"
+      ],
+      "false_notes_removed": 193,
+      "real_piano_gain": 0,
+      "removed_notes": 196
+    }
+  },
+  "consumed_regression_sha256": "d93c9db6b074e7e3f5ed6154330c28ad301ffdbbd4e0f286ec079df1c73dfc81",
+  "actual_checkpoint_sha256": {
+    "support-protected/epoch-025.pt": "d77262e6fcde76d283ded0981909d2031dcfc172e3c949e4316448c01cab78a7",
+    "support-protected/epoch-050.pt": "b2dcbacf3f789a3349ffea092578af5899680b9a2c42dc0c258cc30fd070db89",
+    "support-protected/epoch-100.pt": "c6d2fea0d1b1d4e415d7804ac1730d8cb4a7ea5531661dc57babca8a8fb17d1a",
+    "support-small/epoch-025.pt": "52ecc5d16394cb1f149178fe0d83b19361fc031983b709cef739052714497dbe",
+    "support-small/epoch-050.pt": "1fc47f7c3711f085aad97b386e181155ccc3272f0310f18e6ed3a92dbdfe8161",
+    "support-small/epoch-100.pt": "d0eb688faca51673e3bff003a41f292424eab00b53d3ab0eab13602981f7a610"
+  },
+  "fresh_seeds_285101_285140_untouched": true,
+  "no_user_audio_or_scores": true,
+  "verification": {
+    "backend_and_training_tests_passed": 955,
+    "skipped_opt_in_integrations": 6,
+    "test_log_sha256": "6c05edc5ef264b7626edab29ae784514562654d2de305892ded040d49e61dc88",
+    "focused_new_tests_passed": 8,
+    "new_code_ruff": "passed",
+    "native_integrations_rerun": false,
+    "reason_native_not_rerun": "No production route, model asset or UI change; failed candidate refused export."
+  },
+  "website_check": {
+    "frontend_proxy_health": "ready",
+    "running_chord_release_asset_sha256": "eeef2fae2d0c4ce180af47dbb9670c5c6b82095df5f01722fb06ea2a6534b6d0",
+    "matches_approved_v38": true,
+    "no_runtime_or_asset_changes": true
+  }
+}

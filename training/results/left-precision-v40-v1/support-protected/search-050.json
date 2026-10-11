@@ -1,0 +1,189 @@
+[
+  {
+    "eligible": false,
+    "raw": {
+      "threshold": 0.8,
+      "passes": false,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-texture-v1-262473",
+        "bass-texture-v1-262491",
+        "bass-texture-v1-262494",
+        "nsynth-v25-bass_synthetic_098-dyad",
+        "nsynth-v25-bass_synthetic_098-layered",
+        "groove-v25-groove-source-09-dyad",
+        "groove-v25-groove-source-09-quiet",
+        "groove-v25-groove-source-10-layered",
+        "groove-v25-groove-source-11-repeat",
+        "groove-v25-groove-source-11-quiet",
+        "musicnet-v32-2593-0"
+      ],
+      "false_notes_removed": 396,
+      "real_piano_gain": 6,
+      "removed_notes": 403
+    },
+    "strict": {
+      "threshold": 0.805,
+      "passes": false,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "bass-texture-v1-262473",
+        "bass-texture-v1-262491",
+        "bass-texture-v1-262494",
+        "nsynth-v25-bass_synthetic_098-dyad",
+        "nsynth-v25-bass_synthetic_098-layered",
+        "groove-v25-groove-source-09-dyad",
+        "groove-v25-groove-source-09-quiet",
+        "groove-v25-groove-source-10-layered",
+        "groove-v25-groove-source-11-repeat",
+        "groove-v25-groove-source-11-quiet",
+        "musicnet-v32-2593-0"
+      ],
+      "false_notes_removed": 389,
+      "real_piano_gain": 6,
+      "removed_notes": 396
+    }
+  },
+  {
+    "eligible": false,
+    "raw": {
+      "threshold": 0.9,
+      "passes": false,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "nsynth-v25-bass_synthetic_098-dyad",
+        "nsynth-v25-bass_synthetic_098-layered",
+        "groove-v25-groove-source-09-dyad",
+        "groove-v25-groove-source-09-quiet",
+        "groove-v25-groove-source-10-layered",
+        "musicnet-v32-2593-0"
+      ],
+      "false_notes_removed": 265,
+      "real_piano_gain": 6,
+      "removed_notes": 268
+    },
+    "strict": {
+      "threshold": 0.905,
+      "passes": false,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "nsynth-v25-bass_synthetic_098-dyad",
+        "nsynth-v25-bass_synthetic_098-layered",
+        "groove-v25-groove-source-09-dyad",
+        "groove-v25-groove-source-09-quiet",
+        "groove-v25-groove-source-10-layered",
+        "musicnet-v32-2593-0"
+      ],
+      "false_notes_removed": 257,
+      "real_piano_gain": 6,
+      "removed_notes": 260
+    }
+  },
+  {
+    "eligible": false,
+    "raw": {
+      "threshold": 0.95,
+      "passes": false,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "nsynth-v25-bass_synthetic_098-layered",
+        "groove-v25-groove-source-09-dyad",
+        "musicnet-v32-2593-0"
+      ],
+      "false_notes_removed": 178,
+      "real_piano_gain": 3,
+      "removed_notes": 180
+    },
+    "strict": {
+      "threshold": 0.955,
+      "passes": false,
+      "failed_recordings": [
+        "bass-positive-v1-04_BN1-129-Eb_comp",
+        "musicnet-v32-2593-0"
+      ],
+      "false_notes_removed": 169,
+      "real_piano_gain": 3,
+      "removed_notes": 170
+    }
+  },
+  {
+    "eligible": false,
+    "raw": {
+      "threshold": 0.98,
+      "passes": false,
+      "failed_recordings": [
+        "musicnet-v32-2593-0"
+      ],
+      "false_notes_removed": 106,
+      "real_piano_gain": 3,
+      "removed_notes": 106
+    },
+    "strict": {
+      "threshold": 0.985,
+      "passes": false,
+      "failed_recordings": [
+        "musicnet-v32-2593-0"
+      ],
+      "false_notes_removed": 90,
+      "real_piano_gain": 2,
+      "removed_notes": 90
+    }
+  },
+  {
+    "eligible": true,
+    "raw": {
+      "threshold": 0.99,
+      "passes": true,
+      "failed_recordings": [],
+      "false_notes_removed": 72,
+      "real_piano_gain": 1,
+      "removed_notes": 72
+    },
+    "strict": {
+      "threshold": 0.995,
+      "passes": true,
+      "failed_recordings": [],
+      "false_notes_removed": 58,
+      "real_piano_gain": 1,
+      "removed_notes": 58
+    }
+  },
+  {
+    "eligible": false,
+    "raw": {
+      "threshold": 0.995,
+      "passes": true,
+      "failed_recordings": [],
+      "false_notes_removed": 58,
+      "real_piano_gain": 1,
+      "removed_notes": 58
+    },
+    "strict": {
+      "threshold": 0.9999,
+      "passes": true,
+      "failed_recordings": [],
+      "false_notes_removed": 2,
+      "real_piano_gain": 0,
+      "removed_notes": 2
+    }
+  },
+  {
+    "eligible": false,
+    "raw": {
+      "threshold": 0.999,
+      "passes": true,
+      "failed_recordings": [],
+      "false_notes_removed": 18,
+      "real_piano_gain": 0,
+      "removed_notes": 18
+    },
+    "strict": {
+      "threshold": 0.9999,
+      "passes": true,
+      "failed_recordings": [],
+      "false_notes_removed": 2,
+      "real_piano_gain": 0,
+      "removed_notes": 2
+    }
+  }
+]
