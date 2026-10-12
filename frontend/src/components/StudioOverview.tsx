@@ -1,4 +1,6 @@
 import { ArrowRight, AudioLines, FileMusic, Headphones, Music2, Piano } from "lucide-react";
+import { ScoreOptions } from "../api";
+import RecordingExplorer from "./RecordingExplorer";
 
 const steps = [
   { icon: AudioLines, title: "Bring your recording", description: "Choose an audio file and tell us whether it’s a full song, solo piano, or a melody." },
@@ -6,8 +8,9 @@ const steps = [
   { icon: FileMusic, title: "Make it your own", description: "Print a PDF, edit the notes in a notation app with MusicXML, or take MIDI into your music software." }
 ];
 
-export default function StudioOverview({ retentionHours }: { retentionHours: number }) {
+export default function StudioOverview({ retentionHours, mode, onChooseMode, disabled }: { retentionHours: number; mode: ScoreOptions["transcription_mode"]; onChooseMode: (mode: ScoreOptions["transcription_mode"]) => void; disabled: boolean }) {
   return <div className="studio-overview">
+    <RecordingExplorer mode={mode} onChoose={onChooseMode} disabled={disabled} />
     <section className="workflow-section" id="how-it-works" aria-labelledby="workflow-heading">
       <div className="section-heading"><div><p className="eyebrow">FROM SOUND TO SCORE</p><h2 id="workflow-heading">Your next practice session starts here.</h2></div><a href="#studio" className="section-link">Open the studio <ArrowRight size={16} /></a></div>
       <div className="workflow-grid">{steps.map((step, index) => <article className="workflow-card" key={step.title}><div className="workflow-card-top"><span className="feature-icon"><step.icon size={23} /></span><span className="step-number">0{index + 1}</span></div><h3>{step.title}</h3><p>{step.description}</p></article>)}</div>

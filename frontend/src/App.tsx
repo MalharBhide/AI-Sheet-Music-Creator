@@ -10,6 +10,7 @@ import UploadDropzone from "./components/UploadDropzone";
 import StudioOverview from "./components/StudioOverview";
 import StudioIntro from "./components/StudioIntro";
 import StudioJourney from "./components/StudioJourney";
+import ScoreDetails from "./components/ScoreDetails";
 import { validateAudioUpload } from "./uploadValidation";
 import { ScoreAudio } from "./playback";
 
@@ -63,6 +64,7 @@ export default function App() {
   useEffect(() => { setPlaybackScore(null); setPlaybackPosition(0); setSeekRequest(null); }, [jobId]);
   const submitting = useRef(false);
   const guideRef = useRef<HTMLDialogElement>(null);
+  const recordingPreviewRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -127,6 +129,7 @@ export default function App() {
     if (submitting.current || jobId || !health?.ready) return;
     const validation = validateAudioUpload(recording, health.limits.max_upload_mb);
     if (validation) { setError(validation); return; }
+    recordingPreviewRef.current?.pause();
     submitting.current = true; setError(null); setIsUploading(true); setUploadProgress(0);
     try {
       const created = await uploadAudio(recording, setUploadProgress, settings);
@@ -180,6 +183,7 @@ export default function App() {
             </> : <>
               <h2 className="sidebar-title">Start with a recording</h2>
               <UploadDropzone file={file} onUpload={selectFile} disabled={busy} />
+              {originalUrl && <details className="recording-preview"><summary><Headphones size={15} aria-hidden="true" /> Listen before uploading</summary><audio ref={recordingPreviewRef} controls preload="metadata" src={originalUrl} aria-label="Preview selected recording" /><p>Preview the file on your device before creating a score.</p></details>}
               {recordingLimits && <p className="recording-limit">{recordingLimits}</p>}
               <fieldset className="mode-fieldset" disabled={busy}><legend>Recording type</legend><div className="mode-options">{modes.map(mode => { const Icon = mode.icon; return <label className={`mode-option ${options.transcription_mode === mode.id ? "selected" : ""}`} key={mode.id}><input type="radio" name="transcription-mode" value={mode.id} checked={options.transcription_mode === mode.id} onChange={() => setOptions(current => ({ ...current, transcription_mode: mode.id }))} /><Icon size={19} aria-hidden="true" /><span>{mode.label}</span></label>; })}</div><p className="mode-description">{modes.find(mode => mode.id === options.transcription_mode)?.description}</p></fieldset>
               <details className="advanced-settings"><summary>More options <Plus size={15} /></summary>
@@ -197,7 +201,8 @@ export default function App() {
             {done && <p className="retention-note">Files are available for {health?.limits.retention_hours ?? 24} hours.</p>}
             {job?.analysis?.warnings?.length ? <details className="score-notes"><summary>About this transcription</summary><p>This is an editable first draft. Listen and review the notes before practicing.</p><ul>{job.analysis.warnings.map((warning, index) => <li key={index}>{warning}</li>)}</ul></details> : null}
           </section>
-          {recent.length > 0 && <details className="recent-card" open><summary>Recent scores <span>{recent.length}</span></summary><p className="recent-caption">Pick up where you left off.</p><label className="recent-search"><Search size={15} /><input type="search" aria-label="Find a recent score" placeholder="Find a score…" value={recentQuery} onChange={event => setRecentQuery(event.target.value)} /></label><div className="recent-list">{recent.filter(item => pieceName(item.original_filename).toLocaleLowerCase().includes(recentQuery.trim().toLocaleLowerCase())).map(item => <button className={`recent-item ${item.job_id === jobId ? "current" : ""}`} key={item.job_id} disabled={busy} onClick={() => openRecent(item.job_id)}><Music2 size={17} /><span><strong>{pieceName(item.original_filename)}</strong><small>{new Date(item.created_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })}{item.status === "failed" ? " · Needs attention" : item.status !== "done" ? " · In progress" : ""}</small></span><ChevronRight size={15} /></button>)}{!recent.some(item => pieceName(item.original_filename).toLocaleLowerCase().includes(recentQuery.trim().toLocaleLowerCase())) && <p className="recent-caption" role="status">No matching scores.</p>}</div></details>}
+          {done && job && <ScoreDetails job={job} pages={previewUrls.length} canPlay={!!job.download_urls.playback} />}
+          {recent.length > 0 ? <details className="recent-card" open><summary>Recent scores <span>{recent.length}</span></summary><p className="recent-caption">Pick up where you left off.</p><label className="recent-search"><Search size={15} /><input type="search" aria-label="Find a recent score" placeholder="Find a score…" value={recentQuery} onChange={event => setRecentQuery(event.target.value)} /></label><div className="recent-list">{recent.filter(item => pieceName(item.original_filename).toLocaleLowerCase().includes(recentQuery.trim().toLocaleLowerCase())).map(item => <button className={`recent-item ${item.job_id === jobId ? "current" : ""}`} key={item.job_id} disabled={busy} onClick={() => openRecent(item.job_id)}><Music2 size={17} /><span><strong>{pieceName(item.original_filename)}</strong><small>{new Date(item.created_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })}{item.status === "failed" ? " · Needs attention" : item.status !== "done" ? " · In progress" : ""}</small></span><ChevronRight size={15} /></button>)}{!recent.some(item => pieceName(item.original_filename).toLocaleLowerCase().includes(recentQuery.trim().toLocaleLowerCase())) && <p className="recent-caption" role="status">No matching scores.</p>}</div></details> : <section className="recent-card recent-empty" aria-labelledby="recent-empty-heading"><Music2 size={21} aria-hidden="true" /><h2 id="recent-empty-heading">Your music, all in one place</h2><p>Your recent scores will appear here in this browser after you create your first one.</p></section>}
         </aside>
         <section className="score-workspace" aria-label="Sheet music and playback">
           <div className="score-heading"><div><p className="eyebrow">{jobId ? "PIANO SCORE" : "A PLACE FOR YOUR MUSIC"}</p><h2>{job ? pieceName(job.original_filename) : "Your sheet music"}</h2></div>{done && job?.analysis?.tempo_bpm && <span className="score-tempo">♩ {Math.round(job.analysis.tempo_bpm)}</span>}</div>
@@ -206,7 +211,7 @@ export default function App() {
           {!jobId && <div className="recording-tip"><span className="tip-icon"><Lightbulb size={19} /></span><div><strong>Recording tip · {selectedMode.label}</strong><p>{selectedMode.tip}</p></div></div>}
         </section>
       </div>
-      {!jobId && <StudioOverview retentionHours={health?.limits.retention_hours ?? 24} />}
+      {!jobId && <StudioOverview retentionHours={health?.limits.retention_hours ?? 24} mode={options.transcription_mode} onChooseMode={mode => setOptions(current => ({ ...current, transcription_mode: mode }))} disabled={busy} />}
     </main>
     <footer className="site-footer"><div><strong>PianoScribe</strong><span>From listening to playing.</span></div><nav aria-label="Footer navigation"><a href="#studio">Studio</a>{!jobId && <a href="#questions">Common questions</a>}<button onClick={() => setGuideOpen(true)}>Recording guide</button></nav></footer>
     <dialog className="guide-dialog" ref={guideRef} onCancel={() => setGuideOpen(false)} onClick={event => { if (event.target === event.currentTarget) setGuideOpen(false); }}><button className="icon-button dialog-close" aria-label="Close transcription guide" onClick={() => setGuideOpen(false)}><X size={20} /></button><p className="eyebrow">A NOTE BEFORE THE FIRST NOTE</p><h2>A good score starts<br />with a good recording.</h2><p>Piano Scribe creates an editable first draft. Listen to the result and compare it with your recording before relying on the notes.</p><div className="guide-section"><Piano size={23} /><div><h3>Solo piano → transcription</h3><p>A clear solo recording gives the system its best chance to identify the notes you played. Heavy reverb, background noise, and overlapping instruments make this harder.</p></div></div><div className="guide-section"><Radio size={23} /><div><h3>Full song → piano arrangement</h3><p>A full mix contains voices, drums, bass, and other instruments. The result is a piano reduction of detected musical material, not a guaranteed note-for-note piano score.</p></div></div><div className="guide-section"><Headphones size={23} /><div><h3>Listen, then refine</h3><p>Use the piano player to hear the actual notes in your score, slow it down, and compare with the original. Download MusicXML for edits in a notation app or MIDI for your music software.</p></div></div><p className="guide-footnote">Long recordings are processed in sections. Processing time depends on recording length, complexity, and the available hardware. Files are retained for {health?.limits.retention_hours ?? 24} hours; recent history is stored only in this browser.</p><button className="button button-primary" onClick={() => setGuideOpen(false)}>Back to the studio <ArrowRight size={16} /></button></dialog>
