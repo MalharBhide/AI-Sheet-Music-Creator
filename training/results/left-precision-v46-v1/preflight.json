@@ -1,0 +1,13 @@
+{
+  "targeted_tests": 15,
+  "full_tests": 1024,
+  "skipped": 6,
+  "full_suite_warnings": 5,
+  "full_suite_command": "python -m pytest -q --import-mode=importlib -p no:cacheprovider /src/backend/tests /src/training",
+  "logs": {
+    ".training/left-precision-v46-targeted-tests.log": "4beda8077584a6767119ab26f8f81ff69eaa66d8b70760bb5f065281ae1b1df5",
+    ".training/left-precision-v46-preflight-tests.log": "d8d625cf48ac9b65b60ec9874cbdb3b17ef6e16965617a2b07315786e8103ea2"
+  },
+  "new_weights_deployed": false,
+  "no_user_audio_or_scores": true
+}

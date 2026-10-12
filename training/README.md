@@ -31,6 +31,12 @@ passed the full 1,014-test suite and the complete fitting-data audit. Both
 extra-note restorations caused regressions and TinySOL wrong-pitch gain was zero.
 All V45 weights are withheld; no consumed/fresh tests were read or weights deployed.
 
+The [V46 additional-removal study](results/left-precision-v46-v1/README.md)
+keeps V43 rejections immutable while training two fresh verifiers on the same
+licensed fitting data. Its composition cannot restore rejected notes; genuine-note
+preservation and positive real-piano/pitch-only gains are still required. The
+full 1,024-test suite passed; both profiles are running without website changes.
+
 V44 and TinySOL preparation use the pinned V32 reader in
 `.training/left-precision-v43-replay` for historical physical features. Do not
 weaken old source/hash guards to load these caches with a newer runtime.
