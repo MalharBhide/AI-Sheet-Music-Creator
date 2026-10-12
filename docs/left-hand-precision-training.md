@@ -1,7 +1,7 @@
-# Left-hand note precision studies V39 and V40
+# Left-hand note precision studies
 
 These studies address extra low notes in balanced full-song piano arrangements.
-**Neither model is released. The website continues using V32 note filtering and
+**These candidates are not released. The website continues using V32 note filtering and
 the approved V38 release specialist.** No user uploads, saved jobs or scores were
 processed, and the original 7 mm engraving is unchanged.
 
@@ -110,3 +110,99 @@ The new functional checks cover scope protection, invalid observations,
 label-independent inference, genuine held-note fragments, repeated spacing and
 the V38 composition. These checks establish implementation behavior, not song
 accuracy.
+
+## V41: new quiet-note evidence and a separate physical guardian
+
+V41 adds 112 authored NSynth MP3 examples, using 88 training and 24 validation
+sequences from the original 11/3 instrument partition. All four reserved
+instruments remain outside fitting. New deterministic pitch choices cover quiet
+single notes, quiet overlapping notes and chords, long overlaps, short and
+variable repeated attacks, short chords and broken chords. Original long samples
+retain their 3 s key labels and complete 1 s acoustic tails. Short articulations
+are explicitly authored sample gates with an 80 ms damping tail protected in
+full; they are not presented as recorded human key releases. MP3 rates cycle
+48/128/192 kbps, with checked decoded clocks. No user upload is involved.
+
+Two fresh 100-epoch profiles train on 853 excerpts and validate on 245. The
+rejection CNN receives the V40 physical inputs. A separate MLP receives the 163
+context/recurrence features and per-channel mean, maximum and standard deviation
+of all three windows. Removal requires permission from both heads. The training
+set supplies 29,564 KEEP and 6,229 REMOVE targets; source IDs and labels never
+enter inference. Both heads start with a strong KEEP preference, with separate
+weighted losses and training-only normalization.
+
+The frozen winner is `dual-small`, epoch 100, threshold .99 (stricter .995),
+checkpoint SHA256:
+`b721246b9415d6389781b3349ca88f5454e1e9c6a56311ebf28da54972f43cd0`.
+
+| Evaluation | Clips | Normal / stricter false-note reduction | Genuine attacks lost |
+| --- | ---: | ---: | ---: |
+| Validation | 245 | 75 / 54 | 0 / 0 |
+| Real-piano validation subset | 15 | 2 / 1 | 0 / 0 |
+| All consumed regressions | 563 | 202 / 162 | 3 / 2 |
+
+Every validation excerpt preserves attacks, holds, pitch support and timing, but
+the complete regression rejects the winner at both settings. A separate
+physical guardian alone still misidentifies some genuine low notes. Aggregate
+false-note reduction cannot override that loss. No runner-up, threshold change,
+fresh pass, export or deployment follows; seeds 286101–286140 remain untouched.
+The website's approved V38 model and retained note clocks remain unchanged.
+
+The full suite passes 962 tests, with six optional native integrations skipped.
+The plan, supervision, six checkpoint hashes, curves, searches, per-recording
+diagnostics and exact executed source witnesses are archived under
+`training/results/left-precision-v41-v1`. Audio and model weights remain local.
+
+## V42: learning pitch presence throughout an event
+
+V42 trains a separate convolutional frame-presence head alongside a fresh
+rejection head. Presence targets follow the exact 40-sample coarse-window
+clock. Every supplied pitch fragment is protected, including fragments shorter
+than the sampling grid, and genuine jittered attack/hold matches. Inference
+receives acoustic windows and normalized physical context only. A note can be
+removed only when rejection is confident and every one of its 24 central
+presence samples is below the complementary confidence threshold.
+
+Measured recurrence is added to the existing verified 16/4 public-domain
+Mutopia fitting excerpts from their checksum-checked waveforms. Decoder output,
+labels, work partitions and reserved recordings are unchanged; there is no
+new decoder inference. These are existing project sources receiving a new
+physical observation, not a newly acquired performance corpus.
+
+Two fresh 100-epoch profiles fit 869 excerpts and validate on 249. Neither
+qualifies: preserving settings remove at most one extra validation note with
+no real-piano gain; the small model's more active final checkpoint removes six
+extra notes but harms a supplied note. No consumed regression, independent first
+pass, export or deployment occurs, and seeds 287101–287140 remain untouched.
+The suite passes 968 tests, with six optional native integrations skipped.
+All six checkpoints' hashes, executed sources and measured-data provenance are
+archived in `training/results/left-precision-v42-v1`.
+
+## V43: independent rejection and presence calibration
+
+Two fresh 100-epoch profiles fit 869 excerpts and validate on 249. This study
+requires V42 to have stopped before consumed regression; it does not retune a
+consumed-test failure. Rejection and presence thresholds are independently
+predeclared and selected on validation only.
+
+The frozen winner is calibrated-small, epoch 50, rejection .9 and presence veto
+.2. The stricter policy is .905 and .16. Its checkpoint SHA256 is
+22f1f9bcf5332e470d289579a3243f7ae215da9e1752f72060fdc3bcad8faac9.
+
+Normal / stricter false-note reductions:
+- Validation: 42 / 32, including 1 / 1 real-piano extra notes.
+- All 563 consumed regressions: 109 / 72.
+- Forty independent first-pass MP3 examples: 18 / 14, including 1 / 1 in the
+  original family and 17 / 13 in the texture family.
+
+Both policies preserve every tested excerpt's required attacks, supplied pitch
+support, holds and retained clocks. The independent seeds 288101–288140 are now
+consumed and must join any future regression gate. These limited dataset results
+do not establish accuracy on arbitrary songs or user uploads.
+
+No weights are deployed. Export, native inference parity, complete runtime
+composition and website integration remain required. The website keeps V38.
+The suite passes 971 tests with six optional native checks skipped. All six
+checkpoint hashes, plans, curves, source witnesses, diagnostics and independent
+manifest are archived. Weights/audio remain local. No user upload or saved score
+was processed, and the original engraving size is unchanged.
