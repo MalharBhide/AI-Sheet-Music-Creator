@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, AudioLines, Check, ChevronRight, Headphones, Mic2, Music2, Piano, Plus, Radio, Search, X } from "lucide-react";
+import { ArrowRight, AudioLines, Check, ChevronRight, Headphones, Lightbulb, Mic2, Music2, Piano, Plus, Radio, Search, X } from "lucide-react";
 
 import { ApiError, apiUrl, fetchExample, fetchHealth, fetchJob, Health, Job, ScoreOptions, uploadAudio } from "./api";
 import DownloadPanel from "./components/DownloadPanel";
@@ -8,14 +8,16 @@ import ScorePlayback from "./components/ScorePlayback";
 import ScorePreview from "./components/ScorePreview";
 import UploadDropzone from "./components/UploadDropzone";
 import StudioOverview from "./components/StudioOverview";
+import StudioIntro from "./components/StudioIntro";
+import StudioJourney from "./components/StudioJourney";
 import { validateAudioUpload } from "./uploadValidation";
 import { ScoreAudio } from "./playback";
 
 const defaultOptions: ScoreOptions = { transcription_mode: "full_mix", detail: "balanced", time_signature: "4/4", grid: "sixteenth" };
 const modes = [
-  { id: "full_mix", label: "Full song", icon: AudioLines, description: "Main tune and accompaniment, arranged for piano." },
-  { id: "piano", label: "Solo piano", icon: Piano, description: "For recordings of piano on its own." },
-  { id: "melody", label: "Melody", icon: Mic2, description: "For a voice or instrument playing one tune." }
+  { id: "full_mix", label: "Full song", icon: AudioLines, description: "Main tune and accompaniment, arranged for piano.", tip: "Start with a clear mix. Dense instruments and effects can make the arrangement less faithful to the recording." },
+  { id: "piano", label: "Solo piano", icon: Piano, description: "For recordings of piano on its own.", tip: "A close, clear piano recording works best. Reduce room noise and reverb so each attack and held note is easier to hear." },
+  { id: "melody", label: "Melody", icon: Mic2, description: "For a voice or instrument playing one tune.", tip: "Use a single voice or instrument with as little backing music as possible. This mode focuses on one musical line." }
 ] as const;
 const historyKey = "piano-scribe.recent.v1";
 type RecentJob = Pick<Job, "job_id" | "original_filename" | "created_at" | "status">;
@@ -155,6 +157,7 @@ export default function App() {
   if (!previewUrls.length && job?.download_urls.svg) previewUrls.push(apiUrl(job.download_urls.svg)!);
   const busy = isUploading || loadingExample;
   const done = job?.status === "done";
+  const selectedMode = modes.find(mode => mode.id === options.transcription_mode)!;
   const availableDownloads = !!job && Object.values(job.download_urls).some(Boolean);
   const recordingLimits = health ? [health.limits.max_upload_mb > 0 ? `Up to ${health.limits.max_upload_mb} MB` : null, health.limits.max_audio_seconds > 0 ? `${health.limits.max_audio_seconds} seconds maximum` : null].filter(Boolean).join(" · ") : "";
 
@@ -165,8 +168,9 @@ export default function App() {
       <div className="header-actions"><button className="help-button" onClick={() => setGuideOpen(true)}>Help</button>{jobId && <button className="button button-outline" onClick={reset} disabled={busy}><Plus size={17} /> New score</button>}</div>
     </header>
     <main className="workspace">
-      {!jobId && <section className="page-intro"><p className="eyebrow"><span className="intro-dot" /> YOUR MUSIC. YOUR PIANO.</p><h1>Turn a song into<br /><em>something you can play.</em></h1><p className="intro-description">A workspace for turning recordings into piano sheet music.<br />Upload, listen, and take your score to the piano.</p><div className="intro-formats"><span><AudioLines size={14} /> Audio to piano</span><span><Headphones size={14} /> Follow-along playback</span><span><Music2 size={14} /> PDF, MIDI & MusicXML</span></div></section>}
+      {!jobId && <StudioIntro />}
       <div className="studio-section-heading" id="studio"><div><p className="eyebrow">YOUR WORKSPACE</p><h2>{jobId ? "Listen. Review. Play." : "The piano studio"}</h2></div><button className="studio-guide" onClick={() => setGuideOpen(true)}>Recording guide <ArrowRight size={15} /></button></div>
+      <StudioJourney stage={done ? 2 : file || jobId ? 1 : 0} />
       <div className="studio-grid">
         <aside className="studio-sidebar">
           <section className="setup-card" aria-label={jobId ? "Score downloads" : "Transcription setup"}>
@@ -199,6 +203,7 @@ export default function App() {
           <div className="score-heading"><div><p className="eyebrow">{jobId ? "PIANO SCORE" : "A PLACE FOR YOUR MUSIC"}</p><h2>{job ? pieceName(job.original_filename) : "Your sheet music"}</h2></div>{done && job?.analysis?.tempo_bpm && <span className="score-tempo">♩ {Math.round(job.analysis.tempo_bpm)}</span>}</div>
           {(done || job?.status === "failed") && job?.download_urls.playback && <ScorePlayback key={`playback-${jobId}`} url={apiUrl(job.download_urls.playback)} originalUrl={originalUrl} onPositionChange={setPlaybackPosition} onScoreLoaded={setPlaybackScore} seekRequest={seekRequest} />}
           <ScorePreview key={`preview-${jobId || "new"}`} status={job?.status} previewUrls={previewUrls} pdfUrl={apiUrl(job?.download_urls.pdf)} error={job?.error || (!job ? error : null)} position={playbackPosition} positions={playbackScore?.positions ?? []} onSeek={time => { setPlaybackPosition(time); setSeekRequest({ time }); }} />
+          {!jobId && <div className="recording-tip"><span className="tip-icon"><Lightbulb size={19} /></span><div><strong>Recording tip · {selectedMode.label}</strong><p>{selectedMode.tip}</p></div></div>}
         </section>
       </div>
       {!jobId && <StudioOverview retentionHours={health?.limits.retention_hours ?? 24} />}
