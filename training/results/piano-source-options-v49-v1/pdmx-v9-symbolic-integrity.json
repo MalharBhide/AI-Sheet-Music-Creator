@@ -1,0 +1,51 @@
+{
+  "version": "pdmx-v9-symbolic-integrity-v1",
+  "publisher": "https://zenodo.org/records/15571083",
+  "catalog": {
+    "bytes": 225399738,
+    "md5": "30392ccf38bb63ce70e7afae70f9c88c",
+    "sha256": "fc2187e7e09185f4b28be57b6478a96a1243a037f8fd13624f17de2d8bfd44bd"
+  },
+  "archives": {
+    "mid": {
+      "bytes": 214395208,
+      "md5": "d920a21b2fcd99a56d9c381b39debbb2",
+      "sha256": "e444f9b466f02c9a054d31478c9886847f39c575a65ec45a0aaa1a5ee088c1d1",
+      "regular_files": 254035,
+      "uncompressed_bytes": 1362629957,
+      "directories": 1019,
+      "safe_unique_paths": true
+    },
+    "metadata": {
+      "bytes": 159444765,
+      "md5": "5bc79445090dd2fe5e96cffa77a3461c",
+      "sha256": "325b57ad69c34d45b05b8f307d88ebd10ff67554a7a9b4c183676e7586deffa3",
+      "regular_files": 254077,
+      "uncompressed_bytes": 1667135580,
+      "directories": 11,
+      "safe_unique_paths": true
+    }
+  },
+  "training_cleared": false,
+  "extracted_members": 0,
+  "audio_rendered_or_inferred": false,
+  "user_audio_or_scores_processed": false,
+  "catalog_links": {
+    "rows": 254077,
+    "conflict_free_valid_rows": 222820,
+    "mid_missing_references": 42,
+    "mid_clean_valid_missing_references": 0,
+    "metadata_missing_references": 0,
+    "metadata_clean_valid_missing_references": 0,
+    "mid_empty_references": 42,
+    "mid_unreferenced_archive_members": 0,
+    "metadata_unreferenced_archive_members": 0
+  },
+  "limitations": [
+    "Integrity and catalog linkage only; no per-score rights or work identity clearance.",
+    "Public-domain labels and program zero do not alone establish piano intent or rights.",
+    "Clock, controller, same-key overlap and source-group checks required before rendering.",
+    "Any future sampled audio supplies synthetic commands, not human release or pedal labels."
+  ],
+  "producer_sha256": "cdd77095c5d64c9d808efcbb4f7e71260e9ef86fb40ce3cf774b28114b40b6e0"
+}

@@ -33,6 +33,19 @@ Raw catalogs remain local. These checks do not authorize using every public-doma
 label blindly, mixing related works across partitions, or replacing real-piano
 release evidence with synthesized data.
 
+The complete MIDI and metadata archives also pass publisher sizes and MD5 hashes.
+A streaming inventory checks unique relative paths, file types, sizes and catalog
+links without extracting any member. The MIDI archive contains 254,035 files;
+metadata contains 254,077. All 222,820 conflict-free valid rows link to both files.
+The 42 missing MIDI references are explicitly marked `NA` on invalid rows.
+This integrity proof does not clear any composition, arrangement or performance
+for fitting. No symbolic notes were rendered, transcribed or used in training.
+The audit tool has regression coverage for traversal, links, duplicate members,
+unexpected types, missing references and changed download checksums.
+The full backend/training suite passes 1,075 tests with six skips and five
+dependency warnings. The 14 archive checks also pass separately. Approved
+left-presence and chord-release asset hashes remain unchanged.
+
 PDMX catalog attribution: Phillip Long, Zachary Novack, Julian McAuley and
 Taylor Berg-Kirkpatrick, PDMX v9, DOI 10.5281/zenodo.15571083, CC BY 4.0.
 Changes here are computed catalog counts and screening summaries; no score or
