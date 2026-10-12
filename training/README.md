@@ -70,8 +70,9 @@ recording before optimization. Fitting rehearsal uses earlier predictions only
 as regularization on original fitting corpora, never as truth or validation labels.
 Later NSynth-dynamics, TinySOL and NRG-CP derivatives are not rehearsed. The same
 partitions, masked frame targets, immutable rejection permissions and release
-gates apply. The full suite passes 1,061 tests with six skips; its two 100-epoch
-profiles are running, with no new weights deployed.
+gates apply. The full suite passes 1,061 tests with six skips. Both 100-epoch profiles
+completed; none of 144 settings qualified. The [V49 results](results/left-precision-v49-v1/README.md)
+are archived and withheld, with no consumed/fresh tests read or weights deployed.
 
 The [additional piano-source assessment](results/piano-source-options-v49-v1/README.md)
 records a verified PDMX catalog, an empty RGTM-PNO MIDI archive, and exclusions

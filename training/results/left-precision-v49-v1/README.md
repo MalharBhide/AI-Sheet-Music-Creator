@@ -22,8 +22,14 @@ One frozen winner must then pass all 603 consumed regressions, one untouched
 40-clip first pass, full runtime parity and native pipeline checks. No runner-up,
 retuning or replacement fresh clips after failure.
 
-Status: both profiles are running; no validation winner or accuracy improvement
-is claimed at this checkpoint. No consumed or fresh tests have been read, no
-user audio or saved scores processed, and no website weights changed. The full
-suite passes 1,061 tests with six skips, including exact learned-path warm-start
-preservation and learning from the initially zero boundary residual.
+Status: both 100-epoch profiles completed; none of 144 settings met all
+requirements. Every candidate is withheld. Some settings preserved all measured
+recordings and reduced false notes, but stricter real-piano and isolated-pitch
+gains remained zero. Per-domain maxima can come from different settings and are
+not release claims. The immutable guard prevented all restorations. No consumed
+or fresh tests were read, no user audio or saved scores processed, and no website
+weights changed. The full suite passes 1,061 tests with six skips, including exact
+learned-path warm-start preservation and learning from the initially zero residual.
+The exact 62,124-candidate initialization proof is retained alongside final curves,
+validation diagnostics, checkpoint hashes and source witnesses. Audio and
+checkpoints remain local.
