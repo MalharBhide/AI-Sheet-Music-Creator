@@ -156,3 +156,78 @@ input[type=range] { width: 100%; display: block; height: 5px; accent-color: var(
 @media (max-width: 380px) { .help-button { display: none; } .preview-toolbar { gap: 0; padding: 8px 4px; } .page-controls, .zoom-controls { gap: 0; } .follow-button { padding: 7px 6px; font-size: 10px; } }
 @media (max-width: 760px) { .has-score .studio-sidebar { grid-template-columns: minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { .spin { animation: none; } *, *:before, *:after { transition-duration: 0s !important; scroll-behavior: auto !important; } }
+
+/* The surrounding studio stays quiet so the music remains the focus. */
+.topbar { background: #ffffffed; }
+.main-nav { display: flex; align-items: center; gap: 30px; }
+.main-nav a { text-decoration: none; color: var(--muted); font-size: 13px; padding: 12px 0; }
+.main-nav a:hover, .site-footer a:hover { color: var(--accent); }
+.page-intro { padding: 62px 0 44px; }
+.page-intro > .eyebrow { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.intro-dot { width: 6px; height: 6px; border-radius: 50%; background: #559579; }
+.intro-formats { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 24px; margin-top: 26px; }
+.intro-formats span { display: inline-flex; align-items: center; gap: 7px; color: #62766a; font-size: 11px; }
+.studio-section-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: 12px 0 20px; scroll-margin-top: 24px; }
+.studio-section-heading .eyebrow { margin-bottom: 7px; font-size: 10px; }
+.studio-section-heading h2 { margin: 0; font-size: 22px; letter-spacing: -.7px; font-weight: 500; }
+.studio-guide { display: inline-flex; align-items: center; gap: 8px; border: none; background: none; color: var(--accent); font-size: 12px; padding: 10px 0; }
+.setup-card, .score-workspace { box-shadow: 0 8px 28px #23352a06; }
+.recent-card { background: #fff; }
+.recent-caption { font-size: 11px; line-height: 1.6; color: var(--muted); margin: 10px 0; }
+.recent-search { display: flex; align-items: center; gap: 7px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); }
+.recent-search input { min-width: 0; width: 100%; background: transparent; border: none; font-size: 12px; }
+.recent-list { max-height: 300px; overflow-y: auto; overscroll-behavior: contain; }
+.recent-item { padding: 13px 4px; border-radius: 5px; }
+.recent-item:hover:not(:disabled), .recent-item.current { background: #f3f7f1; }
+.studio-overview { margin-top: 70px; }
+.workflow-section, .formats-section, .faq-section { scroll-margin-top: 32px; }
+.section-heading { display: flex; justify-content: space-between; gap: 24px; align-items: flex-end; margin-bottom: 27px; }
+.studio-overview h2 { margin: 0; font-size: clamp(25px, 2.6vw, 35px); font-family: Georgia, serif; font-weight: 400; letter-spacing: -.7px; line-height: 1.2; }
+.section-link { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--accent); text-decoration: none; white-space: nowrap; padding: 7px 0; }
+.workflow-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.workflow-card { padding: 26px; background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+.workflow-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+.feature-icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; background: #edf4eb; color: var(--accent); }
+.step-number { font-size: 12px; color: #87948b; font-variant-numeric: tabular-nums; }
+.workflow-card h3 { font-size: 15px; font-weight: 600; letter-spacing: -.3px; margin: 0 0 10px; }
+.workflow-card p, .formats-section p, .faq-list p { color: var(--muted); font-size: 13px; line-height: 1.8; margin: 0; }
+.formats-section { margin: 55px 0; padding: 38px; border: 1px solid #d9e4d5; border-radius: 18px; background: #eaf1e5; display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
+.formats-section h2 { margin-bottom: 15px; }
+.formats-section > div > p:last-child { max-width: 380px; }
+.format-features { display: grid; gap: 8px; }
+.format-features > div { padding: 16px 18px; display: flex; gap: 16px; align-items: center; border: 1px solid #dce6d7; border-radius: 10px; color: var(--accent); background: #ffffff9c; }
+.format-features strong { display: block; font-size: 13px; font-weight: 600; }
+.format-features small { display: block; font-size: 12px; margin-top: 4px; color: var(--muted); }
+.faq-section { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; padding: 10px 0 30px; }
+.faq-list details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+.faq-list details:first-child { padding-top: 0; }
+.faq-list summary { font-size: 14px; font-weight: 500; line-height: 1.6; }
+.faq-list p { margin-top: 12px; }
+.site-footer { padding-top: 30px; padding-bottom: 30px; background: #fbfcf8; align-items: center; gap: 25px; }
+.site-footer strong { display: block; font-size: 16px; letter-spacing: -.4px; color: var(--ink); font-weight: 600; }
+.site-footer span { display: block; margin-top: 7px; }
+.site-footer nav { display: flex; align-items: center; gap: 24px; }
+.site-footer a { text-decoration: none; }
+.site-footer button { border: 0; background: none; padding: 0; color: var(--muted); font-size: inherit; }
+@media (max-width: 1050px) { .workflow-card { padding: 22px; } .main-nav { gap: 20px; } }
+@media (max-width: 760px) {
+  .new-score .topbar { height: auto; min-height: 70px; flex-wrap: wrap; padding-top: 16px; padding-bottom: 12px; gap: 12px; }
+  .main-nav { order: 3; width: 100%; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line); padding-top: 3px; }
+  .main-nav a { padding: 9px 0 2px; font-size: 11px; }
+  .new-score .setup-card { width: 100%; }
+  .page-intro { padding: 40px 0 30px; }
+  .intro-formats { gap: 10px 16px; margin-top: 20px; }
+  .intro-formats span { font-size: 10px; }
+  .studio-section-heading { margin-top: 10px; }
+  .studio-section-heading h2 { font-size: 20px; }
+  .studio-guide { font-size: 11px; max-width: 135px; text-align: right; }
+  .studio-overview { margin-top: 45px; }
+  .section-heading { display: block; }
+  .section-link { margin-top: 14px; }
+  .workflow-grid { grid-template-columns: 1fr; gap: 12px; }
+  .workflow-card-top { margin-bottom: 18px; }
+  .formats-section { margin: 35px 0; padding: 25px; grid-template-columns: 1fr; gap: 24px; }
+  .faq-section { grid-template-columns: 1fr; gap: 24px; }
+  .site-footer { flex-direction: column; align-items: flex-start; }
+  .site-footer nav { flex-wrap: wrap; gap: 18px; }
+}

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, AudioLines, Check, ChevronRight, Headphones, Mic2, Music2, Piano, Plus, Radio, X } from "lucide-react";
+import { ArrowRight, AudioLines, Check, ChevronRight, Headphones, Mic2, Music2, Piano, Plus, Radio, Search, X } from "lucide-react";
 
 import { ApiError, apiUrl, fetchExample, fetchHealth, fetchJob, Health, Job, ScoreOptions, uploadAudio } from "./api";
 import DownloadPanel from "./components/DownloadPanel";
@@ -7,6 +7,7 @@ import JobStatus from "./components/JobStatus";
 import ScorePlayback from "./components/ScorePlayback";
 import ScorePreview from "./components/ScorePreview";
 import UploadDropzone from "./components/UploadDropzone";
+import StudioOverview from "./components/StudioOverview";
 import { validateAudioUpload } from "./uploadValidation";
 import { ScoreAudio } from "./playback";
 
@@ -32,7 +33,7 @@ function readHistory(): RecentJob[] {
 function updateUrl(jobId: string | null) {
   const url = new URL(window.location.href);
   if (jobId) url.searchParams.set("job", jobId);
-  else url.searchParams.delete("job");
+  else { url.searchParams.delete("job"); url.hash = ""; }
   window.history.replaceState(null, "", url);
 }
 function pieceName(filename?: string) { return filename?.replace(/\.[^.]+$/, "").replace(/_/g, " ").replace(/\s+/g, " ").trim() || "Untitled recording"; }
@@ -52,6 +53,7 @@ export default function App() {
   const [healthRetry, setHealthRetry] = useState(0);
   const [pollRetry, setPollRetry] = useState(0);
   const [recent, setRecent] = useState<RecentJob[]>(readHistory);
+  const [recentQuery, setRecentQuery] = useState("");
   const [guideOpen, setGuideOpen] = useState(false);
   const [playbackScore, setPlaybackScore] = useState<ScoreAudio | null>(null);
   const [playbackPosition, setPlaybackPosition] = useState(0);
@@ -142,7 +144,7 @@ export default function App() {
     finally { setLoadingExample(false); }
   }
 
-  function reset() { setJobId(null); setJob(null); setFile(null); setError(null); updateUrl(null); }
+  function reset() { setJobId(null); setJob(null); setFile(null); setError(null); setRecentQuery(""); updateUrl(null); window.scrollTo(0, 0); }
   function openRecent(id: string) {
     // Re-selecting the current score must not clear the result: jobId would stay
     // unchanged, so its completed polling effect would never load it again.
@@ -159,10 +161,12 @@ export default function App() {
   return <div className={`app-shell ${jobId ? "has-score" : "new-score"}`}>
     <header className="topbar">
       <a className="brand" href="/" onClick={event => { event.preventDefault(); if (!busy) reset(); }} aria-label="Piano Scribe home"><span className="brand-mark"><Piano size={24} aria-hidden="true" /></span><span>Piano<span className="brand-serif">Scribe</span></span></a>
+      {!jobId && <nav className="main-nav" aria-label="Main navigation"><a href="#studio">Studio</a><a href="#how-it-works">How it works</a><a href="#formats">Export formats</a></nav>}
       <div className="header-actions"><button className="help-button" onClick={() => setGuideOpen(true)}>Help</button>{jobId && <button className="button button-outline" onClick={reset} disabled={busy}><Plus size={17} /> New score</button>}</div>
     </header>
-    <main className="workspace" id="studio">
-      {!jobId && <section className="page-intro"><p className="eyebrow">YOUR MUSIC. YOUR PIANO.</p><h1>Turn a song into<br /><em>something you can play.</em></h1><p className="intro-description">Upload a recording. Get piano sheet music. Play along.</p></section>}
+    <main className="workspace">
+      {!jobId && <section className="page-intro"><p className="eyebrow"><span className="intro-dot" /> YOUR MUSIC. YOUR PIANO.</p><h1>Turn a song into<br /><em>something you can play.</em></h1><p className="intro-description">A workspace for turning recordings into piano sheet music.<br />Upload, listen, and take your score to the piano.</p><div className="intro-formats"><span><AudioLines size={14} /> Audio to piano</span><span><Headphones size={14} /> Follow-along playback</span><span><Music2 size={14} /> PDF, MIDI & MusicXML</span></div></section>}
+      <div className="studio-section-heading" id="studio"><div><p className="eyebrow">YOUR WORKSPACE</p><h2>{jobId ? "Listen. Review. Play." : "The piano studio"}</h2></div><button className="studio-guide" onClick={() => setGuideOpen(true)}>Recording guide <ArrowRight size={15} /></button></div>
       <div className="studio-grid">
         <aside className="studio-sidebar">
           <section className="setup-card" aria-label={jobId ? "Score downloads" : "Transcription setup"}>
@@ -189,7 +193,7 @@ export default function App() {
             {done && <p className="retention-note">Files are available for {health?.limits.retention_hours ?? 24} hours.</p>}
             {job?.analysis?.warnings?.length ? <details className="score-notes"><summary>About this transcription</summary><p>This is an editable first draft. Listen and review the notes before practicing.</p><ul>{job.analysis.warnings.map((warning, index) => <li key={index}>{warning}</li>)}</ul></details> : null}
           </section>
-          {recent.length > 0 && <details className="recent-card"><summary>Recent scores <span>{recent.length}</span></summary><div className="recent-list">{recent.map(item => <button className={`recent-item ${item.job_id === jobId ? "current" : ""}`} key={item.job_id} disabled={busy} onClick={() => openRecent(item.job_id)}><Music2 size={17} /><span><strong>{pieceName(item.original_filename)}</strong><small>{new Date(item.created_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })}{item.status === "failed" ? " · Needs attention" : item.status !== "done" ? " · In progress" : ""}</small></span><ChevronRight size={15} /></button>)}</div></details>}
+          {recent.length > 0 && <details className="recent-card" open><summary>Recent scores <span>{recent.length}</span></summary><p className="recent-caption">Pick up where you left off.</p><label className="recent-search"><Search size={15} /><input type="search" aria-label="Find a recent score" placeholder="Find a score…" value={recentQuery} onChange={event => setRecentQuery(event.target.value)} /></label><div className="recent-list">{recent.filter(item => pieceName(item.original_filename).toLocaleLowerCase().includes(recentQuery.trim().toLocaleLowerCase())).map(item => <button className={`recent-item ${item.job_id === jobId ? "current" : ""}`} key={item.job_id} disabled={busy} onClick={() => openRecent(item.job_id)}><Music2 size={17} /><span><strong>{pieceName(item.original_filename)}</strong><small>{new Date(item.created_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })}{item.status === "failed" ? " · Needs attention" : item.status !== "done" ? " · In progress" : ""}</small></span><ChevronRight size={15} /></button>)}{!recent.some(item => pieceName(item.original_filename).toLocaleLowerCase().includes(recentQuery.trim().toLocaleLowerCase())) && <p className="recent-caption" role="status">No matching scores.</p>}</div></details>}
         </aside>
         <section className="score-workspace" aria-label="Sheet music and playback">
           <div className="score-heading"><div><p className="eyebrow">{jobId ? "PIANO SCORE" : "A PLACE FOR YOUR MUSIC"}</p><h2>{job ? pieceName(job.original_filename) : "Your sheet music"}</h2></div>{done && job?.analysis?.tempo_bpm && <span className="score-tempo">♩ {Math.round(job.analysis.tempo_bpm)}</span>}</div>
@@ -197,8 +201,9 @@ export default function App() {
           <ScorePreview key={`preview-${jobId || "new"}`} status={job?.status} previewUrls={previewUrls} pdfUrl={apiUrl(job?.download_urls.pdf)} error={job?.error || (!job ? error : null)} position={playbackPosition} positions={playbackScore?.positions ?? []} onSeek={time => { setPlaybackPosition(time); setSeekRequest({ time }); }} />
         </section>
       </div>
+      {!jobId && <StudioOverview retentionHours={health?.limits.retention_hours ?? 24} />}
     </main>
-    <footer className="site-footer"><span>PianoScribe</span><span>From listening to playing.</span></footer>
+    <footer className="site-footer"><div><strong>PianoScribe</strong><span>From listening to playing.</span></div><nav aria-label="Footer navigation"><a href="#studio">Studio</a>{!jobId && <a href="#questions">Common questions</a>}<button onClick={() => setGuideOpen(true)}>Recording guide</button></nav></footer>
     <dialog className="guide-dialog" ref={guideRef} onCancel={() => setGuideOpen(false)} onClick={event => { if (event.target === event.currentTarget) setGuideOpen(false); }}><button className="icon-button dialog-close" aria-label="Close transcription guide" onClick={() => setGuideOpen(false)}><X size={20} /></button><p className="eyebrow">A NOTE BEFORE THE FIRST NOTE</p><h2>A good score starts<br />with a good recording.</h2><p>Piano Scribe creates an editable first draft. Listen to the result and compare it with your recording before relying on the notes.</p><div className="guide-section"><Piano size={23} /><div><h3>Solo piano → transcription</h3><p>A clear solo recording gives the system its best chance to identify the notes you played. Heavy reverb, background noise, and overlapping instruments make this harder.</p></div></div><div className="guide-section"><Radio size={23} /><div><h3>Full song → piano arrangement</h3><p>A full mix contains voices, drums, bass, and other instruments. The result is a piano reduction of detected musical material, not a guaranteed note-for-note piano score.</p></div></div><div className="guide-section"><Headphones size={23} /><div><h3>Listen, then refine</h3><p>Use the piano player to hear the actual notes in your score, slow it down, and compare with the original. Download MusicXML for edits in a notation app or MIDI for your music software.</p></div></div><p className="guide-footnote">Long recordings are processed in sections. Processing time depends on recording length, complexity, and the available hardware. Files are retained for {health?.limits.retention_hours ?? 24} hours; recent history is stored only in this browser.</p><button className="button button-primary" onClick={() => setGuideOpen(false)}>Back to the studio <ArrowRight size={16} /></button></dialog>
   </div>;
 }
