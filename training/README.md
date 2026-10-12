@@ -22,6 +22,13 @@ masks unknown human fundamental timing rather than manufacturing held-note,
 onset or release annotations. Future fitting must honor those frame loss masks;
 these observations cannot serve as human timing validation.
 
+The [V45 fine-tuning framework](results/left-precision-v45-v1/README.md) starts
+from V43 and rehearses earlier fitting predictions while honoring TinySOL's
+unknown-frame masks. It requires separate timed and pitch-only validation,
+followed by all consumed regressions and independent fresh testing. Its framework
+passed the full 1,014-test suite; source preparation is running and no V45 weights
+have been fitted or deployed.
+
 V44 and TinySOL preparation use the pinned V32 reader in
 `.training/left-precision-v43-replay` for historical physical features. Do not
 weaken old source/hash guards to load these caches with a newer runtime.

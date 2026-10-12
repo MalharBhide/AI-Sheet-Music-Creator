@@ -1,0 +1,15 @@
+{
+  "targeted_tests": 22,
+  "full_tests": 1014,
+  "skipped": 6,
+  "full_suite_warnings": 5,
+  "collection_attempt_1": "Same-basename test modules require pytest --import-mode=importlib; no application error. Original log retained.",
+  "full_suite_command": "python -m pytest -q --import-mode=importlib -p no:cacheprovider /src/backend/tests /src/training",
+  "logs": {
+    ".training/left-precision-v45-targeted-tests.log": "33cf1465189ec358c9e2badcc03107769258b2df9457315c815a05ed2109c2eb",
+    ".training/left-precision-v45-preflight-tests.log": "17aebff6c82e52a1ecf8b42fe924c0a94017bb6c6767d24835532aed23fdbe27",
+    ".training/left-precision-v45-preflight-tests-v2.log": "88172b94ff0a8e1341efb09fd399dc20031fe55bab976ea2f668943fc55fcaa3"
+  },
+  "new_weights_deployed": false,
+  "no_user_audio_or_scores": true
+}
