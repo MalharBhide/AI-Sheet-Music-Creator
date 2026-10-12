@@ -33,3 +33,6 @@ All prior assets and original engraving size are unchanged. The approved V38
 image and source tree are retained locally for rollback. No user upload or saved
 score was processed. Training checkpoints and audio stay local; only the
 validated CC BY 4.0 release arrays are shipped.
+
+Archived test source witnesses use `.py.txt` to preserve their exact bytes without
+collecting duplicate historical tests during the normal repository test run.
