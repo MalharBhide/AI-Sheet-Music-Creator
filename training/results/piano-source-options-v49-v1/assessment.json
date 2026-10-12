@@ -1,0 +1,53 @@
+{
+  "rgtm_pno": {
+    "publisher": "https://zenodo.org/records/13335848",
+    "license": "CC BY 4.0",
+    "midi_archive_bytes": 70,
+    "midi_archive_md5": "18293b08a2b0e22959cf35adc50558b3",
+    "midi_archive_sha256": "70250123befb6b9631cf8b329a062da9db75ad18cc8731d3aa864ea3da381785",
+    "midi_archive_members": 0,
+    "status": "not_usable_for_paired_note_training_from_this_record",
+    "audio_not_downloaded": true,
+    "note": "The verified publisher MIDI archive is empty. The record GitHub link leads to an EDM drum repository rather than piano labels. Do not use unlabeled audio as note/hold truth."
+  },
+  "pianovam": {
+    "dataset_card": "https://huggingface.co/datasets/PianoVAM/PianoVAM_v1",
+    "code_readme": "https://github.com/yonghyunk1m/PianoVAM-Code",
+    "status": "excluded_noncommercial",
+    "dataset_card_license": "CC BY-NC-SA 4.0",
+    "code_readme_license": "CC BY-NC 4.0",
+    "note": "Both checked primary pages impose noncommercial use. The paper CC BY license is not the dataset grant. No files acquired."
+  },
+  "pdmx": {
+    "publisher": "https://zenodo.org/records/15571083",
+    "repository": "https://github.com/pnlong/PDMX",
+    "metadata_license": "CC BY 4.0",
+    "status": "catalog_verified_no_training_selection_or_audio",
+    "requirements": [
+      "Only no_license_conflict and all_valid records with compatible per-score rights",
+      "Verify known public-domain composition and score license before selection",
+      "Group alternate arrangements, transpositions and shared works across all existing corpora before audio",
+      "Use actual rendered key clocks; no claim of human offsets or pedal truth",
+      "Keep independent real-piano release gain gates"
+    ],
+    "no_audio_acquired_or_inferred": true,
+    "catalog_sha256": "fc2187e7e09185f4b28be57b6478a96a1243a037f8fd13624f17de2d8bfd44bd",
+    "catalog_bytes": 225399738,
+    "catalog_md5": "30392ccf38bb63ce70e7afae70f9c88c",
+    "catalog_rows": 254077,
+    "clean_valid_rows": 222820,
+    "cautions": [
+      "Instrument code 0 is not proof of piano intent; most program-zero composers are unknown.",
+      "Substring composer matching admits mixed attributions and unrelated modern composers; it is not an acquisition rule.",
+      "Catalog best_path groups merge several differently numbered Scarlatti sonatas. Use conservative connected work/composer groups, not filename splits.",
+      "No automatic transcription labels may be treated as independent human key truth."
+    ]
+  },
+  "sky_piano": {
+    "project": "https://joonhyungbae.github.io/skypiano/",
+    "status": "not_cleared_from_checked_project_page",
+    "note": "The project states per-modality license terms but the checked page did not provide a usable commercial audio/MIDI grant. No files acquired."
+  },
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false
+}

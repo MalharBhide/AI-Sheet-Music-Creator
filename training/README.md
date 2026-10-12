@@ -41,11 +41,44 @@ are withheld; no consumed/fresh tests were read or website weights changed.
 
 [NRG-CP v1](results/nrgcp-v1-source-assessment-v1/README.md) is a separately
 assessed CC BY 4.0 chord/rhythm MIDI source. The full checksum and symbolic audit
-passed, but 1,426 ambiguous same-key clips must be excluded and related progressions
-must be partitioned together before rendering. It has not been fitted or used for
-audio inference and does not provide human piano timing annotations.
+passed. The [completed preparation](results/nrgcp-v47-preparation-v1/README.md)
+excludes 1,426 ambiguous same-key clips and selects 48 training and 12 validation
+progression families before rendering. Three fixed variations produce 144/36
+sampled-piano clips with authored synthesis-command clocks and known damping.
+All MP3 lags are zero. The sampled instrument is shared across partitions; these
+are synthetic progression-held-out labels, not human timing evidence.
 
-V44 and TinySOL preparation use the pinned V32 reader in
+The [V47 new-data study](results/left-precision-v47-v1/README.md) completed two
+100-epoch profiles on 2,077 training, 381 timed validation and 237 pitch-only
+validation recordings. None of 144 settings met all release requirements.
+Additional false-note reduction did not provide positive real-piano gain at both
+policies. All weights are withheld; consumed and fresh tests remain unread.
+
+The follow-up [V48 frame-support model](left_precision_v48.py) additionally learns
+from pooled raw attack and release windows. It uses the same physical observations
+and audited fitting partitions, with immutable V43 rejection permissions and all
+existing preservation/gain gates. Its serialization, conservative initialization
+and boundary-input gradient checks pass; the full suite passes 1,055 tests with
+six skips. Both predeclared 100-epoch profiles completed without a qualifying setting.
+The [V48 results](results/left-precision-v48-v1/README.md) are archived and all
+weights withheld. Consumed/fresh tests remain unread; the website stays on V43.
+
+[V49 warm boundary support](left_precision_v49.py) preserves the released physical
+projection's shape and arithmetic and adds a zero-initialized boundary residual.
+Its runner requires bit-identical initial probabilities on every complete training
+recording before optimization. Fitting rehearsal uses earlier predictions only
+as regularization on original fitting corpora, never as truth or validation labels.
+Later NSynth-dynamics, TinySOL and NRG-CP derivatives are not rehearsed. The same
+partitions, masked frame targets, immutable rejection permissions and release
+gates apply. The full suite passes 1,061 tests with six skips; its two 100-epoch
+profiles are running, with no new weights deployed.
+
+The [additional piano-source assessment](results/piano-source-options-v49-v1/README.md)
+records a verified PDMX catalog, an empty RGTM-PNO MIDI archive, and exclusions
+for noncommercial or unverified modality terms. It is not a new training set or
+an accuracy claim; none of those sources has supplied audio inference or fitting.
+
+V44, TinySOL and NRG-CP preparation use the pinned V32 reader in
 `.training/left-precision-v43-replay` for historical physical features. Do not
 weaken old source/hash guards to load these caches with a newer runtime.
 
