@@ -22,7 +22,6 @@ export default function StudioIntro() {
           {[[82, 71], [111, 60], [154, 65], [185, 49], [218, 55], [280, 60], [315, 71], [352, 60]].map(([x, y]) => <g key={x}><ellipse cx={x} cy={y} rx="6" ry="4.5" transform={`rotate(-20 ${x} ${y})`} fill="#355a48" /><path d={`M${x + 5} ${y}V${y - 28}`} stroke="#355a48" strokeWidth="1.6" /></g>)}
           {[[83, 140], [154, 129], [218, 135], [280, 140], [352, 129]].map(([x, y]) => <g key={x}><ellipse cx={x} cy={y} rx="6" ry="4.5" transform={`rotate(-20 ${x} ${y})`} fill="#739181" /><path d={`M${x + 5} ${y}V${y - 27}`} stroke="#739181" strokeWidth="1.6" /></g>)}
         </svg>
-        <div className="illustration-caption"><span className="intro-dot" /> From listening to playing</div>
       </div>
       <div className="illustrated-keyboard">{Array.from({ length: 15 }, (_, index) => <span key={index} className={[2, 5, 9].includes(index) ? "pressed-key" : ""}>{![2, 6, 9, 13, 14].includes(index) && <i />}</span>)}</div>
     </div>
