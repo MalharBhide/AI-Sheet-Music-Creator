@@ -162,6 +162,7 @@ class _GeneralEngine:
         self.bass_attack_declutter = None
         self.bass_embedding_declutter = None
         self.chord_release = None
+        self.left_presence = None
         self.bass_verification = None
 
     def predict(self, path: Path, role: str, bpm: float):
@@ -196,6 +197,7 @@ class _GeneralEngine:
             from app.services.bass_attack_declutter import BassAttackDeclutter
             from app.services.bass_embedding_declutter import BassEmbeddingDeclutter
             from app.services.chord_release import ChordRelease
+            from app.services.left_presence import LeftHandPresence
             from app.services.bass_harmonic import BassHarmonic
             from app.services.bass_residual import BassResidual
             from app.services.bass_temporal import BassTemporal
@@ -218,6 +220,9 @@ class _GeneralEngine:
                 self.chord_release = ChordRelease(
                     Path(__file__).resolve().parents[1] / 'assets/chord-release-v1.npz',
                     'eeef2fae2d0c4ce180af47dbb9670c5c6b82095df5f01722fb06ea2a6534b6d0')
+                self.left_presence = LeftHandPresence(
+                    Path(__file__).resolve().parents[1] / 'assets/left-presence-v1.npz',
+                    '38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda')
                 self.bass_verification = {'model': self.bass_verifier.name,
                                           'articulation_model': self.bass_articulation.name,
                                           'residual_model': self.bass_residual.name,
@@ -228,13 +233,15 @@ class _GeneralEngine:
                                           'attack_release_model': self.bass_attack_declutter.name,
                                           'spectral_recurrence_model': self.bass_embedding_declutter.name,
                                           'chord_release_model': self.chord_release.name,
+                                          'left_presence_model': self.left_presence.name,
                                           'window_candidates': 0, 'window_rejections': 0,
                                           'window_merged_boundaries': 0, 'window_residual_rejections': 0,
                                           'window_texture_rejections': 0, 'window_harmonic_rejections': 0,
                                           'window_temporal_rejections': 0, 'window_refinement_rejections': 0,
                                           'window_attack_release_rejections': 0,
                                           'window_spectral_recurrence_rejections': 0,
-                                          'window_release_corrections': 0}
+                                          'window_release_corrections': 0,
+                                          'window_presence_rejections': 0}
             # Bass training uses these same frequency-bounded Basic Pitch
             # arrays and events. It does not use the accompaniment decoder.
             self.bass_verification['window_candidates'] += sum(len(p.notes) for p in midi.instruments)
@@ -255,8 +262,12 @@ class _GeneralEngine:
             self.bass_verification['window_attack_release_rejections'] += self.bass_attack_declutter.filter(path, arrays, midi)
             # V32 evaluates actual V25 survivors without changing retained notes.
             self.bass_verification['window_spectral_recurrence_rejections'] += self.bass_embedding_declutter.filter(path, arrays, midi)
+            # Presence sees complete V32 intervals. Release correction must
+            # keep its complete approved input before applying this mask.
+            proposal = self.left_presence.prepare(path, arrays, midi)
             # Independently trained releases preserve pitches and all attacks.
             self.bass_verification['window_release_corrections'] += self.chord_release.filter(path, arrays, midi)
+            self.bass_verification['window_presence_rejections'] += proposal.apply(midi)
         if verify:
             from app.services.accompaniment_verifier import AccompanimentVerifier
 
@@ -400,6 +411,8 @@ def transcribe(audio_path: Path, midi_path: Path, options: ScoreOptions, *,
             engine_name += f" + {bass_verification['spectral_recurrence_model']}"
         if bass_verification.get('chord_release_model'):
             engine_name += f" + {bass_verification['chord_release_model']}"
+        if bass_verification.get('left_presence_model'):
+            engine_name += f" + {bass_verification['left_presence_model']}"
     return {"engine": engine_name,
             "accompaniment_verification": verification,
             "bass_verification": bass_verification,

@@ -328,6 +328,7 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
             return 0
 
     monkeypatch.setattr(chord_release, 'ChordRelease', ChordRelease)
+    _stub_left_presence(monkeypatch)
 
 
     fake_inference.results.extend([
@@ -352,11 +353,11 @@ def test_full_mix_uses_separate_sources_discards_drums_and_keeps_roles(
         'harmonic_model': 'Test bass harmonic', 'temporal_model': 'Test bass temporal', 'refinement_model': 'Test bass refinement',
         'attack_release_model': 'Test attack/release verifier',
         'spectral_recurrence_model': 'Test spectral/recurrence verifier',
-        'chord_release_model': 'Test independent chord releases', 'window_candidates': 2,
+        'chord_release_model': 'Test independent chord releases', 'left_presence_model': 'Test left-hand presence', 'window_candidates': 2,
         'window_rejections': 0, 'window_merged_boundaries': 0, 'window_residual_rejections': 0,
         'window_texture_rejections': 0, 'window_harmonic_rejections': 0, 'window_temporal_rejections': 0, 'window_refinement_rejections': 0,
         'window_attack_release_rejections': 0, 'window_spectral_recurrence_rejections': 0,
-        'window_release_corrections': 0}
+        'window_release_corrections': 0, 'window_presence_rejections': 0}
     assert report['support_notes_changed_for_bass'] == 1
     assert [(n.pitch, n.start, n.end) for n in result.instruments[1].notes] == [(36, 0, 1)]
     assert fake_inference.calls[2][1]['minimum_frequency'] is None
@@ -602,6 +603,7 @@ def test_balanced_bass_uses_own_consensus_once_and_preserves_bounded_decoder(tmp
             return 0
 
     monkeypatch.setattr(chord_release, 'ChordRelease', ChordRelease)
+    _stub_left_presence(monkeypatch)
 
 
 
@@ -701,3 +703,21 @@ def test_full_mix_rhythm_uses_lead_phase_instead_of_denser_backing(tmp_path, mon
     result = pretty_midi.PrettyMIDI(str(output))
     assert report['timing_offset_seconds'] == pytest.approx(.06)
     assert [n.start for n in result.instruments[0].notes] == pytest.approx([.5 * i for i in range(12)], abs=.001)
+
+
+def _stub_left_presence(monkeypatch):
+    from types import SimpleNamespace
+
+    from app.services import left_presence
+
+    class LeftHandPresence:
+        name = 'Test left-hand presence'
+
+        def __init__(self, asset, expected_sha):
+            assert asset.name == 'left-presence-v1.npz' and len(expected_sha) == 64
+
+        def prepare(self, path, acoustic, output):
+            assert getattr(output, '_embedding_checked', False)
+            return SimpleNamespace(apply=lambda midi: 0)
+
+    monkeypatch.setattr(left_presence, 'LeftHandPresence', LeftHandPresence)

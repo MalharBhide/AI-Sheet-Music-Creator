@@ -1,4 +1,4 @@
-# Independent frame-presence calibration V43 — runtime validation pending
+# Independent frame-presence calibration V43 — released
 
 Two fresh 100-epoch profiles fit 869 excerpts and validate on 249. This study
 requires V42 to have stopped before consumed regression; it does not retune a
@@ -20,9 +20,16 @@ support, holds and retained clocks. The independent seeds 288101–288140 are no
 consumed and must join any future regression gate. These limited dataset results
 do not establish accuracy on arbitrary songs or user uploads.
 
-No weights are deployed. Export, native inference parity, complete runtime
-composition and website integration remain required. The website keeps V38.
-The suite passes 971 tests with six optional native checks skipped. All six
-checkpoint hashes, plans, curves, source witnesses, diagnostics and independent
-manifest are archived. Weights/audio remain local. No user upload or saved score
-was processed, and the original engraving size is unchanged.
+The frozen winner is now deployed after parity across 1,721 excerpts / 72,256
+notes, physical-feature checks on 40 MP3 fixtures, native routing of all 12
+fresh deletion cases plus two unchanged controls, 986 staged tests, and all six
+native integration checks. Runtime probabilities match exactly; maximum
+physical feature error is 5.960464477539063e-08. The live image, model hash,
+confidence thresholds, frontend proxy and dependencies are verified.
+
+The release asset is backend/app/assets/left-presence-v1.npz, SHA256
+38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda.
+All prior assets and original engraving size are unchanged. The approved V38
+image and source tree are retained locally for rollback. No user upload or saved
+score was processed. Training checkpoints and audio stay local; only the
+validated CC BY 4.0 release arrays are shipped.

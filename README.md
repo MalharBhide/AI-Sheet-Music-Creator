@@ -6,7 +6,17 @@ The transcription design is informed by an [extensive review of Songscription, K
 
 Balanced full-song accompaniment now also uses a trained note verifier to reject unsupported candidate notes. See its [model card and measured limits](docs/accompaniment-verifier.md). Re-upload a recording to apply it to an older score.
 
-The latest [V16 bass refinement](docs/bass-temporal-v16-study.md) adds real
+The latest [V43 left-hand presence verifier](docs/left-hand-precision-training.md)
+combines learned note rejection with a separate frame-presence veto. It removes
+109 additional false notes across 563 consumed regressions and 18 across 40
+independent MP3 fixtures, while preserving required notes, holds and retained
+V38 clocks in every tested excerpt. Export parity covers 1,721 excerpts; native
+routing, 986 tests and all six native integration checks pass before release.
+It applies to balanced Full song bass/accompaniment, MIDI 21–59. These dataset
+results do not establish arbitrary-song accuracy. Original engraving and prior
+scores remain unchanged; upload again to use the new model.
+
+The earlier [V16 bass refinement](docs/bass-temporal-v16-study.md) adds real
 acoustic-piano training to a classifier of actual V15 survivors. Its frozen
 candidate removes two extra false notes on 32 new procedural MP3 fixtures,
 preserving all 675 matched notes and holds. It removes 18 false notes across

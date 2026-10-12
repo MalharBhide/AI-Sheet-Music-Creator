@@ -1,17 +1,19 @@
 # Left-hand note precision studies
 
 These studies address extra low notes in balanced full-song piano arrangements.
-**These candidates are not released. The website continues using V32 note filtering and
-the approved V38 release specialist.** No user uploads, saved jobs or scores were
-processed, and the original 7 mm engraving is unchanged.
+**V43 is released after all validation, regression, independent, runtime and
+native gates passed. V39–V42 remain withheld.** The website uses V32 filtering,
+the approved V38 release specialist, and V43 presence-gated removal. No user
+uploads, saved jobs or scores were processed; the original 7 mm engraving is unchanged.
 
 ## Preserve the improved releases
 
 V38 corrects some note endings but does not remove extra notes. Its historical
 input caches contain V32 survivors, so they cannot simply be renamed as V38
-observations. Both new studies explicitly replay the original V32 readers in an
-isolated tree, retaining their checksum and source-partition guards. The current
-website's V38 sources and model checksum are checked separately.
+observations. These studies explicitly replay the original V32 readers in an
+isolated tree, retaining their checksum and source-partition guards. The approved
+V38 sources and model checksum were checked separately before V43 installation;
+that original source tree is preserved locally for historical replay.
 
 The new classifier proposes a removal mask from the complete V32 observations.
 V38 then corrects releases using that same complete input, and the mask is
@@ -200,9 +202,16 @@ support, holds and retained clocks. The independent seeds 288101–288140 are no
 consumed and must join any future regression gate. These limited dataset results
 do not establish accuracy on arbitrary songs or user uploads.
 
-No weights are deployed. Export, native inference parity, complete runtime
-composition and website integration remain required. The website keeps V38.
-The suite passes 971 tests with six optional native checks skipped. All six
-checkpoint hashes, plans, curves, source witnesses, diagnostics and independent
-manifest are archived. Weights/audio remain local. No user upload or saved score
-was processed, and the original engraving size is unchanged.
+The frozen winner is now deployed after parity across 1,721 excerpts / 72,256
+notes, physical-feature checks on 40 MP3 fixtures, native routing of all 12
+fresh deletion cases plus two unchanged controls, 986 staged tests, and all six
+native integration checks. Runtime probabilities match exactly; maximum
+physical feature error is 5.960464477539063e-08. The live image, model hash,
+confidence thresholds, frontend proxy and dependencies are verified.
+
+The release asset is backend/app/assets/left-presence-v1.npz, SHA256
+38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda.
+All prior assets and original engraving size are unchanged. The approved V38
+image and source tree are retained locally for rollback. No user upload or saved
+score was processed. Training checkpoints and audio stay local; only the
+validated CC BY 4.0 release arrays are shipped.

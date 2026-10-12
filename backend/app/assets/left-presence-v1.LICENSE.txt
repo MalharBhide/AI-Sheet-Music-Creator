@@ -1,0 +1,29 @@
+Left-hand pitch-presence verifier v1 (V43)
+Copyright 2026 Piano Scribe contributors. Model arrays: CC BY 4.0.
+https://creativecommons.org/licenses/by/4.0/
+
+Trained from scratch on licensed physical observations. No user audio or scores.
+CC BY 4.0 sources: NSynth (Jesse Engel, Cinjon Resnick, Adam Roberts, Sander
+Dieleman, Douglas Eck, Karen Simonyan, Mohammad Norouzi), MusicNet (John
+Thickstun, Zaid Harchaoui, Sham Kakade), Vienna 4x22 (Werner Goebl), GuitarSet
+(Qingyang Xi, Rachel Bittner, Johan Pauwels, Xuzhou Ye, Juan Bello), BabySlakh
+(Ethan Manilow, Gordon Wichern, Prem Seetharaman, Jonathan Le Roux), and Groove
+MIDI (Jon Gillick, Adam Roberts, Jesse Engel, Douglas Eck, David Bamman).
+Attribution and original source/license witnesses accompany inherited model
+licenses and training manifests.
+
+Public-domain Mutopia Scott Joplin editions: fitting IDs 441 (Kurt Holtrop),
+345 (Tom Harke), 482 (Magnus Lewis-Smith), 1540 (Benjamin Bloomfield).
+Validation 263 (Chris Sawer), reserved 1899 (Coyau), neither fitted. Audio for
+this subset is synthesized by project-authored code, not downloaded performances.
+
+The 88/24 new NSynth authored sequences retain the original 11/3 instrument
+partition; four reserved instruments are not fitted. Short gates and acoustic
+tails are authored synthesis, not measured human key releases.
+
+Scope: balanced full-song bass/accompaniment, pitches 21–59, after V32 filtering.
+Compute removal on unchanged V32 intervals; run V38 releases on their complete
+input, then remove only approved candidates. Retained pitch, attack, release,
+velocity and source parts are unchanged. First/last 2.5 seconds are protected.
+Recipe, data provenance, evaluations and limits: docs/left-hand-precision-training.md
+and training/results/left-precision-v43-v1. No accuracy guarantee for arbitrary songs.

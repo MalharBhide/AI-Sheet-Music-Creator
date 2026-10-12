@@ -1,0 +1,26 @@
+{
+  "passes": true,
+  "source_sha256": {
+    "app/services/piano_transcription.py": "dfe61497349a4ffdc3c8316fc4d2c2b73d4a9e04a8658af5a499d93ef1f0bd42",
+    "app/routes/dependencies.py": "50d6fdcd6d9aa83854fdca3e9e5e9109b60e3f1d3ab1355d01b9d5fafb3f897f",
+    "app/services/left_presence.py": "c7417371250bef2b01f7701d49fb94d4f868a597db45fcd0e36efc7feaec74a5",
+    "app/services/left_presence_network.py": "0b81c3f5de19a8921e276b98586bebe2c88bc4117b0a1b79f67ed0591070ebee",
+    "app/assets/left-presence-v1.npz": "38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda",
+    "app/assets/left-presence-v1.LICENSE.txt": "7a2ac112a8d5ea9cbf3e9ab5f721a200321410e8ac8da61c16099954d6ed541e",
+    "tests/test_transcription.py": "97e49c57304b8ca6e5e38644688c1dd7f26b1fbc9f9b429296762db8d907e339",
+    "tests/test_left_presence.py": "95f4454ce143ac7b476094fb55345d615c0feee2b8f4eaa61bf34bcf4b08d800"
+  },
+  "test_logs": {
+    "staged-tests": "9934dac6982aaed0e99cd670a0f56b45a869a4dc66fb8075d1a95325dd2dbc93",
+    "native-integration": "c0fe1c4c52e2c527dca3003b785d4a09eb29b26a8cee7631b20ecb398e0d8e69"
+  },
+  "runtime_parity_sha256": "b10ade3e432a93a718bf3eb72af1e1e2255d53cbb1b98488800a9e1d5110bfc7",
+  "native_routing_sha256": "54686e490b34e903df8ee953801f9d3b26635fd5aca4e1ac38ba46164590ce0b",
+  "image_check_sha256": "de016e14a95cd1495fa2bffa0fd0b9020db50f74396c40b2f0aa1b3b49b07fae",
+  "installer_sha256": "968f4838a3bde4c77fea6a1ccc49b269743778cef5d99b87b2134481a2576b9b",
+  "rollback_root": ".training/left-presence-v43-original-runtime",
+  "website_restart_still_required": true,
+  "previous_assets_unchanged": true,
+  "original_engraving_unchanged": true,
+  "no_user_audio_or_scores": true
+}

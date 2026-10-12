@@ -1,0 +1,21 @@
+{
+  "passes": true,
+  "recordings": 1721,
+  "physical_recordings": 40,
+  "events_checked": 72256,
+  "maximum_feature_error": 5.960464477539063e-08,
+  "maximum_probability_error": 0.0,
+  "identical_keep_decisions_both_settings": true,
+  "retained_v38_clocks_identical": true,
+  "asset": "/training/left-presence-v43-portable.npz",
+  "asset_sha256": "38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda",
+  "checkpoint_sha256": "22f1f9bcf5332e470d289579a3243f7ae215da9e1752f72060fdc3bcad8faac9",
+  "first_pass_sha256": "939b855045a7ca00f6e1f977348e37b12ac8a1e2438bd20c710d3910101cf32d",
+  "runtime_source_sha256": {
+    "backend/app/services/left_presence.py": "c7417371250bef2b01f7701d49fb94d4f868a597db45fcd0e36efc7feaec74a5",
+    "backend/app/services/left_presence_network.py": "0b81c3f5de19a8921e276b98586bebe2c88bc4117b0a1b79f67ed0591070ebee",
+    "training/export_left_presence_v43.py": "dc2bc9be305c63fc75ccca3b2509f2406a84f1a9ad31d3aecd5e7654170f3407"
+  },
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false
+}
