@@ -1,0 +1,27 @@
+{
+  "status": "publisher_checksum_and_full_symbolic_inspection_verified_no_training",
+  "publisher": "Patchbanks / WaivOps",
+  "source": "https://zenodo.org/records/15304989",
+  "repository": "https://github.com/patchbanks/WaivOps-NRG-CP",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "archive_md5": "7443fe30674ef149aa4c23580044f597",
+  "archive_sha256": "ceb0f0b8d808150364a1ded15a1f54f9dc3a66f6f51dc0708c8242b62ae2f382",
+  "original_midi_files": 30943,
+  "ambiguous_same_key_clips_to_exclude": 1426,
+  "no_audio_rendered_or_inferred": true,
+  "no_dataset_used_for_training": true,
+  "no_user_audio_or_scores": true,
+  "no_new_weights_deployed": true,
+  "inspector_sha256": "c1342ca904671b0be40bbac1c57e7e34e9ac373a4ce5869252d00c78155b0cd6",
+  "inspection_log_sha256": "492c0b77ad476b87f6690858b6569493245cf09ece4686170ee2430092b1c83b",
+  "required_next_steps": [
+    "Exclude entire ambiguous/overlapping same-key clips before source selection. Do not repair guessed note-off pairings.",
+    "Group related progressions independently of rhythmic variation, transposition and voicing before splitting; filenames and byte uniqueness are insufficient.",
+    "Freeze source and whole-progression partitions before piano rendering or decoder inference.",
+    "Preserve actual MIDI clocks and measured waveform/codec alignment; some endings differ from nominal eight bars.",
+    "Provide source attribution and track intentional piano rendering, transposition and timing augmentation.",
+    "Use authored MIDI/key clocks as synthetic supervision; do not present this as human-performance timing labels.",
+    "Validate against V43 under normal/stricter policies; all 603 consumed regressions, independent fresh tests and runtime checks remain required."
+  ]
+}

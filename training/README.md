@@ -35,7 +35,15 @@ The [V46 additional-removal study](results/left-precision-v46-v1/README.md)
 keeps V43 rejections immutable while training two fresh verifiers on the same
 licensed fitting data. Its composition cannot restore rejected notes; genuine-note
 preservation and positive real-piano/pitch-only gains are still required. The
-full 1,024-test suite passed; both profiles are running without website changes.
+full 1,024-test suite passed. Both profiles completed with zero restorations, but
+none of 144 settings met all required benefits at both policies. All V46 weights
+are withheld; no consumed/fresh tests were read or website weights changed.
+
+[NRG-CP v1](results/nrgcp-v1-source-assessment-v1/README.md) is a separately
+assessed CC BY 4.0 chord/rhythm MIDI source. The full checksum and symbolic audit
+passed, but 1,426 ambiguous same-key clips must be excluded and related progressions
+must be partitioned together before rendering. It has not been fitted or used for
+audio inference and does not provide human piano timing annotations.
 
 V44 and TinySOL preparation use the pinned V32 reader in
 `.training/left-precision-v43-replay` for historical physical features. Do not

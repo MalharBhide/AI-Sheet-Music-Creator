@@ -1,0 +1,24 @@
+{
+  "settings": 144,
+  "eligible": 0,
+  "all_recording_preservation_settings": 117,
+  "preserving_general_benefit_settings": 27,
+  "restored_notes_all_settings": 0,
+  "policies": {
+    "raw": {
+      "max_observed_false_note_gain_not_release_safe": 90,
+      "max_observed_real_piano_gain_not_release_safe": 2,
+      "best_tinysol_wrong_pitch_gain_not_release_safe": 3,
+      "best_preserving_general_benefit": 30
+    },
+    "strict": {
+      "max_observed_false_note_gain_not_release_safe": 61,
+      "max_observed_real_piano_gain_not_release_safe": 0,
+      "best_tinysol_wrong_pitch_gain_not_release_safe": 2,
+      "best_preserving_general_benefit": 12
+    }
+  },
+  "interpretation": "The immutable baseline guard prevents every restoration. Some settings preserve all measured recordings and reduce general false notes, but no setting provides the required combined real-piano and held-out pitch-only benefits under both policies. Withhold every candidate; no consumed or fresh evaluation.",
+  "new_weights_deployed": false,
+  "no_user_audio_or_scores": true
+}

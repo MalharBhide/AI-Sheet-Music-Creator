@@ -1,0 +1,78 @@
+import collections
+import hashlib
+import io
+import json
+import tarfile
+from pathlib import Path, PurePosixPath
+import mido
+
+archive = Path('/training/nrgcp-v1.tar.gz')
+assert hashlib.md5(archive.read_bytes()).hexdigest() == '7443fe30674ef149aa4c23580044f597'
+counts = collections.Counter()
+resolutions, tempos, signatures, types = [collections.Counter() for _ in range(4)]
+exact, patterns, harmonic = [collections.Counter() for _ in range(3)]
+notes_per_clip, end_ticks, pitches, velocities = [], [], [], []
+invalid = []
+with tarfile.open(archive, 'r|gz') as reader:
+    for member in reader:
+        path = PurePosixPath(member.name)
+        if (not member.isfile() or path.is_absolute() or '..' in path.parts or '\\' in member.name
+                or not member.name.endswith('.mid') or member.size > 16384):
+            raise ValueError('Unsafe or unexpected MIDI member')
+        data = reader.extractfile(member).read()
+        assert len(data) == member.size
+        exact[hashlib.sha256(data).hexdigest()] += 1
+        midi = mido.MidiFile(file=io.BytesIO(data))
+        resolutions[midi.ticks_per_beat] += 1
+        types[midi.type] += 1
+        active = collections.defaultdict(list)
+        events, tick, errors = [], 0, collections.Counter()
+        for message in mido.merge_tracks(midi.tracks):
+            tick += message.time
+            counts[message.type] += 1
+            if message.type == 'set_tempo':
+                tempos[message.tempo] += 1
+            if message.type == 'time_signature':
+                signatures[f'{message.numerator}/{message.denominator}'] += 1
+            if message.type == 'note_on' and message.velocity:
+                key = (message.channel,message.note)
+                if active[key]:
+                    errors['overlapping_same_key'] += 1
+                active[key].append((tick,message.velocity))
+            elif message.type == 'note_off' or message.type == 'note_on' and not message.velocity:
+                key=(message.channel,message.note)
+                if not active[key]:
+                    errors['unmatched_note_off'] += 1
+                else:
+                    start, velocity=active[key].pop(0)
+                    if tick <= start:
+                        errors['nonpositive_note'] += 1
+                    events.append((start,tick,message.note,velocity))
+        errors['unclosed_notes'] += sum(len(v) for v in active.values())
+        if not events:
+            errors['empty_clip'] += 1
+        if any(errors.values()):
+            invalid.append({'member':member.name,'issues':dict(errors)})
+        notes_per_clip.append(len(events)); end_ticks.append(tick)
+        if events:
+            pitch_min=min(e[2] for e in events)
+            pitches.extend(e[2] for e in events); velocities.extend(e[3] for e in events)
+            pattern=sorted((a,b,p-pitch_min) for a,b,p,v in events)
+            patterns[hashlib.sha256(json.dumps([midi.ticks_per_beat,pattern]).encode()).hexdigest()] += 1
+            bars=[set() for _ in range(8)]
+            for start,end,pitch,velocity in events:
+                bar=min(7,int(start//(4*midi.ticks_per_beat)))
+                bars[bar].add(pitch%12)
+            normalized=min(tuple(tuple(sorted((p-shift)%12 for p in bar)) for bar in bars) for shift in range(12))
+            harmonic[hashlib.sha256(json.dumps(normalized).encode()).hexdigest()] += 1
+report={'archive_sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'midi_files':len(notes_per_clip),
+    'types':dict(types),'ticks_per_beat':dict(resolutions),'tempo_messages_microseconds_per_quarter':dict(tempos),
+    'time_signature_messages':dict(signatures),'message_counts':dict(counts),'clips_with_note_pair_issues':len(invalid),
+    'note_pair_issue_examples':invalid[:12],'notes_per_clip_range':[min(notes_per_clip),max(notes_per_clip)],
+    'end_tick_range':[min(end_ticks),max(end_ticks)],'pitch_range':[min(pitches),max(pitches)],
+    'velocity_range':[min(velocities),max(velocities)],'unique_byte_sequences':len(exact),
+    'unique_transposition_invariant_note_patterns':len(patterns),'unique_transposition_invariant_bar_pitchclass_progressions':len(harmonic),
+    'largest_harmonic_family':max(harmonic.values()),'no_audio_rendered_or_inferred':True,'no_user_audio_or_scores':True,
+    'no_dataset_used_for_training':True,'no_new_weights_deployed':True}
+Path('/training/nrgcp-v1-midi-inspection.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps(report),flush=True)
