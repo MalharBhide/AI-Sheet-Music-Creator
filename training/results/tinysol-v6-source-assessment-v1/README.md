@@ -15,8 +15,10 @@ invent timing labels or use these clips as timing validation. Official folds are
 not whole-instrument partitions; freeze project-specific instrument partitions
 before feature inference. Retuning flags must remain visible in provenance.
 
-No TinySOL weights have been trained or shipped. The already frozen V44 study
-remains unchanged. No user uploads or saved scores are read.
+Preparation and strict cache loading completed for all 949 recordings. The V45
+fine-tuning study completed without an eligible validation winner; no TinySOL
+weights have been shipped. The already
+frozen V44 study remains unchanged. No user uploads or saved scores are read.
 
 Source: https://zenodo.org/records/3685367
 License: https://creativecommons.org/licenses/by/4.0/
@@ -38,3 +40,9 @@ zero and decoded padding was exactly silent. The new v2 preparation canonicalize
 only proven silent far-end padding and preserves the raw codec waveform. It
 rejects nonzero alignment or any non-silent padding adjustment. This repair
 changes no musical samples, training partitions or independent evaluation data.
+
+The completed preparation retained 121 zero-prediction clips and 2,149 candidate
+notes. All measured codec lags were zero. Seventy-nine clips needed only verified
+silent end-padding repairs. The fitting audit found no source-group overlap;
+60,750 fundamental frames have UNKNOWN timing and remain masked. See
+preparation-completion.json and the V45 data-audit.json witness.

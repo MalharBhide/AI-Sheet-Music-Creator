@@ -1,0 +1,34 @@
+import collections
+import json
+from pathlib import Path
+import numpy as np
+from left_precision_v39 import keep
+from left_precision_v43 import gate, probabilities
+from left_precision_v44 import baseline, deployed_contract, released_models
+from left_precision_v45 import frame_supervision
+from prepare_robust_training_stems import digest
+from train_left_precision_v45 import FOLDERS, fitting_items
+
+production = deployed_contract(Path('/src'))
+items = fitting_items()
+partitions = {g: [i for i in items if i['group'] == g] for g in ('train', 'validation')}
+assert [len(partitions[g]) for g in ('train', 'validation')] == [1933, 582]
+assert len({i['id'] for i in items}) == len(items)
+assert not ({i['source_group'] for i in partitions['train']} & {i['source_group'] for i in partitions['validation']})
+weak = [i for i in items if i['corpus'] == 'tinysol-isolated-pitch']
+assert len(weak) == 949 and all(i['timing_supervision_available'] is False for i in weak)
+assert not ({i['source_group'] for i in weak if i['group'] == 'train'} & {i['source_group'] for i in weak if i['group'] == 'validation'})
+supervision = [frame_supervision(i) for i in weak]
+assert not any(target.any() for target, weight in supervision)
+report = {'passes': True, 'recordings': len(items), 'partitions': {g: len(v) for g,v in partitions.items()}, 'corpora': {g: dict(collections.Counter(i['corpus'] for i in v)) for g,v in partitions.items()}, 'candidate_notes': {g: sum(len(i['events']) for i in v) for g,v in partitions.items()}, 'source_group_overlap': [], 'fitting_manifests': {k:digest(v/'manifest.json') for k,v in FOLDERS.items()}, 'production':production, 'weak_pitch_recordings':len(weak), 'weak_source_groups':{g:sorted({i['source_group'] for i in weak if i['group']==g}) for g in partitions}, 'zero_prediction_weak_clips':sum(len(i['events'])==0 for i in weak), 'unknown_fundamental_frames':sum(int((weight==0).sum()) for target,weight in supervision), 'weak_note_keep_remove':{g:np.bincount(np.concatenate([1-i['y'].astype(np.int64) for i in weak if i['group']==g]),minlength=2).tolist() for g in partitions}, 'no_user_audio_or_scores': True, 'no_reserved_or_consumed_data_read': True, 'no_audio_inference':True}
+released = released_models(Path('/src'))
+validation = partitions['validation']
+heads = [probabilities(released[1], i, released[2]) for i in validation]
+for stricter in (False, True):
+    actual = baseline(validation, released, stricter=stricter)
+    for item, deployed, values in zip(validation, actual, heads, strict=True):
+        proposed = keep(item['events'], gate(values, .16 if stricter else .2), item['duration'], .905 if stricter else .9)
+        assert np.array_equal(proposed, deployed['baseline_accepted'])
+report['candidate_initialization_parity'] = {'recordings':len(validation), 'policies':2, 'different_decisions':0, 'retained_clocks_identical':True, 'no_new_model_fitted':True}
+Path('/training/left-precision-v45-data-audit.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps({k:v for k,v in report.items() if k!='production'}),flush=True)

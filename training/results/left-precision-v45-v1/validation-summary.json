@@ -1,0 +1,21 @@
+{
+  "settings": 108,
+  "eligible": 0,
+  "policies": {
+    "raw": {
+      "best_false_note_gain": -14,
+      "best_real_piano_gain": 0,
+      "fewest_failed_recordings": 15,
+      "best_tinysol_wrong_pitch_gain": 0
+    },
+    "strict": {
+      "best_false_note_gain": -13,
+      "best_real_piano_gain": 0,
+      "fewest_failed_recordings": 13,
+      "best_tinysol_wrong_pitch_gain": 0
+    }
+  },
+  "interpretation": "Every tested setting restores extra notes and fails timed validation; TinySOL wrong-pitch gain is zero. No model qualifies for consumed or fresh evaluation.",
+  "new_weights_deployed": false,
+  "no_user_audio_or_scores": true
+}
