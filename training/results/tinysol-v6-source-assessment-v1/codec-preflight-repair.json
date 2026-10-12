@@ -1,0 +1,18 @@
+{
+  "status": "engineering_preflight_repaired_in_new_run",
+  "first_attempt_completed_fitting_clips": 39,
+  "failed_before_inference_on_clip": "tinysol-v45-0aaa1aefedda82d9e3ce31a1",
+  "original_frames": 380177,
+  "raw_decoded_frames": 380207,
+  "waveform_lag_samples": 0,
+  "leading_two_seconds_peak": 0.0,
+  "trailing_two_seconds_peak": 0.0,
+  "repair": "Canonicalize only the far end of authored silent padding, with zero measured lag, bounded 30ms sample-count difference and exactly silent first/last two seconds. Preserve raw codec waveform/hash and adjustment count; musical samples do not move. Real signal or alignment changes still fail.",
+  "first_attempt_plan_sha256": "64e7c14542dd27c3de7649b1cd4f72c2f35791ed12d269199207abe02c61b499",
+  "first_attempt_log_sha256": "977026589f71764a63beb56d884a1153b1d3c958adaa63083f0a7b8885a4a444",
+  "targeted_tests_passed": 17,
+  "targeted_test_log_sha256": "e6425fe09d0d20ab32ce447e8a18f3b8af7da9ea3d2a7b60ece1d5cfe786faa9",
+  "no_consumed_or_independent_tests_read": true,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false
+}

@@ -1,0 +1,92 @@
+{
+  "status": "withheld_no_validation_winner",
+  "trained_profiles": 2,
+  "epochs_per_profile": 100,
+  "training_recordings": 1221,
+  "validation_recordings": 345,
+  "tested_validation_settings": 144,
+  "stages": [
+    {
+      "profile": "dynamics-protected",
+      "stage": 25,
+      "settings": 24,
+      "eligible": 0,
+      "minimum_failed_recordings_normal": 26,
+      "minimum_failed_recordings_stricter": 20,
+      "maximum_false_note_gain_normal": -27,
+      "maximum_real_piano_gain_normal": -1
+    },
+    {
+      "profile": "dynamics-protected",
+      "stage": 50,
+      "settings": 24,
+      "eligible": 0,
+      "minimum_failed_recordings_normal": 19,
+      "minimum_failed_recordings_stricter": 16,
+      "maximum_false_note_gain_normal": -9,
+      "maximum_real_piano_gain_normal": 0
+    },
+    {
+      "profile": "dynamics-protected",
+      "stage": 100,
+      "settings": 24,
+      "eligible": 0,
+      "minimum_failed_recordings_normal": 14,
+      "minimum_failed_recordings_stricter": 13,
+      "maximum_false_note_gain_normal": 31,
+      "maximum_real_piano_gain_normal": -1
+    },
+    {
+      "profile": "dynamics-small",
+      "stage": 25,
+      "settings": 24,
+      "eligible": 0,
+      "minimum_failed_recordings_normal": 25,
+      "minimum_failed_recordings_stricter": 24,
+      "maximum_false_note_gain_normal": -27,
+      "maximum_real_piano_gain_normal": 0
+    },
+    {
+      "profile": "dynamics-small",
+      "stage": 50,
+      "settings": 24,
+      "eligible": 0,
+      "minimum_failed_recordings_normal": 9,
+      "minimum_failed_recordings_stricter": 8,
+      "maximum_false_note_gain_normal": 85,
+      "maximum_real_piano_gain_normal": 3
+    },
+    {
+      "profile": "dynamics-small",
+      "stage": 100,
+      "settings": 24,
+      "eligible": 0,
+      "minimum_failed_recordings_normal": 12,
+      "minimum_failed_recordings_stricter": 12,
+      "maximum_false_note_gain_normal": 76,
+      "maximum_real_piano_gain_normal": 3
+    }
+  ],
+  "checkpoint_sha256": {
+    "dynamics-protected/epoch-025.pt": "e733a036eac8e5525592411a1e27cd4c1ff4c2347f2d126ebcaaf8b1dd49d2ae",
+    "dynamics-protected/epoch-050.pt": "820f90d61765cd59404f6921f1bbc96bd1c1f058c2867e4430db0d3327ee42fb",
+    "dynamics-protected/epoch-100.pt": "6b0430cfa26716c5165d1c4a6e6f6f80c987bafbc7e0c596de99f0f7e1fd1062",
+    "dynamics-small/epoch-025.pt": "306f27edd26fb42bdb1232516d08d58a88fd739da1d6766706b1c60426791c58",
+    "dynamics-small/epoch-050.pt": "2b1be14d616c0b52e69b00716a9f89ece32a0bac97b67b1666c2a4fcf45302e0",
+    "dynamics-small/epoch-100.pt": "68133118e7ab4f09c5ebc0377810c9ad81f840f7a5a0310761ebb5d4ecb1165e"
+  },
+  "plan_sha256": "eabe246aa3c561cedcdf1f50b4aaf8b800f7daa049b4fb3838d5f02eaca15015",
+  "data_audit_sha256": "cc79d480178b32f1157b955eb56c6378d3b8da42068cd7bcdbbb2fbef13794c1",
+  "source_witnesses_verified": true,
+  "full_backend_training_tests": {
+    "passed": 992,
+    "skipped": 6,
+    "log_sha256": "0c4c2ff138d5fee83f95b1969d3e222769814e4aeb2d7322be6a56b16c692c1f"
+  },
+  "consumed_regressions_read": false,
+  "fresh_evaluation_read": false,
+  "first_pass_seeds_289101_289140_consumed": false,
+  "website_asset_sha256": "38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda",
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false
+}

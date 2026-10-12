@@ -1,0 +1,102 @@
+{
+  "status": "metadata_and_audio_acquisition_verified",
+  "publisher": "https://zenodo.org/records/3685367",
+  "version": "6.0",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "audio_url": "https://zenodo.org/records/3685367/files/TinySOL.tar.gz?download=1",
+  "publisher_audio_md5": "36030a7fe389da86c3419e5ee48e3b7f",
+  "metadata_url": "https://zenodo.org/records/3685367/files/TinySOL_metadata.csv?download=1",
+  "metadata_md5": "a86c9bb115f69e61f2f25872e397fc4a",
+  "metadata_sha256": "925727f1036cb3d574856470be6b04af5c9961102902a23cc8eafc7907d040da",
+  "rows": 2913,
+  "columns": [
+    "Path",
+    "Fold",
+    "Family",
+    "Instrument (abbr.)",
+    "Instrument (in full)",
+    "Technique (abbr.)",
+    "Technique (in full)",
+    "Pitch",
+    "Pitch ID",
+    "Dynamics",
+    "Dynamics ID",
+    "Instance ID",
+    "String ID (if applicable)",
+    "Needed digital retuning"
+  ],
+  "midi_21_59": {
+    "rows": 1133,
+    "instruments": {
+      "Bass Tuba": 90,
+      "French Horn": 80,
+      "Trombone": 78,
+      "Trumpet in C": 17,
+      "Accordion": 232,
+      "Cello": 159,
+      "Contrabass": 261,
+      "Viola": 51,
+      "Violin": 15,
+      "Alto Saxophone": 33,
+      "Bassoon": 78,
+      "Clarinet in Bb": 30,
+      "Flute": 3,
+      "Oboe": 6
+    },
+    "dynamics": {
+      "pp": 359,
+      "mf": 416,
+      "ff": 358
+    },
+    "digitally_retuned": {
+      "FALSE": 820,
+      "TRUE": 313
+    }
+  },
+  "proposed_role": "Separate future pitch-presence fitting study only. Isolated single-note clips have pitch metadata, but lack precise human onset, key release or pedal annotations. Protect the entire clip at its supplied fundamental; do not invent timing labels or count these clips as onset/hold validation. Partition complete instruments before feature inference. Do not mix into frozen V44.",
+  "no_model_fitted": true,
+  "no_audio_inference": true,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false,
+  "audio_archive": {
+    "bytes": 1026917185,
+    "md5": "36030a7fe389da86c3419e5ee48e3b7f",
+    "sha256": "a537e5de4f64edf0a56032369f66fc76adcb67db875e466f54cad2999e00364c"
+  },
+  "source_manifest_sha256": "02e32b9eead2b607b77cc31a927a6fb8060818b93ad3e36d53f7b61ff38677e1",
+  "fitting_subset": {
+    "recordings": 949,
+    "partitions": {
+      "validation": 237,
+      "train": 712
+    },
+    "instrument_partitions": {
+      "train": [
+        "Bass Tuba",
+        "Trombone",
+        "Accordion",
+        "Contrabass",
+        "Viola"
+      ],
+      "validation": [
+        "Cello",
+        "Bassoon"
+      ]
+    },
+    "digitally_retuned": {
+      "False": 680,
+      "True": 269
+    },
+    "measured_source_seconds_range": [
+      1.315170068027211,
+      16.235351473922904
+    ],
+    "publisher_waveform_bytes_preserved": true,
+    "no_reserved_audio_extracted_or_decoded": true
+  },
+  "preparation_unit_tests": {
+    "passed": 17,
+    "log_sha256": "e6425fe09d0d20ab32ce447e8a18f3b8af7da9ea3d2a7b60ece1d5cfe786faa9"
+  }
+}

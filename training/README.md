@@ -1,4 +1,32 @@
-# Supervised melody training
+# Supervised transcription training
+
+## Current left-hand release and studies
+
+The approved website verifier is [V43](results/left-precision-v43-v1/README.md).
+Future candidates must compare against its actual normal and stricter decisions,
+preserve the unchanged V38 release context, pass all 603 consumed regressions,
+then pass an independent fresh evaluation and runtime checks before deployment.
+User uploads and saved scores must never be used for these studies.
+
+The [V44 original-dynamics study](results/left-precision-v44-v1/README.md)
+completed two 100-epoch profiles on 1,221 training and 345 validation recordings.
+None of its 144 validation settings preserved every required recording, so all
+weights are withheld. No consumed or fresh tests were read, and website weights
+are unchanged. The archived plan, curves, failures and source witnesses explain
+the decision; lower fitting loss is not evidence of higher transcription quality.
+
+[TinySOL v6](results/tinysol-v6-source-assessment-v1/README.md) is a newly acquired
+CC BY 4.0 source for a separate pitch-presence study. Its 712 training and 237
+validation recordings use disjoint whole instruments. Preparation explicitly
+masks unknown human fundamental timing rather than manufacturing held-note,
+onset or release annotations. Future fitting must honor those frame loss masks;
+these observations cannot serve as human timing validation.
+
+V44 and TinySOL preparation use the pinned V32 reader in
+`.training/left-precision-v43-replay` for historical physical features. Do not
+weaken old source/hash guards to load these caches with a newer runtime.
+
+## Historical studies
 
 The [V11 wrong-pitch training study](../docs/bass-residual-v11-training.md)
 uses exact merged durations and native recomputed evidence. Two completed pairs
