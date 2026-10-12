@@ -27,10 +27,19 @@ raw-decoded and canonical waveforms, MP3s, labels and candidate features have
 separate hashes. The strict loader recomputes source transformations, references,
 partitions and physical context. No user upload or saved score is processed.
 
-Status at this framework checkpoint: preparation is running toward 144 training
-and 36 validation clips. It is not yet a completed data audit or accuracy result.
+Status: all 180 clips are prepared and the strict physical/label audit passed.
+Training contains 144 clips from 48 families: 11,691 candidates (9,679 conservative
+KEEP, 2,012 REMOVE). Validation contains 36 clips from 12 families: 3,257
+candidates (2,744 KEEP, 513 REMOVE). Nine training and three validation clips
+produced no candidates and remain in the corpus. All codec lags are zero; no
+padding repairs were needed. The 6,939 authored chord attack groups and 25,824
+same-pitch recurrences provide new rhythmic supervision. There are 166 key holds
+over one second, none over four seconds; earlier corpora still provide longer
+holds and human performance evidence. This audit is not an accuracy result.
 Twenty-seven source/render/preparation checks and the full 1,051-test suite passed
-(six full-suite skips). No new weights are trained or deployed at this checkpoint.
+(six full-suite skips). Both 100-epoch V47 profiles completed without a validation winner; their weights
+are withheld. See the separate V47 study archive for measured results. The
+original framework commit checkpoint preceded those runs.
 The planned V47 run uses all earlier fitting partitions plus these new clips,
 with immutable V43 rejection permissions and unchanged V38 timing context. A
 winner must preserve every measured recording, improve real piano and these new

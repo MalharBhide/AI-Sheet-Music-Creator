@@ -1,0 +1,15 @@
+{
+  "version": "nrgcp-unambiguous-progression-source-v47-v1",
+  "publisher": "https://zenodo.org/records/15304989",
+  "license": "CC BY 4.0",
+  "archive_md5": "7443fe30674ef149aa4c23580044f597",
+  "archive_sha256": "ceb0f0b8d808150364a1ded15a1f54f9dc3a66f6f51dc0708c8242b62ae2f382",
+  "producer_sha256": "f8490076a1b8821754818c916d20be92796c56efe7b9bf7fc37321ca2190dbe9",
+  "counts": {
+    "train": 48,
+    "validation": 12
+  },
+  "selection": "Reject entire same-key-overlap clips. Group by transposition-invariant eight-bar pitch-class progression. Partition hash buckets 0 reserved, 1-2 validation, 3-9 train. Select smallest 48/12 eligible family hashes; within a family choose smallest source byte hash. No reserved extraction, rendering or decoder inference. Known exact transposition patterns must also be disjoint. Coarse musical grouping is documented, not a claim of human work IDs.",
+  "no_audio_rendered_or_inferred": true,
+  "no_user_audio_or_scores": true
+}
