@@ -1,0 +1,34 @@
+{
+  "version": "keynata-complete-work-piano-v57-v1",
+  "source_root": "/training/keynata-source-assessment-v55",
+  "output": "/training/keynata-piano-v57-observations",
+  "native_preflight": "/training/keynata-v57-native-preflight.json",
+  "source_sha256": {
+    "keynata_piano_source_v57.py": "8ff067b3f4fb896aaaa74bef508e3bf8dc653e546de96ea73f2c5b4b48a658e2",
+    "prepare_keynata_piano_v57.py": "9e6bb10d52a499ef075a17c6a5d78c7d07b687863c38affdc6da9e39e84259f9",
+    "native_keynata_piano_v57.py": "89804a80f7bfa261c934db0594efbfcec83165bdf0a3f59a4787e5c858a464ac",
+    "test_keynata_preparation_v57.py": "444dcd46bf655c6671c450006b7f5cdc53ca29077bf66159eec909b76e0213e9"
+  },
+  "source_audit_sha256": "5efa02b0294fc49e01b8cf12f51e9ede13cba8dc8e33c0c05cb2a188e814d8a5",
+  "training_recordings": 72,
+  "parent_compositions": 5,
+  "partition": "All complete generated parents and all windows/dynamics are fitting-only.",
+  "crop_seconds": 24,
+  "velocity_multipliers": [
+    0.45,
+    0.7,
+    1.0
+  ],
+  "mp3_bitrates": [
+    48,
+    128,
+    192
+  ],
+  "labels": "Complete key commands only for attack/release; crossing keys only clipped pitch support. Generated positive support is unknown acoustic presence.",
+  "native_preflight_before_inference": true,
+  "require_wave_samples_bit_parity": true,
+  "require_zero_mp3_lag": true,
+  "no_user_audio_or_scores": true,
+  "no_consumed_or_fresh_test_audio_inference": true,
+  "new_weights_deployed": false
+}

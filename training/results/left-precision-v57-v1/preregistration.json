@@ -1,0 +1,71 @@
+{
+  "version": "new-keynata-hard-keep-tail-v57-v1",
+  "hypothesis": "Fresh training with a new CC0 generated piano cohort and worst-10-percent genuine-note fitting loss may reduce wrong notes without losing unusual genuine attacks or holds.",
+  "training_recordings": 2302,
+  "timed_validation_recordings": 381,
+  "pitch_only_validation_recordings": 237,
+  "new_training_recordings": 72,
+  "new_training_parent_compositions": 5,
+  "new_preparation_audit_sha256": "e66fc5d0e7743ecb1b2f6d590ffae50a2f6f95251a96598e7628dbca2f8d3d59",
+  "new_manifest_sha256": "e2d5b9b625dcd3ce4b402f203db05b64cdd714e49e4b27d31adc667a2a5ad98b",
+  "source_sha256": {
+    "left_precision_v57.py": "e3c0fb7549d7c304f8cbf254f410e49c332e5336c37ae5542827ffb3e758cc12",
+    "train_left_precision_v57.py": "f11d1cf665e6578a00b05da342185b49796c63ed48ef440d98210623c114eea4",
+    "test_left_precision_v57.py": "fe110a45aabc8f923fe5284bb5b9430bf63a8b487bca808f64f1e3828ab75c75",
+    "audit_keynata_preparation_v57.py": "d97f2ce7450f1d34d28fa138edfdb91bafea8f58fca20d1f0195bd930f741e09"
+  },
+  "profiles": [
+    {
+      "name": "keynata-tail-balanced",
+      "width": 20,
+      "keep_weight": 24,
+      "presence_weight": 4,
+      "real_piano_weight": 4,
+      "isolated_negative_weight": 8,
+      "hard_keep_weight": 6,
+      "seed": 302001
+    },
+    {
+      "name": "keynata-tail-protected",
+      "width": 20,
+      "keep_weight": 48,
+      "presence_weight": 8,
+      "real_piano_weight": 8,
+      "isolated_negative_weight": 16,
+      "hard_keep_weight": 12,
+      "seed": 302002
+    }
+  ],
+  "epochs": 100,
+  "updates_per_epoch": 40,
+  "batch_size": 256,
+  "hard_keep_fraction": 0.1,
+  "stages": [
+    25,
+    50,
+    100
+  ],
+  "thresholds": [
+    0.9,
+    0.95,
+    0.98,
+    0.99,
+    0.995,
+    0.999
+  ],
+  "veto_thresholds": [
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "stricter_margin": 0.005,
+  "stricter_veto_multiplier": 0.8,
+  "validation": "Every timed and pitch-only recording preserves every required genuine-note identity and fixed timing at both policies; positive overall, real-piano, NRG-CP and TinySOL wrong-pitch gains separately required.",
+  "release": "One validation winner, all 603 consumed regressions, then one untouched 40-clip original/texture MP3 pass with seeds 301101-301140 and separate positive family gains, then portable/native runtime parity. No runner-up or retuning after test failure.",
+  "no_inherited_weights": true,
+  "no_teacher_targets": true,
+  "no_user_audio_or_scores": true,
+  "no_consumed_or_fresh_tests_used_for_fitting_or_selection": true,
+  "new_weights_deployed": false
+}
