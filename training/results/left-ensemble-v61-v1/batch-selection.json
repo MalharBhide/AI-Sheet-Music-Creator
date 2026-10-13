@@ -1,0 +1,93 @@
+{
+  "selected": true,
+  "members": [
+    {
+      "role": "A",
+      "study": "v58",
+      "run": "/training/left-precision-v58-v1",
+      "version": "candidate-phase-conditioned-presence-v58-v1",
+      "profile": {
+        "name": "phase-balanced",
+        "width": 20,
+        "keep_weight": 24,
+        "presence_weight": 4,
+        "real_piano_weight": 4,
+        "isolated_negative_weight": 8,
+        "hard_keep_weight": 0,
+        "seed": 303001
+      },
+      "epoch": 100,
+      "threshold": 0.99,
+      "veto_threshold": 0.3,
+      "checkpoint": "phase-balanced/epoch-100.pt",
+      "checkpoint_sha256": "ca31dec2c72a5c5d8fc7c87a7fe4fbf69f468a27f75745ac0a9bf442dfdecd43",
+      "source_plan_sha256": "3d64bf2cfa73f26f6eea584485dcf13161b3dc297cc1eab8e65f646401b630b5",
+      "source_result_sha256": "7ced0a27c2d83ae76d0992c6a15639fa9ba338f1e045d7d7b1a255e80e2d9926",
+      "search_sha256": {
+        "phase-balanced/search-025.json": "792a36515c67d2ae2ceb6ba08482d5f25298209ca6c310d3e1e102b4f89631b8",
+        "phase-balanced/search-050.json": "2bb1e3539db35f2478411077bafff5a51924b0c1dad48f6062bc4ced1ec717f0",
+        "phase-balanced/search-100.json": "762036101edfb2fb2127cc55cb99c5eb3cedca87aebde672d8b83df399eca315",
+        "phase-protected/search-025.json": "c550761e0941687ea7f7fd1fe5de68708ef1c99336748958584a2617bdc36686",
+        "phase-protected/search-050.json": "4ea059df1041ae80bee396c872bc9b1ebe0bb794e2c8d88bedf17b3a00ac78eb",
+        "phase-protected/search-100.json": "77cd94f89834b5a66ef5afebde6e849b807ae24e181b5a2d071ab9d4cb8481c5"
+      },
+      "selection_key": [
+        1,
+        4,
+        12,
+        34,
+        0.99,
+        -0.3,
+        -100,
+        0
+      ]
+    },
+    {
+      "role": "B",
+      "study": "v59",
+      "run": "/training/left-precision-v59-v1",
+      "version": "known-absent-interior-maximum-loss-v59-v1",
+      "profile": {
+        "name": "max-absence-balanced",
+        "width": 20,
+        "keep_weight": 24,
+        "presence_weight": 4,
+        "real_piano_weight": 4,
+        "isolated_negative_weight": 8,
+        "hard_keep_weight": 0,
+        "max_absence_weight": 1,
+        "seed": 304001
+      },
+      "epoch": 25,
+      "threshold": 0.98,
+      "veto_threshold": 0.2,
+      "checkpoint": "max-absence-balanced/epoch-025.pt",
+      "checkpoint_sha256": "14d42f087de0dc1c1ccc73fbc9fc86a3459814186614e08de77afb4ea7986969",
+      "source_plan_sha256": "a088c9192c6663548b03b703d89a270233aafedb269eb57c733697c218073379",
+      "source_result_sha256": "07d361eb8c9e216352d69ee9f435d7637eebb3b60fd58ce1de46e0d58f990fde",
+      "search_sha256": {
+        "max-absence-balanced/search-025.json": "eb01a81723131583d523c54b076c22d32973a91398807469f73d3ac191bd32f5",
+        "max-absence-balanced/search-050.json": "4b8a6060341a631320187a826520e60a9ed4d5d2a836cf37dd8bc66ed38d10a2",
+        "max-absence-balanced/search-100.json": "30016fba4b0973a5ba6620cc3d27cc61d0952fa1ead9d045ecd8eb4d4ce14a43",
+        "max-absence-protected/search-025.json": "f17edd404f200c08282aec91552a38ffed2ff02dcf257af53e53a9a7d2994015",
+        "max-absence-protected/search-050.json": "80966cae3b8f701d1115874daafe1aadbcb8e5c4d9882fc69c824839ecf76a0a",
+        "max-absence-protected/search-100.json": "51175a31633c034fbd0a3d4db58aa10b6bad0ab27e1da1a37051d4570c3b1e83"
+      },
+      "selection_key": [
+        1,
+        2,
+        6,
+        15,
+        0.98,
+        -0.2,
+        -25,
+        0
+      ]
+    }
+  ],
+  "plan_sha256": "20fe51797397054104463ff07fc5b8136079ddf3b7b964cb2d70408d4753b637",
+  "validation_sha256": "bd365faa16c0bead229367068d04c74c342d0e4d24a043c8def1eb2bce4d795e",
+  "no_test_used_for_selection": true,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false
+}

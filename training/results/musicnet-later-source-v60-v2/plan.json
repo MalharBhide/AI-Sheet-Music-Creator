@@ -1,0 +1,963 @@
+{
+  "version": "musicnet-later-original-fitting-source-v60-v2",
+  "source_root": "/training/musicnet-piano-subset-v1",
+  "assessment_sha256": "ed925b2d65dc629f88085c8651f9c2f4e91f47ffcb8505cfd03591cdda974fb5",
+  "source_manifest_sha256": "51fc54ee4e30f56840e461e48d57ab6a2f8b39db219863a98ac0ab57242f9aa3",
+  "source_sha256": {
+    "acquire_musicnet_later_v60_v2.py": "ae4a35fd8b9a1ce84926bdca130f555e580e0cf36620961d315361d79e711a7b",
+    "acquire_musicnet_later_v60.py": "b1dfcd77e3234170a05b0afa44178eb18c24107f537c10addf913c8dd1331c51",
+    "parallel_archive_v60.py": "536b6f89de7af44061c4fec23fa4121a21afadf7744d192518e0b289fe49631e",
+    "audit_musicnet_expansion_v59.py": "fd226997f2c331980d183b338084f993abcba637bfb64bc73c63f974b0ca1266"
+  },
+  "source_url": "https://zenodo.org/records/5120004/files/musicnet.tar.gz",
+  "archive_bytes": 11097394998,
+  "archive_md5": "844764911fa0d5b97c97da944a057590",
+  "archive_sha256": "f26e6d023b7a62cd54d8f2b0533b88f549c30e3fad0aa546d1ea24aefba28fca",
+  "jobs": [
+    {
+      "id": "musicnet-later-v59-1749-95",
+      "publisher_id": "1749",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D845",
+        "Piano Sonata in A minor"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Schubert/D845/Piano Sonata in A minor",
+      "labels_sha256": "e5a8d00814d72af034a57f1fcfda84086b478c08945b4b4d081adfd56b2560c1",
+      "original_duration": 696.3722448979591,
+      "original_member": "musicnet/train_data/1749.wav",
+      "complete_publisher_note_intervals": 91,
+      "crossing_intervals_for_pitch_support_only": 5,
+      "distinct_pitches": 34
+    },
+    {
+      "id": "musicnet-later-v59-1749-155",
+      "publisher_id": "1749",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D845",
+        "Piano Sonata in A minor"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Schubert/D845/Piano Sonata in A minor",
+      "labels_sha256": "e5a8d00814d72af034a57f1fcfda84086b478c08945b4b4d081adfd56b2560c1",
+      "original_duration": 696.3722448979591,
+      "original_member": "musicnet/train_data/1749.wav",
+      "complete_publisher_note_intervals": 85,
+      "crossing_intervals_for_pitch_support_only": 5,
+      "distinct_pitches": 27
+    },
+    {
+      "id": "musicnet-later-v59-1749-215",
+      "publisher_id": "1749",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D845",
+        "Piano Sonata in A minor"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Schubert/D845/Piano Sonata in A minor",
+      "labels_sha256": "e5a8d00814d72af034a57f1fcfda84086b478c08945b4b4d081adfd56b2560c1",
+      "original_duration": 696.3722448979591,
+      "original_member": "musicnet/train_data/1749.wav",
+      "complete_publisher_note_intervals": 262,
+      "crossing_intervals_for_pitch_support_only": 4,
+      "distinct_pitches": 46
+    },
+    {
+      "id": "musicnet-later-v59-1755-95",
+      "publisher_id": "1755",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D784",
+        "Piano Sonata in A minor"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Schubert/D784/Piano Sonata in A minor",
+      "labels_sha256": "049c8f176c37c21486b2dd931fd19a1f81e5cac6b567bc25d1e16f436a6b7d7a",
+      "original_duration": 229.7991836734694,
+      "original_member": "musicnet/train_data/1755.wav",
+      "complete_publisher_note_intervals": 101,
+      "crossing_intervals_for_pitch_support_only": 6,
+      "distinct_pitches": 24
+    },
+    {
+      "id": "musicnet-later-v59-1755-155",
+      "publisher_id": "1755",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D784",
+        "Piano Sonata in A minor"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Schubert/D784/Piano Sonata in A minor",
+      "labels_sha256": "049c8f176c37c21486b2dd931fd19a1f81e5cac6b567bc25d1e16f436a6b7d7a",
+      "original_duration": 229.7991836734694,
+      "original_member": "musicnet/train_data/1755.wav",
+      "complete_publisher_note_intervals": 99,
+      "crossing_intervals_for_pitch_support_only": 8,
+      "distinct_pitches": 34
+    },
+    {
+      "id": "musicnet-later-v59-1768-95",
+      "publisher_id": "1768",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D664",
+        "Piano Sonata in A major"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Schubert/D664/Piano Sonata in A major",
+      "labels_sha256": "37a48deab264355a30d172679fa4097d4e47cc050c54567a621f55a1e24b3022",
+      "original_duration": 290.8734693877551,
+      "original_member": "musicnet/train_data/1768.wav",
+      "complete_publisher_note_intervals": 42,
+      "crossing_intervals_for_pitch_support_only": 7,
+      "distinct_pitches": 14
+    },
+    {
+      "id": "musicnet-later-v59-1768-155",
+      "publisher_id": "1768",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D664",
+        "Piano Sonata in A major"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Schubert/D664/Piano Sonata in A major",
+      "labels_sha256": "37a48deab264355a30d172679fa4097d4e47cc050c54567a621f55a1e24b3022",
+      "original_duration": 290.8734693877551,
+      "original_member": "musicnet/train_data/1768.wav",
+      "complete_publisher_note_intervals": 97,
+      "crossing_intervals_for_pitch_support_only": 10,
+      "distinct_pitches": 23
+    },
+    {
+      "id": "musicnet-later-v59-1768-215",
+      "publisher_id": "1768",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D664",
+        "Piano Sonata in A major"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Schubert/D664/Piano Sonata in A major",
+      "labels_sha256": "37a48deab264355a30d172679fa4097d4e47cc050c54567a621f55a1e24b3022",
+      "original_duration": 290.8734693877551,
+      "original_member": "musicnet/train_data/1768.wav",
+      "complete_publisher_note_intervals": 79,
+      "crossing_intervals_for_pitch_support_only": 7,
+      "distinct_pitches": 16
+    },
+    {
+      "id": "musicnet-later-v59-1771-95",
+      "publisher_id": "1771",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D568",
+        "Piano Sonata in D-flat major"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Schubert/D568/Piano Sonata in D-flat major",
+      "labels_sha256": "be87dcde4a58cc19f1c1d74db2a9652a1b632918b614eb3eac4ba245b9e9ebc5",
+      "original_duration": 647.3665306122449,
+      "original_member": "musicnet/train_data/1771.wav",
+      "complete_publisher_note_intervals": 231,
+      "crossing_intervals_for_pitch_support_only": 5,
+      "distinct_pitches": 44
+    },
+    {
+      "id": "musicnet-later-v59-1771-155",
+      "publisher_id": "1771",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D568",
+        "Piano Sonata in D-flat major"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Schubert/D568/Piano Sonata in D-flat major",
+      "labels_sha256": "be87dcde4a58cc19f1c1d74db2a9652a1b632918b614eb3eac4ba245b9e9ebc5",
+      "original_duration": 647.3665306122449,
+      "original_member": "musicnet/train_data/1771.wav",
+      "complete_publisher_note_intervals": 212,
+      "crossing_intervals_for_pitch_support_only": 6,
+      "distinct_pitches": 37
+    },
+    {
+      "id": "musicnet-later-v59-1771-215",
+      "publisher_id": "1771",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D568",
+        "Piano Sonata in D-flat major"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Schubert/D568/Piano Sonata in D-flat major",
+      "labels_sha256": "be87dcde4a58cc19f1c1d74db2a9652a1b632918b614eb3eac4ba245b9e9ebc5",
+      "original_duration": 647.3665306122449,
+      "original_member": "musicnet/train_data/1771.wav",
+      "complete_publisher_note_intervals": 114,
+      "crossing_intervals_for_pitch_support_only": 4,
+      "distinct_pitches": 26
+    },
+    {
+      "id": "musicnet-later-v59-1775-95",
+      "publisher_id": "1775",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D850",
+        "Piano Sonata in D major"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Schubert/D850/Piano Sonata in D major",
+      "labels_sha256": "3ddab4850c93f8de59d93aaee1b5bd85a472ba7288b37ffb72882fed519ec065",
+      "original_duration": 578.2204081632653,
+      "original_member": "musicnet/train_data/1775.wav",
+      "complete_publisher_note_intervals": 222,
+      "crossing_intervals_for_pitch_support_only": 5,
+      "distinct_pitches": 34
+    },
+    {
+      "id": "musicnet-later-v59-1775-155",
+      "publisher_id": "1775",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D850",
+        "Piano Sonata in D major"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Schubert/D850/Piano Sonata in D major",
+      "labels_sha256": "3ddab4850c93f8de59d93aaee1b5bd85a472ba7288b37ffb72882fed519ec065",
+      "original_duration": 578.2204081632653,
+      "original_member": "musicnet/train_data/1775.wav",
+      "complete_publisher_note_intervals": 308,
+      "crossing_intervals_for_pitch_support_only": 5,
+      "distinct_pitches": 39
+    },
+    {
+      "id": "musicnet-later-v59-1775-215",
+      "publisher_id": "1775",
+      "group": "train",
+      "work": [
+        "Schubert",
+        "D850",
+        "Piano Sonata in D major"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Schubert/D850/Piano Sonata in D major",
+      "labels_sha256": "3ddab4850c93f8de59d93aaee1b5bd85a472ba7288b37ffb72882fed519ec065",
+      "original_duration": 578.2204081632653,
+      "original_member": "musicnet/train_data/1775.wav",
+      "complete_publisher_note_intervals": 166,
+      "crossing_intervals_for_pitch_support_only": 5,
+      "distinct_pitches": 25
+    },
+    {
+      "id": "musicnet-later-v59-2209-95",
+      "publisher_id": "2209",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV849",
+        "WTK I, No. 4: Prelude and Fugue in C-sharp minor"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Bach/BWV849/WTK I, No. 4: Prelude and Fugue in C-sharp minor",
+      "labels_sha256": "aa4b13d846ed42c7ac3317b19a248da7fd66d5f30a8a867b3a1d837bac0f57d2",
+      "original_duration": 160.78367346938776,
+      "original_member": "musicnet/train_data/2209.wav",
+      "complete_publisher_note_intervals": 226,
+      "crossing_intervals_for_pitch_support_only": 5,
+      "distinct_pitches": 37
+    },
+    {
+      "id": "musicnet-later-v59-2211-95",
+      "publisher_id": "2211",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV857",
+        "WTK I, No. 12: Prelude and Fugue in F minor"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Bach/BWV857/WTK I, No. 12: Prelude and Fugue in F minor",
+      "labels_sha256": "e23228d78952ec6c02ef6df8bcddc7654e712ec354d857e33f0835acfbae6eae",
+      "original_duration": 237.21795918367346,
+      "original_member": "musicnet/train_data/2211.wav",
+      "complete_publisher_note_intervals": 139,
+      "crossing_intervals_for_pitch_support_only": 7,
+      "distinct_pitches": 30
+    },
+    {
+      "id": "musicnet-later-v59-2211-155",
+      "publisher_id": "2211",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV857",
+        "WTK I, No. 12: Prelude and Fugue in F minor"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Bach/BWV857/WTK I, No. 12: Prelude and Fugue in F minor",
+      "labels_sha256": "e23228d78952ec6c02ef6df8bcddc7654e712ec354d857e33f0835acfbae6eae",
+      "original_duration": 237.21795918367346,
+      "original_member": "musicnet/train_data/2211.wav",
+      "complete_publisher_note_intervals": 156,
+      "crossing_intervals_for_pitch_support_only": 8,
+      "distinct_pitches": 26
+    },
+    {
+      "id": "musicnet-later-v59-2211-215",
+      "publisher_id": "2211",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV857",
+        "WTK I, No. 12: Prelude and Fugue in F minor"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Bach/BWV857/WTK I, No. 12: Prelude and Fugue in F minor",
+      "labels_sha256": "e23228d78952ec6c02ef6df8bcddc7654e712ec354d857e33f0835acfbae6eae",
+      "original_duration": 237.21795918367346,
+      "original_member": "musicnet/train_data/2211.wav",
+      "complete_publisher_note_intervals": 63,
+      "crossing_intervals_for_pitch_support_only": 4,
+      "distinct_pitches": 23
+    },
+    {
+      "id": "musicnet-later-v59-2213-95",
+      "publisher_id": "2213",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV847",
+        "WTK I, No. 2: Prelude and Fugue in C minor"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Bach/BWV847/WTK I, No. 2: Prelude and Fugue in C minor",
+      "labels_sha256": "51c16ce3a4cef90a1aa9622181a5bfe9e65116700ec75d8a106dee4dcd721f71",
+      "original_duration": 115.98367346938775,
+      "original_member": "musicnet/train_data/2213.wav",
+      "complete_publisher_note_intervals": 59,
+      "crossing_intervals_for_pitch_support_only": 0,
+      "distinct_pitches": 18
+    },
+    {
+      "id": "musicnet-later-v59-2215-95",
+      "publisher_id": "2215",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV846",
+        "WTK I, No. 1: Prelude and Fugue in C major"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Bach/BWV846/WTK I, No. 1: Prelude and Fugue in C major",
+      "labels_sha256": "f90038ba86740f9a18e7929c76ce96ad0300c8ed34f446ac77e95f7f0c0541ad",
+      "original_duration": 116.42775510204082,
+      "original_member": "musicnet/train_data/2215.wav",
+      "complete_publisher_note_intervals": 85,
+      "crossing_intervals_for_pitch_support_only": 4,
+      "distinct_pitches": 24
+    },
+    {
+      "id": "musicnet-later-v59-2227-95",
+      "publisher_id": "2227",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV851",
+        "WTK I, No. 6: Prelude and Fugue in D minor"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Bach/BWV851/WTK I, No. 6: Prelude and Fugue in D minor",
+      "labels_sha256": "3597a054dc12df452f9ca11466e343da030685316c06b3136913db9d9ae3ff26",
+      "original_duration": 129.43673469387755,
+      "original_member": "musicnet/train_data/2227.wav",
+      "complete_publisher_note_intervals": 171,
+      "crossing_intervals_for_pitch_support_only": 6,
+      "distinct_pitches": 32
+    },
+    {
+      "id": "musicnet-later-v59-2300-95",
+      "publisher_id": "2300",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV853",
+        "WTK I, No. 8: Prelude and Fugue in E-flat minor"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Bach/BWV853/WTK I, No. 8: Prelude and Fugue in E-flat minor",
+      "labels_sha256": "0935eda2e97e3f3db583237400b3ef3f4445d226df0bd40b7ad1861326198704",
+      "original_duration": 238.18448979591838,
+      "original_member": "musicnet/train_data/2300.wav",
+      "complete_publisher_note_intervals": 69,
+      "crossing_intervals_for_pitch_support_only": 6,
+      "distinct_pitches": 26
+    },
+    {
+      "id": "musicnet-later-v59-2300-155",
+      "publisher_id": "2300",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV853",
+        "WTK I, No. 8: Prelude and Fugue in E-flat minor"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Bach/BWV853/WTK I, No. 8: Prelude and Fugue in E-flat minor",
+      "labels_sha256": "0935eda2e97e3f3db583237400b3ef3f4445d226df0bd40b7ad1861326198704",
+      "original_duration": 238.18448979591838,
+      "original_member": "musicnet/train_data/2300.wav",
+      "complete_publisher_note_intervals": 55,
+      "crossing_intervals_for_pitch_support_only": 4,
+      "distinct_pitches": 21
+    },
+    {
+      "id": "musicnet-later-v59-2300-215",
+      "publisher_id": "2300",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV853",
+        "WTK I, No. 8: Prelude and Fugue in E-flat minor"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Bach/BWV853/WTK I, No. 8: Prelude and Fugue in E-flat minor",
+      "labels_sha256": "0935eda2e97e3f3db583237400b3ef3f4445d226df0bd40b7ad1861326198704",
+      "original_duration": 238.18448979591838,
+      "original_member": "musicnet/train_data/2300.wav",
+      "complete_publisher_note_intervals": 20,
+      "crossing_intervals_for_pitch_support_only": 3,
+      "distinct_pitches": 13
+    },
+    {
+      "id": "musicnet-later-v59-2304-95",
+      "publisher_id": "2304",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV859",
+        "WTK I, No. 14: Prelude and Fugue in F-sharp minor"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Bach/BWV859/WTK I, No. 14: Prelude and Fugue in F-sharp minor",
+      "labels_sha256": "a561f05807418ffbcd2ac9e7e8e5c825c695c1eeee0aa12e158bc48f5827cf70",
+      "original_duration": 196.36244897959185,
+      "original_member": "musicnet/train_data/2304.wav",
+      "complete_publisher_note_intervals": 91,
+      "crossing_intervals_for_pitch_support_only": 6,
+      "distinct_pitches": 29
+    },
+    {
+      "id": "musicnet-later-v59-2304-155",
+      "publisher_id": "2304",
+      "group": "train",
+      "work": [
+        "Bach",
+        "BWV859",
+        "WTK I, No. 14: Prelude and Fugue in F-sharp minor"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Bach/BWV859/WTK I, No. 14: Prelude and Fugue in F-sharp minor",
+      "labels_sha256": "a561f05807418ffbcd2ac9e7e8e5c825c695c1eeee0aa12e158bc48f5827cf70",
+      "original_duration": 196.36244897959185,
+      "original_member": "musicnet/train_data/2304.wav",
+      "complete_publisher_note_intervals": 98,
+      "crossing_intervals_for_pitch_support_only": 8,
+      "distinct_pitches": 23
+    },
+    {
+      "id": "musicnet-later-v59-2410-95",
+      "publisher_id": "2410",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP27NO1",
+        "Piano Sonata No 13 in E-flat major"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Beethoven/OP27NO1/Piano Sonata No 13 in E-flat major",
+      "labels_sha256": "5f991c37963129f3c402ac3c0510086caeeeaf3d7591ef48b1c093fd92e18bcf",
+      "original_duration": 313.46938775510205,
+      "original_member": "musicnet/train_data/2410.wav",
+      "complete_publisher_note_intervals": 136,
+      "crossing_intervals_for_pitch_support_only": 5,
+      "distinct_pitches": 33
+    },
+    {
+      "id": "musicnet-later-v59-2410-155",
+      "publisher_id": "2410",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP27NO1",
+        "Piano Sonata No 13 in E-flat major"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Beethoven/OP27NO1/Piano Sonata No 13 in E-flat major",
+      "labels_sha256": "5f991c37963129f3c402ac3c0510086caeeeaf3d7591ef48b1c093fd92e18bcf",
+      "original_duration": 313.46938775510205,
+      "original_member": "musicnet/train_data/2410.wav",
+      "complete_publisher_note_intervals": 148,
+      "crossing_intervals_for_pitch_support_only": 4,
+      "distinct_pitches": 34
+    },
+    {
+      "id": "musicnet-later-v59-2410-215",
+      "publisher_id": "2410",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP27NO1",
+        "Piano Sonata No 13 in E-flat major"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Beethoven/OP27NO1/Piano Sonata No 13 in E-flat major",
+      "labels_sha256": "5f991c37963129f3c402ac3c0510086caeeeaf3d7591ef48b1c093fd92e18bcf",
+      "original_duration": 313.46938775510205,
+      "original_member": "musicnet/train_data/2410.wav",
+      "complete_publisher_note_intervals": 165,
+      "crossing_intervals_for_pitch_support_only": 4,
+      "distinct_pitches": 25
+    },
+    {
+      "id": "musicnet-later-v59-2422-95",
+      "publisher_id": "2422",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP2NO1",
+        "Piano Sonata No 1 in F minor"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Beethoven/OP2NO1/Piano Sonata No 1 in F minor",
+      "labels_sha256": "4ec9d97f7f29379444ad50ff1025f61d09c62eb2ad115b12e9ad02b14aad6319",
+      "original_duration": 241.55428571428573,
+      "original_member": "musicnet/train_data/2422.wav",
+      "complete_publisher_note_intervals": 182,
+      "crossing_intervals_for_pitch_support_only": 9,
+      "distinct_pitches": 42
+    },
+    {
+      "id": "musicnet-later-v59-2422-155",
+      "publisher_id": "2422",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP2NO1",
+        "Piano Sonata No 1 in F minor"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Beethoven/OP2NO1/Piano Sonata No 1 in F minor",
+      "labels_sha256": "4ec9d97f7f29379444ad50ff1025f61d09c62eb2ad115b12e9ad02b14aad6319",
+      "original_duration": 241.55428571428573,
+      "original_member": "musicnet/train_data/2422.wav",
+      "complete_publisher_note_intervals": 200,
+      "crossing_intervals_for_pitch_support_only": 4,
+      "distinct_pitches": 26
+    },
+    {
+      "id": "musicnet-later-v59-2422-215",
+      "publisher_id": "2422",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP2NO1",
+        "Piano Sonata No 1 in F minor"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Beethoven/OP2NO1/Piano Sonata No 1 in F minor",
+      "labels_sha256": "4ec9d97f7f29379444ad50ff1025f61d09c62eb2ad115b12e9ad02b14aad6319",
+      "original_duration": 241.55428571428573,
+      "original_member": "musicnet/train_data/2422.wav",
+      "complete_publisher_note_intervals": 169,
+      "crossing_intervals_for_pitch_support_only": 7,
+      "distinct_pitches": 34
+    },
+    {
+      "id": "musicnet-later-v59-2540-95",
+      "publisher_id": "2540",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP101",
+        "Piano Sonata No 28 in A major"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Beethoven/OP101/Piano Sonata No 28 in A major",
+      "labels_sha256": "c1f25889987fcd258b69c13eed8408e7daa741ce0c058213cce489e961346a5e",
+      "original_duration": 263.5232653061224,
+      "original_member": "musicnet/train_data/2540.wav",
+      "complete_publisher_note_intervals": 104,
+      "crossing_intervals_for_pitch_support_only": 10,
+      "distinct_pitches": 29
+    },
+    {
+      "id": "musicnet-later-v59-2540-155",
+      "publisher_id": "2540",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP101",
+        "Piano Sonata No 28 in A major"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Beethoven/OP101/Piano Sonata No 28 in A major",
+      "labels_sha256": "c1f25889987fcd258b69c13eed8408e7daa741ce0c058213cce489e961346a5e",
+      "original_duration": 263.5232653061224,
+      "original_member": "musicnet/train_data/2540.wav",
+      "complete_publisher_note_intervals": 101,
+      "crossing_intervals_for_pitch_support_only": 9,
+      "distinct_pitches": 34
+    },
+    {
+      "id": "musicnet-later-v59-2540-215",
+      "publisher_id": "2540",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP101",
+        "Piano Sonata No 28 in A major"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Beethoven/OP101/Piano Sonata No 28 in A major",
+      "labels_sha256": "c1f25889987fcd258b69c13eed8408e7daa741ce0c058213cce489e961346a5e",
+      "original_duration": 263.5232653061224,
+      "original_member": "musicnet/train_data/2540.wav",
+      "complete_publisher_note_intervals": 94,
+      "crossing_intervals_for_pitch_support_only": 13,
+      "distinct_pitches": 30
+    },
+    {
+      "id": "musicnet-later-v59-2555-95",
+      "publisher_id": "2555",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP109",
+        "Piano Sonata No 30 in E major"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Beethoven/OP109/Piano Sonata No 30 in E major",
+      "labels_sha256": "e4cb9ed09ae5c14608623e18e5823d59589cff9d9b65a4acf2b6a38bfb8bce30",
+      "original_duration": 223.7126530612245,
+      "original_member": "musicnet/train_data/2555.wav",
+      "complete_publisher_note_intervals": 156,
+      "crossing_intervals_for_pitch_support_only": 8,
+      "distinct_pitches": 44
+    },
+    {
+      "id": "musicnet-later-v59-2555-155",
+      "publisher_id": "2555",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP109",
+        "Piano Sonata No 30 in E major"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Beethoven/OP109/Piano Sonata No 30 in E major",
+      "labels_sha256": "e4cb9ed09ae5c14608623e18e5823d59589cff9d9b65a4acf2b6a38bfb8bce30",
+      "original_duration": 223.7126530612245,
+      "original_member": "musicnet/train_data/2555.wav",
+      "complete_publisher_note_intervals": 111,
+      "crossing_intervals_for_pitch_support_only": 5,
+      "distinct_pitches": 35
+    },
+    {
+      "id": "musicnet-later-v59-2575-95",
+      "publisher_id": "2575",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP13",
+        "Piano Sonata No 8 in C minor"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Beethoven/OP13/Piano Sonata No 8 in C minor",
+      "labels_sha256": "9b09de301307d2555f15c892b838ef44e71e81c01c9e1e302a648a53d175754e",
+      "original_duration": 303.88244897959186,
+      "original_member": "musicnet/train_data/2575.wav",
+      "complete_publisher_note_intervals": 54,
+      "crossing_intervals_for_pitch_support_only": 7,
+      "distinct_pitches": 17
+    },
+    {
+      "id": "musicnet-later-v59-2575-155",
+      "publisher_id": "2575",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP13",
+        "Piano Sonata No 8 in C minor"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Beethoven/OP13/Piano Sonata No 8 in C minor",
+      "labels_sha256": "9b09de301307d2555f15c892b838ef44e71e81c01c9e1e302a648a53d175754e",
+      "original_duration": 303.88244897959186,
+      "original_member": "musicnet/train_data/2575.wav",
+      "complete_publisher_note_intervals": 223,
+      "crossing_intervals_for_pitch_support_only": 11,
+      "distinct_pitches": 29
+    },
+    {
+      "id": "musicnet-later-v59-2575-215",
+      "publisher_id": "2575",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP13",
+        "Piano Sonata No 8 in C minor"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Beethoven/OP13/Piano Sonata No 8 in C minor",
+      "labels_sha256": "9b09de301307d2555f15c892b838ef44e71e81c01c9e1e302a648a53d175754e",
+      "original_duration": 303.88244897959186,
+      "original_member": "musicnet/train_data/2575.wav",
+      "complete_publisher_note_intervals": 97,
+      "crossing_intervals_for_pitch_support_only": 7,
+      "distinct_pitches": 22
+    },
+    {
+      "id": "musicnet-later-v59-2607-95",
+      "publisher_id": "2607",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP31NO1",
+        "Piano Sonata No 16 in G major"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Beethoven/OP31NO1/Piano Sonata No 16 in G major",
+      "labels_sha256": "bea468df5bce06b5ef2c498e21b2def088572c1f21c42edbd7273bf163847bc3",
+      "original_duration": 673.985306122449,
+      "original_member": "musicnet/train_data/2607.wav",
+      "complete_publisher_note_intervals": 60,
+      "crossing_intervals_for_pitch_support_only": 6,
+      "distinct_pitches": 18
+    },
+    {
+      "id": "musicnet-later-v59-2607-155",
+      "publisher_id": "2607",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP31NO1",
+        "Piano Sonata No 16 in G major"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Beethoven/OP31NO1/Piano Sonata No 16 in G major",
+      "labels_sha256": "bea468df5bce06b5ef2c498e21b2def088572c1f21c42edbd7273bf163847bc3",
+      "original_duration": 673.985306122449,
+      "original_member": "musicnet/train_data/2607.wav",
+      "complete_publisher_note_intervals": 112,
+      "crossing_intervals_for_pitch_support_only": 3,
+      "distinct_pitches": 27
+    },
+    {
+      "id": "musicnet-later-v59-2607-215",
+      "publisher_id": "2607",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP31NO1",
+        "Piano Sonata No 16 in G major"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Beethoven/OP31NO1/Piano Sonata No 16 in G major",
+      "labels_sha256": "bea468df5bce06b5ef2c498e21b2def088572c1f21c42edbd7273bf163847bc3",
+      "original_duration": 673.985306122449,
+      "original_member": "musicnet/train_data/2607.wav",
+      "complete_publisher_note_intervals": 184,
+      "crossing_intervals_for_pitch_support_only": 6,
+      "distinct_pitches": 31
+    },
+    {
+      "id": "musicnet-later-v59-2611-95",
+      "publisher_id": "2611",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP10NO3",
+        "Piano Sonata No 7 in D major"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Beethoven/OP10NO3/Piano Sonata No 7 in D major",
+      "labels_sha256": "cfa3443e529b9ec1e6ad457290a9a9e9202d27223cd93ef7ea898034cd37df98",
+      "original_duration": 563.2522448979591,
+      "original_member": "musicnet/train_data/2611.wav",
+      "complete_publisher_note_intervals": 62,
+      "crossing_intervals_for_pitch_support_only": 2,
+      "distinct_pitches": 27
+    },
+    {
+      "id": "musicnet-later-v59-2611-155",
+      "publisher_id": "2611",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP10NO3",
+        "Piano Sonata No 7 in D major"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Beethoven/OP10NO3/Piano Sonata No 7 in D major",
+      "labels_sha256": "cfa3443e529b9ec1e6ad457290a9a9e9202d27223cd93ef7ea898034cd37df98",
+      "original_duration": 563.2522448979591,
+      "original_member": "musicnet/train_data/2611.wav",
+      "complete_publisher_note_intervals": 61,
+      "crossing_intervals_for_pitch_support_only": 9,
+      "distinct_pitches": 36
+    },
+    {
+      "id": "musicnet-later-v59-2611-215",
+      "publisher_id": "2611",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP10NO3",
+        "Piano Sonata No 7 in D major"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Beethoven/OP10NO3/Piano Sonata No 7 in D major",
+      "labels_sha256": "cfa3443e529b9ec1e6ad457290a9a9e9202d27223cd93ef7ea898034cd37df98",
+      "original_duration": 563.2522448979591,
+      "original_member": "musicnet/train_data/2611.wav",
+      "complete_publisher_note_intervals": 100,
+      "crossing_intervals_for_pitch_support_only": 10,
+      "distinct_pitches": 22
+    },
+    {
+      "id": "musicnet-later-v59-2632-95",
+      "publisher_id": "2632",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP14NO2",
+        "Piano Sonata No 10 in G major"
+      ],
+      "start_sample": 4189500,
+      "end_sample": 5071500,
+      "source_group": "musicnet/Beethoven/OP14NO2/Piano Sonata No 10 in G major",
+      "labels_sha256": "b00515949ba4232c3113b5b6ea9d79b9f12bf40c174aee7b7b4866daa5007bf7",
+      "original_duration": 341.89061224489797,
+      "original_member": "musicnet/train_data/2632.wav",
+      "complete_publisher_note_intervals": 90,
+      "crossing_intervals_for_pitch_support_only": 6,
+      "distinct_pitches": 28
+    },
+    {
+      "id": "musicnet-later-v59-2632-155",
+      "publisher_id": "2632",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP14NO2",
+        "Piano Sonata No 10 in G major"
+      ],
+      "start_sample": 6835500,
+      "end_sample": 7717500,
+      "source_group": "musicnet/Beethoven/OP14NO2/Piano Sonata No 10 in G major",
+      "labels_sha256": "b00515949ba4232c3113b5b6ea9d79b9f12bf40c174aee7b7b4866daa5007bf7",
+      "original_duration": 341.89061224489797,
+      "original_member": "musicnet/train_data/2632.wav",
+      "complete_publisher_note_intervals": 92,
+      "crossing_intervals_for_pitch_support_only": 7,
+      "distinct_pitches": 28
+    },
+    {
+      "id": "musicnet-later-v59-2632-215",
+      "publisher_id": "2632",
+      "group": "train",
+      "work": [
+        "Beethoven",
+        "OP14NO2",
+        "Piano Sonata No 10 in G major"
+      ],
+      "start_sample": 9481500,
+      "end_sample": 10363500,
+      "source_group": "musicnet/Beethoven/OP14NO2/Piano Sonata No 10 in G major",
+      "labels_sha256": "b00515949ba4232c3113b5b6ea9d79b9f12bf40c174aee7b7b4866daa5007bf7",
+      "original_duration": 341.89061224489797,
+      "original_member": "musicnet/train_data/2632.wav",
+      "complete_publisher_note_intervals": 154,
+      "crossing_intervals_for_pitch_support_only": 7,
+      "distinct_pitches": 35
+    }
+  ],
+  "expected_recordings": 49,
+  "expected_training_parents": 20,
+  "historical_crops_must_be_bit_identical": true,
+  "no_full_archive_stored": true,
+  "transport": {
+    "workers": 4,
+    "chunk_bytes": 16777216,
+    "maximum_read_bytes": 1048576
+  },
+  "no_model_inference": true,
+  "no_user_audio_or_scores": true,
+  "validation_reserved_and_consumed_members_not_retained_or_decoded": true,
+  "no_change_to_v59_fitting_or_selection": true,
+  "training_cleared": false
+}

@@ -27,3 +27,23 @@ Complete preflight checks are running; selection and evaluation remain pending.
 Complete preregistration preflight: 1,519 tests passed, six skipped and five
 warnings. The finite-score guard was corrected and verified before any joint
 predictions. Original source studies and source-acquisition V1 are unchanged.
+
+The one fixed pair qualifies on all 618 validation recordings: 28/16 extra
+timed notes removed (normal/stricter), real-piano gains 1/1, NRG-CP gains 6/1
+and isolated wrong-pitch gains 6/4. All required identities, holds, coverage,
+timing and retained clocks are preserved; no notes are restored. This is
+validation-only evidence. All 603 consumed regressions, one untouched fresh
+pass and runtime checks remain mandatory before any release.
+
+Final status: withheld after the complete 603-recording consumed regression.
+The pair removed 53/54 extra notes overall under normal/stricter policies, but
+the normal policy loses a genuine note in
+`slakh-bass-positive-reserved-v2-Track00005-demucs-000`. The stricter policy
+passes; it cannot override the required normal-policy failure. No runner-up,
+retuning, alternate member or policy switch is attempted. No fresh clips are
+generated or read. Production weights remain V43. These members have now been
+consumed in a failed joint study and must not be swapped into another retry.
+
+Native release-gate verification rejected the failed candidate without generating
+fresh audio or running inference. User-requested wrap-up preserves the approved
+production weights and stops further acquisition/training.

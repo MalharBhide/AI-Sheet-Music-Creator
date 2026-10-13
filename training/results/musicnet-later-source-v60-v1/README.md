@@ -24,3 +24,9 @@ The complete archive checksum and 49 source crops remain pending. A bounded
 1 MiB request confirms exact HTTP 206 range support for this same object; the
 probe does not verify the full archive or authorize admitting partial sources.
 The original producer and transfer remain unchanged.
+
+V1 was deliberately stopped only after the separately preregistered V2
+transfer showed live sequential-byte progress. Original worker identity was
+checked inside its container before SIGTERM; exit code 143 is recorded.
+The producer and partial files are preserved. The whole original object was
+not yet verified, so none of these partial sources is admitted to fitting.

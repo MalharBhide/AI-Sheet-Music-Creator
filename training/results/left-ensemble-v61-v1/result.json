@@ -1,0 +1,27 @@
+{
+  "status": "withheld_failed_consumed_preservation",
+  "validation_selected": true,
+  "validation_recordings": 618,
+  "consumed_regression_passes": false,
+  "consumed_recordings": 603,
+  "failed_recordings": [
+    "slakh-bass-positive-reserved-v2-Track00005-demucs-000"
+  ],
+  "consumed_regression_sha256": "84679e779248ef724a1b1c230c49e6c0f823c727879b1322ba653779a1caaa64",
+  "source_members_consumed_in_failed_joint_study": [
+    "v58",
+    "v59"
+  ],
+  "member_checkpoint_sha256": [
+    "ca31dec2c72a5c5d8fc7c87a7fe4fbf69f468a27f75745ac0a9bf442dfdecd43",
+    "14d42f087de0dc1c1ccc73fbc9fc86a3459814186614e08de77afb4ea7986969"
+  ],
+  "fresh_test_read_or_generated": false,
+  "no_runner_up_retuning_or_member_substitution": true,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false,
+  "approved_asset_sha256": "38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda",
+  "full_preflight": "1519 passed, 6 skipped, 5 warnings",
+  "native_regression_release_guard_passed": true,
+  "user_requested_wrap_up": true
+}
