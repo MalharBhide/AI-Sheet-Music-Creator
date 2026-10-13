@@ -1,0 +1,25 @@
+{
+  "version": "musicnet-later-original-fitting-source-v60-v1",
+  "source_sha256": {
+    "acquire_musicnet_later_v60.py": "b1dfcd77e3234170a05b0afa44178eb18c24107f537c10addf913c8dd1331c51",
+    "test_musicnet_later_acquisition_v60.py": "068a98cdb3ac5183cba3fb6f18c677991e55680fc9fb6e073f387b36fe3ab1f8"
+  },
+  "assessment_sha256": "ed925b2d65dc629f88085c8651f9c2f4e91f47ffcb8505cfd03591cdda974fb5",
+  "source_root": "/training/musicnet-piano-subset-v1",
+  "assessment": "/training/musicnet-extra-window-assessment-v59.json",
+  "output": "/training/musicnet-later-v60-source",
+  "expected_recordings": 49,
+  "expected_training_parents": 20,
+  "url": "https://zenodo.org/records/5120004/files/musicnet.tar.gz",
+  "archive_bytes": 11097394998,
+  "archive_md5": "844764911fa0d5b97c97da944a057590",
+  "archive_sha256": "f26e6d023b7a62cd54d8f2b0533b88f549c30e3fad0aa546d1ea24aefba28fca",
+  "publisher_grant_must_remain": "CC BY 4.0",
+  "verify_entire_archive_before_completion": true,
+  "historical_source_crops_must_match_bit_for_bit": true,
+  "no_full_archive_stored": true,
+  "no_model_inference": true,
+  "no_user_audio_or_scores": true,
+  "no_change_to_v59_fitting_or_selection": true,
+  "training_cleared": false
+}
