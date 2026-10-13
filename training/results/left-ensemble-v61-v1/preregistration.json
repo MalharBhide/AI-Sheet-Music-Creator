@@ -1,0 +1,47 @@
+{
+  "version": "real-and-sampled-piano-phase-union-v61-v1",
+  "source_studies": {
+    "v58": {
+      "run": "/training/left-precision-v58-v1",
+      "plan_sha256": "3d64bf2cfa73f26f6eea584485dcf13161b3dc297cc1eab8e65f646401b630b5"
+    },
+    "v59": {
+      "run": "/training/left-precision-v59-v1",
+      "plan_sha256": "a088c9192c6663548b03b703d89a270233aafedb269eb57c733697c218073379"
+    }
+  },
+  "source_sha256": {
+    "left_ensemble_v61.py": "50296cea8dcb323e276e1028bcf2d5b2be5368599c4abfa475627c5c8d758492",
+    "ensemble_contract_v61.py": "4134b52b54f9194e2b5659cdb97b042552a65f4eaa61b6ed8cc034b8b66b9cff",
+    "evaluate_left_ensemble_v61.py": "31bddf507932c5de95532f980c310f52df8dbff49bed5e57b08f8364fcbbadcc",
+    "test_left_ensemble_v61.py": "41409d22a2a38aa911ea3eb73522cf91e2619b36858c36d843c2dc006d9228d1",
+    "test_ensemble_contract_v61.py": "e43110ec0105f673c0c0beca26ffca3485392a542ee850932f3a1c7a79a6dfbe",
+    "evaluate_consumed_left_ensemble_v61.py": "fe95c3453e182535cfeb0f9b523e01e167440742c6394f371cb8305c2461d79c",
+    "test_ensemble_regression_v61.py": "39d05659c66907888bf04974d1dcd1289a0ae4d687ed6a2d24651f1ead30a165",
+    "fresh_left_ensemble_v61.py": "25168c49c2e5e366e7f2f5ee24415048a2f38558b6762a92d665e3313de08c55",
+    "left_ensemble_v56.py": "7e9dd006df1139ea06e2d0912779dace4fb4477801d8039e0d30444bd2dc6363"
+  },
+  "hypothesis": "One fixed preserving real-piano phase specialist and one fixed preserving sampled-piano maximum-absence specialist may have complementary gains under both unchanged policies.",
+  "member_A": "Choose only preserving V58 settings with positive real-piano gain at both policies.",
+  "member_B": "Choose only preserving V59 settings with positive NRG-CP gain at both policies.",
+  "selection_priority": [
+    "minimum primary-domain gain across policies",
+    "minimum isolated wrong-pitch gain",
+    "minimum overall timed extra-note gain",
+    "sum of overall timed gains",
+    "higher rejection threshold",
+    "lower veto threshold",
+    "earlier epoch",
+    "earlier original profile index"
+  ],
+  "combined_output_threshold": 0.9,
+  "no_joint_predictions_before_registration": true,
+  "no_consumed_or_fresh_tests_read": true,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false,
+  "approved_asset_sha256": "38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda",
+  "validation": "All 381 timed and 237 pitch-only recordings must jointly preserve identities, pitch, holds, repeated/chord timing, coverage, unsupported duration and exact retained clocks; positive separate overall, real-piano, NRG-CP and TinySOL gains at both policies.",
+  "subsequent_gate": "One fixed validation winner only; all 603 consumed regressions, one untouched 40-clip original/texture MP3 pass seeds 304101-304140 with positive gains separately in both families, then portable/native runtime parity. No runner-up, retuning or member replacement after test failure.",
+  "no_new_fitting_targets": true,
+  "no_failed_tested_members_reused": true
+}
