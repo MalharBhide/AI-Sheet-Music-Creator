@@ -74,6 +74,19 @@ gates apply. The full suite passes 1,061 tests with six skips. Both 100-epoch pr
 completed; none of 144 settings qualified. The [V49 results](results/left-precision-v49-v1/README.md)
 are archived and withheld, with no consumed/fresh tests read or weights deployed.
 
+The [V50 real-piano emphasis study](results/left-precision-v50-v1/README.md)
+completed two 100-epoch profiles with 4x/8x training-only real-piano loss weights.
+None of 144 settings qualified; stricter real-piano and isolated-pitch gains
+remained zero. All candidates are withheld. The 1,084-test preflight and exact
+62,124-candidate initialization proof are archived; website weights are unchanged.
+
+[V51 warm rejection and fresh frame support](results/left-precision-v51-v1/README.md)
+tests whether inherited frame predictions constrain useful correction. It retains
+the verified rejection head but trains a fresh boundary-conditioned frame head
+directly from masked reference labels. Rehearsal uses rejection predictions only.
+All-KEEP additional permissions at initialization must be proved for every full
+training candidate. All earlier validation, consumed, fresh and runtime gates stay.
+
 The [additional piano-source assessment](results/piano-source-options-v49-v1/README.md)
 records a verified PDMX catalog, an empty RGTM-PNO MIDI archive, and exclusions
 for noncommercial or unverified modality terms. It is not a new training set or
