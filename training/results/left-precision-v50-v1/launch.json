@@ -1,0 +1,14 @@
+{
+  "invocation": "python -m train_left_precision_v50 /src /training/left-precision-v50-v1",
+  "cwd": "/training",
+  "pythonpath": [
+    "/training/left-precision-v43-replay/backend",
+    "/training/left-precision-v43-replay/training",
+    "/src/training"
+  ],
+  "guard_verified": "shipped-bass-v32-baseline-v1",
+  "initial_direct_script_launch": "stopped by unchanged historical checksum guard before output directory creation",
+  "no_guard_changes": true,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false
+}

@@ -18,6 +18,8 @@ runtime parity and native functional checks. No runner-up, retuning or replaceme
 fresh clips after failure. No gate has been relaxed.
 
 Status: preflight passes 1,084 tests with six skips, and final runners import with
-the pinned historical reader. Fitting is ready to start; consumed/fresh tests have
-not been read, and website weights are unchanged.
+the pinned historical reader. Fitting has started through the module entry point with the verified historical
+reader. The initial direct-script attempt was stopped by the unchanged V32 guard
+before creating output; no guard was weakened. Consumed/fresh tests have not been
+read, and website weights are unchanged.
 PDMX remains source research and is excluded from this study.
