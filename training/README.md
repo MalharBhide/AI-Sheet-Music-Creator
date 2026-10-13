@@ -86,6 +86,15 @@ the verified rejection head but trains a fresh boundary-conditioned frame head
 directly from masked reference labels. Rehearsal uses rejection predictions only.
 All-KEEP additional permissions at initialization must be proved for every full
 training candidate. All earlier validation, consumed, fresh and runtime gates stay.
+Both 100-epoch profiles completed without a qualifying setting; isolated-pitch
+gain remained zero. The [V51 results](results/left-precision-v51-v1/README.md)
+are archived and withheld, with no consumed/fresh tests read or website release.
+
+The [V52 fixed-pair study](results/left-ensemble-v52-v1/README.md) preregisters
+one preserving V48 member and one preserving V51 member, selected with distinct
+frozen gain priorities. Their combined decisions must pass every preservation
+and separate benefit gate; individual preservation is insufficient. Composition
+and selection tests precede any joint model evaluation. No release is claimed.
 
 The [additional piano-source assessment](results/piano-source-options-v49-v1/README.md)
 records a verified PDMX catalog, an empty RGTM-PNO MIDI archive, and exclusions

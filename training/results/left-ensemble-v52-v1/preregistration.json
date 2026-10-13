@@ -1,0 +1,45 @@
+{
+  "version": "orthogonal-trained-permission-union-v52-v1",
+  "status": "preregistered_before_ensemble_evaluation",
+  "source_studies": {
+    "v48": {
+      "run": "/training/left-precision-v48-v1",
+      "plan_sha256": "7d6719fdc7037fa0c00f15d86ef38e13d8fd93eaa2b04375be49209a28cc1b06"
+    },
+    "v51": {
+      "run": "/training/left-precision-v51-v1",
+      "plan_sha256": "2bea20cf7e626d265b11d675a2feea3e34aa39e21ce310f8962d3566af2ebe20"
+    }
+  },
+  "no_new_fitting_targets": true,
+  "selection_rule": "Wait for both fixed source studies to finish. Consider only settings preserving every timed and pitch-only validation recording at both policies. Select exactly one V48 member by the A key and exactly one V51 member by the B key. If either has no preserving setting, stop this ensemble study. No other source study or runner-up is substituted.",
+  "A_key_maximize": [
+    "minimum_wrong_pitch_gain_across_policies",
+    "minimum_real_piano_gain_across_policies",
+    "minimum_nrgcp_gain_across_policies",
+    "minimum_false_note_gain_across_policies",
+    "sum_false_note_gains",
+    "normal_rejection_threshold",
+    "negative_normal_veto_threshold",
+    "negative_epoch",
+    "negative_profile_index"
+  ],
+  "B_key_maximize": [
+    "minimum_real_piano_gain_across_policies",
+    "minimum_wrong_pitch_gain_across_policies",
+    "minimum_nrgcp_gain_across_policies",
+    "minimum_false_note_gain_across_policies",
+    "sum_false_note_gains",
+    "normal_rejection_threshold",
+    "negative_normal_veto_threshold",
+    "negative_epoch",
+    "negative_profile_index"
+  ],
+  "composition": "Each member uses its own verified checkpoint normalizer and fixed learned inference path. For each complete-input candidate, request additional removal if either member passes its own rejection threshold and independent frame absence veto. At the stricter policy, each member uses threshold + .005 capped at .9999 and veto * .8. Combined output probabilities are deterministic KEEP/REMOVE; evaluate at .5. Intersect with immutable corresponding V43 permissions and run V38 on the complete pre-deletion context. Retained clocks remain unchanged. No reference, filename, corpus/source ID or absolute pitch is an inference input.",
+  "validation_gate": "Evaluate the single fixed pair jointly on all 381 timed and 237 pitch-only validation recordings. Require every existing per-recording identity, pitch, timing, chord, repeat, hold and unsupported-duration preservation check at both policies. Require strictly positive overall, real-piano, NRG-CP and isolated-pitch extra-note gains at both policies, and zero restorations. Individually preserving members do not prove joint preservation.",
+  "subsequent_gate": "Freeze the one joint winner, then all 603 consumed regressions at both policies, then one untouched 40-clip original/texture MP3 first pass with seeds 297101-297140 cycling 48/128/192 kbps and separate positive family gains. No runner-up, retuning or replacement fresh clips after failure. Portable physical/runtime parity and native functional checks required before any release.",
+  "consumed_or_fresh_tests_read": false,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false,
+  "approved_asset_sha256": "38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda"
+}

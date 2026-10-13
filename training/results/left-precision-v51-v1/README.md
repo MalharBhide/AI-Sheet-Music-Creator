@@ -27,11 +27,10 @@ must then pass all 603 consumed regressions, one untouched 40-clip first pass
 (seeds 296101–296140), physical/runtime parity and native functional checks before
 any website release. No runner-up, retuning or replacement clips after failure.
 
-Status: full preflight passes 1,093 tests with six skips and five dependency
-warnings. Final runners import with the verified historical reader. Fitting has started through the module entry point with the pinned historical
-reader; the complete training plan is frozen. No consumed/fresh tests,
-user audio or saved scores processed, and no website weights changed.
-
-Initial rejection parity and all-KEEP additional permissions passed on all
-62,124 candidates across 2,077 full training recordings. The first profile is
-advancing through epochs; validation is pending.
+Status: both 100-epoch profiles completed; none of 144 settings met all release
+requirements. All candidates are withheld. Some preserving settings reduce false
+notes, including real-piano notes at both policies, but isolated-pitch gain stays
+zero. Per-domain maxima may refer to different settings. No consumed/fresh tests
+or user recordings were read, no rejected notes restored and no website weights
+changed. Full curves, checkpoint hashes, source witnesses and the initial decision
+proof across all 62,124 candidates are archived. Checkpoints and audio stay local.

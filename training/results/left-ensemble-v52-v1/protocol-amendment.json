@@ -1,0 +1,9 @@
+{
+  "version": "orthogonal-trained-permission-union-v52-protocol-amendment-v1",
+  "original_preregistration_sha256": "b12347e68ff36fabf88d3e493ce496e504b534910814fa8d826e4e38284d7c4f",
+  "reason": "Existing keep evaluator only accepts thresholds .8 through 1. Binary combined outputs have identical decisions throughout that interval; replace the proposed .5 evaluator threshold with .9 without changing any requested deletion, eligibility rule, member policy, selection key or release gate.",
+  "combined_output_threshold": 0.9,
+  "no_joint_predictions_before_amendment": true,
+  "no_consumed_or_fresh_tests_read": true,
+  "new_weights_deployed": false
+}
