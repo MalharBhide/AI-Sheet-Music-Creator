@@ -24,6 +24,10 @@ These are synthetic command and damping labels, not human timing or pedal truth.
 The sampled instrument is shared with NRG-CP; no timbre independence is claimed.
 
 All 1,156 backend/training checks pass, six opt-in skips and five dependency warnings.
-Preparation has not yet completed. No consumed/fresh test or user audio is processed;
+All 45 observations completed, but the inherited loader expected tuple-valued variants
+and raises on the new scalar dynamics list. No fitting used this cache. The
+original source witnesses and completed records are preserved. The corrected
+serialization check has a regression test; preparation will run separately as v2
+without relaxing any source/hash guard. No consumed/fresh test or user audio is processed;
 website weights remain V43. Later model training retains all existing validation,
 603-recording consumed, independent fresh and runtime release gates.

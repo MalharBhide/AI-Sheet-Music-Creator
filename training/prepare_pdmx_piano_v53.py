@@ -208,7 +208,7 @@ def load(folder):
             or plan["baseline_hashes"] != support.hashes() or plan["code_sha256"] != contracts()
             or plan["piano_assets"] != piano_contracts() or plan["sample_rate"] != RATE
             or plan["source_manifest_sha256"] != digest(source/"manifest.json")
-            or plan["variants"] != [list(v) for v in VARIANTS] or plan["tasks"] != list(jobs.values())
+            or plan["variants"] != list(VARIANTS) or plan["tasks"] != list(jobs.values())
             or manifest["plan_sha256"] != digest(folder/"plan.json") or plan["expected_counts"] != COUNTS
             or dict(Counter(r["group"] for r in records)) != COUNTS
             or len(records) != len(jobs) or {r["id"] for r in records} != set(jobs)
