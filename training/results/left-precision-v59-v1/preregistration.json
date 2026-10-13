@@ -1,0 +1,95 @@
+{
+  "version": "known-absent-interior-maximum-loss-v59-v1",
+  "hypothesis": "An additional worst-interior-frame absence objective may reduce single-frame false-support vetoes while all genuine-note protection remains mandatory.",
+  "source_sha256": {
+    "left_precision_v59.py": "19064567d3dee187777b9273db1feae8f39c4f07f23996b7af2abf23cb4cd5b7",
+    "test_left_precision_v59.py": "c363f3c1d1805e24267aec16163f5f84358ca8b9845c0250ee8db1a506f6a43b",
+    "train_left_precision_v59.py": "30d1fc47da2a867f9e6de44f8f54aa33db381ca6736590951168db13ded4065b",
+    "evaluate_left_precision_v59.py": "0211c41434aca6fda959e230490b1d625e381931a15b7e872d50d37321c1efd2",
+    "fresh_left_precision_v59.py": "6d5da694f2523a25ea2a1303b3f8f2aed692208d6953f472e990adb6972788be"
+  },
+  "fitting_manifests": {
+    "baseline": "33f8b53b88695f8fd31e007488ea9014f7d24fda3cafa2556747cac3ff08b4ac",
+    "piano": "423e548ef6c22d21c330b83c24e34d0c9f6a2d1204daf73600398780da20929d",
+    "authored": "8d7b7cff2f99d62d3334c8a9219bc0cd4df227fbf33bb462796a392c6c69302e",
+    "mutopia": "e1a388adfb4428ceb9fb10af08361eed4f83d7501aaee6070bbcd72914cc5c6c",
+    "dynamics": "06ce3072153e23f2a4214b68c8ba817770d810cfb5e5f0ead76d14907ae59121",
+    "tinysol": "bb4a6d02b70e2efb2f31389327a14e6c1544ad20086e60f4630b774d0f0a88bc",
+    "rhythmic": "7155f7bf79ff48c274ced33e8460306aecbec219c169461d69a15e7ac5844931",
+    "new_piano": "deb5ecc1fd3f873c9da19beb88a444ce8400eabbbe64e039fa17d42789840e2d",
+    "new_holds": "bc025b9bd05dc21e63874f5997f02ad6cd4a197e78d9716360a9e423c16f7e3b",
+    "new_generated": "e2d5b9b625dcd3ce4b402f203db05b64cdd714e49e4b27d31adc667a2a5ad98b"
+  },
+  "new_preparation_audit_sha256": "e66fc5d0e7743ecb1b2f6d590ffae50a2f6f95251a96598e7628dbca2f8d3d59",
+  "training_recordings": 2302,
+  "timed_validation_recordings": 381,
+  "pitch_only_validation_recordings": 237,
+  "unchanged_licensed_training_cohort": true,
+  "new_audio_inference_or_acquisition": false,
+  "later_real_piano_proposals_not_admitted": 49,
+  "max_absence_spec": {
+    "interior_start": 8,
+    "interior_stop": 32,
+    "requires_all_known_zero": true,
+    "note_class": "REMOVE=1",
+    "pool": "maximum"
+  },
+  "objective": "Candidate-weighted mean softplus of maximum interior logit, only for supervised fitting REMOVE candidates with every interior target known zero. Genuine KEEP, any UNKNOWN interior or any positive interior fragment is excluded. No inference change.",
+  "profiles": [
+    {
+      "name": "max-absence-balanced",
+      "width": 20,
+      "keep_weight": 24,
+      "presence_weight": 4,
+      "real_piano_weight": 4,
+      "isolated_negative_weight": 8,
+      "hard_keep_weight": 0,
+      "max_absence_weight": 1,
+      "seed": 304001
+    },
+    {
+      "name": "max-absence-protected",
+      "width": 20,
+      "keep_weight": 48,
+      "presence_weight": 8,
+      "real_piano_weight": 8,
+      "isolated_negative_weight": 16,
+      "hard_keep_weight": 6,
+      "max_absence_weight": 0.5,
+      "seed": 304002
+    }
+  ],
+  "epochs": 100,
+  "updates_per_epoch": 40,
+  "batch_size": 256,
+  "hard_keep_fraction": 0.1,
+  "stages": [
+    25,
+    50,
+    100
+  ],
+  "thresholds": [
+    0.9,
+    0.95,
+    0.98,
+    0.99,
+    0.995,
+    0.999
+  ],
+  "veto_thresholds": [
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "stricter_margin": 0.005,
+  "stricter_veto_multiplier": 0.8,
+  "initial_contract": "Fresh additional permissions must be all KEEP on every eligible labeled fitting candidate; checkpoint phase clocks remain exact.",
+  "selection": "One winner only. Every timed/pitch validation recording must preserve identities, pitch, holds, repeated/chord timing, unsupported duration and retained clocks, with separate positive overall, real-piano, NRG-CP and TinySOL gains under both policies. Rank real-piano raw/strict, overall raw/strict, pitch raw/strict, earlier epoch, higher threshold and lower veto; exact ties preserve profile order.",
+  "subsequent_gate": "All 603 consumed regressions, then one untouched 40-clip original/texture MP3 first pass seeds 303101-303140 with positive family gains at both policies, then portable/native runtime checks. No runner-up, retuning or replacement test clips after failure.",
+  "no_inherited_weights": true,
+  "no_teacher_targets": true,
+  "no_user_audio_or_scores": true,
+  "no_consumed_or_fresh_tests_used_for_fitting_or_selection": true,
+  "new_weights_deployed": false
+}
