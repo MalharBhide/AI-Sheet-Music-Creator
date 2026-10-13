@@ -17,12 +17,12 @@ regressions and one untouched 40-clip first pass (seeds 295101–295140), physic
 runtime parity and native functional checks. No runner-up, retuning or replacement
 fresh clips after failure. No gate has been relaxed.
 
-Status: preflight passes 1,084 tests with six skips, and final runners import with
-the pinned historical reader. Fitting has started through the module entry point with the verified historical
-reader. The initial direct-script attempt was stopped by the unchanged V32 guard
-before creating output; no guard was weakened. Consumed/fresh tests have not been
-read, and website weights are unchanged.
-Initial prediction parity passed on all 62,124 candidates across 2,077 complete
-training recordings before optimization. The first profile is advancing through
-epochs; validation results are pending. PDMX remains source research and is
-excluded from this study.
+Status: both predeclared 100-epoch profiles completed; none of 144 settings met
+all requirements. Every candidate is withheld. Some settings reduced false notes
+while preserving measured recordings, but stricter real-piano and isolated-pitch
+gains remained zero. Per-domain maxima can come from different settings and are
+not release claims. No rejected notes were restored. No consumed/fresh tests or
+user recordings were read, and website weights remain unchanged. Curves,
+validation reports, checkpoint hashes, complete source witnesses and the exact
+62,124-candidate initial parity proof are archived. Audio and checkpoints stay
+local. PDMX remains source research and was excluded from this study.

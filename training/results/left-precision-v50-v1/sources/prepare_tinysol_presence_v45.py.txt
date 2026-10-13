@@ -1,0 +1,210 @@
+"""Cache isolated TinySOL pitch evidence; unknown human clocks remain unlabeled."""
+
+import argparse
+import json
+from collections import Counter
+from pathlib import Path
+
+import numpy as np
+import prepare_left_support_v41 as support
+import soundfile as sf
+from acquire_tinysol_v45 import EXPECTED, sources
+from left_precision_v40 import observations
+from prepare_robust_training_stems import digest, preserve
+from scipy.signal import resample_poly
+
+VERSION = "tinysol-weak-pitch-presence-v45-v2"
+RATE, PADDING = 22050, 3.
+
+
+def contracts():
+    result = support.contracts()
+    for name in ("acquire_tinysol_v45.py", "prepare_tinysol_presence_v45.py",
+                 "left_precision_v39.py", "left_precision_v40.py", "chord_boundary_v36.py"):
+        result[name] = digest(Path(__file__).with_name(name))
+    return result
+
+
+def weak_labels(events, pitch, source_start, source_end):
+    events = np.asarray(events, float)
+    if (events.shape != (len(events), 4) or not np.isfinite(events).all()
+            or np.any(events[:, 1] <= events[:, 0]) or not 21 <= pitch < 60
+            or pitch != int(pitch) or not 0 <= source_start < source_end):
+        raise ValueError("Invalid isolated-note supervision")
+    same = events[:, 2] == pitch
+    overlaps = (events[:, 1] > source_start) & (events[:, 0] < source_end)
+    note_keep = (same & overlaps).astype(np.float32)
+    targets = np.zeros((len(events), 40), np.float32)
+    weights = np.ones_like(targets)
+    for index, (start, end, _, _) in enumerate(events):
+        if not same[index]:
+            continue
+        times = np.concatenate((start-np.linspace(.24, .03, 8), np.linspace(start, end, 24),
+                                end+np.linspace(.03, .24, 8)))
+        # The source supplies a fundamental, not its exact audible interval.
+        # Ignore those unknown fundamental frames; never call the whole clip
+        # a held note. Only authored padding and other pitches supply absences.
+        unknown = (times >= source_start-128/RATE) & (times <= source_end+128/RATE)
+        weights[index, unknown] = 0.
+    return note_keep, targets, weights
+
+
+def canonical_padding(decoded, expected_frames, clock):
+    """Repair only proven silent end padding, never move musical samples."""
+    decoded = np.asarray(decoded, np.float32)
+    delta = expected_frames-len(decoded)
+    if (decoded.ndim != 1 or not np.isfinite(decoded).all()
+            or abs(delta) > round(.03*RATE) or expected_frames <= 6*RATE
+            or clock["codec_lag_samples"] != 0
+            or clock["input_frames"] != expected_frames or clock["decoded_frames"] != len(decoded)):
+        raise ValueError("Changed TinySOL gapless MP3 alignment")
+    if delta:
+        if np.any(decoded[:2*RATE]) or np.any(decoded[-2*RATE:]):
+            raise ValueError("Codec adjustment may only change authored silent padding")
+        decoded = decoded[:expected_frames] if delta < 0 else np.pad(decoded, (0, delta))
+    return decoded, {**clock, "canonical_frames": expected_frames,
+                     "silent_padding_adjustment_samples": delta}
+
+
+def validate(item):
+    events = np.asarray(item["events"], float)
+    if (not np.isfinite(item["duration"]) or item["duration"] <= 0
+            or np.any(events[:, 0] < 0) or np.any(events[:, 1] > item["duration"])
+            or item["base_x"].shape != (len(events), 52) or not np.isfinite(item["base_x"]).all()):
+        raise ValueError("Invalid isolated-note observation clock")
+    np.testing.assert_array_equal(item["eligible"], support.eligible(events, item["duration"]))
+    np.testing.assert_array_equal(item["x"], support.context_features(events, item["base_x"]))
+    np.testing.assert_array_equal(item["release_neighbors"], support.neighbor_features(events, item["base_x"]))
+    observations(item)  # Physical-only inputs; supplied pitch is not an input.
+    y, frame_target, frame_weight = weak_labels(events, item["pitch"], PADDING, item["source_end"])
+    return {**item, "y": y, "mask": np.ones(len(events), bool),
+            "frame_target": frame_target, "frame_weight": frame_weight,
+            "timing_supervision_available": False}
+
+
+def prepare(source, output):
+    notes = sources(source)
+    plan = {"version": VERSION, "source_root": str(source),
+        "source_manifest_sha256": digest(source/"manifest.json"),
+        "baseline_hashes": support.hashes(), "code_sha256": contracts(),
+        "expected_counts": EXPECTED, "tasks": [n["id"] for n in notes],
+        "padding_seconds": PADDING, "sample_rate": RATE, "bitrate_cycle": [48, 128, 192],
+        "codec_policy": "Require zero measured waveform lag. At most 30ms of codec sample-count rounding may be repaired at the far end only when both first and last two seconds of decoded authored padding are exactly zero. Musical samples never move. Preserve raw codec waveform/hash and adjustment count; inference uses canonical original padded frame count.",
+        "labels": "Weak isolated-note supervision only. Conservatively KEEP source-fundamental candidates overlapping the entire source clip. Other pitches are absent. Fundamental frame targets within source audio are UNKNOWN with zero loss weight. Only other pitches and authored silence supply frame absence. No onset/release, pedal or constant-hold labels; no timing evaluation on TinySOL.",
+        "source_pitch_used_only_for_supervision": True,
+        "no_reserved_or_consumed_audio_inference": True, "no_user_audio_or_scores": True}
+    if output.exists():
+        if json.loads((output/"plan.json").read_text()) != json.loads(json.dumps(plan)) or (output/"manifest.json").exists():
+            raise ValueError("Preserve completed or changed TinySOL preparation")
+    else:
+        output.mkdir()
+        preserve(output/"plan.json", plan)
+    engine, captured = support._GeneralEngine("balanced"), {}
+    native = engine.predict_function
+
+    def capture(*args, **kwargs):
+        result = native(*args, **kwargs)
+        captured["acoustic"] = result[0]
+        return result
+
+    engine.predict_function = capture
+    records = []
+    for index, note in enumerate(notes):
+        work = output/note["id"]
+        work.mkdir(exist_ok=True)
+        if (work/"record.json").exists():
+            record = json.loads((work/"record.json").read_text())
+            if (record["plan_sha256"] != digest(output/"plan.json")
+                    or digest(work/"features.npz") != record["cache_sha256"]
+                    or digest(work/"decoded.wav") != record["audio_sha256"]):
+                raise ValueError("Changed completed TinySOL observation")
+        else:
+            wave, rate = sf.read(note["audio"], dtype="float32")
+            if rate != 44100 or wave.shape != (note["frames"],) or not np.isfinite(wave).all():
+                raise ValueError("Changed original TinySOL waveform")
+            resampled = resample_poly(wave, 1, 2).astype(np.float32)
+            source_end = PADDING+len(resampled)/RATE
+            wave = np.pad(resampled, round(PADDING*RATE))
+            duration = len(wave)/RATE
+            bitrate = plan["bitrate_cycle"][index % 3]
+            decoded, clock = support.encode(wave, RATE, work, bitrate)
+            audio = work/"decoded.wav"
+            raw_audio = work/"decoded-codec.wav"
+            audio.rename(raw_audio)
+            decoded, clock = canonical_padding(decoded, len(wave), clock)
+            sf.write(audio, decoded, RATE, subtype="FLOAT")
+            midi = engine.predict(audio, "bass", 120.)
+            retained = [n for part in midi.instruments for n in part.notes]
+            events = np.asarray([[n.start, n.end, n.pitch, n.velocity] for n in retained], float).reshape(-1, 4)
+            base = support.note_features(decoded, RATE, captured["acoustic"], retained, include_context=True)
+            observed = support.observe(decoded, RATE)
+            np.savez_compressed(work/"features.npz", events=events, base_x=base,
+                x=support.context_features(events, base), eligible=support.eligible(events, duration),
+                frames=support.coarse_sequences(observed["cqt"], events), attack_frames=support.sequences(observed, events),
+                release_frames=support.release_sequences(observed, events), release_neighbors=support.neighbor_features(events, base),
+                periodicity=support.recurrence(support.recurrence_observe(decoded, RATE), events),
+                plan_sha256=digest(output/"plan.json"))
+            record = {k: note[k] for k in ("id", "group", "source_group", "pitch", "dynamics", "digitally_retuned")}
+            record.update(corpus="tinysol-isolated-pitch", audio=str(audio), audio_sha256=digest(audio),
+                source_audio_sha256=note["audio_sha256"], cache_sha256=digest(work/"features.npz"),
+                duration=duration, seconds=duration, source_end=source_end, candidate_notes=len(events),
+                codec_clock=clock, raw_codec_audio_sha256=digest(raw_audio),
+                bitrate=bitrate, plan_sha256=digest(output/"plan.json"))
+            with np.load(work/"features.npz", allow_pickle=False) as saved:
+                validate({**record, **{key: saved[key] for key in support.KEYS}})
+            preserve(work/"record.json", record)
+        records.append(record)
+        print(json.dumps({"cached": len(records), "total": len(notes), "id": note["id"],
+                          "notes": record["candidate_notes"]}), flush=True)
+    if support.hashes() != plan["baseline_hashes"] or contracts() != plan["code_sha256"]:
+        raise ValueError("Changed TinySOL preparation sources")
+    preserve(output/"manifest.json", {"version": VERSION, "items": records,
+        "plan_sha256": digest(output/"plan.json"), "no_reserved_or_consumed_audio_inference": True,
+        "no_user_audio_or_scores": True, "timing_supervision_available": False})
+
+
+def load(folder):
+    plan = json.loads((folder/"plan.json").read_text())
+    manifest = json.loads((folder/"manifest.json").read_text())
+    source = Path(plan["source_root"])
+    original = {n["id"]: n for n in sources(source)}
+    records = manifest["items"]
+    if (plan["version"] != VERSION or manifest["version"] != VERSION
+            or plan["baseline_hashes"] != support.hashes() or plan["code_sha256"] != contracts()
+            or manifest["plan_sha256"] != digest(folder/"plan.json")
+            or plan["source_manifest_sha256"] != digest(source/"manifest.json")
+            or plan["expected_counts"] != EXPECTED or dict(Counter(r["group"] for r in records)) != EXPECTED
+            or len(records) != len(original) or {r["id"] for r in records} != set(original)
+            or not plan["source_pitch_used_only_for_supervision"] or manifest["timing_supervision_available"]
+            or not all(doc[k] for doc in (plan, manifest) for k in
+                ("no_reserved_or_consumed_audio_inference", "no_user_audio_or_scores"))):
+        raise ValueError("Changed or leaking isolated pitch observations")
+    result = []
+    for record in records:
+        note = original[record["id"]]
+        path = folder/record["id"]/"features.npz"
+        if (any(record[k] != note[k] for k in ("group", "source_group", "pitch", "dynamics", "digitally_retuned"))
+                or record["source_audio_sha256"] != note["audio_sha256"]
+                or record["plan_sha256"] != manifest["plan_sha256"]
+                or digest(Path(record["audio"])) != record["audio_sha256"] or digest(path) != record["cache_sha256"]
+                or digest(folder/record["id"]/"decoded-codec.wav") != record["raw_codec_audio_sha256"]
+                or record["source_end"] != PADDING+(note["frames"]+1)//2/RATE
+                or record["duration"] != (2*round(PADDING*RATE)+(note["frames"]+1)//2)/RATE):
+            raise ValueError("Changed isolated source clock, partition or cache")
+        raw, rate = sf.read(folder/record["id"]/"decoded-codec.wav", dtype="float32")
+        canonical, clock = canonical_padding(raw, round(record["duration"]*RATE), record["codec_clock"])
+        audio, actual_rate = sf.read(record["audio"], dtype="float32")
+        if rate != RATE or actual_rate != RATE or clock != record["codec_clock"] or not np.array_equal(canonical, audio):
+            raise ValueError("Changed canonical codec waveform")
+        with np.load(path, allow_pickle=False) as saved:
+            if str(saved["plan_sha256"]) != manifest["plan_sha256"]:
+                raise ValueError("Changed isolated cache identity")
+            result.append(validate({**record, **{key: saved[key] for key in support.KEYS}}))
+    return result
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("source", type=Path)
+    parser.add_argument("output", type=Path)
+    prepare(**vars(parser.parse_args()))

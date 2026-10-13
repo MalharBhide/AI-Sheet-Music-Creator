@@ -55,6 +55,20 @@ work identities. The counts and complete screening source are retained here.
 This is still not a training selection: mismatched identities, score rights,
 related arrangements, symbolic clocks and grouping need review before rendering.
 
+Additional checks while V50 fitted:
+
+- [PiJAMA](https://almostimplemented.github.io/PiJAMA/) publishes automatically
+  transcribed MIDI and does not distribute its source audio. It is excluded as
+  independent human note-error supervision; agreement between transcription
+  systems is not independently recorded key truth. No files acquired.
+- [PianoCoRe](https://zenodo.org/records/19186016) explicitly releases its original
+  and processed data under CC BY-NC-SA 4.0. It is excluded from this potentially
+  commercial model. No files acquired.
+- [Vienna 4x22](https://datasets.mdw.ac.at/datasets/dataset/98ea25fa-2468-43ff-929b-3c926e163583)
+  is already represented in earlier project development. Its existing source,
+  clock and partition witnesses must remain authoritative; it cannot be presented
+  as new independent data or reassigned across existing development/test cohorts.
+
 PDMX catalog attribution: Phillip Long, Zachary Novack, Julian McAuley and
 Taylor Berg-Kirkpatrick, PDMX v9, DOI 10.5281/zenodo.15571083, CC BY 4.0.
 Changes here are computed catalog counts and screening summaries; no score or
