@@ -20,3 +20,11 @@ untouched 40-clip first pass with seeds 299101–299140 and separate family gain
 No runner-up, retuning or replacement clips after test failure. Portable/native
 runtime parity is required before deployment. Training may start only after the
 strict completed-cache audit succeeds. No user audio or saved scores are used.
+
+Completed: both profiles trained for 100 epochs. Of 144 settings, 56 preserved
+all validation recordings, but none met every required separate gain. Across safe
+settings the maxima were 13/5 timed extra notes and 4/1 wrong-pitch candidates
+(normal/stricter); real-piano and NRG-CP gains were zero. These maxima can describe
+different settings and are not a deployable candidate. All weights are withheld.
+No consumed or fresh tests were read. Full regression: 1,256 passed, six opt-in
+skips and five dependency warnings. Production V43 assets remain unchanged.
