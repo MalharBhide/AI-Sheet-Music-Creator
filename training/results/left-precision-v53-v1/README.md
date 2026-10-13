@@ -20,3 +20,9 @@ pass and portable/native runtime checks. No runner-up or retuning after failure.
 No user uploads/saved scores or test data are used for fitting. Website weights
 stay V43. PDMX source and crop-clock provenance are separate preparation receipts;
 synthesized clocks are not human performance labels or new instrument evidence.
+
+Both predeclared profiles completed 100 epochs. None of 144 validation settings
+qualified for release; the complete searches, curves, checkpoint hashes and
+source witnesses are archived. Maxima in validation-summary.json can come from
+different settings and cannot be combined into a fictitious winner. No consumed
+or fresh tests were read. All new weights remain withheld; website V43 is unchanged.

@@ -1,0 +1,34 @@
+{
+  "version": "pdmx-scarlatti-train-only-source-v53-v1",
+  "publisher": "https://zenodo.org/records/15571083",
+  "dataset_license": "CC BY 4.0",
+  "score_license": "CC0 1.0",
+  "inputs": {
+    "catalog": {
+      "bytes": 225399738,
+      "md5": "30392ccf38bb63ce70e7afae70f9c88c",
+      "sha256": "fc2187e7e09185f4b28be57b6478a96a1243a037f8fd13624f17de2d8bfd44bd"
+    },
+    "metadata": {
+      "bytes": 159444765,
+      "md5": "5bc79445090dd2fe5e96cffa77a3461c",
+      "sha256": "325b57ad69c34d45b05b8f307d88ebd10ff67554a7a9b4c183676e7586deffa3"
+    },
+    "mid": {
+      "bytes": 214395208,
+      "md5": "d920a21b2fcd99a56d9c381b39debbb2",
+      "sha256": "e444f9b466f02c9a054d31478c9886847f39c575a65ec45a0aaa1a5ee088c1d1"
+    }
+  },
+  "selected": {
+    "2149496": "K.531",
+    "5894834": "K.208"
+  },
+  "producer_sha256": "4c9f40e450b3b9e6a2a61e9ff0ce9d68c1dc2da3b986e30fa831be54852d0d53",
+  "clock_source_sha256": "aea1957ed8eeeccbb6ec62fb971b1da3a06b9f1050aac198e4c8ef45ceb3d910",
+  "partition": "Entire Domenico Scarlatti composer group is training-only. No PDMX validation or test score. Existing held-out real-piano, NRG-CP and TinySOL validation gates remain unchanged. Catalog best_path groups are not work identities.",
+  "source_review": "Exact public-domain keyboard works K.531 in E major and K.208 in A major. Matching conflict-free CC0 score and website metadata; explicit solo piano. K.208 uploader describes personal fingering and hand distribution, covered by the score grant. Neither selected description cites a modern edition or external performance. No custom audio is acquired. Other screened scores are excluded for ambiguous key clocks, pedal, harpsichord intent, conflicting work identifiers or modern-edition provenance.",
+  "human_performance_labels": false,
+  "no_user_audio_or_scores": true,
+  "no_audio_rendered_or_inferred": true
+}

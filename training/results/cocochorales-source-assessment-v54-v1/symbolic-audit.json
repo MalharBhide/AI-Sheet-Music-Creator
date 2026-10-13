@@ -1,0 +1,43 @@
+{
+  "version": "cocochorales-training-symbolic-audit-v54-v1",
+  "publisher": "https://magenta.tensorflow.org/datasets/cocochorales",
+  "license": "CC BY 4.0",
+  "inputs": {
+    "expression": {
+      "bytes": 10623029,
+      "md5": "ed8b8a526ef39e5ad7a8b8e10efaa7bc",
+      "sha256": "f68449daf6befbbea5710b3b03df28fabbc5f51aa1c24654f123856d9d783356"
+    },
+    "metadata": {
+      "bytes": 2361634,
+      "md5": "0345dda2f41cefefb13dc3eb7e9fa7fa",
+      "sha256": "90871e1af2b706928e2e81b32b1afa6e3c6c74f0351f0dcb59bc94934816786a"
+    }
+  },
+  "counts": {
+    "chorales": 2000,
+    "valid_four_voice_clocks": 2000,
+    "source_notes": 188040,
+    "holds_over_1s": 45893,
+    "holds_over_4s": 3064,
+    "unambiguous_piano_key_clocks": 36,
+    "same_key_ambiguous_chorales": 1964
+  },
+  "excluded_clock_reasons": {},
+  "distinct_parent_midi_ids": 2000,
+  "expression_clock_seconds_per_frame": 0.004,
+  "audio_or_pickle_acquired": false,
+  "audio_rendered_or_inferred": false,
+  "validation_or_test_shards_acquired": false,
+  "user_audio_or_scores_processed": false,
+  "training_cleared": false,
+  "new_weights_deployed": false,
+  "producer_sha256": "46c5f7ab4901f59a001041e1769b277196e9fe05a6ca89a4ba27d59227eeebdb",
+  "limitations": [
+    "Source assessment only; no selection, rendering, fitting or release evidence.",
+    "Generated string ensembles are not human piano timing or actual piano recordings.",
+    "Original audio has per-note pitch corrections; nominal MIDI alone is not exact audio pitch truth.",
+    "Any future authored-piano derivative needs separately frozen labels, key clocks and composer/source grouping.",
+    "Reject ambiguous same-key clocks; do not guess voice merges or release durations."
+  ]
+}

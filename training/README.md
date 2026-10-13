@@ -114,7 +114,16 @@ tests with six skips.
 The predeclared [V53 new-data study](results/left-precision-v53-v1/README.md)
 trains two fresh models on 2,122 fitting recordings with unchanged held-out
 validation and release gates. It inherits no V52 checkpoint or failed test data.
-No new weights are deployed.
+Both 100-epoch profiles completed without a qualifying validation setting.
+All [V53 results](results/left-precision-v53-v1/validation-summary.json) are archived
+and withheld; consumed/fresh tests remain unread and V43 stays on the website.
+
+The [CocoChorales symbolic assessment](results/cocochorales-source-assessment-v54-v1/README.md)
+checks two small publisher training shards under CC BY 4.0, without recordings,
+rendering or fitting. Thirty-six four-voice clocks have no ambiguous piano-key
+overlap and include 62 holds over four seconds. They are not cleared training
+data or independent human timing evidence; any future derivative needs its own
+source/clock protocol. The complete suite passes 1,180 checks with six skips.
 
 V44, TinySOL and NRG-CP preparation use the pinned V32 reader in
 `.training/left-precision-v43-replay` for historical physical features. Do not

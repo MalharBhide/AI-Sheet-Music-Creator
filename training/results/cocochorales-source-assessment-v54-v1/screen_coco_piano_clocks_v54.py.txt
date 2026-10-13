@@ -1,0 +1,27 @@
+import hashlib,json
+from pathlib import Path
+from audit_cocochorales_v54 import members,voice_events,piano_unambiguous
+root=Path('/training/cocochorales-source-assessment-v54')
+source=json.loads((root/'symbolic-audit.json').read_text())
+files={}
+for identifier,voice,raw in members(root/'expression-train-1.tar.bz2','expression'):
+ files.setdefault(identifier,{})[voice]=raw
+rows=[]
+for identifier,voices in sorted(files.items()):
+ events=sorted(e for raw in voices.values() for e in voice_events(raw))
+ if not piano_unambiguous(events):continue
+ rows.append({'source_id':identifier,'notes':len(events),'duration_seconds':max(e[1] for e in events)*.004,
+  'holds_over_1s':sum(b-a>250 for a,b,p in events),'holds_over_4s':sum(b-a>1000 for a,b,p in events),
+  'lowest_pitch':min(e[2] for e in events),'highest_pitch':max(e[2] for e in events),
+  'source_voice_sha256':{str(v):hashlib.sha256(raw).hexdigest() for v,raw in voices.items()},
+  'canonical_transposition_pattern_sha256':hashlib.sha256(json.dumps([(a,b,p-min(e[2] for e in events)) for a,b,p in events]).encode()).hexdigest()})
+assert len(rows)==36
+out={'version':'cocochorales-unambiguous-piano-clock-screen-v54-v1','source_audit_sha256':hashlib.sha256((root/'symbolic-audit.json').read_bytes()).hexdigest(),
+ 'retained_source_clocks':len(rows),'excluded_cross_voice_same_key_overlaps':1964,
+ 'complete_keys':sum(r['notes'] for r in rows),'holds_over_1s':sum(r['holds_over_1s'] for r in rows),'holds_over_4s':sum(r['holds_over_4s'] for r in rows),
+ 'unique_transposition_patterns':len({r['canonical_transposition_pattern_sha256'] for r in rows}),
+ 'producer_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+ 'original_audio_not_acquired':True,'no_rendering_or_inference_or_fitting':True,'no_user_audio_or_scores':True,
+ 'training_cleared':False,'limitations':['All are publisher training-only symbolic examples, no independent accuracy evidence.','Physical piano range, command/velocity mapping, full-work cropping and source identity checks remain before any training preparation.','Cross-voice overlaps are legitimate for a string quartet but ambiguous when mapped to one piano key; no guessed merge or note-off.'],'per_source':rows}
+with (root/'unambiguous-piano-screen.json').open('x') as f:json.dump(out,f,indent=2)
+print(json.dumps({k:v for k,v in out.items() if k!='per_source'}),flush=True)
