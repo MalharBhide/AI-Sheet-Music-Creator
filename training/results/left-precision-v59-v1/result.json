@@ -1,0 +1,31 @@
+{
+  "status": "withheld_no_validation_winner",
+  "training_recordings": 2302,
+  "timed_validation_recordings": 381,
+  "pitch_only_validation_recordings": 237,
+  "profiles_completed": 2,
+  "epochs_per_profile": 100,
+  "initial_permissions_candidates_per_profile": 64118,
+  "initial_all_keep_contract_passed_both_profiles": true,
+  "maximum_absence_fitting_candidates": 11025,
+  "genuine_keep_candidates_excluded_from_new_loss": 53070,
+  "partial_or_unknown_remove_candidates_excluded_from_new_loss": 23,
+  "validation_settings": 144,
+  "plan_sha256": "a088c9192c6663548b03b703d89a270233aafedb269eb57c733697c218073379",
+  "batch_selection_sha256": "5393752ae7eff6d8f617b1e60bc40ec33de04b798295762e3ec6f4fbe0987ddf",
+  "checkpoints_local_only": {
+    "max-absence-balanced/epoch-025.pt": "14d42f087de0dc1c1ccc73fbc9fc86a3459814186614e08de77afb4ea7986969",
+    "max-absence-balanced/epoch-050.pt": "c7d61271f8d12a8adb427416bed90b2384eda49f72a8a8e1cabf179c6c12ffcb",
+    "max-absence-balanced/epoch-100.pt": "d71e34f53bd6a29d677d31bc101db2c4f5b9c1d9645bdbe87dadec075fe5a404",
+    "max-absence-protected/epoch-025.pt": "db6531e1692c53ba82ffa78ffa48c254c7599e31c23863d9afad2bf76f5ca0c4",
+    "max-absence-protected/epoch-050.pt": "addada38f095b277eb7880c72ad9f2e2e669f7b69e9764ddcea364f6cd08dde8",
+    "max-absence-protected/epoch-100.pt": "8bd83cf5d5d8c4b51e2a84fd5d3d31e52146243d35c92a0ac296cb7ea6be4831"
+  },
+  "no_consumed_or_fresh_tests_read": true,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false,
+  "approved_asset_sha256": "38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda",
+  "final_preflight": "1453 passed, 6 skipped, 5 warnings",
+  "native_release_imports_passed": true,
+  "withheld_study_blocked_before_regression_or_fresh_inference": true
+}

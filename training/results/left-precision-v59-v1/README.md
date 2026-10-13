@@ -24,3 +24,19 @@ failure. Production remains V43 unless all release gates pass.
 Status: preregistered after 1,433 passing tests, six skips and five warnings.
 Native model/release imports and the exact phase contract pass. Fitting is ready;
 no new candidate predictions or consumed/fresh test reads have occurred.
+
+Final status: both profiles completed 100 epochs and all 144 settings.
+57 settings preserve all required validation recordings, but no single setting
+meets every separate positive domain gain under both policies. The study is
+withheld, with no consumed or fresh tests read and no website asset changed.
+The maximum-absence term applied to 11,025 fitting candidates; all 53,070 genuine
+KEEP candidates and 23 partial/unknown REMOVE candidates were excluded. Both
+profiles proved all-KEEP initial permissions on all 64,118 fitting candidates.
+
+Final code checks: 1,453 tests passed, six skipped and five warnings. Later
+real-piano source acquisition is independent and cannot change this closed
+study's fitting population, selected weights or validation outcome.
+
+Native release smoke check passes: this withheld study cannot reach consumed
+or fresh inference. Frozen fitting sources and approved production assets remain
+unchanged. Training has finished; later-source acquisition is independently live.

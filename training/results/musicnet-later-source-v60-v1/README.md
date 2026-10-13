@@ -18,3 +18,9 @@ has a separate v60 producer/version and never changes that original assessment.
 Twenty focused tests pass for bounded reading, exact crop bytes, malformed clocks,
 archive identities and immutable partial reuse. The exact 49-crop/20-parent source
 contract is verified before transfer. Acquisition is preregistered and pending.
+
+Acquisition started with its own frozen plan and the publisher grant verified.
+The complete archive checksum and 49 source crops remain pending. A bounded
+1 MiB request confirms exact HTTP 206 range support for this same object; the
+probe does not verify the full archive or authorize admitting partial sources.
+The original producer and transfer remain unchanged.
