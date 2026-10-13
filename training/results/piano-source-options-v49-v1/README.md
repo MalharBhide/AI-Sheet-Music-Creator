@@ -46,6 +46,15 @@ The full backend/training suite passes 1,075 tests with six skips and five
 dependency warnings. The 14 archive checks also pass separately. Approved
 left-presence and chord-release asset hashes remain unchanged.
 
+An exploratory exact-composer-alias metadata screen inspected 148 conflict-free,
+valid, single-program-zero CC0 catalog rows. All 148 have matching score license
+fields and explicit CC0 URLs; 147 explicitly name one piano, and 140 have exactly
+matching catalog/metadata composer text. None are marked blocked or disputed in
+the inspected fields. These rows occupy 33 catalog groups, which are not verified
+work identities. The counts and complete screening source are retained here.
+This is still not a training selection: mismatched identities, score rights,
+related arrangements, symbolic clocks and grouping need review before rendering.
+
 PDMX catalog attribution: Phillip Long, Zachary Novack, Julian McAuley and
 Taylor Berg-Kirkpatrick, PDMX v9, DOI 10.5281/zenodo.15571083, CC BY 4.0.
 Changes here are computed catalog counts and screening summaries; no score or

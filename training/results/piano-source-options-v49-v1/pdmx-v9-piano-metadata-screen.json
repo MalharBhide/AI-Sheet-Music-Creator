@@ -1,0 +1,48 @@
+{
+  "version": "pdmx-v9-exploratory-piano-metadata-screen-v1",
+  "status": "research only; no selected training set or per-score rights clearance",
+  "publisher": "https://zenodo.org/records/15571083",
+  "aliases": {
+    "Fr\u00e9d\u00e9ric Chopin": "Chopin",
+    "Frederic Chopin": "Chopin",
+    "F. Chopin": "Chopin",
+    "Fr\u00e9d\u00e9ric Fran\u00e7ois Chopin": "Chopin",
+    "Chopin": "Chopin",
+    "W.A. Mozart": "Mozart",
+    "W. A. Mozart": "Mozart",
+    "Wolfgang Amadeus Mozart": "Mozart",
+    "W.A.Mozart": "Mozart",
+    "Mozart": "Mozart",
+    "Domenico Scarlatti": "Scarlatti",
+    "Muzio Clementi": "Clementi"
+  },
+  "counts": {
+    "screened": 148,
+    "catalog_metadata_license_agree": 148,
+    "explicit_cc0_url": 148,
+    "explicit_single_piano_metadata": 147,
+    "exact_composer_text_agrees": 140,
+    "blocked_or_disputed": 0
+  },
+  "counts_by_composer": {
+    "Mozart": 59,
+    "Chopin": 82,
+    "Scarlatti": 7
+  },
+  "catalog_best_path_groups": 33,
+  "largest_catalog_group": 20,
+  "inputs": {
+    "catalog_sha256": "fc2187e7e09185f4b28be57b6478a96a1243a037f8fd13624f17de2d8bfd44bd",
+    "metadata_sha256": "325b57ad69c34d45b05b8f307d88ebd10ff67554a7a9b4c183676e7586deffa3"
+  },
+  "producer_sha256": "663db5f4d038f779eea14807506d4ed757dd54f04eb87cda555183e8d335dd27",
+  "audio_rendered_or_inferred": false,
+  "user_audio_or_scores_processed": false,
+  "limitations": [
+    "Exact text aliases are only exploratory filters, not verified work/arranger identities.",
+    "CC0 catalog and matching metadata are evidence to inspect, not an independent rights determination.",
+    "Catalog grouping can merge distinct works; conservative connected work/composer partitions still required.",
+    "No MIDI note clocks, controllers or same-key pairing reviewed by this metadata-only screen.",
+    "No train/validation partition, decoding or fitting performed."
+  ]
+}

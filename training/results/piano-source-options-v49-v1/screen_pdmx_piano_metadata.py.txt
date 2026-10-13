@@ -1,0 +1,64 @@
+"""Exploratory symbolic metadata screen. No training selection or rights clearance."""
+import collections,csv,hashlib,json,sys,tarfile
+from pathlib import Path
+sys.path.insert(0,'training')
+from audit_pdmx_archives import safe_path
+aliases={
+ 'Frédéric Chopin':'Chopin','Frederic Chopin':'Chopin','F. Chopin':'Chopin',
+ 'Frédéric François Chopin':'Chopin','Chopin':'Chopin',
+ 'W.A. Mozart':'Mozart','W. A. Mozart':'Mozart','Wolfgang Amadeus Mozart':'Mozart',
+ 'W.A.Mozart':'Mozart','Mozart':'Mozart','Domenico Scarlatti':'Scarlatti',
+ 'Muzio Clementi':'Clementi'}
+base=Path('training/results/piano-source-options-v49-v1')
+proof=json.loads((base/'pdmx-v9-symbolic-integrity.json').read_text())
+paths={'catalog':Path('.training/PDMX-v9.csv'),'metadata':Path('.training/PDMX-v9-metadata.tar.gz')}
+for kind,path in paths.items():
+ h=hashlib.sha256()
+ with path.open('rb') as f:
+  for block in iter(lambda:f.read(1024*1024),b''): h.update(block)
+ expected=proof['catalog']['sha256'] if kind=='catalog' else proof['archives'][kind]['sha256']
+ assert h.hexdigest()==expected,'Changed inspected publisher file'
+wanted={}
+with paths['catalog'].open(newline='') as f:
+ for r in csv.DictReader(f):
+  if (r['license']=='cc-zero' and r['subset:no_license_conflict']=='True' and
+      r['subset:all_valid']=='True' and r['tracks']=='0' and r['composer_name'] in aliases):
+   key=safe_path(r['metadata'],'metadata')
+   assert key not in wanted,'Duplicate metadata reference in screen'
+   wanted[key]=r
+counts=collections.Counter();by_composer=collections.Counter();groups=collections.defaultdict(list)
+with tarfile.open(paths['metadata'],'r|gz') as archive:
+ for member in archive:
+  name=safe_path(member.name,'metadata')
+  if name not in wanted: continue
+  assert member.isfile() and 0<member.size<=64*1024*1024
+  r=wanted.pop(name);raw=archive.extractfile(member).read();m=json.loads(raw)
+  score=m.get('data',{}).get('score',{})
+  counts['screened']+=1;by_composer[aliases[r['composer_name']]]+=1
+  counts['catalog_metadata_license_agree']+=int(score.get('license')==r['license'])
+  counts['explicit_cc0_url']+=int(m.get('data',{}).get('license_url') in (
+   'https://creativecommons.org/publicdomain/zero/1.0/',
+   'http://creativecommons.org/publicdomain/zero/1.0/'))
+  instruments=score.get('instruments',[])
+  piano=(len(instruments)==1 and instruments[0].get('name')=='Piano' and instruments[0].get('count')==1)
+  counts['explicit_single_piano_metadata']+=int(piano)
+  counts['exact_composer_text_agrees']+=int(score.get('composer_name')==r['composer_name'])
+  counts['blocked_or_disputed']+=int(bool(score.get('is_blocked') or m.get('data',{}).get('opened_dispute') or m.get('data',{}).get('is_blocked')))
+  groups[r['best_path']].append(r['path'])
+assert not wanted,'Screened metadata missing'
+result={'version':'pdmx-v9-exploratory-piano-metadata-screen-v1',
+ 'status':'research only; no selected training set or per-score rights clearance',
+ 'publisher':'https://zenodo.org/records/15571083',
+ 'aliases':aliases,'counts':dict(counts),'counts_by_composer':dict(by_composer),
+ 'catalog_best_path_groups':len(groups),'largest_catalog_group':max(map(len,groups.values()),default=0),
+ 'inputs':{'catalog_sha256':proof['catalog']['sha256'],'metadata_sha256':proof['archives']['metadata']['sha256']},
+ 'producer_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+ 'audio_rendered_or_inferred':False,'user_audio_or_scores_processed':False,
+ 'limitations':['Exact text aliases are only exploratory filters, not verified work/arranger identities.',
+  'CC0 catalog and matching metadata are evidence to inspect, not an independent rights determination.',
+  'Catalog grouping can merge distinct works; conservative connected work/composer partitions still required.',
+  'No MIDI note clocks, controllers or same-key pairing reviewed by this metadata-only screen.',
+  'No train/validation partition, decoding or fitting performed.']}
+with (base/'pdmx-v9-piano-metadata-screen.json').open('x') as f:json.dump(result,f,indent=2)
+(base/'screen_pdmx_piano_metadata.py.txt').write_bytes(Path(__file__).read_bytes())
+print(json.dumps({'counts':dict(counts),'composers':dict(by_composer),'groups':len(groups)}))
