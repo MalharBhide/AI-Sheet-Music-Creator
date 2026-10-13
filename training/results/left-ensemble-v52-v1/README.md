@@ -31,3 +31,6 @@ rule or release gate changed; no joint predictions preceded the correction.
 Status: composition/selection helpers implemented; model selection, loading and
 joint evaluation remain pending. No joint predictions, consumed tests or fresh
 tests have been read.
+
+Composition preflight: nine focused checks and the full 1,102-test suite pass
+with six skips. Joint model loading and validation remain pending.
