@@ -53,3 +53,10 @@ Consumed/fresh phase tooling passes the full 1,122-test suite with six skips.
 The qualifying pair was reverified against its frozen validation receipt before
 any test access. All 603 consumed regressions are next; fresh inference remains
 blocked until they pass at both policies with positive benefit.
+
+Final status: withheld after consumed regression. The fixed pair removed 71/60
+extra notes overall under normal/stricter policies, but one of 603 recordings
+loses a genuine reference note and fails preservation at both policies. Aggregate
+gain cannot override that failure. No runner-up or retuning is attempted. The
+untouched 40-clip first pass was not generated or read. Website weights remain
+on V43. This study cannot be presented as a qualified release.

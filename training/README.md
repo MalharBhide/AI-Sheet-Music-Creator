@@ -93,8 +93,11 @@ are archived and withheld, with no consumed/fresh tests read or website release.
 The [V52 fixed-pair study](results/left-ensemble-v52-v1/README.md) preregisters
 one preserving V48 member and one preserving V51 member, selected with distinct
 frozen gain priorities. Their combined decisions must pass every preservation
-and separate benefit gate; individual preservation is insufficient. Composition
-and selection tests precede any joint model evaluation. No release is claimed.
+and separate benefit gate; individual preservation is insufficient. Joint validation
+passed, but the 603-recording consumed regression lost a genuine note in one
+recording at both policies. The pair is withheld; no runner-up or retuning is
+allowed. The untouched 40-clip test was not generated or read, and V43 remains
+the website model. The complete 1,122-test preflight and failure evidence are archived.
 
 The [additional piano-source assessment](results/piano-source-options-v49-v1/README.md)
 records a verified PDMX catalog, an empty RGTM-PNO MIDI archive, and exclusions
