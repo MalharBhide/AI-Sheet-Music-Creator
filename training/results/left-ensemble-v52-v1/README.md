@@ -40,3 +40,16 @@ six skips. Both exact preregistered choices load with their own verified
 checkpoints and normalizers. Joint validation is ready to run once; source
 calibration, complete population, per-recording preservation and aggregate gain
 receipts are checked before any consumed or fresh test access.
+
+The one fixed pair qualifies on complete validation: 38/24 extra timed notes
+removed (normal/stricter), including one real-piano note under each policy and
+four/two NRG-CP notes. One extra isolated-pitch note is removed under each policy.
+All 381 timed and 237 pitch-only recordings preserve every required identity,
+pitch, hold, chord and timing measure; no notes are restored. The pair is frozen
+before any consumed or fresh test access. This is validation-only evidence;
+website weights have not changed and all later release gates remain pending.
+
+Consumed/fresh phase tooling passes the full 1,122-test suite with six skips.
+The qualifying pair was reverified against its frozen validation receipt before
+any test access. All 603 consumed regressions are next; fresh inference remains
+blocked until they pass at both policies with positive benefit.

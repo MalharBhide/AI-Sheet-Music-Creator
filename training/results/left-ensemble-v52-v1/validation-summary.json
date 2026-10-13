@@ -1,0 +1,38 @@
+{
+  "raw": {
+    "threshold": 0.9,
+    "passes": true,
+    "failed_recordings": [],
+    "false_notes_removed": 38,
+    "real_piano_gain": 1,
+    "removed_notes": 38,
+    "recovered_notes": 0,
+    "nrgcp_gain": 4
+  },
+  "raw_pitch": {
+    "threshold": 0.9,
+    "passes": true,
+    "failed_recordings": [],
+    "wrong_pitch_gain": 1,
+    "removed_fundamental_candidates": 0,
+    "timing_supervision_available": false
+  },
+  "strict": {
+    "threshold": 0.9,
+    "passes": true,
+    "failed_recordings": [],
+    "false_notes_removed": 24,
+    "real_piano_gain": 1,
+    "removed_notes": 24,
+    "recovered_notes": 0,
+    "nrgcp_gain": 2
+  },
+  "strict_pitch": {
+    "threshold": 0.9,
+    "passes": true,
+    "failed_recordings": [],
+    "wrong_pitch_gain": 1,
+    "removed_fundamental_candidates": 0,
+    "timing_supervision_available": false
+  }
+}
