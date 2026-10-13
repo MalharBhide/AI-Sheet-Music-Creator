@@ -1,0 +1,100 @@
+{
+  "version": "candidate-phase-conditioned-presence-v58-v1",
+  "hypothesis": "Explicit candidate-relative frame phases may let the absence/presence head distinguish interior note evidence from adjacent sounding notes without losing genuine bass notes.",
+  "source_sha256": {
+    "left_precision_v58.py": "97349786d7e3bb0526bc6ebd0d9b0f89f0a91a0ef0c98beb66be06df0336ba6e",
+    "train_left_precision_v58.py": "f7c3113727b6f982dc4c192ccf1deb118377cd2e93d4be6e6a2e4ba0f9026c59",
+    "test_left_precision_v58.py": "b128764ff5e8919666e7723df37c0aa8dbfd5879d973f466a6ff48e11bc0ca05",
+    "evaluate_left_precision_v58.py": "6361107d7079e16dd77b4a3bfcc8ad46f3ffc7064ee657868e5da3b743860334",
+    "fresh_left_precision_v58.py": "7da3010cc4bc522b5448addf0bc0480040247063d18cd8bd772caed76af813bd"
+  },
+  "fitting_manifests": {
+    "baseline": "33f8b53b88695f8fd31e007488ea9014f7d24fda3cafa2556747cac3ff08b4ac",
+    "piano": "423e548ef6c22d21c330b83c24e34d0c9f6a2d1204daf73600398780da20929d",
+    "authored": "8d7b7cff2f99d62d3334c8a9219bc0cd4df227fbf33bb462796a392c6c69302e",
+    "mutopia": "e1a388adfb4428ceb9fb10af08361eed4f83d7501aaee6070bbcd72914cc5c6c",
+    "dynamics": "06ce3072153e23f2a4214b68c8ba817770d810cfb5e5f0ead76d14907ae59121",
+    "tinysol": "bb4a6d02b70e2efb2f31389327a14e6c1544ad20086e60f4630b774d0f0a88bc",
+    "rhythmic": "7155f7bf79ff48c274ced33e8460306aecbec219c169461d69a15e7ac5844931",
+    "new_piano": "deb5ecc1fd3f873c9da19beb88a444ce8400eabbbe64e039fa17d42789840e2d",
+    "new_holds": "bc025b9bd05dc21e63874f5997f02ad6cd4a197e78d9716360a9e423c16f7e3b",
+    "new_generated": "e2d5b9b625dcd3ce4b402f203db05b64cdd714e49e4b27d31adc667a2a5ad98b"
+  },
+  "new_preparation_audit_sha256": "e66fc5d0e7743ecb1b2f6d590ffae50a2f6f95251a96598e7628dbca2f8d3d59",
+  "training_recordings": 2302,
+  "timed_validation_recordings": 381,
+  "pitch_only_validation_recordings": 237,
+  "new_audio_inference_or_acquisition": false,
+  "unchanged_licensed_training_cohort": true,
+  "phase_contract": {
+    "shape": [
+      1,
+      4,
+      40
+    ],
+    "channels": [
+      "frame-index rank -1 to 1",
+      "before: samples 0-7",
+      "interior: samples 8-31",
+      "after: samples 32-39"
+    ],
+    "uniform_seconds_or_tempo_claim": false,
+    "nontrainable_checkpoint_buffer": true,
+    "checkpoint_clock_must_match_exactly": true
+  },
+  "profiles": [
+    {
+      "name": "phase-balanced",
+      "width": 20,
+      "keep_weight": 24,
+      "presence_weight": 4,
+      "real_piano_weight": 4,
+      "isolated_negative_weight": 8,
+      "hard_keep_weight": 0,
+      "seed": 303001
+    },
+    {
+      "name": "phase-protected",
+      "width": 20,
+      "keep_weight": 48,
+      "presence_weight": 8,
+      "real_piano_weight": 8,
+      "isolated_negative_weight": 16,
+      "hard_keep_weight": 6,
+      "seed": 303002
+    }
+  ],
+  "epochs": 100,
+  "updates_per_epoch": 40,
+  "batch_size": 256,
+  "hard_keep_fraction": 0.1,
+  "stages": [
+    25,
+    50,
+    100
+  ],
+  "thresholds": [
+    0.9,
+    0.95,
+    0.98,
+    0.99,
+    0.995,
+    0.999
+  ],
+  "veto_thresholds": [
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "stricter_margin": 0.005,
+  "stricter_veto_multiplier": 0.8,
+  "initial_contract": "Before fitting each profile, verify additional permissions are all KEEP over every eligible labeled fitting candidate.",
+  "selection": "Only candidates passing every timed/pitch recording and separate positive overall, real-piano, NRG-CP and TinySOL gain at both policies qualify. Maximize real-piano raw/strict, then overall raw/strict, then pitch raw/strict, then earlier epoch, higher rejection threshold and lower veto threshold. Exact ties keep original profile order.",
+  "subsequent_gate": "One validation winner only: all 603 consumed regressions, one untouched 40-clip original/texture MP3 first pass seeds 302101-302140 with positive gain separately in each family at both policies, portable/native runtime parity before release. No runner-up, retuning or replacement test clips after failure.",
+  "no_inherited_weights": true,
+  "no_teacher_targets": true,
+  "no_user_audio_or_scores": true,
+  "no_consumed_or_fresh_tests_used_for_fitting_or_selection": true,
+  "new_weights_deployed": false
+}
