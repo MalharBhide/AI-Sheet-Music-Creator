@@ -28,6 +28,10 @@ must then pass all 603 consumed regressions, one untouched 40-clip first pass
 any website release. No runner-up, retuning or replacement clips after failure.
 
 Status: full preflight passes 1,093 tests with six skips and five dependency
-warnings. Final runners import with the verified historical reader. Fitting is
-ready to start. No consumed/fresh tests,
+warnings. Final runners import with the verified historical reader. Fitting has started through the module entry point with the pinned historical
+reader; the complete training plan is frozen. No consumed/fresh tests,
 user audio or saved scores processed, and no website weights changed.
+
+Initial rejection parity and all-KEEP additional permissions passed on all
+62,124 candidates across 2,077 full training recordings. The first profile is
+advancing through epochs; validation is pending.
