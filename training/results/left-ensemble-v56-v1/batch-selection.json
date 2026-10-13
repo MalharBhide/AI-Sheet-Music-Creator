@@ -1,0 +1,91 @@
+{
+  "selected": true,
+  "members": [
+    {
+      "role": "A",
+      "study": "v53",
+      "run": "/training/left-precision-v53-v1",
+      "version": "new-pdmx-piano-boundary-presence-v53-v1",
+      "profile": {
+        "name": "pdmx-fresh-balanced",
+        "width": 20,
+        "keep_weight": 24,
+        "presence_weight": 4,
+        "real_piano_weight": 4,
+        "seed": 298001
+      },
+      "epoch": 100,
+      "threshold": 0.98,
+      "veto_threshold": 0.3,
+      "checkpoint": "pdmx-fresh-balanced/epoch-100.pt",
+      "checkpoint_sha256": "78982d62870c4a8a918ef9dbc2d0b1f988824bbd8cd6f9bdf620ea3fc103fcc6",
+      "source_plan_sha256": "2ade2cb2c67d63e924cfe1cb75428799db7f56e38243d7580ea573b68d95553c",
+      "source_result_sha256": "0d4e7421a6c7a0e1019dc24439b13d594f62d392b4a6c1020df1f1d1fbbb01d1",
+      "search_sha256": {
+        "pdmx-fresh-balanced/search-025.json": "2e966f77a8ed293a82219f35813b5866519504d1bb2a2ebdaf3d615236bd8c63",
+        "pdmx-fresh-balanced/search-050.json": "2e19052262c272beb4acb0fdf797cbbd228d7819fc2c8e9fa5944f0bd1907b8e",
+        "pdmx-fresh-balanced/search-100.json": "01e548432c4ae3f903bb972e6df5fd8952480194920e5cf56b1df382e2ce7c97",
+        "pdmx-fresh-protected/search-025.json": "d5786b1b49a79f603b5e365b23197991312bd13353f43ba64c8d07326f0c287d",
+        "pdmx-fresh-protected/search-050.json": "73f59492cf8839c4b19420d90c07f26b564265708c6d42e66b6c4dfd6ac7a20f",
+        "pdmx-fresh-protected/search-100.json": "998e0cc30f18be5b68238185aae0c9bfc5593101eeae74696e23de16a2d68522"
+      },
+      "selection_key": [
+        1,
+        2,
+        2,
+        13,
+        34,
+        0.98,
+        -0.3,
+        -100,
+        0
+      ]
+    },
+    {
+      "role": "B",
+      "study": "v54",
+      "run": "/training/left-precision-v54-v1",
+      "version": "coco-hold-protected-isolated-negative-v54-v1",
+      "profile": {
+        "name": "coco-negative-balanced",
+        "width": 20,
+        "keep_weight": 24,
+        "presence_weight": 4,
+        "real_piano_weight": 4,
+        "isolated_negative_weight": 8,
+        "seed": 299001
+      },
+      "epoch": 25,
+      "threshold": 0.95,
+      "veto_threshold": 0.3,
+      "checkpoint": "coco-negative-balanced/epoch-025.pt",
+      "checkpoint_sha256": "6266393b29ec919da40172fdeed2c5b90cf29254053285b833aa779349fbbac7",
+      "source_plan_sha256": "ef080a82a4916597c25c9a04ade64cfc4ac04a2c60227f21060dde5aedfe546c",
+      "source_result_sha256": "072bcf353bca5f194db1c72cfb752bd77cee17ff22d8655199e962d4e0e02be2",
+      "search_sha256": {
+        "coco-negative-balanced/search-025.json": "3204a33ccc706d152a9f4a71892a511ce1b46b5e44acd91b93c863ec7f7f1aa2",
+        "coco-negative-balanced/search-050.json": "33556fd2102b3e0d4ed232c953ddaca11cef59e06d9148b624798b150047ce12",
+        "coco-negative-balanced/search-100.json": "d77b34d6e66590a06ff6a4921df090d6a4264a5515877b437daeb97a1b6b04a4",
+        "coco-negative-protected/search-025.json": "11ac76584a2ad1dc00ae56de7d2ea4151ae369e267f01ccd88be77209ee94258",
+        "coco-negative-protected/search-050.json": "661c567486890874f8ec00855dc8961be2d7b458c29d059050901df49c03316c",
+        "coco-negative-protected/search-100.json": "5b855849bb86af39b4ddc37cfa2408c686c933816e6ac34a49c2493d8bd48bc5"
+      },
+      "selection_key": [
+        1,
+        5,
+        0,
+        5,
+        10,
+        0.95,
+        -0.3,
+        -25,
+        0
+      ]
+    }
+  ],
+  "plan_sha256": "8a86d7ae1ee80a91958d49163e0f3b1cbbf6895098a5fc4a36d165e12c971506",
+  "validation_sha256": "b08344672a3d5ee696bd97e4068af415a6c631655ba127d14e13a736defe3bde",
+  "no_test_used_for_selection": true,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false
+}
