@@ -22,4 +22,7 @@ the pinned historical reader. Fitting has started through the module entry point
 reader. The initial direct-script attempt was stopped by the unchanged V32 guard
 before creating output; no guard was weakened. Consumed/fresh tests have not been
 read, and website weights are unchanged.
-PDMX remains source research and is excluded from this study.
+Initial prediction parity passed on all 62,124 candidates across 2,077 complete
+training recordings before optimization. The first profile is advancing through
+epochs; validation results are pending. PDMX remains source research and is
+excluded from this study.
