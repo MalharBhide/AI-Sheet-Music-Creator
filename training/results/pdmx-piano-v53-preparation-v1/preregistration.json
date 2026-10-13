@@ -1,0 +1,38 @@
+{
+  "version": "pdmx-piano-v53-preparation-preregistration-v1",
+  "status": "preparation only, not accuracy evidence",
+  "publisher": "https://zenodo.org/records/15571083",
+  "source_ids": [
+    "2149496",
+    "5894834"
+  ],
+  "training_only": true,
+  "whole_composer_group": "Domenico Scarlatti",
+  "new_validation_or_test_sources": 0,
+  "expected_training_observations": 45,
+  "window_seconds": 24,
+  "variants": [
+    0.45,
+    0.7,
+    1.0
+  ],
+  "mp3_bitrates": [
+    48,
+    128,
+    192
+  ],
+  "full_work_render_before_waveform_crop": true,
+  "crossing_keys_supply_pitch_support_only": true,
+  "source_sha256": {
+    "acquire_pdmx_piano_v53.py": "4c9f40e450b3b9e6a2a61e9ff0ce9d68c1dc2da3b986e30fa831be54852d0d53",
+    "pdmx_piano_clock_v53.py": "aea1957ed8eeeccbb6ec62fb971b1da3a06b9f1050aac198e4c8ef45ceb3d910",
+    "pdmx_piano_render_v53.py": "8cc5331d117a3d8e9f5a112f6cb316052b132f6332be96f97bf6c6a664d62c97",
+    "prepare_pdmx_piano_v53.py": "df368953d1d9c478c095b56613d7326de5f58fca2c55cf7ace5c2b4c39796ca8",
+    "test_pdmx_piano_clock_v53.py": "2ee7d001ca9a17228b821997f6faaa4fd96ca655ef86d9869c78b2aebdbb9ea1",
+    "test_pdmx_source_v53.py": "7430329e1f759cf0528fae89cb70316d71061d5ff6b6003627c20c600ed28db4"
+  },
+  "approved_left_asset_sha256": "38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda",
+  "no_consumed_or_fresh_inference": true,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false
+}
