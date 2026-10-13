@@ -1,0 +1,63 @@
+{
+  "version": "coco-authored-piano-commands-v54-v1",
+  "publisher": "https://magenta.tensorflow.org/datasets/cocochorales",
+  "license": "CC BY 4.0",
+  "source_audit_sha256": "696c8de924340a5e990ccf432bb1421265f7f8ade60a1237dcb230d38ba6fff4",
+  "screen_sha256": "1f1e9211a66475025bb4a59e8f9416f6f09ad51d97a9b9b5cb3d7f81495a2908",
+  "inputs": {
+    "expression": {
+      "bytes": 10623029,
+      "md5": "ed8b8a526ef39e5ad7a8b8e10efaa7bc",
+      "sha256": "f68449daf6befbbea5710b3b03df28fabbc5f51aa1c24654f123856d9d783356"
+    },
+    "metadata": {
+      "bytes": 2361634,
+      "md5": "0345dda2f41cefefb13dc3eb7e9fa7fa",
+      "sha256": "90871e1af2b706928e2e81b32b1afa6e3c6c74f0351f0dcb59bc94934816786a"
+    }
+  },
+  "selected_training_ids": [
+    63,
+    108,
+    189,
+    196,
+    221,
+    232,
+    275,
+    436,
+    465,
+    496,
+    662,
+    703,
+    725,
+    796,
+    798,
+    954,
+    993,
+    1012,
+    1043,
+    1085,
+    1127,
+    1248,
+    1266,
+    1378,
+    1425,
+    1494,
+    1497,
+    1634,
+    1685,
+    1777,
+    1822,
+    1837,
+    1893,
+    1932,
+    1986,
+    1999
+  ],
+  "producer_sha256": "94ccc4fe2c0d6e5bc7544805053578eedb056046971f0a2228d0137bb50f52be",
+  "source_reader_sha256": "46c5f7ab4901f59a001041e1769b277196e9fe05a6ca89a4ba27d59227eeebdb",
+  "mapping": "Use all 36 pre-screened nonoverlapping four-voice key clocks, with no performance-based selection. Frames are authored at 4ms. Omit explicit rest rows; preserve all voiced pitches/onsets/releases. Map source volume to integer piano velocity round(1+126*volume), clipped 1..127. No source audio, pitch-corrected F0 or human timing claims. Actual future piano commands are rounded to the pinned synthesis block clock. Never merge, truncate, extend or guess simultaneous same-key releases.",
+  "partition": "All selected source parents and future audio variants are train-only. Group by publisher parent midi_file, not ensemble filename. No new validation or test data, and no claim of independence from Coconet/MIDI-DDSP pretraining or human composition catalogs. Existing held-out and release requirements remain.",
+  "no_user_audio_or_scores": true,
+  "no_audio_rendered_or_inferred": true
+}

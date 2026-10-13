@@ -10,14 +10,14 @@ import prepare_left_support_v41 as support
 import soundfile as sf
 from acquire_coco_piano_v54 import COUNTS as SOURCE_COUNTS
 from acquire_coco_piano_v54 import notes, sources
+from coco_piano_render_v54 import HeldWorkPiano as Piano
 from offline_piano_v47 import ASSETS, BLOCK, LICENSE, RATE, TAIL
 from offline_piano_v47 import contracts as piano_contracts
 from pdmx_piano_clock_v53 import synthesis_clock
-from pdmx_piano_render_v53 import WholeWorkPiano as Piano
 from prepare_robust_training_stems import digest, preserve
 from prepare_tinysol_presence_v45 import canonical_padding
 
-VERSION = "coco-complete-authored-piano-v54-v1"
+VERSION = "coco-complete-authored-piano-v54-v2"
 COUNTS = {k: 3*v for k, v in SOURCE_COUNTS.items()}
 VARIANTS = (.45, .7, 1.)
 
@@ -25,7 +25,7 @@ VARIANTS = (.45, .7, 1.)
 def contracts():
     names = ("audit_cocochorales_v54.py", "acquire_coco_piano_v54.py", "prepare_coco_piano_v54.py",
              "offline_piano_v47.py", "pdmx_piano_clock_v53.py", "pdmx_piano_render_v53.py",
-             "prepare_tinysol_presence_v45.py")
+             "prepare_tinysol_presence_v45.py", "coco_piano_render_v54.py")
     return {**support.contracts(), **{n: digest(Path(__file__).with_name(n)) for n in names}}
 
 
@@ -54,6 +54,13 @@ def validate(record, saved, source, job):
     pitch = reference.copy()
     pitch[:, 0] = np.maximum(0, pitch[:, 0]-.05)
     pitch[:, 1] += TAIL+.1
+    expirations = record["natural_sample_expirations"]
+    if (not isinstance(expirations, list) or len(expirations) > len(authored)
+            or any(not isinstance(e, dict) or set(e) != {"channel", "pitch", "active_voices"}
+                   or e["channel"] != 0 or e["active_voices"] != 0
+                   or type(e["pitch"]) is not int or e["pitch"] not in authored[:, 2]
+                   for e in expirations)):
+        raise ValueError("Invalid native sample-expiration audit")
     frames = int(np.ceil((round(authored[:, 1].max()*RATE)+round((TAIL+3)*RATE))/BLOCK))*BLOCK
     if (any(record[k] != source[k] for k in ("group", "source_group"))
             or any(record[k] != job[k] for k in ("id", "source_id", "variant", "bitrate"))
@@ -108,7 +115,7 @@ def prepare(source, output):
         "baseline_hashes": support.hashes(), "code_sha256": contracts(),
         "piano_assets": piano_contracts(), "expected_counts": COUNTS, "tasks": jobs,
         "variants": VARIANTS, "sample_rate": RATE,
-        "labels": "Complete authored piano derivatives of 4ms generated note-expression commands, rounded up to the pinned 64-frame synthesis block. Full work rendered without cropping or retriggering. All keys and long holds preserved. Fixed expression-volume to piano-velocity mapping, three dynamics variants and authored 300ms damping. Conservative pitch support extends another 100ms. No original ensemble audio/F0, pedal, source timing repairs or human piano labels.",
+        "labels": "Complete authored piano derivatives of 4ms generated note-expression commands, rounded up to the pinned 64-frame synthesis block. Full work rendered without cropping or retriggering. All key command clocks preserved. Fixed expression-volume to piano-velocity mapping, three dynamics variants and authored 300ms damping. Conservative pitch support extends another 100ms and is only an upper bound: decaying sample tails do not prove acoustic presence. V54 masks positive pitch-support frames for this source, teaching known absences only. An unmatched native noteoff is accepted solely with a synchronous zero active voice count, explicitly recorded per rendering. No original ensemble audio/F0, pedal, source timing repairs or human piano labels.",
         "partition": "All 36 selected parent MIDI source IDs and all 108 piano derivatives are fitting-only. No new validation or test corpus. Whole parents remain together. The sampled piano is shared with NRG-CP/PDMX, with no timbre or upstream-pretraining independence claim. Existing held-out, consumed, fresh and runtime requirements stay unchanged.",
         "codec_policy": "Require zero measured lag; only proven silent final padding may be canonicalized by the pinned TinySOL codec policy. Preserve rendered, raw-decoded and canonical waveforms and MP3 hashes.",
         "no_reserved_or_consumed_audio_inference": True, "no_user_audio_or_scores": True,
@@ -144,6 +151,7 @@ def prepare(source, output):
                 observation(output, record, row, job, plan_sha)
             else:
                 authored, synthesis_clock = transform(notes(Path(row["midi"]).read_bytes()), job["variant"])
+                before_expirations = len(piano.natural_expirations)
                 wave, reference, pitch = piano.render(authored)
                 duration = len(wave)/RATE
                 decoded, codec_clock = support.encode(wave, RATE, work, job["bitrate"])
@@ -171,6 +179,7 @@ def prepare(source, output):
                     "raw_codec_audio_sha256": digest(work/"decoded-codec.wav"), "synthesis_clock": synthesis_clock,
                     "codec_clock": codec_clock, "duration": duration, "seconds": duration,
                     "reference": reference.tolist(), "pitch_reference": pitch.tolist(), "human_timing_labels": False,
+                    "natural_sample_expirations": piano.natural_expirations[before_expirations:],
                     "candidate_notes": len(events), "plan_sha256": plan_sha}
                 observation(output, record, row, job, plan_sha)
                 preserve(work/"record.json", record)

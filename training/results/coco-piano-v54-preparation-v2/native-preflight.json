@@ -1,0 +1,1041 @@
+{
+  "code_sha256": {
+    "prepare_left_support_v41.py": "6055f3702953d092ce46cf33842aa31e39c930f58a25bb85e8ba3141acf344b9",
+    "prepare_nsynth_bass.py": "56e7f0d3b94f6213047985a0467fa96255b33a74093376e027609fd45273bfcb",
+    "acquire_nsynth_subset.py": "67eea1c2934c7e6b89b5233065a61b2a13257c6e732c11540b79751da0df5ac7",
+    "prepare_slakh_bass.py": "7f2f8be64fce97e9ade2348c2a7eb39ac9966191753da8ebe7810d2f24dcc0be",
+    "prepare_slakh_training.py": "a1f0ad61bdc5b0e8a508c850d101d87903b58057624fb9748032eecfb68640c2",
+    "attack_local_features.py": "7c284d47d5eb55af2ff0811addd8eac1d13264f438c599360e9ef7505639b85f",
+    "release_local_features.py": "a42de471567b3d4b17e0a9a1f56737e5673931e53f9e68ecea335b63001c750b",
+    "release_neighbor_features.py": "c6ff1cb217401a66affe385cde46cc182aaf869dc492a7845a92bc425e98ab71",
+    "periodicity_features.py": "817e51e8ecce71cbe2c0d342b4e994b3365b12939cd93ec6783a3c83fa8e33b4",
+    "audit_cocochorales_v54.py": "46c5f7ab4901f59a001041e1769b277196e9fe05a6ca89a4ba27d59227eeebdb",
+    "acquire_coco_piano_v54.py": "94ccc4fe2c0d6e5bc7544805053578eedb056046971f0a2228d0137bb50f52be",
+    "prepare_coco_piano_v54.py": "ffda9748a935d2f3a183981c75fefde20a843107632eb9876b27e6c0515c5264",
+    "offline_piano_v47.py": "18b456da9ff4a1d27e599221be6ffd34ab538471cf0b2c793df277f3e3f7263e",
+    "pdmx_piano_clock_v53.py": "aea1957ed8eeeccbb6ec62fb971b1da3a06b9f1050aac198e4c8ef45ceb3d910",
+    "pdmx_piano_render_v53.py": "8cc5331d117a3d8e9f5a112f6cb316052b132f6332be96f97bf6c6a664d62c97",
+    "prepare_tinysol_presence_v45.py": "9e4f07a7bd9e61a3a546eb1eb9470bb5b5aaa3326e727c6b5b05749d9aa7a958",
+    "coco_piano_render_v54.py": "8832fab0263cd57d758cb88700fd901302bac17d91634baeaede6361e577982f"
+  },
+  "no_model_inference": true,
+  "no_user_audio_or_scores": true,
+  "records": [
+    {
+      "id": "coco-v54-000063-variant-0",
+      "wave_samples_sha256": "4c644d525c24931d5ad5add4575c409160435cb430c47b20b42fa908ad72a9fb",
+      "duration": 22.865850340136053,
+      "keys": 56,
+      "holds_over_four_seconds": 3,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 69,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-000063-variant-1",
+      "wave_samples_sha256": "5c4098ff2b27778c6e7d2b73ff7309f4ea8e590d54abc8099c159a0f091f0799",
+      "duration": 22.865850340136053,
+      "keys": 56,
+      "holds_over_four_seconds": 3,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 69,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-000063-variant-2",
+      "wave_samples_sha256": "9a4b60139780d53b626aa227e85409cca032be7231d0426cb03d10e8a976deea",
+      "duration": 22.865850340136053,
+      "keys": 56,
+      "holds_over_four_seconds": 3,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000108-variant-0",
+      "wave_samples_sha256": "05c40be241bb5e829fc527eea7ba2d3310c9ac6ea22a7835980763c5e6ea83ba",
+      "duration": 22.57269841269841,
+      "keys": 93,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000108-variant-1",
+      "wave_samples_sha256": "daecf137c5368def47cb9375b28ec04e2c74dbe56e18fffd2e96d322a88fe466",
+      "duration": 22.57269841269841,
+      "keys": 93,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000108-variant-2",
+      "wave_samples_sha256": "0beb67c914c497976de8ec06b0fb3a135b4c080927249cd9b29f21dc6c008041",
+      "duration": 22.57269841269841,
+      "keys": 93,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000189-variant-0",
+      "wave_samples_sha256": "a33854d1ba0314146fca22a8354536e1eebf3f888712e0f8fd68af88b4103ffb",
+      "duration": 20.648344671201816,
+      "keys": 94,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000189-variant-1",
+      "wave_samples_sha256": "ca75bd20e86e6f802f7fb0efc5fc157f79e38ec9b6367c97537152a0c45333a2",
+      "duration": 20.648344671201816,
+      "keys": 94,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000189-variant-2",
+      "wave_samples_sha256": "ae327f4dfe9a5248bf9e31d3857f39f7ff4ce042d70b90a06d10d53d238afbd4",
+      "duration": 20.648344671201816,
+      "keys": 94,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000196-variant-0",
+      "wave_samples_sha256": "5e7714fb0bf316cf2d85f487407823b4eb648f12573610f5df8666384358f9d9",
+      "duration": 34.54839002267574,
+      "keys": 104,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000196-variant-1",
+      "wave_samples_sha256": "1204a70ac86b37a859cf770732be499f4efed99938b24890d2b889851fbee91f",
+      "duration": 34.54839002267574,
+      "keys": 104,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000196-variant-2",
+      "wave_samples_sha256": "63c0b90c5ceeca7968dfde92925f2f56b0d6756bbd07eb35dc8655dea3791049",
+      "duration": 34.54839002267574,
+      "keys": 104,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000221-variant-0",
+      "wave_samples_sha256": "ef02b547f791877e56c4028e8caa422d5b54da3a547a143e562a7adde36c1382",
+      "duration": 25.713197278911565,
+      "keys": 95,
+      "holds_over_four_seconds": 2,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000221-variant-1",
+      "wave_samples_sha256": "210c0576a4f13c7869f72435c6e28f8f9fab97184484aab82ba554b6d4f8708c",
+      "duration": 25.713197278911565,
+      "keys": 95,
+      "holds_over_four_seconds": 2,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000221-variant-2",
+      "wave_samples_sha256": "4e2f5dfdb0c429fcce3b27c42b03cc807fed0d1cb40ebc5415c255d2265c6a31",
+      "duration": 25.713197278911565,
+      "keys": 95,
+      "holds_over_four_seconds": 2,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000232-variant-0",
+      "wave_samples_sha256": "bcd29c2ad3f6300f1de401040c9de04d826e52c9fe56fffaacfb61722a2a1a71",
+      "duration": 22.857142857142858,
+      "keys": 73,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000232-variant-1",
+      "wave_samples_sha256": "3e965b2c84bb30ce184e5b966ec778708852ac2125afd010cffd20e00e6bcb52",
+      "duration": 22.857142857142858,
+      "keys": 73,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000232-variant-2",
+      "wave_samples_sha256": "753cf7a02bd23de2ff02e8b31e028c5d2dd2395227f572060e2f3d5f2bf7d72e",
+      "duration": 22.857142857142858,
+      "keys": 73,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000275-variant-0",
+      "wave_samples_sha256": "4833fbd178366551f46847ffa315426bc1b8df11afb649ed8c8a309a86e5c631",
+      "duration": 36.794920634920636,
+      "keys": 42,
+      "holds_over_four_seconds": 6,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 58,
+          "active_voices": 0
+        },
+        {
+          "channel": 0,
+          "pitch": 62,
+          "active_voices": 0
+        },
+        {
+          "channel": 0,
+          "pitch": 77,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-000275-variant-1",
+      "wave_samples_sha256": "1565c667d893b8f4e2d2bd12fcaa99e535a5bb588b3f44fbf3a20e8ffccf9efe",
+      "duration": 36.794920634920636,
+      "keys": 42,
+      "holds_over_four_seconds": 6,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 58,
+          "active_voices": 0
+        },
+        {
+          "channel": 0,
+          "pitch": 62,
+          "active_voices": 0
+        },
+        {
+          "channel": 0,
+          "pitch": 77,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-000275-variant-2",
+      "wave_samples_sha256": "ba5bf2dff7a5aecf9766f501ce1ff539e8d93f3a0c3e6104a574916c2307a82b",
+      "duration": 36.794920634920636,
+      "keys": 42,
+      "holds_over_four_seconds": 6,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 62,
+          "active_voices": 0
+        },
+        {
+          "channel": 0,
+          "pitch": 77,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-000436-variant-0",
+      "wave_samples_sha256": "a5c0fb0f01da97fb87c0f2a18cca4da6b019bd90dc9daa4fc49af566ae182169",
+      "duration": 34.56290249433106,
+      "keys": 99,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000436-variant-1",
+      "wave_samples_sha256": "883402d256071f976ba115bd9860cb03410dbb4584929d5e5fe7bafe3562ee30",
+      "duration": 34.56290249433106,
+      "keys": 99,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000436-variant-2",
+      "wave_samples_sha256": "ee4ee082199d3e26dda7c530ef00cbeeefcd7a952e1f92b2e7170963afcedf20",
+      "duration": 34.56290249433106,
+      "keys": 99,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000465-variant-0",
+      "wave_samples_sha256": "2edb286ca59780e7f3a4d2f1a0a21c66086d786fb5053a7ef1656a4299be8cdd",
+      "duration": 22.444988662131518,
+      "keys": 83,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000465-variant-1",
+      "wave_samples_sha256": "1d43fdc055fb27034574dad80d5307b416adb2c5cdf507da7b2bf7d25aae42ef",
+      "duration": 22.444988662131518,
+      "keys": 83,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000465-variant-2",
+      "wave_samples_sha256": "e799433e1e4ea1650b6414247209a9404799614b99ef3bfcb85a3fc724094a84",
+      "duration": 22.444988662131518,
+      "keys": 83,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000496-variant-0",
+      "wave_samples_sha256": "a49a61323253dda665e8822eeb7242cd69f568fa67b65a20fdacb726cbe3e845",
+      "duration": 38.86439909297052,
+      "keys": 98,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000496-variant-1",
+      "wave_samples_sha256": "13833391f0e4344a1947b84c41564dde085bd7ce1127c4a648660ad6824f8b87",
+      "duration": 38.86439909297052,
+      "keys": 98,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000496-variant-2",
+      "wave_samples_sha256": "8b79874ddad6b3192cce3dcd3a7758dafa4aa621f70c699424491d49286046f4",
+      "duration": 38.86439909297052,
+      "keys": 98,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000662-variant-0",
+      "wave_samples_sha256": "b251912fb8ee039567e1ddd9886221188a234a2d376f9752ad340b9feca8c3ce",
+      "duration": 40.59718820861678,
+      "keys": 115,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000662-variant-1",
+      "wave_samples_sha256": "e5966caa5d41e4c6f33dd3f02532849741b5b7da05bd71cb27e201f102bbd7e6",
+      "duration": 40.59718820861678,
+      "keys": 115,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000662-variant-2",
+      "wave_samples_sha256": "9fce941c85eccb6ce2825c5d45a038a22a472b11c2f145158d86638b6ff7bdd1",
+      "duration": 40.59718820861678,
+      "keys": 115,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000703-variant-0",
+      "wave_samples_sha256": "ddff4d09cbee433beb686b566fd890080336b4bda52a7968b9d081f28d70ae62",
+      "duration": 19.461224489795917,
+      "keys": 83,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000703-variant-1",
+      "wave_samples_sha256": "ce57d2d3dd3658dca3492d3c9c9817808be67826ea73c74b70249d5e5085a811",
+      "duration": 19.461224489795917,
+      "keys": 83,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000703-variant-2",
+      "wave_samples_sha256": "3173091e3b8a83556f15756f490047a365a5bc9e1a5d083caa75b03aa6ea878b",
+      "duration": 19.461224489795917,
+      "keys": 83,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000725-variant-0",
+      "wave_samples_sha256": "be5b7021f64542e4b1487a8ea47ef51c7a2c78100c1e003641fa0f999ba90d7e",
+      "duration": 26.102131519274376,
+      "keys": 104,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000725-variant-1",
+      "wave_samples_sha256": "6d34507e47cff0d4a42007268bb0aba48697395957904d27746d2d9d0841e882",
+      "duration": 26.102131519274376,
+      "keys": 104,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000725-variant-2",
+      "wave_samples_sha256": "dfd6509fb5f727c3f4c527ca5cb34ae7a8d1ae9742ffad22f19b27fa29ad1896",
+      "duration": 26.102131519274376,
+      "keys": 104,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000796-variant-0",
+      "wave_samples_sha256": "19ac3669bf28c02e1282aa3a046ed7554b62e23ecd07a42575ba7dd4fd2cd32b",
+      "duration": 19.652789115646257,
+      "keys": 54,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000796-variant-1",
+      "wave_samples_sha256": "94eeebb0e20f1706c9c6a5b7eff81155dc527435016923203369491ab53a9a4c",
+      "duration": 19.652789115646257,
+      "keys": 54,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000796-variant-2",
+      "wave_samples_sha256": "fb2d2d59a5d4fdf309ca35cf7b4768139d1823ae8c8308f657852ba17e054a36",
+      "duration": 19.652789115646257,
+      "keys": 54,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000798-variant-0",
+      "wave_samples_sha256": "3df8c7effeb3aa3578a6740c7e7a426f70384225b46ca6c5009ed84529d082fe",
+      "duration": 40.0021768707483,
+      "keys": 79,
+      "holds_over_four_seconds": 8,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 74,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-000798-variant-1",
+      "wave_samples_sha256": "c75bcc9b423c8833fb6805f194f6a4b4994b44e66add571f653f5af40e55b4cf",
+      "duration": 40.0021768707483,
+      "keys": 79,
+      "holds_over_four_seconds": 8,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 74,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-000798-variant-2",
+      "wave_samples_sha256": "655284efb22e66c05fe4793af3c4bd3e768a820cb4a1b2edc782a3a1c9847e60",
+      "duration": 40.0021768707483,
+      "keys": 79,
+      "holds_over_four_seconds": 8,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 74,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-000954-variant-0",
+      "wave_samples_sha256": "325b9ba0302619d9027b97b691d99ebdc38431ef5b481101dd7762b492bdbdb1",
+      "duration": 21.68453514739229,
+      "keys": 99,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000954-variant-1",
+      "wave_samples_sha256": "c699222b6818a6267a55860886a9e7802bf2949b253c7322238c3b8cb6ab0e2f",
+      "duration": 21.68453514739229,
+      "keys": 99,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000954-variant-2",
+      "wave_samples_sha256": "d0286fc39f20ed2da1eafdedec35c23bd443a49765da447b9b3faf2be9eb62f5",
+      "duration": 21.68453514739229,
+      "keys": 99,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-000993-variant-0",
+      "wave_samples_sha256": "b029f23ed586eee4d7ee6b31f68562c95580a1957cb8ed13c8bf2061faeb14a8",
+      "duration": 32.98684807256236,
+      "keys": 82,
+      "holds_over_four_seconds": 5,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 68,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-000993-variant-1",
+      "wave_samples_sha256": "5e8620e8ebf47cd5703a6c8560ddd00d6fa61320a907a3d1b903f3f5fdb874f3",
+      "duration": 32.98684807256236,
+      "keys": 82,
+      "holds_over_four_seconds": 5,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 68,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-000993-variant-2",
+      "wave_samples_sha256": "881b79ef3b82d2e3c30394d93275a6101cd0f94041a18a690cc7a432c7fb8523",
+      "duration": 32.98684807256236,
+      "keys": 82,
+      "holds_over_four_seconds": 5,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 68,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-001012-variant-0",
+      "wave_samples_sha256": "277142fb850e65dd32c050a974f62030ef951c2cff30be19303a7c54d4d50ef4",
+      "duration": 27.422766439909296,
+      "keys": 83,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001012-variant-1",
+      "wave_samples_sha256": "6f935d42c7f595ff0d4d1ee7dfb3c21174e21edb0549921728ef4cae33689c4e",
+      "duration": 27.422766439909296,
+      "keys": 83,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001012-variant-2",
+      "wave_samples_sha256": "e19f78db826a24b0853666368cceee46635031500e340c99261de132e9354528",
+      "duration": 27.422766439909296,
+      "keys": 83,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001043-variant-0",
+      "wave_samples_sha256": "6816d0fd62241dc8c0be2a3ba2fbd42834222e4e151f7036d72230cfcad63648",
+      "duration": 21.202721088435375,
+      "keys": 108,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001043-variant-1",
+      "wave_samples_sha256": "b8a55961294d4c09e6da61da021670b2567bc378897a603d2313d3b9a3439d49",
+      "duration": 21.202721088435375,
+      "keys": 108,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001043-variant-2",
+      "wave_samples_sha256": "618e1d7dc37ee24d4b105b491986e7923bb467af7e22b2f9866d3ef5fa811842",
+      "duration": 21.202721088435375,
+      "keys": 108,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001085-variant-0",
+      "wave_samples_sha256": "f01d94cff132fbd9a197af5e217ed039190f063bdae590f8ea53bb581254e691",
+      "duration": 41.85687074829932,
+      "keys": 74,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 50,
+          "active_voices": 0
+        },
+        {
+          "channel": 0,
+          "pitch": 66,
+          "active_voices": 0
+        },
+        {
+          "channel": 0,
+          "pitch": 69,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-001085-variant-1",
+      "wave_samples_sha256": "eaa21862c2b214a27cd8be1e89a6df82aacc73a77fdaf536c68255f9a8bb0272",
+      "duration": 41.85687074829932,
+      "keys": 74,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 50,
+          "active_voices": 0
+        },
+        {
+          "channel": 0,
+          "pitch": 66,
+          "active_voices": 0
+        },
+        {
+          "channel": 0,
+          "pitch": 69,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-001085-variant-2",
+      "wave_samples_sha256": "590a45ee839ce0a81453fa76eed4d64423a2b607192c2f1d7c97b34f8ce8ef09",
+      "duration": 41.85687074829932,
+      "keys": 74,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 66,
+          "active_voices": 0
+        },
+        {
+          "channel": 0,
+          "pitch": 69,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-001127-variant-0",
+      "wave_samples_sha256": "cae1b3560944f0f9b7eb263a324cabed9ac3c6e9423b0fff5c4ab1883671cf91",
+      "duration": 19.92562358276644,
+      "keys": 104,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001127-variant-1",
+      "wave_samples_sha256": "ad4f4762519cb4adac4235d5bb7727e2d604b5bf4ae0f376a37426ebcd33c9a3",
+      "duration": 19.92562358276644,
+      "keys": 104,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001127-variant-2",
+      "wave_samples_sha256": "c44603b71e1e699632ae020a57ed56c728fad3874ac1cc5bcee506ebcfa0ec17",
+      "duration": 19.92562358276644,
+      "keys": 104,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001248-variant-0",
+      "wave_samples_sha256": "277762a3bea4ede093fb6b9a08ea7075bfed2fe012190976b2bd6016aeb69f6e",
+      "duration": 35.842902494331064,
+      "keys": 103,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001248-variant-1",
+      "wave_samples_sha256": "141d6f17c2775ff18e68dc2ff74ae6bde4db5fb4b0b8934918582f2d33424bcb",
+      "duration": 35.842902494331064,
+      "keys": 103,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001248-variant-2",
+      "wave_samples_sha256": "39f2a87537a27d03c3f32b6b64f85889d50e72d0b1ae88376f056d226b21169b",
+      "duration": 35.842902494331064,
+      "keys": 103,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001266-variant-0",
+      "wave_samples_sha256": "dac8f9c9478a9d5bb94ca0288067a57fec90eefa6e0bdb776c97687f3670a252",
+      "duration": 21.574240362811793,
+      "keys": 81,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001266-variant-1",
+      "wave_samples_sha256": "daa75495b9ec34c84ce181aa859fb62893c219fad96a302833914722fdbcc1c5",
+      "duration": 21.574240362811793,
+      "keys": 81,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001266-variant-2",
+      "wave_samples_sha256": "4d05584eeb09fff08d1088151773629a4e860d06a513a2c1b64a7d130b861c11",
+      "duration": 21.574240362811793,
+      "keys": 81,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001378-variant-0",
+      "wave_samples_sha256": "5d2d5fe96b42b1962c199595b6af6fce01ab5df0ca84a4e663a23445657ad530",
+      "duration": 22.444988662131518,
+      "keys": 86,
+      "holds_over_four_seconds": 2,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001378-variant-1",
+      "wave_samples_sha256": "bbda757665e6889553082d67dcd5cc51fc20020edce585c254509d7f26ca331e",
+      "duration": 22.444988662131518,
+      "keys": 86,
+      "holds_over_four_seconds": 2,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001378-variant-2",
+      "wave_samples_sha256": "998f5230e1f7a4a2ab91d45f3ef2e43056e9f4eccf2b0d9f388e7a35b44f42bb",
+      "duration": 22.444988662131518,
+      "keys": 86,
+      "holds_over_four_seconds": 2,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001425-variant-0",
+      "wave_samples_sha256": "ec8a1391ad60b128c9cf9db6d165a971130efe70ab72be3da386118ea91752ff",
+      "duration": 40.01378684807256,
+      "keys": 99,
+      "holds_over_four_seconds": 2,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001425-variant-1",
+      "wave_samples_sha256": "c02663c03dbd725fcbb8ff84db0a45a3b0f81b78820f1ba37012e9b282988d61",
+      "duration": 40.01378684807256,
+      "keys": 99,
+      "holds_over_four_seconds": 2,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001425-variant-2",
+      "wave_samples_sha256": "69d6df443071b08d6bc0e088872cdb690bf9c4f5b318175456fb72003fdae076",
+      "duration": 40.01378684807256,
+      "keys": 99,
+      "holds_over_four_seconds": 2,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001494-variant-0",
+      "wave_samples_sha256": "df2a97bb5856e64116980791291f80a837a146c08f1f20ac1dbf8b6a36aad6bf",
+      "duration": 23.63501133786848,
+      "keys": 107,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001494-variant-1",
+      "wave_samples_sha256": "5eb083aa2dbfd8e9dfe4767101bd2514729360ee68e800ba7ac8c279db3ee1bc",
+      "duration": 23.63501133786848,
+      "keys": 107,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001494-variant-2",
+      "wave_samples_sha256": "239de66b4da053ab43bda04cb695eab31afb3aa466f91f04318a442e4799f45e",
+      "duration": 23.63501133786848,
+      "keys": 107,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001497-variant-0",
+      "wave_samples_sha256": "af6565a2ed6de67fe29270d9ec92d4dee097ff7c8aabae38da096fa56acc6172",
+      "duration": 24.241632653061224,
+      "keys": 95,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001497-variant-1",
+      "wave_samples_sha256": "af8da45d442900f2fc7dda583f81fe7141c3633516736c9b5708a06e773c329f",
+      "duration": 24.241632653061224,
+      "keys": 95,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001497-variant-2",
+      "wave_samples_sha256": "2528b2d766851d92fcd923b79530b1a4e015bb9ffd53162b1280515088378a16",
+      "duration": 24.241632653061224,
+      "keys": 95,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001634-variant-0",
+      "wave_samples_sha256": "8977eba2e6aa8c76dfc8bf373a2377c592eb26ebb6a7b5d7bea01a4ad78dde7c",
+      "duration": 21.672925170068027,
+      "keys": 76,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001634-variant-1",
+      "wave_samples_sha256": "1ee85751970fb70e103e40afac18072a3f6b337ae90512dc84412edb16e47de7",
+      "duration": 21.672925170068027,
+      "keys": 76,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001634-variant-2",
+      "wave_samples_sha256": "c59dd51ce34d9752ad4c6f561ea8eb8a35009b15858d01fa4ae46e9466d22a60",
+      "duration": 21.672925170068027,
+      "keys": 76,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001685-variant-0",
+      "wave_samples_sha256": "1713a68d09ea2ae38910fbeb046db5dfe27b6e672ccad663f032b1a6b5973b7a",
+      "duration": 31.92453514739229,
+      "keys": 109,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001685-variant-1",
+      "wave_samples_sha256": "c070ce99e8014acc71890c0b076d3a92950abf777868e3fa0a6d380853595538",
+      "duration": 31.92453514739229,
+      "keys": 109,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001685-variant-2",
+      "wave_samples_sha256": "ce1ef8e80726d5d0dac22088500cda1c6ee6f3c7ec3f58276d0c145ff6c0c8c5",
+      "duration": 31.92453514739229,
+      "keys": 109,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001777-variant-0",
+      "wave_samples_sha256": "e981f08ba61d68d87b34a5457198a8b9a28d013c7e9487b1960c6a43a75ef64b",
+      "duration": 31.576235827664398,
+      "keys": 106,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001777-variant-1",
+      "wave_samples_sha256": "c54d6910ff78d5b422bc6074f3c604a16b21775994f436687de7342c86b00c79",
+      "duration": 31.576235827664398,
+      "keys": 106,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001777-variant-2",
+      "wave_samples_sha256": "d3f7909a49988ee673a12e80dc1e12128090055ab2f4228f4487fbdd23a0fa67",
+      "duration": 31.576235827664398,
+      "keys": 106,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001822-variant-0",
+      "wave_samples_sha256": "9276a4f5b63a3c6fe05e31a8d537168ed33ec1619f0ec482dcc740be927af51e",
+      "duration": 20.961814058956914,
+      "keys": 109,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001822-variant-1",
+      "wave_samples_sha256": "9c75dec114d31b6733ac3b00df5f1e54fd7e7e6f6c5c494c2736a1ea5883ce1d",
+      "duration": 20.961814058956914,
+      "keys": 109,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001822-variant-2",
+      "wave_samples_sha256": "b106e39f695e647f78992001e9a4b7b2ea2e56772d3dab872b1dd812e875264e",
+      "duration": 20.961814058956914,
+      "keys": 109,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001837-variant-0",
+      "wave_samples_sha256": "d9a1038e2fc6c673424976e2add13307e4a5068d336e881e428c2a914e3b4ef0",
+      "duration": 38.333242630385485,
+      "keys": 111,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 71,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-001837-variant-1",
+      "wave_samples_sha256": "161663e67aa8c3ab4ab1a03312fc10f3afae02f937a8e69335e0e2945a97f230",
+      "duration": 38.333242630385485,
+      "keys": 111,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 71,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-001837-variant-2",
+      "wave_samples_sha256": "79c13e60a01a4a62f9043232e0a4266050234a6f4296531ed3ea2242e2aa31d6",
+      "duration": 38.333242630385485,
+      "keys": 111,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": [
+        {
+          "channel": 0,
+          "pitch": 71,
+          "active_voices": 0
+        }
+      ]
+    },
+    {
+      "id": "coco-v54-001893-variant-0",
+      "wave_samples_sha256": "87ead264d3fcaeab75a7eaed2b5034d0b2cfa39d577f60a89b2be062cda00f68",
+      "duration": 32.61823129251701,
+      "keys": 102,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001893-variant-1",
+      "wave_samples_sha256": "5ed02a249408c470feae7069c642491a1db79a05b231c092ca110f756ad5df7b",
+      "duration": 32.61823129251701,
+      "keys": 102,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001893-variant-2",
+      "wave_samples_sha256": "57a9e86f250de00cad0a94c1d93ac1502706ba5daefe59b4fc12e4c43da71818",
+      "duration": 32.61823129251701,
+      "keys": 102,
+      "holds_over_four_seconds": 1,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001932-variant-0",
+      "wave_samples_sha256": "56bdb3df00e58c1878e0f5d6ba324d92216333a09ae0b571e11a246291ce3c2c",
+      "duration": 22.584308390022677,
+      "keys": 77,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001932-variant-1",
+      "wave_samples_sha256": "11c5e14166be711c69d6314dbdcaaf75b3e6984b15c6fd13e3737ee97fb4deee",
+      "duration": 22.584308390022677,
+      "keys": 77,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001932-variant-2",
+      "wave_samples_sha256": "e2b617959d28d25d32f2dafdecd72881caa07ff0bc37781c9f97d9ac38b76953",
+      "duration": 22.584308390022677,
+      "keys": 77,
+      "holds_over_four_seconds": 0,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001986-variant-0",
+      "wave_samples_sha256": "f9d93aad21511a99131f760d4983aa2d1854b5abed244c58df764f2cbb80447f",
+      "duration": 27.890068027210884,
+      "keys": 70,
+      "holds_over_four_seconds": 3,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001986-variant-1",
+      "wave_samples_sha256": "3c1ca0cfde0278bbfdfd6fbb414c2a4d028696e0a239f02ef566906c3e5f5848",
+      "duration": 27.890068027210884,
+      "keys": 70,
+      "holds_over_four_seconds": 3,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001986-variant-2",
+      "wave_samples_sha256": "ca33ea3c12c6beeb46164bad8579a6477f0e0225a8fc43c6e3bb4e9ba5d955b2",
+      "duration": 27.890068027210884,
+      "keys": 70,
+      "holds_over_four_seconds": 3,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001999-variant-0",
+      "wave_samples_sha256": "a0eb1860393f030f72ad137eb1f640ffef47bed4243d8fea33566f28903b5b69",
+      "duration": 32.258321995464854,
+      "keys": 95,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001999-variant-1",
+      "wave_samples_sha256": "a4c811589770ecedecea0ccc89426699e8ea8734545f60e59f083158b227a207",
+      "duration": 32.258321995464854,
+      "keys": 95,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": []
+    },
+    {
+      "id": "coco-v54-001999-variant-2",
+      "wave_samples_sha256": "2f5e07ef8efbe9c80f848b5259e5556edc5b4134c9baa47c4a583ece0c42d371",
+      "duration": 32.258321995464854,
+      "keys": 95,
+      "holds_over_four_seconds": 4,
+      "natural_sample_expirations": []
+    }
+  ]
+}
