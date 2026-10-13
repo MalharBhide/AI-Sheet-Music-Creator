@@ -1,0 +1,50 @@
+{
+  "full_suite": "1113 passed, 6 skipped, 5 warnings in 31.33s",
+  "full_suite_log_sha256": "b7f734fd3ef5a63421caf612cdfd45c6d8db799c366d2274bec35e7bb1798901",
+  "ruff": "passed",
+  "source_sha256": {
+    "left_ensemble_v52.py": "11b20a081d069d577471c6bcfe62c761bf0ddce3db1e8c18ac8813bc760628a8",
+    "ensemble_contract_v52.py": "76c4045bbb4eb158614344398ecb9464b548f162ebeceefcaaf1509eaf5509c4",
+    "evaluate_left_ensemble_v52.py": "f57b00d7a5860bd08698bde3c3909cc27ef3262fbe8c0e583ea34fe7cfa545f5",
+    "test_left_ensemble_v52.py": "4460eb235ca992f6aa94dda06f00dcbd8c179956d6e0c562d64d83d06159eef1",
+    "test_ensemble_contract_v52.py": "ce0ec6f621fcdc5887265fddcc0ea23340f4347d88d3f802a4501926c3156297"
+  },
+  "verified_member_load": {
+    "members": [
+      {
+        "study": "v48",
+        "profile": {
+          "name": "boundary-protected",
+          "width": 20,
+          "keep_weight": 24,
+          "presence_weight": 4,
+          "seed": 293002
+        },
+        "epoch": 100,
+        "threshold": 0.98,
+        "veto_threshold": 0.3
+      },
+      {
+        "study": "v51",
+        "profile": {
+          "name": "fresh-presence-balanced",
+          "width": 12,
+          "keep_weight": 24,
+          "presence_weight": 4,
+          "anchor_weight": 2,
+          "real_piano_weight": 4,
+          "seed": 296001
+        },
+        "epoch": 25,
+        "threshold": 0.95,
+        "veto_threshold": 0.3
+      }
+    ],
+    "verified_checkpoints_loaded": 2,
+    "no_joint_predictions": true
+  },
+  "no_joint_predictions_yet": true,
+  "no_consumed_or_fresh_tests_read": true,
+  "new_weights_deployed": false,
+  "no_user_audio_or_scores": true
+}

@@ -34,3 +34,9 @@ tests have been read.
 
 Composition preflight: nine focused checks and the full 1,102-test suite pass
 with six skips. Joint model loading and validation remain pending.
+
+The complete validation runner and frozen-source contract pass 1,113 tests with
+six skips. Both exact preregistered choices load with their own verified
+checkpoints and normalizers. Joint validation is ready to run once; source
+calibration, complete population, per-recording preservation and aggregate gain
+receipts are checked before any consumed or fresh test access.
