@@ -1,0 +1,61 @@
+import hashlib,json
+from collections import Counter
+from pathlib import Path
+import numpy as np
+import soundfile as sf
+import struct
+from prepare_pdmx_piano_v53 import load, tasks
+from acquire_pdmx_piano_v53 import sources
+from prepare_robust_training_stems import digest
+root=Path('/training/pdmx-piano-v53-observations-v2')
+previous=Path('/training/pdmx-piano-v53-observations')
+items=load(root)
+new_plan=json.loads((root/'plan.json').read_text());old_plan=json.loads((previous/'plan.json').read_text())
+witness=Path('/src/training/results/pdmx-piano-v53-preparation-v1/sources/prepare_pdmx_piano_v53.py.txt')
+assert digest(witness)==old_plan['code_sha256']['prepare_pdmx_piano_v53.py']
+old_source=witness.read_text();new_source=Path('/src/training/prepare_pdmx_piano_v53.py').read_text()
+assert old_source.replace('plan["variants"] != [list(v) for v in VARIANTS]','plan["variants"] != list(VARIANTS)')==new_source
+expected=dict(old_plan);expected['code_sha256']=dict(expected['code_sha256']);expected['code_sha256']['prepare_pdmx_piano_v53.py']=digest(Path('/src/training/prepare_pdmx_piano_v53.py'))
+assert expected==new_plan
+old_manifest=json.loads((previous/'manifest.json').read_text());assert old_manifest['plan_sha256']==digest(previous/'plan.json')
+old={i['id']:i for i in old_manifest['items']};assert len(old)==len(items)==45
+rows=[]
+for item in items:
+ prior=old[item['id']];folder=previous/item['id'];new_folder=root/item['id']
+ with np.load(folder/'features.npz',allow_pickle=False) as a,np.load(new_folder/'features.npz',allow_pickle=False) as b:
+  assert digest(folder/'features.npz')==prior['cache_sha256']
+  assert str(a['plan_sha256'])==old_manifest['plan_sha256']
+  assert set(a.files)==set(b.files)
+  equal=all(np.array_equal(a[k],b[k]) for k in a.files if k!='plan_sha256')
+  assert equal,'Physical feature changed during loader-only rebuild'
+ for filename,field in [('original.wav','rendered_audio_sha256'),('source.mp3','mp3_sha256'),('decoded.wav','audio_sha256'),('decoded-codec.wav','raw_codec_audio_sha256')]:
+  assert digest(folder/filename)==prior[field]
+  assert digest(new_folder/filename)==item[field]
+  a,b=(folder/filename).read_bytes(),(new_folder/filename).read_bytes()
+  if filename in ('original.wav','decoded.wav'):
+   assert a[48:52]==b[48:52]==b'PEAK' and a[52:60]==b[52:60]==struct.pack('<II',16,1)
+   assert a[:60]+a[64:]==b[:60]+b[64:], 'Unexpected WAV container difference'
+   x,r=sf.read(folder/filename,dtype='float32');y,q=sf.read(new_folder/filename,dtype='float32')
+   assert r==q==22050 and np.array_equal(x,y), 'Musical samples changed'
+  else:
+   assert a==b, 'MP3 or raw codec bytes changed' 
+ assert prior['reference']==item['reference'].tolist() and prior['pitch_reference']==item['pitch_reference'].tolist()
+ assert prior['codec_clock']==item['codec_clock']
+ selected=item['eligible']&item['mask']
+ rows.append({'id':item['id'],'source_group':item['source_group'],'candidate_notes':len(item['events']),
+  'supervised_keep':int((item['y'][selected]==1).sum()),'supervised_remove':int((item['y'][selected]==0).sum()),
+  'complete_reference_keys':len(item['reference']),'pitch_support_intervals':len(item['pitch_reference']),
+  'codec_lag_samples':item['codec_clock']['codec_lag_samples'],
+  'padding_adjustment_samples':item['codec_clock']['silent_padding_adjustment_samples'],
+  'audio_sample_values_bit_identical':True,'mp3_and_raw_codec_bytes_bit_identical':True,'wav_container_difference_limited_to_peak_timestamp':True,'physical_arrays_bit_identical':equal})
+result={'version':'pdmx-v53-strict-preparation-audit-v2','recordings':len(items),'groups':dict(Counter(i['group'] for i in items)),
+ 'corpora':dict(Counter(i['corpus'] for i in items)),'candidate_notes':sum(r['candidate_notes'] for r in rows),
+ 'supervised_keep':sum(r['supervised_keep'] for r in rows),'supervised_remove':sum(r['supervised_remove'] for r in rows),
+ 'complete_reference_keys':sum(r['complete_reference_keys'] for r in rows),'pitch_support_intervals':sum(r['pitch_support_intervals'] for r in rows),
+ 'all_native_audio_samples_and_physical_arrays_unchanged':True,'wav_container_note':'libsndfile PEAK chunk records the file-write timestamp; only those four non-musical bytes differ. Each run retains its own exact file hashes. Samples, MP3/raw codec bytes, features and labels must be bit-identical.','all_codec_lags_zero':all(r['codec_lag_samples']==0 for r in rows),
+ 'all_padding_adjustments_zero':all(r['padding_adjustment_samples']==0 for r in rows),
+ 'manifest_sha256':digest(root/'manifest.json'),'plan_sha256':digest(root/'plan.json'),
+ 'previous_preserved_manifest_sha256':digest(previous/'manifest.json'),
+ 'producer_sha256':digest(Path(__file__)),'no_consumed_or_fresh_inference':True,'no_user_audio_or_scores':True,'new_weights_deployed':False,'per_recording':rows}
+with (root/'preparation-audit.json').open('x') as f:json.dump(result,f,indent=2)
+print(json.dumps({k:v for k,v in result.items() if k!='per_recording'}),flush=True)

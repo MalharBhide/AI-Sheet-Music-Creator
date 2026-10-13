@@ -102,7 +102,19 @@ the website model. The complete 1,122-test preflight and failure evidence are ar
 The [additional piano-source assessment](results/piano-source-options-v49-v1/README.md)
 records a verified PDMX catalog, an empty RGTM-PNO MIDI archive, and exclusions
 for noncommercial or unverified modality terms. It is not a new training set or
-an accuracy claim; none of those sources has supplied audio inference or fitting.
+an accuracy claim. The later [PDMX preparation](results/pdmx-piano-v53-preparation-v2/README.md)
+selects two exact CC0 solo-piano works into one fitting-only composer group.
+Complete-work rendering before waveform crops preserves crossing holds without
+manufactured attacks/releases. The corrected 45-clip preparation passes strict
+source/clock reload and native sample/feature parity. A scalar-dynamics loader
+check was fixed before fitting, preserving the original run and rebuilding
+separately; no old source/hash guard was relaxed. The full suite passes 1,163
+tests with six skips.
+
+The predeclared [V53 new-data study](results/left-precision-v53-v1/README.md)
+trains two fresh models on 2,122 fitting recordings with unchanged held-out
+validation and release gates. It inherits no V52 checkpoint or failed test data.
+No new weights are deployed.
 
 V44, TinySOL and NRG-CP preparation use the pinned V32 reader in
 `.training/left-precision-v43-replay` for historical physical features. Do not
