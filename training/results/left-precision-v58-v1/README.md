@@ -23,3 +23,21 @@ or retuning after test failure. Production stays V43 until every gate passes.
 Status: preregistered after 1,363 passing tests, six skips and five warnings;
 native model/release imports and phase contract pass. Fitting is ready, with
 no candidate predictions or consumed/fresh test reads yet.
+
+Final status: both profiles completed 100 epochs and all 144 validation settings.
+82 settings preserve all required validation recordings, but no single setting
+satisfies every separate gain under both policies. The study is withheld.
+No consumed or fresh test was read and no website model asset changed.
+Each profile proved all-KEEP initial permissions on all 64,118 fitting candidates;
+exact checkpoint phase clocks were checked throughout fitting.
+
+Final code preflight: 1,415 tests passed, six skipped, five warnings. Prospective
+NPZ/runtime support passes independent raw-head probability parity across batch
+boundaries, malformed-clock/weight rejection and immutable baseline intersection
+checks using generated feature fixtures only. The fresh export guard validates
+the original fixed seed/family mapping and complete per-recording preservation.
+These helpers are not production-routed and do not qualify the withheld weights.
+
+Native release smoke check passed: the withheld selection is rejected before
+any consumed or independent fresh inference. All original source contracts and
+both approved production model assets remain unchanged.

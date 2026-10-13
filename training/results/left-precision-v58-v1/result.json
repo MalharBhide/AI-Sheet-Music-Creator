@@ -1,0 +1,28 @@
+{
+  "status": "withheld_no_validation_winner",
+  "training_recordings": 2302,
+  "timed_validation_recordings": 381,
+  "pitch_only_validation_recordings": 237,
+  "profiles_completed": 2,
+  "epochs_per_profile": 100,
+  "initial_permissions_candidates_per_profile": 64118,
+  "initial_all_keep_contract_passed_both_profiles": true,
+  "validation_settings": 144,
+  "plan_sha256": "3d64bf2cfa73f26f6eea584485dcf13161b3dc297cc1eab8e65f646401b630b5",
+  "batch_selection_sha256": "32b5ba21e7b006044f38a3958e09991715293fa7c3a76dc1d6fb43600ee360e1",
+  "checkpoints_local_only": {
+    "phase-balanced/epoch-025.pt": "cae6bbd86f0694d184b0a1c8f749c89345d2998033dfe7bae1a84124721f67bb",
+    "phase-balanced/epoch-050.pt": "165aa3919851d1194df0f3dcd1d812ae637e41f7d1f5c36c5c3b02f3d567e917",
+    "phase-balanced/epoch-100.pt": "ca31dec2c72a5c5d8fc7c87a7fe4fbf69f468a27f75745ac0a9bf442dfdecd43",
+    "phase-protected/epoch-025.pt": "d4b317b5b9734f433ebf34707b2c5732707aee80eb7646608b52fb8151757e14",
+    "phase-protected/epoch-050.pt": "bf4b1c031bf7257d39d245de917e274e7d64dfbff5c6a79f9b63236ecfa58907",
+    "phase-protected/epoch-100.pt": "08c463962e15098f3e249e3c86a7c6bfdd9a66fd33b4d3ce1122adb311e57199"
+  },
+  "no_consumed_or_fresh_tests_read": true,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false,
+  "approved_asset_sha256": "38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda",
+  "final_preflight": "1415 passed, 6 skipped, 5 warnings",
+  "native_release_imports_passed": true,
+  "withheld_study_blocked_before_regression_or_fresh_inference": true
+}
