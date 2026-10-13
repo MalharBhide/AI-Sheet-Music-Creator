@@ -1,0 +1,32 @@
+{
+  "version": "coco-piano-v54-preparation-preregistration-v1",
+  "status": "training-only source preparation; not model accuracy evidence",
+  "selected_training_parent_count": 36,
+  "expected_training_observations": 108,
+  "dynamics_variants": [
+    0.45,
+    0.7,
+    1.0
+  ],
+  "bitrate_cycle": [
+    48,
+    128,
+    192
+  ],
+  "complete_work_rendering": true,
+  "source_frame_seconds": 0.004,
+  "no_crop_or_retrigger": true,
+  "volume_to_velocity": "round(1+126*volume), clipped 1..127; authored mapping, not original instrumental performance velocity",
+  "reject_all_ambiguous_same_key_commands": true,
+  "source_screen_sha256": "1f1e9211a66475025bb4a59e8f9416f6f09ad51d97a9b9b5cb3d7f81495a2908",
+  "source_sha256": {
+    "acquire_coco_piano_v54.py": "94ccc4fe2c0d6e5bc7544805053578eedb056046971f0a2228d0137bb50f52be",
+    "prepare_coco_piano_v54.py": "f0997e7c8d3dc4649947bf4f22100016d4c98f4804304ce6687272eb088ba8c4",
+    "test_coco_piano_v54.py": "6f40beca7e856b18182545b024e8f9dd87cec0f59d135f3a855d65da89d6ec3c"
+  },
+  "no_new_validation_or_test_sources": true,
+  "no_original_ensemble_audio": true,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false,
+  "release_gates_unchanged": true
+}
