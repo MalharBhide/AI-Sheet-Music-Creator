@@ -20,3 +20,20 @@ after failure. Production remains V43 unless every release gate passes.
 
 Status: fitting preregistered after 1,326 passing tests, six skips and five
 warnings. Training is ready; no candidate has been evaluated or released.
+
+Final fitting outcome: both profiles completed all 100 epochs and all 144
+predeclared validation settings. No setting met every preservation and separate
+domain-gain requirement. The study is withheld; no consumed or fresh test was
+read, no runner-up was selected and no website model asset changed. Search
+reports, full diagnostic recording rows, learning curves and local checkpoint
+hashes are archived. Improvements in different settings cannot be combined
+into a claimed qualifying model.
+
+Final code preflight: 1,347 tests passed, six skipped, five warnings. The
+release-stage proof gates require complete matching cohorts, exact recording
+identities, preserved timing/coverage and consistent separate gain totals.
+They do not make this withheld study eligible for release.
+
+Native smoke verification passed: both release modules import, and the
+withheld study fails at the frozen-winner guard before any consumed or fresh
+evaluation. No source/checkpoint swap or threshold change is attempted.

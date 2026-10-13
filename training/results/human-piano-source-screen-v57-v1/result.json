@@ -1,0 +1,34 @@
+{
+  "checked_date": "2026-10-13",
+  "metadata_and_publisher_pages_only": true,
+  "no_audio_midi_annotations_or_checkpoints_acquired": true,
+  "no_user_audio_or_scores": true,
+  "no_model_inference": true,
+  "no_training_population_change": true,
+  "sources": [
+    {
+      "name": "SMD MIDI-Audio Piano Music",
+      "publisher": "https://audiolabs-erlangen.com/resources/MIR/SMD/midi",
+      "reported_license": "CC-BY-NC-SA-3.0",
+      "decision": "excluded_noncommercial"
+    },
+    {
+      "name": "IDMT-PIANO-MM",
+      "publisher": "https://www.idmt.fraunhofer.de/en/publications/datasets/piano-mm.html",
+      "reported_license": "CC-BY-NC-ND-4.0",
+      "decision": "excluded_noncommercial_evaluation_only"
+    },
+    {
+      "name": "PianoVAM",
+      "publisher": "https://huggingface.co/datasets/PianoVAM/PianoVAM_v1",
+      "reported_license": "CC-BY-NC-SA-4.0",
+      "decision": "excluded_noncommercial"
+    },
+    {
+      "name": "SKY-Piano",
+      "publisher": "https://joonhyungbae.github.io/skypiano/",
+      "reported_license": "Per-modality release terms; specific audio/MIDI commercial grant not established in this screen",
+      "decision": "not_admitted_license_evidence_incomplete"
+    }
+  ]
+}

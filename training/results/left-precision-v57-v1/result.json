@@ -1,0 +1,27 @@
+{
+  "status": "withheld_no_validation_winner",
+  "training_recordings": 2302,
+  "new_training_recordings": 72,
+  "timed_validation_recordings": 381,
+  "pitch_only_validation_recordings": 237,
+  "profiles_completed": 2,
+  "epochs_per_profile": 100,
+  "validation_settings": 144,
+  "plan_sha256": "b8ffebf1eaadebf24cd9dcbb8889afa8f5185622697c770846d08f975295f237",
+  "batch_selection_sha256": "6bbfff16f764644695054f333da94098206d3e5e7ea1848bc2e11b3eb058c0dc",
+  "checkpoints_local_only": {
+    "keynata-tail-balanced/epoch-025.pt": "d083660acbda80b7eaecf60984713e97e0e9f7b3427a04452f6cbea7537ab41d",
+    "keynata-tail-balanced/epoch-050.pt": "6d56f294e87b984e7efda7aa9a3d1d1cc9b7cf317f0113addb9e93860a83cc86",
+    "keynata-tail-balanced/epoch-100.pt": "5a673ea8b8a35a74bacf1c009286a5c59fcca3acf3d074f0364b227dbd509086",
+    "keynata-tail-protected/epoch-025.pt": "3a988992f6964d499f6ebd0041e795c676ed4a2b453a901ea340dedca67bfc08",
+    "keynata-tail-protected/epoch-050.pt": "8aaf8042057fa034ac1901d4117ef6005c5d621fb0a59232af2fa5a7c409f46d",
+    "keynata-tail-protected/epoch-100.pt": "72dc6050be18b91ba9e670c05d4ed45b39e6d20f9641a123eee5e89d7036ee97"
+  },
+  "no_consumed_or_fresh_tests_read": true,
+  "no_user_audio_or_scores": true,
+  "new_weights_deployed": false,
+  "approved_asset_sha256": "38899dd8dbbefafb3a2d5d2f210dc2e6db66087ffc6ee95fcae2635f5d9bbfda",
+  "final_preflight": "1347 passed, 6 skipped, 5 warnings",
+  "native_release_imports_passed": true,
+  "withheld_study_blocked_before_regression_or_fresh_inference": true
+}
