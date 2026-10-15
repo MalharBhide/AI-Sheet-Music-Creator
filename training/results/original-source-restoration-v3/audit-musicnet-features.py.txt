@@ -1,0 +1,51 @@
+"""Audit restored MusicNet features only; does not qualify the combined fitting set."""
+import csv
+import json
+from collections import Counter
+from pathlib import Path
+import numpy as np
+import soundfile as sf
+from current_bass_v32_baseline import hashes
+from prepare_musicnet_v32 import contracts, sources, references
+from prepare_robust_training_stems import digest
+from periodicity_bass_data import validate
+from bass_training_data import eligible
+from release_neighbor_features import features as neighbors
+from app.services.bass_harmonic import features as context
+
+folder=Path('/training/musicnet-v32-observations-v1')
+plan=json.loads((folder/'plan.json').read_text()); manifest=json.loads((folder/'manifest.json').read_text())
+assert plan['code_sha256']==contracts() and plan['baseline_hashes']==hashes()
+assert manifest['plan_sha256']==digest(folder/'plan.json')
+assert all(doc[k] for doc in (plan,manifest) for k in ('reserved_works_untouched','no_user_audio_or_scores'))
+source=Path(plan['source_root']); assert digest(source/'manifest.json')==plan['source_manifest_sha256']
+originals={r['id']:r for r in sources(source)}
+records=manifest['items']; assert len(records)==len({r['id'] for r in records})==78
+assert dict(Counter(r['group'] for r in records))=={'train':63,'validation':15}==plan['expected_counts']
+assert not ({r['source_group'] for r in records if r['group']=='train'} & {r['source_group'] for r in records if r['group']=='validation'})
+for r in records:
+    orig=originals[r['publisher_id']]; crop=orig['excerpts'][r['source_excerpt_index']]
+    assert orig['group']==r['group'] and r['source_group']=='musicnet/'+'/'.join(orig['work'])
+    assert r['labels_sha256']==orig['labels_sha256'] and r['source_audio_sha256']==crop['audio_sha256']
+    assert r['duration']==r['seconds']==20. and r['bitrate']==plan['mp3_bitrates'][r['source_excerpt_index']]
+    labels=Path(orig['labels']); assert digest(labels)==orig['labels_sha256']
+    with labels.open() as stream: rows=list(csv.DictReader(stream))
+    ref,support=references(rows,44100,crop['start_sample'],crop['end_sample'],orig['clock']['original_duration'])
+    assert r['reference']==ref and r['pitch_reference']==support
+    path=folder/r['id']/'features.npz'; assert digest(path)==r['cache_sha256']
+    assert digest(Path(r['audio']))==r['audio_sha256'] and r['plan_sha256']==manifest['plan_sha256']
+    info=sf.info(r['audio']); assert info.samplerate==22050 and info.channels==1 and info.frames==20*22050
+    with np.load(path,allow_pickle=False) as saved:
+        assert str(saved['plan_sha256'])==manifest['plan_sha256']
+        item={**r,**{k:saved[k] for k in ('events','base_x','x','periodicity','eligible','frames','attack_frames','release_frames','release_neighbors')}}
+        item.update(reference=np.asarray(r['reference'],float).reshape(-1,3),pitch_reference=np.asarray(r['pitch_reference'],float).reshape(-1,3))
+        validate(item)
+        assert len(item['events'])==r['candidate_notes']
+        for k,shape in (('frames',(40,9)),('attack_frames',(61,18)),('release_frames',(61,18))):
+            a=item[k]; assert a.shape==(len(item['events']),*shape) and np.isfinite(a).all() and ((a>=0)&(a<=1)).all()
+        np.testing.assert_array_equal(item['eligible'],eligible(item['events'],20.))
+        np.testing.assert_array_equal(item['x'],context(item['events'],item['base_x']))
+        np.testing.assert_array_equal(item['release_neighbors'],neighbors(item['events'],item['base_x']))
+result={'passes':True,'recordings':78,'groups':{'train':63,'validation':15},'scope':'Isolated restored MusicNet component; combined fitting reader still required before training','native_source_guard_unchanged':True,'all_cache_and_waveform_hashes_verified':True,'physical_audio_clock_verified':True,'no_model_inference':True,'no_user_audio_or_scores':True,'reserved_works_untouched':True,'manifest_sha256':digest(folder/'manifest.json')}
+Path('/training/approved-musicnet-feature-native-audit.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result),flush=True)
