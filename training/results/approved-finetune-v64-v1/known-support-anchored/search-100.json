@@ -1,0 +1,51 @@
+[
+  {
+    "eligible": false,
+    "veto_threshold": 0.2,
+    "raw": {
+      "threshold": 0.9,
+      "passes": false,
+      "failed_recordings": [
+        "nsynth-v25-bass_synthetic_098-dyad",
+        "nsynth-v25-bass_synthetic_098-layered",
+        "dynamics-v44-bass_synthetic_098-100-broken-chords"
+      ],
+      "false_notes_removed": 11,
+      "real_piano_gain": 0,
+      "removed_notes": 11,
+      "recovered_notes": 0,
+      "nrgcp_gain": 0
+    },
+    "raw_pitch": {
+      "threshold": 0.9,
+      "passes": true,
+      "failed_recordings": [],
+      "wrong_pitch_gain": 1,
+      "removed_fundamental_candidates": 0,
+      "timing_supervision_available": false
+    },
+    "strict": {
+      "threshold": 0.905,
+      "passes": false,
+      "failed_recordings": [
+        "nsynth-v25-bass_synthetic_098-dyad",
+        "nsynth-v25-bass_synthetic_098-layered",
+        "dynamics-v44-bass_synthetic_098-025-short-chords",
+        "dynamics-v44-bass_synthetic_098-100-broken-chords"
+      ],
+      "false_notes_removed": 10,
+      "real_piano_gain": 0,
+      "removed_notes": 11,
+      "recovered_notes": 0,
+      "nrgcp_gain": 0
+    },
+    "strict_pitch": {
+      "threshold": 0.905,
+      "passes": true,
+      "failed_recordings": [],
+      "wrong_pitch_gain": 0,
+      "removed_fundamental_candidates": 0,
+      "timing_supervision_available": false
+    }
+  }
+]

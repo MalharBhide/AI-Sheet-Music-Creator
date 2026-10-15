@@ -1,0 +1,10 @@
+Final-readout calibration of the approved model
+==============================================
+
+V63 and V64 each finished two independently initialized 100-epoch profiles without a preserving, improving full-validation winner. Their weights remain withheld. No consumed regressions or fresh tests were read, no user audio or scores were processed, and the approved website model remains unchanged.
+
+V65 calibrates only the existing 13 final support-readout parameters of approved V43. All learned feature extractors, context conditioners and note-rejection parameters stay byte-identical and are checked at every saved checkpoint and again before release access. Each profile starts independently from the approved weights and unchanged float32 normalizer. Known-frame supervised BCE and maximum known-absence loss train the readout; teacher rehearsal preserves original KEEP confidence on known frames. Unknown frames and REMOVE candidates receive zero teacher gradient. Teacher outputs use training tensors only. This is behavioral rehearsal, not newly supplied human key-duration truth. No new architecture, inference feature or downloaded dataset.
+
+All 2302 training and 618 validation recordings remain mandatory. Both normal/strict policies must preserve genuine identities, attacks, holds, pitch coverage and timing, with positive aggregate, real-piano, NRG-CP and isolated-pitch gains. Then all603 consumed regressions, one original40-MP3 first pass (307101–307140), full3563-record and40-waveform runtime parity, and native functional checks must pass before routing a separate refinement asset. No runner-up or test replacements after failure. Storage stays under 25 GB.
+
+All four protocols are registered before any candidate fitting. Full code suite: 1842 passed, 7 skipped, 5 warnings. Native preflight passes all protocols, proves exact approved initialization and verifies exactly thirteen mutable parameters. Storage is 18,320,007,168 bytes with a 500 MB reservation. The registered fitting process has started. No new accuracy result or model deployment is claimed.
