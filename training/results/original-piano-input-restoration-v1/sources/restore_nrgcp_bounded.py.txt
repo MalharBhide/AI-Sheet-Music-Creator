@@ -1,0 +1,28 @@
+"""Restore the original progression corpus without choosing new source examples."""
+import json
+from pathlib import Path
+from approved_model_finetune import storage_preflight
+from restore_tinysol_bounded import download
+from acquire_nrgcp_v47 import acquire, sources, digest
+
+root=Path('/training')
+proof=Path('/src/training/results/nrgcp-v47-preparation-v1')
+publisher=json.loads((root/'approved-nrgcp-publisher.json').read_text())
+expected=json.loads(Path('/src/training/results/nrgcp-v1-source-assessment-v1/archive-inspection.json').read_text())
+files=[f for f in publisher['files'] if f['key']=='nrgcp_midi_dataset.tar.gz' and f['size']==expected['bytes'] and f['checksum']=='md5:'+expected['md5']]
+if publisher['id']!=15304989 or publisher['license']['id']!='cc-by-4.0' or len(files)!=1:
+    raise ValueError('Changed publisher identity, grant or original archive')
+output=root/'nrgcp-v47-source'
+archive=root/'nrgcp-original-restoration.tar.gz'
+if output.exists(): raise ValueError('Preserve existing progression-source evidence')
+print(json.dumps({'storage_preflight':storage_preflight(root,6_000_000_000,audited_links={'left-precision-v43-replay/training/results':Path('/src/training/results')}),'combined_reservation_includes_piano_and_tinysol':True,'no_inference':True}),flush=True)
+download(files[0]['links']['self'],archive,{k:expected[k] for k in ('bytes','md5','sha256')})
+acquire(archive,output)
+rows=sources(output)
+old=json.loads((proof/'source-manifest.json').read_text())
+actual=json.loads((output/'manifest.json').read_text())
+if old!=actual: raise ValueError('Source selection, symbolic clocks or family partition changed')
+archive.unlink()
+result={'source_restoration_complete':True,'original_source_manifest_identical':True,'source_groups':len(rows),'manifest_sha256':digest(output/'manifest.json'),'whole_archive_removed':True,'no_audio_rendered_or_inferred':True,'no_user_audio_or_scores':True}
+(root/'nrgcp-restoration-complete.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result),flush=True)
