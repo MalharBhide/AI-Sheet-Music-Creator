@@ -1,0 +1,32 @@
+{
+  "status": "preregistered_full_input_restoration_required",
+  "architecture": "approved V43 width 12, inherited weights and normalization",
+  "fixed_thresholds": {
+    "normal": [
+      0.9,
+      0.2
+    ],
+    "strict": [
+      0.905,
+      0.16
+    ]
+  },
+  "profiles": 2,
+  "epochs_per_profile": 100,
+  "stage_snapshots": [
+    25,
+    50,
+    100
+  ],
+  "full_tests": "1545 passed, 7 skipped, 5 warnings",
+  "focused_tests": "9 passed, 1 warning",
+  "authored_restored_and_native_verified": 112,
+  "training_started": false,
+  "candidate_predictions_evaluated": false,
+  "consumed_or_fresh_tests_read": false,
+  "new_weights_deployed": false,
+  "no_user_audio_or_scores": true,
+  "piano_transfer_session": 26360,
+  "dynamics_feature_restore_session": 44570,
+  "local_training_limit_bytes": 25000000000
+}
