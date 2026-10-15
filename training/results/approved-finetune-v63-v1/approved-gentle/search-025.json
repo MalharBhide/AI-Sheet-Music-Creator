@@ -1,0 +1,54 @@
+[
+  {
+    "eligible": false,
+    "veto_threshold": 0.2,
+    "raw": {
+      "threshold": 0.9,
+      "passes": false,
+      "failed_recordings": [
+        "nsynth-v25-bass_synthetic_098-dyad",
+        "nsynth-v25-bass_synthetic_098-layered",
+        "dynamics-v44-bass_synthetic_098-025-short-chords",
+        "dynamics-v44-bass_synthetic_098-100-broken-chords",
+        "dynamics-v44-bass_synthetic_098-127-long-overlap"
+      ],
+      "false_notes_removed": 25,
+      "real_piano_gain": 1,
+      "removed_notes": 27,
+      "recovered_notes": 0,
+      "nrgcp_gain": 3
+    },
+    "raw_pitch": {
+      "threshold": 0.9,
+      "passes": true,
+      "failed_recordings": [],
+      "wrong_pitch_gain": 1,
+      "removed_fundamental_candidates": 0,
+      "timing_supervision_available": false
+    },
+    "strict": {
+      "threshold": 0.905,
+      "passes": false,
+      "failed_recordings": [
+        "nsynth-v25-bass_synthetic_098-dyad",
+        "nsynth-v25-bass_synthetic_098-layered",
+        "dynamics-v44-bass_synthetic_098-025-short-chords",
+        "dynamics-v44-bass_synthetic_098-100-broken-chords",
+        "dynamics-v44-bass_synthetic_098-127-long-overlap"
+      ],
+      "false_notes_removed": 17,
+      "real_piano_gain": 0,
+      "removed_notes": 18,
+      "recovered_notes": 0,
+      "nrgcp_gain": 1
+    },
+    "strict_pitch": {
+      "threshold": 0.905,
+      "passes": true,
+      "failed_recordings": [],
+      "wrong_pitch_gain": 0,
+      "removed_fundamental_candidates": 0,
+      "timing_supervision_available": false
+    }
+  }
+]
