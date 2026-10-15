@@ -1,0 +1,29 @@
+import json
+from pathlib import Path
+from urllib.request import urlopen
+from restore_tinysol_bounded import download
+from approved_model_finetune import storage_preflight
+from acquire_pdmx_piano_v53 import acquire,sources
+from prepare_robust_training_stems import digest
+root=Path('/training'); production=Path('/src')
+proof=json.loads((production/'training/results/pdmx-piano-v53-preparation-v1/source-plan.json').read_text())
+work=root/'pdmx-original-transfer-v1';output=root/'pdmx-piano-v53-source'
+if work.exists() or output.exists():raise ValueError('Preserve existing source transfer')
+print(json.dumps({'storage':storage_preflight(root,7_000_000_000,audited_links={'left-precision-v43-replay/training/results':production/'training/results'})}),flush=True)
+work.mkdir()
+with urlopen('https://zenodo.org/api/records/15571083',timeout=60) as response: publisher=json.loads(response.read(2_000_001))
+assert publisher['id']==15571083 and publisher['metadata']['license']['id']=='cc-by-4.0'
+(work/'publisher.json').write_text(json.dumps(publisher,indent=2)+'\n')
+for kind,remote,local in (('catalog','PDMX.csv','PDMX-v9.csv'),('metadata','metadata.tar.gz','PDMX-v9-metadata.tar.gz'),('mid','mid.tar.gz','PDMX-v9-mid.tar.gz')):
+ expected=proof['inputs'][kind]
+ file=next(f for f in publisher['files'] if f['key']==remote)
+ assert file['size']==expected['bytes'] and file['checksum']=='md5:'+expected['md5']
+ download('https://zenodo.org/api/records/15571083/files/'+remote+'/content',work/local,expected)
+ print(json.dumps({'verified':local,'sha256':digest(work/local)}),flush=True)
+acquire(work,output)
+rows=sources(output)
+assert len(rows)==2
+result={'passes':True,'source_rows':rows,'source_plan_sha256':digest(output/'plan.json'),'source_manifest_sha256':digest(output/'manifest.json'),'original_inputs':proof['inputs'],'original_selected_scores_unchanged':True,'no_model_inference':True,'no_audio_downloaded':True,'no_user_audio_or_scores':True,'archives_removed_after_verification':True}
+(work/'restoration.json').write_text(json.dumps(result,indent=2)+'\n')
+for local in ('PDMX-v9.csv','PDMX-v9-metadata.tar.gz','PDMX-v9-mid.tar.gz'):(work/local).unlink()
+print(json.dumps(result),flush=True)
