@@ -1,0 +1,26 @@
+{
+  "status": "initialization_verified_data_restoration_in_progress",
+  "user_requested_existing_model_finetuning": true,
+  "local_training_limit_bytes": 25000000000,
+  "approved_architecture_unchanged": true,
+  "approved_weights_and_normalizer_preserved_at_initialization": true,
+  "approved_checkpoint_sha256": "22f1f9bcf5332e470d289579a3243f7ae215da9e1752f72060fdc3bcad8faac9",
+  "focused_tests": "11 passed",
+  "full_tests": "1529 passed, 7 skipped, 5 warnings",
+  "dataset_restore_session": 26360,
+  "restore_stage_reservation_bytes": 2000000000,
+  "training_started": false,
+  "accuracy_improvement_proven": false,
+  "new_weights_deployed": false,
+  "no_user_audio_or_scores": true,
+  "required_release_checks": [
+    "Both normal and stricter validation preserve every recording and improve separate domains",
+    "All 603 consumed regressions",
+    "One independent fresh MP3 first pass without substitutions",
+    "Portable/native/runtime functional checks"
+  ],
+  "source_sha256": {
+    "approved_model_finetune.py": "54116ae04dfb6c8d1ddd30b14137a34912c6ecbe9f2d834e4e58cf617f669bf7",
+    "test_approved_model_finetune.py": "ddb672475eb55a5d7b5c5152397a3dde54fdc1899a8a8958d3ae0628b413b3a0"
+  }
+}
