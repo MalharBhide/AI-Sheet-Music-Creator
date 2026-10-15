@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/src/training/acquire_musicnet_subset.py", line 16, in <module>
+    from prepare_robust_training_stems import digest, preserve
+  File "/src/training/prepare_robust_training_stems.py", line 19, in <module>
+    from cache_note_verifier import cache_one
+  File "/src/training/cache_note_verifier.py", line 14, in <module>
+    from app.services.note_evidence import CONTEXT_VERSION, FEATURE_VERSION
+ModuleNotFoundError: No module named 'app.services.note_evidence'

@@ -1,0 +1,30 @@
+{
+  "status": "bounded_original_pitch_source_restoration_in_progress",
+  "full_tests": "1554 passed, 7 skipped, 5 warnings",
+  "focused_tests": "9 passed",
+  "tinysol_acquisition_session": 81971,
+  "dynamics_feature_restore_session": null,
+  "original_piano_transfer_session": 26360,
+  "local_training_limit_bytes": 25000000000,
+  "combined_pending_stage_reservation_bytes": 7000000000,
+  "parallel_prefix_identity_verified": true,
+  "parallel_probe_prefix_bytes": 4194304,
+  "parallel_probe_seconds_to_first_prefix": 181.05718516499996,
+  "parallel_probe_terminal_exit_code": 0,
+  "original_piano_transfer_replaced": false,
+  "full_piano_archive_verified": false,
+  "training_started": false,
+  "new_weights_deployed": false,
+  "no_user_audio_or_scores": true,
+  "source_sha256": {
+    "restore_tinysol_bounded.py": "83192f3b8a7d1591523fb17dd2b7ae66d4f3cc5ff504bad8386b4918053f7931",
+    "test_restore_tinysol_bounded.py": "12491ecae1156fe07886851f08668796b80c3931518e362758073a83ff78cfad"
+  },
+  "dynamics_restoration_completed": true,
+  "dynamics_recordings_native_verified": 448,
+  "dynamics_groups": {
+    "train": 352,
+    "validation": 96
+  },
+  "dynamics_manifest_sha256": "06ce3072153e23f2a4214b68c8ba817770d810cfb5e5f0ead76d14907ae59121"
+}
