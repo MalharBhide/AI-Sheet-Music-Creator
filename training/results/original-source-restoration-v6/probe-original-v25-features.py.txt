@@ -1,0 +1,27 @@
+import json
+from pathlib import Path
+import numpy as np
+import soundfile as sf
+from app.services.piano_transcription import _GeneralEngine
+from app.services.note_evidence import note_features
+from app.services.bass_harmonic import features
+from bass_training_data import eligible,identity
+from current_bass_v25_baseline import hashes
+from prepare_robust_training_stems import digest
+production=Path('/src');root=Path('/training');hashes()
+old=json.loads((production/'training/results/bass-v25-baseline-v1/manifest.json').read_text());r=next(r for r in old['items'] if r['id']=='bass-positive-v1-00_BN1-129-Eb_comp')
+audio=Path(r['audio']);assert digest(audio)==r['audio_sha256'] and r['group']=='train'
+work=root/'baseline-v25-feature-recovery-pilot-v1';work.mkdir(exist_ok=False)
+engine=_GeneralEngine('balanced');native=engine.predict_function;captured={}
+def capture(*args,**kwargs):
+ result=native(*args,**kwargs);captured['acoustic']=result[0];return result
+engine.predict_function=capture
+midi=engine.predict(audio,'bass',120.)
+notes=[n for part in midi.instruments for n in part.notes]
+events=np.asarray([[n.start,n.end,n.pitch,n.velocity] for n in notes],float).reshape(-1,4)
+wave,rate=sf.read(audio,dtype='float32');base_x=note_features(wave,rate,captured['acoustic'],notes,include_context=True)
+record={k:v for k,v in r.items() if k!='cache_sha256'}
+path=work/'features.npz'
+np.savez_compressed(path,events=events,base_x=base_x,x=features(events,base_x),eligible=eligible(events,r['duration']),identity=identity(record),plan_sha256=digest(production/'training/results/bass-v25-baseline-v1/plan.json'))
+result={'id':r['id'],'expected_notes':r['notes'],'actual_notes':len(events),'expected_cache_sha256':r['cache_sha256'],'actual_cache_sha256':digest(path),'exact_original_cache_bytes_restored':digest(path)==r['cache_sha256'],'original_decoder_guard_passed':True,'training_fixture_inference_only':True,'no_user_audio_or_scores':True,'no_reserved_or_consumed_source_read':True}
+(work/'result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result),flush=True)

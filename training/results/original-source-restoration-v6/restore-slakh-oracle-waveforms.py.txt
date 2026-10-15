@@ -1,0 +1,40 @@
+import json,re
+from pathlib import Path
+import numpy as np
+import soundfile as sf
+import yaml
+from approved_model_finetune import storage_preflight
+from prepare_slakh_bass import bass_sources,encode
+from prepare_robust_training_stems import digest
+root=Path('/training');production=Path('/src')
+old=json.loads((production/'training/results/bass-v25-baseline-v1/manifest.json').read_text())['items']
+rows=[r for r in old if r['corpus']=='slakh-oracle-bass'];assert len(rows)==60
+plan=json.loads((production/'training/results/slakh-training-v1/plan.json').read_text())
+print(json.dumps({'storage':storage_preflight(root,2_000_000_000,audited_links={'left-precision-v43-replay/training/results':production/'training/results'})}),flush=True)
+checked=set();records=[]
+for r in rows:
+ match=re.fullmatch(r'slakh-bass-v1-(Track\d{5})-oracle-(000|030|060|090)',r['id']);assert match
+ identity,offset=match[1],int(match[2]);assert r['group']==plan['project_partition'][identity] and r['group'] in ('train','validation')
+ track=root/'babyslakh/data/babyslakh_16k'/identity
+ if identity not in checked:
+  for name,expected in plan['source_hashes'][identity].items():assert digest(track/name)==expected
+  checked.add(identity)
+ target=Path(r['audio']);assert target==root/'slakh-bass-v1'/r['id']/'decoded.wav'
+ if target.exists():assert digest(target)==r['audio_sha256']
+ else:
+  work=target.parent;work.mkdir(parents=True,exist_ok=True)
+  if any(work.iterdir()):raise ValueError('Preserve incomplete source waveform')
+  meta=yaml.safe_load((track/'metadata.yaml').read_text());samples=np.zeros(30*16000,dtype=np.float32)
+  selected=[name for name in bass_sources(meta) if (track/'stems'/(name+'.wav')).is_file() and (track/'MIDI'/(name+'.mid')).is_file()];assert selected
+  for name in selected:
+   wave,rate=sf.read(track/'stems'/(name+'.wav'),start=offset*16000,frames=len(samples),dtype='float32')
+   assert rate==16000 and wave.shape==samples.shape and np.isfinite(wave).all()
+   samples+=wave
+  encode(samples,16000,work,(48,128,192)[(offset//30)%3])
+  if digest(target)!=r['audio_sha256']:raise ValueError('Original bass waveform mismatch: '+r['id'])
+  for name in ('original.wav','source.mp3'):(work/name).unlink()
+ records.append({'id':r['id'],'group':r['group'],'audio':str(target),'sha256':digest(target)})
+ print(json.dumps({'complete':len(records),'total':60,'id':r['id']}),flush=True)
+result={'passes':True,'recordings':60,'records':records,'no_model_inference':True,'no_user_audio_or_scores':True,'no_reserved_or_consumed_source_read':True}
+(root/'approved-slakh-oracle-waveform-restoration.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps({k:v for k,v in result.items() if k!='records'}),flush=True)

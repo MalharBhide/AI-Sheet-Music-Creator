@@ -1,0 +1,67 @@
+"""Recover original baseline stems; accept only exact archived waveform hashes."""
+import hashlib,json,re,shutil,struct
+from pathlib import Path
+import librosa
+import numpy as np
+import soundfile as sf
+from app.services.source_separation import StemSeparator
+from approved_model_finetune import storage_preflight
+from prepare_vienna_bass_v15 import declared_sources,OFFSET
+from prepare_slakh_bass import encode
+from prepare_robust_training_stems import digest
+root=Path('/training');production=Path('/src')
+allrows=json.loads((production/'training/results/bass-v25-baseline-v1/manifest.json').read_text())['items']
+rows=[r for r in allrows if r['corpus'] in ('slakh-demucs-bass','vienna-demucs-bass-bass')];assert len(rows)==66
+assert all(r['group'] in ('train','validation') for r in rows)
+slakh=json.loads((production/'training/results/slakh-training-v1/plan.json').read_text())
+vienna={r['id']:(i,r) for i,r in enumerate(declared_sources(root))}
+print(json.dumps({'storage':storage_preflight(root,2_000_000_000,audited_links={'left-precision-v43-replay/training/results':production/'training/results'})}),flush=True)
+staging=root/'original-separated-wave-restoration-v1';staging.mkdir(exist_ok=False)
+separator=StemSeparator();checked=set();records=[]
+ranges={'slakh-bass-v1':(1791152130,1791152870),'slakh-bass-demucs-expanded-v1':(1791168930,1791176131),'vienna-bass-v15-v1':(1791183963,1791191164)}
+last={family:first for family,(first,_) in ranges.items()}
+for r in rows:
+ target=Path(r['audio']);assert target.is_relative_to(root) and target.name=='bass.wav'
+ family=target.parent.parent.name;assert family in ranges
+ if target.exists():
+  assert digest(target)==r['audio_sha256']
+ else:
+  work=staging/r['id'];work.mkdir()
+  if r['corpus']=='slakh-demucs-bass':
+   match=re.fullmatch(r'(slakh-bass-v1|slakh-bass-demucs-expanded-v1)-(Track\d{5})-demucs-(000|030|060|090)',r['id']);assert match
+   identity,offset=match[2],int(match[3]);assert slakh['project_partition'][identity]==r['group']
+   track=root/'babyslakh/data/babyslakh_16k'/identity
+   if identity not in checked:
+    for name,expected in slakh['source_hashes'][identity].items():assert digest(track/name)==expected
+    checked.add(identity)
+   samples,rate=sf.read(track/'mix.wav',start=offset*16000,frames=30*16000,dtype='float32');assert rate==16000 and samples.shape==(480000,)
+   bitrate=48 if match[1]=='slakh-bass-v1' else (48,128,192)[(offset//30)-1]
+  else:
+   name=r['id'].removeprefix('vienna-bass-v15-').removesuffix('-demucs-bass');index,source=vienna[name]
+   assert source['group']==r['group'] and digest(Path(source['audio']))==source['audio_sha256']
+   samples,rate=librosa.load(source['audio'],sr=22050,offset=OFFSET,duration=30.)
+   bitrate=(48,128,192)[index%3]
+  encode(samples,rate,work,bitrate)
+  paths=separator.separate(work/'decoded.wav',work);assert 'bass' in paths
+  raw=paths['bass'].read_bytes();i=12;position=None
+  while i+8<=len(raw):
+   name,size=struct.unpack_from('<4sI',raw,i)
+   if name==b'PEAK':
+    assert position is None and size==16 and struct.unpack_from('<I',raw,i+8)[0]==1
+    position=i+12
+   i+=8+size+(size%2)
+  assert position is not None and i==len(raw)
+  prefix=hashlib.sha256(raw[:position]);suffix=memoryview(raw)[position+4:];found=None
+  for stamp in range(last[family],ranges[family][1]):
+   h=prefix.copy();h.update(struct.pack('<I',stamp));h.update(suffix)
+   if h.hexdigest()==r['audio_sha256']:found=stamp;break
+  if found is None:raise ValueError('Original stem bytes not reproduced: '+r['id'])
+  last[family]=found;fixed=raw[:position]+struct.pack('<I',found)+raw[position+4:]
+  assert hashlib.sha256(fixed).hexdigest()==r['audio_sha256']
+  target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(fixed)
+  shutil.rmtree(work)
+ records.append({'id':r['id'],'group':r['group'],'audio':str(target),'sha256':digest(target),'musical_samples_unchanged':True})
+ print(json.dumps({'complete':len(records),'total':66,'id':r['id']}),flush=True)
+result={'passes':True,'recordings':66,'records':records,'original_waveform_bytes_all_identical':True,'source_separation_on_training_fixtures_only':True,'no_user_audio_or_scores':True,'no_reserved_or_consumed_source_read':True}
+(root/'approved-separated-waveform-restoration.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps({k:v for k,v in result.items() if k!='records'}),flush=True)
