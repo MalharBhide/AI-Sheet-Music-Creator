@@ -1,0 +1,60 @@
+"""Recover original training WAV bytes; repair only an unfitted RIFF timestamp."""
+import hashlib,json,struct
+from pathlib import Path
+import librosa
+import soundfile as sf
+from approved_model_finetune import storage_preflight
+from prepare_robust_training_stems import digest
+root=Path('/training');production=Path('/src')
+old=json.loads((production/'training/results/bass-v25-baseline-v1/manifest.json').read_text())
+rows={r['id'].removeprefix('bass-positive-v1-'):r for r in old['items'] if r['corpus']=='guitarset-bass-register'}
+plan=json.loads((production/'training/results/bass-positive-data-v1/plan.json').read_text())
+assert len(rows)==297 and len(plan['sources'])==297
+assert {r['group'] for r in rows.values()}=={'train','validation'}
+print(json.dumps({'storage':storage_preflight(root,3_000_000_000,audited_links={'left-precision-v43-replay/training/results':production/'training/results'})}),flush=True)
+folder=root/'bass-positive-data-v1';folder.mkdir(exist_ok=True)
+records=[];stamp=1791158407
+for source in plan['sources']:
+    r=rows[source['id']];assert r['group']==source['group']
+    original=root/'guitarset/audio'/(source['id']+'_mic.wav')
+    assert digest(original)==source['audio_sha256']
+    target=Path(r['audio']); assert target==folder/('bass-positive-v1-'+source['id'])/'source.wav'
+    if target.exists():
+        assert digest(target)==r['audio_sha256']
+        raw=target.read_bytes()
+    else:
+        target.parent.mkdir(exist_ok=True)
+        partial=target.with_suffix('.wav.partial')
+        if partial.exists():raise ValueError('Preserve previous incomplete waveform')
+        wave,rate=librosa.load(original,sr=22050,duration=30)
+        sf.write(partial,wave,rate,format='WAV',subtype='FLOAT')
+        raw=partial.read_bytes()
+    position=None;i=12
+    assert raw[:4]==b'RIFF' and raw[8:12]==b'WAVE'
+    while i+8<=len(raw):
+        name,length=struct.unpack_from('<4sI',raw,i)
+        if name==b'PEAK':
+            assert position is None and length==16 and struct.unpack_from('<I',raw,i+8)[0]==1
+            position=i+12
+        i+=8+length+(length%2)
+    assert position is not None and i==len(raw)
+    if target.exists():
+        stamp=struct.unpack_from('<I',raw,position)[0]
+    else:
+        prefix=hashlib.sha256(raw[:position]);suffix=memoryview(raw)[position+4:];found=None
+        for candidate in range(stamp,1791164729):
+            h=prefix.copy();h.update(struct.pack('<I',candidate));h.update(suffix)
+            if h.hexdigest()==r['audio_sha256']:
+                found=candidate;break
+        if found is None:raise ValueError('Original waveform not recovered within the bounded header-only search: '+r['id'])
+        stamp=found
+        fixed=raw[:position]+struct.pack('<I',stamp)+raw[position+4:]
+        assert fixed[:position]==raw[:position] and fixed[position+4:]==raw[position+4:]
+        assert hashlib.sha256(fixed).hexdigest()==r['audio_sha256']
+        partial.write_bytes(fixed);partial.rename(target)
+    record={'id':r['id'],'group':r['group'],'audio':str(target),'sha256':digest(target),'original_header_timestamp':stamp,'source_audio_sha256':source['audio_sha256'],'musical_samples_unchanged':True}
+    records.append(record)
+    print(json.dumps({'complete':len(records),'total':297,**record}),flush=True)
+result={'passes':True,'recordings':297,'original_waveform_bytes_all_identical':True,'original_source_manifest_sha256':digest(production/'training/results/bass-v25-baseline-v1/manifest.json'),'records':records,'no_model_inference':True,'no_user_audio_or_scores':True,'no_reserved_or_consumed_source_read':True}
+(root/'approved-guitar-waveform-restoration.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps({k:v for k,v in result.items() if k!='records'}),flush=True)

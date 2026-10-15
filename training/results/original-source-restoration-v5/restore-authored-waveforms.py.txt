@@ -1,0 +1,35 @@
+import json
+from pathlib import Path
+from approved_model_finetune import storage_preflight
+from prepare_bass_positive_data import original,RATE
+from prepare_bass_texture_v12 import texture
+from prepare_slakh_bass import encode
+from prepare_robust_training_stems import digest
+root=Path('/training');production=Path('/src')
+rows=[r for r in json.loads((production/'training/results/bass-v25-baseline-v1/manifest.json').read_text())['items'] if r['corpus'] in ('original-bass-timbres','original-bass-texture')]
+assert len(rows)==256 and all(r['group'] in ('train','validation') for r in rows)
+print(json.dumps({'storage':storage_preflight(root,3_000_000_000,audited_links={'left-precision-v43-replay/training/results':production/'training/results'})}),flush=True)
+records=[]
+for r in rows:
+ seed=int(r['id'].rsplit('-',1)[1]);target=Path(r['audio']);assert str(target).startswith('/training/') and target.name=='decoded.wav'
+ if target.exists():assert digest(target)==r['audio_sha256']
+ else:
+  work=target.parent;work.mkdir(parents=True,exist_ok=True)
+  if any(work.iterdir()):raise ValueError('Preserve incomplete waveform')
+  if r['id'].startswith('bass-positive-v1-original-'):
+   assert 261051<=seed<261131
+   samples,_=original(seed);bitrate=(48,128,192)[seed%3]
+  elif r['id'].startswith('bass-original-expanded-v1-'):
+   assert 261801<=seed<261881
+   samples,_=original(seed);bitrate=(48,128,192)[(seed-261801)%3]
+  else:
+   assert r['id'].startswith('bass-texture-v1-') and 262401<=seed<262497
+   samples,_=texture(seed);bitrate=(48,128,192)[(seed-262401)%3]
+  encode(samples,RATE,work,bitrate)
+  if digest(target)!=r['audio_sha256']:raise ValueError('Original waveform mismatch: '+r['id'])
+  for name in ('original.wav','source.mp3'):(work/name).unlink()
+ records.append({'id':r['id'],'group':r['group'],'audio':str(target),'sha256':digest(target)})
+ print(json.dumps({'complete':len(records),'total':256,'id':r['id']}),flush=True)
+result={'passes':True,'recordings':256,'records':records,'no_model_inference':True,'no_user_audio_or_scores':True,'no_reserved_or_consumed_source_read':True}
+(root/'approved-authored-waveform-restoration.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps({k:v for k,v in result.items() if k!='records'}),flush=True)
