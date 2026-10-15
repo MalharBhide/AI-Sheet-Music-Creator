@@ -1,0 +1,47 @@
+"""Restore previously used original instrument sources; retain no full archive."""
+import hashlib
+import json
+from pathlib import Path
+from urllib.request import urlopen
+from approved_model_finetune import storage_preflight
+from acquire_nsynth_subset import URL, SIZE, acquire
+from acquire_nsynth_dynamics_v44 import acquire as acquire_dynamics, verify_archive
+
+root = Path('/training')
+audit = {'left-precision-v43-replay/training/results': Path('/src/training/results')}
+archive = root/'nsynth-valid-restoration.tar.gz'
+partial = root/'nsynth-valid-restoration.partial'
+outputs = (root/'nsynth-bass-subset-v2', root/'nsynth-dynamics-v44-source')
+if archive.exists() or partial.exists() or any(p.exists() for p in outputs):
+    raise ValueError('Preserve existing restoration evidence; no replacement or implicit restart')
+# Includes this archive + both extracted subsets + the active piano stage's
+# entire 2 GB reservation. No other acquisition/preparation writer is allowed.
+print(json.dumps({'storage_preflight': storage_preflight(root, 3_500_000_000, audited_links=audit), 'no_inference': True}), flush=True)
+with urlopen(URL, timeout=60) as response, partial.open('xb') as target:
+    if response.status != 200 or int(response.headers['Content-Length']) != SIZE:
+        raise ValueError('Changed NSynth transfer identity')
+    count = 0
+    while chunk := response.read(1024*1024):
+        count += len(chunk)
+        if count > SIZE:
+            raise ValueError('Oversized NSynth archive')
+        target.write(chunk)
+        if count % (128*1024*1024) < len(chunk):
+            print(json.dumps({'downloaded_bytes':count,'total':SIZE}), flush=True)
+    if count != SIZE:
+        raise ValueError('Truncated NSynth archive')
+verified = verify_archive(partial)
+partial.rename(archive)
+acquire(archive, outputs[0])
+acquire_dynamics(archive, outputs[1])
+expected = json.loads(Path('/src/training/results/nsynth-bass-subset-v2/manifest.json').read_text())
+actual = json.loads((outputs[0]/'manifest.json').read_text())
+if actual != expected:
+    raise ValueError('Original instrument identities, audio hashes or partitions changed')
+for output in outputs:
+    record = json.loads((output/'manifest.json').read_text())
+    for item in record['items']:
+        if hashlib.sha256(Path(item['audio']).read_bytes()).hexdigest() != item['audio_sha256']:
+            raise ValueError('Changed restored waveform')
+archive.unlink()
+print(json.dumps({'restoration_complete':True,'original_subset_identical':True,'archive_removed_after_verification':True,'source':verified,'storage':storage_preflight(root, audited_links=audit),'no_inference':True}), flush=True)

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/training/restore_nsynth_bounded.py", line 18, in <module>
+    print(json.dumps({'storage_preflight': storage_preflight(root, 3_500_000_000), 'no_inference': True}), flush=True)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/src/training/approved_model_finetune.py", line 41, in storage_preflight
+    raise ValueError("Training storage contains a symlink; audit its target first")
+ValueError: Training storage contains a symlink; audit its target first

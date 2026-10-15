@@ -23,7 +23,7 @@ def sha256(path):
     return result.hexdigest()
 
 
-def storage_preflight(root, incoming_bytes=0, minimum_free_bytes=1_000_000_000):
+def storage_preflight(root, incoming_bytes=0, minimum_free_bytes=1_000_000_000, audited_links=None):
     """Count all training files, refusing links and insufficient reserved space.
 
     Run before each bounded acquisition/preparation stage, reserving that stage's
@@ -35,10 +35,23 @@ def storage_preflight(root, incoming_bytes=0, minimum_free_bytes=1_000_000_000):
             or incoming_bytes < 0 or type(minimum_free_bytes) is not int
             or minimum_free_bytes < 0):
         raise ValueError("Invalid training storage reservation")
+    links = {}
+    for name, target in (audited_links or {}).items():
+        relative = Path(name)
+        if relative.is_absolute() or ".." in relative.parts:
+            raise ValueError("Invalid audited training link")
+        destination = Path(target).resolve(strict=True)
+        if not destination.is_dir():
+            raise ValueError("Audited training link must reference existing code evidence")
+        links[root / relative] = destination
     used = 0
     for path in root.rglob("*"):
         if path.is_symlink():
-            raise ValueError("Training storage contains a symlink; audit its target first")
+            if path not in links or path.resolve(strict=True) != links[path]:
+                raise ValueError("Training storage contains a symlink; audit its target first")
+            # Shared repository evidence is not a second copy in the cache.
+            # rglob does not recurse into this explicitly audited directory link.
+            continue
         if path.is_file():
             info = path.stat()
             used += max(info.st_size, getattr(info, "st_blocks", 0) * 512)

@@ -82,3 +82,18 @@ def test_storage_refuses_low_free_space_and_links(tmp_path, monkeypatch):
 def test_invalid_reservations_are_rejected(tmp_path, reservation):
     with pytest.raises(ValueError, match="reservation"):
         ft.storage_preflight(tmp_path, reservation)
+
+
+def test_only_exact_audited_shared_evidence_link_is_allowed(tmp_path):
+    cache = tmp_path / "cache"
+    cache.mkdir()
+    evidence = tmp_path / "repository-evidence"
+    evidence.mkdir()
+    (cache / "results").symlink_to(evidence, target_is_directory=True)
+    assert ft.storage_preflight(cache, audited_links={"results": evidence})["used_bytes"] == 0
+    other = tmp_path / "other"
+    other.mkdir()
+    with pytest.raises(ValueError, match="symlink"):
+        ft.storage_preflight(cache, audited_links={"results": other})
+    with pytest.raises(ValueError, match="Invalid audited"):
+        ft.storage_preflight(cache, audited_links={"../outside": evidence})

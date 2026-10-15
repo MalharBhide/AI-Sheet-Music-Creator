@@ -1,0 +1,24 @@
+{
+  "status": "historical_reader_and_existing_instrument_sources_restored",
+  "full_tests": "1536 passed, 7 skipped, 5 warnings",
+  "focused_tests": "18 passed",
+  "historical_reader_source_files_verified": 28,
+  "historical_reader_arrays_verified": 14,
+  "original_nsynth_subset_identical_to_archived_manifest": true,
+  "original_nsynth_notes": 497,
+  "existing_dynamics_notes": 1515,
+  "full_nsynth_archive_removed_after_verification": true,
+  "local_training_limit_bytes": 25000000000,
+  "piano_restore_session": 26360,
+  "authored_feature_restore_session": 88734,
+  "training_started": false,
+  "new_weights_deployed": false,
+  "no_user_audio_or_scores": true,
+  "accuracy_improvement_proven": false,
+  "source_sha256": {
+    "restore_approved_replay.py": "5b5f0e84b98dcfac776f226c8a684b095277bd67aef50924429b6ca1ec4f606c",
+    "test_restore_approved_replay.py": "5b9798511de07b96eac7fb9a5b43a47453aa609e9e366f7cee4b7d3b34109fa6",
+    "approved_model_finetune.py": "9ea7177fc88f548abac40e17ef6ce635914716f0492607c1fb906c581254c347",
+    "test_approved_model_finetune.py": "0ca096340aa9c6415c12cd33acd3b60d006e00457e8ba994631832c9d4354d2b"
+  }
+}
