@@ -1,0 +1,12 @@
+.....................                                                    [100%]
+=============================== warnings summary ===============================
+../usr/local/lib/python3.11/site-packages/resampy/filters.py:50
+  /usr/local/lib/python3.11/site-packages/resampy/filters.py:50: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+    import pkg_resources
+
+../home/scribe/.local/lib/python3.11/site-packages/_pytest/cacheprovider.py:475
+  /home/scribe/.local/lib/python3.11/site-packages/_pytest/cacheprovider.py:475: PytestCacheWarning: could not create cache path /src/.pytest_cache/v/cache/nodeids: [Errno 30] Read-only file system: '/src/pytest-cache-files-eh_n5r3k'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+21 passed, 2 warnings in 15.85s
