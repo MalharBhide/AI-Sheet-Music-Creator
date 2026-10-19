@@ -1,0 +1,3223 @@
+{
+  "version": "offline-pipeline-diagnostic-v1",
+  "no_audio_read": true,
+  "no_training": true,
+  "no_model_inference": true,
+  "production_modified": false,
+  "fixtures": [
+    {
+      "name": "straight_sixteenths_control",
+      "role": "vocals",
+      "interpretation": "Supported on-grid control.",
+      "phase_seconds": 0.0,
+      "reference": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.125,
+          "end": 0.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.25,
+          "end": 0.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.375,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.625,
+          "end": 0.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.75,
+          "end": 0.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.875,
+          "end": 1.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.125,
+          "end": 1.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.25,
+          "end": 1.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.375,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.625,
+          "end": 1.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.75,
+          "end": 1.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.875,
+          "end": 2.0,
+          "velocity": 80
+        }
+      ],
+      "after_cleanup": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.125,
+          "end": 0.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.25,
+          "end": 0.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.375,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.625,
+          "end": 0.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.75,
+          "end": 0.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.875,
+          "end": 1.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.125,
+          "end": 1.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.25,
+          "end": 1.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.375,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.625,
+          "end": 1.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.75,
+          "end": 1.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.875,
+          "end": 2.0,
+          "velocity": 80
+        }
+      ],
+      "after_playback": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.125,
+          "end": 0.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.25,
+          "end": 0.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.375,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.625,
+          "end": 0.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.75,
+          "end": 0.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.875,
+          "end": 1.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.125,
+          "end": 1.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.25,
+          "end": 1.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.375,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.625,
+          "end": 1.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.75,
+          "end": 1.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.875,
+          "end": 2.0,
+          "velocity": 80
+        }
+      ],
+      "cleanup_vs_reference": {
+        "reference_notes": 16,
+        "actual_notes": 16,
+        "matched": 16,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "notation_only_vs_reference": {
+        "reference_notes": 16,
+        "actual_notes": 16,
+        "matched": 16,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "playback_vs_cleanup": {
+        "reference_notes": 16,
+        "actual_notes": 16,
+        "matched": 16,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "playback_vs_reference": {
+        "reference_notes": 16,
+        "actual_notes": 16,
+        "matched": 16,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      }
+    },
+    {
+      "name": "complete_triplets_control",
+      "role": "vocals",
+      "interpretation": "Supported complete triplet control.",
+      "phase_seconds": 4.857225732735059e-17,
+      "reference": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.16666666666666666,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.16666666666666666,
+          "end": 0.3333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.3333333333333333,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.6666666666666666,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.6666666666666666,
+          "end": 0.8333333333333334,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.8333333333333334,
+          "end": 1.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.1666666666666667,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.1666666666666667,
+          "end": 1.3333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.3333333333333333,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.6666666666666667,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.6666666666666667,
+          "end": 1.8333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.8333333333333333,
+          "end": 2.0,
+          "velocity": 80
+        }
+      ],
+      "after_cleanup": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.16666666666666666,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.16666666666666666,
+          "end": 0.3333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.3333333333333333,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.6666666666666666,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.6666666666666666,
+          "end": 0.8333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.8333333333333333,
+          "end": 1.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.1666666666666665,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.1666666666666665,
+          "end": 1.3333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.3333333333333333,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.6666666666666665,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.6666666666666665,
+          "end": 1.8333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.8333333333333333,
+          "end": 2.0,
+          "velocity": 80
+        }
+      ],
+      "after_playback": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.166667,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.166667,
+          "end": 0.333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.333333,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.666667,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.666667,
+          "end": 0.833333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.833333,
+          "end": 1.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.166667,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.166667,
+          "end": 1.333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.333333,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.666667,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.666667,
+          "end": 1.833333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.833333,
+          "end": 2.0,
+          "velocity": 80
+        }
+      ],
+      "cleanup_vs_reference": {
+        "reference_notes": 12,
+        "actual_notes": 12,
+        "matched": 12,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 4.625929269271486e-14,
+        "onset_max_ms": 2.220446049250313e-13,
+        "release_mae_ms": 4.625929269271486e-14,
+        "release_max_ms": 2.220446049250313e-13,
+        "repeated_spacing_mae_ms": 1.0092936587501423e-13
+      },
+      "notation_only_vs_reference": {
+        "reference_notes": 12,
+        "actual_notes": 12,
+        "matched": 12,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.00022222222217233023,
+        "onset_max_ms": 0.000333333333379926,
+        "release_mae_ms": 0.00022222222217233023,
+        "release_max_ms": 0.000333333333379926,
+        "repeated_spacing_mae_ms": 0.0004545454544525495
+      },
+      "playback_vs_cleanup": {
+        "reference_notes": 12,
+        "actual_notes": 12,
+        "matched": 12,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0002222222222000858,
+        "onset_max_ms": 0.000333333333379926,
+        "release_mae_ms": 0.0002222222222000858,
+        "release_max_ms": 0.000333333333379926,
+        "repeated_spacing_mae_ms": 0.0004545454545131071
+      },
+      "playback_vs_reference": {
+        "reference_notes": 12,
+        "actual_notes": 12,
+        "matched": 12,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.00022222222217233023,
+        "onset_max_ms": 0.000333333333379926,
+        "release_mae_ms": 0.00022222222217233023,
+        "release_max_ms": 0.000333333333379926,
+        "repeated_spacing_mae_ms": 0.0004545454544525495
+      }
+    },
+    {
+      "name": "swing_repeats",
+      "role": "vocals",
+      "interpretation": "Correct 2:1 swing; fixed straight grid lacks complete triplet evidence.",
+      "phase_seconds": 0.0,
+      "reference": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.3333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.3333333333333333,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.8333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.8333333333333333,
+          "end": 1.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.3333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.3333333333333333,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.8333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.8333333333333333,
+          "end": 2.0,
+          "velocity": 80
+        }
+      ],
+      "after_cleanup": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.375,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.875,
+          "end": 1.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.375,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.875,
+          "end": 2.0,
+          "velocity": 80
+        }
+      ],
+      "after_playback": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.375,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.875,
+          "end": 1.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.375,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.875,
+          "end": 2.0,
+          "velocity": 80
+        }
+      ],
+      "cleanup_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 20.833333333333364,
+        "onset_max_ms": 41.66666666666674,
+        "release_mae_ms": 20.833333333333364,
+        "release_max_ms": 41.66666666666674,
+        "repeated_spacing_mae_ms": 41.66666666666673
+      },
+      "notation_only_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.00016666666661363516,
+        "onset_max_ms": 0.00033333333332441484,
+        "release_mae_ms": 0.00016666666661363516,
+        "release_max_ms": 0.00033333333332441484,
+        "repeated_spacing_mae_ms": 0.000333333333237183
+      },
+      "playback_vs_cleanup": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "playback_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 20.833333333333364,
+        "onset_max_ms": 41.66666666666674,
+        "release_mae_ms": 20.833333333333364,
+        "release_max_ms": 41.66666666666674,
+        "repeated_spacing_mae_ms": 41.66666666666673
+      }
+    },
+    {
+      "name": "incomplete_triplets",
+      "role": "vocals",
+      "interpretation": "Correct two-note triplet fragments; no third attack to activate triplet rule.",
+      "phase_seconds": 0.0,
+      "reference": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.16666666666666666,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.16666666666666666,
+          "end": 0.3333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.6666666666666666,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.6666666666666666,
+          "end": 0.8333333333333333,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.1666666666666667,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.1666666666666667,
+          "end": 1.3333333333333335,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.6666666666666667,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.6666666666666667,
+          "end": 1.8333333333333335,
+          "velocity": 80
+        }
+      ],
+      "after_cleanup": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.125,
+          "end": 0.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.625,
+          "end": 0.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.125,
+          "end": 1.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.625,
+          "end": 1.875,
+          "velocity": 80
+        }
+      ],
+      "after_playback": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.125,
+          "end": 0.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.625,
+          "end": 0.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.125,
+          "end": 1.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.625,
+          "end": 1.875,
+          "velocity": 80
+        }
+      ],
+      "cleanup_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 20.833333333333346,
+        "onset_max_ms": 41.66666666666674,
+        "release_mae_ms": 41.66666666666666,
+        "release_max_ms": 41.66666666666674,
+        "repeated_spacing_mae_ms": 41.66666666666668
+      },
+      "notation_only_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0001666666666309824,
+        "onset_max_ms": 0.000333333333379926,
+        "release_mae_ms": 0.0003333333333001287,
+        "release_max_ms": 0.000333333333379926,
+        "repeated_spacing_mae_ms": 0.00033333333328079896
+      },
+      "playback_vs_cleanup": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "playback_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 20.833333333333346,
+        "onset_max_ms": 41.66666666666674,
+        "release_mae_ms": 41.66666666666666,
+        "release_max_ms": 41.66666666666674,
+        "repeated_spacing_mae_ms": 41.66666666666668
+      }
+    },
+    {
+      "name": "fast_bass_32nds",
+      "role": "bass",
+      "interpretation": "Correct fast bass attacks shorter than the 90 ms balanced cutoff.",
+      "phase_seconds": 0.0,
+      "reference": [
+        {
+          "pitch": 48,
+          "start": 0.0,
+          "end": 0.0625,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.0625,
+          "end": 0.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.125,
+          "end": 0.1875,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.1875,
+          "end": 0.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.25,
+          "end": 0.3125,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.3125,
+          "end": 0.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.375,
+          "end": 0.4375,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.4375,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.5,
+          "end": 0.5625,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.5625,
+          "end": 0.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.625,
+          "end": 0.6875,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.6875,
+          "end": 0.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.75,
+          "end": 0.8125,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.8125,
+          "end": 0.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.875,
+          "end": 0.9375,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.9375,
+          "end": 1.0,
+          "velocity": 80
+        }
+      ],
+      "after_cleanup": [],
+      "after_playback": [],
+      "cleanup_vs_reference": {
+        "reference_notes": 16,
+        "actual_notes": 0,
+        "matched": 0,
+        "missing": 16,
+        "extra": 0,
+        "onset_mae_ms": null,
+        "onset_max_ms": null,
+        "release_mae_ms": null,
+        "release_max_ms": null,
+        "repeated_spacing_mae_ms": null
+      },
+      "notation_only_vs_reference": {
+        "reference_notes": 16,
+        "actual_notes": 16,
+        "matched": 16,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "playback_vs_cleanup": {
+        "reference_notes": 0,
+        "actual_notes": 0,
+        "matched": 0,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": null,
+        "onset_max_ms": null,
+        "release_mae_ms": null,
+        "release_max_ms": null,
+        "repeated_spacing_mae_ms": null
+      },
+      "playback_vs_reference": {
+        "reference_notes": 16,
+        "actual_notes": 0,
+        "matched": 0,
+        "missing": 16,
+        "extra": 0,
+        "onset_mae_ms": null,
+        "onset_max_ms": null,
+        "release_mae_ms": null,
+        "release_max_ms": null,
+        "repeated_spacing_mae_ms": null
+      }
+    },
+    {
+      "name": "staccato_bass",
+      "role": "bass",
+      "interpretation": "Correct 70 ms bass notes, with distinct attacks 250 ms apart.",
+      "phase_seconds": 0.0,
+      "reference": [
+        {
+          "pitch": 48,
+          "start": 0.0,
+          "end": 0.07,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.25,
+          "end": 0.32,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.5,
+          "end": 0.5700000000000001,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.75,
+          "end": 0.8200000000000001,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.0,
+          "end": 1.07,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.25,
+          "end": 1.32,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.5,
+          "end": 1.57,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.75,
+          "end": 1.82,
+          "velocity": 80
+        }
+      ],
+      "after_cleanup": [],
+      "after_playback": [],
+      "cleanup_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 0,
+        "matched": 0,
+        "missing": 8,
+        "extra": 0,
+        "onset_mae_ms": null,
+        "onset_max_ms": null,
+        "release_mae_ms": null,
+        "release_max_ms": null,
+        "repeated_spacing_mae_ms": null
+      },
+      "notation_only_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 7.500000000000048,
+        "release_max_ms": 7.500000000000062,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "playback_vs_cleanup": {
+        "reference_notes": 0,
+        "actual_notes": 0,
+        "matched": 0,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": null,
+        "onset_max_ms": null,
+        "release_mae_ms": null,
+        "release_max_ms": null,
+        "repeated_spacing_mae_ms": null
+      },
+      "playback_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 0,
+        "matched": 0,
+        "missing": 8,
+        "extra": 0,
+        "onset_mae_ms": null,
+        "onset_max_ms": null,
+        "release_mae_ms": null,
+        "release_max_ms": null,
+        "repeated_spacing_mae_ms": null
+      }
+    },
+    {
+      "name": "soft_bass",
+      "role": "bass",
+      "interpretation": "Correct quiet bass notes below the velocity floor; velocity is not confidence.",
+      "phase_seconds": 0.0,
+      "reference": [
+        {
+          "pitch": 48,
+          "start": 0.0,
+          "end": 0.25,
+          "velocity": 28
+        },
+        {
+          "pitch": 48,
+          "start": 0.5,
+          "end": 0.75,
+          "velocity": 28
+        },
+        {
+          "pitch": 48,
+          "start": 1.0,
+          "end": 1.25,
+          "velocity": 28
+        },
+        {
+          "pitch": 48,
+          "start": 1.5,
+          "end": 1.75,
+          "velocity": 28
+        },
+        {
+          "pitch": 48,
+          "start": 2.0,
+          "end": 2.25,
+          "velocity": 28
+        },
+        {
+          "pitch": 48,
+          "start": 2.5,
+          "end": 2.75,
+          "velocity": 28
+        },
+        {
+          "pitch": 48,
+          "start": 3.0,
+          "end": 3.25,
+          "velocity": 28
+        },
+        {
+          "pitch": 48,
+          "start": 3.5,
+          "end": 3.75,
+          "velocity": 28
+        }
+      ],
+      "after_cleanup": [],
+      "after_playback": [],
+      "cleanup_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 0,
+        "matched": 0,
+        "missing": 8,
+        "extra": 0,
+        "onset_mae_ms": null,
+        "onset_max_ms": null,
+        "release_mae_ms": null,
+        "release_max_ms": null,
+        "repeated_spacing_mae_ms": null
+      },
+      "notation_only_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "playback_vs_cleanup": {
+        "reference_notes": 0,
+        "actual_notes": 0,
+        "matched": 0,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": null,
+        "onset_max_ms": null,
+        "release_mae_ms": null,
+        "release_max_ms": null,
+        "repeated_spacing_mae_ms": null
+      },
+      "playback_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 0,
+        "matched": 0,
+        "missing": 8,
+        "extra": 0,
+        "onset_mae_ms": null,
+        "onset_max_ms": null,
+        "release_mae_ms": null,
+        "release_max_ms": null,
+        "repeated_spacing_mae_ms": null
+      }
+    },
+    {
+      "name": "short_bass_releases",
+      "role": "bass",
+      "interpretation": "Correct staccato releases above the cutoff, rounded to a minimum grid duration.",
+      "phase_seconds": 0.0,
+      "reference": [
+        {
+          "pitch": 48,
+          "start": 0.0,
+          "end": 0.095,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.25,
+          "end": 0.345,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.5,
+          "end": 0.595,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.75,
+          "end": 0.845,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.0,
+          "end": 1.095,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.25,
+          "end": 1.345,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.5,
+          "end": 1.595,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.75,
+          "end": 1.845,
+          "velocity": 80
+        }
+      ],
+      "after_cleanup": [
+        {
+          "pitch": 48,
+          "start": 0.0,
+          "end": 0.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.25,
+          "end": 0.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.5,
+          "end": 0.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.75,
+          "end": 0.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.0,
+          "end": 1.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.25,
+          "end": 1.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.5,
+          "end": 1.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.75,
+          "end": 1.875,
+          "velocity": 80
+        }
+      ],
+      "after_playback": [
+        {
+          "pitch": 48,
+          "start": 0.0,
+          "end": 0.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.25,
+          "end": 0.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.5,
+          "end": 0.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 0.75,
+          "end": 0.875,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.0,
+          "end": 1.125,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.25,
+          "end": 1.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.5,
+          "end": 1.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 48,
+          "start": 1.75,
+          "end": 1.875,
+          "velocity": 80
+        }
+      ],
+      "cleanup_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 30.000000000000025,
+        "release_max_ms": 30.00000000000003,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "notation_only_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 9.166999999999977,
+        "release_max_ms": 9.167000000000037,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "playback_vs_cleanup": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "playback_vs_reference": {
+        "reference_notes": 8,
+        "actual_notes": 8,
+        "matched": 8,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 30.000000000000025,
+        "release_max_ms": 30.00000000000003,
+        "repeated_spacing_mae_ms": 0.0
+      }
+    },
+    {
+      "name": "tempo_change",
+      "role": "vocals",
+      "interpretation": "Known 120-to-150 BPM change represented at a fixed 120 BPM score tempo.",
+      "phase_seconds": 0.0,
+      "reference": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.25,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.75,
+          "end": 1.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.25,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.75,
+          "end": 2.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.0,
+          "end": 2.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.25,
+          "end": 2.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.5,
+          "end": 2.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.75,
+          "end": 3.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 3.0,
+          "end": 3.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 3.25,
+          "end": 3.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 3.5,
+          "end": 3.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 3.75,
+          "end": 4.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.0,
+          "end": 4.2,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.2,
+          "end": 4.4,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.4,
+          "end": 4.6,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.6,
+          "end": 4.8,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.8,
+          "end": 5.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.0,
+          "end": 5.2,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.2,
+          "end": 5.4,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.4,
+          "end": 5.6,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.6,
+          "end": 5.8,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.8,
+          "end": 6.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.0,
+          "end": 6.2,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.2,
+          "end": 6.4,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.4,
+          "end": 6.6,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.6,
+          "end": 6.800000000000001,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.800000000000001,
+          "end": 7.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 7.0,
+          "end": 7.2,
+          "velocity": 80
+        }
+      ],
+      "after_cleanup": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.25,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.75,
+          "end": 1.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.25,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.75,
+          "end": 2.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.0,
+          "end": 2.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.25,
+          "end": 2.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.5,
+          "end": 2.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.75,
+          "end": 3.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 3.0,
+          "end": 3.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 3.25,
+          "end": 3.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 3.5,
+          "end": 3.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 3.75,
+          "end": 4.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.0,
+          "end": 4.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.25,
+          "end": 4.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.375,
+          "end": 4.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.625,
+          "end": 4.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.75,
+          "end": 5.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.0,
+          "end": 5.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.25,
+          "end": 5.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.375,
+          "end": 5.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.625,
+          "end": 5.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.75,
+          "end": 6.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.0,
+          "end": 6.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.25,
+          "end": 6.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.375,
+          "end": 6.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.625,
+          "end": 6.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.75,
+          "end": 7.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 7.0,
+          "end": 7.25,
+          "velocity": 80
+        }
+      ],
+      "after_playback": [
+        {
+          "pitch": 64,
+          "start": 0.0,
+          "end": 0.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.25,
+          "end": 0.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.5,
+          "end": 0.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 0.75,
+          "end": 1.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.25,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.5,
+          "end": 1.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.75,
+          "end": 2.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.0,
+          "end": 2.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.25,
+          "end": 2.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.5,
+          "end": 2.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.75,
+          "end": 3.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 3.0,
+          "end": 3.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 3.25,
+          "end": 3.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 3.5,
+          "end": 3.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 3.75,
+          "end": 4.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.0,
+          "end": 4.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.25,
+          "end": 4.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.375,
+          "end": 4.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.625,
+          "end": 4.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 4.75,
+          "end": 5.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.0,
+          "end": 5.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.25,
+          "end": 5.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.375,
+          "end": 5.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.625,
+          "end": 5.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 5.75,
+          "end": 6.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.0,
+          "end": 6.25,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.25,
+          "end": 6.375,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.375,
+          "end": 6.625,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.625,
+          "end": 6.75,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 6.75,
+          "end": 7.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 7.0,
+          "end": 7.25,
+          "velocity": 80
+        }
+      ],
+      "cleanup_vs_reference": {
+        "reference_notes": 32,
+        "actual_notes": 32,
+        "matched": 32,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 14.06250000000006,
+        "onset_max_ms": 50.00000000000071,
+        "release_mae_ms": 15.625000000000055,
+        "release_max_ms": 50.00000000000071,
+        "repeated_spacing_mae_ms": 29.03225806451625
+      },
+      "notation_only_vs_reference": {
+        "reference_notes": 32,
+        "actual_notes": 32,
+        "matched": 32,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 2.3437500000000613,
+        "onset_max_ms": 8.333000000000368,
+        "release_mae_ms": 2.604156250000045,
+        "release_max_ms": 8.333000000000368,
+        "repeated_spacing_mae_ms": 4.838709677419481
+      },
+      "playback_vs_cleanup": {
+        "reference_notes": 32,
+        "actual_notes": 32,
+        "matched": 32,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "playback_vs_reference": {
+        "reference_notes": 32,
+        "actual_notes": 32,
+        "matched": 32,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 14.06250000000006,
+        "onset_max_ms": 50.00000000000071,
+        "release_mae_ms": 15.625000000000055,
+        "release_max_ms": 50.00000000000071,
+        "repeated_spacing_mae_ms": 29.03225806451625
+      }
+    },
+    {
+      "name": "independent_chord_holds_control",
+      "role": "piano",
+      "interpretation": "Supported independent chord holds and repeated-key control.",
+      "phase_seconds": 0.0,
+      "reference": [
+        {
+          "pitch": 48,
+          "start": 0.0,
+          "end": 4.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 55,
+          "start": 0.0,
+          "end": 2.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 60,
+          "start": 0.5,
+          "end": 3.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.0,
+          "end": 2.5,
+          "velocity": 80
+        }
+      ],
+      "after_cleanup": [
+        {
+          "pitch": 48,
+          "start": 0.0,
+          "end": 4.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 55,
+          "start": 0.0,
+          "end": 2.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 60,
+          "start": 0.5,
+          "end": 3.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.0,
+          "end": 2.5,
+          "velocity": 80
+        }
+      ],
+      "after_playback": [
+        {
+          "pitch": 48,
+          "start": 0.0,
+          "end": 4.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 55,
+          "start": 0.0,
+          "end": 2.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 60,
+          "start": 0.5,
+          "end": 3.0,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 1.0,
+          "end": 1.5,
+          "velocity": 80
+        },
+        {
+          "pitch": 64,
+          "start": 2.0,
+          "end": 2.5,
+          "velocity": 80
+        }
+      ],
+      "cleanup_vs_reference": {
+        "reference_notes": 5,
+        "actual_notes": 5,
+        "matched": 5,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "notation_only_vs_reference": {
+        "reference_notes": 5,
+        "actual_notes": 5,
+        "matched": 5,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "playback_vs_cleanup": {
+        "reference_notes": 5,
+        "actual_notes": 5,
+        "matched": 5,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      },
+      "playback_vs_reference": {
+        "reference_notes": 5,
+        "actual_notes": 5,
+        "matched": 5,
+        "missing": 0,
+        "extra": 0,
+        "onset_mae_ms": 0.0,
+        "onset_max_ms": 0.0,
+        "release_mae_ms": 0.0,
+        "release_max_ms": 0.0,
+        "repeated_spacing_mae_ms": 0.0
+      }
+    }
+  ],
+  "arrangement_probe": {
+    "interpretation": "Authored adversarial candidates: long loud wrong tone competes with two correct voices. Shows heuristic behavior, not frequency of this error in recordings.",
+    "reference": [
+      {
+        "pitch": 48,
+        "start": 0.0,
+        "end": 2.0,
+        "velocity": 80
+      },
+      {
+        "pitch": 55,
+        "start": 0.0,
+        "end": 2.0,
+        "velocity": 70
+      }
+    ],
+    "candidates": [
+      {
+        "pitch": 48,
+        "start": 0.0,
+        "end": 2.0,
+        "velocity": 80
+      },
+      {
+        "pitch": 52,
+        "start": 0.0,
+        "end": 2.0,
+        "velocity": 110
+      },
+      {
+        "pitch": 55,
+        "start": 0.0,
+        "end": 2.0,
+        "velocity": 70
+      }
+    ],
+    "selected": [
+      {
+        "pitch": 48,
+        "start": 0.0,
+        "end": 2.0,
+        "velocity": 80
+      },
+      {
+        "pitch": 52,
+        "start": 0.0,
+        "end": 2.0,
+        "velocity": 110
+      }
+    ],
+    "candidate_vs_reference": {
+      "reference_notes": 2,
+      "actual_notes": 3,
+      "matched": 2,
+      "missing": 0,
+      "extra": 1,
+      "onset_mae_ms": 0.0,
+      "onset_max_ms": 0.0,
+      "release_mae_ms": 0.0,
+      "release_max_ms": 0.0,
+      "repeated_spacing_mae_ms": null
+    },
+    "selected_vs_reference": {
+      "reference_notes": 2,
+      "actual_notes": 2,
+      "matched": 1,
+      "missing": 1,
+      "extra": 1,
+      "onset_mae_ms": 0.0,
+      "onset_max_ms": 0.0,
+      "release_mae_ms": 0.0,
+      "release_max_ms": 0.0,
+      "repeated_spacing_mae_ms": null
+    },
+    "clean_control": {
+      "reference_notes": 2,
+      "actual_notes": 2,
+      "matched": 2,
+      "missing": 0,
+      "extra": 0,
+      "onset_mae_ms": 0.0,
+      "onset_max_ms": 0.0,
+      "release_mae_ms": 0.0,
+      "release_max_ms": 0.0,
+      "repeated_spacing_mae_ms": null
+    }
+  },
+  "archived_validation": {
+    "tangent-quarter-margin": {
+      "diagnostic_sha256": "3b88f64377755ba76bd5959f28c97f78d49339340a33f1fb8be7fcb76859d0bb",
+      "policies": {
+        "raw": {
+          "corpora": {
+            "groove-drums-only": {
+              "recordings": 4,
+              "matched_baseline_pairs": 0,
+              "baseline_matched_onset_mae_ms": null,
+              "baseline_matched_release_mae_ms": null,
+              "false_notes_removed": 1,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "groove-pitched-mixture": {
+              "recordings": 24,
+              "matched_baseline_pairs": 98,
+              "baseline_matched_onset_mae_ms": 18.55244574020112,
+              "baseline_matched_release_mae_ms": 1888.4837752788192,
+              "false_notes_removed": 2,
+              "failed_recordings": [
+                "groove-v25-groove-source-10-octave"
+              ],
+              "lost_reference_seconds": 0.20897959183673454
+            },
+            "guitarset-bass-register": {
+              "recordings": 58,
+              "matched_baseline_pairs": 3471,
+              "baseline_matched_onset_mae_ms": 23.87755977451385,
+              "baseline_matched_release_mae_ms": 128.60718241392559,
+              "false_notes_removed": 4,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "musicnet-real-piano": {
+              "recordings": 15,
+              "matched_baseline_pairs": 1055,
+              "baseline_matched_onset_mae_ms": 44.834518274924484,
+              "baseline_matched_release_mae_ms": 138.09878023879375,
+              "false_notes_removed": 4,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "mutopia-joplin-synthesized": {
+              "recordings": 4,
+              "matched_baseline_pairs": 286,
+              "baseline_matched_onset_mae_ms": 12.380253318108831,
+              "baseline_matched_release_mae_ms": 53.44798539555416,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nrgcp-authored-sampled-piano": {
+              "recordings": 36,
+              "matched_baseline_pairs": 2624,
+              "baseline_matched_onset_mae_ms": 13.298846855815555,
+              "baseline_matched_release_mae_ms": 146.20092586831476,
+              "false_notes_removed": 11,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-authored-bass": {
+              "recordings": 16,
+              "matched_baseline_pairs": 129,
+              "baseline_matched_onset_mae_ms": 20.43161243825701,
+              "baseline_matched_release_mae_ms": 841.3215419501136,
+              "false_notes_removed": 2,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-authored-keyboard": {
+              "recordings": 8,
+              "matched_baseline_pairs": 68,
+              "baseline_matched_onset_mae_ms": 6.648319327731297,
+              "baseline_matched_release_mae_ms": 257.9872715752966,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-bass": {
+              "recordings": 12,
+              "matched_baseline_pairs": 52,
+              "baseline_matched_onset_mae_ms": 29.75709052851935,
+              "baseline_matched_release_mae_ms": 1018.66936159079,
+              "false_notes_removed": 2,
+              "failed_recordings": [
+                "nsynth-v25-bass_synthetic_098-dyad",
+                "nsynth-v25-bass_synthetic_098-layered"
+              ],
+              "lost_reference_seconds": 1.4860770975056683
+            },
+            "nsynth-dynamics-bass": {
+              "recordings": 64,
+              "matched_baseline_pairs": 424,
+              "baseline_matched_onset_mae_ms": 17.768088178667764,
+              "baseline_matched_release_mae_ms": 796.555743806957,
+              "false_notes_removed": 25,
+              "failed_recordings": [
+                "dynamics-v44-bass_synthetic_098-025-short-chords",
+                "dynamics-v44-bass_synthetic_098-100-broken-chords"
+              ],
+              "lost_reference_seconds": 0.6733786848072558
+            },
+            "nsynth-dynamics-keyboard": {
+              "recordings": 32,
+              "matched_baseline_pairs": 264,
+              "baseline_matched_onset_mae_ms": 11.083687212258813,
+              "baseline_matched_release_mae_ms": 239.41917559953242,
+              "false_notes_removed": 6,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-keyboard": {
+              "recordings": 6,
+              "matched_baseline_pairs": 12,
+              "baseline_matched_onset_mae_ms": 6.679969765684042,
+              "baseline_matched_release_mae_ms": 243.49478458049873,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "original-bass-texture": {
+              "recordings": 24,
+              "matched_baseline_pairs": 445,
+              "baseline_matched_onset_mae_ms": 14.810392111901006,
+              "baseline_matched_release_mae_ms": 158.63371873592408,
+              "false_notes_removed": 6,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "original-bass-timbres": {
+              "recordings": 32,
+              "matched_baseline_pairs": 628,
+              "baseline_matched_onset_mae_ms": 16.817271112266827,
+              "baseline_matched_release_mae_ms": 133.75379587114867,
+              "false_notes_removed": 2,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "slakh-demucs-bass": {
+              "recordings": 16,
+              "matched_baseline_pairs": 263,
+              "baseline_matched_onset_mae_ms": 26.436839057500666,
+              "baseline_matched_release_mae_ms": 258.99514442148984,
+              "false_notes_removed": 4,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "slakh-oracle-bass": {
+              "recordings": 16,
+              "matched_baseline_pairs": 470,
+              "baseline_matched_onset_mae_ms": 23.439016853468186,
+              "baseline_matched_release_mae_ms": 173.10506036133563,
+              "false_notes_removed": 4,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "vienna-demucs-bass-bass": {
+              "recordings": 2,
+              "matched_baseline_pairs": 17,
+              "baseline_matched_onset_mae_ms": 29.1760304121643,
+              "baseline_matched_release_mae_ms": 361.66326530612156,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "vienna-piano-mp3-bass": {
+              "recordings": 12,
+              "matched_baseline_pairs": 716,
+              "baseline_matched_onset_mae_ms": 18.268510020395322,
+              "baseline_matched_release_mae_ms": 326.66560350397083,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            }
+          },
+          "passes": false,
+          "all_retained_clocks_identical": true
+        },
+        "strict": {
+          "corpora": {
+            "groove-drums-only": {
+              "recordings": 4,
+              "matched_baseline_pairs": 0,
+              "baseline_matched_onset_mae_ms": null,
+              "baseline_matched_release_mae_ms": null,
+              "false_notes_removed": 2,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "groove-pitched-mixture": {
+              "recordings": 24,
+              "matched_baseline_pairs": 98,
+              "baseline_matched_onset_mae_ms": 18.55244574020112,
+              "baseline_matched_release_mae_ms": 1888.4837752788192,
+              "false_notes_removed": 0,
+              "failed_recordings": [
+                "groove-v25-groove-source-10-octave"
+              ],
+              "lost_reference_seconds": 0.20897959183673454
+            },
+            "guitarset-bass-register": {
+              "recordings": 58,
+              "matched_baseline_pairs": 3471,
+              "baseline_matched_onset_mae_ms": 23.87755977451385,
+              "baseline_matched_release_mae_ms": 128.60718241392559,
+              "false_notes_removed": 3,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "musicnet-real-piano": {
+              "recordings": 15,
+              "matched_baseline_pairs": 1055,
+              "baseline_matched_onset_mae_ms": 44.834518274924484,
+              "baseline_matched_release_mae_ms": 138.09878023879375,
+              "false_notes_removed": 4,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "mutopia-joplin-synthesized": {
+              "recordings": 4,
+              "matched_baseline_pairs": 286,
+              "baseline_matched_onset_mae_ms": 12.380253318108831,
+              "baseline_matched_release_mae_ms": 53.44798539555416,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nrgcp-authored-sampled-piano": {
+              "recordings": 36,
+              "matched_baseline_pairs": 2624,
+              "baseline_matched_onset_mae_ms": 13.298846855815555,
+              "baseline_matched_release_mae_ms": 146.20092586831476,
+              "false_notes_removed": 5,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-authored-bass": {
+              "recordings": 16,
+              "matched_baseline_pairs": 129,
+              "baseline_matched_onset_mae_ms": 20.43161243825701,
+              "baseline_matched_release_mae_ms": 841.3215419501136,
+              "false_notes_removed": 1,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-authored-keyboard": {
+              "recordings": 8,
+              "matched_baseline_pairs": 68,
+              "baseline_matched_onset_mae_ms": 6.648319327731297,
+              "baseline_matched_release_mae_ms": 257.9872715752966,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-bass": {
+              "recordings": 12,
+              "matched_baseline_pairs": 52,
+              "baseline_matched_onset_mae_ms": 29.75709052851935,
+              "baseline_matched_release_mae_ms": 1018.66936159079,
+              "false_notes_removed": 2,
+              "failed_recordings": [
+                "nsynth-v25-bass_synthetic_098-dyad",
+                "nsynth-v25-bass_synthetic_098-layered"
+              ],
+              "lost_reference_seconds": 1.4860770975056683
+            },
+            "nsynth-dynamics-bass": {
+              "recordings": 64,
+              "matched_baseline_pairs": 427,
+              "baseline_matched_onset_mae_ms": 17.672340380336443,
+              "baseline_matched_release_mae_ms": 795.7641659630286,
+              "false_notes_removed": 18,
+              "failed_recordings": [
+                "dynamics-v44-bass_synthetic_098-100-broken-chords"
+              ],
+              "lost_reference_seconds": 0.25541950113378675
+            },
+            "nsynth-dynamics-keyboard": {
+              "recordings": 32,
+              "matched_baseline_pairs": 264,
+              "baseline_matched_onset_mae_ms": 11.083687212258813,
+              "baseline_matched_release_mae_ms": 239.41917559953242,
+              "false_notes_removed": 3,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-keyboard": {
+              "recordings": 6,
+              "matched_baseline_pairs": 12,
+              "baseline_matched_onset_mae_ms": 6.679969765684042,
+              "baseline_matched_release_mae_ms": 243.49478458049873,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "original-bass-texture": {
+              "recordings": 24,
+              "matched_baseline_pairs": 445,
+              "baseline_matched_onset_mae_ms": 14.810392111901006,
+              "baseline_matched_release_mae_ms": 158.63371873592408,
+              "false_notes_removed": 4,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "original-bass-timbres": {
+              "recordings": 32,
+              "matched_baseline_pairs": 628,
+              "baseline_matched_onset_mae_ms": 16.817271112266827,
+              "baseline_matched_release_mae_ms": 133.75379587114867,
+              "false_notes_removed": 1,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "slakh-demucs-bass": {
+              "recordings": 16,
+              "matched_baseline_pairs": 263,
+              "baseline_matched_onset_mae_ms": 26.436839057500666,
+              "baseline_matched_release_mae_ms": 258.99514442148984,
+              "false_notes_removed": 4,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "slakh-oracle-bass": {
+              "recordings": 16,
+              "matched_baseline_pairs": 470,
+              "baseline_matched_onset_mae_ms": 23.439016853468186,
+              "baseline_matched_release_mae_ms": 173.10506036133563,
+              "false_notes_removed": 2,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "vienna-demucs-bass-bass": {
+              "recordings": 2,
+              "matched_baseline_pairs": 17,
+              "baseline_matched_onset_mae_ms": 29.1760304121643,
+              "baseline_matched_release_mae_ms": 361.66326530612156,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "vienna-piano-mp3-bass": {
+              "recordings": 12,
+              "matched_baseline_pairs": 716,
+              "baseline_matched_onset_mae_ms": 18.268510020395322,
+              "baseline_matched_release_mae_ms": 326.66560350397083,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            }
+          },
+          "passes": false,
+          "all_retained_clocks_identical": true
+        }
+      }
+    },
+    "tangent-three-quarter-margin": {
+      "diagnostic_sha256": "4c2cf34ee5ebdd5e7bc57412b0bddae76cee6b90b504e3d56407c7b8e74599c8",
+      "policies": {
+        "raw": {
+          "corpora": {
+            "groove-drums-only": {
+              "recordings": 4,
+              "matched_baseline_pairs": 0,
+              "baseline_matched_onset_mae_ms": null,
+              "baseline_matched_release_mae_ms": null,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "groove-pitched-mixture": {
+              "recordings": 24,
+              "matched_baseline_pairs": 98,
+              "baseline_matched_onset_mae_ms": 18.55244574020112,
+              "baseline_matched_release_mae_ms": 1888.4837752788192,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "guitarset-bass-register": {
+              "recordings": 58,
+              "matched_baseline_pairs": 3471,
+              "baseline_matched_onset_mae_ms": 23.87755977451385,
+              "baseline_matched_release_mae_ms": 128.60718241392559,
+              "false_notes_removed": 2,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "musicnet-real-piano": {
+              "recordings": 15,
+              "matched_baseline_pairs": 1055,
+              "baseline_matched_onset_mae_ms": 44.834518274924484,
+              "baseline_matched_release_mae_ms": 138.09878023879375,
+              "false_notes_removed": 1,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "mutopia-joplin-synthesized": {
+              "recordings": 4,
+              "matched_baseline_pairs": 286,
+              "baseline_matched_onset_mae_ms": 12.380253318108831,
+              "baseline_matched_release_mae_ms": 53.44798539555416,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nrgcp-authored-sampled-piano": {
+              "recordings": 36,
+              "matched_baseline_pairs": 2624,
+              "baseline_matched_onset_mae_ms": 13.298846855815555,
+              "baseline_matched_release_mae_ms": 146.20092586831476,
+              "false_notes_removed": 2,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-authored-bass": {
+              "recordings": 16,
+              "matched_baseline_pairs": 129,
+              "baseline_matched_onset_mae_ms": 20.43161243825701,
+              "baseline_matched_release_mae_ms": 841.3215419501136,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-authored-keyboard": {
+              "recordings": 8,
+              "matched_baseline_pairs": 68,
+              "baseline_matched_onset_mae_ms": 6.648319327731297,
+              "baseline_matched_release_mae_ms": 257.9872715752966,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-bass": {
+              "recordings": 12,
+              "matched_baseline_pairs": 52,
+              "baseline_matched_onset_mae_ms": 29.75709052851935,
+              "baseline_matched_release_mae_ms": 1018.66936159079,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-dynamics-bass": {
+              "recordings": 64,
+              "matched_baseline_pairs": 424,
+              "baseline_matched_onset_mae_ms": 17.768088178667764,
+              "baseline_matched_release_mae_ms": 796.555743806957,
+              "false_notes_removed": 4,
+              "failed_recordings": [
+                "dynamics-v44-bass_synthetic_098-100-broken-chords"
+              ],
+              "lost_reference_seconds": 0.25541950113378675
+            },
+            "nsynth-dynamics-keyboard": {
+              "recordings": 32,
+              "matched_baseline_pairs": 264,
+              "baseline_matched_onset_mae_ms": 11.083687212258813,
+              "baseline_matched_release_mae_ms": 239.41917559953242,
+              "false_notes_removed": 1,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-keyboard": {
+              "recordings": 6,
+              "matched_baseline_pairs": 12,
+              "baseline_matched_onset_mae_ms": 6.679969765684042,
+              "baseline_matched_release_mae_ms": 243.49478458049873,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "original-bass-texture": {
+              "recordings": 24,
+              "matched_baseline_pairs": 445,
+              "baseline_matched_onset_mae_ms": 14.810392111901006,
+              "baseline_matched_release_mae_ms": 158.63371873592408,
+              "false_notes_removed": 1,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "original-bass-timbres": {
+              "recordings": 32,
+              "matched_baseline_pairs": 628,
+              "baseline_matched_onset_mae_ms": 16.817271112266827,
+              "baseline_matched_release_mae_ms": 133.75379587114867,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "slakh-demucs-bass": {
+              "recordings": 16,
+              "matched_baseline_pairs": 263,
+              "baseline_matched_onset_mae_ms": 26.436839057500666,
+              "baseline_matched_release_mae_ms": 258.99514442148984,
+              "false_notes_removed": 2,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "slakh-oracle-bass": {
+              "recordings": 16,
+              "matched_baseline_pairs": 470,
+              "baseline_matched_onset_mae_ms": 23.439016853468186,
+              "baseline_matched_release_mae_ms": 173.10506036133563,
+              "false_notes_removed": 1,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "vienna-demucs-bass-bass": {
+              "recordings": 2,
+              "matched_baseline_pairs": 17,
+              "baseline_matched_onset_mae_ms": 29.1760304121643,
+              "baseline_matched_release_mae_ms": 361.66326530612156,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "vienna-piano-mp3-bass": {
+              "recordings": 12,
+              "matched_baseline_pairs": 716,
+              "baseline_matched_onset_mae_ms": 18.268510020395322,
+              "baseline_matched_release_mae_ms": 326.66560350397083,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            }
+          },
+          "passes": false,
+          "all_retained_clocks_identical": true
+        },
+        "strict": {
+          "corpora": {
+            "groove-drums-only": {
+              "recordings": 4,
+              "matched_baseline_pairs": 0,
+              "baseline_matched_onset_mae_ms": null,
+              "baseline_matched_release_mae_ms": null,
+              "false_notes_removed": 2,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "groove-pitched-mixture": {
+              "recordings": 24,
+              "matched_baseline_pairs": 98,
+              "baseline_matched_onset_mae_ms": 18.55244574020112,
+              "baseline_matched_release_mae_ms": 1888.4837752788192,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "guitarset-bass-register": {
+              "recordings": 58,
+              "matched_baseline_pairs": 3471,
+              "baseline_matched_onset_mae_ms": 23.87755977451385,
+              "baseline_matched_release_mae_ms": 128.60718241392559,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "musicnet-real-piano": {
+              "recordings": 15,
+              "matched_baseline_pairs": 1055,
+              "baseline_matched_onset_mae_ms": 44.834518274924484,
+              "baseline_matched_release_mae_ms": 138.09878023879375,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "mutopia-joplin-synthesized": {
+              "recordings": 4,
+              "matched_baseline_pairs": 286,
+              "baseline_matched_onset_mae_ms": 12.380253318108831,
+              "baseline_matched_release_mae_ms": 53.44798539555416,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nrgcp-authored-sampled-piano": {
+              "recordings": 36,
+              "matched_baseline_pairs": 2624,
+              "baseline_matched_onset_mae_ms": 13.298846855815555,
+              "baseline_matched_release_mae_ms": 146.20092586831476,
+              "false_notes_removed": 1,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-authored-bass": {
+              "recordings": 16,
+              "matched_baseline_pairs": 129,
+              "baseline_matched_onset_mae_ms": 20.43161243825701,
+              "baseline_matched_release_mae_ms": 841.3215419501136,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-authored-keyboard": {
+              "recordings": 8,
+              "matched_baseline_pairs": 68,
+              "baseline_matched_onset_mae_ms": 6.648319327731297,
+              "baseline_matched_release_mae_ms": 257.9872715752966,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-bass": {
+              "recordings": 12,
+              "matched_baseline_pairs": 52,
+              "baseline_matched_onset_mae_ms": 29.75709052851935,
+              "baseline_matched_release_mae_ms": 1018.66936159079,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-dynamics-bass": {
+              "recordings": 64,
+              "matched_baseline_pairs": 427,
+              "baseline_matched_onset_mae_ms": 17.672340380336443,
+              "baseline_matched_release_mae_ms": 795.7641659630286,
+              "false_notes_removed": 4,
+              "failed_recordings": [
+                "dynamics-v44-bass_synthetic_098-100-broken-chords"
+              ],
+              "lost_reference_seconds": 0.25541950113378675
+            },
+            "nsynth-dynamics-keyboard": {
+              "recordings": 32,
+              "matched_baseline_pairs": 264,
+              "baseline_matched_onset_mae_ms": 11.083687212258813,
+              "baseline_matched_release_mae_ms": 239.41917559953242,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "nsynth-keyboard": {
+              "recordings": 6,
+              "matched_baseline_pairs": 12,
+              "baseline_matched_onset_mae_ms": 6.679969765684042,
+              "baseline_matched_release_mae_ms": 243.49478458049873,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "original-bass-texture": {
+              "recordings": 24,
+              "matched_baseline_pairs": 445,
+              "baseline_matched_onset_mae_ms": 14.810392111901006,
+              "baseline_matched_release_mae_ms": 158.63371873592408,
+              "false_notes_removed": 1,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "original-bass-timbres": {
+              "recordings": 32,
+              "matched_baseline_pairs": 628,
+              "baseline_matched_onset_mae_ms": 16.817271112266827,
+              "baseline_matched_release_mae_ms": 133.75379587114867,
+              "false_notes_removed": 1,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "slakh-demucs-bass": {
+              "recordings": 16,
+              "matched_baseline_pairs": 263,
+              "baseline_matched_onset_mae_ms": 26.436839057500666,
+              "baseline_matched_release_mae_ms": 258.99514442148984,
+              "false_notes_removed": 1,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "slakh-oracle-bass": {
+              "recordings": 16,
+              "matched_baseline_pairs": 470,
+              "baseline_matched_onset_mae_ms": 23.439016853468186,
+              "baseline_matched_release_mae_ms": 173.10506036133563,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "vienna-demucs-bass-bass": {
+              "recordings": 2,
+              "matched_baseline_pairs": 17,
+              "baseline_matched_onset_mae_ms": 29.1760304121643,
+              "baseline_matched_release_mae_ms": 361.66326530612156,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            },
+            "vienna-piano-mp3-bass": {
+              "recordings": 12,
+              "matched_baseline_pairs": 716,
+              "baseline_matched_onset_mae_ms": 18.268510020395322,
+              "baseline_matched_release_mae_ms": 326.66560350397083,
+              "false_notes_removed": 0,
+              "failed_recordings": [],
+              "lost_reference_seconds": 0.0
+            }
+          },
+          "passes": false,
+          "all_retained_clocks_identical": true
+        }
+      }
+    },
+    "training_corpora": {
+      "slakh-oracle-bass": 44,
+      "slakh-demucs-bass": 48,
+      "original-bass-timbres": 128,
+      "guitarset-bass-register": 239,
+      "original-bass-texture": 72,
+      "vienna-piano-mp3-bass": 42,
+      "nsynth-bass": 36,
+      "nsynth-keyboard": 30,
+      "groove-drums-only": 9,
+      "groove-pitched-mixture": 54,
+      "musicnet-real-piano": 63,
+      "nsynth-authored-bass": 48,
+      "nsynth-authored-keyboard": 40,
+      "mutopia-joplin-synthesized": 16,
+      "nsynth-dynamics-bass": 192,
+      "nsynth-dynamics-keyboard": 160,
+      "tinysol-isolated-pitch": 712,
+      "nrgcp-authored-sampled-piano": 144,
+      "pdmx-authored-sampled-piano": 45,
+      "coco-authored-sampled-piano": 108,
+      "keynata-authored-sampled-piano": 72
+    },
+    "isolated_validation_corpora": {
+      "tinysol-isolated-pitch": 237
+    },
+    "limitations": "Cached bass-candidate evaluation, before global quantization, arrangement, notation and playback. Matched-pair errors exclude missed notes and are not overall accuracy. Authored key-command timing is not a human-performance or acoustic-release label. No raw-versus-separated stage traces or full-song piano-arrangement reference is scored here."
+  },
+  "source_sha256": {
+    "backend/app/services/audio_analysis.py": "845c688c6a8fa69ef933e98e50771e839c37e1d29cd79b05fa8b0d8b1c5dfcce",
+    "backend/app/services/piano_transcription.py": "dfe61497349a4ffdc3c8316fc4d2c2b73d4a9e04a8658af5a499d93ef1f0bd42",
+    "backend/app/services/midi_to_score.py": "230e99e6a1cef92bbc3056386edb7d9c5d2485a008a3e592329b9f5b3ce436f4",
+    "backend/app/services/playback.py": "9186203e4e7ce04ac6b6af78722e3b865e8a2345174779dbe918008f26f5499a",
+    "backend/app/services/source_separation.py": "9f13a175c85c77960200775628e3b47b27413bc77a8aa63f3b8adbc4638a88c5",
+    "backend/app/services/left_presence_network.py": "0b81c3f5de19a8921e276b98586bebe2c88bc4117b0a1b79f67ed0591070ebee",
+    "scripts/diagnose_transcription_pipeline.py": "e527a9db15a5629f1b7d5774b917cca79f61f8ed8986f56631199f35833764bb"
+  }
+}
