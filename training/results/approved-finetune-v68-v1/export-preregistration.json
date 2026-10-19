@@ -1,0 +1,28 @@
+{
+  "version": "approved-guarded-support-feature-finetune-v68-v1",
+  "source_sha256": {
+    "training/export_approved_finetune_v68.py": "4b6fe7c2e995d664565fbde0bbcee6141881e5b3f06843d83c296380943fb1c8",
+    "training/approved_export_gate_v68.py": "a8608335bdbc5c90e6a3077754207f03abfde554bbade7d4a24015c5a5bad37d",
+    "training/test_approved_export_gate_v68.py": "2d306f1290548b3f3e17d820edef8fd7a98ff7743ef62066915ab3a67a1cd6f3",
+    "training/test_export_approved_finetune_v68.py": "4d502a824ae9e9fe8f29686862cd36bb02e3b7a4676629ae7a151793f873cf66",
+    "backend/app/services/left_presence_refinement.py": "b6b9ae4e6cb85514672b60b9ae9492a30726dfc2824afe88a8eb7a4150dd3c58",
+    "backend/tests/test_left_presence_refinement.py": "386db5dfb315e58cdaba81d280b052d54754671ec82a1e935b92b88d13a96aab",
+    "backend/app/services/left_presence.py": "c7417371250bef2b01f7701d49fb94d4f868a597db45fcd0e36efc7feaec74a5",
+    "backend/app/services/left_presence_network.py": "0b81c3f5de19a8921e276b98586bebe2c88bc4117b0a1b79f67ed0591070ebee",
+    "backend/app/services/chord_release.py": "26c6f22bb07e7a572792195e51cb28beea0f9c832fc7b796a709de66cbe996c3",
+    "backend/app/services/attack_local_evidence.py": "e399e4213054788a701f59aee77c57cce56a80f3191a606317d9994ebcb454bc",
+    "backend/app/services/release_local_evidence.py": "226cc21ed43aadfc7034e43c443f3fe765a7f201dc9de1523d4377d09c35a460",
+    "backend/app/services/release_neighbors.py": "1402dd7d5f0090c01ab12e9a5b409a0acc36f4fed717ca37f2b1a2c51a6e4216",
+    "backend/app/services/temporal_note_model.py": "5fe2fab2638de454f9c1743ed1abc11a6c86529d846a7c2ff48c00f2266f95a2",
+    "backend/app/services/waveform_recurrence.py": "ce1b78d31f65ad30695c8ba93bab3301b144cfab6a49a09deafa97a7f9108770"
+  },
+  "fresh_protocol_sha256": "d15ae16226cb1106bec7fc0d789794c0d835c5fcf4e875863ab020dc816cd36d",
+  "qualification_protocol_sha256": "dbeb169f5471b6cbbda1b8c0027db772ca1e0f1eae2c81bde05cdc9429ba0a06",
+  "parity_recordings": 3563,
+  "physical_recordings": 40,
+  "no_user_audio_or_scores": true,
+  "never_overwrite_approved_asset": true,
+  "registered_before_candidate_fitting": true,
+  "no_candidate_exported": true,
+  "storage_reservation_bytes": 500000000
+}

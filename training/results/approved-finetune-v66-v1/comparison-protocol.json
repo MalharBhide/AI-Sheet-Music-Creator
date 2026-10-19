@@ -1,0 +1,9 @@
+{
+  "runs": [
+    "approved-finetune-v66-v1",
+    "approved-finetune-v67-v1"
+  ],
+  "selection": "Require full validation preservation and positive family gains in both policies. Compare each frozen batch winner by real-piano gain raw/strict, total false-note gain raw/strict, then isolated-pitch gain raw/strict; ties prefer V66. Select once before opening any regression or fresh data.",
+  "no_runner_up_after_regression_or_fresh_failure": true,
+  "consumed_or_fresh_data_read": false
+}
