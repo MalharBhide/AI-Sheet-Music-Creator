@@ -316,13 +316,15 @@ def test_shifted_repeated_triplets_keep_equal_spacing_after_phase_alignment():
     assert np.diff([item.start for item in result]) == pytest.approx(np.full(17, 1 / 6))
 
 
-def test_triplet_phase_does_not_infer_ternary_rhythm_from_missing_slots():
+def test_triplet_phase_requires_repeated_evidence_for_missing_slots():
     notes = [n(64, .06 + i * .5, .2 + i * .5) for i in range(10)]
     # A regular quarter line fits the existing straight grid, preserving its phase.
     assert estimate_grid_phase(notes, tempo_bpm=120, grid='sixteenth') == pytest.approx(.06)
     incomplete = [n(64, .06 + beat * .5 + slot / 6, .16 + beat * .5 + slot / 6)
                   for beat in range(8) for slot in (0, 1)]
-    assert estimate_grid_phase(incomplete, tempo_bpm=120, grid='sixteenth') == 0
+    # Three or more consistent pairs now supply the previously missing evidence.
+    assert estimate_grid_phase(incomplete, tempo_bpm=120, grid='sixteenth') == pytest.approx(.06)
+    assert estimate_grid_phase(incomplete[:4], tempo_bpm=120, grid='sixteenth') == 0
 
 
 def test_repeated_key_evidence_refines_small_tempo_error_without_guessing_beat_level():

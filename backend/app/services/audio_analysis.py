@@ -98,12 +98,19 @@ def estimate_tempo(audio_path: Path, requested: float | None) -> tuple[float, li
 
 
 def triplet_beats(notes: list, tempo_bpm: float) -> set[int]:
-    """Recognize complete eighth-triplet groups, not isolated off-grid attacks.
+    """Recognize complete triplets or repeated, well-supported ternary pairs.
 
-    Require all three distinct triplet positions within a beat, each within
-    .06 quarter notes. Chord duplication cannot inflate support. This preserves
-    clear triplets while leaving swing, incomplete groups and rubato unresolved.
+    A complete group needs all three slots within .06 quarter notes. A partial
+    group needs three consecutive beats with the same on-beat/off-beat pair,
+    every attack within .03 quarters, and a better fit than straight 16ths/32nds.
+    Repeated 2:1 swing and incomplete triplets can then retain their spacing
+    without letting one off-grid attack or duplicated chord imply a rhythm.
     """
+    complete, partial = _triplet_evidence(notes, tempo_bpm)
+    return complete | partial
+
+
+def _triplet_evidence(notes: list, tempo_bpm: float) -> tuple[set[int], set[int]]:
     support, positions = defaultdict(set), defaultdict(set)
     for item in notes:
         if not math.isfinite(item.start) or item.start < 0:
@@ -115,16 +122,30 @@ def triplet_beats(notes: list, tempo_bpm: float) -> set[int]:
         if abs(position - tick / 3) <= .06:
             beat, slot = divmod(tick, 3)
             support[beat].add(slot)
-    chosen = set()
+    chosen, partial = set(), {}
     for beat, slots in support.items():
-        if len(slots) != 3:
-            continue
         times = np.asarray(sorted(positions[beat]))
-        triplet_error = np.mean((times - np.floor(times * 3 + .5) / 3) ** 2)
+        residuals = times - np.floor(times * 3 + .5) / 3
+        triplet_error = np.mean(residuals ** 2)
         straight_error = np.mean((times - np.floor(times * 4 + .5) / 4) ** 2)
-        if triplet_error < .5 * straight_error:
+        if len(slots) == 3 and triplet_error < .5 * straight_error:
             chosen.add(beat)
-    return chosen
+        elif len(slots) == 2 and 0 in slots and np.max(np.abs(residuals)) <= .03:
+            fast_error = np.mean((times - np.floor(times * 8 + .5) / 8) ** 2)
+            if triplet_error < .5 * min(straight_error, fast_error):
+                partial[beat] = frozenset(slots)
+    # Only the supported run changes grid; don't propagate swing across rests,
+    # into straight passages, or between different partial triplet patterns.
+    run, repeated = [], set()
+    for beat in sorted(partial):
+        if run and (beat != run[-1] + 1 or partial[beat] != partial[run[-1]]):
+            if len(run) >= 3:
+                repeated.update(run)
+            run = []
+        run.append(beat)
+    if len(run) >= 3:
+        repeated.update(run)
+    return chosen, repeated
 
 
 
@@ -185,7 +206,8 @@ def clean_notes(notes: list, *, role: str, detail: str, tempo_bpm: float,
                   if math.isfinite(item.start) and math.isfinite(item.end)
                   and item.end - item.start >= minimum and low <= item.pitch <= high
                   and item.velocity >= velocity_floor]
-    triplets = triplet_beats(candidates, tempo_bpm) if grid == 'sixteenth' else set()
+    complete, partial = _triplet_evidence(candidates, tempo_bpm) if grid == 'sixteenth' else (set(), set())
+    triplets = complete | partial
     fast = fast_beats(candidates, tempo_bpm) - triplets if grid == 'sixteenth' else set()
 
     def ticks(seconds):
@@ -208,6 +230,21 @@ def clean_notes(notes: list, *, role: str, detail: str, tempo_bpm: float,
         minimum_ticks = lattice // (3 if beat in triplets else 8 if beat in fast else subdivisions)
         start = start_tick * step
         end = max(start_tick + minimum_ticks, ticks(item.end)) * step
+        if beat in partial:
+            # Swing describes attack spacing, not articulation. Do not force
+            # a short release to last a whole eighth-triplet. Choose a nearby
+            # straight or ternary sixteenth duration on the existing 24-tick
+            # notation lattice, keeping at least a ternary sixteenth duration.
+            # Anchor duration at this attack, so a straight staccato duration
+            # on an off-beat triplet does not need to land on an absolute grid.
+            target = item.end / step
+            earliest = start_tick + lattice // 6
+            endings = set()
+            for unit in (lattice // 4, lattice // 6):
+                lower = start_tick + math.floor((target - start_tick) / unit) * unit
+                endings.update(t for t in (lower, lower + unit) if t >= earliest)
+                endings.add(start_tick + math.ceil((earliest - start_tick) / unit) * unit)
+            end = min(endings, key=lambda t: (abs(t - target), t)) * step
         valid.append(pretty_midi.Note(velocity=int(item.velocity), pitch=int(item.pitch),
                                      start=start, end=end))
     grouped = defaultdict(list)
@@ -289,26 +326,31 @@ def estimate_grid_phase(notes: list, *, tempo_bpm: float, grid: str) -> float:
         return float(abs(resultant)), float(np.angle(resultant) * step / (2 * np.pi))
 
     strength, offset = phase(4 if grid == 'sixteenth' else 2)
-    if strength >= .6:
-        return offset
     if grid != 'sixteenth':
-        return 0.0
+        return offset if strength >= .6 else 0.0
     from types import SimpleNamespace
 
     fine_strength, fine_offset = phase(8)
+    ternary_strength, ternary_offset = phase(3)
+    # Jittered swing can also weakly fit a straight phase. Prefer ternary only
+    # when it clearly beats BOTH straight grids and has repeated local evidence.
+    # Comparing the 32nd grid prevents sparse straight pairs being relabeled as
+    # triplets after shifting their phase toward a ternary interpretation.
+    if ternary_strength >= .8 and ternary_strength > max(strength, fine_strength) + .15:
+        shifted = [SimpleNamespace(start=max(0., item.start - ternary_offset)) for item in selected]
+        recognized = triplet_beats(shifted, tempo_bpm)
+        coverage = sum(math.floor(item.start * tempo_bpm / 60 + 1e-6) in recognized for item in shifted)
+        if len(recognized) >= 2 and coverage >= .75 * len(shifted):
+            return ternary_offset
+    if strength >= .6:
+        return offset
     if fine_strength >= .8:
         shifted = [SimpleNamespace(start=max(0., item.start - fine_offset)) for item in selected]
         recognized = fast_beats(shifted, tempo_bpm)
         coverage = sum(math.floor(item.start * tempo_bpm / 60 + 1e-6) in recognized for item in shifted)
         if len(recognized) >= 2 and coverage >= .75 * len(shifted):
             return fine_offset
-    strength, offset = phase(3)
-    if strength < .8:
-        return 0.0
-    shifted = [SimpleNamespace(start=max(0., item.start - offset)) for item in selected]
-    recognized = triplet_beats(shifted, tempo_bpm)
-    coverage = sum(math.floor(item.start * tempo_bpm / 60 + 1e-6) in recognized for item in shifted)
-    return offset if len(recognized) >= 2 and coverage >= .75 * len(shifted) else 0.0
+    return 0.0
 
 
 def refine_repeat_tempo(notes: list, tempo_bpm: float) -> float:

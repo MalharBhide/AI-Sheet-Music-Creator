@@ -1,0 +1,28 @@
+{
+  "baseline_revision": "e9ac0a0",
+  "baseline_sha256": "845c688c6a8fa69ef933e98e50771e839c37e1d29cd79b05fa8b0d8b1c5dfcce",
+  "scope": "Repeated ternary pairs only; no training, threshold changes, downloads, or user audio",
+  "tempi": [
+    80,
+    120,
+    160
+  ],
+  "phase_seconds": [
+    0,
+    0.017
+  ],
+  "patterns": [
+    "swing",
+    "incomplete_triplet"
+  ],
+  "controls": [
+    "straight sixteenths",
+    "straight 32nds",
+    "isolated pair",
+    "chord duplicates",
+    "jitter",
+    "mixed straight and ternary passages",
+    "held chords"
+  ],
+  "release_requirement": "Improve authored repeated ternary spacing, preserve controls and note identities, pass backend tests; do not claim real-song accuracy from fixtures"
+}
