@@ -1,0 +1,94 @@
+[
+  {
+    "threshold": 0.2,
+    "failures": [
+      "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major: note F1",
+      "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major: note F1",
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: note F1",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: note F1",
+      "musicnet/Schubert/D958/Piano Sonata in C minor: note F1",
+      "False positives did not decrease by 5%"
+    ]
+  },
+  {
+    "threshold": 0.3,
+    "failures": [
+      "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major: note F1",
+      "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major: note F1",
+      "False positives did not decrease by 5%"
+    ]
+  },
+  {
+    "threshold": 0.4,
+    "failures": [
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: complete chord recall",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: note F1",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: complete chord recall",
+      "False positives did not decrease by 5%"
+    ]
+  },
+  {
+    "threshold": 0.5,
+    "failures": [
+      "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major: complete chord recall",
+      "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major: complete chord recall",
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: onset recall",
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: note F1",
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: complete chord recall",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: note F1",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: complete chord recall",
+      "musicnet/Schubert/D958/Piano Sonata in C minor: complete chord recall"
+    ]
+  },
+  {
+    "threshold": 0.6,
+    "failures": [
+      "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major: onset recall",
+      "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major: complete chord recall",
+      "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major: onset recall",
+      "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major: complete chord recall",
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: onset recall",
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: note F1",
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: complete chord recall",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: onset recall",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: complete chord recall",
+      "musicnet/Schubert/D958/Piano Sonata in C minor: onset recall",
+      "musicnet/Schubert/D958/Piano Sonata in C minor: complete chord recall"
+    ]
+  },
+  {
+    "threshold": 0.7,
+    "failures": [
+      "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major: onset recall",
+      "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major: complete chord recall",
+      "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major: onset recall",
+      "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major: complete chord recall",
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: onset recall",
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: complete chord recall",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: onset recall",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: note F1",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: complete chord recall",
+      "musicnet/Schubert/D958/Piano Sonata in C minor: onset recall",
+      "musicnet/Schubert/D958/Piano Sonata in C minor: note F1",
+      "musicnet/Schubert/D958/Piano Sonata in C minor: complete chord recall"
+    ]
+  },
+  {
+    "threshold": 0.8,
+    "failures": [
+      "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major: onset recall",
+      "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major: complete chord recall",
+      "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major: onset recall",
+      "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major: complete chord recall",
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: onset recall",
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: note F1",
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major: complete chord recall",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: onset recall",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: note F1",
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major: complete chord recall",
+      "musicnet/Schubert/D958/Piano Sonata in C minor: onset recall",
+      "musicnet/Schubert/D958/Piano Sonata in C minor: note F1",
+      "musicnet/Schubert/D958/Piano Sonata in C minor: complete chord recall"
+    ]
+  }
+]

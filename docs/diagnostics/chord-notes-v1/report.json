@@ -1,0 +1,887 @@
+{
+  "plan": {
+    "version": 1,
+    "seed": 261019,
+    "epochs": 30,
+    "learning_rate": 0.0003,
+    "data": "Existing MusicNet piano MP3 excerpts; CC BY 4.0",
+    "counts": {
+      "train": 63,
+      "validation": 15
+    },
+    "source_manifest_sha256": "51fc54ee4e30f56840e461e48d57ab6a2f8b39db219863a98ac0ab57242f9aa3",
+    "observations_manifest_sha256": "93be698270fd078547c866efa6f9f835758d1385c219fef194f0a65aea6ff574",
+    "encoder_sha256": "2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60",
+    "code_sha256": {
+      "train_chord_notes.py": "509206f0f81dd23f838b21f7f4b3fbd2cb1ec1b72a45640a4e9d128fe38edbdb",
+      "chord_note_model.py": "995b7b18061f9ce4a97121fa1278fd2412acd1df2d7482a9ea56d37eaf177f49"
+    },
+    "validation_status": "Previously used development works, not an untouched test",
+    "gate": "Per-work onset recall loss <= .01, F1 and complete chord recall nondecreasing; aggregate false positives decrease >= 5% versus released verifier",
+    "release": "Offline only; separated-stem and final-arrangement evaluation required before promotion",
+    "reserved_works_untouched": true,
+    "no_user_audio_or_scores": true
+  },
+  "best_epoch": 30,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6146063733668554,
+      "validation_loss": 0.5224351942539215
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.5724297915659253,
+      "validation_loss": 0.47644946972529095
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.5379022979547107,
+      "validation_loss": 0.4515566845734914
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.5254603321590121,
+      "validation_loss": 0.44556167324384055
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.5184121955008734,
+      "validation_loss": 0.438355752825737
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.5121050817625863,
+      "validation_loss": 0.43349506159623463
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.5062579503135075,
+      "validation_loss": 0.4273825645446777
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.4980825767630622,
+      "validation_loss": 0.42352264920870464
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.49009236078413704,
+      "validation_loss": 0.4177298982938131
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.48200889357498716,
+      "validation_loss": 0.4108857880036036
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.47375477968700347,
+      "validation_loss": 0.4060615430275599
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.46748903512008605,
+      "validation_loss": 0.3991150041421255
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.4589050972745532,
+      "validation_loss": 0.3962464024623235
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.45196842461351366,
+      "validation_loss": 0.39070008595784506
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.4462205862242078,
+      "validation_loss": 0.3883887698252996
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.4408986026805545,
+      "validation_loss": 0.38732116520404813
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.436957043314737,
+      "validation_loss": 0.3830119381348292
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.4326889997436887,
+      "validation_loss": 0.38076691528161366
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.4291505179707966,
+      "validation_loss": 0.37985638678073885
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.4260751131981138,
+      "validation_loss": 0.37823595106601715
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.4234577148916229,
+      "validation_loss": 0.3766838123401006
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.4210165260093553,
+      "validation_loss": 0.3753267248471578
+    },
+    {
+      "epoch": 23,
+      "train_loss": 0.4190590011458548,
+      "validation_loss": 0.373439367612203
+    },
+    {
+      "epoch": 24,
+      "train_loss": 0.41774649480505593,
+      "validation_loss": 0.3757753868897756
+    },
+    {
+      "epoch": 25,
+      "train_loss": 0.41602053422303426,
+      "validation_loss": 0.3713551789522171
+    },
+    {
+      "epoch": 26,
+      "train_loss": 0.41442541659824433,
+      "validation_loss": 0.37009860972563424
+    },
+    {
+      "epoch": 27,
+      "train_loss": 0.41238871819916223,
+      "validation_loss": 0.370162895321846
+    },
+    {
+      "epoch": 28,
+      "train_loss": 0.4117222772467704,
+      "validation_loss": 0.3671301354964574
+    },
+    {
+      "epoch": 29,
+      "train_loss": 0.4100800948956656,
+      "validation_loss": 0.36740794976552327
+    },
+    {
+      "epoch": 30,
+      "train_loss": 0.4085200536582205,
+      "validation_loss": 0.3669286608695984
+    }
+  ],
+  "raw_candidates": {
+    "aggregate": {
+      "tp": 1728,
+      "predicted": 2852,
+      "reference": 2730,
+      "chords": 824,
+      "complete_chords": 363,
+      "precision": 0.605890603085554,
+      "recall": 0.6329670329670329,
+      "f1": 0.6191329272662128,
+      "false_positives": 1124,
+      "complete_chord_recall": 0.4405339805825243
+    },
+    "per_work": {
+      "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major": {
+        "tp": 447,
+        "predicted": 635,
+        "reference": 512,
+        "chords": 148,
+        "complete_chords": 112,
+        "precision": 0.7039370078740157,
+        "recall": 0.873046875,
+        "f1": 0.7794245858761988,
+        "false_positives": 188,
+        "complete_chord_recall": 0.7567567567567568
+      },
+      "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major": {
+        "tp": 357,
+        "predicted": 531,
+        "reference": 441,
+        "chords": 126,
+        "complete_chords": 81,
+        "precision": 0.672316384180791,
+        "recall": 0.8095238095238095,
+        "f1": 0.7345679012345679,
+        "false_positives": 174,
+        "complete_chord_recall": 0.6428571428571429
+      },
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major": {
+        "tp": 244,
+        "predicted": 411,
+        "reference": 417,
+        "chords": 97,
+        "complete_chords": 39,
+        "precision": 0.5936739659367397,
+        "recall": 0.5851318944844125,
+        "f1": 0.5893719806763285,
+        "false_positives": 167,
+        "complete_chord_recall": 0.4020618556701031
+      },
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major": {
+        "tp": 357,
+        "predicted": 685,
+        "reference": 753,
+        "chords": 276,
+        "complete_chords": 69,
+        "precision": 0.5211678832116788,
+        "recall": 0.47410358565737054,
+        "f1": 0.4965229485396384,
+        "false_positives": 328,
+        "complete_chord_recall": 0.25
+      },
+      "musicnet/Schubert/D958/Piano Sonata in C minor": {
+        "tp": 323,
+        "predicted": 590,
+        "reference": 607,
+        "chords": 177,
+        "complete_chords": 62,
+        "precision": 0.5474576271186441,
+        "recall": 0.5321252059308073,
+        "f1": 0.5396825396825397,
+        "false_positives": 267,
+        "complete_chord_recall": 0.3502824858757062
+      }
+    }
+  },
+  "released_verifier": {
+    "aggregate": {
+      "tp": 1718,
+      "predicted": 2773,
+      "reference": 2730,
+      "chords": 824,
+      "complete_chords": 359,
+      "precision": 0.6195456184637577,
+      "recall": 0.6293040293040293,
+      "f1": 0.6243866981646374,
+      "false_positives": 1055,
+      "complete_chord_recall": 0.4356796116504854
+    },
+    "per_work": {
+      "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major": {
+        "tp": 446,
+        "predicted": 619,
+        "reference": 512,
+        "chords": 148,
+        "complete_chords": 112,
+        "precision": 0.7205169628432956,
+        "recall": 0.87109375,
+        "f1": 0.78868258178603,
+        "false_positives": 173,
+        "complete_chord_recall": 0.7567567567567568
+      },
+      "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major": {
+        "tp": 355,
+        "predicted": 508,
+        "reference": 441,
+        "chords": 126,
+        "complete_chords": 80,
+        "precision": 0.6988188976377953,
+        "recall": 0.8049886621315193,
+        "f1": 0.7481559536354057,
+        "false_positives": 153,
+        "complete_chord_recall": 0.6349206349206349
+      },
+      "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major": {
+        "tp": 243,
+        "predicted": 401,
+        "reference": 417,
+        "chords": 97,
+        "complete_chords": 38,
+        "precision": 0.6059850374064838,
+        "recall": 0.5827338129496403,
+        "f1": 0.5941320293398533,
+        "false_positives": 158,
+        "complete_chord_recall": 0.3917525773195876
+      },
+      "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major": {
+        "tp": 353,
+        "predicted": 665,
+        "reference": 753,
+        "chords": 276,
+        "complete_chords": 68,
+        "precision": 0.530827067669173,
+        "recall": 0.46879150066401065,
+        "f1": 0.4978843441466855,
+        "false_positives": 312,
+        "complete_chord_recall": 0.2463768115942029
+      },
+      "musicnet/Schubert/D958/Piano Sonata in C minor": {
+        "tp": 321,
+        "predicted": 580,
+        "reference": 607,
+        "chords": 177,
+        "complete_chords": 61,
+        "precision": 0.553448275862069,
+        "recall": 0.528830313014827,
+        "f1": 0.5408593091828138,
+        "false_positives": 259,
+        "complete_chord_recall": 0.3446327683615819
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "threshold": 0.2,
+      "development_gate_passed": false,
+      "aggregate": {
+        "tp": 1728,
+        "predicted": 2844,
+        "reference": 2730,
+        "chords": 824,
+        "complete_chords": 363,
+        "precision": 0.6075949367088608,
+        "recall": 0.6329670329670329,
+        "f1": 0.620021528525296,
+        "false_positives": 1116,
+        "complete_chord_recall": 0.4405339805825243
+      },
+      "per_work": {
+        "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major": {
+          "tp": 447,
+          "predicted": 633,
+          "reference": 512,
+          "chords": 148,
+          "complete_chords": 112,
+          "precision": 0.7061611374407583,
+          "recall": 0.873046875,
+          "f1": 0.7807860262008733,
+          "false_positives": 186,
+          "complete_chord_recall": 0.7567567567567568
+        },
+        "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major": {
+          "tp": 357,
+          "predicted": 529,
+          "reference": 441,
+          "chords": 126,
+          "complete_chords": 81,
+          "precision": 0.6748582230623819,
+          "recall": 0.8095238095238095,
+          "f1": 0.7360824742268042,
+          "false_positives": 172,
+          "complete_chord_recall": 0.6428571428571429
+        },
+        "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major": {
+          "tp": 244,
+          "predicted": 410,
+          "reference": 417,
+          "chords": 97,
+          "complete_chords": 39,
+          "precision": 0.5951219512195122,
+          "recall": 0.5851318944844125,
+          "f1": 0.5900846432889963,
+          "false_positives": 166,
+          "complete_chord_recall": 0.4020618556701031
+        },
+        "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major": {
+          "tp": 357,
+          "predicted": 683,
+          "reference": 753,
+          "chords": 276,
+          "complete_chords": 69,
+          "precision": 0.5226939970717424,
+          "recall": 0.47410358565737054,
+          "f1": 0.4972144846796657,
+          "false_positives": 326,
+          "complete_chord_recall": 0.25
+        },
+        "musicnet/Schubert/D958/Piano Sonata in C minor": {
+          "tp": 323,
+          "predicted": 589,
+          "reference": 607,
+          "chords": 177,
+          "complete_chords": 62,
+          "precision": 0.5483870967741935,
+          "recall": 0.5321252059308073,
+          "f1": 0.540133779264214,
+          "false_positives": 266,
+          "complete_chord_recall": 0.3502824858757062
+        }
+      }
+    },
+    {
+      "threshold": 0.3,
+      "development_gate_passed": false,
+      "aggregate": {
+        "tp": 1726,
+        "predicted": 2808,
+        "reference": 2730,
+        "chords": 824,
+        "complete_chords": 361,
+        "precision": 0.6146723646723646,
+        "recall": 0.6322344322344322,
+        "f1": 0.6233297219212712,
+        "false_positives": 1082,
+        "complete_chord_recall": 0.4381067961165049
+      },
+      "per_work": {
+        "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major": {
+          "tp": 447,
+          "predicted": 625,
+          "reference": 512,
+          "chords": 148,
+          "complete_chords": 112,
+          "precision": 0.7152,
+          "recall": 0.873046875,
+          "f1": 0.7862796833773087,
+          "false_positives": 178,
+          "complete_chord_recall": 0.7567567567567568
+        },
+        "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major": {
+          "tp": 356,
+          "predicted": 518,
+          "reference": 441,
+          "chords": 126,
+          "complete_chords": 80,
+          "precision": 0.6872586872586872,
+          "recall": 0.8072562358276644,
+          "f1": 0.7424400417101147,
+          "false_positives": 162,
+          "complete_chord_recall": 0.6349206349206349
+        },
+        "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major": {
+          "tp": 244,
+          "predicted": 403,
+          "reference": 417,
+          "chords": 97,
+          "complete_chords": 39,
+          "precision": 0.6054590570719603,
+          "recall": 0.5851318944844125,
+          "f1": 0.5951219512195122,
+          "false_positives": 159,
+          "complete_chord_recall": 0.4020618556701031
+        },
+        "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major": {
+          "tp": 356,
+          "predicted": 677,
+          "reference": 753,
+          "chords": 276,
+          "complete_chords": 68,
+          "precision": 0.5258493353028065,
+          "recall": 0.47277556440903057,
+          "f1": 0.4979020979020979,
+          "false_positives": 321,
+          "complete_chord_recall": 0.2463768115942029
+        },
+        "musicnet/Schubert/D958/Piano Sonata in C minor": {
+          "tp": 323,
+          "predicted": 585,
+          "reference": 607,
+          "chords": 177,
+          "complete_chords": 62,
+          "precision": 0.5521367521367522,
+          "recall": 0.5321252059308073,
+          "f1": 0.5419463087248322,
+          "false_positives": 262,
+          "complete_chord_recall": 0.3502824858757062
+        }
+      }
+    },
+    {
+      "threshold": 0.4,
+      "development_gate_passed": false,
+      "aggregate": {
+        "tp": 1716,
+        "predicted": 2753,
+        "reference": 2730,
+        "chords": 824,
+        "complete_chords": 355,
+        "precision": 0.6233200145296041,
+        "recall": 0.6285714285714286,
+        "f1": 0.6259347072770381,
+        "false_positives": 1037,
+        "complete_chord_recall": 0.4308252427184466
+      },
+      "per_work": {
+        "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major": {
+          "tp": 447,
+          "predicted": 617,
+          "reference": 512,
+          "chords": 148,
+          "complete_chords": 112,
+          "precision": 0.7244732576985413,
+          "recall": 0.873046875,
+          "f1": 0.79185119574845,
+          "false_positives": 170,
+          "complete_chord_recall": 0.7567567567567568
+        },
+        "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major": {
+          "tp": 356,
+          "predicted": 507,
+          "reference": 441,
+          "chords": 126,
+          "complete_chords": 80,
+          "precision": 0.7021696252465484,
+          "recall": 0.8072562358276644,
+          "f1": 0.7510548523206751,
+          "false_positives": 151,
+          "complete_chord_recall": 0.6349206349206349
+        },
+        "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major": {
+          "tp": 241,
+          "predicted": 393,
+          "reference": 417,
+          "chords": 97,
+          "complete_chords": 36,
+          "precision": 0.6132315521628499,
+          "recall": 0.5779376498800959,
+          "f1": 0.5950617283950618,
+          "false_positives": 152,
+          "complete_chord_recall": 0.3711340206185567
+        },
+        "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major": {
+          "tp": 353,
+          "predicted": 666,
+          "reference": 753,
+          "chords": 276,
+          "complete_chords": 66,
+          "precision": 0.53003003003003,
+          "recall": 0.46879150066401065,
+          "f1": 0.4975334742776603,
+          "false_positives": 313,
+          "complete_chord_recall": 0.2391304347826087
+        },
+        "musicnet/Schubert/D958/Piano Sonata in C minor": {
+          "tp": 319,
+          "predicted": 570,
+          "reference": 607,
+          "chords": 177,
+          "complete_chords": 61,
+          "precision": 0.5596491228070175,
+          "recall": 0.5255354200988468,
+          "f1": 0.5420560747663551,
+          "false_positives": 251,
+          "complete_chord_recall": 0.3446327683615819
+        }
+      }
+    },
+    {
+      "threshold": 0.5,
+      "development_gate_passed": false,
+      "aggregate": {
+        "tp": 1696,
+        "predicted": 2634,
+        "reference": 2730,
+        "chords": 824,
+        "complete_chords": 345,
+        "precision": 0.6438876233864844,
+        "recall": 0.6212454212454213,
+        "f1": 0.6323639075316928,
+        "false_positives": 938,
+        "complete_chord_recall": 0.4186893203883495
+      },
+      "per_work": {
+        "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major": {
+          "tp": 444,
+          "predicted": 582,
+          "reference": 512,
+          "chords": 148,
+          "complete_chords": 110,
+          "precision": 0.7628865979381443,
+          "recall": 0.8671875,
+          "f1": 0.8117001828153565,
+          "false_positives": 138,
+          "complete_chord_recall": 0.7432432432432432
+        },
+        "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major": {
+          "tp": 351,
+          "predicted": 477,
+          "reference": 441,
+          "chords": 126,
+          "complete_chords": 77,
+          "precision": 0.7358490566037735,
+          "recall": 0.7959183673469388,
+          "f1": 0.7647058823529411,
+          "false_positives": 126,
+          "complete_chord_recall": 0.6111111111111112
+        },
+        "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major": {
+          "tp": 238,
+          "predicted": 385,
+          "reference": 417,
+          "chords": 97,
+          "complete_chords": 35,
+          "precision": 0.6181818181818182,
+          "recall": 0.5707434052757794,
+          "f1": 0.5935162094763092,
+          "false_positives": 147,
+          "complete_chord_recall": 0.36082474226804123
+        },
+        "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major": {
+          "tp": 346,
+          "predicted": 637,
+          "reference": 753,
+          "chords": 276,
+          "complete_chords": 63,
+          "precision": 0.543171114599686,
+          "recall": 0.4594953519256308,
+          "f1": 0.497841726618705,
+          "false_positives": 291,
+          "complete_chord_recall": 0.22826086956521738
+        },
+        "musicnet/Schubert/D958/Piano Sonata in C minor": {
+          "tp": 317,
+          "predicted": 553,
+          "reference": 607,
+          "chords": 177,
+          "complete_chords": 60,
+          "precision": 0.5732368896925859,
+          "recall": 0.5222405271828665,
+          "f1": 0.5465517241379311,
+          "false_positives": 236,
+          "complete_chord_recall": 0.3389830508474576
+        }
+      }
+    },
+    {
+      "threshold": 0.6,
+      "development_gate_passed": false,
+      "aggregate": {
+        "tp": 1666,
+        "predicted": 2504,
+        "reference": 2730,
+        "chords": 824,
+        "complete_chords": 327,
+        "precision": 0.6653354632587859,
+        "recall": 0.6102564102564103,
+        "f1": 0.6366068016813144,
+        "false_positives": 838,
+        "complete_chord_recall": 0.39684466019417475
+      },
+      "per_work": {
+        "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major": {
+          "tp": 439,
+          "predicted": 551,
+          "reference": 512,
+          "chords": 148,
+          "complete_chords": 105,
+          "precision": 0.7967332123411979,
+          "recall": 0.857421875,
+          "f1": 0.825964252116651,
+          "false_positives": 112,
+          "complete_chord_recall": 0.7094594594594594
+        },
+        "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major": {
+          "tp": 345,
+          "predicted": 458,
+          "reference": 441,
+          "chords": 126,
+          "complete_chords": 73,
+          "precision": 0.7532751091703057,
+          "recall": 0.782312925170068,
+          "f1": 0.7675194660734149,
+          "false_positives": 113,
+          "complete_chord_recall": 0.5793650793650794
+        },
+        "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major": {
+          "tp": 234,
+          "predicted": 371,
+          "reference": 417,
+          "chords": 97,
+          "complete_chords": 32,
+          "precision": 0.6307277628032345,
+          "recall": 0.5611510791366906,
+          "f1": 0.5939086294416244,
+          "false_positives": 137,
+          "complete_chord_recall": 0.32989690721649484
+        },
+        "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major": {
+          "tp": 339,
+          "predicted": 607,
+          "reference": 753,
+          "chords": 276,
+          "complete_chords": 60,
+          "precision": 0.5584843492586491,
+          "recall": 0.450199203187251,
+          "f1": 0.4985294117647059,
+          "false_positives": 268,
+          "complete_chord_recall": 0.21739130434782608
+        },
+        "musicnet/Schubert/D958/Piano Sonata in C minor": {
+          "tp": 309,
+          "predicted": 517,
+          "reference": 607,
+          "chords": 177,
+          "complete_chords": 57,
+          "precision": 0.597678916827853,
+          "recall": 0.5090609555189456,
+          "f1": 0.5498220640569395,
+          "false_positives": 208,
+          "complete_chord_recall": 0.3220338983050847
+        }
+      }
+    },
+    {
+      "threshold": 0.7,
+      "development_gate_passed": false,
+      "aggregate": {
+        "tp": 1612,
+        "predicted": 2340,
+        "reference": 2730,
+        "chords": 824,
+        "complete_chords": 303,
+        "precision": 0.6888888888888889,
+        "recall": 0.5904761904761905,
+        "f1": 0.6358974358974359,
+        "false_positives": 728,
+        "complete_chord_recall": 0.36771844660194175
+      },
+      "per_work": {
+        "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major": {
+          "tp": 431,
+          "predicted": 519,
+          "reference": 512,
+          "chords": 148,
+          "complete_chords": 99,
+          "precision": 0.8304431599229287,
+          "recall": 0.841796875,
+          "f1": 0.8360814742967992,
+          "false_positives": 88,
+          "complete_chord_recall": 0.668918918918919
+        },
+        "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major": {
+          "tp": 341,
+          "predicted": 440,
+          "reference": 441,
+          "chords": 126,
+          "complete_chords": 72,
+          "precision": 0.775,
+          "recall": 0.7732426303854876,
+          "f1": 0.7741203178206584,
+          "false_positives": 99,
+          "complete_chord_recall": 0.5714285714285714
+        },
+        "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major": {
+          "tp": 228,
+          "predicted": 350,
+          "reference": 417,
+          "chords": 97,
+          "complete_chords": 28,
+          "precision": 0.6514285714285715,
+          "recall": 0.5467625899280576,
+          "f1": 0.5945241199478487,
+          "false_positives": 122,
+          "complete_chord_recall": 0.28865979381443296
+        },
+        "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major": {
+          "tp": 320,
+          "predicted": 555,
+          "reference": 753,
+          "chords": 276,
+          "complete_chords": 55,
+          "precision": 0.5765765765765766,
+          "recall": 0.4249667994687915,
+          "f1": 0.4892966360856269,
+          "false_positives": 235,
+          "complete_chord_recall": 0.19927536231884058
+        },
+        "musicnet/Schubert/D958/Piano Sonata in C minor": {
+          "tp": 292,
+          "predicted": 476,
+          "reference": 607,
+          "chords": 177,
+          "complete_chords": 49,
+          "precision": 0.6134453781512605,
+          "recall": 0.48105436573311366,
+          "f1": 0.5392428439519852,
+          "false_positives": 184,
+          "complete_chord_recall": 0.2768361581920904
+        }
+      }
+    },
+    {
+      "threshold": 0.8,
+      "development_gate_passed": false,
+      "aggregate": {
+        "tp": 1515,
+        "predicted": 2114,
+        "reference": 2730,
+        "chords": 824,
+        "complete_chords": 267,
+        "precision": 0.716650898770104,
+        "recall": 0.554945054945055,
+        "f1": 0.6255161023947151,
+        "false_positives": 599,
+        "complete_chord_recall": 0.32402912621359226
+      },
+      "per_work": {
+        "musicnet/Bach/BWV862/WTK I, No. 17: Prelude and Fugue in A-flat major": {
+          "tp": 418,
+          "predicted": 483,
+          "reference": 512,
+          "chords": 148,
+          "complete_chords": 91,
+          "precision": 0.865424430641822,
+          "recall": 0.81640625,
+          "f1": 0.8402010050251256,
+          "false_positives": 65,
+          "complete_chord_recall": 0.6148648648648649
+        },
+        "musicnet/Bach/BWV864/WTK I, No. 19: Prelude and Fugue in A major": {
+          "tp": 329,
+          "predicted": 403,
+          "reference": 441,
+          "chords": 126,
+          "complete_chords": 66,
+          "precision": 0.8163771712158809,
+          "recall": 0.746031746031746,
+          "f1": 0.7796208530805687,
+          "false_positives": 74,
+          "complete_chord_recall": 0.5238095238095238
+        },
+        "musicnet/Beethoven/OP31NO3/Piano Sonata No 18 in E-flat major": {
+          "tp": 212,
+          "predicted": 329,
+          "reference": 417,
+          "chords": 97,
+          "complete_chords": 21,
+          "precision": 0.6443768996960486,
+          "recall": 0.5083932853717026,
+          "f1": 0.5683646112600537,
+          "false_positives": 117,
+          "complete_chord_recall": 0.21649484536082475
+        },
+        "musicnet/Beethoven/OP53/Piano Sonata No 21 in C major": {
+          "tp": 292,
+          "predicted": 480,
+          "reference": 753,
+          "chords": 276,
+          "complete_chords": 48,
+          "precision": 0.6083333333333333,
+          "recall": 0.38778220451527223,
+          "f1": 0.47364152473641524,
+          "false_positives": 188,
+          "complete_chord_recall": 0.17391304347826086
+        },
+        "musicnet/Schubert/D958/Piano Sonata in C minor": {
+          "tp": 264,
+          "predicted": 419,
+          "reference": 607,
+          "chords": 177,
+          "complete_chords": 41,
+          "precision": 0.630071599045346,
+          "recall": 0.43492586490939045,
+          "f1": 0.5146198830409356,
+          "false_positives": 155,
+          "complete_chord_recall": 0.23163841807909605
+        }
+      }
+    }
+  ],
+  "chosen_threshold": null,
+  "production_promoted": false,
+  "limitations": [
+    "Piano development recordings are not separated full-song stems.",
+    "Onset metrics require correct pitch within 50ms; endpoint accuracy is not trained or claimed.",
+    "Complete chord recall does not penalize extra chord tones; false positives are gated separately.",
+    "This filter cannot recover notes absent from the frozen detector.",
+    "No final arrangement or reserved test evaluation; never auto-deploy."
+  ]
+}

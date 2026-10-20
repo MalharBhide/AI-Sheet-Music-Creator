@@ -1,0 +1,246 @@
+"""Bounded full-register piano experiment; never exports a production model.
+
+Uses existing licensed MusicNet train/development MP3 excerpts only. Reserved
+works and user uploads are never opened. Validation is not an untouched test.
+"""
+
+import argparse
+import contextlib
+import copy
+import csv
+import hashlib
+import json
+import os
+from pathlib import Path
+
+import numpy as np
+import torch
+
+from chord_note_model import ChordNoteVerifier, peer_matrix
+
+
+def digest(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def write(path, value):
+    path.write_text(json.dumps(value, indent=2) + '\n')
+
+
+def prepare(root, output):
+    import soundfile as sf
+    from basic_pitch import ICASSP_2022_MODEL_PATH
+    from basic_pitch.inference import Model, predict
+    from cache_note_verifier import targets
+    from prepare_musicnet_v32 import references, sources
+
+    from app.services.accompaniment_candidates import decode_candidates
+    from app.services.accompaniment_verifier import AccompanimentVerifier, CHECKPOINT
+    from app.services.note_evidence import note_features
+
+    source = root / 'musicnet-piano-subset-v1'
+    original = {r['id']: r for r in sources(source) if r['group'] in ('train', 'validation')}
+    observed = root / 'musicnet-v32-observations-v1'
+    manifest = json.loads((observed / 'manifest.json').read_text())
+    if manifest['plan_sha256'] != digest(observed / 'plan.json'):
+        raise ValueError('Changed MusicNet observation plan')
+    rows = manifest['items']
+    if len(rows) != 78 or len({r['id'] for r in rows}) != 78:
+        raise ValueError('Incomplete or duplicate fixed MusicNet excerpts')
+    plan = {'version': 1, 'seed': 261019, 'epochs': 30, 'learning_rate': .0003,
+            'data': 'Existing MusicNet piano MP3 excerpts; CC BY 4.0',
+            'counts': {g: sum(r['group'] == g for r in rows) for g in ('train', 'validation')},
+            'source_manifest_sha256': digest(source / 'manifest.json'),
+            'observations_manifest_sha256': digest(observed / 'manifest.json'),
+            'encoder_sha256': digest(CHECKPOINT),
+            'code_sha256': {p.name: digest(p) for p in (Path(__file__), Path(__file__).with_name('chord_note_model.py'))},
+            'validation_status': 'Previously used development works, not an untouched test',
+            'gate': 'Per-work onset recall loss <= .01, F1 and complete chord recall nondecreasing; aggregate false positives decrease >= 5% versus released verifier',
+            'release': 'Offline only; separated-stem and final-arrangement evaluation required before promotion',
+            'reserved_works_untouched': True, 'no_user_audio_or_scores': True}
+    output.mkdir(exist_ok=True)
+    if (output / 'plan.json').exists() and json.loads((output / 'plan.json').read_text()) != plan:
+        raise ValueError('Preserve changed experiment')
+    write(output / 'plan.json', plan)
+    model, verifier = Model(ICASSP_2022_MODEL_PATH), AccompanimentVerifier()
+    for index, row in enumerate(rows):
+        record = original[row['publisher_id']]
+        crop = record['excerpts'][row['source_excerpt_index']]
+        if row['group'] != record['group'] or row['labels_sha256'] != digest(record['labels']):
+            raise ValueError('Changed partition or original piano labels')
+        with Path(record['labels']).open() as stream:
+            ref, support = references(list(csv.DictReader(stream)), 44100,
+                crop['start_sample'], crop['end_sample'], record['clock']['original_duration'])
+        if ref != row['reference'] or support != row['pitch_reference']:
+            raise ValueError('Changed reference clocks')
+        audio = Path(row['audio'])
+        if digest(audio) != row['audio_sha256']:
+            raise ValueError('Changed dataset waveform')
+        path = output / (row['id'] + '.npz')
+        identity = hashlib.sha256(json.dumps(row, sort_keys=True).encode()).hexdigest()
+        if path.exists():
+            with np.load(path, allow_pickle=False) as saved:
+                if str(saved['identity']) != identity:
+                    raise ValueError('Stale piano cache')
+            continue
+        samples, rate = sf.read(audio, dtype='float32')
+        if rate != 22050 or samples.shape != (441000,):
+            raise ValueError('Unexpected dataset clock')
+        with open(os.devnull, 'w') as quiet, contextlib.redirect_stdout(quiet):
+            acoustic, _, _ = predict(str(audio), model_or_model_path=model,
+                onset_threshold=.5, frame_threshold=.3, minimum_note_length=90,
+                multiple_pitch_bends=False, melodia_trick=False)
+            midi = decode_candidates(acoustic)
+            notes = [n for part in midi.instruments for n in part.notes]
+            events = np.asarray([[n.start, n.end, n.pitch, n.velocity] for n in notes]).reshape(-1, 4)
+            x = note_features(samples, rate, acoustic, notes)
+            verifier.filter(audio, acoustic, midi)
+        released = np.asarray([[n.start, n.end, n.pitch, n.velocity]
+            for part in midi.instruments for n in part.notes]).reshape(-1, 4)
+        reference = np.asarray(ref).reshape(-1, 3)
+        y, mask = targets(reference, events)
+        # Ongoing excerpt-edge holds and uncertain alignment remain protected
+        # from negative labels, independently of the strict onset evaluation.
+        for i, (start, end, pitch, _) in enumerate(events):
+            if not y[i] and any(p == pitch and min(end, e) - max(start, s) >= .5 * (end - start)
+                                for s, e, p in support):
+                mask[i] = False
+        mask &= (events[:, 0] >= .15) & (events[:, 1] <= 19.85)
+        np.savez_compressed(path, x=x, events=events, reference=reference, y=y, mask=mask,
+                            released=released, identity=identity)
+        print(json.dumps({'prepared': index + 1, 'total': len(rows), 'id': row['id'],
+                          'candidates': len(events)}), flush=True)
+    write(output / 'manifest.json', {'plan_sha256': digest(output / 'plan.json'),
+        'items': [{k: r[k] for k in ('id', 'group', 'source_group')} | {
+            'sha256': digest(output / (r['id'] + '.npz'))} for r in rows]})
+
+
+def match(reference, events):
+    import librosa
+    import mir_eval
+    return mir_eval.transcription.match_notes(reference[:, :2], librosa.midi_to_hz(reference[:, 2]),
+        events[:, :2], librosa.midi_to_hz(events[:, 2]), onset_tolerance=.05, offset_ratio=None)
+
+
+def chord_groups(reference):
+    """Reference attacks within 40 ms of the first; no transitive chaining."""
+    groups = []
+    for i in np.argsort(reference[:, 0], kind='stable'):
+        if not groups or reference[i, 0] - reference[groups[-1][0], 0] > .04:
+            groups.append([int(i)])
+        else:
+            groups[-1].append(int(i))
+    return [g for g in groups if len({reference[i, 2] for i in g}) >= 2]
+
+
+def measures(reference, events):
+    pairs = match(reference, events)
+    found = {i for i, _ in pairs}
+    groups = chord_groups(reference)
+    return {'tp': len(pairs), 'predicted': len(events), 'reference': len(reference),
+            'chords': len(groups), 'complete_chords': sum(set(g) <= found for g in groups)}
+
+
+def aggregate(rows):
+    result = {k: sum(r[k] for r in rows) for k in ('tp', 'predicted', 'reference', 'chords', 'complete_chords')}
+    result.update(precision=result['tp'] / max(1, result['predicted']),
+        recall=result['tp'] / max(1, result['reference']),
+        f1=2 * result['tp'] / max(1, result['predicted'] + result['reference']),
+        false_positives=result['predicted'] - result['tp'],
+        complete_chord_recall=result['complete_chords'] / max(1, result['chords']))
+    return result
+
+
+def evaluate(items, predictions):
+    per_work = {}
+    for work in sorted({i['source_group'] for i in items}):
+        per_work[work] = aggregate([measures(item['reference'], pred)
+            for item, pred in zip(items, predictions, strict=True) if item['source_group'] == work])
+    return {'aggregate': aggregate(list(per_work.values())), 'per_work': per_work}
+
+
+def train(output):
+    from app.services.accompaniment_verifier import CHECKPOINT
+    plan = json.loads((output / 'plan.json').read_text())
+    manifest = json.loads((output / 'manifest.json').read_text())
+    if manifest['plan_sha256'] != digest(output / 'plan.json') or plan['encoder_sha256'] != digest(CHECKPOINT):
+        raise ValueError('Changed experiment contract')
+    if (output / 'candidate.pt').exists():
+        raise ValueError('Preserve completed training')
+    items = []
+    for row in manifest['items']:
+        path = output / (row['id'] + '.npz')
+        if digest(path) != row['sha256']:
+            raise ValueError('Changed cached evidence')
+        with np.load(path, allow_pickle=False) as saved:
+            items.append({**row, **{k: saved[k] for k in ('x', 'events', 'y', 'mask', 'reference', 'released')}})
+    training = [i for i in items if i['group'] == 'train']
+    validation = [i for i in items if i['group'] == 'validation']
+    if {i['source_group'] for i in training} & {i['source_group'] for i in validation}:
+        raise ValueError('Work leakage')
+    torch.manual_seed(plan['seed'])
+    torch.set_num_threads(2)
+    model = ChordNoteVerifier(torch.load(CHECKPOINT, weights_only=True, map_location='cpu'))
+    optimizer = torch.optim.AdamW(model.residual.parameters(), lr=plan['learning_rate'], weight_decay=.01)
+    rng = np.random.default_rng(plan['seed'])
+    history, best_loss, best = [], float('inf'), None
+    def loss(item):
+        logits = model(torch.from_numpy(item['x']), item['events'])
+        mask = torch.from_numpy(item['mask'])
+        # Weight true notes equally, whether isolated or members of a chord.
+        return torch.nn.functional.binary_cross_entropy_with_logits(logits[mask],
+            torch.from_numpy(item['y'])[mask], pos_weight=torch.tensor(2.))
+    for epoch in range(plan['epochs']):
+        losses = []
+        for index in rng.permutation(len(training)):
+            optimizer.zero_grad()
+            value = loss(training[index])
+            value.backward()
+            torch.nn.utils.clip_grad_norm_(model.residual.parameters(), 2.)
+            optimizer.step()
+            losses.append(float(value.detach()))
+        with torch.inference_mode():
+            val_loss = float(np.mean([float(loss(i)) for i in validation]))
+        history.append({'epoch': epoch + 1, 'train_loss': float(np.mean(losses)), 'validation_loss': val_loss})
+        if val_loss < best_loss:
+            best_loss, best, best_epoch = val_loss, copy.deepcopy(model.state_dict()), epoch + 1
+        print(json.dumps(history[-1]), flush=True)
+    model.load_state_dict(best)
+    with torch.inference_mode():
+        probabilities = [torch.sigmoid(model(torch.from_numpy(i['x']), i['events'])).numpy() for i in validation]
+    baseline = evaluate(validation, [i['released'] for i in validation])
+    raw = evaluate(validation, [i['events'] for i in validation])
+    comparisons = []
+    for threshold in (.2, .3, .4, .5, .6, .7, .8):
+        result = evaluate(validation, [i['events'][p >= threshold] for i, p in zip(validation, probabilities, strict=True)])
+        passed = all(r['recall'] >= baseline['per_work'][w]['recall'] - .01
+                     and r['f1'] >= baseline['per_work'][w]['f1']
+                     and r['complete_chord_recall'] >= baseline['per_work'][w]['complete_chord_recall']
+                     for w, r in result['per_work'].items())
+        passed &= result['aggregate']['false_positives'] <= .95 * baseline['aggregate']['false_positives']
+        comparisons.append({'threshold': threshold, 'development_gate_passed': bool(passed), **result})
+    passing = [r for r in comparisons if r['development_gate_passed']]
+    chosen = max(passing, key=lambda r: r['aggregate']['f1']) if passing else None
+    torch.save({'state_dict': best, 'plan_sha256': digest(output / 'plan.json'),
+                'threshold': chosen['threshold'] if chosen else None, 'offline_only': True}, output / 'candidate.pt')
+    write(output / 'report.json', {'plan': plan, 'best_epoch': best_epoch, 'history': history,
+        'raw_candidates': raw, 'released_verifier': baseline, 'comparisons': comparisons,
+        'chosen_threshold': chosen['threshold'] if chosen else None,
+        'production_promoted': False,
+        'limitations': ['Piano development recordings are not separated full-song stems.',
+            'Onset metrics require correct pitch within 50ms; endpoint accuracy is not trained or claimed.',
+            'Complete chord recall does not penalize extra chord tones; false positives are gated separately.',
+            'This filter cannot recover notes absent from the frozen detector.',
+            'No final arrangement or reserved test evaluation; never auto-deploy.']})
+    print(json.dumps({'chosen_threshold': chosen['threshold'] if chosen else None,
+                      'best_epoch': best_epoch, 'production_promoted': False}), flush=True)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('command', choices=('prepare', 'train'))
+    parser.add_argument('--root', type=Path, default=Path('/training'))
+    parser.add_argument('--output', type=Path, default=Path('/training/chord-notes-v1'))
+    args = parser.parse_args()
+    torch.set_num_threads(2)
+    prepare(args.root, args.output) if args.command == 'prepare' else train(args.output)

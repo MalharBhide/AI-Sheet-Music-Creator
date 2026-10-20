@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "seed": 261019,
+  "epochs": 30,
+  "learning_rate": 0.0003,
+  "data": "Existing MusicNet piano MP3 excerpts; CC BY 4.0",
+  "counts": {
+    "train": 63,
+    "validation": 15
+  },
+  "source_manifest_sha256": "51fc54ee4e30f56840e461e48d57ab6a2f8b39db219863a98ac0ab57242f9aa3",
+  "observations_manifest_sha256": "93be698270fd078547c866efa6f9f835758d1385c219fef194f0a65aea6ff574",
+  "encoder_sha256": "2b75ac2d3c80a2644c7df5c0ec5fab9c10086ff2fa072177868e7e6c3091fe60",
+  "code_sha256": {
+    "train_chord_notes.py": "509206f0f81dd23f838b21f7f4b3fbd2cb1ec1b72a45640a4e9d128fe38edbdb",
+    "chord_note_model.py": "995b7b18061f9ce4a97121fa1278fd2412acd1df2d7482a9ea56d37eaf177f49"
+  },
+  "validation_status": "Previously used development works, not an untouched test",
+  "gate": "Per-work onset recall loss <= .01, F1 and complete chord recall nondecreasing; aggregate false positives decrease >= 5% versus released verifier",
+  "release": "Offline only; separated-stem and final-arrangement evaluation required before promotion",
+  "reserved_works_untouched": true,
+  "no_user_audio_or_scores": true
+}
